@@ -1,0 +1,73 @@
+./sim -bs 16 -us 256 -a 1 -wb -wa traces/spice10000.trace
+*** CACHE SETTINGS ***
+  Unified I- D-cache
+  Size: 	256
+  Associativity: 	1
+  Block size: 	16
+  Write policy: 	WRITE BACK
+  Allocation policy: 	WRITE ALLOCATE
+
+*** CACHE STATISTICS ***
+ INSTRUCTIONS
+  accesses:  6920
+  misses:    663
+  miss rate: 0.0958 (hit rate 0.9042)
+  replace:   654
+ DATA
+  accesses:  3080
+  misses:    874
+  miss rate: 0.2838 (hit rate 0.7162)
+  replace:   867
+ TRAFFIC (in words)
+  demand fetch:  6148
+  copies back:   360
+
+
+./sim -bs 16 -us 256 -a 1 -wt -wa traces/spice10000.trace
+*** CACHE SETTINGS ***
+  Unified I- D-cache
+  Size: 	256
+  Associativity: 	1
+  Block size: 	16
+  Write policy: 	WRITE THROUGH
+  Allocation policy: 	WRITE ALLOCATE
+
+*** CACHE STATISTICS ***
+ INSTRUCTIONS
+  accesses:  6920
+  misses:    663
+  miss rate: 0.0958 (hit rate 0.9042)
+  replace:   654
+ DATA
+  accesses:  3080
+  misses:    874
+  miss rate: 0.2838 (hit rate 0.7162)
+  replace:   867
+ TRAFFIC (in words)
+  demand fetch:  6148
+  copies back:   402
+
+
+./sim -bs 16 -us 256 -a 1 -wb -nw traces/spice10000.trace
+*** CACHE SETTINGS ***
+  Unified I- D-cache
+  Size: 	256
+  Associativity: 	1
+  Block size: 	16
+  Write policy: 	WRITE BACK
+  Allocation policy: 	WRITE NO ALLOCATE
+
+*** CACHE STATISTICS ***
+ INSTRUCTIONS
+  accesses:  6920
+  misses:    661
+  miss rate: 0.0955 (hit rate 0.9045)
+  replace:   651
+ DATA
+  accesses:  3080
+  misses:    914
+  miss rate: 0.2968 (hit rate 0.7032)
+  replace:   851
+ TRAFFIC (in words)
+  demand fetch:  6072
+  copies back:   301
