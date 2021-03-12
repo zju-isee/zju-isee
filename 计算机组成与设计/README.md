@@ -2,6 +2,8 @@
 2020-2021秋冬 刘鹏
 ****
 主要是三个任务：
+
+- 快速加法器设计
 - Verilog HDL实现一个CPU
 - C实现一个Compiler和Assembler
 - C实现一个Cache
