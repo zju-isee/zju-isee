@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hhubibi.mapper.BookMapper">
+
+    <select id="getAllBook" resultType="com.hhubibi.entity.Book">
+        select * from book
+        order by title
+    </select>
+
+    <select id="getBook" parameterType="String" resultType="com.hhubibi.entity.Book">
+        select * from book where bno = #{bno}
+        order by title
+    </select>
+
+    <delete id="deleteBook" parameterType="String">
+        delete from book where bno = #{bno}
+    </delete>
+
+    <insert id="addBook" parameterType="com.hhubibi.entity.Book">
+        insert into book (bno, category, title, press, year, author, price, total, stock)
+        values (#{bno}, #{category}, #{title}, #{press}, #{year}, #{author}, #{price}, #{total}, #{stock})
+    </insert>
+
+    <select id="queryBook" parameterType="com.hhubibi.entity.DBook" resultType="com.hhubibi.entity.Book">
+        select * from book
+        where 1
+            <if test="category != null">
+                and category like #{category}
+            </if>
+            <if test="title != null">
+                and title like #{title}
+            </if>
+            <if test="press != null">
+                and press like #{press}
+            </if>
+            <if test="author != null">
+                and author like #{author}
+            </if>
+            <if test="year > 0">
+                and year &gt;= #{year}
+            </if>
+            <if test="year2 > 0">
+                and year &lt; #{year2}
+            </if>
+            <if test="price > 0">
+                and price &gt;= #{price}
+            </if>
+            <if test="price2 > 0">
+                and price &lt; #{price2}
+            </if>
+        order by title
+        limit 50
+    </select>
+
+    <update id="editBook" parameterType="com.hhubibi.entity.Book">
+        update book set
+        category = #{category},
+        title = #{title},
+        press = #{press},
+        year = #{year},
+        author = #{author},
+        price = #{price},
+        total = #{total},
+        stock = #{stock}
+        where bno = #{bno}
+    </update>
+
+    <select id="getBookStock" parameterType="String" resultType="Integer">
+        select stock from book where bno = #{bno}
+    </select>
+
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hhubibi.mapper.BorrowMapper">
+
+    <select id="getBorrowByCno" parameterType="String" resultType="com.hhubibi.entity.Record">
+        select book.bno, book.category, book.title, book.press, book.year,
+               book.author, book.price, book.total, book.stock, borrow.borrow_date, borrow.return_date
+        from card natural join borrow natural join book
+        where card.cno = #{cno}
+        order by book.title
+        limit 50
+    </select>
+
+    <select id="getBorrowByBno" parameterType="String" resultType="com.hhubibi.entity.Record">
+        select book.bno, book.category, book.title, book.press, book.year,
+               book.author, book.price, book.total, book.stock, borrow.borrow_date, borrow.return_date
+        from book natural join borrow
+        where bno = #{bno}
+        order by book.title
+        limit 50
+    </select>
+
+    <insert id="borrowBook" parameterType="String">
+        insert into borrow (cno, bno, mno)
+        values (#{cno}, #{bno}, #{mno})
+    </insert>
+
+    <delete id="returnBook" parameterType="String">
+        delete from borrow where cno=#{cno} and bno=#{bno} and mno=#{mno}
+    </delete>
+
+</mapper>
