@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--公共的头部-->
+<!--头部导航栏-->
+<div class="navbar navbar-default navbar-static-top top1" th:fragment="topbar1">
+    <div class="container">
+        <div class="navbar-header">
+            <li class="navbar-brand logo_2"><img th:src="@{/img/logo_jw_w.png}" style="margin-top:-3px">图书管理系统</li>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><img style="position:relative;top:15px;" th:src="@{/img/user_logo.jpg}" width="28" height="28"></li>
+            <li><a href="#" style="color:#fff;font-size:16px;position:relative;top:5px;position:relative;left:-10px;">[[${session.manager.mno}+'，已登录']]</a></li>
+            <li><a th:href="@{/manager/loginOut}" style="color:#fff;font-size:16px;position:relative;top:5px;">退出</a></li>
+        </ul>
+        </ul>
+    </div>
+</div>
+
+<nav style="z-index: 999;width: 100%;background-color: #fff" class="navbar-collapse bs-navbar-collapse collapse" role="navigation" th:fragment="topbar2">
+    <div class="container">
+        <div class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        图书管理
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/book/list}">全部图书</a></li>
+                        <li><a th:href="@{/book/query}">查询图书</a></li>
+                        <li><a th:href="@{/book/add}">增加图书</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        借书证管理
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/card/list}">全部借书证</a></li>
+                        <li><a th:href="@{/card/query}">查询借书证</a></li>
+                        <li><a th:href="@{/card/add}">增加借书证</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        借还管理
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/borrow}">借书</a></li>
+                        <li><a th:href="@{/return}">还书</a></li>
+                    </ul>
+                </li>
+                <li >
+                    <a th:href="@{/manager/toupdate}" >
+                        个人信息修改
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
