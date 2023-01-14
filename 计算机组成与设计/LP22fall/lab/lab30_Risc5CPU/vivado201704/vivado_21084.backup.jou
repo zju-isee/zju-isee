@@ -1,0 +1,48 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Dec 30 19:29:45 2022
+# Process ID: 21084
+# Current directory: D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent24248 D:\Desktop\COD_Lab\lab30_Risc5CPU\vivado201704\Risc5CPU.xpr
+# Log file: D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/vivado.log
+# Journal file: D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.xpr
+update_compile_order -fileset sources_1
+create_ip -name dist_mem_gen -vendor xilinx.com -library ip -version 8.0 -module_name DataRAM -dir d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip
+set_property -dict [list CONFIG.data_width {32} CONFIG.Component_Name {DataRAM}] [get_ips DataRAM]
+generate_target {instantiation_template} [get_files d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci]
+catch { config_ip_cache -export [get_ips -all DataRAM] }
+export_ip_user_files -of_objects [get_files d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci]
+launch_runs -jobs 16 DataRAM_synth_1
+export_simulation -of_objects [get_files d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci] -directory D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.ip_user_files/sim_scripts -ip_user_files_dir D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.ip_user_files -ipstatic_source_dir D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/modelsim} {questa=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/questa} {riviera=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/riviera} {activehdl=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+add_files -norecurse {D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_4bits.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/BranchTest.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX_MEM.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/mux3.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU_tb.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/RBWRegisters.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Registers.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_32bits.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_4bits_select.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Decode.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/MEM_WB.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF_ID.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID_EX.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/InstructionROM.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF_tb.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ALU.v}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF_tb.v] -no_script -reset -force -quiet
+remove_files  D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF_tb.v
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+set_property used_in_synthesis false [get_files  D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU_tb.v]
+set_property used_in_implementation false [get_files  D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU_tb.v]
+generate_target Simulation [get_files D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DisplayROM/DisplayROM.xci]
+export_ip_user_files -of_objects [get_files D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DisplayROM/DisplayROM.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DisplayROM/DisplayROM.xci] -directory D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.ip_user_files/sim_scripts -ip_user_files_dir D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.ip_user_files -ipstatic_source_dir D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/modelsim} {questa=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/questa} {riviera=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/riviera} {activehdl=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+launch_simulation
+launch_simulation
+source PipelineCPUTest.tcl
+close_sim
+launch_simulation
+source PipelineCPUTest.tcl
+set_property top Risc5CPU_tb_v [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+source Risc5CPU_tb_v.tcl
+close_sim
+close_sim

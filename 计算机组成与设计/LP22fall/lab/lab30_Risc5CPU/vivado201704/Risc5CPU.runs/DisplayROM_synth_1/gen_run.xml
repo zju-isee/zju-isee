@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="DisplayROM_synth_1" LaunchPart="xc7a200tfbg484-1" LaunchTime="1672484046">
+  <File Type="PA-TCL" Name="DisplayROM.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="DisplayROM_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="DisplayROM_reports.tcl"/>
+  <File Type="RDS-RDS" Name="DisplayROM.vds"/>
+  <File Type="RDS-UTIL" Name="DisplayROM_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="DisplayROM_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="DisplayROM.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="DisplayROM_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="DisplayROM_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/DisplayROM">
+    <File Path="$PSRCDIR/sources_1/ip/DisplayROM/DisplayROM.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="DisplayROM"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/DisplayROM">
+    <File Path="$PSRCDIR/sources_1/ip/DisplayROM/DisplayROM.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="DisplayROM"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

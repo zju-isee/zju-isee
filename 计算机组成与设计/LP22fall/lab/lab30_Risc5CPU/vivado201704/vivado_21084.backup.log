@@ -1,0 +1,566 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Dec 30 19:29:45 2022
+# Process ID: 21084
+# Current directory: D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent24248 D:\Desktop\COD_Lab\lab30_Risc5CPU\vivado201704\Risc5CPU.xpr
+# Log file: D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/vivado.log
+# Journal file: D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.xpr
+INFO: [Project 1-313] Project file moved from 'F:/SourceProgram/lab30_Risc5CPU/vivado201704' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'.
+open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 781.703 ; gain = 39.859
+update_compile_order -fileset sources_1
+create_ip -name dist_mem_gen -vendor xilinx.com -library ip -version 8.0 -module_name DataRAM -dir d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip
+set_property -dict [list CONFIG.data_width {32} CONFIG.Component_Name {DataRAM}] [get_ips DataRAM]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'DataRAM' to 'DataRAM' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'DataRAM'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DataRAM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DataRAM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'DataRAM'...
+catch { config_ip_cache -export [get_ips -all DataRAM] }
+export_ip_user_files -of_objects [get_files d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci]
+launch_runs -jobs 16 DataRAM_synth_1
+[Fri Dec 30 19:45:07 2022] Launched DataRAM_synth_1...
+Run output will be captured here: D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.runs/DataRAM_synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 837.215 ; gain = 8.535
+export_simulation -of_objects [get_files d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/DataRAM.xci] -directory D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.ip_user_files/sim_scripts -ip_user_files_dir D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.ip_user_files -ipstatic_source_dir D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/modelsim} {questa=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/questa} {riviera=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/riviera} {activehdl=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+add_files -norecurse {D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_4bits.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/BranchTest.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX_MEM.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/mux3.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU_tb.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/RBWRegisters.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Registers.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_32bits.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_4bits_select.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Decode.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/MEM_WB.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF_ID.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID_EX.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/InstructionROM.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF_tb.v D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ALU.v}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF_tb.v] -no_script -reset -force -quiet
+remove_files  D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF_tb.v
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+set_property used_in_synthesis false [get_files  D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU_tb.v]
+set_property used_in_implementation false [get_files  D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU_tb.v]
+generate_target Simulation [get_files D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DisplayROM/DisplayROM.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DisplayROM'...
+export_ip_user_files -of_objects [get_files D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DisplayROM/DisplayROM.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DisplayROM/DisplayROM.xci] -directory D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.ip_user_files/sim_scripts -ip_user_files_dir D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.ip_user_files -ipstatic_source_dir D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/modelsim} {questa=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/questa} {riviera=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/riviera} {activehdl=D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'PipelineCPUTest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/DisplayROM.mif'
+INFO: [SIM-utils-43] Exported 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/digital.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj PipelineCPUTest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DisplayROM/sim/DisplayROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DisplayROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/sim/DataRAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataRAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DCM_PLL/DCM_PLL_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DCM_PLL_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DCM_PLL/DCM_PLL.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DCM_PLL
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/BranchTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchTest
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX_MEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX_MEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID_EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID_EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF_ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_ID
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/InstructionROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/MEM_WB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_WB
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/RBWRegisters.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RBWRegisters
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Registers.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Registers
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Risc5CPU
+INFO: [VRFC 10-2458] undeclared symbol PC_id, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:60]
+ERROR: [VRFC 10-2071] PC_id is already implicitly declared on line 60 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:69]
+INFO: [VRFC 10-2458] undeclared symbol RegWrite_wb, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:76]
+INFO: [VRFC 10-2458] undeclared symbol rdAddr_wb, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:77]
+INFO: [VRFC 10-2458] undeclared symbol RegWriteData_wb, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:78]
+INFO: [VRFC 10-2458] undeclared symbol MemRead_ex, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:79]
+INFO: [VRFC 10-2458] undeclared symbol rdAddr_ex, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:80]
+ERROR: [VRFC 10-2071] MemRead_ex is already implicitly declared on line 79 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:137]
+ERROR: [VRFC 10-2071] rdAddr_ex is already implicitly declared on line 80 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:141]
+INFO: [VRFC 10-2458] undeclared symbol ALUResult_mem, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:191]
+INFO: [VRFC 10-2458] undeclared symbol rdAddr_mem, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:192]
+INFO: [VRFC 10-2458] undeclared symbol RegWrite_mem, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:194]
+ERROR: [VRFC 10-2071] RegWrite_mem is already implicitly declared on line 194 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:203]
+ERROR: [VRFC 10-2071] ALUResult_mem is already implicitly declared on line 191 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:204]
+ERROR: [VRFC 10-2071] rdAddr_mem is already implicitly declared on line 192 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:205]
+ERROR: [VRFC 10-2071] RegWrite_wb is already implicitly declared on line 76 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:235]
+ERROR: [VRFC 10-2071] RegWriteData_wb is already implicitly declared on line 78 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:236]
+ERROR: [VRFC 10-2071] rdAddr_wb is already implicitly declared on line 77 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:237]
+ERROR: [VRFC 10-1040] module Risc5CPU ignored due to previous errors [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:6]
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'PipelineCPUTest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/DisplayROM.mif'
+INFO: [SIM-utils-43] Exported 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/digital.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj PipelineCPUTest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DisplayROM/sim/DisplayROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DisplayROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/sim/DataRAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataRAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DCM_PLL/DCM_PLL_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DCM_PLL_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DCM_PLL/DCM_PLL.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DCM_PLL
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/BranchTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchTest
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX_MEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX_MEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID_EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID_EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF_ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_ID
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/InstructionROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/MEM_WB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_WB
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/RBWRegisters.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RBWRegisters
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Registers.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Registers
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Risc5CPU
+INFO: [VRFC 10-2458] undeclared symbol RegWrite_wb, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:77]
+INFO: [VRFC 10-2458] undeclared symbol rdAddr_wb, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:78]
+INFO: [VRFC 10-2458] undeclared symbol RegWriteData_wb, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:79]
+INFO: [VRFC 10-2458] undeclared symbol MemRead_ex, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:80]
+INFO: [VRFC 10-2458] undeclared symbol rdAddr_ex, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:81]
+ERROR: [VRFC 10-2071] MemRead_ex is already implicitly declared on line 80 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:138]
+ERROR: [VRFC 10-2071] rdAddr_ex is already implicitly declared on line 81 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:142]
+INFO: [VRFC 10-2458] undeclared symbol ALUResult_mem, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:192]
+INFO: [VRFC 10-2458] undeclared symbol rdAddr_mem, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:193]
+INFO: [VRFC 10-2458] undeclared symbol RegWrite_mem, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:195]
+ERROR: [VRFC 10-2071] RegWrite_mem is already implicitly declared on line 195 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:204]
+ERROR: [VRFC 10-2071] ALUResult_mem is already implicitly declared on line 192 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:205]
+ERROR: [VRFC 10-2071] rdAddr_mem is already implicitly declared on line 193 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:206]
+ERROR: [VRFC 10-2071] RegWrite_wb is already implicitly declared on line 77 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:236]
+ERROR: [VRFC 10-2071] RegWriteData_wb is already implicitly declared on line 79 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:237]
+ERROR: [VRFC 10-2071] rdAddr_wb is already implicitly declared on line 78 [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:238]
+ERROR: [VRFC 10-1040] module Risc5CPU ignored due to previous errors [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:6]
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'PipelineCPUTest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/DisplayROM.mif'
+INFO: [SIM-utils-43] Exported 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/digital.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj PipelineCPUTest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DisplayROM/sim/DisplayROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DisplayROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/sim/DataRAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataRAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DCM_PLL/DCM_PLL_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DCM_PLL_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DCM_PLL/DCM_PLL.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DCM_PLL
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/BranchTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchTest
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX_MEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX_MEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID_EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID_EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF_ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_ID
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/InstructionROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/MEM_WB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_WB
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/RBWRegisters.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RBWRegisters
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Registers.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Registers
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Risc5CPU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/TMDSencode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TMDSencode
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_32bits.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_32bits
+INFO: [VRFC 10-2458] undeclared symbol c7, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_32bits.v:14]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_4bits.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_4bits
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_4bits_select.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_4bits_select
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/button_process_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module button_process_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/mux3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux3
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/syncGenarator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module syncGenarator
+INFO: [VRFC 10-2458] undeclared symbol EndFrame, assumed default net type wire [D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/syncGenarator.v:36]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/vga_data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_data
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/PipelineCPUTest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipelineCPUTest
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto a9bf92a40bd04395b8aca491821f3e7f --incr --debug typical --relax --mt 2 -L dist_mem_gen_v8_0_12 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot PipelineCPUTest_behav xil_defaultlib.PipelineCPUTest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/PipelineCPUTest.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v:47]
+WARNING: [VRFC 10-278] actual bit length 4 differs from formal bit length 32 for port ALUCode [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v:63]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/BranchTest.v:27]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v:99]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/PipelineCPUTest.v:66]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/PipelineCPUTest.v:101]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_4bits_select.v:8]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_4bits_select.v:9]
+WARNING: [VRFC 10-142] ALUCode was previously declared with a different range [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Decode.v:105]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=10,CLKIN...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.DCM_PLL_clk_wiz
+Compiling module xil_defaultlib.DCM_PLL
+Compiling module xil_defaultlib.button_process_unit
+Compiling module xil_defaultlib.adder_4bits
+Compiling module xil_defaultlib.adder_4bits_select
+Compiling module xil_defaultlib.adder_32bits
+Compiling module xil_defaultlib.InstructionROM
+Compiling module xil_defaultlib.IF
+Compiling module xil_defaultlib.IF_ID
+Compiling module xil_defaultlib.RBWRegisters
+Compiling module xil_defaultlib.Registers
+Compiling module xil_defaultlib.Decode
+Compiling module xil_defaultlib.BranchTest
+Compiling module xil_defaultlib.ID
+Compiling module xil_defaultlib.ID_EX
+Compiling module xil_defaultlib.mux3
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.EX
+Compiling module xil_defaultlib.EX_MEM
+Compiling module dist_mem_gen_v8_0_12.dist_mem_gen_v8_0_12(C_FAMILY="a...
+Compiling module xil_defaultlib.DataRAM
+Compiling module xil_defaultlib.MEM_WB
+Compiling module xil_defaultlib.Risc5CPU
+Compiling module xil_defaultlib.syncGenarator_default
+Compiling module dist_mem_gen_v8_0_12.dist_mem_gen_v8_0_12(C_FAMILY="a...
+Compiling module xil_defaultlib.DisplayROM
+Compiling module xil_defaultlib.vga_data
+Compiling module xil_defaultlib.TMDSencode
+Compiling module unisims_ver.OBUFDS
+Compiling module xil_defaultlib.PipelineCPUTest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot PipelineCPUTest_behav
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/xsim.dir/PipelineCPUTest_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Dec 30 21:07:47 2022...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 958.879 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "PipelineCPUTest_behav -key {Behavioral:sim_1:Functional:PipelineCPUTest} -tclbatch {PipelineCPUTest.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source PipelineCPUTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'PipelineCPUTest_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 980.387 ; gain = 21.508
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 984.680 ; gain = 0.000
+launch_simulation
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'PipelineCPUTest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/DisplayROM.mif'
+INFO: [SIM-utils-43] Exported 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/digital.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj PipelineCPUTest_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto a9bf92a40bd04395b8aca491821f3e7f --incr --debug typical --relax --mt 2 -L dist_mem_gen_v8_0_12 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot PipelineCPUTest_behav xil_defaultlib.PipelineCPUTest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/PipelineCPUTest.v:32]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v:47]
+WARNING: [VRFC 10-278] actual bit length 4 differs from formal bit length 32 for port ALUCode [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v:63]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/BranchTest.v:27]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v:99]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/PipelineCPUTest.v:66]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port reset [D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/imports/PipelineCPU.srcs/PipelineCPUTest.v:101]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_4bits_select.v:8]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_4bits_select.v:9]
+WARNING: [VRFC 10-142] ALUCode was previously declared with a different range [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Decode.v:105]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "PipelineCPUTest_behav -key {Behavioral:sim_1:Functional:PipelineCPUTest} -tclbatch {PipelineCPUTest.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source PipelineCPUTest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'PipelineCPUTest_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 984.680 ; gain = 0.000
+set_property top Risc5CPU_tb_v [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/sim/DataRAM.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/simulation/dist_mem_gen_v8_0.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/sim/DataRAM.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/simulation/dist_mem_gen_v8_0.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/sim/DataRAM.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/simulation/dist_mem_gen_v8_0.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/sim/DataRAM.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/simulation/dist_mem_gen_v8_0.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/sim/DataRAM.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/simulation/dist_mem_gen_v8_0.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/sim/DataRAM.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [d:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.srcs/sources_1/ip/DataRAM/simulation/dist_mem_gen_v8_0.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/EX.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+launch_simulation
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2017.4/data/xsim/ip/xsim_ip.ini' copied to run dir:'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'Risc5CPU_tb_v' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/DisplayROM.mif'
+INFO: [SIM-utils-43] Exported 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/digital.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Risc5CPU_tb_v_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Risc5CPU_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Risc5CPU_tb_v
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto a9bf92a40bd04395b8aca491821f3e7f --incr --debug typical --relax --mt 2 -L dist_mem_gen_v8_0_12 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot Risc5CPU_tb_v_behav xil_defaultlib.Risc5CPU_tb_v xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/IF.v:47]
+WARNING: [VRFC 10-278] actual bit length 4 differs from formal bit length 32 for port ALUCode [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v:63]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/BranchTest.v:27]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/ID.v:99]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_4bits_select.v:8]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port ci [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/adder_4bits_select.v:9]
+WARNING: [VRFC 10-142] ALUCode was previously declared with a different range [D:/Desktop/COD_Lab/lab30_Risc5CPU/src/Decode.v:105]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder_4bits
+Compiling module xil_defaultlib.adder_4bits_select
+Compiling module xil_defaultlib.adder_32bits
+Compiling module xil_defaultlib.InstructionROM
+Compiling module xil_defaultlib.IF
+Compiling module xil_defaultlib.IF_ID
+Compiling module xil_defaultlib.RBWRegisters
+Compiling module xil_defaultlib.Registers
+Compiling module xil_defaultlib.Decode
+Compiling module xil_defaultlib.BranchTest
+Compiling module xil_defaultlib.ID
+Compiling module xil_defaultlib.ID_EX
+Compiling module xil_defaultlib.mux3
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.EX
+Compiling module xil_defaultlib.EX_MEM
+Compiling module dist_mem_gen_v8_0_12.dist_mem_gen_v8_0_12(C_FAMILY="a...
+Compiling module xil_defaultlib.DataRAM
+Compiling module xil_defaultlib.MEM_WB
+Compiling module xil_defaultlib.Risc5CPU
+Compiling module xil_defaultlib.glbl
+Compiling module xil_defaultlib.Risc5CPU_tb_v
+Built simulation snapshot Risc5CPU_tb_v_behav
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim/xsim.dir/Risc5CPU_tb_v_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Dec 30 21:27:21 2022...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 988.074 ; gain = 0.039
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Risc5CPU_tb_v_behav -key {Behavioral:sim_1:Functional:Risc5CPU_tb_v} -tclbatch {Risc5CPU_tb_v.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source Risc5CPU_tb_v.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+WARNING in Risc5CPU_tb_v.uut.DataRAM_1.inst at time               250000 ns: 
+Reading from out-of-range address. Max address in Risc5CPU_tb_v.uut.DataRAM_1.inst is          63
+WARNING in Risc5CPU_tb_v.uut.DataRAM_1.inst at time               550000 ns: 
+Reading from out-of-range address. Max address in Risc5CPU_tb_v.uut.DataRAM_1.inst is          63
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Risc5CPU_tb_v_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 1002.934 ; gain = 14.910
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1008.105 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1008.105 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 30 21:31:01 2022...

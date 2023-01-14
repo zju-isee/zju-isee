@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="DCM_PLL_synth_1" LaunchPart="xc7a200tfbg484-1" LaunchTime="1672484045">
+  <File Type="PA-TCL" Name="DCM_PLL.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="DCM_PLL_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="DCM_PLL_reports.tcl"/>
+  <File Type="RDS-RDS" Name="DCM_PLL.vds"/>
+  <File Type="RDS-UTIL" Name="DCM_PLL_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="DCM_PLL_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="DCM_PLL.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="DCM_PLL_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="DCM_PLL_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/DCM_PLL">
+    <File Path="$PSRCDIR/sources_1/ip/DCM_PLL/DCM_PLL.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="DCM_PLL"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/DCM_PLL">
+    <File Path="$PSRCDIR/sources_1/ip/DCM_PLL/DCM_PLL.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="DCM_PLL"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

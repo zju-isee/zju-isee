@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Dec 31 18:53:18 2022
+# Process ID: 1676
+# Current directory: D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21084 D:\Desktop\COD_Lab\lab30_Risc5CPU\vivado201704\Risc5CPU.xpr
+# Log file: D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/vivado.log
+# Journal file: D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Desktop/COD_Lab/lab30_Risc5CPU/vivado201704/Risc5CPU.xpr
+update_compile_order -fileset sources_1
+reset_run DCM_PLL_synth_1
+reset_run DisplayROM_synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+write_schematic -format pdf -orientation portrait D:/Desktop/COD_Lab/lab30_report/fig/schematic.pdf
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
