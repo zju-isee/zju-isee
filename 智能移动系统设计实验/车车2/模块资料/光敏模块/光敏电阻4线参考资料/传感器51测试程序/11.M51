@@ -1,0 +1,181 @@
+BL51 BANKED LINKER/LOCATER V6.05                                                        11/03/2010  17:24:09  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.05, INVOKED BY:
+E:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, 1.obj TO 11
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  1.obj (1)
+
+
+LINK MAP OF MODULE:  11 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         ?DT?1
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001FH     UNIT         ?PR?MAIN?1
+            CODE    0022H     001BH     UNIT         ?PR?LED_DISPLAY?1
+            CODE    003DH     0018H     UNIT         ?PR?INITIAL_COM?1
+            CODE    0055H     000EH     UNIT         ?PR?DELAY1MS?1
+            CODE    0063H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   11 (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?1
+
+?PR?MAIN?1
+  +--> ?PR?INITIAL_COM?1
+  +--> ?PR?DELAY1MS?1
+  +--> ?PR?LED_DISPLAY?1
+
+?PR?LED_DISPLAY?1
+  +--> ?PR?DELAY1MS?1
+
+
+
+SYMBOL TABLE OF MODULE:  11 (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+BL51 BANKED LINKER/LOCATER V6.05                                                      11/03/2010  17:24:09  PAGE 2
+
+
+  C:0063H         SEGMENT       ?C_C51STARTUP
+  I:0009H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0066H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0063H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0063H         LINE#         133
+  C:0065H         LINE#         134
+  C:0066H         LINE#         135
+  C:0067H         LINE#         136
+  C:0069H         LINE#         185
+  C:006CH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  B:00A8H.4       PUBLIC        ES
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  D:0008H         PUBLIC        date
+  C:0055H         PUBLIC        delay1ms
+  C:0003H         PUBLIC        main
+  C:0022H         PUBLIC        LED_display
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:00A8H.3       PUBLIC        ET1
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+BL51 BANKED LINKER/LOCATER V6.05                                                      11/03/2010  17:24:09  PAGE 3
+
+
+  D:00C8H         PUBLIC        T2CON
+  C:003DH         PUBLIC        Initial_com
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          DELAY1MS
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0055H         LINE#         17
+  C:0055H         LINE#         18
+  C:0055H         LINE#         20
+  C:0062H         LINE#         21
+  -------         ENDPROC       DELAY1MS
+  -------         PROC          LED_DISPLAY
+  C:0022H         LINE#         31
+  C:0022H         LINE#         32
+  C:0022H         LINE#         33
+  C:002BH         LINE#         34
+  C:002EH         LINE#         35
+  C:003AH         LINE#         36
+  -------         ENDPROC       LED_DISPLAY
+  -------         PROC          INITIAL_COM
+  C:003DH         LINE#         45
+  C:003DH         LINE#         46
+  C:003DH         LINE#         47
+  C:003FH         LINE#         48
+  C:0041H         LINE#         49
+  C:0043H         LINE#         50
+  C:0046H         LINE#         51
+  C:0049H         LINE#         52
+  C:004CH         LINE#         53
+  C:004FH         LINE#         54
+  C:0052H         LINE#         55
+  C:0054H         LINE#         57
+  -------         ENDPROC       INITIAL_COM
+  -------         PROC          MAIN
+  C:0003H         LINE#         65
+  C:0003H         LINE#         66
+  C:0003H         LINE#         67
+  C:0006H         LINE#         68
+  C:0006H         LINE#         69
+  C:0006H         LINE#         70
+  C:0009H         LINE#         71
+  C:000CH         LINE#         72
+  C:000FH         LINE#         73
+  C:0012H         LINE#         74
+  C:0015H         LINE#         75
+  C:0015H         LINE#         76
+  C:0018H         LINE#         77
+  C:001BH         LINE#         78
+  C:001DH         LINE#         79
+  C:001DH         LINE#         81
+  C:0020H         LINE#         82
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        1
+
+Program Size: data=10.0 xdata=0 code=111
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

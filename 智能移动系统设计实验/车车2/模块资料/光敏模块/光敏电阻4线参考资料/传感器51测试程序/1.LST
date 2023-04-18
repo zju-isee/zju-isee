@@ -1,0 +1,112 @@
+C51 COMPILER V9.00   1                                                                     09/09/2016 15:37:24 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE 1
+OBJECT MODULE PLACED IN 1.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE 1.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          /******************************************
+   2          传感器触发测试
+   3          单片机：STC89C52
+   4          波特率：9600
+   5          *****************************************/
+   6          #include <reg52.h>
+   7          unsigned char date;
+   8          #define uchar unsigned char
+   9          #define uint unsigned int
+  10          sbit key1=P0^1;
+  11          
+  12          
+  13          /* 函数申明 -----------------------------------------------*/
+  14          void delay(uint z);
+  15          void Initial_com(void);
+  16          
+  17          //***********************************************************
+  18          
+  19          /*
+  20          ********************************************************************************
+  21          ** 函数名称 ： delay(uint z)
+  22          ** 函数功能 ： 延时函数
+  23          ********************************************************************************
+  24          */
+  25          void delay(uint z)
+  26          {                                                
+  27   1          uint i,j;
+  28   1          for(i=z;i>0;i--)
+  29   1              for(j=110;j>0;j--);
+  30   1      } 
+  31          
+  32          
+  33          //******************************
+  34          
+  35          //*****串口初始化函数***********
+  36          
+  37          //******************************
+  38          void Initial_com(void)
+  39          {
+  40   1       EA=1;        //开总中断
+  41   1       ES=1;        //允许串口中断
+  42   1       ET1=1;        //允许定时器T1的中断
+  43   1       TMOD=0x20;   //定时器T1，在方式2中断产生波特率
+  44   1       PCON=0x00;   //SMOD=0
+  45   1       SCON=0x50;   // 方式1 由定时器控制
+  46   1       TH1=0xfd;    //波特率设置为9600
+  47   1       TL1=0xfd;
+  48   1       TR1=1;       //开定时器T1运行控制位
+  49   1      
+  50   1      }
+  51          
+  52          
+  53          
+  54          
+  55          //*************************
+C51 COMPILER V9.00   1                                                                     09/09/2016 15:37:24 PAGE 2   
+
+  56          //**********主函数*********
+  57          //*************************
+  58          main()
+  59          {
+  60   1         Initial_com();
+  61   1         while(1)
+  62   1         {
+  63   2        
+  64   2           if(key1==0)
+  65   2          {
+  66   3            delay();    //消抖动
+*** WARNING C209 IN LINE 66 OF 1.C: '_delay': too few actual parameters
+  67   3            if(key1==0)   //确认触发
+  68   3            {
+  69   4               SBUF=0X01;
+  70   4               delay(200);
+  71   4              
+  72   4            
+  73   4            }
+  74   3           
+  75   3          }
+  76   2           
+  77   2            if(RI)
+  78   2            {
+  79   3            date=SBUF;    //单片机接受
+  80   3            SBUF=date;    //单片机发送
+  81   3            RI=0;
+  82   3            }
+  83   2          
+  84   2          
+  85   2          }
+  86   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     89    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

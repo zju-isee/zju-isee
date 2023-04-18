@@ -1,0 +1,106 @@
+C51 COMPILER V9.00   音繽1                                                                 06/03/2011 01:17:40 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE 音繽1
+OBJECT MODULE PLACED IN 音乐1.OBJ
+COMPILER INVOKED BY: D:\安装的软件\win7下keil\C51\BIN\C51.EXE 音乐1.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          
+   2          /*****************************************************************************  
+   3                            C51音乐程序(世上只有妈妈好)  
+   4          
+   5          ******************************************************************************
+   6          
+   7          
+   8          使用说明：
+   9              注意先将J6用跳线冒短接，即P0.0口控制蜂鸣器  
+  10                  
+  11          ******************************************************************************/   
+  12          #include <reg52.h>   
+  13          #define uchar unsigned char 
+  14          sbit      beep=P0^0;    //定义蜂鸣器输出端口
+  15          uchar timer0h,timer0l,time;
+  16          
+  17                                   //世上只有妈妈好  数据表
+  18          code uchar sszymmh[]={6,2,3,5,2,1,3,2,2,5,2,2,1,3,2,6,2,1,5,2,1,
+  19                                6,2,4,3,2,2,5,2,1,6,2,1,5,2,2,3,2,2,1,2,1,
+  20                                6,1,1,5,2,1,3,2,1,2,2,4,2,2,3,3,2,1,5,2,2,
+  21                                5,2,1,6,2,1,3,2,2,2,2,2,1,2,4,5,2,3,3,2,1,
+  22                                2,2,1,1,2,1,6,1,1,1,2,1,5,1,6,0,0,0 
+  23                                                };
+  24                                   // 音阶频率表 高八位
+  25          code uchar FREQH[]={0xF2,0xF3,0xF5,0xF5,0xF6,0xF7,0xF8, 
+  26                              0xF9,0xF9,0xFA,0xFA,0xFB,0xFB,0xFC,0xFC, //1,2,3,4,5,6,7,8,i
+  27                              0xFC,0xFD,0xFD,0xFD,0xFD,0xFE,
+  28                              0xFE,0xFE,0xFE,0xFE,0xFE,0xFE,0xFF,} ;
+  29                                   // 音阶频率表 低八位
+  30          code uchar FREQL[]={0x42,0xC1,0x17,0xB6,0xD0,0xD1,0xB6,
+  31                              0x21,0xE1,0x8C,0xD8,0x68,0xE9,0x5B,0x8F, //1,2,3,4,5,6,7,8,i
+  32                              0xEE,0x44, 0x6B,0xB4,0xF4,0x2D, 
+  33                              0x47,0x77,0xA2,0xB6,0xDA,0xFA,0x16,};
+  34          void delay(uchar t)               // 延时函数 
+  35          {
+  36   1              uchar t1;
+  37   1              unsigned long t2;
+  38   1              for(t1=0;t1<t;t1++)
+  39   1              {
+  40   2                      for(t2=0;t2<8000;t2++);
+  41   2              }
+  42   1              TR0=0;
+  43   1      }
+  44          void song()                              //  音乐处理函数
+  45          {
+  46   1              TH0=timer0h;
+  47   1              TL0=timer0l;
+  48   1              TR0=1;
+  49   1              delay(time);                       
+  50   1      }
+  51          /******************************************************************
+  52                                                  主函数                                      
+  53          ******************************************************************/
+  54          void main(void)
+  55          {
+C51 COMPILER V9.00   音繽1                                                                 06/03/2011 01:17:40 PAGE 2   
+
+  56   1              uchar k,i;
+  57   1              TMOD=1;                         //置CT0定时工作方式1
+  58   1              EA=1;
+  59   1              ET0=1;                          //IE=0x82 //CPU开中断,CT0开中断 
+  60   1              while(1)
+  61   1              {
+  62   2                      i=0;  
+  63   2                      while(i<100)                              //音乐数组长度 ，唱完从头再来  
+  64   2                      {              
+  65   3                              k=sszymmh[i]+7*sszymmh[i+1]-1;
+  66   3                              timer0h=FREQH[k];
+  67   3                              timer0l=FREQL[k];
+  68   3                              time=sszymmh[i+2];
+  69   3                              i=i+3;
+  70   3                              song();
+  71   3                      }
+  72   2              } 
+  73   1      }
+  74          void t0int() interrupt 1                //定时器中断函数
+  75          {
+  76   1              TR0=0;
+  77   1              beep=!beep;
+  78   1              TH0=timer0h;
+  79   1              TL0=timer0l;
+  80   1              TR0=1;
+  81   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    169    ----
+   CONSTANT SIZE    =    158    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3       8
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
