@@ -1,0 +1,145 @@
+C51 COMPILER V9.00   音繽                                                                  11/16/2011 21:56:06 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE 音繽
+OBJECT MODULE PLACED IN 音乐.OBJ
+COMPILER INVOKED BY: E:\安装软件\keil-51\C51\BIN\C51.EXE 音乐.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          
+   2          /*****************************************************************************  
+   3          *   编写时间： 2011.07.07
+   4          *   作    者： 雁翎电子
+   5          *       版    本： V1.0
+   6          *   函数功能： 无源蜂鸣器测试-8月桂花香                                                     
+   7          *   使用说明： J3短路帽接上
+   8          
+   9          ******************************************************************************/   
+  10          #include <reg52.h>    
+  11          #include <intrins.h>    
+  12          //关于如何编制音乐代码, 其实十分简单,各位可以看以下代码.    
+  13          //频率常数即音乐术语中的音调,而节拍常数即音乐术语中的多少拍;    
+  14          //所以拿出谱子, 试探编吧!    
+  15          
+  16          sbit Beep =  P0^4 ; 
+  17             
+  18          unsigned char n=0;  //n为节拍常数变量    
+  19          unsigned char code music_tab[] ={   
+  20          0x18, 0x30, 0x1C , 0x10, //格式为: 频率常数, 节拍常数, 频率常数, 节拍常数,    
+  21          0x20, 0x40, 0x1C , 0x10,   
+  22          0x18, 0x10, 0x20 , 0x10,   
+  23          0x1C, 0x10, 0x18 , 0x40,   
+  24          0x1C, 0x20, 0x20 , 0x20,   
+  25          0x1C, 0x20, 0x18 , 0x20,   
+  26          0x20, 0x80, 0xFF , 0x20,   
+  27          0x30, 0x1C, 0x10 , 0x18,   
+  28          0x20, 0x15, 0x20 , 0x1C,   
+  29          0x20, 0x20, 0x20 , 0x26,   
+  30          0x40, 0x20, 0x20 , 0x2B,   
+  31          0x20, 0x26, 0x20 , 0x20,   
+  32          0x20, 0x30, 0x80 , 0xFF,   
+  33          0x20, 0x20, 0x1C , 0x10,   
+  34          0x18, 0x10, 0x20 , 0x20,   
+  35          0x26, 0x20, 0x2B , 0x20,   
+  36          0x30, 0x20, 0x2B , 0x40,   
+  37          0x20, 0x20, 0x1C , 0x10,   
+  38          0x18, 0x10, 0x20 , 0x20,   
+  39          0x26, 0x20, 0x2B , 0x20,   
+  40          0x30, 0x20, 0x2B , 0x40,   
+  41          0x20, 0x30, 0x1C , 0x10,   
+  42          0x18, 0x20, 0x15 , 0x20,   
+  43          0x1C, 0x20, 0x20 , 0x20,   
+  44          0x26, 0x40, 0x20 , 0x20,   
+  45          0x2B, 0x20, 0x26 , 0x20,   
+  46          0x20, 0x20, 0x30 , 0x80,   
+  47          0x20, 0x30, 0x1C , 0x10,   
+  48          0x20, 0x10, 0x1C , 0x10,   
+  49          0x20, 0x20, 0x26 , 0x20,   
+  50          0x2B, 0x20, 0x30 , 0x20,   
+  51          0x2B, 0x40, 0x20 , 0x15,   
+  52          0x1F, 0x05, 0x20 , 0x10,   
+  53          0x1C, 0x10, 0x20 , 0x20,   
+  54          0x26, 0x20, 0x2B , 0x20,   
+  55          0x30, 0x20, 0x2B , 0x40,   
+C51 COMPILER V9.00   音繽                                                                  11/16/2011 21:56:06 PAGE 2   
+
+  56          0x20, 0x30, 0x1C , 0x10,   
+  57          0x18, 0x20, 0x15 , 0x20,   
+  58          0x1C, 0x20, 0x20 , 0x20,   
+  59          0x26, 0x40, 0x20 , 0x20,   
+  60          0x2B, 0x20, 0x26 , 0x20,   
+  61          0x20, 0x20, 0x30 , 0x30,   
+  62          0x20, 0x30, 0x1C , 0x10,   
+  63          0x18, 0x40, 0x1C , 0x20,   
+  64          0x20, 0x20, 0x26 , 0x40,   
+  65          0x13, 0x60, 0x18 , 0x20,   
+  66          0x15, 0x40, 0x13 , 0x40,   
+  67          0x18, 0x80, 0x00   
+  68          };   
+  69            
+  70          void delay (unsigned char m)   //控制频率延时    
+  71          {   
+  72   1       unsigned i=3*m;   
+  73   1       while(--i);   
+  74   1      }   
+  75          void delayms(unsigned char a)  //豪秒延时子程序    
+  76          {   
+  77   1        while(--a);     
+  78   1      }    
+  79          void main()   
+  80          { 
+  81   1              unsigned char p,m;   //m为频率常数变量    
+  82   1              unsigned char i=0;   
+  83   1              TMOD&=0x0f;   
+  84   1              TMOD|=0x01;   
+  85   1              TH0=0xd8;TL0=0xef;   
+  86   1              IE=0x82;   
+  87   1      play:
+  88   1              while(1)   
+  89   1          {   
+  90   2              a:  p=music_tab[i];   
+  91   2                      if(p==0x00)       
+  92   2                      { 
+  93   3                              i=0, delayms(1000); goto play; //如果碰到结束符,延时1秒,回到开始再来一遍  
+  94   3                      }       
+  95   2                      else 
+  96   2                              if(p==0xff)  
+  97   2                              { 
+  98   3                                      i=i+1;delayms(100),TR0=0; goto a;  //若碰到休止符,延时100ms,继续取下一音符
+  99   3                              }      
+ 100   2                              else
+ 101   2                              {
+ 102   3                                      m=music_tab[i++], n=music_tab[i++];      //取频率常数 和 节拍常数
+ 103   3                              }      
+ 104   2                              TR0=1;                                             //开定时器0    
+ 105   2                      while(n!=0)                //等待节拍完成,输出音频  
+ 106   2                      {
+ 107   3                              Beep=~Beep;
+ 108   3                              delay(m);    
+ 109   3                      } 
+ 110   2                      TR0=0;                                             //关定时器0    
+ 111   2          }   
+ 112   1      } 
+ 113          void int0() interrupt 1   //采用中断定时器0 控制节拍    
+ 114          {  
+ 115   1              TH0=0xd8;   
+ 116   1              TL0=0xef;   
+ 117   1              n--;   
+C51 COMPILER V9.00   音繽                                                                  11/16/2011 21:56:06 PAGE 3   
+
+ 118   1      } 
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    111    ----
+   CONSTANT SIZE    =    191    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
