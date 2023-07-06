@@ -1,0 +1,17 @@
+MODULE count4
+TITLE'BCD counter4'
+"inputs
+R,EN,CLK PIN;
+"outputs
+q1,q0 pin istype 'reg';
+
+count=[q1,q0];
+equations
+count.clk=CLK;
+count.ar=R;
+when (EN==1) then count:=count+1;
+else count:=count;
+
+
+END 
+

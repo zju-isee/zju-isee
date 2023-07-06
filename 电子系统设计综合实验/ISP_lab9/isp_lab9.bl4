@@ -1,0 +1,2231 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Wed May 24 21:44:39 2023
+#$ MODULE isp_lab9
+#$ PINS 16 clk dout reset Rx LED_VCC2 Tx LED_A LED_B LED_C LED_D LED_E LED_F LED_G LED_VCC1 \
+#  LED_VCC3 LED_VCC4
+#$ NODES 69 clkGenerator_scancnt_1_0_ receiverInst_Data1_0_ \
+#  receiverInst_Data1_1_ receiverInst_Data1_2_ receiverInst_Data1_3_ \
+#  receiverInst_Data2_0_ receiverInst_Data2_1_ receiverInst_Data2_2_ \
+#  receiverInst_Data2_3_ senderInst_Send_count_0_ senderInst_Send_count_1_ \
+#  senderInst_Send_count_2_ senderInst_Send_count_3_ senderInst_Send_data_4_ \
+#  senderInst_Send_over receiverInst_m_0_ receiverInst_m_1_ receiverInst_m_2_ \
+#  receiverInst_m_3_ receiverInst_m_4_ receiverInst_m_5_ receiverInst_m_6_ \
+#  receiverInst_m_7_ receiverInst_Rx_Valid receiverInst_Rx_Data_0_ \
+#  receiverInst_Rx_Data_1_ receiverInst_Rx_Data_2_ receiverInst_Rx_Data_3_ \
+#  receiverInst_Rx_Data_4_ receiverInst_Rx_Data_5_ receiverInst_Rx_Data_6_ \
+#  receiverInst_Rx_Data_7_ debouncer_Inst_timer30ms_q_1_ \
+#  debouncer_Inst_timer30ms_q_2_ debouncer_Inst_timer30ms_q_3_ \
+#  debouncer_Inst_timer30ms_q_4_ debouncer_Inst_timer30ms_q_5_ \
+#  debouncer_Inst_widthTransInst_q_0_ debouncer_Inst_controllerInst_state_0_ \
+#  debouncer_Inst_controllerInst_state_1_ clkGenerator_FreqDivide_1_q_1_ \
+#  clkGenerator_FreqDivide_1_q_2_ clkGenerator_FreqDivide_1_q_3_ \
+#  clkGenerator_FreqDivide_1_q_4_ clkGenerator_FreqDivide_1_q_5_ \
+#  clkGenerator_FreqDivide_1_q_6_ clkGenerator_FreqDivide_1_q_7_ \
+#  clkGenerator_FreqDivide_1_q_8_ clkGenerator_FreqDivide_1_q_9_ \
+#  clkGenerator_FreqDivide_1_q_10_ clkGenerator_FreqDivide_1_q_11_ \
+#  clkGenerator_FreqDivide_1_q_12_ clkGenerator_FreqDivide_1_q_13_ \
+#  clkGenerator_FreqDivide_3_q_1_ clkGenerator_FreqDivide_3_q_2_ \
+#  clkGenerator_FreqDivide_3_q_3_ clkGenerator_FreqDivide_3_q_4_ \
+#  clkGenerator_FreqDivide_3_q_5_ clkGenerator_FreqDivide_3_q_6_ \
+#  clkGenerator_FreqDivide_3_q_7_ clkGenerator_FreqDivide_3_q_8_ \
+#  clkGenerator_FreqDivide_3_q_9_ clkGenerator_FreqDivide_3_q_10_ \
+#  clkGenerator_FreqDivide_4_q_1_ clkGenerator_FreqDivide_4_q_2_ \
+#  clkGenerator_FreqDivide_4_q_3_ clkGenerator_FreqDivide_4_q_4_ \
+#  clkGenerator_FreqDivide_4_q_5_ clkGenerator_FreqDivide_4_q_6_
+.model toplevel
+.inputs clk.BLIF dout.BLIF reset.BLIF Rx.BLIF clkGenerator_scancnt_1_0_.Q \
+receiverInst_Data1_0_.Q receiverInst_Data1_1_.Q receiverInst_Data1_2_.Q \
+receiverInst_Data1_3_.Q receiverInst_Data2_0_.Q receiverInst_Data2_1_.Q \
+receiverInst_Data2_2_.Q receiverInst_Data2_3_.Q senderInst_Send_count_0_.Q \
+senderInst_Send_count_1_.Q senderInst_Send_count_2_.Q \
+senderInst_Send_count_3_.Q senderInst_Send_data_4_.Q senderInst_Send_over.Q \
+receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_Rx_Valid.Q \
+receiverInst_Rx_Data_0_.Q receiverInst_Rx_Data_1_.Q receiverInst_Rx_Data_2_.Q \
+receiverInst_Rx_Data_3_.Q receiverInst_Rx_Data_4_.Q receiverInst_Rx_Data_5_.Q \
+receiverInst_Rx_Data_6_.Q receiverInst_Rx_Data_7_.Q \
+debouncer_Inst_timer30ms_q_1_.Q debouncer_Inst_timer30ms_q_2_.Q \
+debouncer_Inst_timer30ms_q_3_.Q debouncer_Inst_timer30ms_q_4_.Q \
+debouncer_Inst_timer30ms_q_5_.Q debouncer_Inst_widthTransInst_q_0_.Q \
+debouncer_Inst_controllerInst_state_0_.Q \
+debouncer_Inst_controllerInst_state_1_.Q clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_5_.Q \
+clkGenerator_FreqDivide_1_q_6_.Q clkGenerator_FreqDivide_1_q_7_.Q \
+clkGenerator_FreqDivide_1_q_8_.Q clkGenerator_FreqDivide_1_q_9_.Q \
+clkGenerator_FreqDivide_1_q_10_.Q clkGenerator_FreqDivide_1_q_11_.Q \
+clkGenerator_FreqDivide_1_q_12_.Q clkGenerator_FreqDivide_1_q_13_.Q \
+clkGenerator_FreqDivide_3_q_1_.Q clkGenerator_FreqDivide_3_q_2_.Q \
+clkGenerator_FreqDivide_3_q_3_.Q clkGenerator_FreqDivide_3_q_4_.Q \
+clkGenerator_FreqDivide_3_q_5_.Q clkGenerator_FreqDivide_3_q_6_.Q \
+clkGenerator_FreqDivide_3_q_7_.Q clkGenerator_FreqDivide_3_q_8_.Q \
+clkGenerator_FreqDivide_3_q_9_.Q clkGenerator_FreqDivide_3_q_10_.Q \
+clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q
+.outputs LED_VCC2 clkGenerator_FreqDivide_1_q_13_.CE \
+clkGenerator_FreqDivide_1_q_13_.C clkGenerator_FreqDivide_1_q_11_.CE \
+clkGenerator_FreqDivide_1_q_11_.C clkGenerator_FreqDivide_1_q_12_.CE \
+clkGenerator_FreqDivide_1_q_12_.C clkGenerator_FreqDivide_1_q_8_.CE \
+clkGenerator_FreqDivide_1_q_8_.C clkGenerator_FreqDivide_1_q_9_.CE \
+clkGenerator_FreqDivide_1_q_9_.C clkGenerator_FreqDivide_1_q_10_.CE \
+clkGenerator_FreqDivide_1_q_10_.C clkGenerator_FreqDivide_1_q_6_.CE \
+clkGenerator_FreqDivide_1_q_6_.C clkGenerator_FreqDivide_1_q_7_.CE \
+clkGenerator_FreqDivide_1_q_7_.C clkGenerator_FreqDivide_1_q_3_.CE \
+clkGenerator_FreqDivide_1_q_3_.C clkGenerator_FreqDivide_1_q_4_.CE \
+clkGenerator_FreqDivide_1_q_4_.C clkGenerator_FreqDivide_1_q_5_.CE \
+clkGenerator_FreqDivide_1_q_5_.C clkGenerator_FreqDivide_1_q_1_.CE \
+clkGenerator_FreqDivide_1_q_1_.C clkGenerator_FreqDivide_1_q_2_.CE \
+clkGenerator_FreqDivide_1_q_2_.C clkGenerator_FreqDivide_3_q_10_.CE \
+clkGenerator_FreqDivide_3_q_10_.C clkGenerator_FreqDivide_3_q_8_.CE \
+clkGenerator_FreqDivide_3_q_8_.C clkGenerator_FreqDivide_3_q_9_.CE \
+clkGenerator_FreqDivide_3_q_9_.C clkGenerator_FreqDivide_3_q_5_.CE \
+clkGenerator_FreqDivide_3_q_5_.C clkGenerator_FreqDivide_3_q_6_.CE \
+clkGenerator_FreqDivide_3_q_6_.C clkGenerator_FreqDivide_3_q_7_.CE \
+clkGenerator_FreqDivide_3_q_7_.C clkGenerator_FreqDivide_3_q_3_.CE \
+clkGenerator_FreqDivide_3_q_3_.C clkGenerator_FreqDivide_3_q_4_.CE \
+clkGenerator_FreqDivide_3_q_4_.C clkGenerator_FreqDivide_3_q_1_.CE \
+clkGenerator_FreqDivide_3_q_1_.C clkGenerator_FreqDivide_3_q_2_.CE \
+clkGenerator_FreqDivide_3_q_2_.C clkGenerator_FreqDivide_4_q_6_.CE \
+clkGenerator_FreqDivide_4_q_6_.C clkGenerator_FreqDivide_4_q_3_.CE \
+clkGenerator_FreqDivide_4_q_3_.C clkGenerator_FreqDivide_4_q_4_.CE \
+clkGenerator_FreqDivide_4_q_4_.C clkGenerator_FreqDivide_4_q_5_.CE \
+clkGenerator_FreqDivide_4_q_5_.C clkGenerator_FreqDivide_4_q_1_.CE \
+clkGenerator_FreqDivide_4_q_1_.C clkGenerator_FreqDivide_4_q_2_.CE \
+clkGenerator_FreqDivide_4_q_2_.C clkGenerator_scancnt_1_0_.C \
+debouncer_Inst_timer30ms_q_5_.CE debouncer_Inst_timer30ms_q_5_.C \
+debouncer_Inst_timer30ms_q_3_.CE debouncer_Inst_timer30ms_q_3_.C \
+debouncer_Inst_timer30ms_q_4_.CE debouncer_Inst_timer30ms_q_4_.C \
+debouncer_Inst_timer30ms_q_1_.CE debouncer_Inst_timer30ms_q_1_.C \
+debouncer_Inst_timer30ms_q_2_.CE debouncer_Inst_timer30ms_q_2_.C \
+debouncer_Inst_controllerInst_state_0_.C \
+debouncer_Inst_controllerInst_state_1_.C debouncer_Inst_widthTransInst_q_0_.C \
+LED_A.C LED_B.C LED_C.C LED_D.C LED_E.C LED_F.C LED_G.C LED_VCC1.C LED_VCC3.C \
+LED_VCC4.C receiverInst_Rx_Data_2_.CE receiverInst_Rx_Data_2_.C \
+receiverInst_Rx_Data_3_.CE receiverInst_Rx_Data_3_.C \
+receiverInst_Rx_Data_4_.CE receiverInst_Rx_Data_4_.C \
+receiverInst_Rx_Data_5_.CE receiverInst_Rx_Data_5_.C \
+receiverInst_Rx_Data_6_.CE receiverInst_Rx_Data_6_.C \
+receiverInst_Rx_Data_7_.CE receiverInst_Rx_Data_7_.C receiverInst_Data1_3_.C \
+receiverInst_Data1_3_.AR receiverInst_Data2_0_.C receiverInst_Data2_0_.AR \
+receiverInst_Data2_1_.C receiverInst_Data2_1_.AR receiverInst_Data2_2_.C \
+receiverInst_Data2_2_.AR receiverInst_Data2_3_.C receiverInst_Data2_3_.AR \
+receiverInst_m_0_.C receiverInst_m_0_.AR receiverInst_m_1_.C \
+receiverInst_m_1_.AR receiverInst_m_2_.C receiverInst_m_2_.AR \
+receiverInst_m_3_.C receiverInst_m_3_.AR receiverInst_m_4_.C \
+receiverInst_m_4_.AR receiverInst_m_5_.C receiverInst_m_5_.AR \
+receiverInst_m_6_.C receiverInst_m_6_.AR receiverInst_m_7_.C \
+receiverInst_m_7_.AR receiverInst_Rx_Data_0_.CE receiverInst_Rx_Data_0_.C \
+receiverInst_Rx_Data_1_.CE receiverInst_Rx_Data_1_.C receiverInst_Rx_Valid.CE \
+receiverInst_Rx_Valid.C receiverInst_Rx_Valid.AR receiverInst_Data1_0_.C \
+receiverInst_Data1_0_.AR receiverInst_Data1_1_.C receiverInst_Data1_1_.AR \
+receiverInst_Data1_2_.C receiverInst_Data1_2_.AR senderInst_Send_count_1_.C \
+senderInst_Send_count_1_.AR senderInst_Send_count_2_.C \
+senderInst_Send_count_2_.AR senderInst_Send_count_3_.C \
+senderInst_Send_count_3_.AR senderInst_Send_data_4_.C \
+senderInst_Send_data_4_.AR Tx.C Tx.AP senderInst_Send_over.C \
+senderInst_Send_over.AP senderInst_Send_count_0_.C senderInst_Send_count_0_.AR \
+clkGenerator_scancnt_1_0_.D receiverInst_Data1_0_.D receiverInst_Data1_1_.D \
+receiverInst_Data1_2_.D receiverInst_Data1_3_.D receiverInst_Data2_0_.D \
+receiverInst_Data2_1_.D receiverInst_Data2_2_.D receiverInst_Data2_3_.D \
+senderInst_Send_count_0_.D senderInst_Send_count_1_.D \
+senderInst_Send_count_2_.D senderInst_Send_count_3_.D \
+senderInst_Send_data_4_.D senderInst_Send_over.D receiverInst_m_0_.D \
+receiverInst_m_1_.D receiverInst_m_2_.D receiverInst_m_3_.D \
+receiverInst_m_4_.D receiverInst_m_5_.T receiverInst_m_6_.T \
+receiverInst_m_7_.T receiverInst_Rx_Valid.D receiverInst_Rx_Data_0_.D \
+receiverInst_Rx_Data_1_.D receiverInst_Rx_Data_2_.D receiverInst_Rx_Data_3_.D \
+receiverInst_Rx_Data_4_.D receiverInst_Rx_Data_5_.D receiverInst_Rx_Data_6_.D \
+receiverInst_Rx_Data_7_.D Tx.D LED_A.D LED_B.D LED_C.D LED_D.D LED_E.D LED_F.D \
+LED_G.D LED_VCC1.D LED_VCC3.D LED_VCC4.D debouncer_Inst_timer30ms_q_1_.D \
+debouncer_Inst_timer30ms_q_2_.D debouncer_Inst_timer30ms_q_3_.D \
+debouncer_Inst_timer30ms_q_4_.D debouncer_Inst_timer30ms_q_5_.D \
+debouncer_Inst_widthTransInst_q_0_.D debouncer_Inst_controllerInst_state_0_.D \
+debouncer_Inst_controllerInst_state_1_.T clkGenerator_FreqDivide_1_q_1_.D \
+clkGenerator_FreqDivide_1_q_2_.D clkGenerator_FreqDivide_1_q_3_.D \
+clkGenerator_FreqDivide_1_q_4_.D clkGenerator_FreqDivide_1_q_5_.D \
+clkGenerator_FreqDivide_1_q_6_.T clkGenerator_FreqDivide_1_q_7_.T \
+clkGenerator_FreqDivide_1_q_8_.T clkGenerator_FreqDivide_1_q_9_.T \
+clkGenerator_FreqDivide_1_q_10_.T clkGenerator_FreqDivide_1_q_11_.T \
+clkGenerator_FreqDivide_1_q_12_.T clkGenerator_FreqDivide_1_q_13_.T \
+clkGenerator_FreqDivide_3_q_1_.D clkGenerator_FreqDivide_3_q_2_.D \
+clkGenerator_FreqDivide_3_q_3_.D clkGenerator_FreqDivide_3_q_4_.D \
+clkGenerator_FreqDivide_3_q_5_.T clkGenerator_FreqDivide_3_q_6_.T \
+clkGenerator_FreqDivide_3_q_7_.T clkGenerator_FreqDivide_3_q_8_.T \
+clkGenerator_FreqDivide_3_q_9_.T clkGenerator_FreqDivide_3_q_10_.T \
+clkGenerator_FreqDivide_4_q_1_.D clkGenerator_FreqDivide_4_q_2_.D \
+clkGenerator_FreqDivide_4_q_3_.D clkGenerator_FreqDivide_4_q_4_.D \
+clkGenerator_FreqDivide_4_q_5_.D clkGenerator_FreqDivide_4_q_6_.T
+.names LED_VCC2
+.names clkGenerator_FreqDivide_1_q_13_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_11_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_12_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_8_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_9_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_10_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_6_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_7_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_3_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_4_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_5_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_1_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_2_.CE
+ 1
+.names clkGenerator_FreqDivide_3_q_10_.CE
+ 1
+.names clkGenerator_FreqDivide_3_q_8_.CE
+ 1
+.names clkGenerator_FreqDivide_3_q_9_.CE
+ 1
+.names clkGenerator_FreqDivide_3_q_5_.CE
+ 1
+.names clkGenerator_FreqDivide_3_q_6_.CE
+ 1
+.names clkGenerator_FreqDivide_3_q_7_.CE
+ 1
+.names clkGenerator_FreqDivide_3_q_3_.CE
+ 1
+.names clkGenerator_FreqDivide_3_q_4_.CE
+ 1
+.names clkGenerator_FreqDivide_3_q_1_.CE
+ 1
+.names clkGenerator_FreqDivide_3_q_2_.CE
+ 1
+.names clkGenerator_FreqDivide_4_q_6_.CE
+ 1
+.names clkGenerator_FreqDivide_4_q_3_.CE
+ 1
+.names clkGenerator_FreqDivide_4_q_4_.CE
+ 1
+.names clkGenerator_FreqDivide_4_q_5_.CE
+ 1
+.names clkGenerator_FreqDivide_4_q_1_.CE
+ 1
+.names clkGenerator_FreqDivide_4_q_2_.CE
+ 1
+.names clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q clkGenerator_scancnt_1_0_.C
+1111011011101 1
+-----------1- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------1----- 0
+------0------ 0
+-----0------- 0
+----1-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names debouncer_Inst_controllerInst_state_0_.Q \
+clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q debouncer_Inst_timer30ms_q_5_.CE
+-1111011011101 1
+0------------- 1
+1-----------1- 0
+1----------0-- 0
+1---------0--- 0
+1--------0---- 0
+1-------1----- 0
+1------0------ 0
+1-----0------- 0
+1----1-------- 0
+1---0--------- 0
+1--0---------- 0
+1-0----------- 0
+10------------ 0
+1------------0 0
+.names debouncer_Inst_controllerInst_state_0_.Q \
+clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q debouncer_Inst_timer30ms_q_3_.CE
+-1111011011101 1
+0------------- 1
+1-----------1- 0
+1----------0-- 0
+1---------0--- 0
+1--------0---- 0
+1-------1----- 0
+1------0------ 0
+1-----0------- 0
+1----1-------- 0
+1---0--------- 0
+1--0---------- 0
+1-0----------- 0
+10------------ 0
+1------------0 0
+.names debouncer_Inst_controllerInst_state_0_.Q \
+clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q debouncer_Inst_timer30ms_q_4_.CE
+-1111011011101 1
+0------------- 1
+1-----------1- 0
+1----------0-- 0
+1---------0--- 0
+1--------0---- 0
+1-------1----- 0
+1------0------ 0
+1-----0------- 0
+1----1-------- 0
+1---0--------- 0
+1--0---------- 0
+1-0----------- 0
+10------------ 0
+1------------0 0
+.names debouncer_Inst_controllerInst_state_0_.Q \
+clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q debouncer_Inst_timer30ms_q_1_.CE
+-1111011011101 1
+0------------- 1
+1-----------1- 0
+1----------0-- 0
+1---------0--- 0
+1--------0---- 0
+1-------1----- 0
+1------0------ 0
+1-----0------- 0
+1----1-------- 0
+1---0--------- 0
+1--0---------- 0
+1-0----------- 0
+10------------ 0
+1------------0 0
+.names debouncer_Inst_controllerInst_state_0_.Q \
+clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q debouncer_Inst_timer30ms_q_2_.CE
+-1111011011101 1
+0------------- 1
+1-----------1- 0
+1----------0-- 0
+1---------0--- 0
+1--------0---- 0
+1-------1----- 0
+1------0------ 0
+1-----0------- 0
+1----1-------- 0
+1---0--------- 0
+1--0---------- 0
+1-0----------- 0
+10------------ 0
+1------------0 0
+.names clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q LED_A.C
+1111011011101 1
+-----------1- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------1----- 0
+------0------ 0
+-----0------- 0
+----1-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q LED_B.C
+1111011011101 1
+-----------1- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------1----- 0
+------0------ 0
+-----0------- 0
+----1-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q LED_C.C
+1111011011101 1
+-----------1- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------1----- 0
+------0------ 0
+-----0------- 0
+----1-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q LED_D.C
+1111011011101 1
+-----------1- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------1----- 0
+------0------ 0
+-----0------- 0
+----1-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q LED_E.C
+1111011011101 1
+-----------1- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------1----- 0
+------0------ 0
+-----0------- 0
+----1-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q LED_F.C
+1111011011101 1
+-----------1- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------1----- 0
+------0------ 0
+-----0------- 0
+----1-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q LED_G.C
+1111011011101 1
+-----------1- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------1----- 0
+------0------ 0
+-----0------- 0
+----1-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q LED_VCC1.C
+1111011011101 1
+-----------1- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------1----- 0
+------0------ 0
+-----0------- 0
+----1-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q LED_VCC3.C
+1111011011101 1
+-----------1- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------1----- 0
+------0------ 0
+-----0------- 0
+----1-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names clkGenerator_FreqDivide_1_q_1_.Q clkGenerator_FreqDivide_1_q_2_.Q \
+clkGenerator_FreqDivide_1_q_3_.Q clkGenerator_FreqDivide_1_q_4_.Q \
+clkGenerator_FreqDivide_1_q_5_.Q clkGenerator_FreqDivide_1_q_6_.Q \
+clkGenerator_FreqDivide_1_q_7_.Q clkGenerator_FreqDivide_1_q_8_.Q \
+clkGenerator_FreqDivide_1_q_9_.Q clkGenerator_FreqDivide_1_q_10_.Q \
+clkGenerator_FreqDivide_1_q_11_.Q clkGenerator_FreqDivide_1_q_12_.Q \
+clkGenerator_FreqDivide_1_q_13_.Q LED_VCC4.C
+1111011011101 1
+-----------1- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------1----- 0
+------0------ 0
+-----0------- 0
+----1-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names reset.BLIF receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_Rx_Data_2_.CE
+100010001 1
+10001-1-0 1
+10001--10 1
+100011--0 1
+-----0000 0
+----0---- 0
+---1----- 0
+--1------ 0
+-1------- 0
+0-------- 0
+-------11 0
+------1-1 0
+-----1--1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_Rx_Data_2_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_Rx_Data_3_.CE
+100010001 1
+10001-1-0 1
+10001--10 1
+100011--0 1
+-----0000 0
+----0---- 0
+---1----- 0
+--1------ 0
+-1------- 0
+0-------- 0
+-------11 0
+------1-1 0
+-----1--1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_Rx_Data_3_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_Rx_Data_4_.CE
+100010001 1
+10001-1-0 1
+10001--10 1
+100011--0 1
+-----0000 0
+----0---- 0
+---1----- 0
+--1------ 0
+-1------- 0
+0-------- 0
+-------11 0
+------1-1 0
+-----1--1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_Rx_Data_4_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_Rx_Data_5_.CE
+100010001 1
+10001-1-0 1
+10001--10 1
+100011--0 1
+-----0000 0
+----0---- 0
+---1----- 0
+--1------ 0
+-1------- 0
+0-------- 0
+-------11 0
+------1-1 0
+-----1--1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_Rx_Data_5_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_Rx_Data_6_.CE
+100010001 1
+10001-1-0 1
+10001--10 1
+100011--0 1
+-----0000 0
+----0---- 0
+---1----- 0
+--1------ 0
+-1------- 0
+0-------- 0
+-------11 0
+------1-1 0
+-----1--1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_Rx_Data_6_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_Rx_Data_7_.CE
+100010001 1
+10001-1-0 1
+10001--10 1
+100011--0 1
+-----0000 0
+----0---- 0
+---1----- 0
+--1------ 0
+-1------- 0
+0-------- 0
+-------11 0
+------1-1 0
+-----1--1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_Rx_Data_7_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names receiverInst_Rx_Valid.Q receiverInst_Data1_3_.C
+0 1
+1 0
+.names reset.BLIF receiverInst_Data1_3_.AR
+0 1
+1 0
+.names receiverInst_Rx_Valid.Q receiverInst_Data2_0_.C
+0 1
+1 0
+.names reset.BLIF receiverInst_Data2_0_.AR
+0 1
+1 0
+.names receiverInst_Rx_Valid.Q receiverInst_Data2_1_.C
+0 1
+1 0
+.names reset.BLIF receiverInst_Data2_1_.AR
+0 1
+1 0
+.names receiverInst_Rx_Valid.Q receiverInst_Data2_2_.C
+0 1
+1 0
+.names reset.BLIF receiverInst_Data2_2_.AR
+0 1
+1 0
+.names receiverInst_Rx_Valid.Q receiverInst_Data2_3_.C
+0 1
+1 0
+.names reset.BLIF receiverInst_Data2_3_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_m_0_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_0_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_m_1_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_1_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_m_2_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_2_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_m_3_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_3_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_m_4_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_4_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_m_5_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_5_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_m_6_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_6_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_m_7_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_7_.AR
+0 1
+1 0
+.names reset.BLIF receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_Rx_Data_0_.CE
+100010001 1
+10001-1-0 1
+10001--10 1
+100011--0 1
+-----0000 0
+----0---- 0
+---1----- 0
+--1------ 0
+-1------- 0
+0-------- 0
+-------11 0
+------1-1 0
+-----1--1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_Rx_Data_0_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_Rx_Data_1_.CE
+100010001 1
+10001-1-0 1
+10001--10 1
+100011--0 1
+-----0000 0
+----0---- 0
+---1----- 0
+--1------ 0
+-1------- 0
+0-------- 0
+-------11 0
+------1-1 0
+-----1--1 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_Rx_Data_1_.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names Rx.BLIF receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_Rx_Valid.CE
+100000000 1
+-00011001 1
+--0010101 1
+0-------0 0
+-----1--0 0
+----100-- 0
+------1-0 0
+----0---1 0
+-1----0-- 0
+-----11-- 0
+-------1- 0
+---1----- 0
+--1------ 0
+.names clkGenerator_FreqDivide_4_q_1_.Q clkGenerator_FreqDivide_4_q_2_.Q \
+clkGenerator_FreqDivide_4_q_3_.Q clkGenerator_FreqDivide_4_q_4_.Q \
+clkGenerator_FreqDivide_4_q_5_.Q clkGenerator_FreqDivide_4_q_6_.Q \
+receiverInst_Rx_Valid.C
+011001 1
+----1- 0
+---1-- 0
+--0--- 0
+-0---- 0
+1----- 0
+-----0 0
+.names reset.BLIF receiverInst_Rx_Valid.AR
+0 1
+1 0
+.names receiverInst_Rx_Valid.Q receiverInst_Data1_0_.C
+0 1
+1 0
+.names reset.BLIF receiverInst_Data1_0_.AR
+0 1
+1 0
+.names receiverInst_Rx_Valid.Q receiverInst_Data1_1_.C
+0 1
+1 0
+.names reset.BLIF receiverInst_Data1_1_.AR
+0 1
+1 0
+.names receiverInst_Rx_Valid.Q receiverInst_Data1_2_.C
+0 1
+1 0
+.names reset.BLIF receiverInst_Data1_2_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_3_q_1_.Q clkGenerator_FreqDivide_3_q_2_.Q \
+clkGenerator_FreqDivide_3_q_3_.Q clkGenerator_FreqDivide_3_q_4_.Q \
+clkGenerator_FreqDivide_3_q_5_.Q clkGenerator_FreqDivide_3_q_6_.Q \
+clkGenerator_FreqDivide_3_q_7_.Q clkGenerator_FreqDivide_3_q_8_.Q \
+clkGenerator_FreqDivide_3_q_9_.Q clkGenerator_FreqDivide_3_q_10_.Q \
+senderInst_Send_count_1_.C
+0000111001 1
+--------1- 0
+-------1-- 0
+------0--- 0
+-----0---- 0
+----0----- 0
+---1------ 0
+--1------- 0
+-1-------- 0
+1--------- 0
+---------0 0
+.names senderInst_Send_data_4_.Q senderInst_Send_count_1_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_3_q_1_.Q clkGenerator_FreqDivide_3_q_2_.Q \
+clkGenerator_FreqDivide_3_q_3_.Q clkGenerator_FreqDivide_3_q_4_.Q \
+clkGenerator_FreqDivide_3_q_5_.Q clkGenerator_FreqDivide_3_q_6_.Q \
+clkGenerator_FreqDivide_3_q_7_.Q clkGenerator_FreqDivide_3_q_8_.Q \
+clkGenerator_FreqDivide_3_q_9_.Q clkGenerator_FreqDivide_3_q_10_.Q \
+senderInst_Send_count_2_.C
+0000111001 1
+--------1- 0
+-------1-- 0
+------0--- 0
+-----0---- 0
+----0----- 0
+---1------ 0
+--1------- 0
+-1-------- 0
+1--------- 0
+---------0 0
+.names senderInst_Send_data_4_.Q senderInst_Send_count_2_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_3_q_1_.Q clkGenerator_FreqDivide_3_q_2_.Q \
+clkGenerator_FreqDivide_3_q_3_.Q clkGenerator_FreqDivide_3_q_4_.Q \
+clkGenerator_FreqDivide_3_q_5_.Q clkGenerator_FreqDivide_3_q_6_.Q \
+clkGenerator_FreqDivide_3_q_7_.Q clkGenerator_FreqDivide_3_q_8_.Q \
+clkGenerator_FreqDivide_3_q_9_.Q clkGenerator_FreqDivide_3_q_10_.Q \
+senderInst_Send_count_3_.C
+0000111001 1
+--------1- 0
+-------1-- 0
+------0--- 0
+-----0---- 0
+----0----- 0
+---1------ 0
+--1------- 0
+-1-------- 0
+1--------- 0
+---------0 0
+.names senderInst_Send_data_4_.Q senderInst_Send_count_3_.AR
+0 1
+1 0
+.names debouncer_Inst_widthTransInst_q_0_.Q \
+debouncer_Inst_controllerInst_state_0_.Q \
+debouncer_Inst_controllerInst_state_1_.Q senderInst_Send_data_4_.C
+01- 1
+0-1 1
+-00 0
+1-- 0
+.names reset.BLIF senderInst_Send_over.Q senderInst_Send_data_4_.AR
+0- 1
+-0 1
+11 0
+.names clkGenerator_FreqDivide_3_q_1_.Q clkGenerator_FreqDivide_3_q_2_.Q \
+clkGenerator_FreqDivide_3_q_3_.Q clkGenerator_FreqDivide_3_q_4_.Q \
+clkGenerator_FreqDivide_3_q_5_.Q clkGenerator_FreqDivide_3_q_6_.Q \
+clkGenerator_FreqDivide_3_q_7_.Q clkGenerator_FreqDivide_3_q_8_.Q \
+clkGenerator_FreqDivide_3_q_9_.Q clkGenerator_FreqDivide_3_q_10_.Q Tx.C
+0000111001 1
+--------1- 0
+-------1-- 0
+------0--- 0
+-----0---- 0
+----0----- 0
+---1------ 0
+--1------- 0
+-1-------- 0
+1--------- 0
+---------0 0
+.names senderInst_Send_data_4_.Q Tx.AP
+0 1
+1 0
+.names clkGenerator_FreqDivide_3_q_1_.Q clkGenerator_FreqDivide_3_q_2_.Q \
+clkGenerator_FreqDivide_3_q_3_.Q clkGenerator_FreqDivide_3_q_4_.Q \
+clkGenerator_FreqDivide_3_q_5_.Q clkGenerator_FreqDivide_3_q_6_.Q \
+clkGenerator_FreqDivide_3_q_7_.Q clkGenerator_FreqDivide_3_q_8_.Q \
+clkGenerator_FreqDivide_3_q_9_.Q clkGenerator_FreqDivide_3_q_10_.Q \
+senderInst_Send_over.C
+0000111001 1
+--------1- 0
+-------1-- 0
+------0--- 0
+-----0---- 0
+----0----- 0
+---1------ 0
+--1------- 0
+-1-------- 0
+1--------- 0
+---------0 0
+.names senderInst_Send_data_4_.Q senderInst_Send_over.AP
+0 1
+1 0
+.names clkGenerator_FreqDivide_3_q_1_.Q clkGenerator_FreqDivide_3_q_2_.Q \
+clkGenerator_FreqDivide_3_q_3_.Q clkGenerator_FreqDivide_3_q_4_.Q \
+clkGenerator_FreqDivide_3_q_5_.Q clkGenerator_FreqDivide_3_q_6_.Q \
+clkGenerator_FreqDivide_3_q_7_.Q clkGenerator_FreqDivide_3_q_8_.Q \
+clkGenerator_FreqDivide_3_q_9_.Q clkGenerator_FreqDivide_3_q_10_.Q \
+senderInst_Send_count_0_.C
+0000111001 1
+--------1- 0
+-------1-- 0
+------0--- 0
+-----0---- 0
+----0----- 0
+---1------ 0
+--1------- 0
+-1-------- 0
+1--------- 0
+---------0 0
+.names senderInst_Send_data_4_.Q senderInst_Send_count_0_.AR
+0 1
+1 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_13_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_11_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_12_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_8_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_9_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_10_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_6_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_7_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_3_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_4_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_5_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_1_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_1_q_2_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_3_q_10_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_3_q_8_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_3_q_9_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_3_q_5_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_3_q_6_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_3_q_7_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_3_q_3_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_3_q_4_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_3_q_1_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_3_q_2_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_4_q_6_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_4_q_3_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_4_q_4_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_4_q_5_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_4_q_1_.C
+1 1
+0 0
+.names clk.BLIF clkGenerator_FreqDivide_4_q_2_.C
+1 1
+0 0
+.names clk.BLIF debouncer_Inst_timer30ms_q_5_.C
+1 1
+0 0
+.names clk.BLIF debouncer_Inst_timer30ms_q_3_.C
+1 1
+0 0
+.names clk.BLIF debouncer_Inst_timer30ms_q_4_.C
+1 1
+0 0
+.names clk.BLIF debouncer_Inst_timer30ms_q_1_.C
+1 1
+0 0
+.names clk.BLIF debouncer_Inst_timer30ms_q_2_.C
+1 1
+0 0
+.names clk.BLIF debouncer_Inst_controllerInst_state_0_.C
+1 1
+0 0
+.names clk.BLIF debouncer_Inst_controllerInst_state_1_.C
+1 1
+0 0
+.names clk.BLIF debouncer_Inst_widthTransInst_q_0_.C
+1 1
+0 0
+.names clkGenerator_scancnt_1_0_.Q clkGenerator_scancnt_1_0_.D
+0 1
+1 0
+.names receiverInst_Rx_Data_0_.Q receiverInst_Data1_0_.D
+1 1
+0 0
+.names receiverInst_Rx_Data_1_.Q receiverInst_Data1_1_.D
+1 1
+0 0
+.names receiverInst_Rx_Data_2_.Q receiverInst_Data1_2_.D
+1 1
+0 0
+.names receiverInst_Rx_Data_3_.Q receiverInst_Data1_3_.D
+1 1
+0 0
+.names receiverInst_Rx_Data_4_.Q receiverInst_Data2_0_.D
+1 1
+0 0
+.names receiverInst_Rx_Data_5_.Q receiverInst_Data2_1_.D
+1 1
+0 0
+.names receiverInst_Rx_Data_6_.Q receiverInst_Data2_2_.D
+1 1
+0 0
+.names receiverInst_Rx_Data_7_.Q receiverInst_Data2_3_.D
+1 1
+0 0
+.names senderInst_Send_count_0_.Q senderInst_Send_count_1_.Q \
+senderInst_Send_count_2_.Q senderInst_Send_count_3_.Q \
+senderInst_Send_count_0_.D
+-001 1
+0--- 1
+1-1- 0
+11-- 0
+1--0 0
+.names senderInst_Send_count_0_.Q senderInst_Send_count_1_.Q \
+senderInst_Send_count_2_.Q senderInst_Send_count_3_.Q \
+senderInst_Send_count_1_.D
+101- 1
+10-0 1
+01-- 1
+-001 0
+11-- 0
+00-- 0
+.names senderInst_Send_count_0_.Q senderInst_Send_count_1_.Q \
+senderInst_Send_count_2_.Q senderInst_Send_count_2_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names senderInst_Send_count_0_.Q senderInst_Send_count_1_.Q \
+senderInst_Send_count_2_.Q senderInst_Send_count_3_.Q \
+senderInst_Send_count_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+1111 0
+--00 0
+-0-0 0
+0--0 0
+.names senderInst_Send_data_4_.D
+ 1
+.names senderInst_Send_count_0_.Q senderInst_Send_count_1_.Q \
+senderInst_Send_count_2_.Q senderInst_Send_count_3_.Q senderInst_Send_over.Q \
+senderInst_Send_over.D
+---01 1
+--1-1 1
+-1--1 1
+0---1 1
+1001- 0
+----0 0
+.names Rx.BLIF receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_m_0_.D
+00----0-- 1
+-0--1---0 1
+-0----0-1 1
+-0--0-1-- 1
+-0-----1- 1
+-0---1--- 1
+-0-1----- 1
+-01------ 1
+1-0000000 0
+--0010101 0
+-1------- 0
+.names receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_1_.D
+10 1
+01 1
+00 0
+11 0
+.names receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_2_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_m_3_.D
+-0-11--- 1
+01-1---- 1
+-0-1-0-- 1
+-0-1--1- 1
+-0-1---0 1
+1110---- 1
+-101---- 1
+-011---- 1
+-00-0101 0
+1111---- 0
+0--0---- 0
+--00---- 0
+-0-0---- 0
+.names receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_4_.D
+11110 1
+---01 1
+--0-1 1
+-0--1 1
+0---1 1
+11111 0
+---00 0
+--0-0 0
+-0--0 0
+0---0 0
+.names receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_m_5_.T
+-0010101 1
+11111--- 1
+-0---0-- 0
+01------ 0
+-0----1- 0
+-0-----0 0
+--1-0--- 0
+-0--1--- 0
+-10----- 0
+---0---- 0
+.names receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.T
+111111 1
+----0- 0
+---0-- 0
+--0--- 0
+-0---- 0
+0----- 0
+-----0 0
+.names receiverInst_m_0_.Q receiverInst_m_1_.Q receiverInst_m_2_.Q \
+receiverInst_m_3_.Q receiverInst_m_4_.Q receiverInst_m_5_.Q \
+receiverInst_m_6_.Q receiverInst_m_7_.Q receiverInst_m_7_.T
+-0010101 1
+1111111- 1
+0-----1- 0
+-01----- 0
+-0-----0 0
+-1----0- 0
+----0-1- 0
+--0-1--- 0
+-----0-- 0
+---0---- 0
+.names receiverInst_m_4_.Q receiverInst_Rx_Valid.D
+1 1
+0 0
+.names Rx.BLIF receiverInst_m_4_.Q receiverInst_m_5_.Q receiverInst_m_6_.Q \
+receiverInst_Rx_Data_0_.Q receiverInst_Rx_Data_0_.D
+1100- 1
+---11 1
+--1-1 1
+-0--1 1
+0100- 0
+---10 0
+--1-0 0
+-0--0 0
+.names Rx.BLIF receiverInst_m_4_.Q receiverInst_m_5_.Q receiverInst_m_6_.Q \
+receiverInst_Rx_Data_1_.Q receiverInst_Rx_Data_1_.D
+1010- 1
+---11 1
+--0-1 1
+-1--1 1
+0010- 0
+---10 0
+--0-0 0
+-1--0 0
+.names Rx.BLIF receiverInst_m_4_.Q receiverInst_m_5_.Q receiverInst_m_6_.Q \
+receiverInst_Rx_Data_2_.Q receiverInst_Rx_Data_2_.D
+1110- 1
+---11 1
+--0-1 1
+-0--1 1
+0110- 0
+---10 0
+--0-0 0
+-0--0 0
+.names Rx.BLIF receiverInst_m_4_.Q receiverInst_m_5_.Q receiverInst_m_6_.Q \
+receiverInst_Rx_Data_3_.Q receiverInst_Rx_Data_3_.D
+1001- 1
+---01 1
+--1-1 1
+-1--1 1
+0001- 0
+---00 0
+--1-0 0
+-1--0 0
+.names Rx.BLIF receiverInst_m_4_.Q receiverInst_m_5_.Q receiverInst_m_6_.Q \
+receiverInst_Rx_Data_4_.Q receiverInst_Rx_Data_4_.D
+1101- 1
+---01 1
+--1-1 1
+-0--1 1
+0101- 0
+---00 0
+--1-0 0
+-0--0 0
+.names Rx.BLIF receiverInst_m_4_.Q receiverInst_m_5_.Q receiverInst_m_6_.Q \
+receiverInst_Rx_Data_5_.Q receiverInst_Rx_Data_5_.D
+1011- 1
+---01 1
+--0-1 1
+-1--1 1
+0011- 0
+---00 0
+--0-0 0
+-1--0 0
+.names Rx.BLIF receiverInst_m_4_.Q receiverInst_m_5_.Q receiverInst_m_6_.Q \
+receiverInst_Rx_Data_6_.Q receiverInst_Rx_Data_6_.D
+1111- 1
+---01 1
+--0-1 1
+-0--1 1
+0111- 0
+---00 0
+--0-0 0
+-0--0 0
+.names Rx.BLIF receiverInst_m_7_.Q receiverInst_Rx_Data_7_.Q \
+receiverInst_Rx_Data_7_.D
+11- 1
+-01 1
+01- 0
+-00 0
+.names senderInst_Send_count_0_.Q senderInst_Send_count_1_.Q \
+senderInst_Send_count_2_.Q senderInst_Send_count_3_.Q Tx.D
+1-1- 1
+-10- 1
+1--1 1
+-000 0
+0-1- 0
+00-- 0
+.names reset.BLIF clkGenerator_scancnt_1_0_.Q receiverInst_Data1_0_.Q \
+receiverInst_Data1_1_.Q receiverInst_Data1_2_.Q receiverInst_Data1_3_.Q \
+receiverInst_Data2_0_.Q receiverInst_Data2_1_.Q receiverInst_Data2_2_.Q \
+receiverInst_Data2_3_.Q LED_A.D
+-01000---- 1
+-1----1000 1
+-1----001- 1
+-0001----- 1
+-0-1-1---- 1
+-0--11---- 1
+-1-----1-1 1
+-1------11 1
+0--------- 1
+11----000- 0
+10000----- 0
+101-10---- 0
+10-001---- 0
+11----1-10 0
+11-----001 0
+10-1-0---- 0
+11-----1-0 0
+.names reset.BLIF clkGenerator_scancnt_1_0_.Q receiverInst_Data1_0_.Q \
+receiverInst_Data1_1_.Q receiverInst_Data1_2_.Q receiverInst_Data1_3_.Q \
+receiverInst_Data2_0_.Q receiverInst_Data2_1_.Q receiverInst_Data2_2_.Q \
+receiverInst_Data2_3_.Q LED_B.D
+-1----101- 1
+-1----011- 1
+-0101----- 1
+-0011----- 1
+-0-1-1---- 1
+-0--11---- 1
+-1-----1-1 1
+-1------11 1
+0--------- 1
+1011-0---- 0
+11----11-0 0
+11-----00- 0
+1000-0---- 0
+11----00-0 0
+10-00----- 0
+10--00---- 0
+11------00 0
+.names reset.BLIF clkGenerator_scancnt_1_0_.Q receiverInst_Data1_0_.Q \
+receiverInst_Data1_1_.Q receiverInst_Data1_2_.Q receiverInst_Data1_3_.Q \
+receiverInst_Data2_0_.Q receiverInst_Data2_1_.Q receiverInst_Data2_2_.Q \
+receiverInst_Data2_3_.Q LED_C.D
+-1----010- 1
+-0010----- 1
+-0--11---- 1
+-0-1-1---- 1
+-1------11 1
+-1-----1-1 1
+0--------- 1
+11-----00- 0
+10-00----- 0
+10--10---- 0
+101--0---- 0
+11------10 0
+11----1--0 0
+.names reset.BLIF clkGenerator_scancnt_1_0_.Q receiverInst_Data1_0_.Q \
+receiverInst_Data1_1_.Q receiverInst_Data1_2_.Q receiverInst_Data1_3_.Q \
+receiverInst_Data2_0_.Q receiverInst_Data2_1_.Q receiverInst_Data2_2_.Q \
+receiverInst_Data2_3_.Q LED_D.D
+-01000---- 1
+-1----1000 1
+-1----001- 1
+-1----111- 1
+-0001----- 1
+-0111----- 1
+-0-1-1---- 1
+-0--11---- 1
+-1-----1-1 1
+-1------11 1
+0--------- 1
+11----000- 0
+10000----- 0
+101010---- 0
+11----1010 0
+1001-0---- 0
+10-001---- 0
+11-----001 0
+10-100---- 0
+11----01-0 0
+11-----100 0
+.names reset.BLIF clkGenerator_scancnt_1_0_.Q receiverInst_Data1_0_.Q \
+receiverInst_Data1_1_.Q receiverInst_Data1_2_.Q receiverInst_Data1_3_.Q \
+receiverInst_Data2_0_.Q receiverInst_Data2_1_.Q receiverInst_Data2_2_.Q \
+receiverInst_Data2_3_.Q LED_E.D
+-1-----01- 1
+-0-1-1---- 1
+-0-01----- 1
+-1----1--- 1
+-1-----1-1 1
+-01------- 1
+0--------- 1
+11----000- 0
+1001-0---- 0
+10000----- 0
+11----01-0 0
+.names reset.BLIF clkGenerator_scancnt_1_0_.Q receiverInst_Data1_0_.Q \
+receiverInst_Data1_1_.Q receiverInst_Data1_2_.Q receiverInst_Data1_3_.Q \
+receiverInst_Data2_0_.Q receiverInst_Data2_1_.Q receiverInst_Data2_2_.Q \
+receiverInst_Data2_3_.Q LED_F.D
+-01-00---- 1
+-1----1-00 1
+-0--11---- 1
+-1-----10- 1
+-1----11-- 1
+-0-10----- 1
+-011------ 1
+-1------11 1
+0--------- 1
+11----000- 0
+10000----- 0
+100-10---- 0
+10-001---- 0
+11-----001 0
+11----0-10 0
+10-010---- 0
+11-----010 0
+.names reset.BLIF clkGenerator_scancnt_1_0_.Q receiverInst_Data1_0_.Q \
+receiverInst_Data1_1_.Q receiverInst_Data1_2_.Q receiverInst_Data1_3_.Q \
+receiverInst_Data2_0_.Q receiverInst_Data2_1_.Q receiverInst_Data2_2_.Q \
+receiverInst_Data2_3_.Q LED_G.D
+-1----111- 1
+-0-000---- 1
+-0111----- 1
+-1-----000 1
+-0--11---- 1
+-0-1-1---- 1
+-1------11 1
+-1-----1-1 1
+0--------- 1
+11----01-0 0
+100-10---- 0
+10-001---- 0
+11-----001 0
+10-100---- 0
+11-----010 0
+11-----100 0
+10-010---- 0
+.names LED_VCC1.D
+.names reset.BLIF clkGenerator_scancnt_1_0_.Q LED_VCC3.D
+11 1
+0- 0
+-0 0
+.names reset.BLIF clkGenerator_scancnt_1_0_.Q LED_VCC4.D
+10 1
+0- 0
+-1 0
+.names debouncer_Inst_timer30ms_q_1_.Q \
+debouncer_Inst_controllerInst_state_0_.Q debouncer_Inst_timer30ms_q_1_.D
+01 1
+1- 0
+-0 0
+.names debouncer_Inst_timer30ms_q_1_.Q debouncer_Inst_timer30ms_q_2_.Q \
+debouncer_Inst_timer30ms_q_3_.Q debouncer_Inst_timer30ms_q_4_.Q \
+debouncer_Inst_timer30ms_q_5_.Q debouncer_Inst_controllerInst_state_0_.Q \
+debouncer_Inst_timer30ms_q_2_.D
+01---1 1
+10--01 1
+10-0-1 1
+100--1 1
+-0111- 0
+11---- 0
+00---- 0
+-----0 0
+.names debouncer_Inst_timer30ms_q_1_.Q debouncer_Inst_timer30ms_q_2_.Q \
+debouncer_Inst_timer30ms_q_3_.Q debouncer_Inst_timer30ms_q_4_.Q \
+debouncer_Inst_timer30ms_q_5_.Q debouncer_Inst_controllerInst_state_0_.Q \
+debouncer_Inst_timer30ms_q_3_.D
+110--1 1
+-01-01 1
+-010-1 1
+0-1--1 1
+1-111- 0
+111--- 0
+-00--- 0
+0-0--- 0
+-----0 0
+.names debouncer_Inst_timer30ms_q_1_.Q debouncer_Inst_timer30ms_q_2_.Q \
+debouncer_Inst_timer30ms_q_3_.Q debouncer_Inst_timer30ms_q_4_.Q \
+debouncer_Inst_timer30ms_q_5_.Q debouncer_Inst_controllerInst_state_0_.Q \
+debouncer_Inst_timer30ms_q_4_.D
+1110-1 1
+-0-101 1
+--01-1 1
+0--1-1 1
+101-1- 0
+1111-- 0
+--00-- 0
+0--0-- 0
+-0-0-- 0
+-----0 0
+.names debouncer_Inst_timer30ms_q_1_.Q debouncer_Inst_timer30ms_q_2_.Q \
+debouncer_Inst_timer30ms_q_3_.Q debouncer_Inst_timer30ms_q_4_.Q \
+debouncer_Inst_timer30ms_q_5_.Q debouncer_Inst_controllerInst_state_0_.Q \
+debouncer_Inst_timer30ms_q_5_.D
+111101 1
+---011 1
+--0-11 1
+0---11 1
+-0--0- 0
+1-111- 0
+---00- 0
+--0-0- 0
+0---0- 0
+-----0 0
+.names debouncer_Inst_controllerInst_state_0_.Q \
+debouncer_Inst_controllerInst_state_1_.Q debouncer_Inst_widthTransInst_q_0_.D
+1- 1
+-1 1
+00 0
+.names dout.BLIF reset.BLIF debouncer_Inst_timer30ms_q_1_.Q \
+debouncer_Inst_timer30ms_q_2_.Q debouncer_Inst_timer30ms_q_3_.Q \
+debouncer_Inst_timer30ms_q_4_.Q debouncer_Inst_timer30ms_q_5_.Q \
+debouncer_Inst_controllerInst_state_0_.Q \
+debouncer_Inst_controllerInst_state_1_.Q clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_5_.Q \
+clkGenerator_FreqDivide_1_q_6_.Q clkGenerator_FreqDivide_1_q_7_.Q \
+clkGenerator_FreqDivide_1_q_8_.Q clkGenerator_FreqDivide_1_q_9_.Q \
+clkGenerator_FreqDivide_1_q_10_.Q clkGenerator_FreqDivide_1_q_11_.Q \
+clkGenerator_FreqDivide_1_q_12_.Q clkGenerator_FreqDivide_1_q_13_.Q \
+debouncer_Inst_controllerInst_state_0_.D
+01-----00------------- 1
+11-----01------------- 1
+-1-----1------------1- 1
+-1-----1-----------0-- 1
+-1-----1----------0--- 1
+-1-----1---------0---- 1
+-1-----1--------1----- 1
+-1-----1-------0------ 1
+-1-----1------0------- 1
+-1-----1-----1-------- 1
+-1-----1----0--------- 1
+-1-----1---0---------- 1
+-1-----1--0----------- 1
+-1-----1-0------------ 1
+-1----01-------------- 1
+-1---0-1-------------- 1
+-1--0--1-------------- 1
+-1-1---1-------------- 1
+-10----1-------------- 1
+-1-----1-------------0 1
+--101111-1111011011101 0
+1------00------------- 0
+0------01------------- 0
+-0-------------------- 0
+.names reset.BLIF debouncer_Inst_timer30ms_q_1_.Q \
+debouncer_Inst_timer30ms_q_2_.Q debouncer_Inst_timer30ms_q_3_.Q \
+debouncer_Inst_timer30ms_q_4_.Q debouncer_Inst_timer30ms_q_5_.Q \
+debouncer_Inst_controllerInst_state_0_.Q \
+debouncer_Inst_controllerInst_state_1_.Q clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_5_.Q \
+clkGenerator_FreqDivide_1_q_6_.Q clkGenerator_FreqDivide_1_q_7_.Q \
+clkGenerator_FreqDivide_1_q_8_.Q clkGenerator_FreqDivide_1_q_9_.Q \
+clkGenerator_FreqDivide_1_q_10_.Q clkGenerator_FreqDivide_1_q_11_.Q \
+clkGenerator_FreqDivide_1_q_12_.Q clkGenerator_FreqDivide_1_q_13_.Q \
+debouncer_Inst_controllerInst_state_1_.T
+1101111-1111011011101 1
+0------1------------- 1
+0------0------------- 0
+1------------------1- 0
+1-----------------0-- 0
+1----------------0--- 0
+1---------------0---- 0
+1--------------1----- 0
+1-------------0------ 0
+1------------0------- 0
+1-----------1-------- 0
+1----------0--------- 0
+1---------0---------- 0
+1--------0----------- 0
+1-------0------------ 0
+1-----0-------------- 0
+1----0--------------- 0
+1---0---------------- 0
+1--0----------------- 0
+1-1------------------ 0
+10------------------- 0
+1-------------------0 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_1_.D
+10 1
+0- 0
+-1 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_2_.D
+110 1
+101 1
+-00 0
+-11 0
+0-- 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_3_.D
+1110 1
+1-01 1
+10-1 1
+-111 0
+--00 0
+-0-0 0
+0--- 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_4_.D
+11110 1
+1--01 1
+1-0-1 1
+10--1 1
+-1111 0
+0---- 0
+---00 0
+--0-0 0
+-0--0 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_5_.Q \
+clkGenerator_FreqDivide_1_q_6_.Q clkGenerator_FreqDivide_1_q_7_.Q \
+clkGenerator_FreqDivide_1_q_8_.Q clkGenerator_FreqDivide_1_q_9_.Q \
+clkGenerator_FreqDivide_1_q_10_.Q clkGenerator_FreqDivide_1_q_11_.Q \
+clkGenerator_FreqDivide_1_q_12_.Q clkGenerator_FreqDivide_1_q_13_.Q \
+clkGenerator_FreqDivide_1_q_5_.D
+111110------1- 1
+111110-----0-- 1
+111110----0--- 1
+111110---0---- 1
+111110--1----- 1
+111110-0------ 1
+1111100------- 1
+111110-------0 1
+1---01-------- 1
+1--0-1-------- 1
+1-0--1-------- 1
+10---1-------- 1
+-----011011101 0
+-11111-------- 0
+----00-------- 0
+---0-0-------- 0
+--0--0-------- 0
+-0---0-------- 0
+0------------- 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_5_.Q \
+clkGenerator_FreqDivide_1_q_6_.Q clkGenerator_FreqDivide_1_q_7_.Q \
+clkGenerator_FreqDivide_1_q_8_.Q clkGenerator_FreqDivide_1_q_9_.Q \
+clkGenerator_FreqDivide_1_q_10_.Q clkGenerator_FreqDivide_1_q_11_.Q \
+clkGenerator_FreqDivide_1_q_12_.Q clkGenerator_FreqDivide_1_q_13_.Q \
+clkGenerator_FreqDivide_1_q_6_.T
+-1111-11011101 1
+111111-------- 1
+0-----1------- 1
+0-----0------- 0
+1----0------1- 0
+1----0-----0-- 0
+1----0----0--- 0
+1----0---0---- 0
+1----0--1----- 0
+1----0-0------ 0
+-----00------- 0
+1---0--------- 0
+1--0---------- 0
+1-0----------- 0
+10------------ 0
+1----0-------0 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_5_.Q \
+clkGenerator_FreqDivide_1_q_6_.Q clkGenerator_FreqDivide_1_q_7_.Q \
+clkGenerator_FreqDivide_1_q_8_.Q clkGenerator_FreqDivide_1_q_9_.Q \
+clkGenerator_FreqDivide_1_q_10_.Q clkGenerator_FreqDivide_1_q_11_.Q \
+clkGenerator_FreqDivide_1_q_12_.Q clkGenerator_FreqDivide_1_q_13_.Q \
+clkGenerator_FreqDivide_1_q_7_.T
+-1111-11011101 1
+1111111------- 1
+0------1------ 1
+0------0------ 0
+1----0------1- 0
+1----0-----0-- 0
+1----0----0--- 0
+1----0---0---- 0
+1----0--1----- 0
+-----0-0------ 0
+1-----0------- 0
+1---0--------- 0
+1--0---------- 0
+1-0----------- 0
+10------------ 0
+1----0-------0 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_5_.Q \
+clkGenerator_FreqDivide_1_q_6_.Q clkGenerator_FreqDivide_1_q_7_.Q \
+clkGenerator_FreqDivide_1_q_8_.Q clkGenerator_FreqDivide_1_q_8_.T
+11111111- 1
+0-------1 1
+1------0- 0
+1-----0-- 0
+1----0--- 0
+1---0---- 0
+1--0----- 0
+1-0------ 0
+10------- 0
+0-------0 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_5_.Q \
+clkGenerator_FreqDivide_1_q_6_.Q clkGenerator_FreqDivide_1_q_7_.Q \
+clkGenerator_FreqDivide_1_q_8_.Q clkGenerator_FreqDivide_1_q_9_.Q \
+clkGenerator_FreqDivide_1_q_10_.Q clkGenerator_FreqDivide_1_q_11_.Q \
+clkGenerator_FreqDivide_1_q_12_.Q clkGenerator_FreqDivide_1_q_13_.Q \
+clkGenerator_FreqDivide_1_q_9_.T
+-1111011011101 1
+111111111----- 1
+0--------1---- 1
+--------00---- 0
+1-------0-0--- 0
+1-------0--0-- 0
+1-------0---1- 0
+1-------0----0 0
+1----0--1----- 0
+0--------0---- 0
+1----1--0----- 0
+1------0------ 0
+1-----0------- 0
+1---0--------- 0
+1--0---------- 0
+1-0----------- 0
+10------------ 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_5_.Q \
+clkGenerator_FreqDivide_1_q_6_.Q clkGenerator_FreqDivide_1_q_7_.Q \
+clkGenerator_FreqDivide_1_q_8_.Q clkGenerator_FreqDivide_1_q_9_.Q \
+clkGenerator_FreqDivide_1_q_10_.Q clkGenerator_FreqDivide_1_q_11_.Q \
+clkGenerator_FreqDivide_1_q_12_.Q clkGenerator_FreqDivide_1_q_13_.Q \
+clkGenerator_FreqDivide_1_q_10_.T
+-1111011011101 1
+1111111111---- 1
+0---------1--- 1
+--------0-0--- 0
+1-------0--0-- 0
+1-------0---1- 0
+1-------0----0 0
+1----0--1----- 0
+1----1--0----- 0
+0---------0--- 0
+1--------0---- 0
+1------0------ 0
+1-----0------- 0
+1---0--------- 0
+1--0---------- 0
+1-0----------- 0
+10------------ 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_5_.Q \
+clkGenerator_FreqDivide_1_q_6_.Q clkGenerator_FreqDivide_1_q_7_.Q \
+clkGenerator_FreqDivide_1_q_8_.Q clkGenerator_FreqDivide_1_q_9_.Q \
+clkGenerator_FreqDivide_1_q_10_.Q clkGenerator_FreqDivide_1_q_11_.Q \
+clkGenerator_FreqDivide_1_q_12_.Q clkGenerator_FreqDivide_1_q_13_.Q \
+clkGenerator_FreqDivide_1_q_11_.T
+-1111011011101 1
+11111111111--- 1
+0----------1-- 1
+--------0--0-- 0
+1-------0---1- 0
+1-------0----0 0
+1----0--1----- 0
+1----1--0----- 0
+0----------0-- 0
+1---------0--- 0
+1--------0---- 0
+1------0------ 0
+1-----0------- 0
+1---0--------- 0
+1--0---------- 0
+1-0----------- 0
+10------------ 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_5_.Q \
+clkGenerator_FreqDivide_1_q_6_.Q clkGenerator_FreqDivide_1_q_7_.Q \
+clkGenerator_FreqDivide_1_q_8_.Q clkGenerator_FreqDivide_1_q_9_.Q \
+clkGenerator_FreqDivide_1_q_10_.Q clkGenerator_FreqDivide_1_q_11_.Q \
+clkGenerator_FreqDivide_1_q_12_.Q clkGenerator_FreqDivide_1_q_12_.T
+111111111111- 1
+0-----------1 1
+1----------0- 0
+1---------0-- 0
+1--------0--- 0
+1-------0---- 0
+1------0----- 0
+1-----0------ 0
+1----0------- 0
+1---0-------- 0
+1--0--------- 0
+1-0---------- 0
+10----------- 0
+0-----------0 0
+.names reset.BLIF clkGenerator_FreqDivide_1_q_1_.Q \
+clkGenerator_FreqDivide_1_q_2_.Q clkGenerator_FreqDivide_1_q_3_.Q \
+clkGenerator_FreqDivide_1_q_4_.Q clkGenerator_FreqDivide_1_q_5_.Q \
+clkGenerator_FreqDivide_1_q_6_.Q clkGenerator_FreqDivide_1_q_7_.Q \
+clkGenerator_FreqDivide_1_q_8_.Q clkGenerator_FreqDivide_1_q_9_.Q \
+clkGenerator_FreqDivide_1_q_10_.Q clkGenerator_FreqDivide_1_q_11_.Q \
+clkGenerator_FreqDivide_1_q_12_.Q clkGenerator_FreqDivide_1_q_13_.Q \
+clkGenerator_FreqDivide_1_q_13_.T
+1111111111111- 1
+-1111011011101 1
+0------------1 1
+--------0----0 0
+1----1------0- 0
+1-------0---1- 0
+1----0--1----- 0
+1----------0-- 0
+1---------0--- 0
+1--------0---- 0
+1------0------ 0
+1-----0------- 0
+1---0--------- 0
+1--0---------- 0
+1-0----------- 0
+10------------ 0
+0------------0 0
+.names reset.BLIF clkGenerator_FreqDivide_3_q_1_.Q \
+clkGenerator_FreqDivide_3_q_2_.Q clkGenerator_FreqDivide_3_q_3_.Q \
+clkGenerator_FreqDivide_3_q_4_.Q clkGenerator_FreqDivide_3_q_5_.Q \
+clkGenerator_FreqDivide_3_q_6_.Q clkGenerator_FreqDivide_3_q_7_.Q \
+clkGenerator_FreqDivide_3_q_8_.Q clkGenerator_FreqDivide_3_q_9_.Q \
+clkGenerator_FreqDivide_3_q_10_.Q clkGenerator_FreqDivide_3_q_1_.D
+10-------1- 1
+10------1-- 1
+10-----0--- 1
+10----0---- 1
+10---0----- 1
+10--1------ 1
+10-1------- 1
+101-------- 1
+10--------0 1
+--000111001 0
+-1--------- 0
+0---------- 0
+.names reset.BLIF clkGenerator_FreqDivide_3_q_1_.Q \
+clkGenerator_FreqDivide_3_q_2_.Q clkGenerator_FreqDivide_3_q_2_.D
+110 1
+101 1
+-00 0
+-11 0
+0-- 0
+.names reset.BLIF clkGenerator_FreqDivide_3_q_1_.Q \
+clkGenerator_FreqDivide_3_q_2_.Q clkGenerator_FreqDivide_3_q_3_.Q \
+clkGenerator_FreqDivide_3_q_3_.D
+1110 1
+1-01 1
+10-1 1
+-111 0
+--00 0
+-0-0 0
+0--- 0
+.names reset.BLIF clkGenerator_FreqDivide_3_q_1_.Q \
+clkGenerator_FreqDivide_3_q_2_.Q clkGenerator_FreqDivide_3_q_3_.Q \
+clkGenerator_FreqDivide_3_q_4_.Q clkGenerator_FreqDivide_3_q_4_.D
+11110 1
+1--01 1
+1-0-1 1
+10--1 1
+-1111 0
+0---- 0
+---00 0
+--0-0 0
+-0--0 0
+.names reset.BLIF clkGenerator_FreqDivide_3_q_1_.Q \
+clkGenerator_FreqDivide_3_q_2_.Q clkGenerator_FreqDivide_3_q_3_.Q \
+clkGenerator_FreqDivide_3_q_4_.Q clkGenerator_FreqDivide_3_q_5_.Q \
+clkGenerator_FreqDivide_3_q_6_.Q clkGenerator_FreqDivide_3_q_7_.Q \
+clkGenerator_FreqDivide_3_q_8_.Q clkGenerator_FreqDivide_3_q_9_.Q \
+clkGenerator_FreqDivide_3_q_10_.Q clkGenerator_FreqDivide_3_q_5_.T
+-0000111001 1
+11111------ 1
+0----1----- 1
+----00----- 0
+11--0------ 0
+1---0-0---- 0
+1---0--0--- 0
+1---0---1-- 0
+1--01------ 0
+1-01------- 0
+101-------- 0
+1---0----1- 0
+1---0-----0 0
+0----0----- 0
+.names reset.BLIF clkGenerator_FreqDivide_3_q_1_.Q \
+clkGenerator_FreqDivide_3_q_2_.Q clkGenerator_FreqDivide_3_q_3_.Q \
+clkGenerator_FreqDivide_3_q_4_.Q clkGenerator_FreqDivide_3_q_5_.Q \
+clkGenerator_FreqDivide_3_q_6_.Q clkGenerator_FreqDivide_3_q_7_.Q \
+clkGenerator_FreqDivide_3_q_8_.Q clkGenerator_FreqDivide_3_q_9_.Q \
+clkGenerator_FreqDivide_3_q_10_.Q clkGenerator_FreqDivide_3_q_6_.T
+-0000111001 1
+111111----- 1
+0-----1---- 1
+----0-0---- 0
+11--0------ 0
+1---0--0--- 0
+1---0---1-- 0
+1---0----1- 0
+1--01------ 0
+1-01------- 0
+101-------- 0
+1---0-----0 0
+0-----0---- 0
+1----0----- 0
+.names reset.BLIF clkGenerator_FreqDivide_3_q_1_.Q \
+clkGenerator_FreqDivide_3_q_2_.Q clkGenerator_FreqDivide_3_q_3_.Q \
+clkGenerator_FreqDivide_3_q_4_.Q clkGenerator_FreqDivide_3_q_5_.Q \
+clkGenerator_FreqDivide_3_q_6_.Q clkGenerator_FreqDivide_3_q_7_.Q \
+clkGenerator_FreqDivide_3_q_8_.Q clkGenerator_FreqDivide_3_q_9_.Q \
+clkGenerator_FreqDivide_3_q_10_.Q clkGenerator_FreqDivide_3_q_7_.T
+-0000111001 1
+1111111---- 1
+0------1--- 1
+----0--0--- 0
+11--0------ 0
+1---0---1-- 0
+1---0----1- 0
+1--01------ 0
+1-01------- 0
+101-------- 0
+1---0-----0 0
+0------0--- 0
+1-----0---- 0
+1----0----- 0
+.names reset.BLIF clkGenerator_FreqDivide_3_q_1_.Q \
+clkGenerator_FreqDivide_3_q_2_.Q clkGenerator_FreqDivide_3_q_3_.Q \
+clkGenerator_FreqDivide_3_q_4_.Q clkGenerator_FreqDivide_3_q_5_.Q \
+clkGenerator_FreqDivide_3_q_6_.Q clkGenerator_FreqDivide_3_q_7_.Q \
+clkGenerator_FreqDivide_3_q_8_.Q clkGenerator_FreqDivide_3_q_8_.T
+11111111- 1
+0-------1 1
+1------0- 0
+1-----0-- 0
+1----0--- 0
+1---0---- 0
+1--0----- 0
+1-0------ 0
+10------- 0
+0-------0 0
+.names reset.BLIF clkGenerator_FreqDivide_3_q_1_.Q \
+clkGenerator_FreqDivide_3_q_2_.Q clkGenerator_FreqDivide_3_q_3_.Q \
+clkGenerator_FreqDivide_3_q_4_.Q clkGenerator_FreqDivide_3_q_5_.Q \
+clkGenerator_FreqDivide_3_q_6_.Q clkGenerator_FreqDivide_3_q_7_.Q \
+clkGenerator_FreqDivide_3_q_8_.Q clkGenerator_FreqDivide_3_q_9_.Q \
+clkGenerator_FreqDivide_3_q_9_.T
+111111111- 1
+0--------1 1
+1-------0- 0
+1------0-- 0
+1-----0--- 0
+1----0---- 0
+1---0----- 0
+1--0------ 0
+1-0------- 0
+10-------- 0
+0--------0 0
+.names reset.BLIF clkGenerator_FreqDivide_3_q_1_.Q \
+clkGenerator_FreqDivide_3_q_2_.Q clkGenerator_FreqDivide_3_q_3_.Q \
+clkGenerator_FreqDivide_3_q_4_.Q clkGenerator_FreqDivide_3_q_5_.Q \
+clkGenerator_FreqDivide_3_q_6_.Q clkGenerator_FreqDivide_3_q_7_.Q \
+clkGenerator_FreqDivide_3_q_8_.Q clkGenerator_FreqDivide_3_q_9_.Q \
+clkGenerator_FreqDivide_3_q_10_.Q clkGenerator_FreqDivide_3_q_10_.T
+-0000111001 1
+1111111111- 1
+0---------1 1
+--------0-0 0
+11-------0- 0
+1-------01- 0
+1---0---1-- 0
+1-0-1------ 0
+1-10------- 0
+10-1------- 0
+1------0--- 0
+1-----0---- 0
+1----0----- 0
+0---------0 0
+.names reset.BLIF clkGenerator_FreqDivide_4_q_1_.Q \
+clkGenerator_FreqDivide_4_q_2_.Q clkGenerator_FreqDivide_4_q_3_.Q \
+clkGenerator_FreqDivide_4_q_4_.Q clkGenerator_FreqDivide_4_q_5_.Q \
+clkGenerator_FreqDivide_4_q_6_.Q clkGenerator_FreqDivide_4_q_1_.D
+10---1- 1
+10--1-- 1
+10-0--- 1
+100---- 1
+10----0 1
+--11001 0
+-1----- 0
+0------ 0
+.names reset.BLIF clkGenerator_FreqDivide_4_q_1_.Q \
+clkGenerator_FreqDivide_4_q_2_.Q clkGenerator_FreqDivide_4_q_3_.Q \
+clkGenerator_FreqDivide_4_q_4_.Q clkGenerator_FreqDivide_4_q_5_.Q \
+clkGenerator_FreqDivide_4_q_6_.Q clkGenerator_FreqDivide_4_q_2_.D
+110---- 1
+101--1- 1
+101-1-- 1
+1010--- 1
+101---0 1
+--11001 0
+-00---- 0
+-11---- 0
+0------ 0
+.names reset.BLIF clkGenerator_FreqDivide_4_q_1_.Q \
+clkGenerator_FreqDivide_4_q_2_.Q clkGenerator_FreqDivide_4_q_3_.Q \
+clkGenerator_FreqDivide_4_q_4_.Q clkGenerator_FreqDivide_4_q_5_.Q \
+clkGenerator_FreqDivide_4_q_6_.Q clkGenerator_FreqDivide_4_q_3_.D
+1110--- 1
+10-1-1- 1
+10-11-- 1
+1-01--- 1
+10-1--0 1
+--11001 0
+-111--- 0
+--00--- 0
+-0-0--- 0
+0------ 0
+.names reset.BLIF clkGenerator_FreqDivide_4_q_1_.Q \
+clkGenerator_FreqDivide_4_q_2_.Q clkGenerator_FreqDivide_4_q_3_.Q \
+clkGenerator_FreqDivide_4_q_4_.Q clkGenerator_FreqDivide_4_q_4_.D
+11110 1
+1--01 1
+1-0-1 1
+10--1 1
+-1111 0
+0---- 0
+---00 0
+--0-0 0
+-0--0 0
+.names reset.BLIF clkGenerator_FreqDivide_4_q_1_.Q \
+clkGenerator_FreqDivide_4_q_2_.Q clkGenerator_FreqDivide_4_q_3_.Q \
+clkGenerator_FreqDivide_4_q_4_.Q clkGenerator_FreqDivide_4_q_5_.Q \
+clkGenerator_FreqDivide_4_q_5_.D
+111110 1
+1---01 1
+1--0-1 1
+1-0--1 1
+10---1 1
+-11111 0
+0----- 0
+----00 0
+---0-0 0
+--0--0 0
+-0---0 0
+.names reset.BLIF clkGenerator_FreqDivide_4_q_1_.Q \
+clkGenerator_FreqDivide_4_q_2_.Q clkGenerator_FreqDivide_4_q_3_.Q \
+clkGenerator_FreqDivide_4_q_4_.Q clkGenerator_FreqDivide_4_q_5_.Q \
+clkGenerator_FreqDivide_4_q_6_.Q clkGenerator_FreqDivide_4_q_6_.T
+111111- 1
+-011001 1
+0-----1 1
+----0-0 0
+11---0- 0
+1---01- 0
+10--1-- 0
+1--0--- 0
+1-0---- 0
+0-----0 0
+.end

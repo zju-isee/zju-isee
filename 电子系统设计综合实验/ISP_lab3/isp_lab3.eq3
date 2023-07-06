@@ -1,0 +1,1134 @@
+|--------------------------------------------------- ----------|
+|- ispLEVER Classic 2.1.00.02.49.20 Equations File            -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+Equations:
+
+LED_A.D = !( randomNumGenetate_2_num_0_.Q & randomNumGenetate_2_num_2_.Q
+       & !randomNumGenetate_2_num_3_.Q & ledscaninst_n_75_2_n
+    # counter_lose_q_1_.Q & counter_lose_q_3_.Q & !counter_lose_q_4_.Q
+       & ledscaninst_n_74_2_n
+    # counter_win_q_1_.Q & counter_win_q_3_.Q & !counter_win_q_4_.Q
+       & ledscaninst_n_76_2_n
+    # randomNumGenetate_1_num_0_.Q & randomNumGenetate_1_num_2_.Q
+       & ledscaninst_n_214_n
+    # counter_lose_q_2_.Q & !counter_lose_q_4_.Q & ledscaninst_n_74_2_n
+    # counter_win_q_2_.Q & !counter_win_q_4_.Q & ledscaninst_n_76_2_n
+    # resetOut & !ledscaninst_n_44_0_n
+    # randomNumGenetate_1_num_1_.Q & ledscaninst_n_214_n
+    # ledscaninst_n_231_n
+    # resetOut & !ledscaninst_n_45_0_n ) ; (10 pterms, 22 signals)
+LED_A.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_B.D = !( !counter_lose_q_1_.Q & !counter_lose_q_2_.Q
+       & !counter_lose_q_4_.Q & ledscaninst_n_74_2_n
+    # counter_lose_q_1_.Q & counter_lose_q_2_.Q & !counter_lose_q_4_.Q
+       & ledscaninst_n_74_2_n
+    # !randomNumGenetate_2_num_0_.Q & !randomNumGenetate_2_num_1_.Q
+       & !randomNumGenetate_2_num_3_.Q & ledscaninst_n_75_2_n
+    # counter_win_q_1_.Q & counter_win_q_2_.Q & !counter_win_q_4_.Q
+       & ledscaninst_n_76_2_n
+    # !counter_win_q_1_.Q & !counter_win_q_2_.Q & !counter_win_q_4_.Q
+       & ledscaninst_n_76_2_n
+    # !randomNumGenetate_1_num_0_.Q & !randomNumGenetate_1_num_1_.Q
+       & ledscaninst_n_214_n
+    # randomNumGenetate_1_num_0_.Q & randomNumGenetate_1_num_1_.Q
+       & ledscaninst_n_214_n
+    # !counter_lose_q_3_.Q & !counter_lose_q_4_.Q & ledscaninst_n_74_2_n
+    # !randomNumGenetate_2_num_2_.Q & !randomNumGenetate_2_num_3_.Q
+       & ledscaninst_n_75_2_n
+    # !randomNumGenetate_2_num_1_.Q & !randomNumGenetate_2_num_2_.Q
+       & ledscaninst_n_75_2_n
+    # !counter_win_q_2_.Q & !counter_win_q_3_.Q & ledscaninst_n_76_2_n
+    # !counter_win_q_3_.Q & !counter_win_q_4_.Q & ledscaninst_n_76_2_n
+    # randomNumGenetate_2_num_0_.Q & ledscaninst_n_231_n
+    # !randomNumGenetate_1_num_2_.Q & ledscaninst_n_214_n
+    # !ledscaninst_n_53_0_n ) ; (15 pterms, 21 signals)
+LED_B.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_C.D = !( clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !counter_lose_q_2_.Q & !counter_lose_q_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !counter_win_q_2_.Q & !counter_win_q_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_2_num_1_.Q & !randomNumGenetate_2_num_2_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_1_num_1_.Q & !randomNumGenetate_1_num_2_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & counter_lose_q_3_.Q & !counter_lose_q_4_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & counter_lose_q_1_.Q & !counter_lose_q_4_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & counter_win_q_3_.Q & !counter_win_q_4_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & counter_win_q_1_.Q & !counter_win_q_4_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & randomNumGenetate_2_num_2_.Q & !randomNumGenetate_2_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & randomNumGenetate_2_num_0_.Q & !randomNumGenetate_2_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & randomNumGenetate_1_num_2_.Q & !randomNumGenetate_1_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & randomNumGenetate_1_num_0_.Q & !randomNumGenetate_1_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (12 pterms, 20 signals)
+LED_C.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_D.D = !( !clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & counter_win_q_2_.Q & !counter_win_q_3_.Q & !counter_win_q_4_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & randomNumGenetate_1_num_1_.Q & !randomNumGenetate_1_num_2_.Q
+       & !randomNumGenetate_1_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # counter_win_q_1_.Q & !counter_win_q_2_.Q & counter_win_q_3_.Q
+       & !counter_win_q_4_.Q & ledscaninst_n_76_2_n
+    # !counter_lose_q_1_.Q & counter_lose_q_2_.Q & !counter_lose_q_4_.Q
+       & ledscaninst_n_74_2_n
+    # randomNumGenetate_1_num_0_.Q & !randomNumGenetate_1_num_1_.Q
+       & randomNumGenetate_1_num_2_.Q & ledscaninst_n_214_n
+    # !randomNumGenetate_1_num_0_.Q & randomNumGenetate_1_num_1_.Q
+       & ledscaninst_n_214_n
+    # !ledscaninst_n_45_0_n & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !ledscaninst_n_44_0_n & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !ledscaninst_n_58_0_n
+    # !ledscaninst_led_d_6_n_28_i_3_n
+    # !ledscaninst_n_68_i_2_n ) ; (11 pterms, 23 signals)
+LED_D.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_E.D = !( clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !counter_lose_q_1_.Q & counter_lose_q_2_.Q & !counter_lose_q_4_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !counter_lose_q_1_.Q & !counter_lose_q_2_.Q & !counter_lose_q_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !counter_win_q_1_.Q & counter_win_q_2_.Q & !counter_win_q_4_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !counter_win_q_1_.Q & !counter_win_q_2_.Q & !counter_win_q_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_2_num_0_.Q & randomNumGenetate_2_num_1_.Q
+       & !randomNumGenetate_2_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_2_num_0_.Q & !randomNumGenetate_2_num_1_.Q
+       & !randomNumGenetate_2_num_2_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_1_num_0_.Q & randomNumGenetate_1_num_1_.Q
+       & !randomNumGenetate_1_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_1_num_0_.Q & !randomNumGenetate_1_num_1_.Q
+       & !randomNumGenetate_1_num_2_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (8 pterms, 20 signals)
+LED_E.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_F.D = !( !counter_lose_q_1_.Q & counter_lose_q_3_.Q & !counter_lose_q_4_.Q
+       & ledscaninst_n_74_2_n
+    # !randomNumGenetate_2_num_0_.Q & randomNumGenetate_2_num_2_.Q
+       & !randomNumGenetate_2_num_3_.Q & ledscaninst_n_75_2_n
+    # !counter_win_q_2_.Q & counter_win_q_3_.Q & !counter_win_q_4_.Q
+       & ledscaninst_n_76_2_n
+    # !counter_win_q_1_.Q & counter_win_q_3_.Q & !counter_win_q_4_.Q
+       & ledscaninst_n_76_2_n
+    # !randomNumGenetate_1_num_1_.Q & randomNumGenetate_1_num_2_.Q
+       & ledscaninst_n_214_n
+    # !randomNumGenetate_1_num_0_.Q & randomNumGenetate_1_num_2_.Q
+       & ledscaninst_n_214_n
+    # resetOut & !ledscaninst_n_45_0_n
+    # resetOut & !ledscaninst_n_44_0_n
+    # !ledscaninst_n_57_0_n ) ; (9 pterms, 21 signals)
+LED_F.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_G.D = !( !clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & counter_win_q_2_.Q & !counter_win_q_3_.Q & !counter_win_q_4_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & randomNumGenetate_1_num_1_.Q & !randomNumGenetate_1_num_2_.Q
+       & !randomNumGenetate_1_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !counter_lose_q_1_.Q & counter_lose_q_2_.Q & !counter_lose_q_4_.Q
+       & ledscaninst_n_74_2_n
+    # !counter_win_q_2_.Q & counter_win_q_3_.Q & !counter_win_q_4_.Q
+       & ledscaninst_n_76_2_n
+    # !randomNumGenetate_1_num_1_.Q & randomNumGenetate_1_num_2_.Q
+       & ledscaninst_n_214_n
+    # !randomNumGenetate_1_num_0_.Q & randomNumGenetate_1_num_1_.Q
+       & ledscaninst_n_214_n
+    # !ledscaninst_n_44_0_n & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !ledscaninst_n_57_0_n
+    # !ledscaninst_n_58_0_n
+    # !ledscaninst_n_68_i_2_n ) ; (10 pterms, 21 signals)
+LED_G.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_VCC1.D = clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 4 signals)
+LED_VCC1.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_VCC2.D = !clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 4 signals)
+LED_VCC2.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_VCC3.D = clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 4 signals)
+LED_VCC3.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_VCC4.D = !clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 4 signals)
+LED_VCC4.C = clk_1kHz ; (1 pterm, 1 signal)
+
+buttonInst_1_ControlInst_state_0_.D = !( !buttonInst_1_Timer_q_2_.Q
+       & !buttonInst_1_Timer_q_3_.Q & buttonInst_1_Timer_q_4_.Q
+       & buttonInst_1_ControlInst_state_0_.Q & clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & !clkGenerate_FreqDivide_1_q_5_.Q
+       & clkGenerate_FreqDivide_1_q_6_.Q & clkGenerate_FreqDivide_1_q_7_.Q
+       & !clkGenerate_FreqDivide_1_q_8_.Q & clkGenerate_FreqDivide_1_q_9_.Q
+       & clkGenerate_FreqDivide_1_q_10_.Q & clkGenerate_FreqDivide_1_q_11_.Q
+       & !clkGenerate_FreqDivide_1_q_12_.Q & clkGenerate_FreqDivide_1_q_13_.Q
+       & buttonInst_1_Timer_q_1_.Q
+    # ButtonIn & !buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_ControlInst_state_1_.Q
+    # !ButtonIn & !buttonInst_1_ControlInst_state_0_.Q
+       & buttonInst_1_ControlInst_state_1_.Q ) ; (3 pterms, 20 signals)
+buttonInst_1_ControlInst_state_0_.C = clk ; (1 pterm, 1 signal)
+
+buttonInst_1_ControlInst_state_1_.T = !buttonInst_1_Timer_q_2_.Q
+       & !buttonInst_1_Timer_q_3_.Q & buttonInst_1_Timer_q_4_.Q
+       & buttonInst_1_ControlInst_state_0_.Q & clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & !clkGenerate_FreqDivide_1_q_5_.Q
+       & clkGenerate_FreqDivide_1_q_6_.Q & clkGenerate_FreqDivide_1_q_7_.Q
+       & !clkGenerate_FreqDivide_1_q_8_.Q & clkGenerate_FreqDivide_1_q_9_.Q
+       & clkGenerate_FreqDivide_1_q_10_.Q & clkGenerate_FreqDivide_1_q_11_.Q
+       & !clkGenerate_FreqDivide_1_q_12_.Q & clkGenerate_FreqDivide_1_q_13_.Q
+       & buttonInst_1_Timer_q_1_.Q ; (1 pterm, 18 signals)
+buttonInst_1_ControlInst_state_1_.C = clk ; (1 pterm, 1 signal)
+
+buttonInst_1_Timer_q_1_.D = buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_Timer_q_1_.Q ; (1 pterm, 2 signals)
+buttonInst_1_Timer_q_1_.C = clk ; (1 pterm, 1 signal)
+buttonInst_1_Timer_q_1_.CE = buttonInst_1_Timer_q_2__0 ; (1 pterm, 1 signal)
+
+buttonInst_1_Timer_q_2_.D = buttonInst_1_Timer_q_2_.Q
+       & buttonInst_1_ControlInst_state_0_.Q & !buttonInst_1_Timer_q_1_.Q
+    # !buttonInst_1_Timer_q_2_.Q & !buttonInst_1_Timer_q_4_.Q
+       & buttonInst_1_ControlInst_state_0_.Q & buttonInst_1_Timer_q_1_.Q
+    # !buttonInst_1_Timer_q_2_.Q & buttonInst_1_Timer_q_3_.Q
+       & buttonInst_1_ControlInst_state_0_.Q & buttonInst_1_Timer_q_1_.Q ; (3 pterms, 5 signals)
+buttonInst_1_Timer_q_2_.C = clk ; (1 pterm, 1 signal)
+buttonInst_1_Timer_q_2_.CE = buttonInst_1_Timer_q_2__0 ; (1 pterm, 1 signal)
+
+buttonInst_1_Timer_q_2__0 = !buttonInst_1_ControlInst_state_0_.Q
+    # clkGenerate_FreqDivide_1_q_1_.Q & clkGenerate_FreqDivide_1_q_2_.Q
+       & clkGenerate_FreqDivide_1_q_3_.Q & clkGenerate_FreqDivide_1_q_4_.Q
+       & !clkGenerate_FreqDivide_1_q_5_.Q & clkGenerate_FreqDivide_1_q_6_.Q
+       & clkGenerate_FreqDivide_1_q_7_.Q & !clkGenerate_FreqDivide_1_q_8_.Q
+       & clkGenerate_FreqDivide_1_q_9_.Q & clkGenerate_FreqDivide_1_q_10_.Q
+       & clkGenerate_FreqDivide_1_q_11_.Q & !clkGenerate_FreqDivide_1_q_12_.Q
+       & clkGenerate_FreqDivide_1_q_13_.Q ; (2 pterms, 14 signals)
+
+buttonInst_1_Timer_q_3_.D = buttonInst_1_Timer_q_2_.Q
+       & !buttonInst_1_Timer_q_3_.Q & buttonInst_1_ControlInst_state_0_.Q
+       & buttonInst_1_Timer_q_1_.Q
+    # !buttonInst_1_Timer_q_2_.Q & buttonInst_1_Timer_q_3_.Q
+       & buttonInst_1_ControlInst_state_0_.Q
+    # buttonInst_1_Timer_q_3_.Q & buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_Timer_q_1_.Q ; (3 pterms, 4 signals)
+buttonInst_1_Timer_q_3_.C = clk ; (1 pterm, 1 signal)
+buttonInst_1_Timer_q_3_.CE = buttonInst_1_Timer_q_2__0 ; (1 pterm, 1 signal)
+
+buttonInst_1_Timer_q_4_.D = buttonInst_1_Timer_q_2_.Q
+       & buttonInst_1_Timer_q_3_.Q & !buttonInst_1_Timer_q_4_.Q
+       & buttonInst_1_ControlInst_state_0_.Q & buttonInst_1_Timer_q_1_.Q
+    # buttonInst_1_Timer_q_2_.Q & !buttonInst_1_Timer_q_3_.Q
+       & buttonInst_1_Timer_q_4_.Q & buttonInst_1_ControlInst_state_0_.Q
+    # !buttonInst_1_Timer_q_2_.Q & buttonInst_1_Timer_q_3_.Q
+       & buttonInst_1_Timer_q_4_.Q & buttonInst_1_ControlInst_state_0_.Q
+    # buttonInst_1_Timer_q_4_.Q & buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_Timer_q_1_.Q ; (4 pterms, 5 signals)
+buttonInst_1_Timer_q_4_.C = clk ; (1 pterm, 1 signal)
+buttonInst_1_Timer_q_4_.CE = buttonInst_1_Timer_q_2__0 ; (1 pterm, 1 signal)
+
+buttonInst_2_ControlInst_state_0_.D = !( clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & !clkGenerate_FreqDivide_1_q_5_.Q
+       & clkGenerate_FreqDivide_1_q_6_.Q & clkGenerate_FreqDivide_1_q_7_.Q
+       & !clkGenerate_FreqDivide_1_q_8_.Q & clkGenerate_FreqDivide_1_q_9_.Q
+       & clkGenerate_FreqDivide_1_q_10_.Q & clkGenerate_FreqDivide_1_q_11_.Q
+       & !clkGenerate_FreqDivide_1_q_12_.Q & clkGenerate_FreqDivide_1_q_13_.Q
+       & buttonInst_2_Timer_q_1_.Q & !buttonInst_2_Timer_q_2_.Q
+       & !buttonInst_2_Timer_q_3_.Q & buttonInst_2_Timer_q_4_.Q
+       & buttonInst_2_ControlInst_state_0_.Q
+    # resetIn & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !resetIn & !buttonInst_2_ControlInst_state_0_.Q
+       & buttonInst_2_ControlInst_state_1_.Q ) ; (3 pterms, 20 signals)
+buttonInst_2_ControlInst_state_0_.C = clk ; (1 pterm, 1 signal)
+
+buttonInst_2_ControlInst_state_1_.T = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & !clkGenerate_FreqDivide_1_q_5_.Q
+       & clkGenerate_FreqDivide_1_q_6_.Q & clkGenerate_FreqDivide_1_q_7_.Q
+       & !clkGenerate_FreqDivide_1_q_8_.Q & clkGenerate_FreqDivide_1_q_9_.Q
+       & clkGenerate_FreqDivide_1_q_10_.Q & clkGenerate_FreqDivide_1_q_11_.Q
+       & !clkGenerate_FreqDivide_1_q_12_.Q & clkGenerate_FreqDivide_1_q_13_.Q
+       & buttonInst_2_Timer_q_1_.Q & !buttonInst_2_Timer_q_2_.Q
+       & !buttonInst_2_Timer_q_3_.Q & buttonInst_2_Timer_q_4_.Q
+       & buttonInst_2_ControlInst_state_0_.Q ; (1 pterm, 18 signals)
+buttonInst_2_ControlInst_state_1_.C = clk ; (1 pterm, 1 signal)
+
+buttonInst_2_Timer_q_1_.D = !buttonInst_2_Timer_q_1_.Q
+       & buttonInst_2_ControlInst_state_0_.Q ; (1 pterm, 2 signals)
+buttonInst_2_Timer_q_1_.C = clk ; (1 pterm, 1 signal)
+buttonInst_2_Timer_q_1_.CE = buttonInst_2_Timer_q_1__0 ; (1 pterm, 1 signal)
+
+buttonInst_2_Timer_q_1__0 = !buttonInst_2_ControlInst_state_0_.Q
+    # clkGenerate_FreqDivide_1_q_1_.Q & clkGenerate_FreqDivide_1_q_2_.Q
+       & clkGenerate_FreqDivide_1_q_3_.Q & clkGenerate_FreqDivide_1_q_4_.Q
+       & !clkGenerate_FreqDivide_1_q_5_.Q & clkGenerate_FreqDivide_1_q_6_.Q
+       & clkGenerate_FreqDivide_1_q_7_.Q & !clkGenerate_FreqDivide_1_q_8_.Q
+       & clkGenerate_FreqDivide_1_q_9_.Q & clkGenerate_FreqDivide_1_q_10_.Q
+       & clkGenerate_FreqDivide_1_q_11_.Q & !clkGenerate_FreqDivide_1_q_12_.Q
+       & clkGenerate_FreqDivide_1_q_13_.Q ; (2 pterms, 14 signals)
+
+buttonInst_2_Timer_q_2_.D = buttonInst_2_Timer_q_1_.Q
+       & !buttonInst_2_Timer_q_2_.Q & !buttonInst_2_Timer_q_4_.Q
+       & buttonInst_2_ControlInst_state_0_.Q
+    # buttonInst_2_Timer_q_1_.Q & !buttonInst_2_Timer_q_2_.Q
+       & buttonInst_2_Timer_q_3_.Q & buttonInst_2_ControlInst_state_0_.Q
+    # !buttonInst_2_Timer_q_1_.Q & buttonInst_2_Timer_q_2_.Q
+       & buttonInst_2_ControlInst_state_0_.Q ; (3 pterms, 5 signals)
+buttonInst_2_Timer_q_2_.C = clk ; (1 pterm, 1 signal)
+buttonInst_2_Timer_q_2_.CE = buttonInst_2_Timer_q_1__0 ; (1 pterm, 1 signal)
+
+buttonInst_2_Timer_q_3_.D = buttonInst_2_Timer_q_1_.Q
+       & buttonInst_2_Timer_q_2_.Q & !buttonInst_2_Timer_q_3_.Q
+       & buttonInst_2_ControlInst_state_0_.Q
+    # !buttonInst_2_Timer_q_2_.Q & buttonInst_2_Timer_q_3_.Q
+       & buttonInst_2_ControlInst_state_0_.Q
+    # !buttonInst_2_Timer_q_1_.Q & buttonInst_2_Timer_q_3_.Q
+       & buttonInst_2_ControlInst_state_0_.Q ; (3 pterms, 4 signals)
+buttonInst_2_Timer_q_3_.C = clk ; (1 pterm, 1 signal)
+buttonInst_2_Timer_q_3_.CE = buttonInst_2_Timer_q_1__0 ; (1 pterm, 1 signal)
+
+buttonInst_2_Timer_q_4_.D = buttonInst_2_Timer_q_1_.Q
+       & buttonInst_2_Timer_q_2_.Q & buttonInst_2_Timer_q_3_.Q
+       & !buttonInst_2_Timer_q_4_.Q & buttonInst_2_ControlInst_state_0_.Q
+    # buttonInst_2_Timer_q_2_.Q & !buttonInst_2_Timer_q_3_.Q
+       & buttonInst_2_Timer_q_4_.Q & buttonInst_2_ControlInst_state_0_.Q
+    # !buttonInst_2_Timer_q_2_.Q & buttonInst_2_Timer_q_3_.Q
+       & buttonInst_2_Timer_q_4_.Q & buttonInst_2_ControlInst_state_0_.Q
+    # !buttonInst_2_Timer_q_1_.Q & buttonInst_2_Timer_q_4_.Q
+       & buttonInst_2_ControlInst_state_0_.Q ; (4 pterms, 5 signals)
+buttonInst_2_Timer_q_4_.C = clk ; (1 pterm, 1 signal)
+buttonInst_2_Timer_q_4_.CE = buttonInst_2_Timer_q_1__0 ; (1 pterm, 1 signal)
+
+clkGenerate_FreqDivide_1_q_10_.T = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & !clkGenerate_FreqDivide_1_q_5_.Q
+       & clkGenerate_FreqDivide_1_q_6_.Q & clkGenerate_FreqDivide_1_q_7_.Q
+       & !clkGenerate_FreqDivide_1_q_8_.Q & clkGenerate_FreqDivide_1_q_9_.Q
+       & clkGenerate_FreqDivide_1_q_10_.Q & clkGenerate_FreqDivide_1_q_11_.Q
+       & !clkGenerate_FreqDivide_1_q_12_.Q & clkGenerate_FreqDivide_1_q_13_.Q
+    # clkGenerate_FreqDivide_1_q_1_.Q & clkGenerate_FreqDivide_1_q_2_.Q
+       & clkGenerate_FreqDivide_1_q_3_.Q & clkGenerate_FreqDivide_1_q_4_.Q
+       & clkGenerate_FreqDivide_1_q_5_.Q & clkGenerate_FreqDivide_1_q_6_.Q
+       & clkGenerate_FreqDivide_1_q_7_.Q & clkGenerate_FreqDivide_1_q_8_.Q
+       & clkGenerate_FreqDivide_1_q_9_.Q ; (2 pterms, 13 signals)
+clkGenerate_FreqDivide_1_q_10_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_10_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_1_q_11_.T = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & !clkGenerate_FreqDivide_1_q_5_.Q
+       & clkGenerate_FreqDivide_1_q_6_.Q & clkGenerate_FreqDivide_1_q_7_.Q
+       & !clkGenerate_FreqDivide_1_q_8_.Q & clkGenerate_FreqDivide_1_q_9_.Q
+       & clkGenerate_FreqDivide_1_q_10_.Q & clkGenerate_FreqDivide_1_q_11_.Q
+       & !clkGenerate_FreqDivide_1_q_12_.Q & clkGenerate_FreqDivide_1_q_13_.Q
+    # clkGenerate_FreqDivide_1_q_1_.Q & clkGenerate_FreqDivide_1_q_2_.Q
+       & clkGenerate_FreqDivide_1_q_3_.Q & clkGenerate_FreqDivide_1_q_4_.Q
+       & clkGenerate_FreqDivide_1_q_5_.Q & clkGenerate_FreqDivide_1_q_6_.Q
+       & clkGenerate_FreqDivide_1_q_7_.Q & clkGenerate_FreqDivide_1_q_8_.Q
+       & clkGenerate_FreqDivide_1_q_9_.Q & clkGenerate_FreqDivide_1_q_10_.Q ; (2 pterms, 13 signals)
+clkGenerate_FreqDivide_1_q_11_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_11_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_1_q_12_.T = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & clkGenerate_FreqDivide_1_q_5_.Q
+       & clkGenerate_FreqDivide_1_q_6_.Q & clkGenerate_FreqDivide_1_q_7_.Q
+       & clkGenerate_FreqDivide_1_q_8_.Q & clkGenerate_FreqDivide_1_q_9_.Q
+       & clkGenerate_FreqDivide_1_q_10_.Q & clkGenerate_FreqDivide_1_q_11_.Q ; (1 pterm, 11 signals)
+clkGenerate_FreqDivide_1_q_12_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_12_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_1_q_13_.T = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & !clkGenerate_FreqDivide_1_q_5_.Q
+       & clkGenerate_FreqDivide_1_q_6_.Q & clkGenerate_FreqDivide_1_q_7_.Q
+       & !clkGenerate_FreqDivide_1_q_8_.Q & clkGenerate_FreqDivide_1_q_9_.Q
+       & clkGenerate_FreqDivide_1_q_10_.Q & clkGenerate_FreqDivide_1_q_11_.Q
+       & !clkGenerate_FreqDivide_1_q_12_.Q & clkGenerate_FreqDivide_1_q_13_.Q
+    # clkGenerate_FreqDivide_1_q_1_.Q & clkGenerate_FreqDivide_1_q_2_.Q
+       & clkGenerate_FreqDivide_1_q_3_.Q & clkGenerate_FreqDivide_1_q_4_.Q
+       & clkGenerate_FreqDivide_1_q_5_.Q & clkGenerate_FreqDivide_1_q_6_.Q
+       & clkGenerate_FreqDivide_1_q_7_.Q & clkGenerate_FreqDivide_1_q_8_.Q
+       & clkGenerate_FreqDivide_1_q_9_.Q & clkGenerate_FreqDivide_1_q_10_.Q
+       & clkGenerate_FreqDivide_1_q_11_.Q & clkGenerate_FreqDivide_1_q_12_.Q ; (2 pterms, 13 signals)
+clkGenerate_FreqDivide_1_q_13_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_13_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_1_q_1_.D = !clkGenerate_FreqDivide_1_q_1_.Q ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_1_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_1_q_2_.D = clkGenerate_FreqDivide_1_q_1_.Q
+       & !clkGenerate_FreqDivide_1_q_2_.Q
+    # !clkGenerate_FreqDivide_1_q_1_.Q & clkGenerate_FreqDivide_1_q_2_.Q ; (2 pterms, 2 signals)
+clkGenerate_FreqDivide_1_q_2_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_1_q_3_.D = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & !clkGenerate_FreqDivide_1_q_3_.Q
+    # !clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+    # !clkGenerate_FreqDivide_1_q_1_.Q & clkGenerate_FreqDivide_1_q_3_.Q ; (3 pterms, 3 signals)
+clkGenerate_FreqDivide_1_q_3_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_1_q_4_.D = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & !clkGenerate_FreqDivide_1_q_4_.Q
+    # !clkGenerate_FreqDivide_1_q_3_.Q & clkGenerate_FreqDivide_1_q_4_.Q
+    # !clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_4_.Q
+    # !clkGenerate_FreqDivide_1_q_1_.Q & clkGenerate_FreqDivide_1_q_4_.Q ; (4 pterms, 4 signals)
+clkGenerate_FreqDivide_1_q_4_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_1_q_5_.T.X1 = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q ; (1 pterm, 4 signals)
+clkGenerate_FreqDivide_1_q_5_.T.X2 = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & !clkGenerate_FreqDivide_1_q_5_.Q
+       & clkGenerate_FreqDivide_1_q_6_.Q & clkGenerate_FreqDivide_1_q_7_.Q
+       & !clkGenerate_FreqDivide_1_q_8_.Q & clkGenerate_FreqDivide_1_q_9_.Q
+       & clkGenerate_FreqDivide_1_q_10_.Q & clkGenerate_FreqDivide_1_q_11_.Q
+       & !clkGenerate_FreqDivide_1_q_12_.Q & clkGenerate_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+clkGenerate_FreqDivide_1_q_5_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_5_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_1_q_6_.T = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & clkGenerate_FreqDivide_1_q_6_.Q
+       & clkGenerate_FreqDivide_1_q_7_.Q & !clkGenerate_FreqDivide_1_q_8_.Q
+       & clkGenerate_FreqDivide_1_q_9_.Q & clkGenerate_FreqDivide_1_q_10_.Q
+       & clkGenerate_FreqDivide_1_q_11_.Q & !clkGenerate_FreqDivide_1_q_12_.Q
+       & clkGenerate_FreqDivide_1_q_13_.Q
+    # clkGenerate_FreqDivide_1_q_1_.Q & clkGenerate_FreqDivide_1_q_2_.Q
+       & clkGenerate_FreqDivide_1_q_3_.Q & clkGenerate_FreqDivide_1_q_4_.Q
+       & clkGenerate_FreqDivide_1_q_5_.Q ; (2 pterms, 13 signals)
+clkGenerate_FreqDivide_1_q_6_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_6_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_1_q_7_.T = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & clkGenerate_FreqDivide_1_q_6_.Q
+       & clkGenerate_FreqDivide_1_q_7_.Q & !clkGenerate_FreqDivide_1_q_8_.Q
+       & clkGenerate_FreqDivide_1_q_9_.Q & clkGenerate_FreqDivide_1_q_10_.Q
+       & clkGenerate_FreqDivide_1_q_11_.Q & !clkGenerate_FreqDivide_1_q_12_.Q
+       & clkGenerate_FreqDivide_1_q_13_.Q
+    # clkGenerate_FreqDivide_1_q_1_.Q & clkGenerate_FreqDivide_1_q_2_.Q
+       & clkGenerate_FreqDivide_1_q_3_.Q & clkGenerate_FreqDivide_1_q_4_.Q
+       & clkGenerate_FreqDivide_1_q_5_.Q & clkGenerate_FreqDivide_1_q_6_.Q ; (2 pterms, 13 signals)
+clkGenerate_FreqDivide_1_q_7_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_7_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_1_q_8_.T = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & clkGenerate_FreqDivide_1_q_5_.Q
+       & clkGenerate_FreqDivide_1_q_6_.Q & clkGenerate_FreqDivide_1_q_7_.Q ; (1 pterm, 7 signals)
+clkGenerate_FreqDivide_1_q_8_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_8_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_1_q_9_.T = clkGenerate_FreqDivide_1_q_1_.Q
+       & clkGenerate_FreqDivide_1_q_2_.Q & clkGenerate_FreqDivide_1_q_3_.Q
+       & clkGenerate_FreqDivide_1_q_4_.Q & !clkGenerate_FreqDivide_1_q_5_.Q
+       & clkGenerate_FreqDivide_1_q_6_.Q & clkGenerate_FreqDivide_1_q_7_.Q
+       & !clkGenerate_FreqDivide_1_q_8_.Q & clkGenerate_FreqDivide_1_q_9_.Q
+       & clkGenerate_FreqDivide_1_q_10_.Q & clkGenerate_FreqDivide_1_q_11_.Q
+       & !clkGenerate_FreqDivide_1_q_12_.Q & clkGenerate_FreqDivide_1_q_13_.Q
+    # clkGenerate_FreqDivide_1_q_1_.Q & clkGenerate_FreqDivide_1_q_2_.Q
+       & clkGenerate_FreqDivide_1_q_3_.Q & clkGenerate_FreqDivide_1_q_4_.Q
+       & clkGenerate_FreqDivide_1_q_5_.Q & clkGenerate_FreqDivide_1_q_6_.Q
+       & clkGenerate_FreqDivide_1_q_7_.Q & clkGenerate_FreqDivide_1_q_8_.Q ; (2 pterms, 13 signals)
+clkGenerate_FreqDivide_1_q_9_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_1_q_9_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_10_.T = clkGenerate_FreqDivide_2_q_1_.Q
+       & clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q ; (1 pterm, 9 signals)
+clkGenerate_FreqDivide_2_q_10_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_10_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_11_.T = clkGenerate_FreqDivide_2_q_1_.Q
+       & clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q
+       & clkGenerate_FreqDivide_2_q_10_.Q ; (1 pterm, 10 signals)
+clkGenerate_FreqDivide_2_q_11_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_11_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_12_.T = !clkGenerate_FreqDivide_2_q_1_.Q
+       & !clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & !clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q
+       & !clkGenerate_FreqDivide_2_q_10_.Q & !clkGenerate_FreqDivide_2_q_11_.Q
+       & clkGenerate_FreqDivide_2_q_12_.Q & !clkGenerate_FreqDivide_2_q_13_.Q
+       & clkGenerate_FreqDivide_2_q_14_.Q
+    # clkGenerate_FreqDivide_2_q_1_.Q & clkGenerate_FreqDivide_2_q_2_.Q
+       & clkGenerate_FreqDivide_2_q_3_.Q & clkGenerate_FreqDivide_2_q_4_.Q
+       & clkGenerate_FreqDivide_2_q_5_.Q & clkGenerate_FreqDivide_2_q_6_.Q
+       & clkGenerate_FreqDivide_2_q_7_.Q & clkGenerate_FreqDivide_2_q_8_.Q
+       & clkGenerate_FreqDivide_2_q_9_.Q & clkGenerate_FreqDivide_2_q_10_.Q
+       & clkGenerate_FreqDivide_2_q_11_.Q ; (2 pterms, 14 signals)
+clkGenerate_FreqDivide_2_q_12_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_12_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_13_.T = clkGenerate_FreqDivide_2_q_1_.Q
+       & clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q
+       & clkGenerate_FreqDivide_2_q_10_.Q & clkGenerate_FreqDivide_2_q_11_.Q
+       & clkGenerate_FreqDivide_2_q_12_.Q ; (1 pterm, 12 signals)
+clkGenerate_FreqDivide_2_q_13_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_13_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_14_.T = !clkGenerate_FreqDivide_2_q_1_.Q
+       & !clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & !clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q
+       & !clkGenerate_FreqDivide_2_q_10_.Q & !clkGenerate_FreqDivide_2_q_11_.Q
+       & clkGenerate_FreqDivide_2_q_12_.Q & !clkGenerate_FreqDivide_2_q_13_.Q
+       & clkGenerate_FreqDivide_2_q_14_.Q
+    # clkGenerate_FreqDivide_2_q_1_.Q & clkGenerate_FreqDivide_2_q_2_.Q
+       & clkGenerate_FreqDivide_2_q_3_.Q & clkGenerate_FreqDivide_2_q_4_.Q
+       & clkGenerate_FreqDivide_2_q_5_.Q & clkGenerate_FreqDivide_2_q_6_.Q
+       & clkGenerate_FreqDivide_2_q_7_.Q & clkGenerate_FreqDivide_2_q_8_.Q
+       & clkGenerate_FreqDivide_2_q_9_.Q & clkGenerate_FreqDivide_2_q_10_.Q
+       & clkGenerate_FreqDivide_2_q_11_.Q & clkGenerate_FreqDivide_2_q_12_.Q
+       & clkGenerate_FreqDivide_2_q_13_.Q ; (2 pterms, 14 signals)
+clkGenerate_FreqDivide_2_q_14_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_14_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_1_.D = !( !clkGenerate_FreqDivide_2_q_2_.Q
+       & clkGenerate_FreqDivide_2_q_3_.Q & clkGenerate_FreqDivide_2_q_4_.Q
+       & !clkGenerate_FreqDivide_2_q_5_.Q & clkGenerate_FreqDivide_2_q_6_.Q
+       & clkGenerate_FreqDivide_2_q_7_.Q & clkGenerate_FreqDivide_2_q_8_.Q
+       & clkGenerate_FreqDivide_2_q_9_.Q & !clkGenerate_FreqDivide_2_q_10_.Q
+       & !clkGenerate_FreqDivide_2_q_11_.Q & clkGenerate_FreqDivide_2_q_12_.Q
+       & !clkGenerate_FreqDivide_2_q_13_.Q & clkGenerate_FreqDivide_2_q_14_.Q
+    # clkGenerate_FreqDivide_2_q_1_.Q ) ; (2 pterms, 14 signals)
+clkGenerate_FreqDivide_2_q_1_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_2_.D = clkGenerate_FreqDivide_2_q_1_.Q
+       & !clkGenerate_FreqDivide_2_q_2_.Q
+    # !clkGenerate_FreqDivide_2_q_1_.Q & clkGenerate_FreqDivide_2_q_2_.Q ; (2 pterms, 2 signals)
+clkGenerate_FreqDivide_2_q_2_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_3_.D = !( !clkGenerate_FreqDivide_2_q_1_.Q
+       & !clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_4_.Q
+       & !clkGenerate_FreqDivide_2_q_5_.Q & clkGenerate_FreqDivide_2_q_6_.Q
+       & clkGenerate_FreqDivide_2_q_7_.Q & clkGenerate_FreqDivide_2_q_8_.Q
+       & clkGenerate_FreqDivide_2_q_9_.Q & !clkGenerate_FreqDivide_2_q_10_.Q
+       & !clkGenerate_FreqDivide_2_q_11_.Q & clkGenerate_FreqDivide_2_q_12_.Q
+       & !clkGenerate_FreqDivide_2_q_13_.Q & clkGenerate_FreqDivide_2_q_14_.Q
+    # clkGenerate_FreqDivide_2_q_1_.Q & clkGenerate_FreqDivide_2_q_2_.Q
+       & clkGenerate_FreqDivide_2_q_3_.Q
+    # !clkGenerate_FreqDivide_2_q_2_.Q & !clkGenerate_FreqDivide_2_q_3_.Q
+    # !clkGenerate_FreqDivide_2_q_1_.Q & !clkGenerate_FreqDivide_2_q_3_.Q ) ; (4 pterms, 14 signals)
+clkGenerate_FreqDivide_2_q_3_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_4_.D.X1 = clkGenerate_FreqDivide_2_q_1_.Q
+       & clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+    # !clkGenerate_FreqDivide_2_q_1_.Q & !clkGenerate_FreqDivide_2_q_2_.Q
+       & clkGenerate_FreqDivide_2_q_3_.Q & clkGenerate_FreqDivide_2_q_4_.Q
+       & !clkGenerate_FreqDivide_2_q_5_.Q & clkGenerate_FreqDivide_2_q_6_.Q
+       & clkGenerate_FreqDivide_2_q_7_.Q & clkGenerate_FreqDivide_2_q_8_.Q
+       & clkGenerate_FreqDivide_2_q_9_.Q & !clkGenerate_FreqDivide_2_q_10_.Q
+       & !clkGenerate_FreqDivide_2_q_11_.Q & clkGenerate_FreqDivide_2_q_12_.Q
+       & !clkGenerate_FreqDivide_2_q_13_.Q & clkGenerate_FreqDivide_2_q_14_.Q ; (2 pterms, 14 signals)
+clkGenerate_FreqDivide_2_q_4_.D.X2 = clkGenerate_FreqDivide_2_q_4_.Q ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_4_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_5_.D.X1 = clkGenerate_FreqDivide_2_q_1_.Q
+       & clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q ; (1 pterm, 4 signals)
+clkGenerate_FreqDivide_2_q_5_.D.X2 = clkGenerate_FreqDivide_2_q_5_.Q ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_5_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_5_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_6_.T = !clkGenerate_FreqDivide_2_q_1_.Q
+       & !clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & !clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q
+       & !clkGenerate_FreqDivide_2_q_10_.Q & !clkGenerate_FreqDivide_2_q_11_.Q
+       & clkGenerate_FreqDivide_2_q_12_.Q & !clkGenerate_FreqDivide_2_q_13_.Q
+       & clkGenerate_FreqDivide_2_q_14_.Q
+    # clkGenerate_FreqDivide_2_q_1_.Q & clkGenerate_FreqDivide_2_q_2_.Q
+       & clkGenerate_FreqDivide_2_q_3_.Q & clkGenerate_FreqDivide_2_q_4_.Q
+       & clkGenerate_FreqDivide_2_q_5_.Q ; (2 pterms, 14 signals)
+clkGenerate_FreqDivide_2_q_6_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_6_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_7_.T = !clkGenerate_FreqDivide_2_q_1_.Q
+       & !clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & !clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q
+       & !clkGenerate_FreqDivide_2_q_10_.Q & !clkGenerate_FreqDivide_2_q_11_.Q
+       & clkGenerate_FreqDivide_2_q_12_.Q & !clkGenerate_FreqDivide_2_q_13_.Q
+       & clkGenerate_FreqDivide_2_q_14_.Q
+    # clkGenerate_FreqDivide_2_q_1_.Q & clkGenerate_FreqDivide_2_q_2_.Q
+       & clkGenerate_FreqDivide_2_q_3_.Q & clkGenerate_FreqDivide_2_q_4_.Q
+       & clkGenerate_FreqDivide_2_q_5_.Q & clkGenerate_FreqDivide_2_q_6_.Q ; (2 pterms, 14 signals)
+clkGenerate_FreqDivide_2_q_7_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_7_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_8_.T = !clkGenerate_FreqDivide_2_q_1_.Q
+       & !clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & !clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q
+       & !clkGenerate_FreqDivide_2_q_10_.Q & !clkGenerate_FreqDivide_2_q_11_.Q
+       & clkGenerate_FreqDivide_2_q_12_.Q & !clkGenerate_FreqDivide_2_q_13_.Q
+       & clkGenerate_FreqDivide_2_q_14_.Q
+    # clkGenerate_FreqDivide_2_q_1_.Q & clkGenerate_FreqDivide_2_q_2_.Q
+       & clkGenerate_FreqDivide_2_q_3_.Q & clkGenerate_FreqDivide_2_q_4_.Q
+       & clkGenerate_FreqDivide_2_q_5_.Q & clkGenerate_FreqDivide_2_q_6_.Q
+       & clkGenerate_FreqDivide_2_q_7_.Q ; (2 pterms, 14 signals)
+clkGenerate_FreqDivide_2_q_8_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_8_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_2_q_9_.T = !clkGenerate_FreqDivide_2_q_1_.Q
+       & !clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & !clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q
+       & !clkGenerate_FreqDivide_2_q_10_.Q & !clkGenerate_FreqDivide_2_q_11_.Q
+       & clkGenerate_FreqDivide_2_q_12_.Q & !clkGenerate_FreqDivide_2_q_13_.Q
+       & clkGenerate_FreqDivide_2_q_14_.Q
+    # clkGenerate_FreqDivide_2_q_1_.Q & clkGenerate_FreqDivide_2_q_2_.Q
+       & clkGenerate_FreqDivide_2_q_3_.Q & clkGenerate_FreqDivide_2_q_4_.Q
+       & clkGenerate_FreqDivide_2_q_5_.Q & clkGenerate_FreqDivide_2_q_6_.Q
+       & clkGenerate_FreqDivide_2_q_7_.Q & clkGenerate_FreqDivide_2_q_8_.Q ; (2 pterms, 14 signals)
+clkGenerate_FreqDivide_2_q_9_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_2_q_9_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_scancnt_0_.D = !clkGenerate_scancnt_0_.Q ; (1 pterm, 1 signal)
+clkGenerate_scancnt_0_.C = clk_1kHz ; (1 pterm, 1 signal)
+
+clkGenerate_scancnt_1_.D = clkGenerate_scancnt_0_.Q
+       & !clkGenerate_scancnt_1_.Q
+    # !clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q ; (2 pterms, 2 signals)
+clkGenerate_scancnt_1_.C = clk_1kHz ; (1 pterm, 1 signal)
+
+clk_1kHz = clkGenerate_FreqDivide_1_q_1_.Q & clkGenerate_FreqDivide_1_q_2_.Q
+       & clkGenerate_FreqDivide_1_q_3_.Q & clkGenerate_FreqDivide_1_q_4_.Q
+       & !clkGenerate_FreqDivide_1_q_5_.Q & clkGenerate_FreqDivide_1_q_6_.Q
+       & clkGenerate_FreqDivide_1_q_7_.Q & !clkGenerate_FreqDivide_1_q_8_.Q
+       & clkGenerate_FreqDivide_1_q_9_.Q & clkGenerate_FreqDivide_1_q_10_.Q
+       & clkGenerate_FreqDivide_1_q_11_.Q & !clkGenerate_FreqDivide_1_q_12_.Q
+       & clkGenerate_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+counter_lose_q_1_.D = !counter_lose_q_1_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !counter_lose_q_1_.Q & !width_trans_inst_2_q.Q ; (2 pterms, 4 signals)
+counter_lose_q_1_.C = clk ; (1 pterm, 1 signal)
+counter_lose_q_1_.CE = !( counter_lose_q_1__0 ) ; (1 pterm, 1 signal)
+
+counter_lose_q_1__0 = !randomNumGenetate_1_num_2_.Q
+       & !randomNumGenetate_1_num_3_.Q & !randomNumGenetate_2_num_2_.Q
+       & !randomNumGenetate_2_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_1_num_2_.Q & !randomNumGenetate_1_num_3_.Q
+       & !randomNumGenetate_2_num_2_.Q & !randomNumGenetate_2_num_3_.Q
+       & !width_trans_inst_2_q.Q
+    # !randomNumGenetate_1_num_1_.Q & !randomNumGenetate_2_num_1_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_1_num_1_.Q & randomNumGenetate_2_num_1_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_1_num_0_.Q & !randomNumGenetate_2_num_0_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_1_num_0_.Q & randomNumGenetate_2_num_0_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_ControlInst_state_1_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_1_num_1_.Q & !randomNumGenetate_2_num_1_.Q
+       & !width_trans_inst_2_q.Q
+    # randomNumGenetate_1_num_1_.Q & randomNumGenetate_2_num_1_.Q
+       & !width_trans_inst_2_q.Q
+    # !randomNumGenetate_1_num_0_.Q & !randomNumGenetate_2_num_0_.Q
+       & !width_trans_inst_2_q.Q
+    # randomNumGenetate_1_num_0_.Q & randomNumGenetate_2_num_0_.Q
+       & !width_trans_inst_2_q.Q
+    # !buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_ControlInst_state_1_.Q & !width_trans_inst_2_q.Q
+    # randomNumGenetate_2_num_2_.Q & randomNumGenetate_2_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_1_num_2_.Q & randomNumGenetate_2_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_1_num_3_.Q & randomNumGenetate_2_num_2_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_1_num_2_.Q & randomNumGenetate_1_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_2_num_2_.Q & randomNumGenetate_2_num_3_.Q
+       & !width_trans_inst_2_q.Q
+    # randomNumGenetate_1_num_2_.Q & randomNumGenetate_2_num_3_.Q
+       & !width_trans_inst_2_q.Q
+    # randomNumGenetate_1_num_3_.Q & randomNumGenetate_2_num_2_.Q
+       & !width_trans_inst_2_q.Q
+    # randomNumGenetate_1_num_2_.Q & randomNumGenetate_1_num_3_.Q
+       & !width_trans_inst_2_q.Q
+    # randomNumGenetate_1_num_3_.Q & randomNumGenetate_2_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_1_num_3_.Q & randomNumGenetate_2_num_3_.Q
+       & !width_trans_inst_2_q.Q
+    # !width_trans_inst_1_q.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !width_trans_inst_2_q.Q & !width_trans_inst_1_q.Q ; (24 pterms, 14 signals)
+
+counter_lose_q_2_.D = !( !counter_lose_q_2_.Q & !counter_lose_q_3_.Q
+       & counter_lose_q_4_.Q
+    # width_trans_inst_2_q.Q & buttonInst_2_ControlInst_state_0_.Q
+    # counter_lose_q_1_.Q & counter_lose_q_2_.Q
+    # !counter_lose_q_1_.Q & !counter_lose_q_2_.Q
+    # width_trans_inst_2_q.Q & buttonInst_2_ControlInst_state_1_.Q ) ; (5 pterms, 7 signals)
+counter_lose_q_2_.C = clk ; (1 pterm, 1 signal)
+counter_lose_q_2_.CE = !( counter_lose_q_1__0 ) ; (1 pterm, 1 signal)
+
+counter_lose_q_3_.D = !( counter_lose_q_1_.Q & counter_lose_q_2_.Q
+       & counter_lose_q_3_.Q
+    # width_trans_inst_2_q.Q & buttonInst_2_ControlInst_state_0_.Q
+    # !counter_lose_q_2_.Q & !counter_lose_q_3_.Q
+    # !counter_lose_q_1_.Q & !counter_lose_q_3_.Q
+    # width_trans_inst_2_q.Q & buttonInst_2_ControlInst_state_1_.Q ) ; (5 pterms, 6 signals)
+counter_lose_q_3_.C = clk ; (1 pterm, 1 signal)
+counter_lose_q_3_.CE = !( counter_lose_q_1__0 ) ; (1 pterm, 1 signal)
+
+counter_lose_q_4_.T = counter_lose_q_1_.Q & counter_lose_q_2_.Q
+       & counter_lose_q_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # counter_lose_q_1_.Q & counter_lose_q_2_.Q & counter_lose_q_3_.Q
+       & !width_trans_inst_2_q.Q
+    # counter_lose_q_1_.Q & !counter_lose_q_2_.Q & !counter_lose_q_3_.Q
+       & counter_lose_q_4_.Q
+    # counter_lose_q_4_.Q & width_trans_inst_2_q.Q
+       & buttonInst_2_ControlInst_state_0_.Q
+    # counter_lose_q_4_.Q & width_trans_inst_2_q.Q
+       & buttonInst_2_ControlInst_state_1_.Q ; (5 pterms, 7 signals)
+counter_lose_q_4_.C = clk ; (1 pterm, 1 signal)
+counter_lose_q_4_.CE = !( counter_lose_q_1__0 ) ; (1 pterm, 1 signal)
+
+counter_win_q_1_.D = !counter_win_q_1_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !counter_win_q_1_.Q & !width_trans_inst_2_q.Q ; (2 pterms, 4 signals)
+counter_win_q_1_.C = clk ; (1 pterm, 1 signal)
+counter_win_q_1_.CE = counter_win_q_1__0 ; (1 pterm, 1 signal)
+
+counter_win_q_1__0 = width_trans_inst_2_q.Q
+       & buttonInst_2_ControlInst_state_1_.Q
+    # width_trans_inst_2_q.Q & buttonInst_2_ControlInst_state_0_.Q
+    # buttonInst_1_ControlInst_state_0_.Q & randomNumGenetate_1_num_3_.Q
+       & randomNumGenetate_2_num_3_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_1_.Q & randomNumGenetate_1_num_3_.Q
+       & randomNumGenetate_2_num_3_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_0_.Q & randomNumGenetate_1_num_2_.Q
+       & randomNumGenetate_1_num_3_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_1_.Q & randomNumGenetate_1_num_2_.Q
+       & randomNumGenetate_1_num_3_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_0_.Q & randomNumGenetate_1_num_3_.Q
+       & randomNumGenetate_2_num_2_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_1_.Q & randomNumGenetate_1_num_3_.Q
+       & randomNumGenetate_2_num_2_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_0_.Q & randomNumGenetate_1_num_2_.Q
+       & randomNumGenetate_2_num_3_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_1_.Q & randomNumGenetate_1_num_2_.Q
+       & randomNumGenetate_2_num_3_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_0_.Q & randomNumGenetate_2_num_2_.Q
+       & randomNumGenetate_2_num_3_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_1_.Q & randomNumGenetate_2_num_2_.Q
+       & randomNumGenetate_2_num_3_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_0_.Q & randomNumGenetate_1_num_0_.Q
+       & randomNumGenetate_2_num_0_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_1_.Q & randomNumGenetate_1_num_0_.Q
+       & randomNumGenetate_2_num_0_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_0_.Q & !randomNumGenetate_1_num_0_.Q
+       & !randomNumGenetate_2_num_0_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_1_.Q & !randomNumGenetate_1_num_0_.Q
+       & !randomNumGenetate_2_num_0_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_0_.Q & randomNumGenetate_1_num_1_.Q
+       & randomNumGenetate_2_num_1_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_1_.Q & randomNumGenetate_1_num_1_.Q
+       & randomNumGenetate_2_num_1_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_0_.Q & !randomNumGenetate_1_num_1_.Q
+       & !randomNumGenetate_2_num_1_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_1_.Q & !randomNumGenetate_1_num_1_.Q
+       & !randomNumGenetate_2_num_1_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_0_.Q & !randomNumGenetate_1_num_2_.Q
+       & !randomNumGenetate_1_num_3_.Q & !randomNumGenetate_2_num_2_.Q
+       & !randomNumGenetate_2_num_3_.Q & width_trans_inst_1_q.Q
+    # buttonInst_1_ControlInst_state_1_.Q & !randomNumGenetate_1_num_2_.Q
+       & !randomNumGenetate_1_num_3_.Q & !randomNumGenetate_2_num_2_.Q
+       & !randomNumGenetate_2_num_3_.Q & width_trans_inst_1_q.Q ; (22 pterms, 14 signals)
+
+counter_win_q_2_.D = !( !counter_win_q_2_.Q & !counter_win_q_3_.Q
+       & counter_win_q_4_.Q
+    # width_trans_inst_2_q.Q & buttonInst_2_ControlInst_state_0_.Q
+    # counter_win_q_1_.Q & counter_win_q_2_.Q
+    # !counter_win_q_1_.Q & !counter_win_q_2_.Q
+    # width_trans_inst_2_q.Q & buttonInst_2_ControlInst_state_1_.Q ) ; (5 pterms, 7 signals)
+counter_win_q_2_.C = clk ; (1 pterm, 1 signal)
+counter_win_q_2_.CE = counter_win_q_1__0 ; (1 pterm, 1 signal)
+
+counter_win_q_3_.D = !( counter_win_q_1_.Q & counter_win_q_2_.Q
+       & counter_win_q_3_.Q
+    # width_trans_inst_2_q.Q & buttonInst_2_ControlInst_state_0_.Q
+    # !counter_win_q_2_.Q & !counter_win_q_3_.Q
+    # !counter_win_q_1_.Q & !counter_win_q_3_.Q
+    # width_trans_inst_2_q.Q & buttonInst_2_ControlInst_state_1_.Q ) ; (5 pterms, 6 signals)
+counter_win_q_3_.C = clk ; (1 pterm, 1 signal)
+counter_win_q_3_.CE = counter_win_q_1__0 ; (1 pterm, 1 signal)
+
+counter_win_q_4_.T = counter_win_q_1_.Q & counter_win_q_2_.Q
+       & counter_win_q_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # counter_win_q_1_.Q & counter_win_q_2_.Q & counter_win_q_3_.Q
+       & !width_trans_inst_2_q.Q
+    # counter_win_q_1_.Q & !counter_win_q_2_.Q & !counter_win_q_3_.Q
+       & counter_win_q_4_.Q
+    # counter_win_q_4_.Q & width_trans_inst_2_q.Q
+       & buttonInst_2_ControlInst_state_0_.Q
+    # counter_win_q_4_.Q & width_trans_inst_2_q.Q
+       & buttonInst_2_ControlInst_state_1_.Q ; (5 pterms, 7 signals)
+counter_win_q_4_.C = clk ; (1 pterm, 1 signal)
+counter_win_q_4_.CE = counter_win_q_1__0 ; (1 pterm, 1 signal)
+
+ledscaninst_led_d_6_n_28_i_3_n = !( clkGenerate_scancnt_0_.Q
+       & clkGenerate_scancnt_1_.Q & counter_lose_q_1_.Q & !counter_lose_q_2_.Q
+       & counter_lose_q_3_.Q & !counter_lose_q_4_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & randomNumGenetate_2_num_0_.Q & !randomNumGenetate_2_num_1_.Q
+       & randomNumGenetate_2_num_2_.Q & !randomNumGenetate_2_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (2 pterms, 12 signals)
+
+ledscaninst_n_214_n = !clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_1_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 5 signals)
+
+ledscaninst_n_231_n = clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & randomNumGenetate_2_num_1_.Q & !randomNumGenetate_2_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 6 signals)
+
+ledscaninst_n_44_0_n = !( !clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !counter_win_q_2_.Q & !counter_win_q_3_.Q & counter_win_q_4_.Q
+    # clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_2_num_1_.Q & !randomNumGenetate_2_num_2_.Q
+       & randomNumGenetate_2_num_3_.Q
+    # !clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_1_num_1_.Q & !randomNumGenetate_1_num_2_.Q
+       & randomNumGenetate_1_num_3_.Q
+    # clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !counter_lose_q_2_.Q & !counter_lose_q_3_.Q & counter_lose_q_4_.Q ) ; (4 pterms, 14 signals)
+
+ledscaninst_n_45_0_n = !( !clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !counter_win_q_1_.Q & !counter_win_q_2_.Q & !counter_win_q_3_.Q
+    # clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_2_num_0_.Q & !randomNumGenetate_2_num_1_.Q
+       & !randomNumGenetate_2_num_2_.Q
+    # !clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_1_num_0_.Q & !randomNumGenetate_1_num_1_.Q
+       & !randomNumGenetate_1_num_2_.Q
+    # clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !counter_lose_q_1_.Q & !counter_lose_q_2_.Q & !counter_lose_q_3_.Q ) ; (4 pterms, 14 signals)
+
+ledscaninst_n_53_0_n = !( clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !counter_lose_q_2_.Q & !counter_lose_q_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_1_num_1_.Q & !randomNumGenetate_1_num_2_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (2 pterms, 8 signals)
+
+ledscaninst_n_57_0_n = !( clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !counter_lose_q_2_.Q & counter_lose_q_3_.Q & !counter_lose_q_4_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_2_num_1_.Q & randomNumGenetate_2_num_2_.Q
+       & !randomNumGenetate_2_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (2 pterms, 10 signals)
+
+ledscaninst_n_58_0_n = !( clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & counter_lose_q_2_.Q & !counter_lose_q_3_.Q & !counter_lose_q_4_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & randomNumGenetate_2_num_1_.Q & !randomNumGenetate_2_num_2_.Q
+       & !randomNumGenetate_2_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (2 pterms, 10 signals)
+
+ledscaninst_n_68_i_2_n = !( !clkGenerate_scancnt_0_.Q
+       & clkGenerate_scancnt_1_.Q & !counter_win_q_1_.Q & counter_win_q_2_.Q
+       & !counter_win_q_4_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !randomNumGenetate_2_num_0_.Q & randomNumGenetate_2_num_1_.Q
+       & !randomNumGenetate_2_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (2 pterms, 10 signals)
+
+ledscaninst_n_74_2_n = clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 4 signals)
+
+ledscaninst_n_75_2_n = clkGenerate_scancnt_0_.Q & !clkGenerate_scancnt_1_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 4 signals)
+
+ledscaninst_n_76_2_n = !clkGenerate_scancnt_0_.Q & clkGenerate_scancnt_1_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 4 signals)
+
+light_win = !randomNumGenetate_1_num_2_.Q & !randomNumGenetate_1_num_3_.Q
+       & !randomNumGenetate_2_num_2_.Q & !randomNumGenetate_2_num_3_.Q
+    # !randomNumGenetate_1_num_1_.Q & !randomNumGenetate_2_num_1_.Q
+    # randomNumGenetate_1_num_1_.Q & randomNumGenetate_2_num_1_.Q
+    # !randomNumGenetate_1_num_0_.Q & !randomNumGenetate_2_num_0_.Q
+    # randomNumGenetate_1_num_0_.Q & randomNumGenetate_2_num_0_.Q
+    # randomNumGenetate_1_num_3_.Q & randomNumGenetate_2_num_2_.Q
+    # randomNumGenetate_1_num_2_.Q & randomNumGenetate_1_num_3_.Q
+    # randomNumGenetate_2_num_2_.Q & randomNumGenetate_2_num_3_.Q
+    # randomNumGenetate_1_num_2_.Q & randomNumGenetate_2_num_3_.Q
+    # randomNumGenetate_1_num_3_.Q & randomNumGenetate_2_num_3_.Q ; (10 pterms, 8 signals)
+
+randomNumGenetate_1_conter_9_q_1_.D = !randomNumGenetate_1_conter_9_q_1_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_1_conter_9_q_1_.C = clk_low ; (1 pterm, 1 signal)
+randomNumGenetate_1_conter_9_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+randomNumGenetate_1_conter_9_q_2_.D = randomNumGenetate_1_conter_9_q_1_.Q
+       & !randomNumGenetate_1_conter_9_q_2_.Q
+       & randomNumGenetate_1_conter_9_q_3_.Q
+    # randomNumGenetate_1_conter_9_q_1_.Q
+       & !randomNumGenetate_1_conter_9_q_2_.Q
+       & !randomNumGenetate_1_conter_9_q_4_.Q
+    # !randomNumGenetate_1_conter_9_q_1_.Q
+       & randomNumGenetate_1_conter_9_q_2_.Q ; (3 pterms, 4 signals)
+randomNumGenetate_1_conter_9_q_2_.C = clk_low ; (1 pterm, 1 signal)
+randomNumGenetate_1_conter_9_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+randomNumGenetate_1_conter_9_q_3_.D = randomNumGenetate_1_conter_9_q_1_.Q
+       & randomNumGenetate_1_conter_9_q_2_.Q
+       & !randomNumGenetate_1_conter_9_q_3_.Q
+    # !randomNumGenetate_1_conter_9_q_2_.Q
+       & randomNumGenetate_1_conter_9_q_3_.Q
+    # !randomNumGenetate_1_conter_9_q_1_.Q
+       & randomNumGenetate_1_conter_9_q_3_.Q ; (3 pterms, 3 signals)
+randomNumGenetate_1_conter_9_q_3_.C = clk_low ; (1 pterm, 1 signal)
+randomNumGenetate_1_conter_9_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+randomNumGenetate_1_conter_9_q_4_.D = randomNumGenetate_1_conter_9_q_1_.Q
+       & randomNumGenetate_1_conter_9_q_2_.Q
+       & randomNumGenetate_1_conter_9_q_3_.Q
+       & !randomNumGenetate_1_conter_9_q_4_.Q
+    # randomNumGenetate_1_conter_9_q_2_.Q
+       & !randomNumGenetate_1_conter_9_q_3_.Q
+       & randomNumGenetate_1_conter_9_q_4_.Q
+    # !randomNumGenetate_1_conter_9_q_2_.Q
+       & randomNumGenetate_1_conter_9_q_3_.Q
+       & randomNumGenetate_1_conter_9_q_4_.Q
+    # !randomNumGenetate_1_conter_9_q_1_.Q
+       & randomNumGenetate_1_conter_9_q_4_.Q ; (4 pterms, 4 signals)
+randomNumGenetate_1_conter_9_q_4_.C = clk_low ; (1 pterm, 1 signal)
+randomNumGenetate_1_conter_9_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+randomNumGenetate_1_num_0_.D = randomNumGenetate_1_conter_9_q_1_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_1_num_0_.C = !( !buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_ControlInst_state_1_.Q ) ; (1 pterm, 2 signals)
+
+randomNumGenetate_1_num_1_.D = randomNumGenetate_1_conter_9_q_2_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_1_num_1_.C = !( !buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_ControlInst_state_1_.Q ) ; (1 pterm, 2 signals)
+
+randomNumGenetate_1_num_2_.D = randomNumGenetate_1_conter_9_q_3_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_1_num_2_.C = !( !buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_ControlInst_state_1_.Q ) ; (1 pterm, 2 signals)
+
+randomNumGenetate_1_num_3_.D = randomNumGenetate_1_conter_9_q_4_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_1_num_3_.C = !( !buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_ControlInst_state_1_.Q ) ; (1 pterm, 2 signals)
+
+randomNumGenetate_2_conter_9_q_1_.D = !randomNumGenetate_2_conter_9_q_1_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_2_conter_9_q_1_.C = !clkGenerate_FreqDivide_2_q_1_.Q
+       & !clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & !clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q
+       & !clkGenerate_FreqDivide_2_q_10_.Q & !clkGenerate_FreqDivide_2_q_11_.Q
+       & clkGenerate_FreqDivide_2_q_12_.Q & !clkGenerate_FreqDivide_2_q_13_.Q
+       & clkGenerate_FreqDivide_2_q_14_.Q ; (1 pterm, 14 signals)
+randomNumGenetate_2_conter_9_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+randomNumGenetate_2_conter_9_q_2_.D = randomNumGenetate_2_conter_9_q_1_.Q
+       & !randomNumGenetate_2_conter_9_q_2_.Q
+       & randomNumGenetate_2_conter_9_q_3_.Q
+    # randomNumGenetate_2_conter_9_q_1_.Q
+       & !randomNumGenetate_2_conter_9_q_2_.Q
+       & !randomNumGenetate_2_conter_9_q_4_.Q
+    # !randomNumGenetate_2_conter_9_q_1_.Q
+       & randomNumGenetate_2_conter_9_q_2_.Q ; (3 pterms, 4 signals)
+randomNumGenetate_2_conter_9_q_2_.C = !clkGenerate_FreqDivide_2_q_1_.Q
+       & !clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & !clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q
+       & !clkGenerate_FreqDivide_2_q_10_.Q & !clkGenerate_FreqDivide_2_q_11_.Q
+       & clkGenerate_FreqDivide_2_q_12_.Q & !clkGenerate_FreqDivide_2_q_13_.Q
+       & clkGenerate_FreqDivide_2_q_14_.Q ; (1 pterm, 14 signals)
+randomNumGenetate_2_conter_9_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+randomNumGenetate_2_conter_9_q_3_.D = randomNumGenetate_2_conter_9_q_1_.Q
+       & randomNumGenetate_2_conter_9_q_2_.Q
+       & !randomNumGenetate_2_conter_9_q_3_.Q
+    # !randomNumGenetate_2_conter_9_q_2_.Q
+       & randomNumGenetate_2_conter_9_q_3_.Q
+    # !randomNumGenetate_2_conter_9_q_1_.Q
+       & randomNumGenetate_2_conter_9_q_3_.Q ; (3 pterms, 3 signals)
+randomNumGenetate_2_conter_9_q_3_.C = !clkGenerate_FreqDivide_2_q_1_.Q
+       & !clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & !clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q
+       & !clkGenerate_FreqDivide_2_q_10_.Q & !clkGenerate_FreqDivide_2_q_11_.Q
+       & clkGenerate_FreqDivide_2_q_12_.Q & !clkGenerate_FreqDivide_2_q_13_.Q
+       & clkGenerate_FreqDivide_2_q_14_.Q ; (1 pterm, 14 signals)
+randomNumGenetate_2_conter_9_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+randomNumGenetate_2_conter_9_q_4_.D = randomNumGenetate_2_conter_9_q_1_.Q
+       & randomNumGenetate_2_conter_9_q_2_.Q
+       & randomNumGenetate_2_conter_9_q_3_.Q
+       & !randomNumGenetate_2_conter_9_q_4_.Q
+    # randomNumGenetate_2_conter_9_q_2_.Q
+       & !randomNumGenetate_2_conter_9_q_3_.Q
+       & randomNumGenetate_2_conter_9_q_4_.Q
+    # !randomNumGenetate_2_conter_9_q_2_.Q
+       & randomNumGenetate_2_conter_9_q_3_.Q
+       & randomNumGenetate_2_conter_9_q_4_.Q
+    # !randomNumGenetate_2_conter_9_q_1_.Q
+       & randomNumGenetate_2_conter_9_q_4_.Q ; (4 pterms, 4 signals)
+randomNumGenetate_2_conter_9_q_4_.C = !clkGenerate_FreqDivide_2_q_1_.Q
+       & !clkGenerate_FreqDivide_2_q_2_.Q & clkGenerate_FreqDivide_2_q_3_.Q
+       & clkGenerate_FreqDivide_2_q_4_.Q & !clkGenerate_FreqDivide_2_q_5_.Q
+       & clkGenerate_FreqDivide_2_q_6_.Q & clkGenerate_FreqDivide_2_q_7_.Q
+       & clkGenerate_FreqDivide_2_q_8_.Q & clkGenerate_FreqDivide_2_q_9_.Q
+       & !clkGenerate_FreqDivide_2_q_10_.Q & !clkGenerate_FreqDivide_2_q_11_.Q
+       & clkGenerate_FreqDivide_2_q_12_.Q & !clkGenerate_FreqDivide_2_q_13_.Q
+       & clkGenerate_FreqDivide_2_q_14_.Q ; (1 pterm, 14 signals)
+randomNumGenetate_2_conter_9_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+randomNumGenetate_2_num_0_.D = randomNumGenetate_2_conter_9_q_1_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_2_num_0_.C = !( !buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_ControlInst_state_1_.Q ) ; (1 pterm, 2 signals)
+
+randomNumGenetate_2_num_1_.D = randomNumGenetate_2_conter_9_q_2_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_2_num_1_.C = !( !buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_ControlInst_state_1_.Q ) ; (1 pterm, 2 signals)
+
+randomNumGenetate_2_num_2_.D = randomNumGenetate_2_conter_9_q_3_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_2_num_2_.C = !( !buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_ControlInst_state_1_.Q ) ; (1 pterm, 2 signals)
+
+randomNumGenetate_2_num_3_.D = randomNumGenetate_2_conter_9_q_4_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_2_num_3_.C = !( !buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_ControlInst_state_1_.Q ) ; (1 pterm, 2 signals)
+
+resetOut = !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 2 signals)
+
+width_trans_inst_1_q.D = !buttonInst_1_ControlInst_state_0_.Q
+       & !buttonInst_1_ControlInst_state_1_.Q ; (1 pterm, 2 signals)
+width_trans_inst_1_q.C = clk ; (1 pterm, 1 signal)
+
+width_trans_inst_2_q.D = !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 2 signals)
+width_trans_inst_2_q.C = clk ; (1 pterm, 1 signal)
+

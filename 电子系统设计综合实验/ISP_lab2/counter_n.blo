@@ -1,0 +1,41 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Fri Apr 21 11:11:55 2023
+#$ MODULE counter_n
+#$ PINS 5 q_1_ clk r en co
+#$ NODES 6 q_0_1_ r_i r_c en_c co_c qDFF_1_reg
+.model counter_n
+.inputs clk.BLIF r.BLIF en.BLIF q_0_1_.BLIF r_i.BLIF r_c.BLIF en_c.BLIF \
+co_c.BLIF qDFF_1_reg.BLIF
+.outputs q_1_ co qDFF_1_reg.D qDFF_1_reg.C r_i r_c en_c co_c q_0_1_
+.names q_0_1_.BLIF r_i.BLIF qDFF_1_reg.D
+11 1
+0- 0
+-0 0
+.names r_c.BLIF r_i
+0 1
+1 0
+.names en_c.BLIF qDFF_1_reg.BLIF co_c
+11 1
+0- 0
+-0 0
+.names qDFF_1_reg.BLIF q_1_
+1 1
+0 0
+.names co_c.BLIF co
+1 1
+0 0
+.names clk.BLIF qDFF_1_reg.C
+1 1
+0 0
+.names r.BLIF r_c
+1 1
+0 0
+.names en.BLIF en_c
+1 1
+0 0
+.names en_c.BLIF qDFF_1_reg.BLIF q_0_1_
+10 1
+01 1
+00 0
+11 0
+.end

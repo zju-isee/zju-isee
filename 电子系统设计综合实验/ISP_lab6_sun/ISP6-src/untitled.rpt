@@ -1,0 +1,1116 @@
+|--------------------------------------------------------------|
+|- ispLEVER Classic 2.1.00.02.49.20 Fitter Report File        -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+
+
+The Basic/Detailed Report Format can be selected in the dialog box
+Tools->Fitter Report File Format...
+
+Project_Summary
+~~~~~~~~~~~~~~~
+Project Name         :  untitled
+Project Path         :  D:\temp\project\2
+Project Fitted on    :  Tue Mar 17 11:26:15 2020
+
+Device               :  M4256_64
+Package              :  100
+GLB Input Mux Size   :  33
+Available Blocks     :  16
+Speed                :  -7.5
+Part Number          :  LC4256V-75T100I
+Source Format        :  ABEL_Schematic
+
+
+// Project 'untitled' Fit Successfully! //
+
+
+Compilation_Times
+~~~~~~~~~~~~~~~~~
+Prefit Time                     0 secs
+Load Design Time                0.03 secs
+Partition Time                  0.05 secs
+Place Time                      0.00 secs
+Route Time                      0.00 secs
+Total Fit Time                  00:00:01
+
+
+Design_Summary
+~~~~~~~~~~~~~~
+Total Input Pins                11
+Total Logic Functions           64
+  Total Output Pins             16
+  Total Bidir I/O Pins          0
+  Total Buried Nodes            48
+Total Flip-Flops                36
+  Total D Flip-Flops            33
+  Total T Flip-Flops            3
+  Total Latches                 0
+Total Product Terms             466
+
+Total Reserved Pins             0
+Total Locked Pins               27
+Total Locked Nodes              0
+
+Total Unique Output Enables     0
+Total Unique Clocks             5
+Total Unique Clock Enables      0
+Total Unique Resets             3
+Total Unique Presets            2
+
+Fmax Logic Levels               1
+
+
+Device_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~~~~
+                                 Device
+                                 Total    Used   Not Used   Utilization
+-----------------------------------------------------------------------
+Dedicated Pins
+  Clock/Input Pins                  4        1      3    -->    25
+  Input-Only Pins                   6        1      5    -->    16
+  I/O / Enable Pins                 2        2      0    -->   100
+I/O Pins                           62       23     39    -->    37
+Logic Functions                   256       64    192    -->    25
+  Input Registers                  64        0     64    -->     0
+
+GLB Inputs                        576      163    413    -->    28
+Logical Product Terms            1280      432    848    -->    33
+Occupied GLBs                      16       16      0    -->   100
+Macrocells                        256       64    192    -->    25
+
+Control Product Terms:
+  GLB Clock/Clock Enables          16        8      8    -->    50
+  GLB Reset/Presets                16        0     16    -->     0
+  Macrocell Clocks                256        2    254    -->     0
+  Macrocell Clock Enables         256        0    256    -->     0
+  Macrocell Enables               256        0    256    -->     0
+  Macrocell Resets                256        5    251    -->     1
+  Macrocell Presets               256        1    255    -->     0
+
+Global Routing Pool               324       62    262    -->    19
+  GRP from IFB                     ..        9     ..    -->    ..
+    (from input signals)           ..        9     ..    -->    ..
+    (from output signals)          ..        0     ..    -->    ..
+    (from bidir signals)           ..        0     ..    -->    ..
+  GRP from MFB                     ..       53     ..    -->    ..
+----------------------------------------------------------------------
+
+<Note> 1 : The available PT is the product term that has not been used.
+<Note> 2 : IFB is I/O feedback.
+<Note> 3 : MFB is macrocell feedback.
+
+
+
+GLB_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~
+                                                                                     # of PT
+               ---  Fanin  ---    I/O    Input  Macrocells       Macrocells   Logic  clusters
+             Unique Shared Total  Pins    Regs Used Inaccessible  available    PTs   used
+-------------------------------------------------------------------------------------------
+Maximum
+  GLB                      36      *(1)     8   --     --             16       80       16
+-------------------------------------------------------------------------------------------
+  GLB    A     13     1    14      3/4      0    5      9              2       63       14
+  GLB    B      0     8     8      0/4      0    3      0             13       18        5
+  GLB    C      8     0     8      0/4      0    1      0             15       19        4
+  GLB    D      3     1     4      0/4      0    3      0             13        4        3
+-------------------------------------------------------------------------------------------
+  GLB    E      8     0     8      0/4      0    1      7              8       48       10
+  GLB    F      8     0     8      0/4      0    1      6              9       47       10
+  GLB    G      8     0     8      0/4      0    1      0             15       18        4
+  GLB    H      0     0     0      0/4      0    1      0             15        0        1
+-------------------------------------------------------------------------------------------
+  GLB    I      5    12    17      0/4      0    9      0              7       25        9
+  GLB    J      8     0     8      2/4      0    1      3             12       29        6
+  GLB    K      7     9    16      3/4      0   11      0              5       27       11
+  GLB    L      6     8    14      3/4      0    6      0             10       17        6
+-------------------------------------------------------------------------------------------
+  GLB    M     12     4    16      3/4      0    6      0             10       25        8
+  GLB    N     11     2    13      2/4      0    4      8              4       66       15
+  GLB    O      5     4     9      4/4      0    6      0             10       12        6
+  GLB    P      0    12    12      3/4      0    5      0             11       14        5
+-------------------------------------------------------------------------------------------
+TOTALS:       102    61   163     23/64     0   64     33            159      432      117
+
+<Note> 1 : For ispMACH 4000 devices, the number of IOs depends on the GLB.
+<Note> 2 : Four rightmost columns above reflect last status of the placement process.
+
+
+
+GLB_Control_Summary
+~~~~~~~~~~~~~~~~~~~
+           Shared Shared | Mcell  Mcell  Mcell  Mcell  Mcell 
+           Clk/CE Rst/Pr | Clock  CE     Enable Reset  Preset
+------------------------------------------------------------------------------
+Maximum
+  GLB        1      1        16     16     16     16     16  
+==============================================================================
+  GLB    A   1      0         0      0      0      0      1
+  GLB    B   0      0         0      0      0      0      0
+  GLB    C   0      0         0      0      0      0      0
+  GLB    D   1      0         0      0      0      1      0
+------------------------------------------------------------------------------
+  GLB    E   0      0         0      0      0      0      0
+  GLB    F   0      0         0      0      0      0      0
+  GLB    G   0      0         0      0      0      0      0
+  GLB    H   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    I   1      0         0      0      0      3      0
+  GLB    J   0      0         0      0      0      0      0
+  GLB    K   1      0         0      0      0      0      0
+  GLB    L   1      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    M   1      0         0      0      0      0      0
+  GLB    N   0      0         0      0      0      0      0
+  GLB    O   1      0         2      0      0      1      0
+  GLB    P   1      0         0      0      0      0      0
+------------------------------------------------------------------------------
+
+<Note> 1 : For ispMACH 4000 devices, the number of output enables depends on the GLB.
+
+
+
+Optimizer_and_Fitter_Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pin Assignment :                       Yes
+Group Assignment :                     No
+Pin Reservation :                      No
+
+@Ignore_Project_Constraints :
+  Pin Assignments :                    No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+  Group Assignments :                  No
+  Macrocell Assignment :               No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+
+@Backannotate_Project_Constraints
+  Pin Assignments :                    No
+  Pin And Block Assignments :          No
+  Pin, Macrocell and Block :           No
+
+@Timing_Constraints :                  No
+
+@Global_Project_Optimization :
+  Balanced Partitioning :              Yes
+  Spread Placement :                   Yes
+
+  Note :
+    Pack Design :
+       Balanced Partitioning = No
+       Spread Placement      = No
+    Spread Design :
+       Balanced Partitioning = Yes
+       Spread Placement      = Yes
+
+
+@Logic_Synthesis :
+  Logic Reduction :                    Yes
+  Node Collapsing :                    FMAX
+  Fmax_Logic_Level :                   1
+  D/T Synthesis :                      Yes
+  XOR Synthesis :                      Yes
+  Max. P-Term for Collapsing :         16
+  Max. P-Term for Splitting :          80
+  Max Symbols :                        24
+
+@Utilization_options
+  Max. % of Macrocells used :          100
+@Usercode                               (HEX)
+@IO_Types                              Default = LVCMOS33 (2)
+@Output_Slew_Rate                      Default = FAST (2)
+@Power                                 Default = HIGH (2)
+@Pull                                  Default = PULLUP_UP (2)
+@Fast_Bypass                           Default = None (2)
+@ORP_Bypass                            Default = None
+@Input_Registers                       Default = None (2)
+@Register_Powerup                      Default = None
+
+Device Options:
+<Note> 1 : Reserved unused I/Os can be independently driven to Low or High, and does not
+           follow the drive level set for the Global Configure Unused I/O Option.
+<Note> 2 : For user-specified constraints on individual signals, refer to the Output,
+           Bidir and Buried Signal Lists.
+
+
+
+Pinout_Listing
+~~~~~~~~~~~~~~
+      | Pin   | Bank |GLB |Assigned|                 | Signal|
+Pin No| Type  |Number|Pad |Pin     |     I/O Type    | Type  | Signal name
+--------------------------------------------------------------------------
+1     | GND   |   -  |    |        |                 |       |
+2     | TDI   |   -  |    |        |                 |       |
+3     |  I_O  |   0  |C12 |        |                 |       |
+4     |  I_O  |   0  |C10 |        |                 |       |
+5     |  I_O  |   0  |C6  |        |                 |       |
+6     |  I_O  |   0  |C2  |        |                 |       |
+7     |GNDIO0 |   -  |    |        |                 |       |
+8     |  I_O  |   0  |D12 |        |                 |       |
+9     |  I_O  |   0  |D10 |        |                 |       |
+10    |  I_O  |   0  |D6  |        |                 |       |
+11    |  I_O  |   0  |D4  |        |                 |       |
+12    | IN0   |   0  |    |        |                 |       |
+13    |VCCIO0 |   -  |    |        |                 |       |
+14    |  I_O  |   0  |E4  |        |                 |       |
+15    |  I_O  |   0  |E6  |        |                 |       |
+16    |  I_O  |   0  |E10 |        |                 |       |
+17    |  I_O  |   0  |E12 |        |                 |       |
+18    |GNDIO0 |   -  |    |        |                 |       |
+19    |  I_O  |   0  |F2  |        |                 |       |
+20    |  I_O  |   0  |F6  |        |                 |       |
+21    |  I_O  |   0  |F10 |        |                 |       |
+22    |  I_O  |   0  |F12 |        |                 |       |
+23    | IN1   |   0  |    |        |                 |       |
+24    | TCK   |   -  |    |        |                 |       |
+25    | VCC   |   -  |    |        |                 |       |
+26    | GND   |   -  |    |        |                 |       |
+27    | IN2   |   0  |    |        |                 |       |
+28    |  I_O  |   0  |G12 |        |                 |       |
+29    |  I_O  |   0  |G10 |        |                 |       |
+30    |  I_O  |   0  |G6  |        |                 |       |
+31    |  I_O  |   0  |G2  |        |                 |       |
+32    |GNDIO0 |   -  |    |        |                 |       |
+33    |VCCIO0 |   -  |    |        |                 |       |
+34    |  I_O  |   0  |H12 |        |                 |       |
+35    |  I_O  |   0  |H10 |        |                 |       |
+36    |  I_O  |   0  |H6  |        |                 |       |
+37    |  I_O  |   0  |H2  |        |                 |       |
+38    |INCLK1 |   0  |    |        |                 |       |
+39    |INCLK2 |   1  |    |    *   |LVCMOS33         | Input |clk2
+40    | VCC   |   -  |    |        |                 |       |
+41    |  I_O  |   1  |I2  |        |                 |       |
+42    |  I_O  |   1  |I6  |        |                 |       |
+43    |  I_O  |   1  |I10 |        |                 |       |
+44    |  I_O  |   1  |I12 |        |                 |       |
+45    |VCCIO1 |   -  |    |        |                 |       |
+46    |GNDIO1 |   -  |    |        |                 |       |
+47    |  I_O  |   1  |J2  |        |                 |       |
+48    |  I_O  |   1  |J6  |    *   |LVCMOS33         | Input |ket2
+49    |  I_O  |   1  |J10 |    *   |LVCMOS33         | Input |key1
+50    |  I_O  |   1  |J12 |        |                 |       |
+51    | GND   |   -  |    |        |                 |       |
+52    | TMS   |   -  |    |        |                 |       |
+53    |  I_O  |   1  |K12 |        |                 |       |
+54    |  I_O  |   1  |K10 |    *   |LVCMOS33         | Output|LEDVCC4
+55    |  I_O  |   1  |K6  |    *   |LVCMOS33         | Output|LEDVCC3
+56    |  I_O  |   1  |K2  |    *   |LVCMOS33         | Output|b
+57    |GNDIO1 |   -  |    |        |                 |       |
+58    |  I_O  |   1  |L12 |    *   |LVCMOS33         | Output|g
+59    |  I_O  |   1  |L10 |        |                 |       |
+60    |  I_O  |   1  |L6  |    *   |LVCMOS33         | Output|f
+61    |  I_O  |   1  |L4  |    *   |LVCMOS33         | Output|a
+62    | IN3   |   1  |    |        |                 |       |
+63    |VCCIO1 |   -  |    |        |                 |       |
+64    |  I_O  |   1  |M4  |    *   |LVCMOS33         | Output|d
+65    |  I_O  |   1  |M6  |    *   |LVCMOS33         | Output|e
+66    |  I_O  |   1  |M10 |    *   |LVCMOS33         | Output|c
+67    |  I_O  |   1  |M12 |        |                 |       |
+68    |GNDIO1 |   -  |    |        |                 |       |
+69    |  I_O  |   1  |N2  |    *   |LVCMOS33         | Output|Point
+70    |  I_O  |   1  |N6  |        |                 |       |
+71    |  I_O  |   1  |N10 |        |                 |       |
+72    |  I_O  |   1  |N12 |    *   |LVCMOS33         | Output|LEDVCC1
+73    | IN4   |   1  |    |        |                 |       |
+74    | TDO   |   -  |    |        |                 |       |
+75    | VCC   |   -  |    |        |                 |       |
+76    | GND   |   -  |    |        |                 |       |
+77    | IN5   |   1  |    |    *   |LVCMOS33         | Input |AD7
+78    |  I_O  |   1  |O12 |    *   |LVCMOS33         | Output|LEDVCC2
+79    |  I_O  |   1  |O10 |    *   |LVCMOS33         | Output|CLOCK
+80    |  I_O  |   1  |O6  |    *   |LVCMOS33         | Output|B1
+81    |  I_O  |   1  |O2  |    *   |LVCMOS33         | Output|A1
+82    |GNDIO1 |   -  |    |        |                 |       |
+83    |VCCIO1 |   -  |    |        |                 |       |
+84    |  I_O  |   1  |P12 |    *   |LVCMOS33         | Input |AD0
+85    |  I_O  |   1  |P10 |    *   |LVCMOS33         | Input |AD1
+86    |  I_O  |   1  |P6  |    *   |LVCMOS33         | Input |AD2
+87    | I_O/OE|   1  |P2  |    *   |LVCMOS33         | Input |AD3
+88    |INCLK3 |   1  |    |        |                 |       |
+89    |INCLK0 |   0  |    |        |                 |       |
+90    | VCC   |   -  |    |        |                 |       |
+91    | I_O/OE|   0  |A2  |    *   |LVCMOS33         | Input |AD4
+92    |  I_O  |   0  |A6  |    *   |LVCMOS33         | Input |AD5
+93    |  I_O  |   0  |A10 |    *   |LVCMOS33         | Input |AD6
+94    |  I_O  |   0  |A12 |    *   |LVCMOS33         | Output|START
+95    |VCCIO0 |   -  |    |        |                 |       |
+96    |GNDIO0 |   -  |    |        |                 |       |
+97    |  I_O  |   0  |B2  |        |                 |       |
+98    |  I_O  |   0  |B6  |        |                 |       |
+99    |  I_O  |   0  |B10 |        |                 |       |
+100   |  I_O  |   0  |B12 |        |                 |       |
+--------------------------------------------------------------------------
+
+<Note> GLB Pad : This notation refers to the GLB I/O pad number in the device.
+<Note> Assigned Pin : user or dedicated input assignment (E.g. Clock pins).
+<Note> Pin Type : 
+          ClkIn : Dedicated input or clock pin 
+           CLK  : Dedicated clock pin
+           I_O  : Input/Output pin
+           INP  : Dedicated input pin
+           JTAG : JTAG Control and test pin
+           NC   : No connected
+
+
+
+Input_Signal_List
+~~~~~~~~~~~~~~~~~
+                Input
+         Pin    Fanout
+ Pin GLB Type                       Pullup Signal
+-------------------------------------------------
+  84   P  I/O   1  A---------------      Up AD0
+  85   P  I/O   1  ---D------------      Up AD1
+  86   P  I/O   1  A---------------      Up AD2
+  87   P  I/O   1  ------------M---      Up AD3
+  91   A  I/O   1  --------------O-      Up AD4
+  92   A  I/O   1  ---D------------      Up AD5
+  93   A  I/O   1  A---------------      Up AD6
+  77  --  IN       ----------------      Up AD7
+  39  -- INCLK     ----------------      Up clk2
+  48   J  I/O   1  ---------------P      Up ket2
+  49   J  I/O   1  --------I-------      Up key1
+-------------------------------------------------
+
+
+
+Output_Signal_List
+~~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Output
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+--------------------------------------------------------------------------------
+  81   O  3  1   2  1 DFF  *   S         1  --------------O-  Fast     Up A1
+  80   O  4  1   3  1 DFF  *   S         1  --------------O-  Fast     Up B1
+  79   O  1  1   2  1 DFF    * R         4  A--D--------M-O-  Fast     Up CLOCK
+  72   N  2  -   1  1 COM                   ----------------  Fast     Up LEDVCC1
+  78   O  2  -   1  1 COM                   ----------------  Fast     Up LEDVCC2
+  55   K  2  -   1  1 COM                   ----------------  Fast     Up LEDVCC3
+  54   K  2  -   1  1 COM                   ----------------  Fast     Up LEDVCC4
+  69   N  2  -   1  1 COM                   ----------------  Fast     Up Point
+  94   A  3  1   3  1 DFF  *   R         1  A---------------  Fast     Up START
+  61   L  4  -   4  1 COM                   ----------------  Fast     Up a
+  56   K  4  -   4  1 COM                   ----------------  Fast     Up b
+  66   M  4  -   3  1 COM                   ----------------  Fast     Up c
+  64   M  4  -   4  1 COM                   ----------------  Fast     Up d
+  65   M  4  -   3  1 COM                   ----------------  Fast     Up e
+  60   L  4  -   4  1 COM                   ----------------  Fast     Up f
+  58   L  4  -   2  1 COM                   ----------------  Fast     Up g
+--------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Bidir_Signal_List
+~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Bidir
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Buried_Signal_List
+~~~~~~~~~~~~~~~~~~
+        I         C      P R P       Node
+        N         L Mc   R E U C I F Fanout
+Mc GLB  P LL PTs  S Type E S P E R P                     Signal
+---------------------------------------------------------------
+ 2   D  2  1   2  1 DFF    * R       2  A--D------------  C0_q1
+ 7   K  9  1   3  1 DFF      R       1  ----------K-----  J0_q2
+ 3   K  9  1   4  1 DFF      R       1  ----------K-----  J0_q3
+ 1   I 11  1   4  1 DFF    * R       1  --------I-------  J1_Q0
+ 0   I 12  1   5  1 DFF    * R       1  --------I-------  J1_Q1
+ 5   P 11  1   3  1 DFF    * R       1  ---------------P  L0_Q0
+ 1   P 12  1   4  1 DFF    * R       1  ---------------P  L0_Q1
+11   P 12  1   2  1 DFF    * R       2  --------------OP  N_155
+ 3   I 12  1   3  1 DFF    * R       2  --------I-----O-  N_157
+ 5   O  2  -   2  1 DFF      R       9  ABC-EFG--J--MN--  N_159
+11   A  2  -   1  1 DFF      R       9  ABC-EFG--J--MN--  N_160
+ 5   D  2  -   1  1 DFF      R       9  ABC-EFG--J--MN--  N_161
+ 9   O  2  -   2  1 DFF      R       9  ABC-EFG--J--MN--  N_162
+12   M  2  -   1  1 DFF      R       9  ABC-EFG--J--MN--  N_163
+12   A  2  -   1  1 DFF      R       9  ABC-EFG--J--MN--  N_164
+10   D  2  -   1  1 DFF      R       9  ABC-EFG--J--MN--  N_165
+13   A  2  -   1  1 DFF      R       9  ABC-EFG--J--MN--  N_166
+ 8   E  8  -  48 10 COM              1  ----------K-----  N_167
+13   N  8  -  61 13 COM              1  -------------N--  N_168
+10   A  8  -  57 12 COM              1  --------I-------  N_169
+ 2   B  8  -   8  2 COM              1  -----------L----  N_170
+ 8   F  8  -  47 10 COM              1  -----------L----  N_171
+12   G  8  -  18  4 COM              1  ----------K-----  N_172
+ 9   C  8  -  19  4 COM              1  -------------N--  N_173
+ 6   J  8  -  29  6 COM              1  --------I-------  N_174
+ 3   M  8  -  12  3 COM              1  -----------L----  N_175
+10   B  7  -   4  1 COM              1  -------------N--  N_176
+ 7   H  0  -   0  1 COM              1  ----------K-----  N_177
+ 5   B  8  -   6  2 COM              1  --------I-------  N_178
+ 8   K  5  1   2  1 DFF      R       2  ----------KL----  N_180
+ 1   K  4  1   4  1 DFF      R       2  ----------KL----  N_181
+ 4   K  3  1   3  1 DFF      R       2  ----------KL----  N_182
+ 9   L  2  1   2  1 DFF      R       2  ----------KL----  N_183
+ 9   K  1  1   1  1 DFF      R       2  ----------KL----  N_184
+ 7   I  7  1   1  1 TFF      R       2  --------I------P  N_195
+ 9   I  6  1   1  1 TFF      R       2  --------I------P  N_196
+12   I  5  1   1  1 TFF      R       2  --------I------P  N_197
+ 3   P  5  1   3  1 DFF      R       2  --------I------P  N_198
+ 2   I  4  1   4  1 DFF      R       2  --------I------P  N_199
+ 4   I  3  1   3  1 DFF      R       2  --------I------P  N_200
+ 9   M  2  1   2  1 DFF      R       3  --------I---M--P  N_201
+ 7   P  1  1   2  1 DFF      R       3  --------I---M--P  N_202
+ 5   K  5  -   3  1 COM              3  ----------KLM---  N_29
+14   N  5  -   3  1 COM              3  ----------KLM---  N_30
+ 5   I  5  -   3  1 COM              3  ----------KLM---  N_31
+ 3   L  5  -   3  1 COM              3  ----------KLM---  N_32
+12   L  7  1   2  1 DFF      R       5  --------I-KL-NO-  N_45
+12   K  6  1   1  1 DFF      R       5  --------I-KL-NO-  N_46
+---------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        IR = Input register
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+PostFit_Equations
+~~~~~~~~~~~~~~~~~
+A1.D = !A1.Q ; (1 pterm, 1 signal)
+A1.C = N_157.Q ; (1 pterm, 1 signal)
+A1.AP = !N_155.Q ; (1 pterm, 1 signal)
+
+B1.D = A1.Q & B1.Q
+    # !A1.Q & !B1.Q ; (2 pterms, 2 signals)
+B1.C = N_157.Q ; (1 pterm, 1 signal)
+B1.AP = !N_155.Q ; (1 pterm, 1 signal)
+
+C0_q1.D = !CLOCK.Q & C0_q1.Q
+    # CLOCK.Q & !C0_q1.Q ; (2 pterms, 2 signals)
+C0_q1.C = clk2 ; (1 pterm, 1 signal)
+C0_q1.AR = 0 ; (0 pterm, 0 signal)
+
+CLOCK.D = !CLOCK.Q ; (1 pterm, 1 signal)
+CLOCK.C = clk2 ; (1 pterm, 1 signal)
+CLOCK.AR = 0 ; (0 pterm, 0 signal)
+
+J0_q2.D = N_46.Q & N_45.Q & !J0_q2.Q & J0_q3.Q
+    # !N_45.Q & J0_q2.Q
+    # !N_46.Q & J0_q2.Q ; (3 pterms, 4 signals)
+J0_q2.C = N_180.Q & N_181.Q & N_182.Q & N_183.Q & N_184.Q ; (1 pterm, 5 signals)
+
+J0_q3.D = N_46.Q & N_45.Q & J0_q2.Q & !J0_q3.Q
+    # !N_45.Q & J0_q3.Q
+    # !J0_q2.Q & J0_q3.Q
+    # !N_46.Q & J0_q3.Q ; (4 pterms, 4 signals)
+J0_q3.C = N_180.Q & N_181.Q & N_182.Q & N_183.Q & N_184.Q ; (1 pterm, 5 signals)
+
+J1_Q0.D = key1 & !J1_Q0.Q & !N_157.Q
+    # !key1 & J1_Q0.Q
+    # J1_Q0.Q & N_157.Q ; (3 pterms, 3 signals)
+J1_Q0.C = N_195.Q & N_196.Q & N_197.Q & N_198.Q & N_199.Q & N_200.Q & N_201.Q
+       & N_202.Q ; (1 pterm, 8 signals)
+J1_Q0.AR = !key1 ; (1 pterm, 1 signal)
+
+J1_Q1.D = key1 & J1_Q0.Q & !J1_Q1.Q & !N_157.Q
+    # !J1_Q0.Q & J1_Q1.Q
+    # !key1 & J1_Q1.Q
+    # J1_Q1.Q & N_157.Q ; (4 pterms, 4 signals)
+J1_Q1.C = N_195.Q & N_196.Q & N_197.Q & N_198.Q & N_199.Q & N_200.Q & N_201.Q
+       & N_202.Q ; (1 pterm, 8 signals)
+J1_Q1.AR = !key1 ; (1 pterm, 1 signal)
+
+L0_Q0.D = ket2 & !L0_Q0.Q & !N_155.Q
+    # !ket2 & L0_Q0.Q
+    # L0_Q0.Q & N_155.Q ; (3 pterms, 3 signals)
+L0_Q0.C = N_195.Q & N_196.Q & N_197.Q & N_198.Q & N_199.Q & N_200.Q & N_201.Q
+       & N_202.Q ; (1 pterm, 8 signals)
+L0_Q0.AR = !ket2 ; (1 pterm, 1 signal)
+
+L0_Q1.D = ket2 & L0_Q0.Q & !L0_Q1.Q & !N_155.Q
+    # !L0_Q0.Q & L0_Q1.Q
+    # !ket2 & L0_Q1.Q
+    # L0_Q1.Q & N_155.Q ; (4 pterms, 4 signals)
+L0_Q1.C = N_195.Q & N_196.Q & N_197.Q & N_198.Q & N_199.Q & N_200.Q & N_201.Q
+       & N_202.Q ; (1 pterm, 8 signals)
+L0_Q1.AR = !ket2 ; (1 pterm, 1 signal)
+
+LEDVCC1 = !N_46.Q & !N_45.Q ; (1 pterm, 2 signals)
+
+LEDVCC2 = N_46.Q & !N_45.Q ; (1 pterm, 2 signals)
+
+LEDVCC3 = !N_46.Q & N_45.Q ; (1 pterm, 2 signals)
+
+LEDVCC4 = N_46.Q & N_45.Q ; (1 pterm, 2 signals)
+
+N_155.D = ket2 & L0_Q0.Q & L0_Q1.Q
+    # N_155.Q ; (2 pterms, 4 signals)
+N_155.C = N_195.Q & N_196.Q & N_197.Q & N_198.Q & N_199.Q & N_200.Q & N_201.Q
+       & N_202.Q ; (1 pterm, 8 signals)
+N_155.AR = !ket2 ; (1 pterm, 1 signal)
+
+N_157.D = key1 & J1_Q0.Q & J1_Q1.Q
+    # N_157.Q ; (2 pterms, 4 signals)
+N_157.C = N_195.Q & N_196.Q & N_197.Q & N_198.Q & N_199.Q & N_200.Q & N_201.Q
+       & N_202.Q ; (1 pterm, 8 signals)
+N_157.AR = !key1 ; (1 pterm, 1 signal)
+
+N_159.D = !AD7 ; (1 pterm, 1 signal)
+N_159.C = CLOCK.Q ; (1 pterm, 1 signal)
+
+N_160.D = !AD6 ; (1 pterm, 1 signal)
+N_160.C = CLOCK.Q ; (1 pterm, 1 signal)
+
+N_161.D = !AD5 ; (1 pterm, 1 signal)
+N_161.C = CLOCK.Q ; (1 pterm, 1 signal)
+
+N_162.D = !AD4 ; (1 pterm, 1 signal)
+N_162.C = CLOCK.Q ; (1 pterm, 1 signal)
+
+N_163.D = !AD3 ; (1 pterm, 1 signal)
+N_163.C = CLOCK.Q ; (1 pterm, 1 signal)
+
+N_164.D = !AD2 ; (1 pterm, 1 signal)
+N_164.C = CLOCK.Q ; (1 pterm, 1 signal)
+
+N_165.D = !AD1 ; (1 pterm, 1 signal)
+N_165.C = CLOCK.Q ; (1 pterm, 1 signal)
+
+N_166.D = !AD0 ; (1 pterm, 1 signal)
+N_166.C = CLOCK.Q ; (1 pterm, 1 signal)
+
+N_167 = N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_164.Q
+       & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & !N_165.Q
+       & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & N_165.Q
+       & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & !N_165.Q
+       & !N_166.Q
+    # !N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & N_164.Q & !N_165.Q
+       & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & !N_164.Q
+       & !N_165.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_164.Q
+       & !N_165.Q & N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & N_164.Q & !N_165.Q
+       & N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_164.Q & !N_165.Q
+       & !N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & !N_162.Q & N_163.Q & N_164.Q & !N_165.Q
+       & !N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_164.Q & N_165.Q
+       & !N_166.Q
+    # !N_159.Q & N_160.Q & N_161.Q & !N_162.Q & N_163.Q & N_164.Q & N_165.Q
+       & !N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & !N_163.Q & !N_164.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & !N_165.Q
+       & !N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_164.Q & !N_165.Q
+       & !N_166.Q
+    # !N_159.Q & N_160.Q & N_161.Q & N_162.Q & N_163.Q & !N_164.Q & !N_165.Q
+       & !N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_162.Q & N_163.Q & N_164.Q & !N_165.Q
+       & !N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & !N_164.Q & N_165.Q
+       & !N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & !N_164.Q & N_165.Q
+       & !N_166.Q
+    # !N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & N_165.Q
+       & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_164.Q & N_165.Q
+       & !N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & N_164.Q & N_165.Q
+       & !N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & N_162.Q & !N_163.Q & N_164.Q & N_165.Q
+       & !N_166.Q
+    # !N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & N_163.Q & N_164.Q & N_165.Q
+       & !N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & !N_165.Q
+       & N_166.Q
+    # !N_159.Q & N_160.Q & N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & !N_165.Q
+       & N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & !N_163.Q & N_164.Q & !N_165.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & N_163.Q & N_164.Q & !N_165.Q
+       & N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & N_164.Q & !N_165.Q
+       & N_166.Q
+    # !N_159.Q & N_160.Q & N_161.Q & N_162.Q & N_163.Q & N_164.Q & !N_165.Q
+       & N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & N_165.Q
+       & N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & N_165.Q
+       & N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & N_165.Q
+       & N_166.Q
+    # !N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_164.Q & N_165.Q
+       & N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & N_164.Q & N_165.Q
+       & N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & N_165.Q
+       & !N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & !N_165.Q
+       & N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & !N_165.Q
+       & N_166.Q
+    # !N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_164.Q & !N_165.Q
+       & N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & !N_164.Q & N_165.Q
+       & N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & N_165.Q
+       & N_166.Q
+    # !N_159.Q & N_160.Q & N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & N_165.Q
+       & N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_162.Q & !N_163.Q & N_164.Q & N_165.Q
+       & N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & N_163.Q & !N_164.Q & N_165.Q & !N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & N_165.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_164.Q & N_165.Q
+       & N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & N_162.Q & N_163.Q & !N_164.Q & N_165.Q
+       & N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & N_162.Q & N_163.Q & N_164.Q & N_165.Q
+       & N_166.Q ; (48 pterms, 8 signals)
+
+N_168.X1 = !N_159.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & !N_165.Q
+       & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_163.Q & N_164.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & !N_165.Q
+       & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & !N_165.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_163.Q & !N_164.Q & !N_165.Q
+       & !N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & N_164.Q & !N_165.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & !N_165.Q & N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & !N_165.Q
+       & N_166.Q
+    # !N_159.Q & N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_163.Q & !N_164.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_162.Q & !N_163.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_162.Q & !N_163.Q & !N_164.Q
+    # N_159.Q & !N_160.Q & N_161.Q & !N_163.Q & N_164.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & !N_163.Q & !N_164.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & N_162.Q & !N_163.Q & N_164.Q & !N_165.Q
+    # N_159.Q & N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & !N_165.Q & N_166.Q
+    # !N_159.Q & !N_161.Q & N_162.Q & N_163.Q & N_164.Q & !N_165.Q & N_166.Q
+    # !N_159.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & !N_165.Q & N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_164.Q & !N_165.Q
+    # !N_159.Q & !N_160.Q & !N_161.Q & N_163.Q & N_164.Q & !N_165.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & !N_161.Q & N_163.Q & !N_164.Q & !N_165.Q
+       & !N_166.Q
+    # !N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_161.Q & !N_162.Q & N_163.Q & N_164.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & N_161.Q & N_163.Q & N_164.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & N_161.Q & !N_162.Q & N_163.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & N_161.Q & !N_162.Q & N_163.Q & N_164.Q & !N_165.Q
+    # N_159.Q & !N_160.Q & N_162.Q & N_163.Q & !N_164.Q & !N_165.Q & N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & N_163.Q & N_164.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_164.Q & !N_165.Q
+    # N_159.Q & !N_160.Q & N_161.Q & N_163.Q & !N_164.Q & !N_165.Q
+    # N_159.Q & N_161.Q & N_162.Q & N_163.Q & !N_164.Q & !N_165.Q & N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & N_162.Q & N_163.Q & !N_165.Q & N_166.Q
+    # !N_159.Q & N_162.Q & !N_163.Q & !N_164.Q & N_165.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & !N_163.Q & !N_164.Q & N_165.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_162.Q & !N_163.Q & N_165.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_162.Q & !N_163.Q & !N_164.Q & N_165.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & N_165.Q
+       & !N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & !N_163.Q & !N_164.Q & N_165.Q & !N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & N_164.Q & N_165.Q
+    # N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_165.Q & N_166.Q
+    # !N_159.Q & !N_161.Q & !N_162.Q & N_163.Q & N_164.Q & N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_163.Q & N_164.Q & N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_164.Q & N_165.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & N_163.Q & !N_164.Q & N_165.Q & !N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & N_163.Q & N_164.Q & N_165.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_165.Q & N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_164.Q & N_165.Q
+       & N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_162.Q & !N_164.Q & N_165.Q
+    # N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & N_165.Q & !N_166.Q
+    # !N_159.Q & N_161.Q & N_162.Q & !N_164.Q & N_165.Q & N_166.Q
+    # !N_160.Q & N_161.Q & !N_163.Q & !N_164.Q & N_165.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_162.Q & N_165.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_164.Q & N_165.Q & N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & N_163.Q & N_164.Q & N_165.Q & !N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & N_163.Q & N_164.Q & N_165.Q
+    # N_159.Q & N_160.Q & N_161.Q & N_163.Q & !N_164.Q & N_165.Q & !N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & N_162.Q & N_163.Q & N_164.Q & N_165.Q
+    # N_159.Q & N_160.Q & N_161.Q & !N_162.Q & N_163.Q & N_165.Q & N_166.Q ; (60 pterms, 8 signals)
+N_168.X2 = !N_159.Q & N_161.Q & !N_163.Q & N_165.Q ; (1 pterm, 4 signals)
+
+N_169.X1 = N_160.Q & N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & !N_165.Q
+       & !N_166.Q
+    # N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & N_165.Q & !N_166.Q
+    # N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & !N_165.Q
+    # !N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_164.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & !N_161.Q & N_162.Q & N_163.Q & !N_164.Q & N_165.Q & !N_166.Q
+    # N_159.Q & !N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & N_162.Q & N_163.Q & !N_164.Q & !N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & !N_163.Q & !N_164.Q & N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_162.Q & N_163.Q & !N_164.Q & !N_165.Q
+    # !N_159.Q & N_160.Q & N_161.Q & N_162.Q & !N_164.Q & N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & !N_164.Q & !N_165.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_164.Q
+    # !N_159.Q & !N_160.Q & !N_162.Q & !N_163.Q & !N_164.Q & N_165.Q
+       & !N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & !N_164.Q & N_165.Q & !N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & !N_164.Q
+       & !N_166.Q
+    # !N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & !N_165.Q
+       & !N_166.Q
+    # N_159.Q & N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & !N_160.Q & !N_162.Q & N_163.Q & N_164.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & N_165.Q & !N_166.Q
+    # !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_164.Q & N_165.Q & !N_166.Q
+    # N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & N_165.Q & !N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & !N_162.Q & N_164.Q & N_165.Q & !N_166.Q
+    # !N_160.Q & N_161.Q & N_162.Q & !N_163.Q & N_164.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & N_162.Q & N_163.Q & N_164.Q & !N_166.Q
+    # !N_159.Q & !N_160.Q & N_162.Q & !N_163.Q & N_164.Q & N_165.Q & !N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_162.Q & N_164.Q & N_165.Q & !N_166.Q
+    # N_160.Q & !N_161.Q & N_162.Q & N_163.Q & N_164.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & N_162.Q & N_163.Q & N_164.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_164.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & N_164.Q & !N_166.Q
+    # !N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & !N_165.Q & N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & !N_164.Q & !N_165.Q & N_166.Q
+    # N_159.Q & !N_160.Q & !N_162.Q & N_163.Q & !N_164.Q & !N_165.Q & N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_162.Q & !N_163.Q & !N_164.Q & !N_165.Q & N_166.Q
+    # !N_160.Q & N_161.Q & N_162.Q & N_163.Q & !N_164.Q & !N_165.Q & N_166.Q
+    # !N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & N_165.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_162.Q & N_163.Q & !N_164.Q & N_165.Q & N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & !N_165.Q & N_166.Q
+    # !N_159.Q & N_160.Q & !N_162.Q & N_163.Q & !N_165.Q & N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_163.Q & !N_164.Q & !N_165.Q & N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & !N_163.Q & !N_164.Q & N_165.Q & N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & !N_162.Q & !N_163.Q & N_164.Q & N_165.Q & N_166.Q
+    # !N_160.Q & N_161.Q & !N_162.Q & N_164.Q & N_165.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & N_163.Q & N_164.Q & N_166.Q
+    # N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_165.Q & N_166.Q
+    # N_159.Q & !N_161.Q & N_162.Q & !N_163.Q & N_164.Q & !N_165.Q & N_166.Q
+    # !N_160.Q & !N_161.Q & N_162.Q & N_163.Q & N_164.Q & !N_165.Q & N_166.Q
+    # N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & N_164.Q & N_165.Q & N_166.Q
+    # N_159.Q & !N_161.Q & N_162.Q & N_163.Q & N_164.Q & N_165.Q & N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & !N_163.Q & N_164.Q & N_165.Q & N_166.Q
+    # N_160.Q & N_161.Q & N_162.Q & !N_163.Q & N_164.Q & !N_165.Q & N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & N_162.Q & N_163.Q & N_164.Q & N_166.Q
+    # !N_159.Q & N_160.Q & N_161.Q & N_162.Q & N_164.Q & N_165.Q & N_166.Q ; (56 pterms, 8 signals)
+N_169.X2 = N_160.Q & !N_162.Q & !N_164.Q & N_166.Q ; (1 pterm, 4 signals)
+
+N_170 = !( !N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & !N_164.Q & !N_165.Q
+       & !N_166.Q
+    # !N_159.Q & N_160.Q & N_162.Q & N_164.Q & N_165.Q
+    # N_159.Q & !N_160.Q & !N_162.Q & !N_164.Q & !N_165.Q
+    # !N_159.Q & N_160.Q & N_162.Q & N_163.Q
+    # N_159.Q & !N_160.Q & !N_162.Q & !N_163.Q
+    # N_159.Q & !N_160.Q & !N_162.Q & !N_164.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & N_161.Q
+    # N_159.Q & !N_160.Q & !N_161.Q ) ; (8 pterms, 8 signals)
+
+N_171.X1 = N_159.Q & !N_160.Q & !N_162.Q & N_163.Q & !N_164.Q
+    # !N_160.Q & !N_162.Q & N_163.Q & !N_164.Q & !N_165.Q & !N_166.Q
+    # !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & !N_166.Q
+    # !N_160.Q & !N_161.Q & N_163.Q & !N_164.Q & !N_165.Q
+    # N_159.Q & !N_160.Q & !N_164.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & !N_164.Q & !N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_164.Q & !N_165.Q
+    # !N_159.Q & N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & !N_164.Q
+    # N_159.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & !N_165.Q
+    # !N_159.Q & N_160.Q & !N_162.Q & !N_163.Q & !N_164.Q & N_165.Q
+    # !N_159.Q & N_160.Q & N_161.Q & !N_162.Q & !N_164.Q & N_165.Q
+    # N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & !N_164.Q & N_165.Q & N_166.Q
+    # N_159.Q & N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & N_165.Q
+    # N_159.Q & N_160.Q & !N_162.Q & !N_163.Q & N_164.Q & N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & !N_162.Q & N_164.Q & N_165.Q
+    # !N_159.Q & N_160.Q & !N_162.Q & N_163.Q & N_164.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & N_164.Q & !N_165.Q
+    # !N_159.Q & !N_160.Q & !N_163.Q & N_164.Q & N_165.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_164.Q & N_165.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_163.Q & N_164.Q
+    # N_160.Q & N_161.Q & !N_162.Q & N_163.Q & N_164.Q & !N_165.Q & N_166.Q
+    # N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & !N_165.Q & !N_166.Q
+    # N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_164.Q & N_165.Q & N_166.Q
+    # N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_164.Q & N_165.Q & !N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_162.Q & !N_163.Q & N_165.Q & N_166.Q
+    # N_159.Q & !N_160.Q & N_163.Q & !N_164.Q & !N_166.Q
+    # N_159.Q & !N_160.Q & N_163.Q & !N_164.Q & !N_165.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & N_163.Q & !N_164.Q
+    # !N_159.Q & !N_160.Q & N_162.Q & N_164.Q & N_165.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_162.Q & !N_163.Q & N_164.Q & N_166.Q
+    # !N_159.Q & N_162.Q & !N_163.Q & N_164.Q & N_165.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_162.Q & N_164.Q & N_166.Q
+    # !N_159.Q & N_161.Q & N_162.Q & N_164.Q & N_165.Q
+    # !N_159.Q & N_161.Q & N_162.Q & !N_163.Q & N_164.Q
+    # !N_160.Q & N_162.Q & !N_163.Q & N_164.Q & N_165.Q & N_166.Q
+    # !N_160.Q & N_161.Q & N_162.Q & !N_163.Q & N_164.Q & N_165.Q
+    # N_159.Q & N_160.Q & N_162.Q & !N_163.Q & !N_164.Q & !N_165.Q
+    # N_159.Q & N_160.Q & N_161.Q & N_162.Q & N_163.Q & !N_164.Q
+    # N_159.Q & N_160.Q & !N_161.Q & N_162.Q & !N_164.Q & N_165.Q
+    # !N_161.Q & N_162.Q & N_163.Q & !N_164.Q & !N_165.Q & N_166.Q
+    # !N_159.Q & N_160.Q & N_162.Q & N_163.Q & !N_164.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_162.Q & !N_164.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_164.Q & !N_166.Q
+    # N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & N_164.Q & !N_165.Q
+    # N_161.Q & N_162.Q & !N_163.Q & N_164.Q & N_165.Q & N_166.Q ; (46 pterms, 8 signals)
+N_171.X2 = !N_160.Q & N_162.Q ; (1 pterm, 2 signals)
+
+N_172.X1 = N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_164.Q
+       & N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_164.Q & N_165.Q
+    # N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q
+    # N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & !N_164.Q & !N_165.Q
+    # !N_159.Q & N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & !N_164.Q
+    # !N_159.Q & N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & N_163.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & N_163.Q & N_165.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & N_163.Q & N_164.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & !N_166.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & !N_165.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & N_164.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & N_165.Q & N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & N_164.Q & N_165.Q
+       & N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & N_162.Q & !N_163.Q & N_165.Q
+    # N_159.Q & N_160.Q & N_161.Q & N_162.Q & !N_163.Q & N_164.Q
+    # N_159.Q & N_160.Q & N_161.Q & N_162.Q & N_163.Q & !N_164.Q ; (17 pterms, 8 signals)
+N_172.X2 = N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & !N_163.Q ; (1 pterm, 5 signals)
+
+N_173.X1 = N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & !N_164.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & N_163.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & N_164.Q & N_165.Q & N_166.Q
+    # !N_159.Q & !N_160.Q & N_162.Q & !N_163.Q & !N_164.Q
+    # !N_159.Q & !N_160.Q & N_162.Q & !N_163.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_163.Q & N_164.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & N_163.Q & N_165.Q & N_166.Q
+    # N_160.Q & !N_161.Q & N_162.Q & N_163.Q & N_164.Q & N_165.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_163.Q
+    # !N_159.Q & !N_160.Q & N_161.Q & !N_164.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & N_160.Q & N_161.Q & !N_162.Q
+    # N_159.Q & N_161.Q & !N_162.Q & N_163.Q & N_164.Q
+    # !N_159.Q & N_161.Q & N_162.Q & !N_163.Q
+    # !N_159.Q & N_161.Q & N_162.Q & !N_164.Q & !N_165.Q & !N_166.Q
+    # !N_160.Q & N_161.Q & N_162.Q
+    # N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & !N_165.Q ; (18 pterms, 8 signals)
+N_173.X2 = !N_159.Q & N_162.Q ; (1 pterm, 2 signals)
+
+N_174.X1 = !N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_164.Q
+    # !N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & N_165.Q & N_166.Q
+    # !N_160.Q & N_161.Q & !N_162.Q & N_163.Q & !N_164.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_164.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & N_165.Q & N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & !N_162.Q & !N_164.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & !N_160.Q & !N_162.Q & N_163.Q & !N_164.Q
+    # N_159.Q & !N_160.Q & !N_161.Q & !N_162.Q & N_163.Q & !N_165.Q & !N_166.Q
+    # !N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & !N_164.Q
+    # !N_159.Q & !N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & !N_165.Q
+       & !N_166.Q
+    # !N_159.Q & !N_160.Q & N_162.Q & N_163.Q & N_164.Q & N_165.Q & N_166.Q
+    # N_159.Q & !N_160.Q & N_161.Q & N_162.Q & N_163.Q
+    # !N_160.Q & N_161.Q & N_162.Q & N_163.Q & N_164.Q & N_166.Q
+    # !N_160.Q & N_161.Q & N_162.Q & N_163.Q & N_164.Q & N_165.Q
+    # N_159.Q & !N_160.Q & N_161.Q & N_162.Q & N_164.Q & N_165.Q
+    # N_160.Q & !N_161.Q & N_162.Q & !N_163.Q & N_164.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_163.Q & !N_165.Q & N_166.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_163.Q & !N_164.Q & N_165.Q
+    # !N_159.Q & N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q & !N_166.Q
+    # N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_164.Q & !N_166.Q
+    # N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_164.Q & !N_165.Q
+    # N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_164.Q
+    # N_159.Q & N_160.Q & !N_161.Q & N_162.Q & N_163.Q & !N_165.Q
+    # N_159.Q & N_160.Q & N_161.Q & !N_162.Q & N_163.Q
+    # N_160.Q & N_161.Q & !N_162.Q & N_163.Q & N_164.Q & N_165.Q & N_166.Q
+    # !N_159.Q & N_160.Q & N_161.Q & N_162.Q & !N_163.Q
+    # N_160.Q & N_161.Q & N_162.Q & !N_163.Q & !N_164.Q & !N_165.Q
+    # !N_159.Q & N_160.Q & N_161.Q & N_162.Q & !N_164.Q & !N_165.Q & !N_166.Q ; (28 pterms, 8 signals)
+N_174.X2 = !N_160.Q & N_161.Q & !N_162.Q & !N_163.Q ; (1 pterm, 4 signals)
+
+N_175 = !N_159.Q & N_160.Q & !N_161.Q
+    # !N_159.Q & N_160.Q & !N_162.Q & !N_163.Q & !N_164.Q
+    # N_160.Q & !N_161.Q & !N_162.Q & !N_163.Q
+    # !N_159.Q & N_160.Q & !N_162.Q & !N_163.Q & !N_165.Q & !N_166.Q
+    # N_160.Q & !N_161.Q & !N_162.Q & !N_164.Q & !N_165.Q
+    # N_159.Q & !N_160.Q & N_161.Q
+    # !N_160.Q & N_161.Q & N_162.Q & N_165.Q & N_166.Q
+    # !N_160.Q & N_161.Q & N_162.Q & N_163.Q
+    # !N_160.Q & N_161.Q & N_162.Q & N_164.Q
+    # N_159.Q & !N_160.Q & N_162.Q & N_163.Q
+    # N_159.Q & !N_160.Q & N_162.Q & N_164.Q & N_165.Q & N_166.Q
+    # N_159.Q & N_161.Q & N_162.Q & N_163.Q & N_164.Q ; (12 pterms, 8 signals)
+
+N_176 = N_159.Q & N_160.Q & N_163.Q & N_164.Q
+    # N_159.Q & N_160.Q & N_163.Q & N_165.Q
+    # N_159.Q & N_160.Q & N_161.Q
+    # N_159.Q & N_160.Q & N_162.Q ; (4 pterms, 7 signals)
+
+N_177 = 0 ; (0 pterm, 0 signal)
+
+N_178.X1 = !N_159.Q & N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & !N_164.Q
+    # !N_159.Q & N_160.Q & N_161.Q & !N_162.Q & !N_163.Q & !N_165.Q & !N_166.Q
+    # N_159.Q & !N_160.Q
+    # N_159.Q & !N_161.Q & !N_162.Q & !N_163.Q
+    # N_159.Q & !N_161.Q & !N_162.Q & !N_164.Q & !N_165.Q ; (5 pterms, 8 signals)
+N_178.X2 = !N_159.Q & N_160.Q & N_161.Q ; (1 pterm, 3 signals)
+
+N_180.D.X1 = N_180.Q ; (1 pterm, 1 signal)
+N_180.D.X2 = N_181.Q & N_182.Q & N_183.Q & N_184.Q ; (1 pterm, 4 signals)
+N_180.C = clk2 ; (1 pterm, 1 signal)
+
+N_181.D = !N_181.Q & N_182.Q & N_183.Q & N_184.Q
+    # N_181.Q & !N_183.Q
+    # N_181.Q & !N_182.Q
+    # N_181.Q & !N_184.Q ; (4 pterms, 4 signals)
+N_181.C = clk2 ; (1 pterm, 1 signal)
+
+N_182.D = !N_182.Q & N_183.Q & N_184.Q
+    # N_182.Q & !N_183.Q
+    # N_182.Q & !N_184.Q ; (3 pterms, 3 signals)
+N_182.C = clk2 ; (1 pterm, 1 signal)
+
+N_183.D = N_183.Q & !N_184.Q
+    # !N_183.Q & N_184.Q ; (2 pterms, 2 signals)
+N_183.C = clk2 ; (1 pterm, 1 signal)
+
+N_184.D = !N_184.Q ; (1 pterm, 1 signal)
+N_184.C = clk2 ; (1 pterm, 1 signal)
+
+N_195.T = N_196.Q & N_197.Q & N_198.Q & N_199.Q & N_200.Q & N_201.Q & N_202.Q ; (1 pterm, 7 signals)
+N_195.C = clk2 ; (1 pterm, 1 signal)
+
+N_196.T = N_197.Q & N_198.Q & N_199.Q & N_200.Q & N_201.Q & N_202.Q ; (1 pterm, 6 signals)
+N_196.C = clk2 ; (1 pterm, 1 signal)
+
+N_197.T = N_198.Q & N_199.Q & N_200.Q & N_201.Q & N_202.Q ; (1 pterm, 5 signals)
+N_197.C = clk2 ; (1 pterm, 1 signal)
+
+N_198.D.X1 = N_199.Q & N_200.Q & N_201.Q & N_202.Q ; (1 pterm, 4 signals)
+N_198.D.X2 = N_198.Q ; (1 pterm, 1 signal)
+N_198.C = clk2 ; (1 pterm, 1 signal)
+
+N_199.D = !N_199.Q & N_200.Q & N_201.Q & N_202.Q
+    # N_199.Q & !N_201.Q
+    # N_199.Q & !N_200.Q
+    # N_199.Q & !N_202.Q ; (4 pterms, 4 signals)
+N_199.C = clk2 ; (1 pterm, 1 signal)
+
+N_200.D = !N_200.Q & N_201.Q & N_202.Q
+    # N_200.Q & !N_201.Q
+    # N_200.Q & !N_202.Q ; (3 pterms, 3 signals)
+N_200.C = clk2 ; (1 pterm, 1 signal)
+
+N_201.D = N_201.Q & !N_202.Q
+    # !N_201.Q & N_202.Q ; (2 pterms, 2 signals)
+N_201.C = clk2 ; (1 pterm, 1 signal)
+
+N_202.D = !N_202.Q ; (1 pterm, 1 signal)
+N_202.C = clk2 ; (1 pterm, 1 signal)
+
+N_29 = N_172 & N_46.Q & !N_45.Q
+    # N_167 & !N_46.Q & N_45.Q
+    # N_177 & !N_46.Q & !N_45.Q ; (3 pterms, 5 signals)
+
+N_30 = N_173 & N_46.Q & !N_45.Q
+    # N_168 & !N_46.Q & N_45.Q
+    # N_176 & !N_46.Q & !N_45.Q ; (3 pterms, 5 signals)
+
+N_31 = N_174 & N_46.Q & !N_45.Q
+    # N_169 & !N_46.Q & N_45.Q
+    # N_178 & !N_46.Q & !N_45.Q ; (3 pterms, 5 signals)
+
+N_32 = N_171 & N_46.Q & !N_45.Q
+    # N_170 & !N_46.Q & N_45.Q
+    # N_175 & !N_46.Q & !N_45.Q ; (3 pterms, 5 signals)
+
+N_45.D = !N_46.Q & N_45.Q
+    # N_46.Q & !N_45.Q ; (2 pterms, 2 signals)
+N_45.C = N_180.Q & N_181.Q & N_182.Q & N_183.Q & N_184.Q ; (1 pterm, 5 signals)
+
+N_46.D = !N_46.Q ; (1 pterm, 1 signal)
+N_46.C = N_180.Q & N_181.Q & N_182.Q & N_183.Q & N_184.Q ; (1 pterm, 5 signals)
+
+Point = !( !N_46.Q & !N_45.Q ) ; (1 pterm, 2 signals)
+
+START.D = CLOCK.Q & !START.Q & C0_q1.Q
+    # START.Q & !C0_q1.Q
+    # !CLOCK.Q & START.Q ; (3 pterms, 3 signals)
+START.C = clk2 ; (1 pterm, 1 signal)
+START.AP = 0 ; (0 pterm, 0 signal)
+
+a = N_29 & !N_30 & N_31 & N_32
+    # !N_29 & !N_30 & !N_31 & N_32
+    # N_30 & !N_31 & !N_32
+    # N_29 & N_30 & !N_31 ; (4 pterms, 4 signals)
+
+b = !N_29 & N_30 & !N_31 & N_32
+    # N_29 & N_31 & N_32
+    # N_30 & N_31 & !N_32
+    # N_29 & N_30 & !N_32 ; (4 pterms, 4 signals)
+
+c = !N_29 & !N_30 & N_31 & !N_32
+    # N_29 & N_30 & N_31
+    # N_29 & N_30 & !N_32 ; (3 pterms, 4 signals)
+
+d = N_29 & !N_30 & N_31 & !N_32
+    # !N_29 & N_30 & !N_31 & !N_32
+    # !N_29 & !N_30 & !N_31 & N_32
+    # N_30 & N_31 & N_32 ; (4 pterms, 4 signals)
+
+e = !N_29 & N_30 & !N_31
+    # !N_30 & !N_31 & N_32
+    # !N_29 & N_32 ; (3 pterms, 4 signals)
+
+f = N_29 & N_30 & !N_31
+    # !N_29 & !N_30 & N_31
+    # !N_29 & N_31 & N_32
+    # !N_29 & !N_30 & N_32 ; (4 pterms, 4 signals)
+
+g = !N_29 & N_30 & N_31 & N_32
+    # !N_29 & !N_30 & !N_31 ; (2 pterms, 4 signals)
+
+
+
+

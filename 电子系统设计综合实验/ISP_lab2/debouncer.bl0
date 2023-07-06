@@ -1,0 +1,161 @@
+#$ DATE Fri Apr 21 11:12:24 2023
+#$ TOOL EDIF2BLIF version IspLever 1.0 
+#$ MODULE debouncer
+#$ PINS 5 in clk reset out pulse1kHz
+#$ NODES 54 Timer_q_1_ Timer_q_2_ Timer_q_3_ Timer_q_4_ timer_done ControlInst_state_0_ ControlInst_state_1_ controlinst_n_29_n timer_n_22_n timer_n_23_n \
+#  timer_n_24_n timer_n_25_n timer_n_26_n timer_n_27_n timer_n_29_n timer_n_34_n controlinst_state_ns_0__n ControlInst_state_ns_1_0__m1 controlinst_state_ns_1_0__n_7_n ControlInst_state_ns_1_0__m5 \
+#  controlinst_n_29_i_n pulse1kHz_i un1_timer_i_3__n un1_timer_i_2__n un1_timer_i_0__n un1_timer_i_1__n timer_r_i_0_i_n reset_i timer_done_i controlinst_state_i_1__n \
+#  timer_n_24_i_0_n in_c clk_c reset_c pulse1kHz_c timer_n_34_i_n timer_n_18_i_n timer_n_22_0_n timer_n_23_0_n timer_n_29_i_n \
+#  timer_n_27_i_n timer_n_25_i_n timer_n_26_i_n timer_n_19_0_1_n timer_n_31_0_1_n timer_n_8_0_1_n timer_done_1 timer_done_2 timer_done_3 timer_n_34_1_n \
+#  timer_n_34_2_n controlinst_state_ns_1_0__m3_un3_n controlinst_state_ns_1_0__m3_un1_n controlinst_state_ns_1_0__m3_un0_n 
+.model debouncer
+.inputs in.BLIF clk.BLIF reset.BLIF pulse1kHz.BLIF Timer_q_1_.BLIF Timer_q_2_.BLIF Timer_q_3_.BLIF Timer_q_4_.BLIF timer_done.BLIF \
+  ControlInst_state_0_.BLIF ControlInst_state_1_.BLIF controlinst_n_29_n.BLIF timer_n_22_n.BLIF timer_n_23_n.BLIF timer_n_24_n.BLIF timer_n_25_n.BLIF timer_n_26_n.BLIF timer_n_27_n.BLIF \
+  timer_n_29_n.BLIF timer_n_34_n.BLIF controlinst_state_ns_0__n.BLIF ControlInst_state_ns_1_0__m1.BLIF controlinst_state_ns_1_0__n_7_n.BLIF ControlInst_state_ns_1_0__m5.BLIF controlinst_n_29_i_n.BLIF pulse1kHz_i.BLIF un1_timer_i_3__n.BLIF \
+  un1_timer_i_2__n.BLIF un1_timer_i_0__n.BLIF un1_timer_i_1__n.BLIF timer_r_i_0_i_n.BLIF reset_i.BLIF timer_done_i.BLIF controlinst_state_i_1__n.BLIF timer_n_24_i_0_n.BLIF in_c.BLIF \
+  clk_c.BLIF reset_c.BLIF pulse1kHz_c.BLIF timer_n_34_i_n.BLIF timer_n_18_i_n.BLIF timer_n_22_0_n.BLIF timer_n_23_0_n.BLIF timer_n_29_i_n.BLIF timer_n_27_i_n.BLIF \
+  timer_n_25_i_n.BLIF timer_n_26_i_n.BLIF timer_n_19_0_1_n.BLIF timer_n_31_0_1_n.BLIF timer_n_8_0_1_n.BLIF timer_done_1.BLIF timer_done_2.BLIF timer_done_3.BLIF timer_n_34_1_n.BLIF \
+  timer_n_34_2_n.BLIF controlinst_state_ns_1_0__m3_un3_n.BLIF controlinst_state_ns_1_0__m3_un1_n.BLIF controlinst_state_ns_1_0__m3_un0_n.BLIF  
+.outputs out Timer_q_3_.D Timer_q_3_.CE Timer_q_3_.C Timer_q_4_.D Timer_q_4_.CE Timer_q_4_.C Timer_q_1_.D Timer_q_1_.CE Timer_q_1_.C Timer_q_2_.D \
+  Timer_q_2_.CE Timer_q_2_.C ControlInst_state_0_.D ControlInst_state_0_.C ControlInst_state_1_.D ControlInst_state_1_.C ControlInst_state_ns_1_0__m5.X1 ControlInst_state_ns_1_0__m5.X2 ControlInst_state_ns_1_0__m1.X1 ControlInst_state_ns_1_0__m1.X2 timer_done \
+  controlinst_n_29_n timer_n_22_n timer_n_23_n timer_n_24_n timer_n_25_n timer_n_26_n timer_n_27_n timer_n_29_n timer_n_34_n controlinst_state_ns_0__n controlinst_state_ns_1_0__n_7_n \
+  controlinst_n_29_i_n pulse1kHz_i un1_timer_i_3__n un1_timer_i_2__n un1_timer_i_0__n un1_timer_i_1__n timer_r_i_0_i_n reset_i timer_done_i controlinst_state_i_1__n timer_n_24_i_0_n \
+  in_c clk_c reset_c pulse1kHz_c timer_n_34_i_n timer_n_18_i_n timer_n_22_0_n timer_n_23_0_n timer_n_29_i_n timer_n_27_i_n timer_n_25_i_n \
+  timer_n_26_i_n timer_n_19_0_1_n timer_n_31_0_1_n timer_n_8_0_1_n timer_done_1 timer_done_2 timer_done_3 timer_n_34_1_n timer_n_34_2_n controlinst_state_ns_1_0__m3_un3_n controlinst_state_ns_1_0__m3_un1_n \
+  controlinst_state_ns_1_0__m3_un0_n
+.names  in.BLIF in_c
+1 1
+.names  clk.BLIF clk_c
+1 1
+.names  reset.BLIF reset_c
+1 1
+.names  controlinst_n_29_i_n.BLIF out
+1 1
+.names  pulse1kHz.BLIF pulse1kHz_c
+1 1
+.names  timer_n_26_n.BLIF timer_n_26_i_n
+0 1
+.names  timer_n_18_i_n.BLIF timer_n_22_n.BLIF timer_n_19_0_1_n
+11 1
+.names  timer_n_19_0_1_n.BLIF timer_n_29_i_n.BLIF Timer_q_2_.D
+11 1
+.names  timer_n_27_i_n.BLIF timer_n_18_i_n.BLIF timer_n_31_0_1_n
+11 1
+.names  timer_n_31_0_1_n.BLIF timer_n_23_n.BLIF Timer_q_3_.D
+11 1
+.names  timer_n_18_i_n.BLIF timer_n_25_i_n.BLIF timer_n_8_0_1_n
+11 1
+.names  timer_n_8_0_1_n.BLIF timer_n_26_i_n.BLIF Timer_q_4_.D
+11 1
+.names  pulse1kHz_c.BLIF Timer_q_1_.BLIF timer_done_1
+11 1
+.names  Timer_q_4_.BLIF un1_timer_i_1__n.BLIF timer_done_2
+11 1
+.names  timer_done_1.BLIF timer_done_2.BLIF timer_done_3
+11 1
+.names  timer_done_3.BLIF un1_timer_i_2__n.BLIF timer_done
+11 1
+.names  Timer_q_1_.BLIF Timer_q_4_.BLIF timer_n_34_1_n
+11 1
+.names  un1_timer_i_1__n.BLIF un1_timer_i_2__n.BLIF timer_n_34_2_n
+11 1
+.names  timer_n_34_1_n.BLIF timer_n_34_2_n.BLIF timer_n_34_n
+11 1
+.names  timer_n_23_n.BLIF un1_timer_i_3__n.BLIF timer_n_25_n
+11 1
+.names  pulse1kHz_c.BLIF pulse1kHz_i
+0 1
+.names  ControlInst_state_0_.BLIF pulse1kHz_i.BLIF timer_n_24_n
+11 1
+.names  controlinst_n_29_n.BLIF controlinst_n_29_i_n
+0 1
+.names  timer_n_34_n.BLIF timer_n_34_i_n
+0 1
+.names  timer_n_22_0_n.BLIF timer_n_22_n
+0 1
+.names  timer_n_23_0_n.BLIF timer_n_23_n
+0 1
+.names  timer_n_29_n.BLIF timer_n_29_i_n
+0 1
+.names  timer_n_27_n.BLIF timer_n_27_i_n
+0 1
+.names  timer_n_25_n.BLIF timer_n_25_i_n
+0 1
+.names  ControlInst_state_ns_1_0__m5.BLIF reset_i.BLIF ControlInst_state_1_.D
+11 1
+.names  reset_c.BLIF reset_i
+0 1
+.names  controlinst_state_ns_0__n.BLIF reset_i.BLIF ControlInst_state_0_.D
+11 1
+.names  timer_n_22_0_n.BLIF Timer_q_3_.BLIF timer_n_23_0_n
+11 1
+.names  Timer_q_1_.BLIF Timer_q_2_.BLIF timer_n_22_0_n
+11 1
+.names  ControlInst_state_0_.BLIF timer_r_i_0_i_n
+0 1
+.names  timer_n_34_i_n.BLIF ControlInst_state_0_.BLIF timer_n_18_i_n
+11 1
+.names  Timer_q_2_.BLIF un1_timer_i_1__n
+0 1
+.names  un1_timer_i_0__n.BLIF un1_timer_i_1__n.BLIF timer_n_29_n
+11 1
+.names  Timer_q_1_.BLIF un1_timer_i_0__n
+0 1
+.names  timer_n_18_i_n.BLIF un1_timer_i_0__n.BLIF Timer_q_1_.D
+11 1
+.names  Timer_q_3_.BLIF un1_timer_i_2__n
+0 1
+.names  timer_n_22_n.BLIF un1_timer_i_2__n.BLIF timer_n_27_n
+11 1
+.names  timer_n_23_0_n.BLIF Timer_q_4_.BLIF timer_n_26_n
+11 1
+.names  Timer_q_4_.BLIF un1_timer_i_3__n
+0 1
+.names  timer_n_24_n.BLIF timer_n_24_i_0_n
+0 1
+.names  ControlInst_state_1_.BLIF controlinst_state_i_1__n
+0 1
+.names  controlinst_state_i_1__n.BLIF timer_r_i_0_i_n.BLIF controlinst_n_29_n
+11 1
+.names  timer_done.BLIF timer_done_i
+0 1
+.names  ControlInst_state_0_.BLIF controlinst_state_ns_1_0__m3_un3_n
+0 1
+.names  timer_done_i.BLIF ControlInst_state_0_.BLIF controlinst_state_ns_1_0__m3_un1_n
+11 1
+.names  ControlInst_state_ns_1_0__m1.BLIF controlinst_state_ns_1_0__m3_un3_n.BLIF controlinst_state_ns_1_0__m3_un0_n
+11 1
+.names  controlinst_state_ns_1_0__m3_un1_n.BLIF controlinst_state_ns_1_0__m3_un0_n.BLIF controlinst_state_ns_0__n
+1- 1
+-1 1
+.names  ControlInst_state_0_.BLIF timer_done.BLIF controlinst_state_ns_1_0__n_7_n
+11 1
+.names  timer_n_24_i_0_n.BLIF Timer_q_3_.CE
+1 1
+.names  clk_c.BLIF Timer_q_3_.C
+1 1
+.names  timer_n_24_i_0_n.BLIF Timer_q_4_.CE
+1 1
+.names  clk_c.BLIF Timer_q_4_.C
+1 1
+.names  timer_n_24_i_0_n.BLIF Timer_q_1_.CE
+1 1
+.names  clk_c.BLIF Timer_q_1_.C
+1 1
+.names  timer_n_24_i_0_n.BLIF Timer_q_2_.CE
+1 1
+.names  clk_c.BLIF Timer_q_2_.C
+1 1
+.names  clk_c.BLIF ControlInst_state_0_.C
+1 1
+.names  clk_c.BLIF ControlInst_state_1_.C
+1 1
+.names  ControlInst_state_1_.BLIF ControlInst_state_ns_1_0__m5.X1
+1 1
+.names  controlinst_state_ns_1_0__n_7_n.BLIF ControlInst_state_ns_1_0__m5.X2
+1 1
+.names  ControlInst_state_1_.BLIF ControlInst_state_ns_1_0__m1.X1
+1 1
+.names  in_c.BLIF ControlInst_state_ns_1_0__m1.X2
+1 1
+.end

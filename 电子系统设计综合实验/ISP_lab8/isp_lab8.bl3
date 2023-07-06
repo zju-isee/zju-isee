@@ -1,0 +1,2181 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Mon May 01 16:57:01 2023
+#$ MODULE isp_lab8
+#$ PINS 21 key_out_3_ key_in_3_ clk reset LED_A LED_B LED_C LED_D LED_E LED_F LED_G \
+#  LED_VCC1 LED_VCC2 LED_VCC3 LED_VCC4 key_out_2_ key_out_1_ key_out_0_ key_in_2_ \
+#  key_in_1_ key_in_0_
+#$ NODES 78 clkGenerator_scancnt_0_ clkGenerator_scancnt_1_ clk_1kHz \
+#  scanButtonsInst_led_int_Data2_0_ scanButtonsInst_led_int_Data2_1_ \
+#  scanButtonsInst_led_int_Data2_2_ ledscaninst_n_137_n \
+#  scanButtonsInst_un1_int_Data0_1_i_1_ scanButtonsInst_key_out_0_reg \
+#  scanButtonsInst_key_out_1_reg scanButtonsInst_key_out_2_reg \
+#  scanButtonsInst_flag_Cal_0_ scanButtonsInst_key_out_3_reg \
+#  scanButtonsInst_flag_Cal_1_ scanButtonsInst_int_Data1_0_ \
+#  scanButtonsInst_int_Data1_1_ scanbuttonsinst_n_52_i_1_n \
+#  scanButtonsInst_int_Data1_2_ scanButtonsInst_int_Data1_3_ \
+#  scanButtonsInst_int_Data0_0_ scanButtonsInst_int_Data0_1_ \
+#  scanButtonsInst_int_Data0_2_ scanButtonsInst_int_Data0_3_ \
+#  scanbuttonsinst_led_int_data18_n LEDscanInst_LED_Areg \
+#  scanButtonsInst_int_Data_0_ scanButtonsInst_int_Data_1_ LEDscanInst_LED_Breg \
+#  scanButtonsInst_int_Data_2_ scanButtonsInst_int_Data_3_ LEDscanInst_LED_Creg \
+#  scanButtonsInst_int_Data_4_ LEDscanInst_LED_Dreg scanButtonsInst_flag_Data_0_ \
+#  scanButtonsInst_flag_Data_1_ LEDscanInst_LED_Ereg scanButtonsInst_scanvalue_0_ \
+#  scanButtonsInst_scanvalue_1_ LEDscanInst_LED_Freg LEDscanInst_LED_Greg \
+#  LEDscanInst_LED_VCC1reg LEDscanInst_LED_VCC2reg scanbuttonsinst_n_387_n \
+#  scanbuttonsinst_n_388_n LEDscanInst_LED_VCC3reg LEDscanInst_LED_VCC4reg \
+#  ledscaninst_n_175_0_n ledscaninst_n_63_0_n scanbuttonsinst_n_737_i_n \
+#  scanbuttonsinst_n_79_i_n scanbuttonsinst_n_736_i_n \
+#  clkGenerator_FreqDivide_1_q_1_ clkGenerator_FreqDivide_1_q_2_ \
+#  clkGenerator_FreqDivide_1_q_3_ clkGenerator_FreqDivide_1_q_4_ \
+#  clkGenerator_FreqDivide_1_q_5_ clkGenerator_FreqDivide_1_q_6_ \
+#  clkGenerator_FreqDivide_1_q_7_ clkGenerator_FreqDivide_1_q_8_ \
+#  clkGenerator_FreqDivide_1_q_9_ clkGenerator_FreqDivide_1_q_10_ \
+#  clkGenerator_FreqDivide_1_q_11_ clkGenerator_FreqDivide_1_q_12_ \
+#  clkGenerator_FreqDivide_1_q_13_ clkGenerator_FreqDivide_2_q_1_ \
+#  clkGenerator_FreqDivide_2_q_2_ clkGenerator_FreqDivide_2_q_3_ \
+#  clkGenerator_FreqDivide_2_q_4_ scanbuttonsinst_n_37_i_n scanbuttonsinst_n_35_i_n \
+#  scanbuttonsinst_un1_key_in_4_0_n scanbuttonsinst_n_21_i_n \
+#  scanbuttonsinst_un1_int_data0_i_n clkgenerator_freqdivide_1_q_c7_n \
+#  clkgenerator_freqdivide_1_q_c3_n data0_2__n scanbuttonsinst_n_395_0_n \
+#  scanbuttonsinst_n_391_i_n
+.model toplevel
+.inputs key_in_3_.BLIF clk.BLIF reset.BLIF key_in_2_.BLIF key_in_1_.BLIF \
+key_in_0_.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+clk_1kHz.BLIF scanButtonsInst_led_int_Data2_0_.BLIF \
+scanButtonsInst_led_int_Data2_1_.BLIF scanButtonsInst_led_int_Data2_2_.BLIF \
+ledscaninst_n_137_n.BLIF scanButtonsInst_un1_int_Data0_1_i_1_.BLIF \
+scanButtonsInst_key_out_0_reg.BLIF scanButtonsInst_key_out_1_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_flag_Cal_0_.BLIF \
+scanButtonsInst_key_out_3_reg.BLIF scanButtonsInst_flag_Cal_1_.BLIF \
+scanButtonsInst_int_Data1_0_.BLIF scanButtonsInst_int_Data1_1_.BLIF \
+scanbuttonsinst_n_52_i_1_n.BLIF scanButtonsInst_int_Data1_2_.BLIF \
+scanButtonsInst_int_Data1_3_.BLIF scanButtonsInst_int_Data0_0_.BLIF \
+scanButtonsInst_int_Data0_1_.BLIF scanButtonsInst_int_Data0_2_.BLIF \
+scanButtonsInst_int_Data0_3_.BLIF scanbuttonsinst_led_int_data18_n.BLIF \
+LEDscanInst_LED_Areg.BLIF scanButtonsInst_int_Data_0_.BLIF \
+scanButtonsInst_int_Data_1_.BLIF LEDscanInst_LED_Breg.BLIF \
+scanButtonsInst_int_Data_2_.BLIF scanButtonsInst_int_Data_3_.BLIF \
+LEDscanInst_LED_Creg.BLIF scanButtonsInst_int_Data_4_.BLIF \
+LEDscanInst_LED_Dreg.BLIF scanButtonsInst_flag_Data_0_.BLIF \
+scanButtonsInst_flag_Data_1_.BLIF LEDscanInst_LED_Ereg.BLIF \
+scanButtonsInst_scanvalue_0_.BLIF scanButtonsInst_scanvalue_1_.BLIF \
+LEDscanInst_LED_Freg.BLIF LEDscanInst_LED_Greg.BLIF \
+LEDscanInst_LED_VCC1reg.BLIF LEDscanInst_LED_VCC2reg.BLIF \
+scanbuttonsinst_n_387_n.BLIF scanbuttonsinst_n_388_n.BLIF \
+LEDscanInst_LED_VCC3reg.BLIF LEDscanInst_LED_VCC4reg.BLIF \
+ledscaninst_n_175_0_n.BLIF ledscaninst_n_63_0_n.BLIF \
+scanbuttonsinst_n_737_i_n.BLIF scanbuttonsinst_n_79_i_n.BLIF \
+scanbuttonsinst_n_736_i_n.BLIF clkGenerator_FreqDivide_1_q_1_.BLIF \
+clkGenerator_FreqDivide_1_q_2_.BLIF clkGenerator_FreqDivide_1_q_3_.BLIF \
+clkGenerator_FreqDivide_1_q_4_.BLIF clkGenerator_FreqDivide_1_q_5_.BLIF \
+clkGenerator_FreqDivide_1_q_6_.BLIF clkGenerator_FreqDivide_1_q_7_.BLIF \
+clkGenerator_FreqDivide_1_q_8_.BLIF clkGenerator_FreqDivide_1_q_9_.BLIF \
+clkGenerator_FreqDivide_1_q_10_.BLIF clkGenerator_FreqDivide_1_q_11_.BLIF \
+clkGenerator_FreqDivide_1_q_12_.BLIF clkGenerator_FreqDivide_1_q_13_.BLIF \
+clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanbuttonsinst_n_37_i_n.BLIF scanbuttonsinst_n_35_i_n.BLIF \
+scanbuttonsinst_un1_key_in_4_0_n.BLIF scanbuttonsinst_n_21_i_n.BLIF \
+scanbuttonsinst_un1_int_data0_i_n.BLIF clkgenerator_freqdivide_1_q_c7_n.BLIF \
+clkgenerator_freqdivide_1_q_c3_n.BLIF data0_2__n.BLIF \
+scanbuttonsinst_n_395_0_n.BLIF scanbuttonsinst_n_391_i_n.BLIF
+.outputs key_out_3_ LED_A LED_B LED_C LED_D LED_E LED_F LED_G LED_VCC1 \
+LED_VCC2 LED_VCC3 LED_VCC4 key_out_2_ key_out_1_ key_out_0_ \
+clkGenerator_FreqDivide_1_q_11_.CE clkGenerator_FreqDivide_1_q_11_.C \
+clkGenerator_FreqDivide_1_q_12_.CE clkGenerator_FreqDivide_1_q_12_.C \
+clkGenerator_FreqDivide_1_q_13_.CE clkGenerator_FreqDivide_1_q_13_.C \
+clkGenerator_FreqDivide_1_q_9_.D clkGenerator_FreqDivide_1_q_9_.CE \
+clkGenerator_FreqDivide_1_q_9_.C clkGenerator_FreqDivide_1_q_10_.D \
+clkGenerator_FreqDivide_1_q_10_.CE clkGenerator_FreqDivide_1_q_10_.C \
+clkGenerator_FreqDivide_1_q_6_.D clkGenerator_FreqDivide_1_q_6_.CE \
+clkGenerator_FreqDivide_1_q_6_.C clkGenerator_FreqDivide_1_q_7_.CE \
+clkGenerator_FreqDivide_1_q_7_.C clkGenerator_FreqDivide_1_q_8_.CE \
+clkGenerator_FreqDivide_1_q_8_.C clkGenerator_FreqDivide_1_q_4_.D \
+clkGenerator_FreqDivide_1_q_4_.CE clkGenerator_FreqDivide_1_q_4_.C \
+clkGenerator_FreqDivide_1_q_5_.D clkGenerator_FreqDivide_1_q_5_.CE \
+clkGenerator_FreqDivide_1_q_5_.C clkGenerator_FreqDivide_1_q_1_.D \
+clkGenerator_FreqDivide_1_q_1_.CE clkGenerator_FreqDivide_1_q_1_.C \
+clkGenerator_FreqDivide_1_q_2_.D clkGenerator_FreqDivide_1_q_2_.CE \
+clkGenerator_FreqDivide_1_q_2_.C clkGenerator_FreqDivide_1_q_3_.D \
+clkGenerator_FreqDivide_1_q_3_.CE clkGenerator_FreqDivide_1_q_3_.C \
+clkGenerator_FreqDivide_2_q_4_.D clkGenerator_FreqDivide_2_q_4_.CE \
+clkGenerator_FreqDivide_2_q_4_.C clkGenerator_FreqDivide_2_q_1_.D \
+clkGenerator_FreqDivide_2_q_1_.CE clkGenerator_FreqDivide_2_q_1_.C \
+clkGenerator_FreqDivide_2_q_2_.D clkGenerator_FreqDivide_2_q_2_.CE \
+clkGenerator_FreqDivide_2_q_2_.C clkGenerator_FreqDivide_2_q_3_.D \
+clkGenerator_FreqDivide_2_q_3_.CE clkGenerator_FreqDivide_2_q_3_.C \
+clkGenerator_scancnt_0_.D clkGenerator_scancnt_0_.C clkGenerator_scancnt_1_.D \
+clkGenerator_scancnt_1_.C scanButtonsInst_scanvalue_0_.D \
+scanButtonsInst_scanvalue_0_.C scanButtonsInst_scanvalue_0_.AR \
+scanButtonsInst_scanvalue_1_.D scanButtonsInst_scanvalue_1_.C \
+scanButtonsInst_scanvalue_1_.AR scanButtonsInst_flag_Data_0_.D \
+scanButtonsInst_flag_Data_0_.C scanButtonsInst_flag_Data_0_.AR \
+scanButtonsInst_flag_Data_1_.C scanButtonsInst_flag_Data_1_.AR \
+scanButtonsInst_int_Data1_2_.D scanButtonsInst_int_Data1_2_.CE \
+scanButtonsInst_int_Data1_2_.C scanButtonsInst_int_Data1_2_.AR \
+scanButtonsInst_int_Data1_3_.D scanButtonsInst_int_Data1_3_.CE \
+scanButtonsInst_int_Data1_3_.C scanButtonsInst_int_Data1_3_.AR \
+scanButtonsInst_int_Data0_0_.D scanButtonsInst_int_Data0_0_.CE \
+scanButtonsInst_int_Data0_0_.C scanButtonsInst_int_Data0_0_.AR \
+scanButtonsInst_int_Data0_1_.D scanButtonsInst_int_Data0_1_.CE \
+scanButtonsInst_int_Data0_1_.C scanButtonsInst_int_Data0_1_.AR \
+scanButtonsInst_int_Data0_2_.D scanButtonsInst_int_Data0_2_.CE \
+scanButtonsInst_int_Data0_2_.C scanButtonsInst_int_Data0_2_.AR \
+scanButtonsInst_int_Data0_3_.D scanButtonsInst_int_Data0_3_.CE \
+scanButtonsInst_int_Data0_3_.C scanButtonsInst_int_Data0_3_.AR \
+scanButtonsInst_flag_Cal_0_.D scanButtonsInst_flag_Cal_0_.CE \
+scanButtonsInst_flag_Cal_0_.C scanButtonsInst_flag_Cal_0_.AR \
+scanButtonsInst_flag_Cal_1_.D scanButtonsInst_flag_Cal_1_.CE \
+scanButtonsInst_flag_Cal_1_.C scanButtonsInst_flag_Cal_1_.AR \
+scanButtonsInst_key_out_0_reg.D scanButtonsInst_key_out_0_reg.CE \
+scanButtonsInst_key_out_0_reg.C scanButtonsInst_key_out_1_reg.D \
+scanButtonsInst_key_out_1_reg.CE scanButtonsInst_key_out_1_reg.C \
+scanButtonsInst_key_out_2_reg.D scanButtonsInst_key_out_2_reg.CE \
+scanButtonsInst_key_out_2_reg.C scanButtonsInst_key_out_3_reg.D \
+scanButtonsInst_key_out_3_reg.CE scanButtonsInst_key_out_3_reg.C \
+scanButtonsInst_int_Data_1_.D scanButtonsInst_int_Data_1_.CE \
+scanButtonsInst_int_Data_1_.C scanButtonsInst_int_Data_1_.AR \
+scanButtonsInst_int_Data_2_.CE scanButtonsInst_int_Data_2_.C \
+scanButtonsInst_int_Data_2_.AR scanButtonsInst_int_Data_3_.D \
+scanButtonsInst_int_Data_3_.CE scanButtonsInst_int_Data_3_.C \
+scanButtonsInst_int_Data_3_.AR scanButtonsInst_int_Data_4_.D \
+scanButtonsInst_int_Data_4_.CE scanButtonsInst_int_Data_4_.C \
+scanButtonsInst_int_Data_4_.AR scanButtonsInst_led_int_Data2_0_.D \
+scanButtonsInst_led_int_Data2_0_.CE scanButtonsInst_led_int_Data2_0_.C \
+scanButtonsInst_led_int_Data2_0_.AR scanButtonsInst_led_int_Data2_1_.D \
+scanButtonsInst_led_int_Data2_1_.CE scanButtonsInst_led_int_Data2_1_.C \
+scanButtonsInst_led_int_Data2_1_.AP scanButtonsInst_led_int_Data2_2_.D \
+scanButtonsInst_led_int_Data2_2_.CE scanButtonsInst_led_int_Data2_2_.C \
+scanButtonsInst_led_int_Data2_2_.AR scanButtonsInst_int_Data1_0_.D \
+scanButtonsInst_int_Data1_0_.CE scanButtonsInst_int_Data1_0_.C \
+scanButtonsInst_int_Data1_0_.AR scanButtonsInst_int_Data1_1_.D \
+scanButtonsInst_int_Data1_1_.CE scanButtonsInst_int_Data1_1_.C \
+scanButtonsInst_int_Data1_1_.AR scanButtonsInst_int_Data_0_.D \
+scanButtonsInst_int_Data_0_.CE scanButtonsInst_int_Data_0_.C \
+scanButtonsInst_int_Data_0_.AR LEDscanInst_LED_Areg.D LEDscanInst_LED_Areg.C \
+LEDscanInst_LED_Breg.D LEDscanInst_LED_Breg.C LEDscanInst_LED_Creg.D \
+LEDscanInst_LED_Creg.C LEDscanInst_LED_Dreg.D LEDscanInst_LED_Dreg.C \
+LEDscanInst_LED_Ereg.D LEDscanInst_LED_Ereg.C LEDscanInst_LED_Freg.D \
+LEDscanInst_LED_Freg.C LEDscanInst_LED_Greg.D LEDscanInst_LED_Greg.C \
+LEDscanInst_LED_VCC3reg.D LEDscanInst_LED_VCC3reg.C LEDscanInst_LED_VCC1reg.D \
+LEDscanInst_LED_VCC1reg.C LEDscanInst_LED_VCC2reg.D LEDscanInst_LED_VCC2reg.C \
+LEDscanInst_LED_VCC4reg.D LEDscanInst_LED_VCC4reg.C clk_1kHz \
+ledscaninst_n_137_n scanbuttonsinst_n_52_i_1_n \
+scanbuttonsinst_led_int_data18_n scanbuttonsinst_n_387_n \
+scanbuttonsinst_n_388_n ledscaninst_n_175_0_n ledscaninst_n_63_0_n \
+scanbuttonsinst_n_737_i_n scanbuttonsinst_n_736_i_n \
+scanbuttonsinst_un1_key_in_4_0_n clkgenerator_freqdivide_1_q_c7_n \
+clkgenerator_freqdivide_1_q_c3_n data0_2__n scanbuttonsinst_n_395_0_n \
+scanbuttonsinst_n_391_i_n scanButtonsInst_un1_int_Data0_1_i_1_ \
+scanButtonsInst_int_Data_2_.D.X1 scanButtonsInst_int_Data_2_.D.X2 \
+scanButtonsInst_flag_Data_1_.D.X1 scanButtonsInst_flag_Data_1_.D.X2 \
+scanbuttonsinst_n_79_i_n.X1 scanbuttonsinst_n_79_i_n.X2 \
+clkGenerator_FreqDivide_1_q_7_.D.X1 clkGenerator_FreqDivide_1_q_7_.D.X2 \
+clkGenerator_FreqDivide_1_q_8_.D.X1 clkGenerator_FreqDivide_1_q_8_.D.X2 \
+clkGenerator_FreqDivide_1_q_11_.D.X1 clkGenerator_FreqDivide_1_q_11_.D.X2 \
+clkGenerator_FreqDivide_1_q_12_.D.X1 clkGenerator_FreqDivide_1_q_12_.D.X2 \
+clkGenerator_FreqDivide_1_q_13_.D.X1 clkGenerator_FreqDivide_1_q_13_.D.X2 \
+scanbuttonsinst_n_37_i_n.X1 scanbuttonsinst_n_37_i_n.X2 \
+scanbuttonsinst_n_35_i_n.X1 scanbuttonsinst_n_35_i_n.X2 \
+scanbuttonsinst_n_21_i_n.X1 scanbuttonsinst_n_21_i_n.X2 \
+scanbuttonsinst_un1_int_data0_i_n.X1 scanbuttonsinst_un1_int_data0_i_n.X2
+.names clkGenerator_FreqDivide_1_q_1_.BLIF clkGenerator_FreqDivide_1_q_1_.D
+0 1
+1 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_1_.D
+0 1
+1 0
+.names clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+clkGenerator_scancnt_0_.D
+00 1
+11 1
+10 0
+01 0
+.names scanButtonsInst_scanvalue_0_.BLIF scanButtonsInst_scanvalue_1_.BLIF \
+scanButtonsInst_scanvalue_1_.D
+10 1
+01 1
+00 0
+11 0
+.names key_in_3_.BLIF key_in_2_.BLIF key_in_1_.BLIF key_in_0_.BLIF \
+scanButtonsInst_key_out_0_reg.BLIF scanButtonsInst_key_out_1_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_key_out_3_reg.BLIF \
+scanButtonsInst_flag_Data_0_.BLIF scanButtonsInst_flag_Data_1_.BLIF \
+scanButtonsInst_flag_Data_0_.D
+0-------11 1
+0100--10-- 1
+0010--10-- 1
+0100-1-0-- 1
+0010-1-0-- 1
+01001--0-- 1
+00101--0-- 1
+0001---1-- 1
+0001--1--- 1
+0001-1---- 1
+00011----- 1
+1-1-----1- 1
+11------1- 1
+------001- 1
+000-----1- 1
+-11-----1- 1
+---1----1- 1
+---0---10- 0
+----00000- 0
+0100---1-0 0
+0010---1-0 0
+1000--1--- 0
+1000---1-- 0
+-000----0- 0
+--11----0- 0
+-1-1----0- 0
+-11-----0- 0
+1-------0- 0
+.names key_in_3_.BLIF key_in_2_.BLIF key_in_0_.BLIF \
+scanButtonsInst_key_out_0_reg.BLIF scanButtonsInst_key_out_1_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_int_Data0_1_.D
+0-01-- 1
+-1--1- 1
+--1--1 1
+--000- 0
+1-0-0- 0
+-000-- 0
+100--- 0
+--1-00 0
+-01--0 0
+.names scanButtonsInst_scanvalue_0_.BLIF scanButtonsInst_scanvalue_1_.BLIF \
+scanButtonsInst_key_out_0_reg.D
+00 1
+1- 0
+-1 0
+.names scanButtonsInst_scanvalue_0_.BLIF scanButtonsInst_scanvalue_1_.BLIF \
+scanButtonsInst_key_out_3_reg.D
+11 1
+0- 0
+-0 0
+.names key_in_1_.BLIF key_in_0_.BLIF scanButtonsInst_key_out_0_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_key_out_3_reg.BLIF \
+scanButtonsInst_int_Data1_1_.BLIF scanButtonsInst_int_Data0_1_.BLIF \
+scanbuttonsinst_n_736_i_n.BLIF scanbuttonsinst_n_395_0_n.BLIF \
+scanButtonsInst_int_Data_1_.D
+00--10000 1
+00--11100 1
+00--11010 1
+00--10110 1
+00--11001 1
+00--10101 1
+00--10011 1
+00--11111 1
+-01-10000 1
+-01-11100 1
+-01-11010 1
+-01-10110 1
+-01-11001 1
+-01-10101 1
+-01-10011 1
+-01-11111 1
+-0100---- 1
+00-00---- 1
+-111----- 1
+01-1----- 1
+-0--11000 0
+-0--10100 0
+-0--10010 0
+-0--11110 0
+-0--10001 0
+-0--11101 0
+-0--11011 0
+-0--10111 0
+-0-10---- 0
+-1-0----- 0
+1-0------ 0
+.names key_in_3_.BLIF key_in_2_.BLIF key_in_1_.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_key_out_3_reg.BLIF \
+scanButtonsInst_int_Data1_3_.BLIF scanButtonsInst_int_Data0_3_.BLIF \
+scanbuttonsinst_n_736_i_n.BLIF scanbuttonsinst_n_391_i_n.BLIF \
+scanButtonsInst_int_Data_3_.D
+1---10000 1
+1---11100 1
+1---11010 1
+1---10110 1
+1---11001 1
+1---10101 1
+1---10011 1
+1---11111 1
+--11----- 1
+-1-1----- 1
+-00--1000 0
+-00--0100 0
+-00--0010 0
+-00--1110 0
+-00--0001 0
+-00--1101 0
+-00--1011 0
+-00--0111 0
+---0-1000 0
+---0-0100 0
+---0-0010 0
+---0-1110 0
+---0-0001 0
+---0-1101 0
+---0-1011 0
+---0-0111 0
+-00-0---- 0
+000------ 0
+---00---- 0
+0--0----- 0
+.names key_in_3_.BLIF scanButtonsInst_key_out_3_reg.BLIF \
+scanButtonsInst_flag_Cal_1_.BLIF scanButtonsInst_int_Data1_3_.BLIF \
+scanButtonsInst_int_Data0_3_.BLIF scanbuttonsinst_n_391_i_n.BLIF \
+scanButtonsInst_int_Data_4_.D
+111001 1
+110-10 1
+1101-0 1
+11-111 1
+---101 0
+---011 0
+--000- 0
+--1--0 0
+-0---- 0
+0----- 0
+.names key_in_3_.BLIF key_in_2_.BLIF key_in_1_.BLIF key_in_0_.BLIF \
+scanButtonsInst_key_out_3_reg.BLIF scanbuttonsinst_n_736_i_n.BLIF \
+scanbuttonsinst_un1_int_data0_i_n.BLIF scanButtonsInst_led_int_Data2_0_.D
+1000110 1
+-----0- 0
+----0-- 0
+---1--- 0
+--1---- 0
+-1----- 0
+0------ 0
+------1 0
+.names scanButtonsInst_led_int_Data2_2_.D
+ 0
+.names key_in_3_.BLIF key_in_1_.BLIF key_in_0_.BLIF \
+scanButtonsInst_key_out_0_reg.BLIF scanButtonsInst_key_out_1_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_int_Data1_1_.D
+000-1- 1
+0-01-- 1
+001--1 1
+0--1-1 1
+--000- 0
+-1-0-- 0
+--1--0 0
+1----- 0
+.names key_in_3_.BLIF key_in_1_.BLIF scanButtonsInst_key_out_0_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_key_out_3_reg.BLIF \
+scanButtonsInst_int_Data1_0_.BLIF scanButtonsInst_int_Data0_0_.BLIF \
+scanButtonsInst_int_Data_0_.D
+1---110 1
+1---101 1
+-100--- 1
+00-1--- 1
+001---- 1
+10---00 0
+10---11 0
+1-1--00 0
+1-1--11 0
+1--1-00 0
+1--1-11 0
+10--0-- 0
+1-1-0-- 0
+1--10-- 0
+0000--- 0
+01-1--- 0
+011---- 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+scanButtonsInst_led_int_Data2_0_.BLIF scanButtonsInst_led_int_Data2_1_.BLIF \
+scanButtonsInst_led_int_Data2_2_.BLIF ledscaninst_n_137_n.BLIF \
+scanbuttonsinst_led_int_data18_n.BLIF scanButtonsInst_int_Data_0_.BLIF \
+scanButtonsInst_int_Data_1_.BLIF scanButtonsInst_int_Data_2_.BLIF \
+scanButtonsInst_int_Data_3_.BLIF ledscaninst_n_63_0_n.BLIF data0_2__n.BLIF \
+LEDscanInst_LED_Areg.D
+--0---01--101- 1
+--0---0--0011- 1
+--0----1-1-01- 1
+--0----101--1- 1
+--1--0-1-1--1- 1
+--1-1--1-1--1- 1
+--10---1-1--1- 1
+--0----0-0-11- 1
+--0----000--1- 1
+--1--0-0-0--1- 1
+--1-1--0-0--1- 1
+--10---0-0--1- 1
+--0---00---11- 1
+-1-----1-1--1- 1
+-1-----0-0--1- 1
+--0----1-1--10 1
+--0----0-0--10 1
+--0---0-0---1- 1
+--1--00-----1- 1
+--1-1-0-----1- 1
+--10--0-----1- 1
+-1----0-----1- 1
+--0---0-----10 1
+0-----------1- 1
+100-----1000-1 0
+100----11-11-1 0
+101101-------- 0
+100----111-1-1 0
+100----01--0-1 0
+1-----10-1---- 0
+1-----11-0---- 0
+------------0- 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+scanButtonsInst_led_int_Data2_0_.BLIF scanButtonsInst_led_int_Data2_1_.BLIF \
+scanButtonsInst_led_int_Data2_2_.BLIF ledscaninst_n_137_n.BLIF \
+scanbuttonsinst_led_int_data18_n.BLIF scanButtonsInst_int_Data_0_.BLIF \
+scanButtonsInst_int_Data_1_.BLIF scanButtonsInst_int_Data_2_.BLIF \
+scanButtonsInst_int_Data_3_.BLIF data0_2__n.BLIF LEDscanInst_LED_Breg.D
+1-11-1-1-0--1 1
+1--1-1-001--1 1
+100----11-101 1
+100-----11-11 1
+1-1-1--1-0--1 1
+1---1--001--1 1
+1-11-1--1---1 1
+100-----1-011 1
+-00---0-0---1 1
+1-1-1---1---1 1
+-00---01-010- 1
+-00---01-001- 1
+-00---0100--- 1
+100----100--1 1
+100----111--1 1
+--0---00-1-1- 1
+--0---0001--- 1
+111----1-0--1 1
+--11-10------ 1
+1-0----010--1 1
+1-0----001--1 1
+111-----1---1 1
+11-----0-1--1 1
+--1-1-0------ 1
+-1----00----- 1
+-11---0------ 1
+0-----0------ 1
+1-0----11011- 0
+100----011-0- 0
+1-0----11000- 0
+101-00------- 0
+10100-------- 0
+------1000--- 0
+------1101--- 0
+100----0-0--0 0
+110----1----- 0
+1-0----1-1--0 0
+0-----1------ 0
+------1-----0 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+scanButtonsInst_led_int_Data2_1_.BLIF ledscaninst_n_137_n.BLIF \
+scanbuttonsinst_led_int_data18_n.BLIF scanButtonsInst_int_Data_0_.BLIF \
+scanButtonsInst_int_Data_1_.BLIF scanButtonsInst_int_Data_2_.BLIF \
+scanButtonsInst_int_Data_3_.BLIF data0_2__n.BLIF LEDscanInst_LED_Creg.D
+-00-01--101 1
+-00-0--0011 1
+-00--1-0100 1
+-00--1-0010 1
+-00-01-1-01 1
+-00--100--0 1
+--0--001--0 1
+--0--0-1-10 1
+--0-00---11 1
+-00-0-0---1 1
+--110------ 1
+-11-0------ 1
+-1--00----- 1
+--11------0 1
+-11-------0 1
+-1---0----0 1
+0---0------ 1
+0---------0 1
+100---1000- 0
+1-0--11-11- 0
+1-0--111-1- 0
+100--01--0- 0
+100--0-0--0 0
+1010------- 0
+1-0--1-1--0 0
+110--1----- 0
+----1-----1 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+scanButtonsInst_led_int_Data2_0_.BLIF scanButtonsInst_led_int_Data2_1_.BLIF \
+scanButtonsInst_led_int_Data2_2_.BLIF ledscaninst_n_137_n.BLIF \
+scanbuttonsinst_led_int_data18_n.BLIF scanButtonsInst_int_Data_0_.BLIF \
+scanButtonsInst_int_Data_1_.BLIF scanButtonsInst_int_Data_3_.BLIF \
+ledscaninst_n_175_0_n.BLIF ledscaninst_n_63_0_n.BLIF data0_2__n.BLIF \
+LEDscanInst_LED_Dreg.D
+--10---0-0-11- 1
+--10---1-1-11- 1
+--1-1--0-0-11- 1
+--1-1--1-1-11- 1
+--0---0----110 1
+--1--0-0-0-11- 1
+--1--0-1-1-11- 1
+--0----1--0111 1
+--0------01111 1
+--0----0-1-111 1
+---0--0----110 1
+--10-------111 1
+----1-0----110 1
+--1-1------111 1
+--0-----0--111 1
+-----00----110 1
+--1--0-----111 1
+--0----0-0-110 1
+-1-----0-0--1- 1
+--0----1-1-110 1
+-1-----1-1--1- 1
+-1----0-----1- 1
+0-----------1- 1
+-1----------11 1
+100----0100--1 0
+100----1111--1 0
+101101-------- 0
+1-----11-0---0 0
+1-----10-1---0 0
+10---------0-- 0
+------------0- 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+scanButtonsInst_led_int_Data2_0_.BLIF scanButtonsInst_led_int_Data2_1_.BLIF \
+scanButtonsInst_led_int_Data2_2_.BLIF scanbuttonsinst_led_int_data18_n.BLIF \
+scanButtonsInst_int_Data_0_.BLIF scanButtonsInst_int_Data_1_.BLIF \
+ledscaninst_n_175_0_n.BLIF data0_2__n.BLIF LEDscanInst_LED_Ereg.D
+--0---1-01- 1
+--0---0-11- 1
+--0----1-1- 1
+--1--1---1- 1
+--1-1----1- 1
+--11-----1- 1
+--0------11 1
+-1--------- 1
+0---------- 1
+100---000-0 0
+100---101-0 0
+101000----- 0
+10-------0- 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+scanButtonsInst_led_int_Data2_1_.BLIF scanButtonsInst_led_int_Data2_2_.BLIF \
+ledscaninst_n_137_n.BLIF scanButtonsInst_int_Data_0_.BLIF \
+scanButtonsInst_int_Data_1_.BLIF scanButtonsInst_int_Data_2_.BLIF \
+scanButtonsInst_int_Data_3_.BLIF scanButtonsInst_int_Data_4_.BLIF \
+ledscaninst_n_63_0_n.BLIF data0_2__n.BLIF LEDscanInst_LED_Freg.D
+--0--0---011- 1
+--0------0110 1
+1-0---1--011- 1
+1-0---11-0-1- 1
+--0--0-1-0-1- 1
+1-0---10-1-1- 1
+--0--0-0-1-1- 1
+--0----1-0-10 1
+--0----0-1-10 1
+1-0---1-0--1- 1
+1-1-0-1----1- 1
+1-11--1----1- 1
+--0--0--0--1- 1
+--0-----0--10 1
+--1-00-----1- 1
+--11-0-----1- 1
+11----1----1- 1
+--1-0------10 1
+--11-------10 1
+0----0-----1- 1
+-1---0-----1- 1
+0----------10 1
+-1---------10 1
+100----0100-- 0
+100----111--- 0
+10101-------- 0
+-----10-----1 0
+0----1------1 0
+-----------0- 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+scanButtonsInst_led_int_Data2_0_.BLIF scanButtonsInst_led_int_Data2_1_.BLIF \
+scanButtonsInst_led_int_Data2_2_.BLIF ledscaninst_n_137_n.BLIF \
+scanbuttonsinst_led_int_data18_n.BLIF scanButtonsInst_int_Data_1_.BLIF \
+scanButtonsInst_int_Data_2_.BLIF scanButtonsInst_int_Data_3_.BLIF \
+scanButtonsInst_int_Data_4_.BLIF ledscaninst_n_175_0_n.BLIF data0_2__n.BLIF \
+LEDscanInst_LED_Greg.D
+--0-------0111 1
+--0---0-000-1- 1
+--0---0010--1- 1
+--101--00---1- 1
+--101--11---1- 1
+--0---0-0-011- 1
+--101-0-----1- 1
+--101-------11 1
+--0----00-011- 1
+--1-00-11---1- 1
+--0----1101-1- 1
+--1-00-00---1- 1
+--1-11-11---1- 1
+--0---001-0-1- 1
+--1-11-00---1- 1
+--0----0000-1- 1
+--0---010-1-1- 1
+--1-000-----1- 1
+--1-110-----1- 1
+--1-00------11 1
+--1-11------11 1
+--0-----1-0-11 1
+--0-----0-1-11 1
+--0------0--11 1
+-1-----11----- 1
+-1-----00----- 1
+-1----0------- 1
+0------------- 1
+-1-----------1 1
+100-----0100-- 0
+101110-------- 0
+100-----111--- 0
+100----11-0--0 0
+100----00-1--0 0
+101-01-------- 0
+1-----110----0 0
+1-----101----0 0
+10----------0- 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+LEDscanInst_LED_VCC1reg.D
+111 1
+-0- 0
+0-- 0
+--0 0
+.names clkGenerator_FreqDivide_1_q_1_.BLIF clkGenerator_FreqDivide_1_q_2_.BLIF \
+clkGenerator_FreqDivide_1_q_3_.BLIF clkGenerator_FreqDivide_1_q_4_.BLIF \
+clkGenerator_FreqDivide_1_q_5_.BLIF clkGenerator_FreqDivide_1_q_6_.BLIF \
+clkGenerator_FreqDivide_1_q_7_.BLIF clkGenerator_FreqDivide_1_q_8_.BLIF \
+clkGenerator_FreqDivide_1_q_9_.BLIF clkGenerator_FreqDivide_1_q_10_.BLIF \
+clkGenerator_FreqDivide_1_q_11_.BLIF clkGenerator_FreqDivide_1_q_12_.BLIF \
+clkGenerator_FreqDivide_1_q_13_.BLIF clk_1kHz
+1111011011101 1
+-----------1- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------1----- 0
+------0------ 0
+-----0------- 0
+----1-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+scanButtonsInst_int_Data_1_.BLIF scanButtonsInst_int_Data_2_.BLIF \
+scanButtonsInst_int_Data_3_.BLIF scanButtonsInst_int_Data_4_.BLIF \
+ledscaninst_n_137_n
+100--00 1
+100000- 1
+100-11- 1
+1001-1- 1
+---001- 0
+----101 0
+---1-01 0
+--1---- 0
+-1----- 0
+0------ 0
+.names key_in_3_.BLIF key_in_0_.BLIF scanButtonsInst_key_out_2_reg.BLIF \
+scanButtonsInst_flag_Cal_0_.BLIF scanButtonsInst_key_out_3_reg.BLIF \
+scanButtonsInst_flag_Cal_1_.BLIF scanbuttonsinst_n_52_i_1_n
+1--110 1
+1--011 1
+0---0- 1
+--1-0- 1
+01---- 1
+1-0-0- 0
+00--1- 0
+1--010 0
+1--111 0
+.names scanButtonsInst_int_Data_1_.BLIF scanButtonsInst_int_Data_2_.BLIF \
+scanButtonsInst_int_Data_3_.BLIF scanButtonsInst_int_Data_4_.BLIF \
+scanbuttonsinst_led_int_data18_n
+-11- 1
+1-1- 1
+---1 1
+00-0 0
+--00 0
+.names scanButtonsInst_flag_Cal_0_.BLIF scanButtonsInst_flag_Cal_1_.BLIF \
+scanButtonsInst_int_Data1_2_.BLIF scanButtonsInst_int_Data1_3_.BLIF \
+scanButtonsInst_int_Data0_2_.BLIF scanButtonsInst_int_Data0_3_.BLIF \
+scanbuttonsinst_n_387_n
+--1--0 1
+----11 1
+01-10- 1
+0100-- 1
+-01--- 1
+1-1--- 1
+-0--1- 1
+1---1- 1
+010110 0
+011001 0
+-00-0- 0
+1-0-0- 0
+.names scanButtonsInst_flag_Cal_0_.BLIF scanButtonsInst_flag_Cal_1_.BLIF \
+scanButtonsInst_int_Data1_0_.BLIF scanButtonsInst_int_Data1_1_.BLIF \
+scanButtonsInst_int_Data1_2_.BLIF scanButtonsInst_int_Data1_3_.BLIF \
+scanButtonsInst_int_Data0_0_.BLIF scanButtonsInst_int_Data0_1_.BLIF \
+scanButtonsInst_int_Data0_2_.BLIF scanButtonsInst_int_Data0_3_.BLIF \
+scanbuttonsinst_n_388_n
+01----0000 1
+0111----00 1
+011-1--0-0 1
+01-11-0--0 1
+010----111 1
+01-0--1-11 1
+01--0-11-1 1
+01000----1 1
+011--1-00- 1
+01-1-10-0- 1
+-1---0111- 1
+0100-0--1- 1
+01--1100-- 1
+010-00-1-- 1
+01-0001--- 1
+-11111---- 1
+11----111- 1
+111----11- 1
+11-1--1-1- 1
+11--1-11-- 1
+1111----1- 1
+111-1--1-- 1
+11-11-1--- 1
+11111----- 1
+0--01--10- 0
+0-0-1-1-0- 0
+0--10--01- 0
+0-1-0-0-1- 0
+0-01--10-- 0
+0-10--01-- 0
+0---01--10 0
+0--0-1-1-0 0
+0-0--11--0 0
+0---10--01 0
+0--1-0-0-1 0
+0-1--00--1 0
+1---0---0- 0
+1--0---0-- 0
+1-0---0--- 0
+-0-------- 0
+.names reset.BLIF clkGenerator_scancnt_1_.BLIF \
+scanButtonsInst_int_Data_0_.BLIF scanButtonsInst_int_Data_1_.BLIF \
+scanButtonsInst_int_Data_2_.BLIF scanButtonsInst_int_Data_3_.BLIF \
+scanButtonsInst_int_Data_4_.BLIF ledscaninst_n_175_0_n
+----101 1
+---0-00 1
+----01- 1
+---1-1- 1
+--1---- 1
+-1----- 1
+0------ 1
+---1--1 1
+1000001 0
+1001-00 0
+100011- 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+scanButtonsInst_led_int_Data2_0_.BLIF scanButtonsInst_led_int_Data2_1_.BLIF \
+scanButtonsInst_led_int_Data2_2_.BLIF scanButtonsInst_int_Data_0_.BLIF \
+scanButtonsInst_int_Data_1_.BLIF scanButtonsInst_int_Data_2_.BLIF \
+scanButtonsInst_int_Data_3_.BLIF scanButtonsInst_int_Data_4_.BLIF \
+ledscaninst_n_63_0_n
+--0---1--00 1
+--0---11-1- 1
+--0-----1-- 1
+--0----1-00 1
+--0----0--1 1
+--1--1----- 1
+--1-1------ 1
+--11------- 1
+-1--------- 1
+0---------- 1
+100---0101- 0
+101000----- 0
+100----1001 0
+100----0010 0
+100---000-0 0
+.names key_in_3_.BLIF key_in_2_.BLIF key_in_1_.BLIF key_in_0_.BLIF \
+scanButtonsInst_key_out_0_reg.BLIF scanButtonsInst_key_out_1_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_key_out_3_reg.BLIF \
+scanButtonsInst_flag_Data_0_.BLIF scanbuttonsinst_n_737_i_n
+1000---1- 1
+1000--1-- 1
+1000-1--- 1
+10001---- 1
+0100---10 1
+0010---10 1
+0001---10 1
+0100--1-0 1
+0010--1-0 1
+0001--1-0 1
+0100-1--0 1
+0010-1--0 1
+0001-1--0 1
+01001---0 1
+00101---0 1
+00011---0 1
+0-------1 0
+0000----- 0
+----0000- 0
+--11----- 0
+-1-1----- 0
+1--1----- 0
+-11------ 0
+1-1------ 0
+11------- 0
+.names scanButtonsInst_flag_Cal_0_.BLIF scanButtonsInst_flag_Cal_1_.BLIF \
+scanbuttonsinst_n_736_i_n
+01 1
+1- 0
+-0 0
+.names key_in_3_.BLIF key_in_2_.BLIF key_in_1_.BLIF key_in_0_.BLIF \
+scanButtonsInst_key_out_3_reg.BLIF scanButtonsInst_flag_Data_0_.BLIF \
+scanButtonsInst_flag_Data_1_.BLIF scanbuttonsinst_un1_key_in_4_0_n
+0----0- 1
+0-----1 1
+000---- 1
+1-1---- 1
+11----- 1
+-11---- 1
+----0-- 1
+---1--- 1
+0100110 0
+0010110 0
+10001-- 0
+.names clkGenerator_FreqDivide_1_q_1_.BLIF clkGenerator_FreqDivide_1_q_2_.BLIF \
+clkGenerator_FreqDivide_1_q_3_.BLIF clkGenerator_FreqDivide_1_q_4_.BLIF \
+clkGenerator_FreqDivide_1_q_5_.BLIF clkGenerator_FreqDivide_1_q_6_.BLIF \
+clkGenerator_FreqDivide_1_q_7_.BLIF clkGenerator_FreqDivide_1_q_8_.BLIF \
+clkgenerator_freqdivide_1_q_c7_n
+11111111 1
+------0- 0
+-----0-- 0
+----0--- 0
+---0---- 0
+--0----- 0
+-0------ 0
+0------- 0
+-------0 0
+.names clkGenerator_FreqDivide_1_q_1_.BLIF clkGenerator_FreqDivide_1_q_2_.BLIF \
+clkGenerator_FreqDivide_1_q_3_.BLIF clkGenerator_FreqDivide_1_q_4_.BLIF \
+clkgenerator_freqdivide_1_q_c3_n
+1111 1
+--0- 0
+-0-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data_1_.BLIF \
+scanButtonsInst_int_Data_2_.BLIF scanButtonsInst_int_Data_3_.BLIF \
+scanButtonsInst_int_Data_4_.BLIF data0_2__n
+100-1 1
+1-100 1
+111-- 1
+-0-10 0
+-10-- 0
+-01-1 0
+--0-0 0
+0---- 0
+.names scanButtonsInst_flag_Cal_0_.BLIF scanButtonsInst_flag_Cal_1_.BLIF \
+scanButtonsInst_int_Data1_0_.BLIF scanButtonsInst_int_Data1_1_.BLIF \
+scanButtonsInst_int_Data1_2_.BLIF scanButtonsInst_int_Data1_3_.BLIF \
+scanButtonsInst_int_Data0_0_.BLIF scanButtonsInst_int_Data0_1_.BLIF \
+scanButtonsInst_int_Data0_2_.BLIF scanButtonsInst_int_Data0_3_.BLIF \
+scanbuttonsinst_n_395_0_n
+0-10-0011- 1
+0-100001-- 1
+0-01-1100- 1
+0-011110-- 1
+0-01--1000 1
+0-1-000-1- 1
+0-011-10-0 1
+0-0-111-0- 1
+0-10--0111 1
+0-100-01-1 1
+0-0-1-1-00 1
+0-1-0-0-11 1
+0-0--11--0 1
+0-1--00--1 1
+1-0---0--- 1
+-0----0--- 1
+-00------- 1
+-1-0001--- 0
+-1-00-1--1 0
+-11-1--0-0 0
+-1-0-01-1- 0
+-11-11-0-- 0
+-1-0--1-11 0
+-11-1---00 0
+-11-11--0- 0
+01-100-100 0
+01-101-101 0
+01-110-110 0
+01-111-111 0
+-11----000 0
+-11--1-00- 0
+-1--001-1- 0
+-1--0-1-11 0
+-11--1---0 0
+-1---01--1 0
+010---0--- 0
+11----1--- 0
+111------- 0
+--1---1--- 0
+.names scanButtonsInst_flag_Cal_0_.BLIF scanButtonsInst_flag_Cal_1_.BLIF \
+scanButtonsInst_int_Data1_0_.BLIF scanButtonsInst_int_Data1_1_.BLIF \
+scanButtonsInst_int_Data1_2_.BLIF scanButtonsInst_int_Data1_3_.BLIF \
+scanButtonsInst_int_Data0_0_.BLIF scanButtonsInst_int_Data0_1_.BLIF \
+scanButtonsInst_int_Data0_2_.BLIF scanButtonsInst_int_Data0_3_.BLIF \
+scanbuttonsinst_n_387_n.BLIF scanbuttonsinst_n_388_n.BLIF \
+scanbuttonsinst_n_79_i_n.BLIF scanbuttonsinst_n_736_i_n.BLIF \
+scanbuttonsinst_un1_int_data0_i_n.BLIF scanbuttonsinst_n_391_i_n
+010-11-10--000- 1
+010--1-110-0010 1
+011--1-110-0110 1
+011--1-100-010- 1
+010-11-10--00-1 1
+--0--0-011-0010 1
+--0--0-001-000- 1
+011--1-100-01-1 1
+1-1----01--0110 1
+010-1--100-000- 1
+1-1----00--010- 1
+--0--0-001-00-1 1
+-01----01--0110 1
+010-1--100-00-1 1
+1-1----00--01-1 1
+----0-0011-0-10 1
+----00001--0-10 1
+-01----00--010- 1
+-01----00--01-1 1
+1-0----01--0010 1
+1-0----00--000- 1
+--1-00100--010- 1
+---0--101--0010 1
+-00----01--0010 1
+---1--011--0110 1
+1-0----00--00-1 1
+--1-00100--01-1 1
+-00----00--000- 1
+--1-0-1001-010- 1
+---0--010--000- 1
+-00----00--00-1 1
+--10-0101--0-10 1
+--1-0-1001-01-1 1
+---1--101--0110 1
+---0--010--00-1 1
+---0--100--000- 1
+--10--1011-0-10 1
+---0--100--00-1 1
+01---11110-0-10 1
+01--0111-0-00-- 1
+010-01-1-0-00-- 1
+01---11100-0-0- 1
+01--1111-0-01-- 1
+011-11-1-0-01-- 1
+01--1-1100-0-0- 1
+01--11110--0-0- 1
+011-1--100-01-- 1
+011-11-10--01-- 1
+01--1-1100-01-- 1
+01--11110--01-- 1
+--001-0011-01-- 1
+--0010001--01-- 1
+--000-0001-0-0- 1
+--0000000--0-0- 1
+01---11100-0--1 1
+01--1-1100-0--1 1
+01--11110--0--1 1
+--000-0001-0--1 1
+--0000000--0--1 1
+--1-1-1011-01-- 1
+--1-10101--01-- 1
+---0--011--0010 1
+---1--010--010- 1
+-----00011-0-10 1
+--0-00-0-1-00-- 1
+----0000-1-00-- 1
+--1-10-0-1-01-- 1
+--0-0--011-00-- 1
+--0-00-01--00-- 1
+-----00001-0-0- 1
+----1000-1-01-- 1
+----0-0011-00-- 1
+----00001--00-- 1
+---1--100--010- 1
+--11----1--0110 1
+--00----1--0010 1
+---11-01---01-- 1
+---00-01---00-- 1
+---1--010--01-1 1
+--11----0--010- 1
+--00----0--000- 1
+-0----001--0-10 1
+1-----001--0-10 1
+-00-0--0---00-- 1
+1-0-0--0---00-- 1
+---11-10---01-- 1
+---00-10---00-- 1
+-----00001-0--1 1
+-0--0-00---00-- 1
+1---0-00---00-- 1
+-01-1--0---01-- 1
+1-1-1--0---01-- 1
+---1--100--01-1 1
+-0----000--0-0- 1
+1-----000--0-0- 1
+-0--1-00---01-- 1
+1---1-00---01-- 1
+--111------01-- 1
+--000------00-- 1
+--11----0--01-1 1
+--00----0--00-1 1
+-0----000--0--1 1
+1-----000--0--1 1
+--------1-00-10 1
+----0-----000-- 1
+--------0-00-0- 1
+----1-----001-- 1
+--------0-00--1 1
+0101-1000-1---- 0
+0101--00001---- 0
+01101100--1---- 0
+01101-00-01---- 0
+--1-0-11-11-0-- 0
+010--100-01-1-- 0
+--1-0011--1-0-- 0
+--0-0-11-11-1-- 0
+--0-0011--1-1-- 0
+---00--1-11-1-- 0
+--0--011-11-1-- 0
+---000-1--1-1-- 0
+--1--011-11-0-- 0
+0110-1000-1---- 0
+011--100-01-0-- 0
+0110--00001---- 0
+---1---1111-0-- 0
+---1-0-11-1-0-- 0
+--0--0111-1-1-- 0
+01-111-0--1-0-- 0
+---0---1111-1-- 0
+--1--0111-1-0-- 0
+01-11--0-01-0-- 0
+---0-0-11-1-1-- 0
+01-101--011-0-- 0
+01-100--001-0-- 0
+1-0---11--1-1-- 0
+--0---11111-1-- 0
+-00---11--1-1-- 0
+--1---11111-0-- 0
+1-1---11--1-0-- 0
+-01---11--1-0-- 0
+--00--01--1-1-- 0
+--11--01--1-0-- 0
+--00--10--1-1-- 0
+--11--10--1-0-- 0
+01011-00-01---- 0
+01011100--1---- 0
+01-01--0001-1-- 0
+01-011-00-1-1-- 0
+01-1-1-0-01-0-- 0
+01-0-1-0-01-1-- 0
+---1-0-1-11-0-- 0
+---0-0-1-11-1-- 0
+----1---0---010 0
+----0---0---110 0
+----1---1---00- 0
+----0---1---10- 0
+-0-1---1--1-0-- 0
+1--1---1--1-0-- 0
+-0-0---1--1-1-- 0
+1--0---1--1-1-- 0
+----1---1---0-1 0
+----0---1---1-1 0
+-----------1--- 0
+.names scanButtonsInst_flag_Cal_0_.BLIF scanButtonsInst_flag_Cal_1_.BLIF \
+scanButtonsInst_int_Data1_0_.BLIF scanButtonsInst_int_Data1_1_.BLIF \
+scanButtonsInst_int_Data1_2_.BLIF scanButtonsInst_int_Data1_3_.BLIF \
+scanButtonsInst_int_Data0_0_.BLIF scanButtonsInst_int_Data0_1_.BLIF \
+scanButtonsInst_int_Data0_2_.BLIF scanButtonsInst_int_Data0_3_.BLIF \
+scanButtonsInst_un1_int_Data0_1_i_1_
+0110000-00 1
+0110100-10 1
+0110010-01 1
+0110110-11 1
+--0-00-1-- 1
+--0--0-11- 1
+--0-0--1-1 1
+--0----111 1
+01-1---000 1
+01-11--0-0 1
+01-1-1-00- 1
+01-111-0-- 1
+----0011-- 1
+-----0111- 1
+----0-11-1 1
+------1111 1
+01--11-00- 1
+01--1--000 1
+01---1-0-0 1
+----00-11- 1
+----0--111 1
+-0-----1-- 1
+1------1-- 1
+-----0-1-1 1
+0111-1010- 0
+01111101-- 0
+0111--0100 0
+01111-01-0 0
+01--11-10- 0
+01--1--100 0
+---0-0101- 0
+--00-0-01- 0
+---00010-- 0
+--0000-0-- 0
+01---1-1-0 0
+----00-01- 0
+---0--1011 0
+--00---011 0
+---00-10-1 0
+--000--0-1 0
+----0--011 0
+-0-----0-- 0
+1------0-- 0
+-----0-0-1 0
+.names scanButtonsInst_key_out_3_reg.BLIF key_out_3_
+1 1
+0 0
+.names LEDscanInst_LED_Areg.BLIF LED_A
+1 1
+0 0
+.names LEDscanInst_LED_Breg.BLIF LED_B
+1 1
+0 0
+.names LEDscanInst_LED_Creg.BLIF LED_C
+1 1
+0 0
+.names LEDscanInst_LED_Dreg.BLIF LED_D
+1 1
+0 0
+.names LEDscanInst_LED_Ereg.BLIF LED_E
+1 1
+0 0
+.names LEDscanInst_LED_Freg.BLIF LED_F
+1 1
+0 0
+.names LEDscanInst_LED_Greg.BLIF LED_G
+1 1
+0 0
+.names LEDscanInst_LED_VCC1reg.BLIF LED_VCC1
+1 1
+0 0
+.names LEDscanInst_LED_VCC2reg.BLIF LED_VCC2
+1 1
+0 0
+.names LEDscanInst_LED_VCC3reg.BLIF LED_VCC3
+1 1
+0 0
+.names LEDscanInst_LED_VCC4reg.BLIF LED_VCC4
+1 1
+0 0
+.names scanButtonsInst_key_out_2_reg.BLIF key_out_2_
+1 1
+0 0
+.names scanButtonsInst_key_out_1_reg.BLIF key_out_1_
+1 1
+0 0
+.names scanButtonsInst_key_out_0_reg.BLIF key_out_0_
+1 1
+0 0
+.names clkGenerator_FreqDivide_1_q_11_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_11_.C
+1 1
+0 0
+.names clkGenerator_FreqDivide_1_q_12_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_12_.C
+1 1
+0 0
+.names clkGenerator_FreqDivide_1_q_13_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_13_.C
+1 1
+0 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_9_.BLIF \
+clkgenerator_freqdivide_1_q_c7_n.BLIF clkGenerator_FreqDivide_1_q_9_.D
+010 1
+-01 1
+1-1 1
+011 0
+-00 0
+1-0 0
+.names clkGenerator_FreqDivide_1_q_9_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_9_.C
+1 1
+0 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_9_.BLIF \
+clkGenerator_FreqDivide_1_q_10_.BLIF clkgenerator_freqdivide_1_q_c7_n.BLIF \
+clkGenerator_FreqDivide_1_q_10_.D
+001- 1
+0-10 1
+-101 1
+11-1 1
+0111 0
+-00- 0
+10-- 0
+--00 0
+1--0 0
+.names clkGenerator_FreqDivide_1_q_10_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_10_.C
+1 1
+0 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_5_.BLIF \
+clkGenerator_FreqDivide_1_q_6_.BLIF clkgenerator_freqdivide_1_q_c3_n.BLIF \
+clkGenerator_FreqDivide_1_q_6_.D
+001- 1
+0-10 1
+-101 1
+11-1 1
+0111 0
+-00- 0
+10-- 0
+--00 0
+1--0 0
+.names clkGenerator_FreqDivide_1_q_6_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_6_.C
+1 1
+0 0
+.names clkGenerator_FreqDivide_1_q_7_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_7_.C
+1 1
+0 0
+.names clkGenerator_FreqDivide_1_q_8_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_8_.C
+1 1
+0 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_1_.BLIF \
+clkGenerator_FreqDivide_1_q_2_.BLIF clkGenerator_FreqDivide_1_q_3_.BLIF \
+clkGenerator_FreqDivide_1_q_4_.BLIF clkGenerator_FreqDivide_1_q_4_.D
+01110 1
+0--01 1
+0-0-1 1
+00--1 1
+-1111 0
+1---- 0
+---00 0
+--0-0 0
+-0--0 0
+.names clkGenerator_FreqDivide_1_q_4_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_4_.C
+1 1
+0 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_5_.BLIF \
+clkgenerator_freqdivide_1_q_c3_n.BLIF clkGenerator_FreqDivide_1_q_5_.D
+001 1
+11- 1
+-10 1
+011 0
+10- 0
+-00 0
+.names clkGenerator_FreqDivide_1_q_5_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_5_.C
+1 1
+0 0
+.names clkGenerator_FreqDivide_1_q_1_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_1_.C
+1 1
+0 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_1_.BLIF \
+clkGenerator_FreqDivide_1_q_2_.BLIF clkGenerator_FreqDivide_1_q_2_.D
+010 1
+001 1
+-00 0
+-11 0
+1-- 0
+.names clkGenerator_FreqDivide_1_q_2_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_2_.C
+1 1
+0 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_1_.BLIF \
+clkGenerator_FreqDivide_1_q_2_.BLIF clkGenerator_FreqDivide_1_q_3_.BLIF \
+clkGenerator_FreqDivide_1_q_3_.D
+0110 1
+0-01 1
+00-1 1
+-111 0
+--00 0
+-0-0 0
+1--- 0
+.names clkGenerator_FreqDivide_1_q_3_.CE
+ 1
+.names clk.BLIF clkGenerator_FreqDivide_1_q_3_.C
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+clkGenerator_FreqDivide_2_q_4_.D
+1110 1
+-101 1
+-011 1
+0--1 1
+1111 0
+100- 0
+0--0 0
+--00 0
+-0-0 0
+.names clkGenerator_FreqDivide_2_q_4_.CE
+ 1
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_2_q_4_.C
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.CE
+ 1
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_2_q_1_.C
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+clkGenerator_FreqDivide_2_q_2_.D
+101- 1
+10-0 1
+01-- 1
+-001 0
+00-- 0
+11-- 0
+.names clkGenerator_FreqDivide_2_q_2_.CE
+ 1
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_2_q_2_.C
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_3_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names clkGenerator_FreqDivide_2_q_3_.CE
+ 1
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_2_q_3_.C
+1 1
+0 0
+.names clk_1kHz.BLIF clkGenerator_scancnt_0_.C
+1 1
+0 0
+.names clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.D
+1 1
+0 0
+.names clk_1kHz.BLIF clkGenerator_scancnt_1_.C
+1 1
+0 0
+.names scanButtonsInst_scanvalue_0_.BLIF scanButtonsInst_scanvalue_0_.D
+0 1
+1 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_scanvalue_0_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_scanvalue_0_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_scanvalue_1_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_scanvalue_1_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_flag_Data_0_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_flag_Data_0_.AR
+0 1
+1 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_flag_Data_1_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_flag_Data_1_.AR
+0 1
+1 0
+.names key_in_3_.BLIF key_in_0_.BLIF scanButtonsInst_key_out_1_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_int_Data1_2_.D
+0-1- 1
+-1-1 1
+-00- 0
+10-- 0
+--00 0
+1--0 0
+.names scanbuttonsinst_n_37_i_n.BLIF scanButtonsInst_int_Data1_2_.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data1_2_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data1_2_.AR
+0 1
+1 0
+.names key_in_3_.BLIF key_in_0_.BLIF scanButtonsInst_key_out_2_reg.BLIF \
+scanButtonsInst_int_Data1_3_.D
+001 1
+-1- 0
+1-- 0
+--0 0
+.names scanbuttonsinst_n_37_i_n.BLIF scanButtonsInst_int_Data1_3_.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data1_3_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data1_3_.AR
+0 1
+1 0
+.names key_in_3_.BLIF key_in_2_.BLIF key_in_0_.BLIF \
+scanButtonsInst_key_out_0_reg.BLIF scanButtonsInst_key_out_1_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_int_Data0_0_.D
+000-1- 1
+0-11-- 1
+01-1-- 1
+0-1--1 1
+01---1 1
+-00-0- 0
+--10-0 0
+-1-0-0 0
+1----- 0
+.names scanbuttonsinst_n_35_i_n.BLIF scanButtonsInst_int_Data0_0_.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data0_0_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data0_0_.AR
+0 1
+1 0
+.names scanbuttonsinst_n_35_i_n.BLIF scanButtonsInst_int_Data0_1_.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data0_1_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data0_1_.AR
+0 1
+1 0
+.names key_in_3_.BLIF key_in_0_.BLIF scanButtonsInst_key_out_1_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_int_Data0_2_.D
+0-1- 1
+-1-1 1
+-00- 0
+10-- 0
+--00 0
+1--0 0
+.names scanbuttonsinst_n_35_i_n.BLIF scanButtonsInst_int_Data0_2_.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data0_2_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data0_2_.AR
+0 1
+1 0
+.names key_in_3_.BLIF key_in_0_.BLIF scanButtonsInst_key_out_2_reg.BLIF \
+scanButtonsInst_int_Data0_3_.D
+001 1
+-1- 0
+1-- 0
+--0 0
+.names scanbuttonsinst_n_35_i_n.BLIF scanButtonsInst_int_Data0_3_.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data0_3_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data0_3_.AR
+0 1
+1 0
+.names key_in_1_.BLIF scanButtonsInst_flag_Cal_0_.D
+1 1
+0 0
+.names scanbuttonsinst_un1_key_in_4_0_n.BLIF scanButtonsInst_flag_Cal_0_.CE
+0 1
+1 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_flag_Cal_0_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_flag_Cal_0_.AR
+0 1
+1 0
+.names key_in_2_.BLIF scanButtonsInst_flag_Cal_1_.D
+1 1
+0 0
+.names scanbuttonsinst_un1_key_in_4_0_n.BLIF scanButtonsInst_flag_Cal_1_.CE
+0 1
+1 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_flag_Cal_1_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_flag_Cal_1_.AR
+0 1
+1 0
+.names reset.BLIF scanButtonsInst_key_out_0_reg.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_key_out_0_reg.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names scanButtonsInst_scanvalue_0_.BLIF scanButtonsInst_scanvalue_1_.BLIF \
+scanButtonsInst_key_out_1_reg.D
+10 1
+0- 0
+-1 0
+.names reset.BLIF scanButtonsInst_key_out_1_reg.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_key_out_1_reg.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names scanButtonsInst_scanvalue_0_.BLIF scanButtonsInst_scanvalue_1_.BLIF \
+scanButtonsInst_key_out_2_reg.D
+01 1
+1- 0
+-0 0
+.names reset.BLIF scanButtonsInst_key_out_2_reg.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_key_out_2_reg.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_key_out_3_reg.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_key_out_3_reg.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names scanbuttonsinst_n_52_i_1_n.BLIF scanbuttonsinst_n_737_i_n.BLIF \
+scanButtonsInst_int_Data_1_.CE
+11 1
+0- 0
+-0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data_1_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data_1_.AR
+0 1
+1 0
+.names scanbuttonsinst_n_52_i_1_n.BLIF scanbuttonsinst_n_737_i_n.BLIF \
+scanButtonsInst_int_Data_2_.CE
+11 1
+0- 0
+-0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data_2_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data_2_.AR
+0 1
+1 0
+.names scanbuttonsinst_n_52_i_1_n.BLIF scanbuttonsinst_n_737_i_n.BLIF \
+scanButtonsInst_int_Data_3_.CE
+11 1
+0- 0
+-0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data_3_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data_3_.AR
+0 1
+1 0
+.names scanbuttonsinst_n_52_i_1_n.BLIF scanbuttonsinst_n_737_i_n.BLIF \
+scanButtonsInst_int_Data_4_.CE
+11 1
+0- 0
+-0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data_4_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data_4_.AR
+0 1
+1 0
+.names scanbuttonsinst_n_21_i_n.BLIF scanButtonsInst_led_int_Data2_0_.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_led_int_Data2_0_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_led_int_Data2_0_.AR
+0 1
+1 0
+.names scanButtonsInst_led_int_Data2_1_.D
+ 1
+.names scanbuttonsinst_n_21_i_n.BLIF scanButtonsInst_led_int_Data2_1_.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_led_int_Data2_1_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_led_int_Data2_1_.AP
+0 1
+1 0
+.names scanbuttonsinst_n_21_i_n.BLIF scanButtonsInst_led_int_Data2_2_.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_led_int_Data2_2_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_led_int_Data2_2_.AR
+0 1
+1 0
+.names key_in_3_.BLIF key_in_2_.BLIF key_in_0_.BLIF \
+scanButtonsInst_key_out_0_reg.BLIF scanButtonsInst_key_out_1_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_int_Data1_0_.D
+000-1- 1
+0-11-- 1
+01-1-- 1
+0-1--1 1
+01---1 1
+-00-0- 0
+--10-0 0
+-1-0-0 0
+1----- 0
+.names scanbuttonsinst_n_37_i_n.BLIF scanButtonsInst_int_Data1_0_.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data1_0_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data1_0_.AR
+0 1
+1 0
+.names scanbuttonsinst_n_37_i_n.BLIF scanButtonsInst_int_Data1_1_.CE
+1 1
+0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data1_1_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data1_1_.AR
+0 1
+1 0
+.names scanbuttonsinst_n_52_i_1_n.BLIF scanbuttonsinst_n_737_i_n.BLIF \
+scanButtonsInst_int_Data_0_.CE
+11 1
+0- 0
+-0 0
+.names clkGenerator_FreqDivide_2_q_1_.BLIF clkGenerator_FreqDivide_2_q_2_.BLIF \
+clkGenerator_FreqDivide_2_q_3_.BLIF clkGenerator_FreqDivide_2_q_4_.BLIF \
+scanButtonsInst_int_Data_0_.C
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names reset.BLIF scanButtonsInst_int_Data_0_.AR
+0 1
+1 0
+.names clk_1kHz.BLIF LEDscanInst_LED_Areg.C
+1 1
+0 0
+.names clk_1kHz.BLIF LEDscanInst_LED_Breg.C
+1 1
+0 0
+.names clk_1kHz.BLIF LEDscanInst_LED_Creg.C
+1 1
+0 0
+.names clk_1kHz.BLIF LEDscanInst_LED_Dreg.C
+1 1
+0 0
+.names clk_1kHz.BLIF LEDscanInst_LED_Ereg.C
+1 1
+0 0
+.names clk_1kHz.BLIF LEDscanInst_LED_Freg.C
+1 1
+0 0
+.names clk_1kHz.BLIF LEDscanInst_LED_Greg.C
+1 1
+0 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+LEDscanInst_LED_VCC3reg.D
+110 1
+-0- 0
+0-- 0
+--1 0
+.names clk_1kHz.BLIF LEDscanInst_LED_VCC3reg.C
+1 1
+0 0
+.names clk_1kHz.BLIF LEDscanInst_LED_VCC1reg.C
+1 1
+0 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+LEDscanInst_LED_VCC2reg.D
+101 1
+-1- 0
+0-- 0
+--0 0
+.names clk_1kHz.BLIF LEDscanInst_LED_VCC2reg.C
+1 1
+0 0
+.names reset.BLIF clkGenerator_scancnt_0_.BLIF clkGenerator_scancnt_1_.BLIF \
+LEDscanInst_LED_VCC4reg.D
+100 1
+-1- 0
+0-- 0
+--1 0
+.names clk_1kHz.BLIF LEDscanInst_LED_VCC4reg.C
+1 1
+0 0
+.names key_in_0_.BLIF scanButtonsInst_key_out_3_reg.BLIF \
+scanButtonsInst_int_Data1_2_.BLIF scanButtonsInst_int_Data_2_.D.X1
+010 1
+1-- 0
+-0- 0
+--1 0
+.names key_in_0_.BLIF scanButtonsInst_un1_int_Data0_1_i_1_.BLIF \
+scanButtonsInst_key_out_1_reg.BLIF scanButtonsInst_key_out_2_reg.BLIF \
+scanButtonsInst_key_out_3_reg.BLIF scanButtonsInst_int_Data1_1_.BLIF \
+scanButtonsInst_int_Data1_2_.BLIF scanButtonsInst_int_Data0_2_.BLIF \
+scanbuttonsinst_n_79_i_n.BLIF scanbuttonsinst_n_736_i_n.BLIF \
+scanbuttonsinst_n_395_0_n.BLIF scanButtonsInst_int_Data_2_.D.X2
+--100------ 1
+00--10-000- 1
+00--1--0-01 1
+0---10-0001 1
+00--11-010- 1
+0---11-0101 1
+01--10-011- 1
+01--1--0-10 1
+0---10-0110 1
+01--11-001- 1
+0---11-0010 1
+01--10-110- 1
+01--1--1-00 1
+0---10-1100 1
+01--11-100- 1
+0---11-1000 1
+00--10-101- 1
+00--1--1-11 1
+0---10-1011 1
+00--11-111- 1
+0---11-1111 1
+1-1-------- 1
+1--1------- 1
+1-00------- 0
+0-0-0------ 0
+0--10------ 0
+00--1--0-11 0
+00--1--1-01 0
+01--1--1-10 0
+01--1--0-00 0
+01--10-111- 0
+00--11-011- 0
+01--11-101- 0
+00--10-001- 0
+00--11-110- 0
+01--10-010- 0
+00--10-100- 0
+01--11-000- 0
+0---11-0111 0
+0---10-0011 0
+0---11-1101 0
+0---10-1001 0
+0---10-1110 0
+0---11-1010 0
+0---10-0100 0
+0---11-0000 0
+.names key_in_3_.BLIF scanButtonsInst_flag_Data_1_.BLIF \
+scanButtonsInst_flag_Data_1_.D.X1
+11 1
+0- 0
+-0 0
+.names key_in_3_.BLIF key_in_2_.BLIF key_in_1_.BLIF key_in_0_.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_key_out_3_reg.BLIF \
+scanButtonsInst_flag_Data_0_.BLIF scanButtonsInst_flag_Data_1_.BLIF \
+scanButtonsInst_flag_Data_1_.D.X2
+0------1 1
+0010-11- 1
+0100-11- 1
+-0001--1 1
+-000-1-1 1
+11------ 0
+1-1----- 0
+1--1---- 0
+---1---0 0
+-----0-0 0
+------00 0
+1---00-- 0
+-11----0 0
+-00----0 0
+.names scanButtonsInst_int_Data1_3_.BLIF scanButtonsInst_int_Data0_3_.BLIF \
+scanbuttonsinst_n_79_i_n.X1
+10 1
+0- 0
+-1 0
+.names scanButtonsInst_flag_Cal_0_.BLIF scanButtonsInst_flag_Cal_1_.BLIF \
+scanButtonsInst_int_Data1_0_.BLIF scanButtonsInst_int_Data1_1_.BLIF \
+scanButtonsInst_int_Data1_2_.BLIF scanButtonsInst_int_Data1_3_.BLIF \
+scanButtonsInst_int_Data0_0_.BLIF scanButtonsInst_int_Data0_1_.BLIF \
+scanButtonsInst_int_Data0_2_.BLIF scanButtonsInst_int_Data0_3_.BLIF \
+scanbuttonsinst_n_79_i_n.X2
+01---0---1 1
+01--0---1- 1
+01000----- 1
+01-00-1--- 1
+010-0--1-- 1
+01-00--1-- 1
+01--0-11-- 1
+0100----1- 1
+01-0--1-1- 1
+010----11- 1
+01-0---11- 1
+01----111- 1
+-----1---0 1
+1----0---- 0
+-0---0---- 0
+1--------1 0
+-0-------1 0
+----11--01 0
+----10--00 0
+---111-0-1 0
+---1-1-001 0
+---110-0-0 0
+---1-0-000 0
+--11110--1 0
+--1-1100-1 0
+--11-10-01 0
+--1--10001 0
+--11100--0 0
+--1-1000-0 0
+--11-00-00 0
+--1--00000 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_7_.BLIF \
+clkGenerator_FreqDivide_1_q_7_.D.X1
+01 1
+1- 0
+-0 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_5_.BLIF \
+clkGenerator_FreqDivide_1_q_6_.BLIF clkGenerator_FreqDivide_1_q_7_.BLIF \
+clkgenerator_freqdivide_1_q_c3_n.BLIF clkGenerator_FreqDivide_1_q_7_.D.X2
+-11-1 1
+-0--- 0
+--0-- 0
+----0 0
+.names clkGenerator_FreqDivide_1_q_8_.BLIF clkGenerator_FreqDivide_1_q_8_.D.X1
+1 1
+0 0
+.names clkGenerator_FreqDivide_1_q_5_.BLIF clkGenerator_FreqDivide_1_q_6_.BLIF \
+clkGenerator_FreqDivide_1_q_7_.BLIF clkGenerator_FreqDivide_1_q_8_.BLIF \
+clkgenerator_freqdivide_1_q_c3_n.BLIF clkGenerator_FreqDivide_1_q_8_.D.X2
+111-1 1
+0---- 0
+-0--- 0
+--0-- 0
+----0 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_11_.BLIF \
+clkGenerator_FreqDivide_1_q_11_.D.X1
+01 1
+1- 0
+-0 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_9_.BLIF \
+clkGenerator_FreqDivide_1_q_10_.BLIF clkGenerator_FreqDivide_1_q_11_.BLIF \
+clkgenerator_freqdivide_1_q_c7_n.BLIF clkGenerator_FreqDivide_1_q_11_.D.X2
+-11-1 1
+-0--- 0
+--0-- 0
+----0 0
+.names clkGenerator_FreqDivide_1_q_12_.BLIF \
+clkGenerator_FreqDivide_1_q_12_.D.X1
+1 1
+0 0
+.names clkGenerator_FreqDivide_1_q_9_.BLIF \
+clkGenerator_FreqDivide_1_q_10_.BLIF clkGenerator_FreqDivide_1_q_11_.BLIF \
+clkGenerator_FreqDivide_1_q_12_.BLIF clkgenerator_freqdivide_1_q_c7_n.BLIF \
+clkGenerator_FreqDivide_1_q_12_.D.X2
+111-1 1
+0---- 0
+-0--- 0
+--0-- 0
+----0 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_13_.BLIF \
+clkGenerator_FreqDivide_1_q_13_.D.X1
+01 1
+1- 0
+-0 0
+.names clk_1kHz.BLIF clkGenerator_FreqDivide_1_q_9_.BLIF \
+clkGenerator_FreqDivide_1_q_10_.BLIF clkGenerator_FreqDivide_1_q_11_.BLIF \
+clkGenerator_FreqDivide_1_q_12_.BLIF clkGenerator_FreqDivide_1_q_13_.BLIF \
+clkgenerator_freqdivide_1_q_c7_n.BLIF clkGenerator_FreqDivide_1_q_13_.D.X2
+-1111-1 1
+-0----- 0
+--0---- 0
+---0--- 0
+----0-- 0
+------0 0
+.names key_in_3_.BLIF scanButtonsInst_flag_Data_1_.BLIF \
+scanbuttonsinst_n_37_i_n.X1
+01 1
+1- 0
+-0 0
+.names key_in_3_.BLIF key_in_2_.BLIF key_in_1_.BLIF key_in_0_.BLIF \
+scanButtonsInst_key_out_0_reg.BLIF scanButtonsInst_key_out_1_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_key_out_3_reg.BLIF \
+scanButtonsInst_flag_Data_0_.BLIF scanButtonsInst_flag_Data_1_.BLIF \
+scanbuttonsinst_n_37_i_n.X2
+0000-----1 1
+0-------11 1
+0--0000--1 1
+011------1 1
+01-1-----1 1
+0-11-----1 1
+0---0000-1 1
+1000--1--- 1
+11-------- 0
+1-1------- 0
+1--1------ 0
+1-----0--- 0
+0--------0 0
+-0011---0- 0
+-0101---0- 0
+-1001---0- 0
+-001-1--0- 0
+-010-1--0- 0
+-100-1--0- 0
+-001--1-0- 0
+-010--1-0- 0
+-100--1-0- 0
+-001---10- 0
+.names key_in_3_.BLIF scanButtonsInst_flag_Data_1_.BLIF \
+scanbuttonsinst_n_35_i_n.X1
+00 1
+1- 0
+-1 0
+.names key_in_3_.BLIF key_in_2_.BLIF key_in_1_.BLIF key_in_0_.BLIF \
+scanButtonsInst_key_out_0_reg.BLIF scanButtonsInst_key_out_1_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_key_out_3_reg.BLIF \
+scanButtonsInst_flag_Data_0_.BLIF scanButtonsInst_flag_Data_1_.BLIF \
+scanbuttonsinst_n_35_i_n.X2
+0000-----0 1
+0-------10 1
+0--0000--0 1
+011------0 1
+01-1-----0 1
+0-11-----0 1
+0---0000-0 1
+1000--1--- 1
+11-------- 0
+1-1------- 0
+1--1------ 0
+1-----0--- 0
+0--------1 0
+-0011---0- 0
+-0101---0- 0
+-1001---0- 0
+-001-1--0- 0
+-010-1--0- 0
+-100-1--0- 0
+-001--1-0- 0
+-010--1-0- 0
+-100--1-0- 0
+-001---10- 0
+.names key_in_3_.BLIF scanButtonsInst_flag_Data_0_.BLIF \
+scanbuttonsinst_n_21_i_n.X1
+00 1
+1- 0
+-1 0
+.names key_in_3_.BLIF key_in_2_.BLIF key_in_1_.BLIF key_in_0_.BLIF \
+scanButtonsInst_key_out_0_reg.BLIF scanButtonsInst_key_out_1_reg.BLIF \
+scanButtonsInst_key_out_2_reg.BLIF scanButtonsInst_flag_Cal_0_.BLIF \
+scanButtonsInst_key_out_3_reg.BLIF scanButtonsInst_flag_Cal_1_.BLIF \
+scanButtonsInst_flag_Data_0_.BLIF scanButtonsInst_flag_Data_1_.BLIF \
+scanbuttonsinst_n_21_i_n.X2
+0---------01 1
+011-------0- 1
+01-1------0- 1
+0-11------0- 1
+0--0----1-0- 1
+0000------0- 1
+0---000-0-0- 1
+1000--1----- 1
+1000---011-- 1
+1000---110-- 1
+11---------- 0
+1-1--------- 0
+1--1-------- 0
+0---------1- 0
+1-----0-0--- 0
+1-----01-1-- 0
+1-----00-0-- 0
+-0011------0 0
+-001-1-----0 0
+-001--1----0 0
+-001----1--0 0
+-0101---0--0 0
+-1001---0--0 0
+-010-1--0--0 0
+-100-1--0--0 0
+-010--1-0--0 0
+-100--1-0--0 0
+.names scanButtonsInst_int_Data1_3_.BLIF scanButtonsInst_int_Data0_3_.BLIF \
+scanbuttonsinst_un1_int_data0_i_n.X1
+10 1
+0- 0
+-1 0
+.names scanButtonsInst_int_Data1_0_.BLIF scanButtonsInst_int_Data1_1_.BLIF \
+scanButtonsInst_int_Data1_2_.BLIF scanButtonsInst_int_Data1_3_.BLIF \
+scanButtonsInst_int_Data0_0_.BLIF scanButtonsInst_int_Data0_1_.BLIF \
+scanButtonsInst_int_Data0_2_.BLIF scanButtonsInst_int_Data0_3_.BLIF \
+scanbuttonsinst_un1_int_data0_i_n.X2
+---0---1 1
+--0---1- 1
+000----- 1
+-00-1--- 1
+0-0--1-- 1
+-00--1-- 1
+--0-11-- 1
+00----1- 1
+-0--1-1- 1
+0----11- 1
+-0---11- 1
+----111- 1
+---1---0 1
+--11--01 0
+--10--00 0
+-111-0-1 0
+-1-1-001 0
+-110-0-0 0
+-1-0-000 0
+11110--1 0
+1-1100-1 0
+11-10-01 0
+1--10001 0
+11100--0 0
+1-1000-0 0
+11-00-00 0
+1--00000 0
+.end

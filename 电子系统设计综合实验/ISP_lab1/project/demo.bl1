@@ -1,0 +1,50 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Fri Apr 07 10:43:44 2023
+#$ TITLE demo.bls 
+#$ PROPERTY Lattice LOCK A *15
+#$ PROPERTY Lattice ECP D path1
+#$ PROPERTY Lattice SCP C path1
+#$ MODULE demo
+#$ PINS 6 OUT'o'  CK D C B A
+#$ NODES 9 N_1'o'  N_2'o'  N_3'o'  N_4'o'  N_5'o'  N_6'o'  N_7'o'  N_8'o'  N_9'o' 
+.model demo
+.inputs N_8.BLIF N_9.BLIF N_6.BLIF N_7.BLIF N_5.BLIF N_4.BLIF CK.BLIF N_3.BLIF \
+N_2.BLIF D.BLIF C.BLIF B.BLIF A.BLIF N_1.BLIF
+.outputs N_4 N_5 N_2 N_3 N_1.D N_1.C N_6 N_7 N_8 N_9 OUT
+.names N_8.BLIF N_9.BLIF N_4
+11 1
+0- 0
+-0 0
+.names N_6.BLIF N_7.BLIF N_5
+11 1
+0- 0
+-0 0
+.names N_5.BLIF N_4.BLIF N_2
+1- 1
+-1 1
+00 0
+.names CK.BLIF N_3
+1 1
+0 0
+.names N_2.BLIF N_1.D
+1 1
+0 0
+.names N_3.BLIF N_1.C
+1 1
+0 0
+.names D.BLIF N_6
+1 1
+0 0
+.names C.BLIF N_7
+1 1
+0 0
+.names B.BLIF N_8
+1 1
+0 0
+.names A.BLIF N_9
+1 1
+0 0
+.names N_1.BLIF OUT
+1 1
+0 0
+.end

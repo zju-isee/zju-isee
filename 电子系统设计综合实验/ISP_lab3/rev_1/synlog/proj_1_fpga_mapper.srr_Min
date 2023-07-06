@@ -1,0 +1,284 @@
+
+
+##### START OF TIMING REPORT #####[
+# Timing Report written on Sat Apr 29 21:48:00 2023
+#
+
+
+Top view:               top_level
+Requested Frequency:    1.0 MHz
+Wire load mode:         top
+Paths requested:        5
+Constraint File(s):    
+@N: MT320 |Timing report estimates place and route data. Please look at the place and route timing report for final timing.
+
+@N: MT322 |Clock constraints cover only FF-to-FF paths associated with the clock.
+
+
+
+Performance Summary 
+*******************
+
+
+Worst slack in design: 0.709
+
+                      Requested     Estimated     Requested     Estimated                 Clock        Clock              
+Starting Clock        Frequency     Frequency     Period        Period        Slack       Type         Group              
+--------------------------------------------------------------------------------------------------------------------------
+top_level|clk         1.0 MHz       34.7 MHz      1000.000      28.848        971.152     inferred     Inferred_clkgroup_0
+top_level|clk_low     1.0 MHz       86.1 MHz      1000.000      11.612        988.388     inferred     Inferred_clkgroup_1
+System                1.0 MHz       22.4 MHz      1000.000      44.720        955.280     system       system_clkgroup    
+==========================================================================================================================
+
+
+
+Clock Relationships
+*******************
+
+Clocks                                |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+-----------------------------------------------------------------------------------------------------------------------------
+Starting           Ending             |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
+-----------------------------------------------------------------------------------------------------------------------------
+System             System             |  0.000       0.709   |  No paths    -      |  No paths    -      |  No paths    -    
+System             top_level|clk      |  0.000       9.797   |  No paths    -      |  No paths    -      |  No paths    -    
+top_level|clk      System             |  0.000       10.475  |  No paths    -      |  No paths    -      |  No paths    -    
+top_level|clk      top_level|clk      |  0.000       2.568   |  No paths    -      |  No paths    -      |  No paths    -    
+top_level|clk_low  System             |  0.000       0.709   |  No paths    -      |  No paths    -      |  No paths    -    
+top_level|clk_low  top_level|clk_low  |  0.000       2.948   |  No paths    -      |  No paths    -      |  No paths    -    
+=============================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+No IO constraint found
+
+
+
+====================================
+Detailed Report for Clock: top_level|clk
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                   Starting                                                                  Arrival          
+Instance                           Reference         Type        Pin     Net                                 Time        Slack
+                                   Clock                                                                                      
+------------------------------------------------------------------------------------------------------------------------------
+clkGenerate.FreqDivide_2.q7_4      top_level|clk     CU4P3IX     Q3      clkGenerate.un1_FreqDivide_2[7]     3.198       2.568
+clkGenerate.FreqDivide_2.q11_8     top_level|clk     CU4P3IX     Q0      clkGenerate.un1_FreqDivide_2[8]     3.198       2.568
+clkGenerate.FreqDivide_1.q3_0      top_level|clk     CU4P3IX     CO      clkGenerate.FreqDivide_1.N_4        3.640       2.870
+clkGenerate.FreqDivide_1.q7_4      top_level|clk     CU4P3IX     CO      clkGenerate.FreqDivide_1.N_5        3.640       2.870
+clkGenerate.FreqDivide_1.q11_8     top_level|clk     CU4P3IX     CO      clkGenerate.FreqDivide_1.N_6        3.640       2.870
+clkGenerate.FreqDivide_2.q3_0      top_level|clk     CU4P3IX     CO      clkGenerate.FreqDivide_2.N_4        3.640       2.870
+clkGenerate.FreqDivide_2.q7_4      top_level|clk     CU4P3IX     CO      clkGenerate.FreqDivide_2.N_5        3.640       2.870
+clkGenerate.FreqDivide_2.q11_8     top_level|clk     CU4P3IX     CO      clkGenerate.FreqDivide_2.N_6        3.640       2.870
+buttonInst_1.Timer.q3_0            top_level|clk     CU4P3IX     Q0      buttonInst_1.un1_Timer[0]           3.648       3.018
+buttonInst_1.Timer.q3_0            top_level|clk     CU4P3IX     Q1      buttonInst_1.un1_Timer[1]           3.648       3.018
+==============================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                    Starting                                                               Required          
+Instance                            Reference         Type        Pin     Net                              Time         Slack
+                                    Clock                                                                                    
+-----------------------------------------------------------------------------------------------------------------------------
+clkGenerate.FreqDivide_2.q3_0       top_level|clk     CU4P3IX     CD      clkGenerate.FreqDivide_2.N_2     2.590        2.568
+clkGenerate.FreqDivide_2.q7_4       top_level|clk     CU4P3IX     CD      clkGenerate.FreqDivide_2.N_2     2.590        2.568
+clkGenerate.FreqDivide_2.q11_8      top_level|clk     CU4P3IX     CD      clkGenerate.FreqDivide_2.N_2     2.590        2.568
+clkGenerate.FreqDivide_2.q15_12     top_level|clk     CU4P3IX     CD      clkGenerate.FreqDivide_2.N_2     2.590        2.568
+clkGenerate.FreqDivide_1.q7_4       top_level|clk     CU4P3IX     CI      clkGenerate.FreqDivide_1.N_4     0.770        2.870
+clkGenerate.FreqDivide_1.q11_8      top_level|clk     CU4P3IX     CI      clkGenerate.FreqDivide_1.N_5     0.770        2.870
+clkGenerate.FreqDivide_1.q15_12     top_level|clk     CU4P3IX     CI      clkGenerate.FreqDivide_1.N_6     0.770        2.870
+clkGenerate.FreqDivide_2.q7_4       top_level|clk     CU4P3IX     CI      clkGenerate.FreqDivide_2.N_4     0.770        2.870
+clkGenerate.FreqDivide_2.q11_8      top_level|clk     CU4P3IX     CI      clkGenerate.FreqDivide_2.N_5     0.770        2.870
+clkGenerate.FreqDivide_2.q15_12     top_level|clk     CU4P3IX     CI      clkGenerate.FreqDivide_2.N_6     0.770        2.870
+=============================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+    Propagation time:                        5.158
+    + Clock delay at starting point:         0.000 (ideal)
+    - Requested Period:                      0.000
+    - Hold time:                             2.590
+    - Clock delay at ending point:           0.000 (ideal)
+    = Slack (non-critical) :                 2.568
+
+    Number of logic level(s):                1
+    Starting point:                          clkGenerate.FreqDivide_2.q7_4 / Q3
+    Ending point:                            clkGenerate.FreqDivide_2.q3_0 / CD
+    The start point is clocked by            top_level|clk [rising] on pin CK
+    The end   point is clocked by            top_level|clk [rising] on pin CK
+
+Instance / Net                                   Pin      Pin               Arrival     No. of    
+Name                                Type         Name     Dir     Delay     Time        Fan Out(s)
+--------------------------------------------------------------------------------------------------
+clkGenerate.FreqDivide_2.q7_4       CU4P3IX      Q3       Out     3.198     3.198       -         
+clkGenerate.un1_FreqDivide_2[7]     Net          -        -       -         -           1         
+clkGenerate.FreqDivide_2.q48        ORCALUT5     E        In      0.000     3.198       -         
+clkGenerate.FreqDivide_2.q48        ORCALUT5     Z        Out     1.960     5.158       -         
+clkGenerate.FreqDivide_2.N_2        Net          -        -       -         -           5         
+clkGenerate.FreqDivide_2.q3_0       CU4P3IX      CD       In      0.000     5.158       -         
+==================================================================================================
+
+
+
+
+====================================
+Detailed Report for Clock: top_level|clk_low
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                      Starting                                                                    Arrival          
+Instance                              Reference             Type        Pin     Net                               Time        Slack
+                                      Clock                                                                                        
+-----------------------------------------------------------------------------------------------------------------------------------
+randomNumGenetate_1.conter_9.q3_0     top_level|clk_low     CU4P3IX     Q0      randomNumGenetate_1.numNow[0]     3.648       0.709
+randomNumGenetate_1.conter_9.q3_0     top_level|clk_low     CU4P3IX     Q1      randomNumGenetate_1.numNow[1]     3.648       0.709
+randomNumGenetate_1.conter_9.q3_0     top_level|clk_low     CU4P3IX     Q2      randomNumGenetate_1.numNow[2]     3.648       0.709
+randomNumGenetate_1.conter_9.q3_0     top_level|clk_low     CU4P3IX     Q3      randomNumGenetate_1.numNow[3]     3.648       0.709
+===================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                      Starting                                                                       Required          
+Instance                              Reference             Type        Pin     Net                                  Time         Slack
+                                      Clock                                                                                            
+---------------------------------------------------------------------------------------------------------------------------------------
+randomNumGenetate_1.num[0]            top_level|clk_low     FD1S3AY     D       randomNumGenetate_1.numNow[0]        2.940        0.709
+randomNumGenetate_1.num[1]            top_level|clk_low     FD1S3AY     D       randomNumGenetate_1.numNow[1]        2.940        0.709
+randomNumGenetate_1.num[2]            top_level|clk_low     FD1S3AY     D       randomNumGenetate_1.numNow[2]        2.940        0.709
+randomNumGenetate_1.num[3]            top_level|clk_low     FD1S3AY     D       randomNumGenetate_1.numNow[3]        2.940        0.709
+randomNumGenetate_1.conter_9.q3_0     top_level|clk_low     CU4P3IX     CD      randomNumGenetate_1.conter_9.N_2     2.590        2.948
+=======================================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+    Propagation time:                        3.648
+    + Clock delay at starting point:         0.000 (ideal)
+    - Requested Period:                      0.000
+    - Hold time:                             2.940
+    - Clock delay at ending point:           0.000 (ideal)
+0.000
+    = Slack (critical) :                     0.708
+
+    Number of logic level(s):                0
+    Starting point:                          randomNumGenetate_1.conter_9.q3_0 / Q0
+    Ending point:                            randomNumGenetate_1.num[0] / D
+    The start point is clocked by            top_level|clk_low [rising] on pin CK
+    The end   point is clocked by            System [rising] on pin CK
+
+Instance / Net                                    Pin      Pin               Arrival     No. of    
+Name                                  Type        Name     Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------------
+randomNumGenetate_1.conter_9.q3_0     CU4P3IX     Q0       Out     3.648     3.648       -         
+randomNumGenetate_1.numNow[0]         Net         -        -       -         -           2         
+randomNumGenetate_1.num[0]            FD1S3AY     D        In      0.000     3.648       -         
+===================================================================================================
+
+
+
+
+====================================
+Detailed Report for Clock: System
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                      Starting                                                            Arrival           
+Instance                              Reference     Type        Pin     Net                               Time        Slack 
+                                      Clock                                                                                 
+----------------------------------------------------------------------------------------------------------------------------
+randomNumGenetate_2.conter_9.q3_0     System        CU4P3IX     Q0      randomNumGenetate_2.numNow[0]     3.648       0.709 
+randomNumGenetate_2.conter_9.q3_0     System        CU4P3IX     Q1      randomNumGenetate_2.numNow[1]     3.648       0.709 
+randomNumGenetate_2.conter_9.q3_0     System        CU4P3IX     Q2      randomNumGenetate_2.numNow[2]     3.648       0.709 
+randomNumGenetate_2.conter_9.q3_0     System        CU4P3IX     Q3      randomNumGenetate_2.numNow[3]     3.648       0.709 
+clkGenerate.scancnt3_0                System        CU4P3DX     Q1      selLED[1]                         7.834       4.055 
+clkGenerate.scancnt3_0                System        CU4P3DX     Q0      selLED[0]                         8.607       4.827 
+randomNumGenetate_2.num[3]            System        FD1S3AY     Q       Data1[3]                          5.838       9.797 
+randomNumGenetate_2.num[0]            System        FD1S3AY     Q       Data1[0]                          6.224       10.099
+randomNumGenetate_1.num[1]            System        FD1S3AY     Q       Data0[1]                          5.838       13.471
+randomNumGenetate_2.num[1]            System        FD1S3AY     Q       Data1[1]                          5.838       13.471
+============================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                      Starting                                                               Required          
+Instance                              Reference     Type        Pin     Net                                  Time         Slack
+                                      Clock                                                                                    
+-------------------------------------------------------------------------------------------------------------------------------
+randomNumGenetate_2.num[0]            System        FD1S3AY     D       randomNumGenetate_2.numNow[0]        2.940        0.709
+randomNumGenetate_2.num[1]            System        FD1S3AY     D       randomNumGenetate_2.numNow[1]        2.940        0.709
+randomNumGenetate_2.num[2]            System        FD1S3AY     D       randomNumGenetate_2.numNow[2]        2.940        0.709
+randomNumGenetate_2.num[3]            System        FD1S3AY     D       randomNumGenetate_2.numNow[3]        2.940        0.709
+randomNumGenetate_2.conter_9.q3_0     System        CU4P3IX     CD      randomNumGenetate_2.conter_9.N_2     2.590        2.948
+LEDscanInst.LED_VCC3                  System        FD1S3IX     CD      selLED[1]                            3.780        4.055
+LEDscanInst.LED_VCC2                  System        FD1S3IX     CD      selLED[0]                            3.780        4.827
+LEDscanInst.LED_VCC4                  System        FD1S3IX     CD      selLED[0]                            3.780        4.827
+counter_lose.q3_0                     System        CU4P3IX     SP      counter_lose.qe_0                    2.590        9.797
+counter_win.q3_0                      System        CU4P3IX     SP      counter_win.qe_0                     2.590        9.797
+===============================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+    Propagation time:                        3.648
+    + Clock delay at starting point:         0.000 (ideal)
+-0.000
+    - Requested Period:                      0.000
+    - Hold time:                             2.940
+    - Clock delay at ending point:           0.000 (ideal)
+0.000
+    = Slack (critical) :                     0.708
+
+    Number of logic level(s):                0
+    Starting point:                          randomNumGenetate_2.conter_9.q3_0 / Q0
+    Ending point:                            randomNumGenetate_2.num[0] / D
+    The start point is clocked by            System [rising] on pin CK
+    The end   point is clocked by            System [rising] on pin CK
+
+Instance / Net                                    Pin      Pin               Arrival     No. of    
+Name                                  Type        Name     Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------------
+randomNumGenetate_2.conter_9.q3_0     CU4P3IX     Q0       Out     3.648     3.648       -         
+randomNumGenetate_2.numNow[0]         Net         -        -       -         -           2         
+randomNumGenetate_2.num[0]            FD1S3AY     D        In      0.000     3.648       -         
+===================================================================================================
+
+
+
+##### END OF TIMING REPORT #####]
+
