@@ -1,0 +1,106 @@
+// Lattice TS Stimulus Data from the Waveform Editor
+NETWORK untitled
+XRESET_SIGNAL !XRESET 0@0ns 1@0ns
+XRESET_SIGNAL XRESET 0@0ns 1@0ns
+VECTOR XTEST_OE PATTERN 1#0ns
+
+
+// Create Dummy Wires to Connect to signals
+
+
+
+// Code for all top level Inputs and BiDirs, etc.
+
+
+VECTOR clk1 PATTERN 1*(\
+ 1#0ns,\
+ 0#1600ns,\
+ 4294967295*( 1#1600ns,\
+ 0#1600ns),\
+  0#1600ns   )
+
+VECTOR key1 PATTERN 1*(\
+ 1#0ns,\
+ 0#1716000ns,\
+ 1#116000ns,\
+ 4294967295*( 1#726000ns,\
+ 0#1716000ns,\
+ 1#116000ns),\
+  1#726000ns   )
+
+VECTOR clk2 PATTERN 1*(\
+ 1#0ns,\
+ 0#4800ns,\
+ 4294967295*( 1#4800ns,\
+ 0#4800ns),\
+  0#4800ns   )
+
+VECTOR ket2 PATTERN 1*(\
+ 1#0ns,\
+ 0#1472000ns,\
+ 1#124000ns,\
+  1#869000ns   )
+
+VECTOR AD0 PATTERN 1*(\
+ 1#0ns,\
+ 0#100000ns,\
+ 4294967295*( 1#100000ns,\
+ 0#100000ns),\
+  0#100000ns   )
+
+VECTOR AD1 PATTERN 1*(\
+ 1#0ns,\
+ 0#200000ns,\
+ 4294967295*( 1#200000ns,\
+ 0#200000ns),\
+  0#200000ns   )
+
+VECTOR AD2 PATTERN 1*(\
+ 1#0ns,\
+ 0#400000ns,\
+ 4294967295*( 1#400000ns,\
+ 0#400000ns),\
+  0#400000ns   )
+
+VECTOR AD3 PATTERN 1*(\
+ 1#0ns,\
+ 0#800000ns,\
+ 4294967295*( 1#800000ns,\
+ 0#800000ns),\
+  0#800000ns   )
+
+VECTOR AD4 PATTERN 1*(\
+ 1#0ns,\
+ 0#1600000ns,\
+ 4294967295*( 1#1610000ns,\
+ 0#1600000ns),\
+  0#1610000ns   )
+
+VECTOR AD5 PATTERN 1*(\
+ 1#0ns,\
+ 0#3200000ns,\
+ 4294967295*( 1#3200000ns,\
+ 0#3200000ns),\
+  0#3200000ns   )
+
+VECTOR AD6 PATTERN 1*(\
+ 1#0ns,\
+ 0#6400000ns,\
+ 4294967295*( 1#6400000ns,\
+ 0#6400000ns),\
+  0#6400000ns   )
+
+VECTOR AD7 PATTERN 1*(\
+ 1#0ns,\
+ 0#12800000ns,\
+  0#12800000ns   )
+
+
+
+FTRACE(lab2.TRA, "%12t: %b%b%b%b%b%b%b%b%b%b%b%b->", $time, AD7, AD6, AD5, AD4, AD3, AD2, AD1, AD0, ket2, clk2, key1, clk1);
+SET INTERNAL_ONLY_ALL_SET$$ [AD7,AD6,AD5,AD4,AD3,AD2,AD1,AD0,ket2,clk2,key1,clk1]
+BREAK IF INTERNAL_ONLY_ALL_SET$$->? DO PRINT
+
+RUN
+
+ÿ

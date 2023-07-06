@@ -1,0 +1,1067 @@
+|--------------------------------------------------------------|
+|- ispLEVER Classic 2.1.00.02.49.20 Fitter Report File        -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+
+
+The Basic/Detailed Report Format can be selected in the dialog box
+Tools->Fitter Report File Format...
+
+Project_Summary
+~~~~~~~~~~~~~~~
+Project Name         :  isp_lab10
+Project Path         :  D:\MyDucuments\_Junior_1\ElectricSystemDesign\ISP_lab10
+Project Fitted on    :  Wed May 24 22:05:36 2023
+
+Device               :  M4256_64
+Package              :  100
+GLB Input Mux Size   :  33
+Available Blocks     :  16
+Speed                :  -7.5
+Part Number          :  LC4256V-75T100I
+Source Format        :  Schematic_Verilog_HDL
+
+
+// Project 'isp_lab10' Fit Successfully! //
+
+
+Compilation_Times
+~~~~~~~~~~~~~~~~~
+Prefit Time                     0 secs
+Load Design Time                0.05 secs
+Partition Time                  0.02 secs
+Place Time                      0.00 secs
+Route Time                      0.00 secs
+Total Fit Time                  00:00:01
+
+
+Design_Summary
+~~~~~~~~~~~~~~
+Total Input Pins                5
+Total Logic Functions           44
+  Total Output Pins             11
+  Total Bidir I/O Pins          0
+  Total Buried Nodes            33
+Total Flip-Flops                41
+  Total D Flip-Flops            33
+  Total T Flip-Flops            0
+  Total Latches                 8
+Total Product Terms             252
+
+Total Reserved Pins             0
+Total Locked Pins               16
+Total Locked Nodes              0
+
+Total Unique Output Enables     0
+Total Unique Clocks             5
+Total Unique Clock Enables      2
+Total Unique Resets             1
+Total Unique Presets            1
+
+Fmax Logic Levels               1
+
+
+Device_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~~~~
+                                 Device
+                                 Total    Used   Not Used   Utilization
+-----------------------------------------------------------------------
+Dedicated Pins
+  Clock/Input Pins                  4        3      1    -->    75
+  Input-Only Pins                   6        0      6    -->     0
+  I/O / Enable Pins                 2        0      2    -->     0
+I/O Pins                           62       13     49    -->    20
+Logic Functions                   256       44    212    -->    17
+  Input Registers                  64        0     64    -->     0
+
+GLB Inputs                        576      157    419    -->    27
+Logical Product Terms            1280      198   1082    -->    15
+Occupied GLBs                      16       16      0    -->   100
+Macrocells                        256       44    212    -->    17
+
+Control Product Terms:
+  GLB Clock/Clock Enables          16       13      3    -->    81
+  GLB Reset/Presets                16        0     16    -->     0
+  Macrocell Clocks                256        9    247    -->     3
+  Macrocell Clock Enables         256        3    253    -->     1
+  Macrocell Enables               256        0    256    -->     0
+  Macrocell Resets                256        0    256    -->     0
+  Macrocell Presets               256        0    256    -->     0
+
+Global Routing Pool               324       36    288    -->    11
+  GRP from IFB                     ..        3     ..    -->    ..
+    (from input signals)           ..        3     ..    -->    ..
+    (from output signals)          ..        0     ..    -->    ..
+    (from bidir signals)           ..        0     ..    -->    ..
+  GRP from MFB                     ..       33     ..    -->    ..
+----------------------------------------------------------------------
+
+<Note> 1 : The available PT is the product term that has not been used.
+<Note> 2 : IFB is I/O feedback.
+<Note> 3 : MFB is macrocell feedback.
+
+
+
+GLB_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~
+                                                                                     # of PT
+               ---  Fanin  ---    I/O    Input  Macrocells       Macrocells   Logic  clusters
+             Unique Shared Total  Pins    Regs Used Inaccessible  available    PTs   used
+-------------------------------------------------------------------------------------------
+Maximum
+  GLB                      36      *(1)     8   --     --             16       80       16
+-------------------------------------------------------------------------------------------
+  GLB    A      0     7     7      0/4      0    2      0             14        5        2
+  GLB    B      3     9    12      0/4      0    2      0             14       16        4
+  GLB    C     11     0    11      2/4      0    1      0             15       13        3
+  GLB    D      1    11    12      0/4      0    7      0              9       17        7
+-------------------------------------------------------------------------------------------
+  GLB    E     11     0    11      0/4      0    1      0             15       13        3
+  GLB    F     11     0    11      0/4      0    1      0             15       13        3
+  GLB    G     11     0    11      0/4      0    1      0             15       13        3
+  GLB    H     11     0    11      0/4      0    1      0             15       13        3
+-------------------------------------------------------------------------------------------
+  GLB    I     11     0    11      0/4      0    1      0             15       12        3
+  GLB    J     11     0    11      0/4      0    1      0             15       12        3
+  GLB    K      4     1     5      3/4      0    3      0             13        5        3
+  GLB    L      0     5     5      3/4      0    3      0             13       12        3
+-------------------------------------------------------------------------------------------
+  GLB    M      0     5     5      3/4      0    3      0             13       10        3
+  GLB    N      1    11    12      1/4      0    7      0              9       16        7
+  GLB    O      0    11    11      1/4      0    6      0             10       16        6
+  GLB    P      0    11    11      0/4      0    4      0             12       12        4
+-------------------------------------------------------------------------------------------
+TOTALS:        86    71   157     13/64     0   44      0            212      198       60
+
+<Note> 1 : For ispMACH 4000 devices, the number of IOs depends on the GLB.
+<Note> 2 : Four rightmost columns above reflect last status of the placement process.
+
+
+
+GLB_Control_Summary
+~~~~~~~~~~~~~~~~~~~
+           Shared Shared | Mcell  Mcell  Mcell  Mcell  Mcell 
+           Clk/CE Rst/Pr | Clock  CE     Enable Reset  Preset
+------------------------------------------------------------------------------
+Maximum
+  GLB        1      1        16     16     16     16     16  
+==============================================================================
+  GLB    A   1      0         0      0      0      0      0
+  GLB    B   1      0         1      0      0      0      0
+  GLB    C   1      0         0      0      0      0      0
+  GLB    D   1      0         2      1      0      0      0
+------------------------------------------------------------------------------
+  GLB    E   1      0         0      0      0      0      0
+  GLB    F   1      0         0      0      0      0      0
+  GLB    G   1      0         0      0      0      0      0
+  GLB    H   1      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    I   1      0         0      0      0      0      0
+  GLB    J   1      0         0      0      0      0      0
+  GLB    K   0      0         0      0      0      0      0
+  GLB    L   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    M   0      0         0      0      0      0      0
+  GLB    N   1      0         2      1      0      0      0
+  GLB    O   1      0         2      1      0      0      0
+  GLB    P   1      0         2      0      0      0      0
+------------------------------------------------------------------------------
+
+<Note> 1 : For ispMACH 4000 devices, the number of output enables depends on the GLB.
+
+
+
+Optimizer_and_Fitter_Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pin Assignment :                       Yes
+Group Assignment :                     No
+Pin Reservation :                      No
+
+@Ignore_Project_Constraints :
+  Pin Assignments :                    No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+  Group Assignments :                  No
+  Macrocell Assignment :               No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+
+@Backannotate_Project_Constraints
+  Pin Assignments :                    No
+  Pin And Block Assignments :          No
+  Pin, Macrocell and Block :           No
+
+@Timing_Constraints :                  No
+
+@Global_Project_Optimization :
+  Balanced Partitioning :              Yes
+  Spread Placement :                   Yes
+
+  Note :
+    Pack Design :
+       Balanced Partitioning = No
+       Spread Placement      = No
+    Spread Design :
+       Balanced Partitioning = Yes
+       Spread Placement      = Yes
+
+
+@Logic_Synthesis :
+  Logic Reduction :                    Yes
+  Node Collapsing :                    FMAX
+  Fmax_Logic_Level :                   1
+  D/T Synthesis :                      Yes
+  XOR Synthesis :                      Yes
+  Max. P-Term for Collapsing :         16
+  Max. P-Term for Splitting :          80
+  Max Symbols :                        24
+
+@Utilization_options
+  Max. % of Macrocells used :          100
+@Usercode                               (HEX)
+@IO_Types                              Default = LVCMOS18 (2)
+@Output_Slew_Rate                      Default = FAST (2)
+@Power                                 Default = HIGH (2)
+@Pull                                  Default = PULLUP_UP (2)
+@Fast_Bypass                           Default = None (2)
+@ORP_Bypass                            Default = None
+@Input_Registers                       Default = None (2)
+@Register_Powerup                      Default = None
+
+Device Options:
+<Note> 1 : Reserved unused I/Os can be independently driven to Low or High, and does not
+           follow the drive level set for the Global Configure Unused I/O Option.
+<Note> 2 : For user-specified constraints on individual signals, refer to the Output,
+           Bidir and Buried Signal Lists.
+
+
+
+Pinout_Listing
+~~~~~~~~~~~~~~
+      | Pin   | Bank |GLB |Assigned|                 | Signal|
+Pin No| Type  |Number|Pad |Pin     |     I/O Type    | Type  | Signal name
+----------------------------------------------------------------------------------------------
+1     | GND   |   -  |    |        |                 |       |
+2     | TDI   |   -  |    |        |                 |       |
+3     |  I_O  |   0  |C12 |    *   |LVCMOS18         | Input |KeyClock
+4     |  I_O  |   0  |C10 |    *   |LVCMOS18         | Input |KeyData
+5     |  I_O  |   0  |C6  |        |                 |       |
+6     |  I_O  |   0  |C2  |        |                 |       |
+7     |GNDIO0 |   -  |    |        |                 |       |
+8     |  I_O  |   0  |D12 |        |                 |       |
+9     |  I_O  |   0  |D10 |        |                 |       |
+10    |  I_O  |   0  |D6  |        |                 |       |
+11    |  I_O  |   0  |D4  |        |                 |       |
+12    | IN0   |   0  |    |        |                 |       |
+13    |VCCIO0 |   -  |    |        |                 |       |
+14    |  I_O  |   0  |E4  |        |                 |       |
+15    |  I_O  |   0  |E6  |        |                 |       |
+16    |  I_O  |   0  |E10 |        |                 |       |
+17    |  I_O  |   0  |E12 |        |                 |       |
+18    |GNDIO0 |   -  |    |        |                 |       |
+19    |  I_O  |   0  |F2  |        |                 |       |
+20    |  I_O  |   0  |F6  |        |                 |       |
+21    |  I_O  |   0  |F10 |        |                 |       |
+22    |  I_O  |   0  |F12 |        |                 |       |
+23    | IN1   |   0  |    |        |                 |       |
+24    | TCK   |   -  |    |        |                 |       |
+25    | VCC   |   -  |    |        |                 |       |
+26    | GND   |   -  |    |        |                 |       |
+27    | IN2   |   0  |    |        |                 |       |
+28    |  I_O  |   0  |G12 |        |                 |       |
+29    |  I_O  |   0  |G10 |        |                 |       |
+30    |  I_O  |   0  |G6  |        |                 |       |
+31    |  I_O  |   0  |G2  |        |                 |       |
+32    |GNDIO0 |   -  |    |        |                 |       |
+33    |VCCIO0 |   -  |    |        |                 |       |
+34    |  I_O  |   0  |H12 |        |                 |       |
+35    |  I_O  |   0  |H10 |        |                 |       |
+36    |  I_O  |   0  |H6  |        |                 |       |
+37    |  I_O  |   0  |H2  |        |                 |       |
+38    |INCLK1 |   0  |    |    *   |LVCMOS18         | Input |reset
+39    |INCLK2 |   1  |    |    *   |LVCMOS18         | Input |clk_low
+40    | VCC   |   -  |    |        |                 |       |
+41    |  I_O  |   1  |I2  |        |                 |       |
+42    |  I_O  |   1  |I6  |        |                 |       |
+43    |  I_O  |   1  |I10 |        |                 |       |
+44    |  I_O  |   1  |I12 |        |                 |       |
+45    |VCCIO1 |   -  |    |        |                 |       |
+46    |GNDIO1 |   -  |    |        |                 |       |
+47    |  I_O  |   1  |J2  |        |                 |       |
+48    |  I_O  |   1  |J6  |        |                 |       |
+49    |  I_O  |   1  |J10 |        |                 |       |
+50    |  I_O  |   1  |J12 |        |                 |       |
+51    | GND   |   -  |    |        |                 |       |
+52    | TMS   |   -  |    |        |                 |       |
+53    |  I_O  |   1  |K12 |        |                 |       |
+54    |  I_O  |   1  |K10 |    *   |LVCMOS18         | Output|LED_VCC4
+55    |  I_O  |   1  |K6  |    *   |LVCMOS18         | Output|LED_VCC3
+56    |  I_O  |   1  |K2  |    *   |LVCMOS18         | Output|LED_B
+57    |GNDIO1 |   -  |    |        |                 |       |
+58    |  I_O  |   1  |L12 |    *   |LVCMOS18         | Output|LED_G
+59    |  I_O  |   1  |L10 |        |                 |       |
+60    |  I_O  |   1  |L6  |    *   |LVCMOS18         | Output|LED_F
+61    |  I_O  |   1  |L4  |    *   |LVCMOS18         | Output|LED_A
+62    | IN3   |   1  |    |        |                 |       |
+63    |VCCIO1 |   -  |    |        |                 |       |
+64    |  I_O  |   1  |M4  |    *   |LVCMOS18         | Output|LED_D
+65    |  I_O  |   1  |M6  |    *   |LVCMOS18         | Output|LED_E
+66    |  I_O  |   1  |M10 |    *   |LVCMOS18         | Output|LED_C
+67    |  I_O  |   1  |M12 |        |                 |       |
+68    |GNDIO1 |   -  |    |        |                 |       |
+69    |  I_O  |   1  |N2  |        |                 |       |
+70    |  I_O  |   1  |N6  |        |                 |       |
+71    |  I_O  |   1  |N10 |        |                 |       |
+72    |  I_O  |   1  |N12 |    *   |LVCMOS18         | Output|LED_VCC1
+73    | IN4   |   1  |    |        |                 |       |
+74    | TDO   |   -  |    |        |                 |       |
+75    | VCC   |   -  |    |        |                 |       |
+76    | GND   |   -  |    |        |                 |       |
+77    | IN5   |   1  |    |        |                 |       |
+78    |  I_O  |   1  |O12 |    *   |LVCMOS18         | Output|LED_VCC2
+79    |  I_O  |   1  |O10 |        |                 |       |
+80    |  I_O  |   1  |O6  |        |                 |       |
+81    |  I_O  |   1  |O2  |        |                 |       |
+82    |GNDIO1 |   -  |    |        |                 |       |
+83    |VCCIO1 |   -  |    |        |                 |       |
+84    |  I_O  |   1  |P12 |        |                 |       |
+85    |  I_O  |   1  |P10 |        |                 |       |
+86    |  I_O  |   1  |P6  |        |                 |       |
+87    | I_O/OE|   1  |P2  |        |                 |       |
+88    |INCLK3 |   1  |    |    *   |LVCMOS18         | Input |clk
+89    |INCLK0 |   0  |    |        |                 |       |
+90    | VCC   |   -  |    |        |                 |       |
+91    | I_O/OE|   0  |A2  |        |                 |       |
+92    |  I_O  |   0  |A6  |        |                 |       |
+93    |  I_O  |   0  |A10 |        |                 |       |
+94    |  I_O  |   0  |A12 |        |                 |       |
+95    |VCCIO0 |   -  |    |        |                 |       |
+96    |GNDIO0 |   -  |    |        |                 |       |
+97    |  I_O  |   0  |B2  |        |                 |       |
+98    |  I_O  |   0  |B6  |        |                 |       |
+99    |  I_O  |   0  |B10 |        |                 |       |
+100   |  I_O  |   0  |B12 |        |                 |       |
+----------------------------------------------------------------------------------------------
+
+<Note> GLB Pad : This notation refers to the GLB I/O pad number in the device.
+<Note> Assigned Pin : user or dedicated input assignment (E.g. Clock pins).
+<Note> Pin Type : 
+          ClkIn : Dedicated input or clock pin 
+           CLK  : Dedicated clock pin
+           I_O  : Input/Output pin
+           INP  : Dedicated input pin
+           JTAG : JTAG Control and test pin
+           NC   : No connected
+
+
+
+Input_Signal_List
+~~~~~~~~~~~~~~~~~
+                Input
+         Pin    Fanout
+ Pin GLB Type                       Pullup Signal
+---------------------------------------------------
+   3   C  I/O   1  ---D------------      Up KeyClock
+   4   C  I/O   4  ---D---------NOP      Up KeyData
+  88  -- INCLK     ----------------      Up clk
+  39  -- INCLK     ----------------      Up clk_low
+  38  -- INCLK  16 ABCDEFGHIJKLMNOP      Up reset
+---------------------------------------------------
+
+
+
+Output_Signal_List
+~~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Output
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+---------------------------------------------------------------------------------
+  61   L  5  1   4  1 DFF      R            ----------------  Fast     Up LED_A
+  56   K  5  1   4  1 DFF      R            ----------------  Fast     Up LED_B
+  66   M  5  1   3  1 DFF      R            ----------------  Fast     Up LED_C
+  64   M  5  1   5  1 DFF      R            ----------------  Fast     Up LED_D
+  65   M  5  1   2  1 DFF      R            ----------------  Fast     Up LED_E
+  60   L  5  1   4  1 DFF      R            ----------------  Fast     Up LED_F
+  58   L  5  1   4  1 DFF      R            ----------------  Fast     Up LED_G
+  72   N  0  -   0  1 COM                   ----------------  Fast     Up LED_VCC1
+  78   O  0  -   0  1 COM                   ----------------  Fast     Up LED_VCC2
+  55   K  0  -   0  1 COM                   ----------------  Fast     Up LED_VCC3
+  54   K  1  -   1  1 DFF      R            ----------------  Fast     Up LED_VCC4
+---------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Bidir_Signal_List
+~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Bidir
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Buried_Signal_List
+~~~~~~~~~~~~~~~~~~
+        I         C      P R P       Node
+        N         L Mc   R E U C I F Fanout
+Mc GLB  P LL PTs  S Type E S P E R P                     Signal
+----------------------------------------------------------------------------------------
+ 9   D  2  -   1  1 DFF    * R       1  -------------N--  PS2_Receiver_Inst_KeyClock_r0
+12   N  2  1   1  1 DFF    * R       5  A--D---------NOP  PS2_Receiver_Inst_KeyClock_r1
+12   D  2  1   1  1 DFF    * R       5  A--D---------NOP  PS2_Receiver_Inst_KeyClock_r2
+ 9   O  3  1   2  1 DFF  *   S       8  -BC-EFGHIJ------  PS2_Receiver_Inst_LastRxData_0_
+ 5   D  3  1   2  1 DFF    * R       8  -BC-EFGHIJ------  PS2_Receiver_Inst_LastRxData_1_
+ 6   P  3  1   2  1 DFF  *   S       8  -BC-EFGHIJ------  PS2_Receiver_Inst_LastRxData_2_
+ 7   N  3  1   2  1 DFF    * R       8  -BC-EFGHIJ------  PS2_Receiver_Inst_LastRxData_3_
+ 7   D  3  1   2  1 DFF    * R       8  -BC-EFGHIJ------  PS2_Receiver_Inst_LastRxData_4_
+ 9   N  3  1   2  1 DFF    * R       8  -BC-EFGHIJ------  PS2_Receiver_Inst_LastRxData_5_
+12   O  3  1   2  1 DFF  *   S       8  -BC-EFGHIJ------  PS2_Receiver_Inst_LastRxData_6_
+10   P  3  1   2  1 DFF    * R       8  -BC-EFGHIJ------  PS2_Receiver_Inst_LastRxData_7_
+ 9   B 10  1   2  1 DFF    * R       8  -BC-EFGHIJ------  PS2_Receiver_Inst_LedEn
+ 4   E 11  1  13  3 LAT    * R       3  ----------KLM---  PS2_Receiver_Inst_PS_Data_0_
+ 4   F 11  1  13  3 LAT    * R       3  ----------KLM---  PS2_Receiver_Inst_PS_Data_1_
+ 4   C 11  1  13  3 LAT    * R       3  ----------KLM---  PS2_Receiver_Inst_PS_Data_2_
+ 4   I 11  1  12  3 LAT    * R       3  ----------KLM---  PS2_Receiver_Inst_PS_Data_3_
+ 3   O  9  1   4  1 DFF      R *     1  --------------O-  PS2_Receiver_Inst_RxData_1_
+ 0   D  9  1   4  1 DFF      R *     1  ---D------------  PS2_Receiver_Inst_RxData_2_
+ 1   P  9  1   4  1 DFF      R *     1  ---------------P  PS2_Receiver_Inst_RxData_3_
+ 1   N  9  1   4  1 DFF      R *     1  -------------N--  PS2_Receiver_Inst_RxData_4_
+ 1   D  9  1   4  1 DFF      R *     1  ---D------------  PS2_Receiver_Inst_RxData_5_
+ 3   N  9  1   4  1 DFF      R *     1  -------------N--  PS2_Receiver_Inst_RxData_6_
+ 5   O  9  1   4  1 DFF      R *     1  --------------O-  PS2_Receiver_Inst_RxData_7_
+ 3   P  9  1   4  1 DFF      R *     1  ---------------P  PS2_Receiver_Inst_RxData_8_
+ 3   D  6  1   3  1 DFF  *   S *     5  -B-D---------NOP  PS2_Receiver_Inst_RxEn
+ 5   N  7  1   3  1 DFF    * R *     5  A--D---------NOP  PS2_Receiver_Inst_counter_0_
+ 3   A  7  1   3  1 DFF    * R *     5  A--D---------NOP  PS2_Receiver_Inst_counter_1_
+ 7   O  7  1   4  1 DFF    * R *     5  A--D---------NOP  PS2_Receiver_Inst_counter_2_
+ 9   A  7  1   2  1 DFF    * R *     5  A--D---------NOP  PS2_Receiver_Inst_counter_3_
+ 3   B 11  1  14  3 LAT      R       2  -B--E-----------  PS2_Receiver_Inst_save_0_
+ 4   G 11  1  13  3 LAT      R       2  -----FG---------  PS2_Receiver_Inst_save_1_
+ 4   H 11  1  13  3 LAT      R       2  --C----H--------  PS2_Receiver_Inst_save_2_
+ 4   J 11  1  12  3 LAT      R       2  --------IJ------  PS2_Receiver_Inst_save_3_
+----------------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        IR = Input register
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+PostFit_Equations
+~~~~~~~~~~~~~~~~~
+LED_A.D = !( reset & !PS2_Receiver_Inst_PS_Data_0_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q & PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_0_.Q & PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (4 pterms, 5 signals)
+LED_A.C = clk_low ; (1 pterm, 1 signal)
+
+LED_B.D = !( reset & PS2_Receiver_Inst_PS_Data_0_.Q
+       & PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_0_.Q
+       & !PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (4 pterms, 5 signals)
+LED_B.C = clk_low ; (1 pterm, 1 signal)
+
+LED_C.D = !( reset & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_2_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_0_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (3 pterms, 5 signals)
+LED_C.C = clk_low ; (1 pterm, 1 signal)
+
+LED_D.D = !( reset & !PS2_Receiver_Inst_PS_Data_0_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_0_.Q & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & PS2_Receiver_Inst_PS_Data_2_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q & PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_0_.Q & PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (5 pterms, 5 signals)
+LED_D.C = clk_low ; (1 pterm, 1 signal)
+
+LED_E.D = !( reset & !PS2_Receiver_Inst_PS_Data_0_.Q
+       & !PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_2_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_0_.Q & PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (2 pterms, 5 signals)
+LED_E.C = clk_low ; (1 pterm, 1 signal)
+
+LED_F.D = !( reset & !PS2_Receiver_Inst_PS_Data_0_.Q
+       & !PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q & PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_0_.Q & PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q & PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (4 pterms, 5 signals)
+LED_F.C = clk_low ; (1 pterm, 1 signal)
+
+LED_G.D = !( reset & !PS2_Receiver_Inst_PS_Data_0_.Q
+       & PS2_Receiver_Inst_PS_Data_2_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q & PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q & PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (4 pterms, 5 signals)
+LED_G.C = clk_low ; (1 pterm, 1 signal)
+
+LED_VCC1 = 0 ; (0 pterm, 0 signal)
+
+LED_VCC2 = 0 ; (0 pterm, 0 signal)
+
+LED_VCC3 = 0 ; (0 pterm, 0 signal)
+
+LED_VCC4.D = reset ; (1 pterm, 1 signal)
+LED_VCC4.C = clk_low ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_KeyClock_r0.D = KeyClock ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_KeyClock_r0.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_KeyClock_r0.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_KeyClock_r1.D = PS2_Receiver_Inst_KeyClock_r0.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_KeyClock_r1.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_KeyClock_r1.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_KeyClock_r2.D = PS2_Receiver_Inst_KeyClock_r1.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_KeyClock_r2.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_KeyClock_r2.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_0_.D = PS2_Receiver_Inst_RxData_1_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_0_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_0_.AP = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_1_.D = PS2_Receiver_Inst_RxData_2_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_1_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_1_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_2_.D = PS2_Receiver_Inst_RxData_3_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_2_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_2_.AP = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_3_.D = PS2_Receiver_Inst_RxData_4_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_3_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_3_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_4_.D = PS2_Receiver_Inst_RxData_5_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_4_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_4_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_5_.D = PS2_Receiver_Inst_RxData_6_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_5_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_5_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_6_.D = PS2_Receiver_Inst_RxData_7_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_6_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_6_.AP = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_7_.D = PS2_Receiver_Inst_RxData_8_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_7_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_7_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LedEn.D = !PS2_Receiver_Inst_LastRxData_0_.Q
+       & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & !PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_LastRxData_7_.Q ; (1 pterm, 8 signals)
+PS2_Receiver_Inst_LedEn.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LedEn.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_PS_Data_0_.D = !PS2_Receiver_Inst_LastRxData_0_.Q
+       & !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_1_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_3_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_0_.Q ; (13 pterms, 9 signals)
+PS2_Receiver_Inst_PS_Data_0_.LH = !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_PS_Data_0_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_PS_Data_1_.D = !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_3_.Q & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_4_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_3_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_1_.Q ; (13 pterms, 9 signals)
+PS2_Receiver_Inst_PS_Data_1_.LH = !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_PS_Data_1_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_PS_Data_2_.D = !PS2_Receiver_Inst_LastRxData_1_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_3_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_4_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_2_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_2_.Q ; (13 pterms, 9 signals)
+PS2_Receiver_Inst_PS_Data_2_.LH = !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_PS_Data_2_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_PS_Data_3_.D = !PS2_Receiver_Inst_LastRxData_1_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_3_.Q
+    # PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_3_.Q ; (12 pterms, 9 signals)
+PS2_Receiver_Inst_PS_Data_3_.LH = !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_PS_Data_3_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_RxData_1_.D.X1 = !KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_1_.Q
+    # KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_1_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_1_.D.X2 = PS2_Receiver_Inst_RxData_1_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_1_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_1_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_2_.D.X1 = !KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_2_.Q
+    # KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_2_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_2_.D.X2 = PS2_Receiver_Inst_RxData_2_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_2_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_2_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_3_.D.X1 = !KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_3_.Q
+    # KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_3_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_3_.D.X2 = PS2_Receiver_Inst_RxData_3_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_3_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_3_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_4_.D.X1 = !KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_4_.Q
+    # KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_4_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_4_.D.X2 = PS2_Receiver_Inst_RxData_4_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_4_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_4_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_5_.D.X1 = !KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_5_.Q
+    # KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_5_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_5_.D.X2 = PS2_Receiver_Inst_RxData_5_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_5_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_5_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_6_.D.X1 = !KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_6_.Q
+    # KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_6_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_6_.D.X2 = PS2_Receiver_Inst_RxData_6_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_6_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_6_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_7_.D.X1 = !KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_7_.Q
+    # KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_7_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_7_.D.X2 = PS2_Receiver_Inst_RxData_7_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_7_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_7_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_8_.D.X1 = !KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_8_.Q
+    # KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_8_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_8_.D.X2 = PS2_Receiver_Inst_RxData_8_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_8_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_8_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxEn.D = !PS2_Receiver_Inst_counter_1_.Q
+       & !PS2_Receiver_Inst_counter_2_.Q
+    # !PS2_Receiver_Inst_counter_3_.Q ; (2 pterms, 3 signals)
+PS2_Receiver_Inst_RxEn.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxEn.CE = !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 2 signals)
+PS2_Receiver_Inst_RxEn.AP = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_counter_0_.D = !PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+    # !PS2_Receiver_Inst_counter_0_.Q & !PS2_Receiver_Inst_counter_3_.Q ; (2 pterms, 4 signals)
+PS2_Receiver_Inst_counter_0_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_counter_0_.CE = !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 2 signals)
+PS2_Receiver_Inst_counter_0_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_counter_1_.D = PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+    # !PS2_Receiver_Inst_counter_0_.Q & PS2_Receiver_Inst_counter_1_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q
+    # PS2_Receiver_Inst_counter_0_.Q & !PS2_Receiver_Inst_counter_1_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q ; (3 pterms, 4 signals)
+PS2_Receiver_Inst_counter_1_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_counter_1_.CE = !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 2 signals)
+PS2_Receiver_Inst_counter_1_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_counter_2_.D = PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q
+    # !PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q
+    # !PS2_Receiver_Inst_counter_0_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q ; (3 pterms, 4 signals)
+PS2_Receiver_Inst_counter_2_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_counter_2_.CE = !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 2 signals)
+PS2_Receiver_Inst_counter_2_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_counter_3_.D = PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q
+    # !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & PS2_Receiver_Inst_counter_3_.Q ; (2 pterms, 4 signals)
+PS2_Receiver_Inst_counter_3_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_counter_3_.CE = !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 2 signals)
+PS2_Receiver_Inst_counter_3_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_save_0_.D = !PS2_Receiver_Inst_LastRxData_0_.Q
+       & !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_1_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_0_.Q ; (13 pterms, 9 signals)
+PS2_Receiver_Inst_save_0_.LH = reset & !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 2 signals)
+
+PS2_Receiver_Inst_save_1_.D = !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_3_.Q & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_3_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_4_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_1_.Q ; (13 pterms, 9 signals)
+PS2_Receiver_Inst_save_1_.LH = reset & !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 2 signals)
+
+PS2_Receiver_Inst_save_2_.D = !PS2_Receiver_Inst_LastRxData_1_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_3_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_4_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_2_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_2_.Q ; (13 pterms, 9 signals)
+PS2_Receiver_Inst_save_2_.LH = reset & !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 2 signals)
+
+PS2_Receiver_Inst_save_3_.D = !PS2_Receiver_Inst_LastRxData_1_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_3_.Q
+    # PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_3_.Q ; (12 pterms, 9 signals)
+PS2_Receiver_Inst_save_3_.LH = reset & !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 2 signals)
+
+
+
+

@@ -1,0 +1,1562 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Wed May 24 21:58:08 2023
+#$ MODULE isp_lab10
+#$ PINS 16 clk clk_low reset KeyData KeyClock LED_A LED_B LED_C LED_D LED_E LED_F LED_G \
+#  LED_VCC1 LED_VCC2 LED_VCC3 LED_VCC4
+#$ NODES 272 ps2_receiver_inst_un1_rxdata_1_1__n PS2_Receiver_Inst_PS_Data_0_ \
+#  ledscaninst_n_24_1_n PS2_Receiver_Inst_PS_Data_1_ ledscaninst_n_27_1_n \
+#  PS2_Receiver_Inst_PS_Data_2_ ledscaninst_n_31_1_n PS2_Receiver_Inst_PS_Data_3_ \
+#  ledscaninst_led_b_6_0_1_n gnd_n_n PS2_Receiver_Inst_PS_Data_cnst_3_0__m8_1 \
+#  ps2_receiver_inst_rxdata_2_6__un3_n ps2_receiver_inst_rxdata_2_6__un1_n \
+#  ps2_receiver_inst_rxdata_2_6__un0_n ps2_receiver_inst_rxdata_2_5__un3_n \
+#  ps2_receiver_inst_rxdata_2_5__un1_n ps2_receiver_inst_rxdata_2_5__un0_n \
+#  ps2_receiver_inst_rxdata_2_4__un3_n ledscaninst_n_17_n \
+#  ps2_receiver_inst_rxdata_2_4__un1_n ledscaninst_n_14_n \
+#  ps2_receiver_inst_rxdata_2_4__un0_n ledscaninst_n_32_n \
+#  ps2_receiver_inst_rxdata_2_3__un3_n ledscaninst_n_21_n \
+#  ps2_receiver_inst_rxdata_2_3__un1_n ledscaninst_n_27_n \
+#  ps2_receiver_inst_rxdata_2_3__un0_n ledscaninst_n_25_n \
+#  ps2_receiver_inst_rxdata_2_2__un3_n ledscaninst_n_26_n \
+#  ps2_receiver_inst_rxdata_2_2__un1_n ledscaninst_n_31_n \
+#  ps2_receiver_inst_rxdata_2_2__un0_n ledscaninst_n_29_n \
+#  ps2_receiver_inst_rxdata_2_1__un3_n ledscaninst_n_30_n \
+#  ps2_receiver_inst_rxdata_2_1__un1_n ledscaninst_n_28_n \
+#  ps2_receiver_inst_rxdata_2_1__un0_n ledscaninst_n_33_n \
+#  ps2_receiver_inst_rxdata_2_8__un3_n ledscaninst_n_24_n \
+#  ps2_receiver_inst_rxdata_2_8__un1_n ledscaninst_n_22_n \
+#  ps2_receiver_inst_rxdata_2_8__un0_n ledscaninst_n_23_n \
+#  ps2_receiver_inst_rxdata_2_7__un3_n PS2_Receiver_Inst_KeyClock_r1 \
+#  ps2_receiver_inst_rxdata_2_7__un1_n PS2_Receiver_Inst_RxEn \
+#  ps2_receiver_inst_rxdata_2_7__un0_n PS2_Receiver_Inst_LastRxData_0_ \
+#  ps2_receiver_inst_ps_data_cnst_3_0__m2_un3_n PS2_Receiver_Inst_LastRxData_1_ \
+#  ps2_receiver_inst_ps_data_cnst_3_0__m2_un1_n PS2_Receiver_Inst_LastRxData_2_ \
+#  ps2_receiver_inst_ps_data_cnst_3_0__m2_un0_n PS2_Receiver_Inst_LastRxData_3_ \
+#  ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un3_n \
+#  PS2_Receiver_Inst_LastRxData_4_ \
+#  ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un1_n \
+#  PS2_Receiver_Inst_LastRxData_5_ \
+#  ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un0_n \
+#  PS2_Receiver_Inst_LastRxData_6_ \
+#  ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un3_n \
+#  PS2_Receiver_Inst_LastRxData_7_ \
+#  ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un1_n PS2_Receiver_Inst_LedEn \
+#  ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un0_n \
+#  PS2_Receiver_Inst_KeyClock_r0 \
+#  ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un3_n \
+#  ps2_receiver_inst_neg_keyclock_n \
+#  ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un1_n \
+#  PS2_Receiver_Inst_KeyClock_r2 \
+#  ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un0_n \
+#  ps2_receiver_inst_ps_data38_n \
+#  ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un3_n \
+#  PS2_Receiver_Inst_counter_0_ \
+#  ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un1_n \
+#  PS2_Receiver_Inst_counter_1_ \
+#  ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un0_n \
+#  PS2_Receiver_Inst_counter_2_ ps2_receiver_inst_ps_data_cnst_3_0__m14_un3_n \
+#  PS2_Receiver_Inst_counter_3_ ps2_receiver_inst_ps_data_cnst_3_0__m14_un1_n \
+#  ps2_receiver_inst_rxdata_0_sqmuxa_n \
+#  ps2_receiver_inst_ps_data_cnst_3_0__m14_un0_n \
+#  ps2_receiver_inst_ps_data_cnst_3_0__m7_un3_n PS2_Receiver_Inst_RxData_1_ \
+#  ps2_receiver_inst_ps_data_cnst_3_0__m7_un1_n PS2_Receiver_Inst_RxData_2_ \
+#  ps2_receiver_inst_ps_data_cnst_3_0__m7_un0_n PS2_Receiver_Inst_RxData_3_ \
+#  PS2_Receiver_Inst_RxData_4_ PS2_Receiver_Inst_RxData_5_ \
+#  PS2_Receiver_Inst_RxData_6_ PS2_Receiver_Inst_RxData_7_ \
+#  PS2_Receiver_Inst_RxData_8_ PS2_Receiver_Inst_save_0_ PS2_Receiver_Inst_save_1_ \
+#  PS2_Receiver_Inst_save_2_ PS2_Receiver_Inst_save_3_ \
+#  ps2_receiver_inst_ps_data_3_0__n ps2_receiver_inst_ps_data_3_1__n \
+#  ps2_receiver_inst_ps_data_3_2__n ps2_receiver_inst_ps_data_3_3__n \
+#  PS2_Receiver_Inst_PS_Data_cnst_3_0__m8 PS2_Receiver_Inst_PS_Data_cnst_3_0__m6 \
+#  ps2_receiver_inst_ps_data29_n ps2_receiver_inst_ps_data30_4_n \
+#  ps2_receiver_inst_ps_data32_1_n ps2_receiver_inst_ps_data28_n \
+#  ps2_receiver_inst_ps_data30_1_n ps2_receiver_inst_ps_data32_2_n \
+#  ps2_receiver_inst_ps_data26_n ps2_receiver_inst_ps_data27_3_n \
+#  ps2_receiver_inst_ps_data25_n ps2_receiver_inst_ps_data34_3_n \
+#  ps2_receiver_inst_ps_data34_2_n ps2_receiver_inst_leden8_1_n \
+#  ps2_receiver_inst_ps_data34_n ps2_receiver_inst_ps_data33_n \
+#  ps2_receiver_inst_ps_data32_n ps2_receiver_inst_ps_data31_n \
+#  ps2_receiver_inst_ps_data30_5_n ps2_receiver_inst_un1_ps_data34_1_n \
+#  ps2_receiver_inst_ps_data_cnst_3_0__i4_mux_n \
+#  ps2_receiver_inst_ps_data_cnst_2__n ps2_receiver_inst_ps_data_cnst_1__n \
+#  PS2_Receiver_Inst_PS_Data_cnst_3_0__m5 \
+#  ps2_receiver_inst_ps_data_cnst_3_0__n_3_n PS2_Receiver_Inst_counter_n2 \
+#  PS2_Receiver_Inst_counter_n3 PS2_Receiver_Inst_counter_n0 \
+#  PS2_Receiver_Inst_counter_n1 ps2_receiver_inst_rxen_2_n \
+#  ps2_receiver_inst_un1_rxdata_2_8__n ps2_receiver_inst_un1_rxdata_7__n \
+#  ps2_receiver_inst_n_24_n ps2_receiver_inst_un1_rxdata_2_7__n \
+#  ps2_receiver_inst_n_21_n ps2_receiver_inst_n_18_n ps2_receiver_inst_n_20_n \
+#  ps2_receiver_inst_un1_rxdata_8__n ps2_receiver_inst_counter_c1_n \
+#  ps2_receiver_inst_un1_rxdata_6__n ps2_receiver_inst_un1_rxdata_5__n \
+#  ps2_receiver_inst_un1_rxdata_2_5__n ps2_receiver_inst_un1_rxdata_4__n \
+#  ps2_receiver_inst_un1_rxdata_3__n ps2_receiver_inst_un1_rxdata_2_3__n \
+#  ps2_receiver_inst_un1_rxdata_2__n ps2_receiver_inst_un1_rxdata_1__n \
+#  ps2_receiver_inst_counter_i_3__n ps2_receiver_inst_counter_i_1__n \
+#  ps2_receiver_inst_counter_i_2__n ps2_receiver_inst_counter_i_0__n \
+#  ps2_receiver_inst_leden_i_n ps2_receiver_inst_keyclock_r1_i_n \
+#  ps2_receiver_inst_lastrxdata_i_3__n ps2_receiver_inst_lastrxdata_i_4__n \
+#  ps2_receiver_inst_ps_data_cnst_3_0__n_3_i_n \
+#  ps2_receiver_inst_ps_data_cnst_3_0__n_9_i_n ps2_receiver_inst_ps_data27_3_i_n \
+#  ps2_receiver_inst_ps_data30_5_i_n ps2_receiver_inst_ps_data_cnst_3_0__n_6_i_n \
+#  ps2_receiver_inst_ps_data_cnst_3_0__i4_mux_i_n ps2_receiver_inst_ps_data25_i_n \
+#  ps2_receiver_inst_ps_data26_i_n ps2_receiver_inst_ps_data31_i_n \
+#  ps2_receiver_inst_ps_data32_i_n ps2_receiver_inst_ps_data33_i_n \
+#  ps2_receiver_inst_ps_data34_i_n ps2_receiver_inst_ps_data28_i_n \
+#  ps2_receiver_inst_ps_data29_i_n ps2_receiver_inst_lastrxdata_i_0__n \
+#  ps2_receiver_inst_lastrxdata_i_1__n ps2_receiver_inst_lastrxdata_i_7__n \
+#  ps2_receiver_inst_lastrxdata_i_2__n ps2_receiver_inst_lastrxdata_i_5__n \
+#  ps2_receiver_inst_lastrxdata_i_6__n data_i_0__n data_i_2__n data_i_3__n \
+#  data_i_1__n reset_i ps2_receiver_inst_rxen_i_n clk_c clk_low_c reset_c KeyData_c \
+#  LEDscanInst_LED_Areg LEDscanInst_LED_Breg LEDscanInst_LED_Creg \
+#  LEDscanInst_LED_Dreg LEDscanInst_LED_Ereg LEDscanInst_LED_Freg \
+#  LEDscanInst_LED_Greg LEDscanInst_LED_VCC4reg \
+#  ps2_receiver_inst_un1_rxdata_2_i_8__n ps2_receiver_inst_rxen_2_i_n \
+#  ledscaninst_n_8_0_n ledscaninst_n_22_i_n ledscaninst_n_23_i_n \
+#  ledscaninst_led_b_6_0_n ledscaninst_n_24_i_n ledscaninst_led_c_6_0_n \
+#  ledscaninst_led_d_6_0_n ledscaninst_n_33_i_n ledscaninst_led_g_6_0_n \
+#  ledscaninst_n_14_i_n ledscaninst_n_28_i_n ledscaninst_n_15_i_n \
+#  ledscaninst_n_29_i_n ledscaninst_n_30_i_n ledscaninst_n_16_i_n \
+#  ledscaninst_n_17_i_n ledscaninst_n_31_i_n ledscaninst_n_18_i_n \
+#  ledscaninst_n_25_i_n ledscaninst_n_26_i_n ledscaninst_n_27_i_n \
+#  ledscaninst_led_f_6_0_n ledscaninst_n_21_i_n ledscaninst_n_32_i_n \
+#  ledscaninst_n_6_0_n ledscaninst_n_6_0_1_n ledscaninst_n_6_0_2_n \
+#  ledscaninst_led_f_6_0_1_n ledscaninst_led_f_6_0_2_n \
+#  ps2_receiver_inst_ps_data29_1_n ps2_receiver_inst_ps_data29_2_n \
+#  ps2_receiver_inst_ps_data29_3_n ps2_receiver_inst_ps_data29_4_n \
+#  ps2_receiver_inst_ps_data28_1_n ps2_receiver_inst_ps_data28_2_n \
+#  ps2_receiver_inst_ps_data28_3_n ps2_receiver_inst_ps_data26_1_n \
+#  ps2_receiver_inst_ps_data26_2_n ps2_receiver_inst_ps_data25_1_n \
+#  ps2_receiver_inst_ps_data25_2_n ps2_receiver_inst_ps_data25_3_n \
+#  ps2_receiver_inst_leden8_1_0_n ps2_receiver_inst_leden8_2_n \
+#  ps2_receiver_inst_leden8_3_n ps2_receiver_inst_leden8_4_n \
+#  ps2_receiver_inst_leden8_5_n ps2_receiver_inst_ps_data34_1_n \
+#  ps2_receiver_inst_ps_data34_2_0_n ps2_receiver_inst_ps_data34_3_0_n \
+#  ps2_receiver_inst_ps_data33_1_n ps2_receiver_inst_ps_data33_2_n \
+#  ps2_receiver_inst_ps_data32_1_0_n ps2_receiver_inst_ps_data32_2_0_n \
+#  ps2_receiver_inst_ps_data32_3_n ps2_receiver_inst_ps_data31_1_n \
+#  ps2_receiver_inst_ps_data31_2_n ps2_receiver_inst_ps_data31_3_n \
+#  ps2_receiver_inst_ps_data30_5_1_n ps2_receiver_inst_un1_ps_data34_1_1_n \
+#  ps2_receiver_inst_un1_ps_data34_1_2_n ps2_receiver_inst_un1_ps_data34_1_3_n \
+#  ps2_receiver_inst_un1_ps_data34_1_4_n ps2_receiver_inst_un1_ps_data34_1_5_n \
+#  ps2_receiver_inst_un1_ps_data34_1_6_n ps2_receiver_inst_un1_rxdata_1_8__n \
+#  ps2_receiver_inst_un1_rxdata_1_6__n ps2_receiver_inst_un1_rxdata_2_6__n \
+#  ps2_receiver_inst_un1_rxdata_1_5__n ps2_receiver_inst_un1_rxdata_1_4__n \
+#  ps2_receiver_inst_un1_rxdata_1_2__n
+.model toplevel
+.inputs clk.BLIF clk_low.BLIF reset.BLIF KeyData.BLIF KeyClock.BLIF \
+ps2_receiver_inst_un1_rxdata_1_1__n.BLIF PS2_Receiver_Inst_PS_Data_0_.BLIF \
+ledscaninst_n_24_1_n.BLIF PS2_Receiver_Inst_PS_Data_1_.BLIF \
+ledscaninst_n_27_1_n.BLIF PS2_Receiver_Inst_PS_Data_2_.BLIF \
+ledscaninst_n_31_1_n.BLIF PS2_Receiver_Inst_PS_Data_3_.BLIF \
+ledscaninst_led_b_6_0_1_n.BLIF gnd_n_n.BLIF \
+PS2_Receiver_Inst_PS_Data_cnst_3_0__m8_1.BLIF \
+ps2_receiver_inst_rxdata_2_6__un3_n.BLIF \
+ps2_receiver_inst_rxdata_2_6__un1_n.BLIF \
+ps2_receiver_inst_rxdata_2_6__un0_n.BLIF \
+ps2_receiver_inst_rxdata_2_5__un3_n.BLIF \
+ps2_receiver_inst_rxdata_2_5__un1_n.BLIF \
+ps2_receiver_inst_rxdata_2_5__un0_n.BLIF \
+ps2_receiver_inst_rxdata_2_4__un3_n.BLIF ledscaninst_n_17_n.BLIF \
+ps2_receiver_inst_rxdata_2_4__un1_n.BLIF ledscaninst_n_14_n.BLIF \
+ps2_receiver_inst_rxdata_2_4__un0_n.BLIF ledscaninst_n_32_n.BLIF \
+ps2_receiver_inst_rxdata_2_3__un3_n.BLIF ledscaninst_n_21_n.BLIF \
+ps2_receiver_inst_rxdata_2_3__un1_n.BLIF ledscaninst_n_27_n.BLIF \
+ps2_receiver_inst_rxdata_2_3__un0_n.BLIF ledscaninst_n_25_n.BLIF \
+ps2_receiver_inst_rxdata_2_2__un3_n.BLIF ledscaninst_n_26_n.BLIF \
+ps2_receiver_inst_rxdata_2_2__un1_n.BLIF ledscaninst_n_31_n.BLIF \
+ps2_receiver_inst_rxdata_2_2__un0_n.BLIF ledscaninst_n_29_n.BLIF \
+ps2_receiver_inst_rxdata_2_1__un3_n.BLIF ledscaninst_n_30_n.BLIF \
+ps2_receiver_inst_rxdata_2_1__un1_n.BLIF ledscaninst_n_28_n.BLIF \
+ps2_receiver_inst_rxdata_2_1__un0_n.BLIF ledscaninst_n_33_n.BLIF \
+ps2_receiver_inst_rxdata_2_8__un3_n.BLIF ledscaninst_n_24_n.BLIF \
+ps2_receiver_inst_rxdata_2_8__un1_n.BLIF ledscaninst_n_22_n.BLIF \
+ps2_receiver_inst_rxdata_2_8__un0_n.BLIF ledscaninst_n_23_n.BLIF \
+ps2_receiver_inst_rxdata_2_7__un3_n.BLIF PS2_Receiver_Inst_KeyClock_r1.BLIF \
+ps2_receiver_inst_rxdata_2_7__un1_n.BLIF PS2_Receiver_Inst_RxEn.BLIF \
+ps2_receiver_inst_rxdata_2_7__un0_n.BLIF PS2_Receiver_Inst_LastRxData_0_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m2_un3_n.BLIF \
+PS2_Receiver_Inst_LastRxData_1_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m2_un1_n.BLIF \
+PS2_Receiver_Inst_LastRxData_2_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m2_un0_n.BLIF \
+PS2_Receiver_Inst_LastRxData_3_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un3_n.BLIF \
+PS2_Receiver_Inst_LastRxData_4_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un1_n.BLIF \
+PS2_Receiver_Inst_LastRxData_5_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un0_n.BLIF \
+PS2_Receiver_Inst_LastRxData_6_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un3_n.BLIF \
+PS2_Receiver_Inst_LastRxData_7_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un1_n.BLIF \
+PS2_Receiver_Inst_LedEn.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un0_n.BLIF \
+PS2_Receiver_Inst_KeyClock_r0.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un3_n.BLIF \
+ps2_receiver_inst_neg_keyclock_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un1_n.BLIF \
+PS2_Receiver_Inst_KeyClock_r2.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un0_n.BLIF \
+ps2_receiver_inst_ps_data38_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un3_n.BLIF \
+PS2_Receiver_Inst_counter_0_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un1_n.BLIF \
+PS2_Receiver_Inst_counter_1_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un0_n.BLIF \
+PS2_Receiver_Inst_counter_2_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m14_un3_n.BLIF \
+PS2_Receiver_Inst_counter_3_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m14_un1_n.BLIF \
+ps2_receiver_inst_rxdata_0_sqmuxa_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m14_un0_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m7_un3_n.BLIF \
+PS2_Receiver_Inst_RxData_1_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m7_un1_n.BLIF \
+PS2_Receiver_Inst_RxData_2_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m7_un0_n.BLIF \
+PS2_Receiver_Inst_RxData_3_.BLIF PS2_Receiver_Inst_RxData_4_.BLIF \
+PS2_Receiver_Inst_RxData_5_.BLIF PS2_Receiver_Inst_RxData_6_.BLIF \
+PS2_Receiver_Inst_RxData_7_.BLIF PS2_Receiver_Inst_RxData_8_.BLIF \
+PS2_Receiver_Inst_save_0_.BLIF PS2_Receiver_Inst_save_1_.BLIF \
+PS2_Receiver_Inst_save_2_.BLIF PS2_Receiver_Inst_save_3_.BLIF \
+ps2_receiver_inst_ps_data_3_0__n.BLIF ps2_receiver_inst_ps_data_3_1__n.BLIF \
+ps2_receiver_inst_ps_data_3_2__n.BLIF ps2_receiver_inst_ps_data_3_3__n.BLIF \
+PS2_Receiver_Inst_PS_Data_cnst_3_0__m8.BLIF \
+PS2_Receiver_Inst_PS_Data_cnst_3_0__m6.BLIF ps2_receiver_inst_ps_data29_n.BLIF \
+ps2_receiver_inst_ps_data30_4_n.BLIF ps2_receiver_inst_ps_data32_1_n.BLIF \
+ps2_receiver_inst_ps_data28_n.BLIF ps2_receiver_inst_ps_data30_1_n.BLIF \
+ps2_receiver_inst_ps_data32_2_n.BLIF ps2_receiver_inst_ps_data26_n.BLIF \
+ps2_receiver_inst_ps_data27_3_n.BLIF ps2_receiver_inst_ps_data25_n.BLIF \
+ps2_receiver_inst_ps_data34_3_n.BLIF ps2_receiver_inst_ps_data34_2_n.BLIF \
+ps2_receiver_inst_leden8_1_n.BLIF ps2_receiver_inst_ps_data34_n.BLIF \
+ps2_receiver_inst_ps_data33_n.BLIF ps2_receiver_inst_ps_data32_n.BLIF \
+ps2_receiver_inst_ps_data31_n.BLIF ps2_receiver_inst_ps_data30_5_n.BLIF \
+ps2_receiver_inst_un1_ps_data34_1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__i4_mux_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_2__n.BLIF \
+ps2_receiver_inst_ps_data_cnst_1__n.BLIF \
+PS2_Receiver_Inst_PS_Data_cnst_3_0__m5.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__n_3_n.BLIF \
+PS2_Receiver_Inst_counter_n2.BLIF PS2_Receiver_Inst_counter_n3.BLIF \
+PS2_Receiver_Inst_counter_n0.BLIF PS2_Receiver_Inst_counter_n1.BLIF \
+ps2_receiver_inst_rxen_2_n.BLIF ps2_receiver_inst_un1_rxdata_2_8__n.BLIF \
+ps2_receiver_inst_un1_rxdata_7__n.BLIF ps2_receiver_inst_n_24_n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_7__n.BLIF ps2_receiver_inst_n_21_n.BLIF \
+ps2_receiver_inst_n_18_n.BLIF ps2_receiver_inst_n_20_n.BLIF \
+ps2_receiver_inst_un1_rxdata_8__n.BLIF ps2_receiver_inst_counter_c1_n.BLIF \
+ps2_receiver_inst_un1_rxdata_6__n.BLIF ps2_receiver_inst_un1_rxdata_5__n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_5__n.BLIF \
+ps2_receiver_inst_un1_rxdata_4__n.BLIF ps2_receiver_inst_un1_rxdata_3__n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_3__n.BLIF \
+ps2_receiver_inst_un1_rxdata_2__n.BLIF ps2_receiver_inst_un1_rxdata_1__n.BLIF \
+ps2_receiver_inst_counter_i_3__n.BLIF ps2_receiver_inst_counter_i_1__n.BLIF \
+ps2_receiver_inst_counter_i_2__n.BLIF ps2_receiver_inst_counter_i_0__n.BLIF \
+ps2_receiver_inst_leden_i_n.BLIF ps2_receiver_inst_keyclock_r1_i_n.BLIF \
+ps2_receiver_inst_lastrxdata_i_3__n.BLIF \
+ps2_receiver_inst_lastrxdata_i_4__n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__n_3_i_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__n_9_i_n.BLIF \
+ps2_receiver_inst_ps_data27_3_i_n.BLIF ps2_receiver_inst_ps_data30_5_i_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__n_6_i_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__i4_mux_i_n.BLIF \
+ps2_receiver_inst_ps_data25_i_n.BLIF ps2_receiver_inst_ps_data26_i_n.BLIF \
+ps2_receiver_inst_ps_data31_i_n.BLIF ps2_receiver_inst_ps_data32_i_n.BLIF \
+ps2_receiver_inst_ps_data33_i_n.BLIF ps2_receiver_inst_ps_data34_i_n.BLIF \
+ps2_receiver_inst_ps_data28_i_n.BLIF ps2_receiver_inst_ps_data29_i_n.BLIF \
+ps2_receiver_inst_lastrxdata_i_0__n.BLIF \
+ps2_receiver_inst_lastrxdata_i_1__n.BLIF \
+ps2_receiver_inst_lastrxdata_i_7__n.BLIF \
+ps2_receiver_inst_lastrxdata_i_2__n.BLIF \
+ps2_receiver_inst_lastrxdata_i_5__n.BLIF \
+ps2_receiver_inst_lastrxdata_i_6__n.BLIF data_i_0__n.BLIF data_i_2__n.BLIF \
+data_i_3__n.BLIF data_i_1__n.BLIF reset_i.BLIF ps2_receiver_inst_rxen_i_n.BLIF \
+clk_c.BLIF clk_low_c.BLIF reset_c.BLIF KeyData_c.BLIF \
+LEDscanInst_LED_Areg.BLIF LEDscanInst_LED_Breg.BLIF LEDscanInst_LED_Creg.BLIF \
+LEDscanInst_LED_Dreg.BLIF LEDscanInst_LED_Ereg.BLIF LEDscanInst_LED_Freg.BLIF \
+LEDscanInst_LED_Greg.BLIF LEDscanInst_LED_VCC4reg.BLIF \
+ps2_receiver_inst_un1_rxdata_2_i_8__n.BLIF ps2_receiver_inst_rxen_2_i_n.BLIF \
+ledscaninst_n_8_0_n.BLIF ledscaninst_n_22_i_n.BLIF ledscaninst_n_23_i_n.BLIF \
+ledscaninst_led_b_6_0_n.BLIF ledscaninst_n_24_i_n.BLIF \
+ledscaninst_led_c_6_0_n.BLIF ledscaninst_led_d_6_0_n.BLIF \
+ledscaninst_n_33_i_n.BLIF ledscaninst_led_g_6_0_n.BLIF \
+ledscaninst_n_14_i_n.BLIF ledscaninst_n_28_i_n.BLIF ledscaninst_n_15_i_n.BLIF \
+ledscaninst_n_29_i_n.BLIF ledscaninst_n_30_i_n.BLIF ledscaninst_n_16_i_n.BLIF \
+ledscaninst_n_17_i_n.BLIF ledscaninst_n_31_i_n.BLIF ledscaninst_n_18_i_n.BLIF \
+ledscaninst_n_25_i_n.BLIF ledscaninst_n_26_i_n.BLIF ledscaninst_n_27_i_n.BLIF \
+ledscaninst_led_f_6_0_n.BLIF ledscaninst_n_21_i_n.BLIF \
+ledscaninst_n_32_i_n.BLIF ledscaninst_n_6_0_n.BLIF ledscaninst_n_6_0_1_n.BLIF \
+ledscaninst_n_6_0_2_n.BLIF ledscaninst_led_f_6_0_1_n.BLIF \
+ledscaninst_led_f_6_0_2_n.BLIF ps2_receiver_inst_ps_data29_1_n.BLIF \
+ps2_receiver_inst_ps_data29_2_n.BLIF ps2_receiver_inst_ps_data29_3_n.BLIF \
+ps2_receiver_inst_ps_data29_4_n.BLIF ps2_receiver_inst_ps_data28_1_n.BLIF \
+ps2_receiver_inst_ps_data28_2_n.BLIF ps2_receiver_inst_ps_data28_3_n.BLIF \
+ps2_receiver_inst_ps_data26_1_n.BLIF ps2_receiver_inst_ps_data26_2_n.BLIF \
+ps2_receiver_inst_ps_data25_1_n.BLIF ps2_receiver_inst_ps_data25_2_n.BLIF \
+ps2_receiver_inst_ps_data25_3_n.BLIF ps2_receiver_inst_leden8_1_0_n.BLIF \
+ps2_receiver_inst_leden8_2_n.BLIF ps2_receiver_inst_leden8_3_n.BLIF \
+ps2_receiver_inst_leden8_4_n.BLIF ps2_receiver_inst_leden8_5_n.BLIF \
+ps2_receiver_inst_ps_data34_1_n.BLIF ps2_receiver_inst_ps_data34_2_0_n.BLIF \
+ps2_receiver_inst_ps_data34_3_0_n.BLIF ps2_receiver_inst_ps_data33_1_n.BLIF \
+ps2_receiver_inst_ps_data33_2_n.BLIF ps2_receiver_inst_ps_data32_1_0_n.BLIF \
+ps2_receiver_inst_ps_data32_2_0_n.BLIF ps2_receiver_inst_ps_data32_3_n.BLIF \
+ps2_receiver_inst_ps_data31_1_n.BLIF ps2_receiver_inst_ps_data31_2_n.BLIF \
+ps2_receiver_inst_ps_data31_3_n.BLIF ps2_receiver_inst_ps_data30_5_1_n.BLIF \
+ps2_receiver_inst_un1_ps_data34_1_1_n.BLIF \
+ps2_receiver_inst_un1_ps_data34_1_2_n.BLIF \
+ps2_receiver_inst_un1_ps_data34_1_3_n.BLIF \
+ps2_receiver_inst_un1_ps_data34_1_4_n.BLIF \
+ps2_receiver_inst_un1_ps_data34_1_5_n.BLIF \
+ps2_receiver_inst_un1_ps_data34_1_6_n.BLIF \
+ps2_receiver_inst_un1_rxdata_1_8__n.BLIF \
+ps2_receiver_inst_un1_rxdata_1_6__n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_6__n.BLIF \
+ps2_receiver_inst_un1_rxdata_1_5__n.BLIF \
+ps2_receiver_inst_un1_rxdata_1_4__n.BLIF \
+ps2_receiver_inst_un1_rxdata_1_2__n.BLIF
+.outputs LED_A LED_B LED_C LED_D LED_E LED_F LED_G LED_VCC1 LED_VCC2 LED_VCC3 \
+LED_VCC4 PS2_Receiver_Inst_RxData_5_.D PS2_Receiver_Inst_RxData_5_.CE \
+PS2_Receiver_Inst_RxData_5_.C PS2_Receiver_Inst_RxData_6_.D \
+PS2_Receiver_Inst_RxData_6_.CE PS2_Receiver_Inst_RxData_6_.C \
+PS2_Receiver_Inst_RxData_7_.D PS2_Receiver_Inst_RxData_7_.CE \
+PS2_Receiver_Inst_RxData_7_.C PS2_Receiver_Inst_RxData_8_.D \
+PS2_Receiver_Inst_RxData_8_.CE PS2_Receiver_Inst_RxData_8_.C \
+PS2_Receiver_Inst_LastRxData_5_.D PS2_Receiver_Inst_LastRxData_5_.C \
+PS2_Receiver_Inst_LastRxData_5_.AR PS2_Receiver_Inst_LastRxData_6_.D \
+PS2_Receiver_Inst_LastRxData_6_.C PS2_Receiver_Inst_LastRxData_6_.AP \
+PS2_Receiver_Inst_LastRxData_7_.D PS2_Receiver_Inst_LastRxData_7_.C \
+PS2_Receiver_Inst_LastRxData_7_.AR PS2_Receiver_Inst_RxData_1_.D \
+PS2_Receiver_Inst_RxData_1_.CE PS2_Receiver_Inst_RxData_1_.C \
+PS2_Receiver_Inst_RxData_2_.D PS2_Receiver_Inst_RxData_2_.CE \
+PS2_Receiver_Inst_RxData_2_.C PS2_Receiver_Inst_RxData_3_.D \
+PS2_Receiver_Inst_RxData_3_.CE PS2_Receiver_Inst_RxData_3_.C \
+PS2_Receiver_Inst_RxData_4_.D PS2_Receiver_Inst_RxData_4_.CE \
+PS2_Receiver_Inst_RxData_4_.C PS2_Receiver_Inst_counter_2_.D \
+PS2_Receiver_Inst_counter_2_.CE PS2_Receiver_Inst_counter_2_.C \
+PS2_Receiver_Inst_counter_2_.AR PS2_Receiver_Inst_counter_3_.D \
+PS2_Receiver_Inst_counter_3_.CE PS2_Receiver_Inst_counter_3_.C \
+PS2_Receiver_Inst_counter_3_.AR PS2_Receiver_Inst_LastRxData_0_.D \
+PS2_Receiver_Inst_LastRxData_0_.C PS2_Receiver_Inst_LastRxData_0_.AP \
+PS2_Receiver_Inst_LastRxData_1_.D PS2_Receiver_Inst_LastRxData_1_.C \
+PS2_Receiver_Inst_LastRxData_1_.AR PS2_Receiver_Inst_LastRxData_2_.D \
+PS2_Receiver_Inst_LastRxData_2_.C PS2_Receiver_Inst_LastRxData_2_.AP \
+PS2_Receiver_Inst_LastRxData_3_.D PS2_Receiver_Inst_LastRxData_3_.C \
+PS2_Receiver_Inst_LastRxData_3_.AR PS2_Receiver_Inst_LastRxData_4_.D \
+PS2_Receiver_Inst_LastRxData_4_.C PS2_Receiver_Inst_LastRxData_4_.AR \
+PS2_Receiver_Inst_counter_0_.D PS2_Receiver_Inst_counter_0_.CE \
+PS2_Receiver_Inst_counter_0_.C PS2_Receiver_Inst_counter_0_.AR \
+PS2_Receiver_Inst_counter_1_.D PS2_Receiver_Inst_counter_1_.CE \
+PS2_Receiver_Inst_counter_1_.C PS2_Receiver_Inst_counter_1_.AR \
+PS2_Receiver_Inst_LedEn.D PS2_Receiver_Inst_LedEn.C PS2_Receiver_Inst_LedEn.AR \
+PS2_Receiver_Inst_RxEn.D PS2_Receiver_Inst_RxEn.CE PS2_Receiver_Inst_RxEn.C \
+PS2_Receiver_Inst_RxEn.AP PS2_Receiver_Inst_KeyClock_r0.D \
+PS2_Receiver_Inst_KeyClock_r0.C PS2_Receiver_Inst_KeyClock_r0.AR \
+PS2_Receiver_Inst_KeyClock_r1.D PS2_Receiver_Inst_KeyClock_r1.C \
+PS2_Receiver_Inst_KeyClock_r1.AR PS2_Receiver_Inst_KeyClock_r2.D \
+PS2_Receiver_Inst_KeyClock_r2.C PS2_Receiver_Inst_KeyClock_r2.AR \
+LEDscanInst_LED_Ereg.D LEDscanInst_LED_Ereg.C LEDscanInst_LED_Freg.D \
+LEDscanInst_LED_Freg.C LEDscanInst_LED_Greg.D LEDscanInst_LED_Greg.C \
+LEDscanInst_LED_Areg.D LEDscanInst_LED_Areg.C LEDscanInst_LED_Breg.D \
+LEDscanInst_LED_Breg.C LEDscanInst_LED_Creg.D LEDscanInst_LED_Creg.C \
+LEDscanInst_LED_Dreg.D LEDscanInst_LED_Dreg.C LEDscanInst_LED_VCC4reg.D \
+LEDscanInst_LED_VCC4reg.C PS2_Receiver_Inst_save_0_.D \
+PS2_Receiver_Inst_save_0_.LH PS2_Receiver_Inst_save_1_.D \
+PS2_Receiver_Inst_save_1_.LH PS2_Receiver_Inst_save_2_.D \
+PS2_Receiver_Inst_save_2_.LH PS2_Receiver_Inst_save_3_.D \
+PS2_Receiver_Inst_save_3_.LH PS2_Receiver_Inst_PS_Data_0_.D \
+PS2_Receiver_Inst_PS_Data_0_.LH PS2_Receiver_Inst_PS_Data_0_.AR \
+PS2_Receiver_Inst_PS_Data_1_.D PS2_Receiver_Inst_PS_Data_1_.LH \
+PS2_Receiver_Inst_PS_Data_1_.AR PS2_Receiver_Inst_PS_Data_2_.D \
+PS2_Receiver_Inst_PS_Data_2_.LH PS2_Receiver_Inst_PS_Data_2_.AR \
+PS2_Receiver_Inst_PS_Data_3_.D PS2_Receiver_Inst_PS_Data_3_.LH \
+PS2_Receiver_Inst_PS_Data_3_.AR ps2_receiver_inst_un1_rxdata_1_1__n \
+ledscaninst_n_24_1_n ledscaninst_n_27_1_n ledscaninst_n_31_1_n \
+ledscaninst_led_b_6_0_1_n gnd_n_n ps2_receiver_inst_rxdata_2_6__un3_n \
+ps2_receiver_inst_rxdata_2_6__un1_n ps2_receiver_inst_rxdata_2_6__un0_n \
+ps2_receiver_inst_rxdata_2_5__un3_n ps2_receiver_inst_rxdata_2_5__un1_n \
+ps2_receiver_inst_rxdata_2_5__un0_n ps2_receiver_inst_rxdata_2_4__un3_n \
+ledscaninst_n_17_n ps2_receiver_inst_rxdata_2_4__un1_n ledscaninst_n_14_n \
+ps2_receiver_inst_rxdata_2_4__un0_n ledscaninst_n_32_n \
+ps2_receiver_inst_rxdata_2_3__un3_n ledscaninst_n_21_n \
+ps2_receiver_inst_rxdata_2_3__un1_n ledscaninst_n_27_n \
+ps2_receiver_inst_rxdata_2_3__un0_n ledscaninst_n_25_n \
+ps2_receiver_inst_rxdata_2_2__un3_n ledscaninst_n_26_n \
+ps2_receiver_inst_rxdata_2_2__un1_n ledscaninst_n_31_n \
+ps2_receiver_inst_rxdata_2_2__un0_n ledscaninst_n_29_n \
+ps2_receiver_inst_rxdata_2_1__un3_n ledscaninst_n_30_n \
+ps2_receiver_inst_rxdata_2_1__un1_n ledscaninst_n_28_n \
+ps2_receiver_inst_rxdata_2_1__un0_n ledscaninst_n_33_n \
+ps2_receiver_inst_rxdata_2_8__un3_n ledscaninst_n_24_n \
+ps2_receiver_inst_rxdata_2_8__un1_n ledscaninst_n_22_n \
+ps2_receiver_inst_rxdata_2_8__un0_n ledscaninst_n_23_n \
+ps2_receiver_inst_rxdata_2_7__un3_n ps2_receiver_inst_rxdata_2_7__un1_n \
+ps2_receiver_inst_rxdata_2_7__un0_n \
+ps2_receiver_inst_ps_data_cnst_3_0__m2_un3_n \
+ps2_receiver_inst_ps_data_cnst_3_0__m2_un1_n \
+ps2_receiver_inst_ps_data_cnst_3_0__m2_un0_n \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un3_n \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un1_n \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un0_n \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un3_n \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un1_n \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un0_n \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un3_n \
+ps2_receiver_inst_neg_keyclock_n \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un1_n \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un0_n \
+ps2_receiver_inst_ps_data38_n \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un3_n \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un1_n \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un0_n \
+ps2_receiver_inst_ps_data_cnst_3_0__m14_un3_n \
+ps2_receiver_inst_ps_data_cnst_3_0__m14_un1_n \
+ps2_receiver_inst_rxdata_0_sqmuxa_n \
+ps2_receiver_inst_ps_data_cnst_3_0__m14_un0_n \
+ps2_receiver_inst_ps_data_cnst_3_0__m7_un3_n \
+ps2_receiver_inst_ps_data_cnst_3_0__m7_un1_n \
+ps2_receiver_inst_ps_data_cnst_3_0__m7_un0_n ps2_receiver_inst_ps_data_3_0__n \
+ps2_receiver_inst_ps_data_3_1__n ps2_receiver_inst_ps_data_3_2__n \
+ps2_receiver_inst_ps_data_3_3__n ps2_receiver_inst_ps_data29_n \
+ps2_receiver_inst_ps_data30_4_n ps2_receiver_inst_ps_data32_1_n \
+ps2_receiver_inst_ps_data28_n ps2_receiver_inst_ps_data30_1_n \
+ps2_receiver_inst_ps_data32_2_n ps2_receiver_inst_ps_data26_n \
+ps2_receiver_inst_ps_data27_3_n ps2_receiver_inst_ps_data25_n \
+ps2_receiver_inst_ps_data34_3_n ps2_receiver_inst_ps_data34_2_n \
+ps2_receiver_inst_leden8_1_n ps2_receiver_inst_ps_data34_n \
+ps2_receiver_inst_ps_data33_n ps2_receiver_inst_ps_data32_n \
+ps2_receiver_inst_ps_data31_n ps2_receiver_inst_ps_data30_5_n \
+ps2_receiver_inst_un1_ps_data34_1_n \
+ps2_receiver_inst_ps_data_cnst_3_0__i4_mux_n \
+ps2_receiver_inst_ps_data_cnst_2__n ps2_receiver_inst_ps_data_cnst_1__n \
+ps2_receiver_inst_ps_data_cnst_3_0__n_3_n ps2_receiver_inst_rxen_2_n \
+ps2_receiver_inst_un1_rxdata_2_8__n ps2_receiver_inst_un1_rxdata_7__n \
+ps2_receiver_inst_n_24_n ps2_receiver_inst_un1_rxdata_2_7__n \
+ps2_receiver_inst_n_21_n ps2_receiver_inst_n_18_n ps2_receiver_inst_n_20_n \
+ps2_receiver_inst_un1_rxdata_8__n ps2_receiver_inst_counter_c1_n \
+ps2_receiver_inst_un1_rxdata_6__n ps2_receiver_inst_un1_rxdata_5__n \
+ps2_receiver_inst_un1_rxdata_2_5__n ps2_receiver_inst_un1_rxdata_4__n \
+ps2_receiver_inst_un1_rxdata_3__n ps2_receiver_inst_un1_rxdata_2_3__n \
+ps2_receiver_inst_un1_rxdata_2__n ps2_receiver_inst_un1_rxdata_1__n \
+ps2_receiver_inst_counter_i_3__n ps2_receiver_inst_counter_i_1__n \
+ps2_receiver_inst_counter_i_2__n ps2_receiver_inst_counter_i_0__n \
+ps2_receiver_inst_leden_i_n ps2_receiver_inst_keyclock_r1_i_n \
+ps2_receiver_inst_lastrxdata_i_3__n ps2_receiver_inst_lastrxdata_i_4__n \
+ps2_receiver_inst_ps_data_cnst_3_0__n_3_i_n \
+ps2_receiver_inst_ps_data_cnst_3_0__n_9_i_n ps2_receiver_inst_ps_data27_3_i_n \
+ps2_receiver_inst_ps_data30_5_i_n ps2_receiver_inst_ps_data_cnst_3_0__n_6_i_n \
+ps2_receiver_inst_ps_data_cnst_3_0__i4_mux_i_n ps2_receiver_inst_ps_data25_i_n \
+ps2_receiver_inst_ps_data26_i_n ps2_receiver_inst_ps_data31_i_n \
+ps2_receiver_inst_ps_data32_i_n ps2_receiver_inst_ps_data33_i_n \
+ps2_receiver_inst_ps_data34_i_n ps2_receiver_inst_ps_data28_i_n \
+ps2_receiver_inst_ps_data29_i_n ps2_receiver_inst_lastrxdata_i_0__n \
+ps2_receiver_inst_lastrxdata_i_1__n ps2_receiver_inst_lastrxdata_i_7__n \
+ps2_receiver_inst_lastrxdata_i_2__n ps2_receiver_inst_lastrxdata_i_5__n \
+ps2_receiver_inst_lastrxdata_i_6__n data_i_0__n data_i_2__n data_i_3__n \
+data_i_1__n reset_i ps2_receiver_inst_rxen_i_n clk_c clk_low_c reset_c \
+KeyData_c ps2_receiver_inst_un1_rxdata_2_i_8__n ps2_receiver_inst_rxen_2_i_n \
+ledscaninst_n_8_0_n ledscaninst_n_22_i_n ledscaninst_n_23_i_n \
+ledscaninst_led_b_6_0_n ledscaninst_n_24_i_n ledscaninst_led_c_6_0_n \
+ledscaninst_led_d_6_0_n ledscaninst_n_33_i_n ledscaninst_led_g_6_0_n \
+ledscaninst_n_14_i_n ledscaninst_n_28_i_n ledscaninst_n_15_i_n \
+ledscaninst_n_29_i_n ledscaninst_n_30_i_n ledscaninst_n_16_i_n \
+ledscaninst_n_17_i_n ledscaninst_n_31_i_n ledscaninst_n_18_i_n \
+ledscaninst_n_25_i_n ledscaninst_n_26_i_n ledscaninst_n_27_i_n \
+ledscaninst_led_f_6_0_n ledscaninst_n_21_i_n ledscaninst_n_32_i_n \
+ledscaninst_n_6_0_n ledscaninst_n_6_0_1_n ledscaninst_n_6_0_2_n \
+ledscaninst_led_f_6_0_1_n ledscaninst_led_f_6_0_2_n \
+ps2_receiver_inst_ps_data29_1_n ps2_receiver_inst_ps_data29_2_n \
+ps2_receiver_inst_ps_data29_3_n ps2_receiver_inst_ps_data29_4_n \
+ps2_receiver_inst_ps_data28_1_n ps2_receiver_inst_ps_data28_2_n \
+ps2_receiver_inst_ps_data28_3_n ps2_receiver_inst_ps_data26_1_n \
+ps2_receiver_inst_ps_data26_2_n ps2_receiver_inst_ps_data25_1_n \
+ps2_receiver_inst_ps_data25_2_n ps2_receiver_inst_ps_data25_3_n \
+ps2_receiver_inst_leden8_1_0_n ps2_receiver_inst_leden8_2_n \
+ps2_receiver_inst_leden8_3_n ps2_receiver_inst_leden8_4_n \
+ps2_receiver_inst_leden8_5_n ps2_receiver_inst_ps_data34_1_n \
+ps2_receiver_inst_ps_data34_2_0_n ps2_receiver_inst_ps_data34_3_0_n \
+ps2_receiver_inst_ps_data33_1_n ps2_receiver_inst_ps_data33_2_n \
+ps2_receiver_inst_ps_data32_1_0_n ps2_receiver_inst_ps_data32_2_0_n \
+ps2_receiver_inst_ps_data32_3_n ps2_receiver_inst_ps_data31_1_n \
+ps2_receiver_inst_ps_data31_2_n ps2_receiver_inst_ps_data31_3_n \
+ps2_receiver_inst_ps_data30_5_1_n ps2_receiver_inst_un1_ps_data34_1_1_n \
+ps2_receiver_inst_un1_ps_data34_1_2_n ps2_receiver_inst_un1_ps_data34_1_3_n \
+ps2_receiver_inst_un1_ps_data34_1_4_n ps2_receiver_inst_un1_ps_data34_1_5_n \
+ps2_receiver_inst_un1_ps_data34_1_6_n ps2_receiver_inst_un1_rxdata_1_8__n \
+ps2_receiver_inst_un1_rxdata_1_6__n ps2_receiver_inst_un1_rxdata_2_6__n \
+ps2_receiver_inst_un1_rxdata_1_5__n ps2_receiver_inst_un1_rxdata_1_4__n \
+ps2_receiver_inst_un1_rxdata_1_2__n PS2_Receiver_Inst_PS_Data_cnst_3_0__m8_1 \
+PS2_Receiver_Inst_PS_Data_cnst_3_0__m8 PS2_Receiver_Inst_PS_Data_cnst_3_0__m6 \
+PS2_Receiver_Inst_PS_Data_cnst_3_0__m5 PS2_Receiver_Inst_counter_n2 \
+PS2_Receiver_Inst_counter_n3 PS2_Receiver_Inst_counter_n0 \
+PS2_Receiver_Inst_counter_n1
+.names ps2_receiver_inst_rxdata_2_5__un1_n.BLIF \
+ps2_receiver_inst_rxdata_2_5__un0_n.BLIF PS2_Receiver_Inst_RxData_5_.D
+1- 1
+-1 1
+.names ps2_receiver_inst_rxdata_2_6__un1_n.BLIF \
+ps2_receiver_inst_rxdata_2_6__un0_n.BLIF PS2_Receiver_Inst_RxData_6_.D
+1- 1
+-1 1
+.names ps2_receiver_inst_rxdata_2_7__un1_n.BLIF \
+ps2_receiver_inst_rxdata_2_7__un0_n.BLIF PS2_Receiver_Inst_RxData_7_.D
+1- 1
+-1 1
+.names ps2_receiver_inst_rxdata_2_8__un1_n.BLIF \
+ps2_receiver_inst_rxdata_2_8__un0_n.BLIF PS2_Receiver_Inst_RxData_8_.D
+1- 1
+-1 1
+.names ps2_receiver_inst_rxdata_2_1__un1_n.BLIF \
+ps2_receiver_inst_rxdata_2_1__un0_n.BLIF PS2_Receiver_Inst_RxData_1_.D
+1- 1
+-1 1
+.names ps2_receiver_inst_rxdata_2_2__un1_n.BLIF \
+ps2_receiver_inst_rxdata_2_2__un0_n.BLIF PS2_Receiver_Inst_RxData_2_.D
+1- 1
+-1 1
+.names ps2_receiver_inst_rxdata_2_3__un1_n.BLIF \
+ps2_receiver_inst_rxdata_2_3__un0_n.BLIF PS2_Receiver_Inst_RxData_3_.D
+1- 1
+-1 1
+.names ps2_receiver_inst_rxdata_2_4__un1_n.BLIF \
+ps2_receiver_inst_rxdata_2_4__un0_n.BLIF PS2_Receiver_Inst_RxData_4_.D
+1- 1
+-1 1
+.names PS2_Receiver_Inst_counter_n0.BLIF PS2_Receiver_Inst_counter_0_.D
+0 1
+.names ps2_receiver_inst_leden8_4_n.BLIF ps2_receiver_inst_leden8_5_n.BLIF \
+PS2_Receiver_Inst_LedEn.D
+11 1
+.names ledscaninst_n_6_0_n.BLIF LEDscanInst_LED_Ereg.D
+0 1
+.names ledscaninst_led_f_6_0_n.BLIF LEDscanInst_LED_Freg.D
+0 1
+.names ledscaninst_led_g_6_0_n.BLIF LEDscanInst_LED_Greg.D
+0 1
+.names ledscaninst_n_8_0_n.BLIF LEDscanInst_LED_Areg.D
+0 1
+.names ledscaninst_led_b_6_0_n.BLIF LEDscanInst_LED_Breg.D
+0 1
+.names ledscaninst_led_c_6_0_n.BLIF LEDscanInst_LED_Creg.D
+0 1
+.names ledscaninst_led_d_6_0_n.BLIF LEDscanInst_LED_Dreg.D
+0 1
+.names PS2_Receiver_Inst_counter_0_.BLIF ps2_receiver_inst_counter_i_1__n.BLIF \
+ps2_receiver_inst_un1_rxdata_1_1__n
+11 1
+.names data_i_2__n.BLIF PS2_Receiver_Inst_PS_Data_1_.BLIF ledscaninst_n_24_1_n
+11 1
+.names data_i_3__n.BLIF PS2_Receiver_Inst_PS_Data_0_.BLIF ledscaninst_n_27_1_n
+11 1
+.names PS2_Receiver_Inst_PS_Data_2_.BLIF PS2_Receiver_Inst_PS_Data_0_.BLIF \
+ledscaninst_n_31_1_n
+11 1
+.names ledscaninst_n_15_i_n.BLIF ledscaninst_n_22_i_n.BLIF \
+ledscaninst_led_b_6_0_1_n
+11 1
+.names gnd_n_n
+.names ps2_receiver_inst_un1_rxdata_6__n.BLIF \
+ps2_receiver_inst_rxdata_2_6__un3_n
+0 1
+.names KeyData_c.BLIF ps2_receiver_inst_un1_rxdata_6__n.BLIF \
+ps2_receiver_inst_rxdata_2_6__un1_n
+11 1
+.names PS2_Receiver_Inst_RxData_6_.BLIF \
+ps2_receiver_inst_rxdata_2_6__un3_n.BLIF ps2_receiver_inst_rxdata_2_6__un0_n
+11 1
+.names ps2_receiver_inst_un1_rxdata_5__n.BLIF \
+ps2_receiver_inst_rxdata_2_5__un3_n
+0 1
+.names KeyData_c.BLIF ps2_receiver_inst_un1_rxdata_5__n.BLIF \
+ps2_receiver_inst_rxdata_2_5__un1_n
+11 1
+.names PS2_Receiver_Inst_RxData_5_.BLIF \
+ps2_receiver_inst_rxdata_2_5__un3_n.BLIF ps2_receiver_inst_rxdata_2_5__un0_n
+11 1
+.names ps2_receiver_inst_un1_rxdata_4__n.BLIF \
+ps2_receiver_inst_rxdata_2_4__un3_n
+0 1
+.names ledscaninst_n_17_i_n.BLIF ledscaninst_n_17_n
+0 1
+.names KeyData_c.BLIF ps2_receiver_inst_un1_rxdata_4__n.BLIF \
+ps2_receiver_inst_rxdata_2_4__un1_n
+11 1
+.names ledscaninst_n_14_i_n.BLIF ledscaninst_n_14_n
+0 1
+.names PS2_Receiver_Inst_RxData_4_.BLIF \
+ps2_receiver_inst_rxdata_2_4__un3_n.BLIF ps2_receiver_inst_rxdata_2_4__un0_n
+11 1
+.names PS2_Receiver_Inst_PS_Data_2_.BLIF data_i_1__n.BLIF ledscaninst_n_32_n
+11 1
+.names ps2_receiver_inst_un1_rxdata_3__n.BLIF \
+ps2_receiver_inst_rxdata_2_3__un3_n
+0 1
+.names PS2_Receiver_Inst_PS_Data_1_.BLIF PS2_Receiver_Inst_PS_Data_3_.BLIF \
+ledscaninst_n_21_n
+11 1
+.names KeyData_c.BLIF ps2_receiver_inst_un1_rxdata_3__n.BLIF \
+ps2_receiver_inst_rxdata_2_3__un1_n
+11 1
+.names ledscaninst_n_27_1_n.BLIF data_i_2__n.BLIF ledscaninst_n_27_n
+11 1
+.names PS2_Receiver_Inst_RxData_3_.BLIF \
+ps2_receiver_inst_rxdata_2_3__un3_n.BLIF ps2_receiver_inst_rxdata_2_3__un0_n
+11 1
+.names PS2_Receiver_Inst_PS_Data_1_.BLIF ledscaninst_n_17_n.BLIF \
+ledscaninst_n_25_n
+11 1
+.names ps2_receiver_inst_un1_rxdata_2__n.BLIF \
+ps2_receiver_inst_rxdata_2_2__un3_n
+0 1
+.names PS2_Receiver_Inst_PS_Data_2_.BLIF PS2_Receiver_Inst_PS_Data_3_.BLIF \
+ledscaninst_n_26_n
+11 1
+.names KeyData_c.BLIF ps2_receiver_inst_un1_rxdata_2__n.BLIF \
+ps2_receiver_inst_rxdata_2_2__un1_n
+11 1
+.names ledscaninst_n_31_1_n.BLIF PS2_Receiver_Inst_PS_Data_1_.BLIF \
+ledscaninst_n_31_n
+11 1
+.names PS2_Receiver_Inst_RxData_2_.BLIF \
+ps2_receiver_inst_rxdata_2_2__un3_n.BLIF ps2_receiver_inst_rxdata_2_2__un0_n
+11 1
+.names data_i_1__n.BLIF ledscaninst_n_17_i_n.BLIF ledscaninst_n_29_n
+11 1
+.names ps2_receiver_inst_un1_rxdata_1__n.BLIF \
+ps2_receiver_inst_rxdata_2_1__un3_n
+0 1
+.names PS2_Receiver_Inst_PS_Data_0_.BLIF ledscaninst_n_33_n.BLIF \
+ledscaninst_n_30_n
+11 1
+.names KeyData_c.BLIF ps2_receiver_inst_un1_rxdata_1__n.BLIF \
+ps2_receiver_inst_rxdata_2_1__un1_n
+11 1
+.names PS2_Receiver_Inst_PS_Data_3_.BLIF ledscaninst_n_14_n.BLIF \
+ledscaninst_n_28_n
+11 1
+.names PS2_Receiver_Inst_RxData_1_.BLIF \
+ps2_receiver_inst_rxdata_2_1__un3_n.BLIF ps2_receiver_inst_rxdata_2_1__un0_n
+11 1
+.names data_i_3__n.BLIF ledscaninst_n_14_i_n.BLIF ledscaninst_n_33_n
+11 1
+.names ps2_receiver_inst_un1_rxdata_8__n.BLIF \
+ps2_receiver_inst_rxdata_2_8__un3_n
+0 1
+.names ledscaninst_n_24_1_n.BLIF data_i_0__n.BLIF ledscaninst_n_24_n
+11 1
+.names KeyData_c.BLIF ps2_receiver_inst_un1_rxdata_8__n.BLIF \
+ps2_receiver_inst_rxdata_2_8__un1_n
+11 1
+.names PS2_Receiver_Inst_PS_Data_0_.BLIF ledscaninst_n_32_n.BLIF \
+ledscaninst_n_22_n
+11 1
+.names PS2_Receiver_Inst_RxData_8_.BLIF \
+ps2_receiver_inst_rxdata_2_8__un3_n.BLIF ps2_receiver_inst_rxdata_2_8__un0_n
+11 1
+.names PS2_Receiver_Inst_PS_Data_1_.BLIF ledscaninst_n_17_i_n.BLIF \
+ledscaninst_n_23_n
+11 1
+.names ps2_receiver_inst_un1_rxdata_7__n.BLIF \
+ps2_receiver_inst_rxdata_2_7__un3_n
+0 1
+.names KeyData_c.BLIF ps2_receiver_inst_un1_rxdata_7__n.BLIF \
+ps2_receiver_inst_rxdata_2_7__un1_n
+11 1
+.names PS2_Receiver_Inst_RxData_7_.BLIF \
+ps2_receiver_inst_rxdata_2_7__un3_n.BLIF ps2_receiver_inst_rxdata_2_7__un0_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_5_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m2_un3_n
+0 1
+.names ps2_receiver_inst_lastrxdata_i_4__n.BLIF \
+PS2_Receiver_Inst_LastRxData_5_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m2_un1_n
+11 1
+.names ps2_receiver_inst_lastrxdata_i_3__n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m2_un3_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m2_un0_n
+11 1
+.names ps2_receiver_inst_un1_ps_data34_1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un3_n
+0 1
+.names PS2_Receiver_Inst_save_3_.BLIF ps2_receiver_inst_un1_ps_data34_1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un1_n
+11 1
+.names ps2_receiver_inst_ps_data_cnst_3_0__i4_mux_i_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un3_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un0_n
+11 1
+.names ps2_receiver_inst_un1_ps_data34_1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un3_n
+0 1
+.names PS2_Receiver_Inst_save_2_.BLIF ps2_receiver_inst_un1_ps_data34_1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un1_n
+11 1
+.names ps2_receiver_inst_ps_data_cnst_2__n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un3_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un0_n
+11 1
+.names ps2_receiver_inst_un1_ps_data34_1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un3_n
+0 1
+.names ps2_receiver_inst_keyclock_r1_i_n.BLIF \
+PS2_Receiver_Inst_KeyClock_r2.BLIF ps2_receiver_inst_neg_keyclock_n
+11 1
+.names PS2_Receiver_Inst_save_1_.BLIF ps2_receiver_inst_un1_ps_data34_1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un1_n
+11 1
+.names ps2_receiver_inst_ps_data_cnst_1__n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un3_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un0_n
+11 1
+.names ps2_receiver_inst_leden_i_n.BLIF reset_c.BLIF \
+ps2_receiver_inst_ps_data38_n
+11 1
+.names ps2_receiver_inst_un1_ps_data34_1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un3_n
+0 1
+.names PS2_Receiver_Inst_save_0_.BLIF ps2_receiver_inst_un1_ps_data34_1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un1_n
+11 1
+.names ps2_receiver_inst_ps_data_cnst_3_0__n_6_i_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un3_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un0_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_4_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m14_un3_n
+0 1
+.names ps2_receiver_inst_ps_data30_5_i_n.BLIF \
+PS2_Receiver_Inst_LastRxData_4_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m14_un1_n
+11 1
+.names ps2_receiver_inst_neg_keyclock_n.BLIF reset_c.BLIF \
+ps2_receiver_inst_rxdata_0_sqmuxa_n
+11 1
+.names ps2_receiver_inst_ps_data27_3_i_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m14_un3_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m14_un0_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_5_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m7_un3_n
+0 1
+.names PS2_Receiver_Inst_PS_Data_cnst_3_0__m6.BLIF \
+PS2_Receiver_Inst_LastRxData_5_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m7_un1_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_3_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m7_un3_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m7_un0_n
+11 1
+.names ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_0__un0_n.BLIF \
+ps2_receiver_inst_ps_data_3_0__n
+1- 1
+-1 1
+.names ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_1__un0_n.BLIF \
+ps2_receiver_inst_ps_data_3_1__n
+1- 1
+-1 1
+.names ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_2__un0_n.BLIF \
+ps2_receiver_inst_ps_data_3_2__n
+1- 1
+-1 1
+.names ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__ps_data_3_3__un0_n.BLIF \
+ps2_receiver_inst_ps_data_3_3__n
+1- 1
+-1 1
+.names ps2_receiver_inst_ps_data29_4_n.BLIF \
+ps2_receiver_inst_ps_data29_3_n.BLIF ps2_receiver_inst_ps_data29_n
+11 1
+.names ps2_receiver_inst_lastrxdata_i_6__n.BLIF \
+ps2_receiver_inst_lastrxdata_i_7__n.BLIF ps2_receiver_inst_ps_data30_4_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_0_.BLIF \
+PS2_Receiver_Inst_LastRxData_2_.BLIF ps2_receiver_inst_ps_data32_1_n
+11 1
+.names ps2_receiver_inst_ps_data28_3_n.BLIF \
+ps2_receiver_inst_ps_data30_4_n.BLIF ps2_receiver_inst_ps_data28_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_1_.BLIF \
+PS2_Receiver_Inst_LastRxData_2_.BLIF ps2_receiver_inst_ps_data30_1_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_3_.BLIF \
+PS2_Receiver_Inst_LastRxData_4_.BLIF ps2_receiver_inst_ps_data32_2_n
+11 1
+.names ps2_receiver_inst_ps_data26_1_n.BLIF \
+ps2_receiver_inst_ps_data26_2_n.BLIF ps2_receiver_inst_ps_data26_n
+11 1
+.names ps2_receiver_inst_lastrxdata_i_0__n.BLIF \
+ps2_receiver_inst_lastrxdata_i_5__n.BLIF ps2_receiver_inst_ps_data27_3_n
+11 1
+.names ps2_receiver_inst_ps_data25_3_n.BLIF \
+ps2_receiver_inst_ps_data34_3_n.BLIF ps2_receiver_inst_ps_data25_n
+11 1
+.names ps2_receiver_inst_lastrxdata_i_4__n.BLIF \
+ps2_receiver_inst_lastrxdata_i_5__n.BLIF ps2_receiver_inst_ps_data34_3_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_6_.BLIF \
+ps2_receiver_inst_lastrxdata_i_3__n.BLIF ps2_receiver_inst_ps_data34_2_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_4_.BLIF \
+PS2_Receiver_Inst_LastRxData_5_.BLIF ps2_receiver_inst_leden8_1_n
+11 1
+.names ps2_receiver_inst_ps_data34_3_0_n.BLIF \
+ps2_receiver_inst_ps_data34_2_n.BLIF ps2_receiver_inst_ps_data34_n
+11 1
+.names ps2_receiver_inst_ps_data33_1_n.BLIF \
+ps2_receiver_inst_ps_data33_2_n.BLIF ps2_receiver_inst_ps_data33_n
+11 1
+.names ps2_receiver_inst_ps_data32_3_n.BLIF \
+ps2_receiver_inst_ps_data32_1_n.BLIF ps2_receiver_inst_ps_data32_n
+11 1
+.names ps2_receiver_inst_ps_data31_3_n.BLIF \
+ps2_receiver_inst_ps_data30_1_n.BLIF ps2_receiver_inst_ps_data31_n
+11 1
+.names ps2_receiver_inst_ps_data30_5_1_n.BLIF \
+PS2_Receiver_Inst_LastRxData_5_.BLIF ps2_receiver_inst_ps_data30_5_n
+11 1
+.names ps2_receiver_inst_un1_ps_data34_1_5_n.BLIF \
+ps2_receiver_inst_un1_ps_data34_1_6_n.BLIF ps2_receiver_inst_un1_ps_data34_1_n
+11 1
+.names ps2_receiver_inst_ps_data_cnst_3_0__m14_un1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m14_un0_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__i4_mux_n
+1- 1
+-1 1
+.names PS2_Receiver_Inst_LastRxData_5_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__n_9_i_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_2__n
+11 1
+.names ps2_receiver_inst_ps_data_cnst_3_0__m7_un1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m7_un0_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_1__n
+1- 1
+-1 1
+.names ps2_receiver_inst_ps_data_cnst_3_0__m2_un1_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__m2_un0_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__n_3_n
+1- 1
+-1 1
+.names ps2_receiver_inst_rxen_2_i_n.BLIF ps2_receiver_inst_rxen_2_n
+0 1
+.names ps2_receiver_inst_counter_i_1__n.BLIF \
+ps2_receiver_inst_counter_i_2__n.BLIF ps2_receiver_inst_un1_rxdata_2_8__n
+11 1
+.names ps2_receiver_inst_counter_c1_n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_7__n.BLIF ps2_receiver_inst_un1_rxdata_7__n
+11 1
+.names PS2_Receiver_Inst_counter_3_.BLIF \
+ps2_receiver_inst_un1_rxdata_2_8__n.BLIF ps2_receiver_inst_n_24_n
+11 1
+.names PS2_Receiver_Inst_counter_2_.BLIF ps2_receiver_inst_counter_i_3__n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_7__n
+11 1
+.names ps2_receiver_inst_rxen_2_n.BLIF ps2_receiver_inst_counter_c1_n.BLIF \
+ps2_receiver_inst_n_21_n
+11 1
+.names ps2_receiver_inst_rxen_2_n.BLIF PS2_Receiver_Inst_counter_0_.BLIF \
+ps2_receiver_inst_n_18_n
+11 1
+.names PS2_Receiver_Inst_counter_1_.BLIF ps2_receiver_inst_counter_i_3__n.BLIF \
+ps2_receiver_inst_n_20_n
+11 1
+.names ps2_receiver_inst_un1_rxdata_1_8__n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_8__n.BLIF ps2_receiver_inst_un1_rxdata_8__n
+11 1
+.names PS2_Receiver_Inst_counter_0_.BLIF PS2_Receiver_Inst_counter_1_.BLIF \
+ps2_receiver_inst_counter_c1_n
+11 1
+.names ps2_receiver_inst_un1_rxdata_1_6__n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_6__n.BLIF ps2_receiver_inst_un1_rxdata_6__n
+11 1
+.names ps2_receiver_inst_un1_rxdata_1_5__n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_5__n.BLIF ps2_receiver_inst_un1_rxdata_5__n
+11 1
+.names ps2_receiver_inst_counter_i_1__n.BLIF \
+ps2_receiver_inst_counter_i_3__n.BLIF ps2_receiver_inst_un1_rxdata_2_5__n
+11 1
+.names ps2_receiver_inst_un1_rxdata_1_4__n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_5__n.BLIF ps2_receiver_inst_un1_rxdata_4__n
+11 1
+.names ps2_receiver_inst_counter_c1_n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_3__n.BLIF ps2_receiver_inst_un1_rxdata_3__n
+11 1
+.names ps2_receiver_inst_counter_i_2__n.BLIF \
+ps2_receiver_inst_counter_i_3__n.BLIF ps2_receiver_inst_un1_rxdata_2_3__n
+11 1
+.names ps2_receiver_inst_un1_rxdata_1_2__n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_3__n.BLIF ps2_receiver_inst_un1_rxdata_2__n
+11 1
+.names ps2_receiver_inst_un1_rxdata_1_1__n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_3__n.BLIF ps2_receiver_inst_un1_rxdata_1__n
+11 1
+.names PS2_Receiver_Inst_counter_3_.BLIF ps2_receiver_inst_counter_i_3__n
+0 1
+.names PS2_Receiver_Inst_counter_1_.BLIF ps2_receiver_inst_counter_i_1__n
+0 1
+.names PS2_Receiver_Inst_counter_2_.BLIF ps2_receiver_inst_counter_i_2__n
+0 1
+.names PS2_Receiver_Inst_counter_0_.BLIF ps2_receiver_inst_counter_i_0__n
+0 1
+.names PS2_Receiver_Inst_LedEn.BLIF ps2_receiver_inst_leden_i_n
+0 1
+.names PS2_Receiver_Inst_KeyClock_r1.BLIF ps2_receiver_inst_keyclock_r1_i_n
+0 1
+.names PS2_Receiver_Inst_LastRxData_3_.BLIF \
+ps2_receiver_inst_lastrxdata_i_3__n
+0 1
+.names PS2_Receiver_Inst_LastRxData_4_.BLIF \
+ps2_receiver_inst_lastrxdata_i_4__n
+0 1
+.names ps2_receiver_inst_ps_data_cnst_3_0__n_3_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__n_3_i_n
+0 1
+.names PS2_Receiver_Inst_PS_Data_cnst_3_0__m8.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__n_9_i_n
+0 1
+.names ps2_receiver_inst_ps_data27_3_n.BLIF ps2_receiver_inst_ps_data27_3_i_n
+0 1
+.names ps2_receiver_inst_ps_data30_5_n.BLIF ps2_receiver_inst_ps_data30_5_i_n
+0 1
+.names PS2_Receiver_Inst_PS_Data_cnst_3_0__m5.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__n_6_i_n
+0 1
+.names ps2_receiver_inst_ps_data_cnst_3_0__i4_mux_n.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__i4_mux_i_n
+0 1
+.names ps2_receiver_inst_ps_data25_n.BLIF ps2_receiver_inst_ps_data25_i_n
+0 1
+.names ps2_receiver_inst_ps_data26_n.BLIF ps2_receiver_inst_ps_data26_i_n
+0 1
+.names ps2_receiver_inst_ps_data31_n.BLIF ps2_receiver_inst_ps_data31_i_n
+0 1
+.names ps2_receiver_inst_ps_data32_n.BLIF ps2_receiver_inst_ps_data32_i_n
+0 1
+.names ps2_receiver_inst_ps_data33_n.BLIF ps2_receiver_inst_ps_data33_i_n
+0 1
+.names ps2_receiver_inst_ps_data34_n.BLIF ps2_receiver_inst_ps_data34_i_n
+0 1
+.names ps2_receiver_inst_ps_data28_n.BLIF ps2_receiver_inst_ps_data28_i_n
+0 1
+.names ps2_receiver_inst_ps_data29_n.BLIF ps2_receiver_inst_ps_data29_i_n
+0 1
+.names PS2_Receiver_Inst_LastRxData_0_.BLIF \
+ps2_receiver_inst_lastrxdata_i_0__n
+0 1
+.names PS2_Receiver_Inst_LastRxData_1_.BLIF \
+ps2_receiver_inst_lastrxdata_i_1__n
+0 1
+.names PS2_Receiver_Inst_LastRxData_7_.BLIF \
+ps2_receiver_inst_lastrxdata_i_7__n
+0 1
+.names PS2_Receiver_Inst_LastRxData_2_.BLIF \
+ps2_receiver_inst_lastrxdata_i_2__n
+0 1
+.names PS2_Receiver_Inst_LastRxData_5_.BLIF \
+ps2_receiver_inst_lastrxdata_i_5__n
+0 1
+.names PS2_Receiver_Inst_LastRxData_6_.BLIF \
+ps2_receiver_inst_lastrxdata_i_6__n
+0 1
+.names PS2_Receiver_Inst_PS_Data_0_.BLIF data_i_0__n
+0 1
+.names PS2_Receiver_Inst_PS_Data_2_.BLIF data_i_2__n
+0 1
+.names PS2_Receiver_Inst_PS_Data_3_.BLIF data_i_3__n
+0 1
+.names PS2_Receiver_Inst_PS_Data_1_.BLIF data_i_1__n
+0 1
+.names reset_c.BLIF reset_i
+0 1
+.names PS2_Receiver_Inst_RxEn.BLIF ps2_receiver_inst_rxen_i_n
+0 1
+.names ps2_receiver_inst_un1_rxdata_2_8__n.BLIF \
+ps2_receiver_inst_un1_rxdata_2_i_8__n
+0 1
+.names PS2_Receiver_Inst_counter_3_.BLIF \
+ps2_receiver_inst_un1_rxdata_2_i_8__n.BLIF ps2_receiver_inst_rxen_2_i_n
+11 1
+.names ledscaninst_n_15_i_n.BLIF ledscaninst_n_16_i_n.BLIF ledscaninst_n_8_0_n
+11 1
+.names ledscaninst_n_22_n.BLIF ledscaninst_n_22_i_n
+0 1
+.names ledscaninst_n_23_n.BLIF ledscaninst_n_23_i_n
+0 1
+.names ledscaninst_led_b_6_0_1_n.BLIF ledscaninst_n_23_i_n.BLIF \
+ledscaninst_led_b_6_0_n
+11 1
+.names ledscaninst_n_24_n.BLIF ledscaninst_n_24_i_n
+0 1
+.names ledscaninst_n_15_i_n.BLIF ledscaninst_n_24_i_n.BLIF \
+ledscaninst_led_c_6_0_n
+11 1
+.names ledscaninst_n_16_i_n.BLIF ledscaninst_n_18_i_n.BLIF \
+ledscaninst_led_d_6_0_n
+11 1
+.names ledscaninst_n_33_n.BLIF ledscaninst_n_33_i_n
+0 1
+.names ledscaninst_n_18_i_n.BLIF ledscaninst_n_33_i_n.BLIF \
+ledscaninst_led_g_6_0_n
+11 1
+.names data_i_1__n.BLIF data_i_2__n.BLIF ledscaninst_n_14_i_n
+11 1
+.names ledscaninst_n_28_n.BLIF ledscaninst_n_28_i_n
+0 1
+.names ledscaninst_n_28_i_n.BLIF reset_c.BLIF ledscaninst_n_15_i_n
+11 1
+.names ledscaninst_n_29_n.BLIF ledscaninst_n_29_i_n
+0 1
+.names ledscaninst_n_30_n.BLIF ledscaninst_n_30_i_n
+0 1
+.names ledscaninst_n_29_i_n.BLIF ledscaninst_n_30_i_n.BLIF \
+ledscaninst_n_16_i_n
+11 1
+.names PS2_Receiver_Inst_PS_Data_2_.BLIF data_i_0__n.BLIF ledscaninst_n_17_i_n
+11 1
+.names ledscaninst_n_31_n.BLIF ledscaninst_n_31_i_n
+0 1
+.names ledscaninst_n_15_i_n.BLIF ledscaninst_n_31_i_n.BLIF \
+ledscaninst_n_18_i_n
+11 1
+.names ledscaninst_n_25_n.BLIF ledscaninst_n_25_i_n
+0 1
+.names ledscaninst_n_26_n.BLIF ledscaninst_n_26_i_n
+0 1
+.names ledscaninst_n_27_n.BLIF ledscaninst_n_27_i_n
+0 1
+.names ledscaninst_led_f_6_0_1_n.BLIF ledscaninst_led_f_6_0_2_n.BLIF \
+ledscaninst_led_f_6_0_n
+11 1
+.names ledscaninst_n_21_n.BLIF ledscaninst_n_21_i_n
+0 1
+.names ledscaninst_n_32_n.BLIF ledscaninst_n_32_i_n
+0 1
+.names ledscaninst_n_6_0_1_n.BLIF ledscaninst_n_6_0_2_n.BLIF \
+ledscaninst_n_6_0_n
+11 1
+.names data_i_0__n.BLIF ledscaninst_n_21_i_n.BLIF ledscaninst_n_6_0_1_n
+11 1
+.names ledscaninst_n_32_i_n.BLIF reset_c.BLIF ledscaninst_n_6_0_2_n
+11 1
+.names ledscaninst_n_25_i_n.BLIF ledscaninst_n_26_i_n.BLIF \
+ledscaninst_led_f_6_0_1_n
+11 1
+.names ledscaninst_n_27_i_n.BLIF reset_c.BLIF ledscaninst_led_f_6_0_2_n
+11 1
+.names ps2_receiver_inst_ps_data30_4_n.BLIF \
+ps2_receiver_inst_ps_data32_1_n.BLIF ps2_receiver_inst_ps_data29_1_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_5_.BLIF \
+ps2_receiver_inst_lastrxdata_i_1__n.BLIF ps2_receiver_inst_ps_data29_2_n
+11 1
+.names ps2_receiver_inst_lastrxdata_i_3__n.BLIF \
+ps2_receiver_inst_lastrxdata_i_4__n.BLIF ps2_receiver_inst_ps_data29_3_n
+11 1
+.names ps2_receiver_inst_ps_data29_1_n.BLIF \
+ps2_receiver_inst_ps_data29_2_n.BLIF ps2_receiver_inst_ps_data29_4_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_5_.BLIF \
+ps2_receiver_inst_lastrxdata_i_0__n.BLIF ps2_receiver_inst_ps_data28_1_n
+11 1
+.names ps2_receiver_inst_lastrxdata_i_4__n.BLIF \
+ps2_receiver_inst_ps_data30_1_n.BLIF ps2_receiver_inst_ps_data28_2_n
+11 1
+.names ps2_receiver_inst_ps_data28_1_n.BLIF \
+ps2_receiver_inst_ps_data28_2_n.BLIF ps2_receiver_inst_ps_data28_3_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_4_.BLIF \
+ps2_receiver_inst_ps_data27_3_n.BLIF ps2_receiver_inst_ps_data26_1_n
+11 1
+.names ps2_receiver_inst_ps_data30_1_n.BLIF \
+ps2_receiver_inst_ps_data30_4_n.BLIF ps2_receiver_inst_ps_data26_2_n
+11 1
+.names ps2_receiver_inst_lastrxdata_i_1__n.BLIF \
+ps2_receiver_inst_lastrxdata_i_7__n.BLIF ps2_receiver_inst_ps_data25_1_n
+11 1
+.names ps2_receiver_inst_ps_data32_1_n.BLIF \
+ps2_receiver_inst_ps_data34_2_n.BLIF ps2_receiver_inst_ps_data25_2_n
+11 1
+.names ps2_receiver_inst_ps_data25_1_n.BLIF \
+ps2_receiver_inst_ps_data25_2_n.BLIF ps2_receiver_inst_ps_data25_3_n
+11 1
+.names PS2_Receiver_Inst_LastRxData_6_.BLIF \
+PS2_Receiver_Inst_LastRxData_7_.BLIF ps2_receiver_inst_leden8_1_0_n
+11 1
+.names ps2_receiver_inst_lastrxdata_i_0__n.BLIF \
+ps2_receiver_inst_lastrxdata_i_1__n.BLIF ps2_receiver_inst_leden8_2_n
+11 1
+.names ps2_receiver_inst_leden8_1_n.BLIF \
+ps2_receiver_inst_lastrxdata_i_2__n.BLIF ps2_receiver_inst_leden8_3_n
+11 1
+.names ps2_receiver_inst_leden8_1_0_n.BLIF ps2_receiver_inst_leden8_2_n.BLIF \
+ps2_receiver_inst_leden8_4_n
+11 1
+.names ps2_receiver_inst_leden8_3_n.BLIF \
+ps2_receiver_inst_lastrxdata_i_3__n.BLIF ps2_receiver_inst_leden8_5_n
+11 1
+.names ps2_receiver_inst_ps_data34_3_n.BLIF \
+ps2_receiver_inst_lastrxdata_i_0__n.BLIF ps2_receiver_inst_ps_data34_1_n
+11 1
+.names ps2_receiver_inst_lastrxdata_i_7__n.BLIF \
+ps2_receiver_inst_ps_data30_1_n.BLIF ps2_receiver_inst_ps_data34_2_0_n
+11 1
+.names ps2_receiver_inst_ps_data34_1_n.BLIF \
+ps2_receiver_inst_ps_data34_2_0_n.BLIF ps2_receiver_inst_ps_data34_3_0_n
+11 1
+.names ps2_receiver_inst_lastrxdata_i_0__n.BLIF \
+ps2_receiver_inst_ps_data30_1_n.BLIF ps2_receiver_inst_ps_data33_1_n
+11 1
+.names ps2_receiver_inst_ps_data30_4_n.BLIF \
+ps2_receiver_inst_ps_data32_2_n.BLIF ps2_receiver_inst_ps_data33_2_n
+11 1
+.names ps2_receiver_inst_ps_data32_2_n.BLIF \
+PS2_Receiver_Inst_LastRxData_5_.BLIF ps2_receiver_inst_ps_data32_1_0_n
+11 1
+.names ps2_receiver_inst_lastrxdata_i_1__n.BLIF \
+ps2_receiver_inst_ps_data30_4_n.BLIF ps2_receiver_inst_ps_data32_2_0_n
+11 1
+.names ps2_receiver_inst_ps_data32_1_0_n.BLIF \
+ps2_receiver_inst_ps_data32_2_0_n.BLIF ps2_receiver_inst_ps_data32_3_n
+11 1
+.names ps2_receiver_inst_ps_data30_4_n.BLIF \
+ps2_receiver_inst_lastrxdata_i_0__n.BLIF ps2_receiver_inst_ps_data31_1_n
+11 1
+.names ps2_receiver_inst_lastrxdata_i_3__n.BLIF \
+ps2_receiver_inst_leden8_1_n.BLIF ps2_receiver_inst_ps_data31_2_n
+11 1
+.names ps2_receiver_inst_ps_data31_1_n.BLIF \
+ps2_receiver_inst_ps_data31_2_n.BLIF ps2_receiver_inst_ps_data31_3_n
+11 1
+.names ps2_receiver_inst_ps_data30_1_n.BLIF \
+PS2_Receiver_Inst_LastRxData_3_.BLIF ps2_receiver_inst_ps_data30_5_1_n
+11 1
+.names ps2_receiver_inst_ps_data25_i_n.BLIF \
+ps2_receiver_inst_ps_data26_i_n.BLIF ps2_receiver_inst_un1_ps_data34_1_1_n
+11 1
+.names ps2_receiver_inst_ps_data28_i_n.BLIF \
+ps2_receiver_inst_ps_data29_i_n.BLIF ps2_receiver_inst_un1_ps_data34_1_2_n
+11 1
+.names ps2_receiver_inst_ps_data31_i_n.BLIF \
+ps2_receiver_inst_ps_data32_i_n.BLIF ps2_receiver_inst_un1_ps_data34_1_3_n
+11 1
+.names ps2_receiver_inst_ps_data33_i_n.BLIF \
+ps2_receiver_inst_ps_data34_i_n.BLIF ps2_receiver_inst_un1_ps_data34_1_4_n
+11 1
+.names ps2_receiver_inst_un1_ps_data34_1_1_n.BLIF \
+ps2_receiver_inst_un1_ps_data34_1_2_n.BLIF \
+ps2_receiver_inst_un1_ps_data34_1_5_n
+11 1
+.names ps2_receiver_inst_un1_ps_data34_1_3_n.BLIF \
+ps2_receiver_inst_un1_ps_data34_1_4_n.BLIF \
+ps2_receiver_inst_un1_ps_data34_1_6_n
+11 1
+.names PS2_Receiver_Inst_counter_3_.BLIF ps2_receiver_inst_counter_i_0__n.BLIF \
+ps2_receiver_inst_un1_rxdata_1_8__n
+11 1
+.names PS2_Receiver_Inst_counter_1_.BLIF PS2_Receiver_Inst_counter_2_.BLIF \
+ps2_receiver_inst_un1_rxdata_1_6__n
+11 1
+.names ps2_receiver_inst_counter_i_0__n.BLIF \
+ps2_receiver_inst_counter_i_3__n.BLIF ps2_receiver_inst_un1_rxdata_2_6__n
+11 1
+.names PS2_Receiver_Inst_counter_0_.BLIF PS2_Receiver_Inst_counter_2_.BLIF \
+ps2_receiver_inst_un1_rxdata_1_5__n
+11 1
+.names PS2_Receiver_Inst_counter_2_.BLIF ps2_receiver_inst_counter_i_0__n.BLIF \
+ps2_receiver_inst_un1_rxdata_1_4__n
+11 1
+.names PS2_Receiver_Inst_counter_1_.BLIF ps2_receiver_inst_counter_i_0__n.BLIF \
+ps2_receiver_inst_un1_rxdata_1_2__n
+11 1
+.names PS2_Receiver_Inst_LastRxData_1_.BLIF \
+PS2_Receiver_Inst_LastRxData_4_.BLIF PS2_Receiver_Inst_PS_Data_cnst_3_0__m8_1
+01 1
+10 1
+11 0
+00 0
+.names PS2_Receiver_Inst_PS_Data_cnst_3_0__m8_1.BLIF \
+PS2_Receiver_Inst_LastRxData_3_.BLIF PS2_Receiver_Inst_PS_Data_cnst_3_0__m8
+01 1
+10 1
+11 0
+00 0
+.names PS2_Receiver_Inst_LastRxData_1_.BLIF \
+PS2_Receiver_Inst_LastRxData_3_.BLIF PS2_Receiver_Inst_PS_Data_cnst_3_0__m6
+01 1
+10 1
+11 0
+00 0
+.names PS2_Receiver_Inst_LastRxData_0_.BLIF \
+ps2_receiver_inst_ps_data_cnst_3_0__n_3_i_n.BLIF \
+PS2_Receiver_Inst_PS_Data_cnst_3_0__m5
+01 1
+10 1
+11 0
+00 0
+.names ps2_receiver_inst_un1_rxdata_2_7__n.BLIF ps2_receiver_inst_n_21_n.BLIF \
+PS2_Receiver_Inst_counter_n2
+01 1
+10 1
+11 0
+00 0
+.names ps2_receiver_inst_un1_rxdata_7__n.BLIF ps2_receiver_inst_n_24_n.BLIF \
+PS2_Receiver_Inst_counter_n3
+01 1
+10 1
+11 0
+00 0
+.names ps2_receiver_inst_n_18_n.BLIF ps2_receiver_inst_rxen_2_i_n.BLIF \
+PS2_Receiver_Inst_counter_n0
+01 1
+10 1
+11 0
+00 0
+.names ps2_receiver_inst_n_18_n.BLIF ps2_receiver_inst_n_20_n.BLIF \
+PS2_Receiver_Inst_counter_n1
+01 1
+10 1
+11 0
+00 0
+.names LEDscanInst_LED_Areg.BLIF LED_A
+1 1
+0 0
+.names LEDscanInst_LED_Breg.BLIF LED_B
+1 1
+0 0
+.names LEDscanInst_LED_Creg.BLIF LED_C
+1 1
+0 0
+.names LEDscanInst_LED_Dreg.BLIF LED_D
+1 1
+0 0
+.names LEDscanInst_LED_Ereg.BLIF LED_E
+1 1
+0 0
+.names LEDscanInst_LED_Freg.BLIF LED_F
+1 1
+0 0
+.names LEDscanInst_LED_Greg.BLIF LED_G
+1 1
+0 0
+.names gnd_n_n.BLIF LED_VCC1
+1 1
+0 0
+.names gnd_n_n.BLIF LED_VCC2
+1 1
+0 0
+.names gnd_n_n.BLIF LED_VCC3
+1 1
+0 0
+.names LEDscanInst_LED_VCC4reg.BLIF LED_VCC4
+1 1
+0 0
+.names ps2_receiver_inst_rxdata_0_sqmuxa_n.BLIF PS2_Receiver_Inst_RxData_5_.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_RxData_5_.C
+1 1
+0 0
+.names ps2_receiver_inst_rxdata_0_sqmuxa_n.BLIF PS2_Receiver_Inst_RxData_6_.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_RxData_6_.C
+1 1
+0 0
+.names ps2_receiver_inst_rxdata_0_sqmuxa_n.BLIF PS2_Receiver_Inst_RxData_7_.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_RxData_7_.C
+1 1
+0 0
+.names ps2_receiver_inst_rxdata_0_sqmuxa_n.BLIF PS2_Receiver_Inst_RxData_8_.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_RxData_8_.C
+1 1
+0 0
+.names PS2_Receiver_Inst_RxData_6_.BLIF PS2_Receiver_Inst_LastRxData_5_.D
+1 1
+0 0
+.names ps2_receiver_inst_rxen_i_n.BLIF PS2_Receiver_Inst_LastRxData_5_.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_LastRxData_5_.AR
+1 1
+0 0
+.names PS2_Receiver_Inst_RxData_7_.BLIF PS2_Receiver_Inst_LastRxData_6_.D
+1 1
+0 0
+.names ps2_receiver_inst_rxen_i_n.BLIF PS2_Receiver_Inst_LastRxData_6_.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_LastRxData_6_.AP
+1 1
+0 0
+.names PS2_Receiver_Inst_RxData_8_.BLIF PS2_Receiver_Inst_LastRxData_7_.D
+1 1
+0 0
+.names ps2_receiver_inst_rxen_i_n.BLIF PS2_Receiver_Inst_LastRxData_7_.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_LastRxData_7_.AR
+1 1
+0 0
+.names ps2_receiver_inst_rxdata_0_sqmuxa_n.BLIF PS2_Receiver_Inst_RxData_1_.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_RxData_1_.C
+1 1
+0 0
+.names ps2_receiver_inst_rxdata_0_sqmuxa_n.BLIF PS2_Receiver_Inst_RxData_2_.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_RxData_2_.C
+1 1
+0 0
+.names ps2_receiver_inst_rxdata_0_sqmuxa_n.BLIF PS2_Receiver_Inst_RxData_3_.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_RxData_3_.C
+1 1
+0 0
+.names ps2_receiver_inst_rxdata_0_sqmuxa_n.BLIF PS2_Receiver_Inst_RxData_4_.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_RxData_4_.C
+1 1
+0 0
+.names PS2_Receiver_Inst_counter_n2.BLIF PS2_Receiver_Inst_counter_2_.D
+1 1
+0 0
+.names ps2_receiver_inst_neg_keyclock_n.BLIF PS2_Receiver_Inst_counter_2_.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_counter_2_.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_counter_2_.AR
+1 1
+0 0
+.names PS2_Receiver_Inst_counter_n3.BLIF PS2_Receiver_Inst_counter_3_.D
+1 1
+0 0
+.names ps2_receiver_inst_neg_keyclock_n.BLIF PS2_Receiver_Inst_counter_3_.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_counter_3_.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_counter_3_.AR
+1 1
+0 0
+.names PS2_Receiver_Inst_RxData_1_.BLIF PS2_Receiver_Inst_LastRxData_0_.D
+1 1
+0 0
+.names ps2_receiver_inst_rxen_i_n.BLIF PS2_Receiver_Inst_LastRxData_0_.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_LastRxData_0_.AP
+1 1
+0 0
+.names PS2_Receiver_Inst_RxData_2_.BLIF PS2_Receiver_Inst_LastRxData_1_.D
+1 1
+0 0
+.names ps2_receiver_inst_rxen_i_n.BLIF PS2_Receiver_Inst_LastRxData_1_.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_LastRxData_1_.AR
+1 1
+0 0
+.names PS2_Receiver_Inst_RxData_3_.BLIF PS2_Receiver_Inst_LastRxData_2_.D
+1 1
+0 0
+.names ps2_receiver_inst_rxen_i_n.BLIF PS2_Receiver_Inst_LastRxData_2_.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_LastRxData_2_.AP
+1 1
+0 0
+.names PS2_Receiver_Inst_RxData_4_.BLIF PS2_Receiver_Inst_LastRxData_3_.D
+1 1
+0 0
+.names ps2_receiver_inst_rxen_i_n.BLIF PS2_Receiver_Inst_LastRxData_3_.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_LastRxData_3_.AR
+1 1
+0 0
+.names PS2_Receiver_Inst_RxData_5_.BLIF PS2_Receiver_Inst_LastRxData_4_.D
+1 1
+0 0
+.names ps2_receiver_inst_rxen_i_n.BLIF PS2_Receiver_Inst_LastRxData_4_.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_LastRxData_4_.AR
+1 1
+0 0
+.names ps2_receiver_inst_neg_keyclock_n.BLIF PS2_Receiver_Inst_counter_0_.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_counter_0_.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_counter_0_.AR
+1 1
+0 0
+.names PS2_Receiver_Inst_counter_n1.BLIF PS2_Receiver_Inst_counter_1_.D
+1 1
+0 0
+.names ps2_receiver_inst_neg_keyclock_n.BLIF PS2_Receiver_Inst_counter_1_.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_counter_1_.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_counter_1_.AR
+1 1
+0 0
+.names ps2_receiver_inst_rxen_i_n.BLIF PS2_Receiver_Inst_LedEn.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_LedEn.AR
+1 1
+0 0
+.names ps2_receiver_inst_rxen_2_n.BLIF PS2_Receiver_Inst_RxEn.D
+1 1
+0 0
+.names ps2_receiver_inst_neg_keyclock_n.BLIF PS2_Receiver_Inst_RxEn.CE
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_RxEn.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_RxEn.AP
+1 1
+0 0
+.names KeyClock.BLIF PS2_Receiver_Inst_KeyClock_r0.D
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_KeyClock_r0.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_KeyClock_r0.AR
+1 1
+0 0
+.names PS2_Receiver_Inst_KeyClock_r0.BLIF PS2_Receiver_Inst_KeyClock_r1.D
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_KeyClock_r1.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_KeyClock_r1.AR
+1 1
+0 0
+.names PS2_Receiver_Inst_KeyClock_r1.BLIF PS2_Receiver_Inst_KeyClock_r2.D
+1 1
+0 0
+.names clk_c.BLIF PS2_Receiver_Inst_KeyClock_r2.C
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_KeyClock_r2.AR
+1 1
+0 0
+.names clk_low_c.BLIF LEDscanInst_LED_Ereg.C
+1 1
+0 0
+.names clk_low_c.BLIF LEDscanInst_LED_Freg.C
+1 1
+0 0
+.names clk_low_c.BLIF LEDscanInst_LED_Greg.C
+1 1
+0 0
+.names clk_low_c.BLIF LEDscanInst_LED_Areg.C
+1 1
+0 0
+.names clk_low_c.BLIF LEDscanInst_LED_Breg.C
+1 1
+0 0
+.names clk_low_c.BLIF LEDscanInst_LED_Creg.C
+1 1
+0 0
+.names clk_low_c.BLIF LEDscanInst_LED_Dreg.C
+1 1
+0 0
+.names reset_c.BLIF LEDscanInst_LED_VCC4reg.D
+1 1
+0 0
+.names clk_low_c.BLIF LEDscanInst_LED_VCC4reg.C
+1 1
+0 0
+.names ps2_receiver_inst_ps_data_3_0__n.BLIF PS2_Receiver_Inst_save_0_.D
+1 1
+0 0
+.names ps2_receiver_inst_ps_data38_n.BLIF PS2_Receiver_Inst_save_0_.LH
+1 1
+0 0
+.names ps2_receiver_inst_ps_data_3_1__n.BLIF PS2_Receiver_Inst_save_1_.D
+1 1
+0 0
+.names ps2_receiver_inst_ps_data38_n.BLIF PS2_Receiver_Inst_save_1_.LH
+1 1
+0 0
+.names ps2_receiver_inst_ps_data_3_2__n.BLIF PS2_Receiver_Inst_save_2_.D
+1 1
+0 0
+.names ps2_receiver_inst_ps_data38_n.BLIF PS2_Receiver_Inst_save_2_.LH
+1 1
+0 0
+.names ps2_receiver_inst_ps_data_3_3__n.BLIF PS2_Receiver_Inst_save_3_.D
+1 1
+0 0
+.names ps2_receiver_inst_ps_data38_n.BLIF PS2_Receiver_Inst_save_3_.LH
+1 1
+0 0
+.names ps2_receiver_inst_ps_data_3_0__n.BLIF PS2_Receiver_Inst_PS_Data_0_.D
+1 1
+0 0
+.names ps2_receiver_inst_leden_i_n.BLIF PS2_Receiver_Inst_PS_Data_0_.LH
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_PS_Data_0_.AR
+1 1
+0 0
+.names ps2_receiver_inst_ps_data_3_1__n.BLIF PS2_Receiver_Inst_PS_Data_1_.D
+1 1
+0 0
+.names ps2_receiver_inst_leden_i_n.BLIF PS2_Receiver_Inst_PS_Data_1_.LH
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_PS_Data_1_.AR
+1 1
+0 0
+.names ps2_receiver_inst_ps_data_3_2__n.BLIF PS2_Receiver_Inst_PS_Data_2_.D
+1 1
+0 0
+.names ps2_receiver_inst_leden_i_n.BLIF PS2_Receiver_Inst_PS_Data_2_.LH
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_PS_Data_2_.AR
+1 1
+0 0
+.names ps2_receiver_inst_ps_data_3_3__n.BLIF PS2_Receiver_Inst_PS_Data_3_.D
+1 1
+0 0
+.names ps2_receiver_inst_leden_i_n.BLIF PS2_Receiver_Inst_PS_Data_3_.LH
+1 1
+0 0
+.names reset_i.BLIF PS2_Receiver_Inst_PS_Data_3_.AR
+1 1
+0 0
+.names clk.BLIF clk_c
+1 1
+0 0
+.names clk_low.BLIF clk_low_c
+1 1
+0 0
+.names reset.BLIF reset_c
+1 1
+0 0
+.names KeyData.BLIF KeyData_c
+1 1
+0 0
+.end

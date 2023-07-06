@@ -1,0 +1,1600 @@
+|--------------------------------------------------- ----------|
+|- ispLEVER Classic 2.1.00.02.49.20 Equations File            -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+Equations:
+
+EndFrame = vga_ctrl_LineScan_q1_1_0_.Q & vga_ctrl_LineScan_q1_1_1_.Q
+       & vga_ctrl_co1_n & vga_ctrl_FrameScan_q2_1_0_.Q
+       & vga_ctrl_FrameScan_q2_1_1_.Q ; (1 pterm, 5 signals)
+
+hsync = !( !vga_ctrl_LineScan_q1_1_0_.Q & !vga_ctrl_LineScan_q1_1_1_.Q ) ; (1 pterm, 2 signals)
+
+nblank = !vga_ctrl_LineScan_q1_1_0_.Q & vga_ctrl_LineScan_q1_1_1_.Q
+       & !vga_ctrl_FrameScan_q2_1_0_.Q & vga_ctrl_FrameScan_q2_1_1_.Q ; (1 pterm, 4 signals)
+
+vga_ctrl_FrameScan_q2_1_0_.T = !( reset_n & vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_8_.Q & !vga_ctrl_HCounter_hcnt_9_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_7_.Q & !vga_ctrl_HCounter_cnt_7_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_cnt_7_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_6_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_cnt_6_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_cnt_4_.Q
+    # reset_n & !vga_ctrl_FrameScan_q2_1_1_.Q & !vga_ctrl_vcounter_un7_co2_n
+    # !reset_n & !vga_ctrl_FrameScan_q2_1_0_.Q
+    # !vga_ctrl_FrameScan_q2_1_0_.Q & !vga_ctrl_vcounter_un7_co2_n
+    # reset_n & !vga_ctrl_LineScan_q1_1_1_.Q
+    # reset_n & !vga_ctrl_LineScan_q1_1_0_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_5_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_3_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_2_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_1_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_0_.Q ) ; (19 pterms, 20 signals)
+vga_ctrl_FrameScan_q2_1_0_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_FrameScan_q2_1_1_.D.X1 = reset_n & !vga_ctrl_FrameScan_q2_1_0_.Q
+       & vga_ctrl_FrameScan_q2_1_1_.Q
+    # reset_n & !vga_ctrl_co1_n & vga_ctrl_FrameScan_q2_1_1_.Q
+    # reset_n & !vga_ctrl_LineScan_q1_1_1_.Q & vga_ctrl_FrameScan_q2_1_1_.Q
+    # reset_n & !vga_ctrl_LineScan_q1_1_0_.Q & vga_ctrl_FrameScan_q2_1_1_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_LineScan_q1_1_0_.Q & vga_ctrl_LineScan_q1_1_1_.Q
+       & vga_ctrl_co1_n & vga_ctrl_FrameScan_q2_1_0_.Q
+       & !vga_ctrl_FrameScan_q2_1_1_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_vcounter_un7_co2_11_n
+    # reset_n & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_LineScan_q1_1_0_.Q & vga_ctrl_LineScan_q1_1_1_.Q
+       & vga_ctrl_co1_n & vga_ctrl_FrameScan_q2_1_0_.Q
+       & !vga_ctrl_FrameScan_q2_1_1_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_vcounter_un7_co2_11_n
+    # reset_n & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_LineScan_q1_1_0_.Q
+       & vga_ctrl_LineScan_q1_1_1_.Q & vga_ctrl_co1_n
+       & vga_ctrl_FrameScan_q2_1_0_.Q & !vga_ctrl_FrameScan_q2_1_1_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q & vga_ctrl_vcounter_un7_co2_11_n ; (7 pterms, 18 signals)
+vga_ctrl_FrameScan_q2_1_1_.D.X2 = reset_n & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_LineScan_q1_1_0_.Q & vga_ctrl_LineScan_q1_1_1_.Q
+       & vga_ctrl_co1_n & vga_ctrl_FrameScan_q2_1_0_.Q
+       & !vga_ctrl_FrameScan_q2_1_1_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+       & vga_ctrl_vcounter_un7_co2_11_n ; (1 pterm, 17 signals)
+vga_ctrl_FrameScan_q2_1_1_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_cnt_4_.D = !vga_ctrl_LineScan_q1_1_0_.Q
+       & !vga_ctrl_LineScan_q1_1_1_.Q
+    # vga_ctrl_LineScan_q1_1_0_.Q & vga_ctrl_LineScan_q1_1_1_.Q ; (2 pterms, 2 signals)
+vga_ctrl_HCounter_cnt_4_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_cnt_6_.D = !vga_ctrl_LineScan_q1_1_0_.Q
+       & !vga_ctrl_LineScan_q1_1_1_.Q ; (1 pterm, 2 signals)
+vga_ctrl_HCounter_cnt_6_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_cnt_7_.D = vga_ctrl_LineScan_q1_1_0_.Q
+       & !vga_ctrl_LineScan_q1_1_1_.Q ; (1 pterm, 2 signals)
+vga_ctrl_HCounter_cnt_7_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_cnt_8_.D = !vga_ctrl_LineScan_q1_1_0_.Q
+       & vga_ctrl_LineScan_q1_1_1_.Q ; (1 pterm, 2 signals)
+vga_ctrl_HCounter_cnt_8_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_hcnt_0_.D = reset_n & !vga_ctrl_HCounter_hcnt_0_.Q ; (1 pterm, 2 signals)
+vga_ctrl_HCounter_hcnt_0_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_hcnt_1_.D = reset_n & vga_ctrl_HCounter_hcnt_0_.Q
+       & !vga_ctrl_HCounter_hcnt_1_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q ; (2 pterms, 3 signals)
+vga_ctrl_HCounter_hcnt_1_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_hcnt_2_.D = reset_n & vga_ctrl_HCounter_hcnt_0_.Q
+       & vga_ctrl_HCounter_hcnt_1_.Q & !vga_ctrl_HCounter_hcnt_2_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_2_.Q ; (3 pterms, 4 signals)
+vga_ctrl_HCounter_hcnt_2_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_hcnt_3_.D = reset_n & vga_ctrl_HCounter_hcnt_0_.Q
+       & vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & !vga_ctrl_HCounter_hcnt_3_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_3_.Q ; (4 pterms, 5 signals)
+vga_ctrl_HCounter_hcnt_3_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_hcnt_4_.D = reset_n & vga_ctrl_HCounter_hcnt_0_.Q
+       & vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & !vga_ctrl_HCounter_hcnt_4_.Q
+       & vga_ctrl_HCounter_hcnt_9_.Q & !vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_8_.Q
+       & vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+       & !vga_ctrl_HCounter_hcnt_9_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & !vga_ctrl_HCounter_cnt_7_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & !vga_ctrl_HCounter_cnt_6_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_cnt_6_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_5_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_3_.Q & vga_ctrl_HCounter_hcnt_4_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_4_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_4_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_4_.Q ; (13 pterms, 15 signals)
+vga_ctrl_HCounter_hcnt_4_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_hcnt_5_.T = reset_n & vga_ctrl_HCounter_hcnt_0_.Q
+       & vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & vga_ctrl_HCounter_hcnt_4_.Q
+       & vga_ctrl_HCounter_hcnt_9_.Q & !vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_8_.Q
+       & vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+       & !vga_ctrl_HCounter_hcnt_9_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & !vga_ctrl_HCounter_cnt_7_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & !vga_ctrl_HCounter_cnt_6_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_cnt_6_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_cnt_4_.Q
+    # !reset_n & vga_ctrl_HCounter_hcnt_5_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_5_.Q ; (10 pterms, 15 signals)
+vga_ctrl_HCounter_hcnt_5_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_hcnt_6_.T = vga_ctrl_HCounter_hcnt_0_.Q
+       & vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & !vga_ctrl_HCounter_hcnt_4_.Q
+       & !vga_ctrl_HCounter_hcnt_5_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & !vga_ctrl_HCounter_hcnt_7_.Q & !vga_ctrl_HCounter_hcnt_8_.Q
+       & !vga_ctrl_HCounter_hcnt_9_.Q & vga_ctrl_HCounter_cnt_4_.Q
+       & vga_ctrl_HCounter_cnt_6_.Q & !vga_ctrl_HCounter_cnt_7_.Q
+       & !vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & !vga_ctrl_HCounter_hcnt_8_.Q & !vga_ctrl_HCounter_hcnt_9_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q & vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & !vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & !vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q & vga_ctrl_HCounter_cnt_6_.Q
+       & !vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q & vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & !vga_ctrl_HCounter_hcnt_7_.Q & !vga_ctrl_HCounter_hcnt_8_.Q
+       & !vga_ctrl_HCounter_hcnt_9_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+       & vga_ctrl_HCounter_cnt_6_.Q & !vga_ctrl_HCounter_cnt_7_.Q
+       & !vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_hcnt_7_.Q & !vga_ctrl_HCounter_hcnt_8_.Q
+       & !vga_ctrl_HCounter_hcnt_9_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+       & vga_ctrl_HCounter_cnt_6_.Q & vga_ctrl_HCounter_cnt_7_.Q
+       & !vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & !vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+       & vga_ctrl_HCounter_hcnt_9_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+       & vga_ctrl_HCounter_cnt_6_.Q & !vga_ctrl_HCounter_cnt_7_.Q
+       & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+       & vga_ctrl_HCounter_hcnt_9_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+       & vga_ctrl_HCounter_cnt_6_.Q & vga_ctrl_HCounter_cnt_7_.Q
+       & vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_5_.Q
+    # !reset_n & vga_ctrl_HCounter_hcnt_6_.Q ; (10 pterms, 15 signals)
+vga_ctrl_HCounter_hcnt_6_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_hcnt_7_.T = vga_ctrl_HCounter_hcnt_0_.Q
+       & vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & !vga_ctrl_HCounter_hcnt_4_.Q
+       & !vga_ctrl_HCounter_hcnt_5_.Q & !vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_hcnt_7_.Q & !vga_ctrl_HCounter_hcnt_8_.Q
+       & !vga_ctrl_HCounter_hcnt_9_.Q & vga_ctrl_HCounter_cnt_4_.Q
+       & !vga_ctrl_HCounter_cnt_6_.Q & vga_ctrl_HCounter_cnt_7_.Q
+       & !vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & !vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & !vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & !vga_ctrl_HCounter_hcnt_8_.Q & !vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_ctrl_HCounter_cnt_4_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & !vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & !vga_ctrl_HCounter_hcnt_8_.Q & !vga_ctrl_HCounter_hcnt_9_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q & vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & !vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & !vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_ctrl_HCounter_cnt_4_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q & vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_hcnt_7_.Q & !vga_ctrl_HCounter_hcnt_8_.Q
+       & !vga_ctrl_HCounter_hcnt_9_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+       & vga_ctrl_HCounter_cnt_6_.Q & vga_ctrl_HCounter_cnt_7_.Q
+       & !vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+       & vga_ctrl_HCounter_hcnt_9_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+       & vga_ctrl_HCounter_cnt_6_.Q & vga_ctrl_HCounter_cnt_7_.Q
+       & vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q
+    # !reset_n & vga_ctrl_HCounter_hcnt_7_.Q ; (10 pterms, 15 signals)
+vga_ctrl_HCounter_hcnt_7_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_hcnt_8_.T = vga_ctrl_HCounter_hcnt_0_.Q
+       & vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & !vga_ctrl_HCounter_hcnt_4_.Q
+       & !vga_ctrl_HCounter_hcnt_5_.Q & !vga_ctrl_HCounter_hcnt_6_.Q
+       & !vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+       & vga_ctrl_HCounter_hcnt_9_.Q & vga_ctrl_HCounter_cnt_4_.Q
+       & !vga_ctrl_HCounter_cnt_6_.Q & !vga_ctrl_HCounter_cnt_7_.Q
+       & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & !vga_ctrl_HCounter_hcnt_6_.Q & !vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_ctrl_HCounter_cnt_4_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+       & !vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & !vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q & vga_ctrl_HCounter_cnt_6_.Q
+       & !vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & !vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & !vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_ctrl_HCounter_cnt_4_.Q & vga_ctrl_HCounter_cnt_6_.Q
+       & !vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & !vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_ctrl_HCounter_cnt_4_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q & vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+       & vga_ctrl_HCounter_hcnt_9_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+       & vga_ctrl_HCounter_cnt_6_.Q & vga_ctrl_HCounter_cnt_7_.Q
+       & vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+    # !reset_n & vga_ctrl_HCounter_hcnt_8_.Q ; (10 pterms, 15 signals)
+vga_ctrl_HCounter_hcnt_8_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_HCounter_hcnt_9_.T = vga_ctrl_HCounter_hcnt_0_.Q
+       & vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & !vga_ctrl_HCounter_hcnt_4_.Q
+       & !vga_ctrl_HCounter_hcnt_5_.Q & !vga_ctrl_HCounter_hcnt_6_.Q
+       & !vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+       & vga_ctrl_HCounter_hcnt_9_.Q & vga_ctrl_HCounter_cnt_4_.Q
+       & !vga_ctrl_HCounter_cnt_6_.Q & !vga_ctrl_HCounter_cnt_7_.Q
+       & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & !vga_ctrl_HCounter_hcnt_6_.Q & !vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_ctrl_HCounter_cnt_4_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+       & !vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & !vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q & vga_ctrl_HCounter_cnt_6_.Q
+       & !vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & !vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & !vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_ctrl_HCounter_cnt_4_.Q & vga_ctrl_HCounter_cnt_6_.Q
+       & !vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & !vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_ctrl_HCounter_cnt_4_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q & vga_ctrl_HCounter_cnt_6_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+       & vga_ctrl_HCounter_hcnt_9_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+       & vga_ctrl_HCounter_cnt_6_.Q & vga_ctrl_HCounter_cnt_7_.Q
+       & vga_ctrl_HCounter_cnt_8_.Q
+    # !reset_n & vga_ctrl_HCounter_hcnt_9_.Q ; (10 pterms, 15 signals)
+vga_ctrl_HCounter_hcnt_9_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_LineScan_q1_1_0_.T = !( reset_n & vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_8_.Q & !vga_ctrl_HCounter_hcnt_9_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_7_.Q & !vga_ctrl_HCounter_cnt_7_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_cnt_7_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_6_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_cnt_6_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_cnt_4_.Q
+    # !reset_n & !vga_ctrl_LineScan_q1_1_0_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_5_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_3_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_2_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_1_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_0_.Q ) ; (15 pterms, 16 signals)
+vga_ctrl_LineScan_q1_1_0_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_LineScan_q1_1_1_.T = !( reset_n & vga_ctrl_HCounter_hcnt_8_.Q
+       & !vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_9_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_7_.Q & !vga_ctrl_HCounter_cnt_7_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_cnt_7_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_6_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_cnt_6_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_cnt_4_.Q
+    # !reset_n & !vga_ctrl_LineScan_q1_1_1_.Q
+    # reset_n & !vga_ctrl_LineScan_q1_1_0_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_5_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_3_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_2_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_1_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_0_.Q ) ; (16 pterms, 17 signals)
+vga_ctrl_LineScan_q1_1_1_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_cnt_0_.D = !( !vga_ctrl_FrameScan_q2_1_0_.Q
+       & vga_ctrl_FrameScan_q2_1_1_.Q ) ; (1 pterm, 2 signals)
+vga_ctrl_VCounter_cnt_0_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_cnt_1_.D = !vga_ctrl_FrameScan_q2_1_0_.Q
+       & !vga_ctrl_FrameScan_q2_1_1_.Q ; (1 pterm, 2 signals)
+vga_ctrl_VCounter_cnt_1_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_cnt_2_.D = vga_ctrl_FrameScan_q2_1_0_.Q
+       & !vga_ctrl_FrameScan_q2_1_1_.Q ; (1 pterm, 2 signals)
+vga_ctrl_VCounter_cnt_2_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_cnt_3_.D = !vga_ctrl_FrameScan_q2_1_0_.Q
+       & vga_ctrl_FrameScan_q2_1_1_.Q ; (1 pterm, 2 signals)
+vga_ctrl_VCounter_cnt_3_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_cnt_4_.D = vga_ctrl_FrameScan_q2_1_0_.Q
+       & !vga_ctrl_FrameScan_q2_1_1_.Q
+    # !vga_ctrl_FrameScan_q2_1_0_.Q & vga_ctrl_FrameScan_q2_1_1_.Q ; (2 pterms, 2 signals)
+vga_ctrl_VCounter_cnt_4_.C = sys_clk ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_vcnt_0_.D = reset_n & !vga_ctrl_VCounter_vcnt_0_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_8_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_7_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_5_.Q
+    # reset_n & !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_3_.Q ; (14 pterms, 16 signals)
+vga_ctrl_VCounter_vcnt_0_.C = sys_clk ; (1 pterm, 1 signal)
+vga_ctrl_VCounter_vcnt_0_.CE = vga_ctrl_vcounter_vcnte_n ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_vcnt_1_.D = !( !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+    # !reset_n ) ; (19 pterms, 16 signals)
+vga_ctrl_VCounter_vcnt_1_.C = sys_clk ; (1 pterm, 1 signal)
+vga_ctrl_VCounter_vcnt_1_.CE = vga_ctrl_vcounter_vcnte_n ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_vcnt_2_.D = !( !vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+    # !vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+    # !reset_n ) ; (20 pterms, 16 signals)
+vga_ctrl_VCounter_vcnt_2_.C = sys_clk ; (1 pterm, 1 signal)
+vga_ctrl_VCounter_vcnt_2_.CE = vga_ctrl_vcounter_vcnte_n ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_vcnt_3_.D.X1 = reset_n & vga_ctrl_VCounter_vcnt_3_.Q
+    # reset_n & vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # reset_n & vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # reset_n & vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # reset_n & vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q ; (5 pterms, 16 signals)
+vga_ctrl_VCounter_vcnt_3_.D.X2 = reset_n & vga_ctrl_VCounter_vcnt_0_.Q
+       & vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q ; (1 pterm, 4 signals)
+vga_ctrl_VCounter_vcnt_3_.C = sys_clk ; (1 pterm, 1 signal)
+vga_ctrl_VCounter_vcnt_3_.CE = vga_ctrl_vcounter_vcnte_n ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_vcnt_4_.T = !vga_ctrl_VCounter_vcnt_0_.Q
+       & !vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_3_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # reset_n & vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & vga_ctrl_VCounter_vcnt_3_.Q
+    # !reset_n & vga_ctrl_VCounter_vcnt_4_.Q ; (18 pterms, 16 signals)
+vga_ctrl_VCounter_vcnt_4_.C = sys_clk ; (1 pterm, 1 signal)
+vga_ctrl_VCounter_vcnt_4_.CE = vga_ctrl_vcounter_vcnte_n ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_vcnt_5_.T = reset_n & vga_ctrl_VCounter_vcnt_0_.Q
+       & vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+    # !reset_n & vga_ctrl_VCounter_vcnt_5_.Q ; (2 pterms, 7 signals)
+vga_ctrl_VCounter_vcnt_5_.C = sys_clk ; (1 pterm, 1 signal)
+vga_ctrl_VCounter_vcnt_5_.CE = !( !vga_ctrl_vcounter_vcnte_n ) ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_vcnt_6_.T = vga_ctrl_VCounter_vcnt_0_.Q
+       & vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # reset_n & vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & vga_ctrl_VCounter_vcnt_5_.Q
+    # !reset_n & vga_ctrl_VCounter_vcnt_6_.Q ; (19 pterms, 16 signals)
+vga_ctrl_VCounter_vcnt_6_.C = sys_clk ; (1 pterm, 1 signal)
+vga_ctrl_VCounter_vcnt_6_.CE = vga_ctrl_vcounter_vcnte_n ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_vcnt_7_.T = reset_n & vga_ctrl_VCounter_vcnt_0_.Q
+       & vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+    # !reset_n & vga_ctrl_VCounter_vcnt_7_.Q ; (2 pterms, 9 signals)
+vga_ctrl_VCounter_vcnt_7_.C = sys_clk ; (1 pterm, 1 signal)
+vga_ctrl_VCounter_vcnt_7_.CE = !( !vga_ctrl_vcounter_vcnte_n ) ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_vcnt_8_.T = reset_n & vga_ctrl_VCounter_vcnt_0_.Q
+       & vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & vga_ctrl_VCounter_vcnt_7_.Q
+    # !reset_n & vga_ctrl_VCounter_vcnt_8_.Q ; (2 pterms, 10 signals)
+vga_ctrl_VCounter_vcnt_8_.C = sys_clk ; (1 pterm, 1 signal)
+vga_ctrl_VCounter_vcnt_8_.CE = !( !vga_ctrl_vcounter_vcnte_n ) ; (1 pterm, 1 signal)
+
+vga_ctrl_VCounter_vcnt_9_.T = reset_n & vga_ctrl_VCounter_vcnt_0_.Q
+       & vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_vcnt_8_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !reset_n & vga_ctrl_VCounter_vcnt_9_.Q ; (19 pterms, 16 signals)
+vga_ctrl_VCounter_vcnt_9_.C = sys_clk ; (1 pterm, 1 signal)
+vga_ctrl_VCounter_vcnt_9_.CE = vga_ctrl_vcounter_vcnte_n ; (1 pterm, 1 signal)
+
+vga_ctrl_co1_n.X1 = !vga_ctrl_HCounter_hcnt_0_.Q & vga_ctrl_HCounter_hcnt_1_.Q
+       & vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+    # vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & vga_ctrl_HCounter_hcnt_5_.Q
+    # vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+       & !vga_ctrl_HCounter_hcnt_9_.Q
+    # vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & !vga_ctrl_HCounter_hcnt_4_.Q
+       & !vga_ctrl_HCounter_cnt_4_.Q
+    # vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & !vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_cnt_6_.Q
+    # vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & !vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_cnt_7_.Q
+    # vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & !vga_ctrl_HCounter_hcnt_8_.Q
+       & vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_ctrl_HCounter_cnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & !vga_ctrl_HCounter_cnt_7_.Q
+    # vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & !vga_ctrl_HCounter_cnt_6_.Q
+    # vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & vga_ctrl_HCounter_hcnt_4_.Q
+       & vga_ctrl_HCounter_cnt_4_.Q ; (11 pterms, 14 signals)
+vga_ctrl_co1_n.X2 = vga_ctrl_HCounter_hcnt_1_.Q & vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q ; (1 pterm, 3 signals)
+
+vga_ctrl_vcounter_un7_co2_11_n.X1 = !vga_ctrl_VCounter_vcnt_0_.Q
+       & !vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_2_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & !vga_ctrl_VCounter_vcnt_2_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q ; (16 pterms, 9 signals)
+vga_ctrl_vcounter_un7_co2_11_n.X2 = !vga_ctrl_VCounter_vcnt_0_.Q
+       & vga_ctrl_VCounter_cnt_0_.Q ; (1 pterm, 2 signals)
+
+vga_ctrl_vcounter_un7_co2_n.X1 = !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+    # !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & vga_ctrl_VCounter_vcnt_8_.Q
+    # !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+    # vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_cnt_0_.Q
+    # !vga_ctrl_VCounter_vcnt_0_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+    # !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_cnt_3_.Q
+    # !vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q
+    # vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_1_.Q
+    # !vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_cnt_0_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q
+    # vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q
+    # vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q
+    # !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_3_.Q
+    # !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & vga_ctrl_VCounter_vcnt_9_.Q & !vga_ctrl_VCounter_cnt_3_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_cnt_3_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q & !vga_ctrl_VCounter_cnt_2_.Q
+    # vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q & !vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & !vga_ctrl_VCounter_cnt_0_.Q & !vga_ctrl_VCounter_cnt_1_.Q
+       & !vga_ctrl_VCounter_cnt_2_.Q
+    # !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_cnt_0_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q
+    # !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_cnt_1_.Q
+       & vga_ctrl_VCounter_cnt_2_.Q
+    # !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & vga_ctrl_VCounter_cnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_cnt_2_.Q
+       & !vga_ctrl_VCounter_cnt_4_.Q
+    # vga_ctrl_VCounter_vcnt_1_.Q & vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_cnt_1_.Q & vga_ctrl_VCounter_cnt_2_.Q ; (25 pterms, 15 signals)
+vga_ctrl_vcounter_un7_co2_n.X2 = !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q ; (1 pterm, 2 signals)
+
+vga_ctrl_vcounter_vcnte_n = !( reset_n & vga_ctrl_HCounter_hcnt_8_.Q
+       & !vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_9_.Q & vga_ctrl_HCounter_cnt_8_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_7_.Q & !vga_ctrl_HCounter_cnt_7_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_cnt_7_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_6_.Q & !vga_ctrl_HCounter_cnt_6_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_cnt_6_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_cnt_4_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_cnt_4_.Q
+    # reset_n & !vga_ctrl_LineScan_q1_1_1_.Q
+    # reset_n & !vga_ctrl_LineScan_q1_1_0_.Q
+    # reset_n & vga_ctrl_HCounter_hcnt_5_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_3_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_2_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_1_.Q
+    # reset_n & !vga_ctrl_HCounter_hcnt_0_.Q ) ; (16 pterms, 17 signals)
+
+vga_d_0_.X1 = orient & vga_ctrl_VCounter_vcnt_6_.Q
+       & vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & !vga_data_un1_vcnt_5_i_n & nblank
+       & !vga_data_n_280_n & !vga_data_n_18_n
+    # !orient & vga_ctrl_HCounter_hcnt_6_.Q & !vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_9_.Q & !vga_data_un1_hcnt_4_n
+       & !vga_data_un1_hcnt_6_i_n & nblank & !vga_data_n_18_n
+       & !vga_data_n_539_n
+    # !orient & vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+       & !vga_ctrl_HCounter_hcnt_9_.Q & vga_data_n_435_0_n
+       & vga_data_un1_hcnt_4_n & nblank & !vga_data_n_18_n
+    # !orient & vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_data_un1_hcnt_4_n & !vga_data_un1_hcnt_6_i_n & nblank
+       & !vga_data_n_18_n
+    # orient & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & !vga_data_n_246_0_n & nblank
+       & !vga_data_n_18_n
+    # orient & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & !vga_data_n_98_0_n & nblank
+       & !vga_data_n_18_n
+    # orient & vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & nblank & !vga_data_n_134_n
+       & !vga_data_n_18_n
+    # !orient & vga_ctrl_HCounter_hcnt_9_.Q & vga_data_un1_hcnt_4_n & nblank
+       & !vga_data_n_18_n
+    # orient & vga_ctrl_VCounter_vcnt_9_.Q & !vga_data_un1_vcnt_5_i_n & nblank
+       & !vga_data_n_18_n
+    # !orient & !vga_ctrl_HCounter_hcnt_9_.Q & !vga_data_n_435_0_n
+       & vga_data_n_396_0_n & nblank & !vga_data_n_18_n
+    # !orient & vga_ctrl_HCounter_hcnt_8_.Q & !vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_data_n_435_0_n & nblank & !vga_data_n_18_n
+    # !orient & !vga_ctrl_HCounter_hcnt_7_.Q & !vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_data_n_435_0_n & !vga_data_n_357_0_n & nblank & !vga_data_n_18_n ; (12 pterms, 22 signals)
+vga_d_0_.X2 = !orient & !vga_ctrl_HCounter_hcnt_4_.Q
+       & !vga_ctrl_HCounter_hcnt_5_.Q & !vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+       & !vga_ctrl_HCounter_hcnt_9_.Q & vga_data_n_435_0_n
+       & vga_data_un1_hcnt_4_n & nblank & !vga_data_n_18_n ; (1 pterm, 11 signals)
+
+vga_d_1_ = !( !orient & !vga_ctrl_HCounter_hcnt_7_.Q
+       & !vga_ctrl_HCounter_hcnt_8_.Q & !vga_ctrl_HCounter_hcnt_9_.Q
+       & !vga_data_n_357_0_n
+    # orient & vga_ctrl_VCounter_vcnt_6_.Q & vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+       & vga_data_n_174_0_1_n
+    # orient & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & !vga_data_n_246_0_n
+    # orient & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & !vga_data_n_98_0_n
+    # !orient & vga_data_n_435_0_n & vga_data_un1_hcnt_4_n
+    # !orient & vga_ctrl_HCounter_hcnt_9_.Q & vga_data_un1_hcnt_4_n
+    # orient & vga_data_un1_vcnt_5_i_n
+    # !orient & vga_data_un1_hcnt_6_i_n
+    # !nblank ) ; (9 pterms, 17 signals)
+
+vga_d_2_ = orient & vga_ctrl_VCounter_vcnt_6_.Q & vga_ctrl_VCounter_vcnt_7_.Q
+       & !vga_data_un1_vcnt_5_i_n & nblank & vga_data_n_174_0_1_n
+    # !orient & vga_data_n_435_0_n & !vga_data_un1_hcnt_6_i_n & nblank
+    # !orient & vga_ctrl_HCounter_hcnt_9_.Q & !vga_data_un1_hcnt_6_i_n
+       & nblank
+    # orient & vga_ctrl_VCounter_vcnt_9_.Q & !vga_data_un1_vcnt_5_i_n & nblank
+    # orient & vga_ctrl_VCounter_vcnt_8_.Q & !vga_data_un1_vcnt_5_i_n & nblank ; (5 pterms, 11 signals)
+
+vga_data_n_134_n = !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+    # !vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_3_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+    # !vga_ctrl_VCounter_vcnt_4_.Q & !vga_ctrl_VCounter_vcnt_5_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q ; (3 pterms, 6 signals)
+
+vga_data_n_174_0_1_n = !( !vga_ctrl_VCounter_vcnt_0_.Q
+       & !vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+    # !vga_ctrl_VCounter_vcnt_5_.Q ) ; (2 pterms, 6 signals)
+
+vga_data_n_18_n = orient & vga_ctrl_VCounter_vcnt_6_.Q
+       & vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q & vga_data_n_174_0_1_n
+    # orient & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+    # orient & !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_6_.Q & !vga_ctrl_VCounter_vcnt_7_.Q
+       & vga_ctrl_VCounter_vcnt_8_.Q & !vga_ctrl_VCounter_vcnt_9_.Q
+    # orient & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & vga_ctrl_VCounter_vcnt_8_.Q
+       & !vga_ctrl_VCounter_vcnt_9_.Q ; (4 pterms, 10 signals)
+
+vga_data_n_246_0_n = vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_2_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+    # vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_4_.Q
+       & vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q ; (2 pterms, 7 signals)
+
+vga_data_n_280_n = !vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_2_.Q
+       & !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q ; (1 pterm, 5 signals)
+
+vga_data_n_357_0_n = vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q
+    # vga_ctrl_HCounter_hcnt_3_.Q & vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q
+    # vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q ; (3 pterms, 5 signals)
+
+vga_data_n_396_0_n = vga_ctrl_HCounter_hcnt_5_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_hcnt_7_.Q
+    # vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_hcnt_7_.Q
+    # vga_ctrl_HCounter_hcnt_3_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_hcnt_7_.Q ; (3 pterms, 5 signals)
+
+vga_data_n_435_0_n = vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_5_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_8_.Q ; (4 pterms, 7 signals)
+
+vga_data_n_539_n = !vga_ctrl_HCounter_hcnt_4_.Q & !vga_ctrl_HCounter_hcnt_5_.Q
+    # !vga_ctrl_HCounter_hcnt_3_.Q & !vga_ctrl_HCounter_hcnt_5_.Q ; (2 pterms, 3 signals)
+
+vga_data_n_98_0_n = vga_ctrl_VCounter_vcnt_0_.Q & vga_ctrl_VCounter_vcnt_1_.Q
+       & vga_ctrl_VCounter_vcnt_3_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+    # vga_ctrl_VCounter_vcnt_2_.Q & vga_ctrl_VCounter_vcnt_3_.Q
+       & vga_ctrl_VCounter_vcnt_6_.Q
+    # vga_ctrl_VCounter_vcnt_5_.Q & vga_ctrl_VCounter_vcnt_6_.Q
+    # vga_ctrl_VCounter_vcnt_4_.Q & vga_ctrl_VCounter_vcnt_6_.Q ; (4 pterms, 7 signals)
+
+vga_data_un1_hcnt_4_n = !( vga_ctrl_HCounter_hcnt_3_.Q
+       & vga_ctrl_HCounter_hcnt_4_.Q & vga_ctrl_HCounter_hcnt_5_.Q
+       & vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_2_.Q & vga_ctrl_HCounter_hcnt_4_.Q
+       & vga_ctrl_HCounter_hcnt_5_.Q & vga_ctrl_HCounter_hcnt_6_.Q
+       & vga_ctrl_HCounter_hcnt_7_.Q & vga_ctrl_HCounter_hcnt_8_.Q
+    # vga_ctrl_HCounter_hcnt_9_.Q ) ; (3 pterms, 8 signals)
+
+vga_data_un1_hcnt_6_i_n = vga_ctrl_HCounter_hcnt_2_.Q
+       & vga_ctrl_HCounter_hcnt_3_.Q & vga_ctrl_HCounter_hcnt_4_.Q
+       & vga_ctrl_HCounter_hcnt_5_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_9_.Q
+    # vga_ctrl_HCounter_hcnt_6_.Q & vga_ctrl_HCounter_hcnt_7_.Q
+       & vga_ctrl_HCounter_hcnt_9_.Q
+    # vga_ctrl_HCounter_hcnt_8_.Q & vga_ctrl_HCounter_hcnt_9_.Q ; (3 pterms, 8 signals)
+
+vga_data_un1_vcnt_5_i_n = !( !vga_ctrl_VCounter_vcnt_0_.Q
+       & !vga_ctrl_VCounter_vcnt_1_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+    # !vga_ctrl_VCounter_vcnt_3_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+    # !vga_ctrl_VCounter_vcnt_2_.Q & !vga_ctrl_VCounter_vcnt_4_.Q
+       & !vga_ctrl_VCounter_vcnt_5_.Q & !vga_ctrl_VCounter_vcnt_6_.Q
+       & !vga_ctrl_VCounter_vcnt_7_.Q & !vga_ctrl_VCounter_vcnt_8_.Q
+    # !vga_ctrl_VCounter_vcnt_9_.Q ) ; (4 pterms, 10 signals)
+
+vsync = !( !vga_ctrl_FrameScan_q2_1_0_.Q & !vga_ctrl_FrameScan_q2_1_1_.Q ) ; (1 pterm, 2 signals)
+

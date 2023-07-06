@@ -1,0 +1,985 @@
+|--------------------------------------------------- ----------|
+|- ispLEVER Classic 2.1.00.02.49.20 Equations File            -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+Equations:
+
+LED_A.D = !( reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_0_.Q
+       & !receiverInst_Data2_1_.Q & !receiverInst_Data2_2_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_0_.Q
+       & !receiverInst_Data1_1_.Q & !receiverInst_Data1_2_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & receiverInst_Data1_0_.Q
+       & receiverInst_Data1_2_.Q & !receiverInst_Data1_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_1_.Q
+       & !receiverInst_Data1_2_.Q & receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & receiverInst_Data2_0_.Q
+       & receiverInst_Data2_2_.Q & !receiverInst_Data2_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_1_.Q
+       & !receiverInst_Data2_2_.Q & receiverInst_Data2_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & receiverInst_Data1_1_.Q
+       & !receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & receiverInst_Data2_1_.Q
+       & !receiverInst_Data2_3_.Q ) ; (8 pterms, 10 signals)
+LED_A.C = clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_B.D = !( reset & !clkGenerator_scancnt_1_0_.Q & receiverInst_Data1_0_.Q
+       & receiverInst_Data1_1_.Q & !receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & receiverInst_Data2_0_.Q
+       & receiverInst_Data2_1_.Q & !receiverInst_Data2_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_1_.Q
+       & !receiverInst_Data2_2_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_0_.Q
+       & !receiverInst_Data1_1_.Q & !receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_0_.Q
+       & !receiverInst_Data2_1_.Q & !receiverInst_Data2_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_1_.Q
+       & !receiverInst_Data1_2_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_2_.Q
+       & !receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_2_.Q
+       & !receiverInst_Data2_3_.Q ) ; (8 pterms, 10 signals)
+LED_B.C = clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_C.D = !( reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_1_.Q
+       & !receiverInst_Data2_2_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_1_.Q
+       & !receiverInst_Data1_2_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & receiverInst_Data1_2_.Q
+       & !receiverInst_Data1_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & receiverInst_Data1_0_.Q
+       & !receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & receiverInst_Data2_2_.Q
+       & !receiverInst_Data2_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & receiverInst_Data2_0_.Q
+       & !receiverInst_Data2_3_.Q ) ; (6 pterms, 10 signals)
+LED_C.C = clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_D.D = !( reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_0_.Q
+       & !receiverInst_Data2_1_.Q & !receiverInst_Data2_2_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_0_.Q
+       & !receiverInst_Data1_1_.Q & !receiverInst_Data1_2_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & receiverInst_Data1_0_.Q
+       & !receiverInst_Data1_1_.Q & receiverInst_Data1_2_.Q
+       & !receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & receiverInst_Data2_0_.Q
+       & !receiverInst_Data2_1_.Q & receiverInst_Data2_2_.Q
+       & !receiverInst_Data2_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_0_.Q
+       & receiverInst_Data1_1_.Q & !receiverInst_Data1_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_1_.Q
+       & !receiverInst_Data1_2_.Q & receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_1_.Q
+       & !receiverInst_Data2_2_.Q & receiverInst_Data2_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & receiverInst_Data1_1_.Q
+       & !receiverInst_Data1_2_.Q & !receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_0_.Q
+       & receiverInst_Data2_1_.Q & !receiverInst_Data2_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & receiverInst_Data2_1_.Q
+       & !receiverInst_Data2_2_.Q & !receiverInst_Data2_3_.Q ) ; (10 pterms, 10 signals)
+LED_D.C = clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_E.D = !( reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_0_.Q
+       & !receiverInst_Data2_1_.Q & !receiverInst_Data2_2_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_0_.Q
+       & receiverInst_Data1_1_.Q & !receiverInst_Data1_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_0_.Q
+       & !receiverInst_Data1_1_.Q & !receiverInst_Data1_2_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_0_.Q
+       & receiverInst_Data2_1_.Q & !receiverInst_Data2_3_.Q ) ; (4 pterms, 10 signals)
+LED_E.C = clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_F.D = !( reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_0_.Q
+       & !receiverInst_Data2_1_.Q & !receiverInst_Data2_2_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_0_.Q
+       & !receiverInst_Data1_1_.Q & !receiverInst_Data1_2_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_0_.Q
+       & receiverInst_Data1_2_.Q & !receiverInst_Data1_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_1_.Q
+       & !receiverInst_Data1_2_.Q & receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_1_.Q
+       & !receiverInst_Data2_2_.Q & receiverInst_Data2_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_0_.Q
+       & receiverInst_Data2_2_.Q & !receiverInst_Data2_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_1_.Q
+       & receiverInst_Data1_2_.Q & !receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_1_.Q
+       & receiverInst_Data2_2_.Q & !receiverInst_Data2_3_.Q ) ; (8 pterms, 10 signals)
+LED_F.C = clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_G.D = !( reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_0_.Q
+       & receiverInst_Data2_1_.Q & !receiverInst_Data2_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_0_.Q
+       & receiverInst_Data1_2_.Q & !receiverInst_Data1_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_1_.Q
+       & !receiverInst_Data1_2_.Q & receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_1_.Q
+       & !receiverInst_Data2_2_.Q & receiverInst_Data2_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & receiverInst_Data1_1_.Q
+       & !receiverInst_Data1_2_.Q & !receiverInst_Data1_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & !receiverInst_Data2_1_.Q
+       & receiverInst_Data2_2_.Q & !receiverInst_Data2_3_.Q
+    # reset & clkGenerator_scancnt_1_0_.Q & receiverInst_Data2_1_.Q
+       & !receiverInst_Data2_2_.Q & !receiverInst_Data2_3_.Q
+    # reset & !clkGenerator_scancnt_1_0_.Q & !receiverInst_Data1_1_.Q
+       & receiverInst_Data1_2_.Q & !receiverInst_Data1_3_.Q ) ; (8 pterms, 10 signals)
+LED_G.C = clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_VCC1.D = 0 ; (0 pterm, 0 signal)
+LED_VCC1.C = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_VCC2 = 0 ; (0 pterm, 0 signal)
+
+LED_VCC3.D = reset & clkGenerator_scancnt_1_0_.Q ; (1 pterm, 2 signals)
+LED_VCC3.C = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_VCC4.D = reset & !clkGenerator_scancnt_1_0_.Q ; (1 pterm, 2 signals)
+LED_VCC4.C = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+Tx.D = senderInst_Send_count_0_.Q & senderInst_Send_count_2_.Q
+    # senderInst_Send_count_1_.Q & !senderInst_Send_count_2_.Q
+    # senderInst_Send_count_0_.Q & senderInst_Send_count_3_.Q ; (3 pterms, 4 signals)
+Tx.C = !clkGenerator_FreqDivide_3_q_1_.Q & !clkGenerator_FreqDivide_3_q_2_.Q
+       & !clkGenerator_FreqDivide_3_q_3_.Q & !clkGenerator_FreqDivide_3_q_4_.Q
+       & clkGenerator_FreqDivide_3_q_5_.Q & clkGenerator_FreqDivide_3_q_6_.Q
+       & clkGenerator_FreqDivide_3_q_7_.Q & !clkGenerator_FreqDivide_3_q_8_.Q
+       & !clkGenerator_FreqDivide_3_q_9_.Q & clkGenerator_FreqDivide_3_q_10_.Q ; (1 pterm, 10 signals)
+Tx.AP = !senderInst_Send_data_4_.Q ; (1 pterm, 1 signal)
+
+clkGenerator_FreqDivide_1_q_10_.T = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_10_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_10_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_10_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_11_.T = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_11_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_11_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_11_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_12_.T = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_12_.Q ; (2 pterms, 13 signals)
+clkGenerator_FreqDivide_1_q_12_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_12_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_13_.T = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & clkGenerator_FreqDivide_1_q_12_.Q
+    # clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_13_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_13_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_13_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_1_.D = reset & !clkGenerator_FreqDivide_1_q_1_.Q ; (1 pterm, 2 signals)
+clkGenerator_FreqDivide_1_q_1_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_2_.D = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & !clkGenerator_FreqDivide_1_q_2_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q ; (2 pterms, 3 signals)
+clkGenerator_FreqDivide_1_q_2_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_3_.D = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & !clkGenerator_FreqDivide_1_q_3_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q ; (3 pterms, 4 signals)
+clkGenerator_FreqDivide_1_q_3_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_4_.D = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & !clkGenerator_FreqDivide_1_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q ; (4 pterms, 5 signals)
+clkGenerator_FreqDivide_1_q_4_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_5_.D.X1 = reset
+       & !clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_5_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_5_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_5_.Q
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q ; (5 pterms, 6 signals)
+clkGenerator_FreqDivide_1_q_5_.D.X2 = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 14 signals)
+clkGenerator_FreqDivide_1_q_5_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_5_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_6_.T = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_6_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_6_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_6_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_7_.T = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_7_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_7_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_7_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_8_.T = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_8_.Q ; (2 pterms, 9 signals)
+clkGenerator_FreqDivide_1_q_8_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_8_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_9_.T = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_9_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_9_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_9_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_3_q_10_.T = !clkGenerator_FreqDivide_3_q_1_.Q
+       & !clkGenerator_FreqDivide_3_q_2_.Q & !clkGenerator_FreqDivide_3_q_3_.Q
+       & !clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q & clkGenerator_FreqDivide_3_q_7_.Q
+       & !clkGenerator_FreqDivide_3_q_8_.Q & !clkGenerator_FreqDivide_3_q_9_.Q
+       & clkGenerator_FreqDivide_3_q_10_.Q
+    # reset & clkGenerator_FreqDivide_3_q_1_.Q
+       & clkGenerator_FreqDivide_3_q_2_.Q & clkGenerator_FreqDivide_3_q_3_.Q
+       & clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q & clkGenerator_FreqDivide_3_q_7_.Q
+       & clkGenerator_FreqDivide_3_q_8_.Q & clkGenerator_FreqDivide_3_q_9_.Q
+    # !reset & clkGenerator_FreqDivide_3_q_10_.Q ; (3 pterms, 11 signals)
+clkGenerator_FreqDivide_3_q_10_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_3_q_10_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_3_q_1_.D = !( !clkGenerator_FreqDivide_3_q_2_.Q
+       & !clkGenerator_FreqDivide_3_q_3_.Q & !clkGenerator_FreqDivide_3_q_4_.Q
+       & clkGenerator_FreqDivide_3_q_5_.Q & clkGenerator_FreqDivide_3_q_6_.Q
+       & clkGenerator_FreqDivide_3_q_7_.Q & !clkGenerator_FreqDivide_3_q_8_.Q
+       & !clkGenerator_FreqDivide_3_q_9_.Q & clkGenerator_FreqDivide_3_q_10_.Q
+    # clkGenerator_FreqDivide_3_q_1_.Q
+    # !reset ) ; (3 pterms, 11 signals)
+clkGenerator_FreqDivide_3_q_1_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_3_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_3_q_2_.D = reset & clkGenerator_FreqDivide_3_q_1_.Q
+       & !clkGenerator_FreqDivide_3_q_2_.Q
+    # reset & !clkGenerator_FreqDivide_3_q_1_.Q
+       & clkGenerator_FreqDivide_3_q_2_.Q ; (2 pterms, 3 signals)
+clkGenerator_FreqDivide_3_q_2_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_3_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_3_q_3_.D = reset & clkGenerator_FreqDivide_3_q_1_.Q
+       & clkGenerator_FreqDivide_3_q_2_.Q & !clkGenerator_FreqDivide_3_q_3_.Q
+    # reset & !clkGenerator_FreqDivide_3_q_2_.Q
+       & clkGenerator_FreqDivide_3_q_3_.Q
+    # reset & !clkGenerator_FreqDivide_3_q_1_.Q
+       & clkGenerator_FreqDivide_3_q_3_.Q ; (3 pterms, 4 signals)
+clkGenerator_FreqDivide_3_q_3_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_3_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_3_q_4_.D = reset & clkGenerator_FreqDivide_3_q_1_.Q
+       & clkGenerator_FreqDivide_3_q_2_.Q & clkGenerator_FreqDivide_3_q_3_.Q
+       & !clkGenerator_FreqDivide_3_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_3_q_3_.Q
+       & clkGenerator_FreqDivide_3_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_3_q_2_.Q
+       & clkGenerator_FreqDivide_3_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_3_q_1_.Q
+       & clkGenerator_FreqDivide_3_q_4_.Q ; (4 pterms, 5 signals)
+clkGenerator_FreqDivide_3_q_4_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_3_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_3_q_5_.T = !clkGenerator_FreqDivide_3_q_1_.Q
+       & !clkGenerator_FreqDivide_3_q_2_.Q & !clkGenerator_FreqDivide_3_q_3_.Q
+       & !clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q & clkGenerator_FreqDivide_3_q_7_.Q
+       & !clkGenerator_FreqDivide_3_q_8_.Q & !clkGenerator_FreqDivide_3_q_9_.Q
+       & clkGenerator_FreqDivide_3_q_10_.Q
+    # reset & clkGenerator_FreqDivide_3_q_1_.Q
+       & clkGenerator_FreqDivide_3_q_2_.Q & clkGenerator_FreqDivide_3_q_3_.Q
+       & clkGenerator_FreqDivide_3_q_4_.Q
+    # !reset & clkGenerator_FreqDivide_3_q_5_.Q ; (3 pterms, 11 signals)
+clkGenerator_FreqDivide_3_q_5_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_3_q_5_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_3_q_6_.T = !clkGenerator_FreqDivide_3_q_1_.Q
+       & !clkGenerator_FreqDivide_3_q_2_.Q & !clkGenerator_FreqDivide_3_q_3_.Q
+       & !clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q & clkGenerator_FreqDivide_3_q_7_.Q
+       & !clkGenerator_FreqDivide_3_q_8_.Q & !clkGenerator_FreqDivide_3_q_9_.Q
+       & clkGenerator_FreqDivide_3_q_10_.Q
+    # reset & clkGenerator_FreqDivide_3_q_1_.Q
+       & clkGenerator_FreqDivide_3_q_2_.Q & clkGenerator_FreqDivide_3_q_3_.Q
+       & clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+    # !reset & clkGenerator_FreqDivide_3_q_6_.Q ; (3 pterms, 11 signals)
+clkGenerator_FreqDivide_3_q_6_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_3_q_6_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_3_q_7_.T = !clkGenerator_FreqDivide_3_q_1_.Q
+       & !clkGenerator_FreqDivide_3_q_2_.Q & !clkGenerator_FreqDivide_3_q_3_.Q
+       & !clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q & clkGenerator_FreqDivide_3_q_7_.Q
+       & !clkGenerator_FreqDivide_3_q_8_.Q & !clkGenerator_FreqDivide_3_q_9_.Q
+       & clkGenerator_FreqDivide_3_q_10_.Q
+    # reset & clkGenerator_FreqDivide_3_q_1_.Q
+       & clkGenerator_FreqDivide_3_q_2_.Q & clkGenerator_FreqDivide_3_q_3_.Q
+       & clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q
+    # !reset & clkGenerator_FreqDivide_3_q_7_.Q ; (3 pterms, 11 signals)
+clkGenerator_FreqDivide_3_q_7_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_3_q_7_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_3_q_8_.T = reset & clkGenerator_FreqDivide_3_q_1_.Q
+       & clkGenerator_FreqDivide_3_q_2_.Q & clkGenerator_FreqDivide_3_q_3_.Q
+       & clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q & clkGenerator_FreqDivide_3_q_7_.Q
+    # !reset & clkGenerator_FreqDivide_3_q_8_.Q ; (2 pterms, 9 signals)
+clkGenerator_FreqDivide_3_q_8_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_3_q_8_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_3_q_9_.T = reset & clkGenerator_FreqDivide_3_q_1_.Q
+       & clkGenerator_FreqDivide_3_q_2_.Q & clkGenerator_FreqDivide_3_q_3_.Q
+       & clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q & clkGenerator_FreqDivide_3_q_7_.Q
+       & clkGenerator_FreqDivide_3_q_8_.Q
+    # !reset & clkGenerator_FreqDivide_3_q_9_.Q ; (2 pterms, 10 signals)
+clkGenerator_FreqDivide_3_q_9_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_3_q_9_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_4_q_1_.D = !( clkGenerator_FreqDivide_4_q_2_.Q
+       & clkGenerator_FreqDivide_4_q_3_.Q & !clkGenerator_FreqDivide_4_q_4_.Q
+       & !clkGenerator_FreqDivide_4_q_5_.Q & clkGenerator_FreqDivide_4_q_6_.Q
+    # clkGenerator_FreqDivide_4_q_1_.Q
+    # !reset ) ; (3 pterms, 7 signals)
+clkGenerator_FreqDivide_4_q_1_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_4_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_4_q_2_.D = !( clkGenerator_FreqDivide_4_q_2_.Q
+       & clkGenerator_FreqDivide_4_q_3_.Q & !clkGenerator_FreqDivide_4_q_4_.Q
+       & !clkGenerator_FreqDivide_4_q_5_.Q & clkGenerator_FreqDivide_4_q_6_.Q
+    # !clkGenerator_FreqDivide_4_q_1_.Q & !clkGenerator_FreqDivide_4_q_2_.Q
+    # clkGenerator_FreqDivide_4_q_1_.Q & clkGenerator_FreqDivide_4_q_2_.Q
+    # !reset ) ; (4 pterms, 7 signals)
+clkGenerator_FreqDivide_4_q_2_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_4_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_4_q_3_.D.X1 = reset & clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q
+    # reset & clkGenerator_FreqDivide_4_q_2_.Q
+       & clkGenerator_FreqDivide_4_q_3_.Q & !clkGenerator_FreqDivide_4_q_4_.Q
+       & !clkGenerator_FreqDivide_4_q_5_.Q & clkGenerator_FreqDivide_4_q_6_.Q ; (2 pterms, 7 signals)
+clkGenerator_FreqDivide_4_q_3_.D.X2 = reset & clkGenerator_FreqDivide_4_q_3_.Q ; (1 pterm, 2 signals)
+clkGenerator_FreqDivide_4_q_3_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_4_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_4_q_4_.D = reset & clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_4_q_3_.Q
+       & clkGenerator_FreqDivide_4_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_4_q_2_.Q
+       & clkGenerator_FreqDivide_4_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_4_.Q ; (4 pterms, 5 signals)
+clkGenerator_FreqDivide_4_q_4_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_4_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_4_q_5_.D.X1 = reset & clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & clkGenerator_FreqDivide_4_q_4_.Q ; (1 pterm, 5 signals)
+clkGenerator_FreqDivide_4_q_5_.D.X2 = reset & clkGenerator_FreqDivide_4_q_5_.Q ; (1 pterm, 2 signals)
+clkGenerator_FreqDivide_4_q_5_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_4_q_5_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_4_q_6_.T = reset & clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & clkGenerator_FreqDivide_4_q_4_.Q & clkGenerator_FreqDivide_4_q_5_.Q
+    # !clkGenerator_FreqDivide_4_q_1_.Q & clkGenerator_FreqDivide_4_q_2_.Q
+       & clkGenerator_FreqDivide_4_q_3_.Q & !clkGenerator_FreqDivide_4_q_4_.Q
+       & !clkGenerator_FreqDivide_4_q_5_.Q & clkGenerator_FreqDivide_4_q_6_.Q
+    # !reset & clkGenerator_FreqDivide_4_q_6_.Q ; (3 pterms, 7 signals)
+clkGenerator_FreqDivide_4_q_6_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_4_q_6_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_scancnt_1_0_.D = !clkGenerator_scancnt_1_0_.Q ; (1 pterm, 1 signal)
+clkGenerator_scancnt_1_0_.C = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+debouncer_Inst_controllerInst_state_0_.D = !( debouncer_Inst_timer30ms_q_1_.Q
+       & !debouncer_Inst_timer30ms_q_2_.Q & debouncer_Inst_timer30ms_q_3_.Q
+       & debouncer_Inst_timer30ms_q_4_.Q & debouncer_Inst_timer30ms_q_5_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+       & clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # dout & !debouncer_Inst_controllerInst_state_0_.Q
+       & !debouncer_Inst_controllerInst_state_1_.Q
+    # !dout & !debouncer_Inst_controllerInst_state_0_.Q
+       & debouncer_Inst_controllerInst_state_1_.Q
+    # !reset ) ; (4 pterms, 22 signals)
+debouncer_Inst_controllerInst_state_0_.C = clk ; (1 pterm, 1 signal)
+
+debouncer_Inst_controllerInst_state_1_.T = reset
+       & debouncer_Inst_timer30ms_q_1_.Q & !debouncer_Inst_timer30ms_q_2_.Q
+       & debouncer_Inst_timer30ms_q_3_.Q & debouncer_Inst_timer30ms_q_4_.Q
+       & debouncer_Inst_timer30ms_q_5_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+       & clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # !reset & debouncer_Inst_controllerInst_state_1_.Q ; (2 pterms, 21 signals)
+debouncer_Inst_controllerInst_state_1_.C = clk ; (1 pterm, 1 signal)
+
+debouncer_Inst_timer30ms_q_1_.D = !debouncer_Inst_timer30ms_q_1_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q ; (1 pterm, 2 signals)
+debouncer_Inst_timer30ms_q_1_.C = clk ; (1 pterm, 1 signal)
+debouncer_Inst_timer30ms_q_1_.CE = debouncer_Inst_timer30ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncer_Inst_timer30ms_q_1__0 = !debouncer_Inst_controllerInst_state_0_.Q
+    # clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (2 pterms, 14 signals)
+
+debouncer_Inst_timer30ms_q_2_.D = !debouncer_Inst_timer30ms_q_1_.Q
+       & debouncer_Inst_timer30ms_q_2_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+    # debouncer_Inst_timer30ms_q_1_.Q & !debouncer_Inst_timer30ms_q_2_.Q
+       & !debouncer_Inst_timer30ms_q_5_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+    # debouncer_Inst_timer30ms_q_1_.Q & !debouncer_Inst_timer30ms_q_2_.Q
+       & !debouncer_Inst_timer30ms_q_4_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+    # debouncer_Inst_timer30ms_q_1_.Q & !debouncer_Inst_timer30ms_q_2_.Q
+       & !debouncer_Inst_timer30ms_q_3_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q ; (4 pterms, 6 signals)
+debouncer_Inst_timer30ms_q_2_.C = clk ; (1 pterm, 1 signal)
+debouncer_Inst_timer30ms_q_2_.CE = debouncer_Inst_timer30ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncer_Inst_timer30ms_q_3_.D = debouncer_Inst_timer30ms_q_1_.Q
+       & debouncer_Inst_timer30ms_q_2_.Q & !debouncer_Inst_timer30ms_q_3_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+    # !debouncer_Inst_timer30ms_q_2_.Q & debouncer_Inst_timer30ms_q_3_.Q
+       & !debouncer_Inst_timer30ms_q_5_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+    # !debouncer_Inst_timer30ms_q_2_.Q & debouncer_Inst_timer30ms_q_3_.Q
+       & !debouncer_Inst_timer30ms_q_4_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+    # !debouncer_Inst_timer30ms_q_1_.Q & debouncer_Inst_timer30ms_q_3_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q ; (4 pterms, 6 signals)
+debouncer_Inst_timer30ms_q_3_.C = clk ; (1 pterm, 1 signal)
+debouncer_Inst_timer30ms_q_3_.CE = debouncer_Inst_timer30ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncer_Inst_timer30ms_q_4_.D = debouncer_Inst_timer30ms_q_1_.Q
+       & debouncer_Inst_timer30ms_q_2_.Q & debouncer_Inst_timer30ms_q_3_.Q
+       & !debouncer_Inst_timer30ms_q_4_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+    # !debouncer_Inst_timer30ms_q_2_.Q & debouncer_Inst_timer30ms_q_4_.Q
+       & !debouncer_Inst_timer30ms_q_5_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+    # !debouncer_Inst_timer30ms_q_3_.Q & debouncer_Inst_timer30ms_q_4_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+    # !debouncer_Inst_timer30ms_q_1_.Q & debouncer_Inst_timer30ms_q_4_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q ; (4 pterms, 6 signals)
+debouncer_Inst_timer30ms_q_4_.C = clk ; (1 pterm, 1 signal)
+debouncer_Inst_timer30ms_q_4_.CE = debouncer_Inst_timer30ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncer_Inst_timer30ms_q_5_.D = debouncer_Inst_timer30ms_q_1_.Q
+       & debouncer_Inst_timer30ms_q_2_.Q & debouncer_Inst_timer30ms_q_3_.Q
+       & debouncer_Inst_timer30ms_q_4_.Q & !debouncer_Inst_timer30ms_q_5_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+    # !debouncer_Inst_timer30ms_q_4_.Q & debouncer_Inst_timer30ms_q_5_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+    # !debouncer_Inst_timer30ms_q_3_.Q & debouncer_Inst_timer30ms_q_5_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q
+    # !debouncer_Inst_timer30ms_q_1_.Q & debouncer_Inst_timer30ms_q_5_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q ; (4 pterms, 6 signals)
+debouncer_Inst_timer30ms_q_5_.C = clk ; (1 pterm, 1 signal)
+debouncer_Inst_timer30ms_q_5_.CE = debouncer_Inst_timer30ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncer_Inst_widthTransInst_q_0_.D = !( 
+      !debouncer_Inst_controllerInst_state_0_.Q
+       & !debouncer_Inst_controllerInst_state_1_.Q ) ; (1 pterm, 2 signals)
+debouncer_Inst_widthTransInst_q_0_.C = clk ; (1 pterm, 1 signal)
+
+receiverInst_Data1_0_.D = receiverInst_Rx_Data_0_.Q ; (1 pterm, 1 signal)
+receiverInst_Data1_0_.C = !receiverInst_Rx_Valid.Q ; (1 pterm, 1 signal)
+receiverInst_Data1_0_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_Data1_1_.D = receiverInst_Rx_Data_1_.Q ; (1 pterm, 1 signal)
+receiverInst_Data1_1_.C = !receiverInst_Rx_Valid.Q ; (1 pterm, 1 signal)
+receiverInst_Data1_1_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_Data1_2_.D = receiverInst_Rx_Data_2_.Q ; (1 pterm, 1 signal)
+receiverInst_Data1_2_.C = !receiverInst_Rx_Valid.Q ; (1 pterm, 1 signal)
+receiverInst_Data1_2_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_Data1_3_.D = receiverInst_Rx_Data_3_.Q ; (1 pterm, 1 signal)
+receiverInst_Data1_3_.C = !receiverInst_Rx_Valid.Q ; (1 pterm, 1 signal)
+receiverInst_Data1_3_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_Data2_0_.D = receiverInst_Rx_Data_4_.Q ; (1 pterm, 1 signal)
+receiverInst_Data2_0_.C = !receiverInst_Rx_Valid.Q ; (1 pterm, 1 signal)
+receiverInst_Data2_0_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_Data2_1_.D = receiverInst_Rx_Data_5_.Q ; (1 pterm, 1 signal)
+receiverInst_Data2_1_.C = !receiverInst_Rx_Valid.Q ; (1 pterm, 1 signal)
+receiverInst_Data2_1_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_Data2_2_.D = receiverInst_Rx_Data_6_.Q ; (1 pterm, 1 signal)
+receiverInst_Data2_2_.C = !receiverInst_Rx_Valid.Q ; (1 pterm, 1 signal)
+receiverInst_Data2_2_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_Data2_3_.D = receiverInst_Rx_Data_7_.Q ; (1 pterm, 1 signal)
+receiverInst_Data2_3_.C = !receiverInst_Rx_Valid.Q ; (1 pterm, 1 signal)
+receiverInst_Data2_3_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_Rx_Data_0_.D = Rx & receiverInst_m_4_.Q & !receiverInst_m_5_.Q
+       & !receiverInst_m_6_.Q
+    # receiverInst_m_6_.Q & receiverInst_Rx_Data_0_.Q
+    # receiverInst_m_5_.Q & receiverInst_Rx_Data_0_.Q
+    # !receiverInst_m_4_.Q & receiverInst_Rx_Data_0_.Q ; (4 pterms, 5 signals)
+receiverInst_Rx_Data_0_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_Rx_Data_0_.CE = receiverInst_Rx_Data_0__0 ; (1 pterm, 1 signal)
+
+receiverInst_Rx_Data_0__0 = reset & !receiverInst_m_0_.Q
+       & !receiverInst_m_1_.Q & !receiverInst_m_2_.Q & receiverInst_m_3_.Q
+       & receiverInst_m_4_.Q & !receiverInst_m_7_.Q
+    # reset & !receiverInst_m_0_.Q & !receiverInst_m_1_.Q
+       & !receiverInst_m_2_.Q & receiverInst_m_3_.Q & receiverInst_m_6_.Q
+       & !receiverInst_m_7_.Q
+    # reset & !receiverInst_m_0_.Q & !receiverInst_m_1_.Q
+       & !receiverInst_m_2_.Q & receiverInst_m_3_.Q & receiverInst_m_5_.Q
+       & !receiverInst_m_7_.Q
+    # reset & !receiverInst_m_0_.Q & !receiverInst_m_1_.Q
+       & !receiverInst_m_2_.Q & receiverInst_m_3_.Q & !receiverInst_m_4_.Q
+       & !receiverInst_m_5_.Q & !receiverInst_m_6_.Q & receiverInst_m_7_.Q ; (4 pterms, 9 signals)
+
+receiverInst_Rx_Data_1_.D = Rx & !receiverInst_m_4_.Q & receiverInst_m_5_.Q
+       & !receiverInst_m_6_.Q
+    # receiverInst_m_6_.Q & receiverInst_Rx_Data_1_.Q
+    # !receiverInst_m_5_.Q & receiverInst_Rx_Data_1_.Q
+    # receiverInst_m_4_.Q & receiverInst_Rx_Data_1_.Q ; (4 pterms, 5 signals)
+receiverInst_Rx_Data_1_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_Rx_Data_1_.CE = receiverInst_Rx_Data_0__0 ; (1 pterm, 1 signal)
+
+receiverInst_Rx_Data_2_.D = Rx & receiverInst_m_4_.Q & receiverInst_m_5_.Q
+       & !receiverInst_m_6_.Q
+    # receiverInst_m_6_.Q & receiverInst_Rx_Data_2_.Q
+    # !receiverInst_m_5_.Q & receiverInst_Rx_Data_2_.Q
+    # !receiverInst_m_4_.Q & receiverInst_Rx_Data_2_.Q ; (4 pterms, 5 signals)
+receiverInst_Rx_Data_2_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_Rx_Data_2_.CE = receiverInst_Rx_Data_0__0 ; (1 pterm, 1 signal)
+
+receiverInst_Rx_Data_3_.D = Rx & !receiverInst_m_4_.Q & !receiverInst_m_5_.Q
+       & receiverInst_m_6_.Q
+    # !receiverInst_m_6_.Q & receiverInst_Rx_Data_3_.Q
+    # receiverInst_m_5_.Q & receiverInst_Rx_Data_3_.Q
+    # receiverInst_m_4_.Q & receiverInst_Rx_Data_3_.Q ; (4 pterms, 5 signals)
+receiverInst_Rx_Data_3_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_Rx_Data_3_.CE = receiverInst_Rx_Data_0__0 ; (1 pterm, 1 signal)
+
+receiverInst_Rx_Data_4_.D = Rx & receiverInst_m_4_.Q & !receiverInst_m_5_.Q
+       & receiverInst_m_6_.Q
+    # !receiverInst_m_6_.Q & receiverInst_Rx_Data_4_.Q
+    # receiverInst_m_5_.Q & receiverInst_Rx_Data_4_.Q
+    # !receiverInst_m_4_.Q & receiverInst_Rx_Data_4_.Q ; (4 pterms, 5 signals)
+receiverInst_Rx_Data_4_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_Rx_Data_4_.CE = receiverInst_Rx_Data_0__0 ; (1 pterm, 1 signal)
+
+receiverInst_Rx_Data_5_.D = Rx & !receiverInst_m_4_.Q & receiverInst_m_5_.Q
+       & receiverInst_m_6_.Q
+    # !receiverInst_m_6_.Q & receiverInst_Rx_Data_5_.Q
+    # !receiverInst_m_5_.Q & receiverInst_Rx_Data_5_.Q
+    # receiverInst_m_4_.Q & receiverInst_Rx_Data_5_.Q ; (4 pterms, 5 signals)
+receiverInst_Rx_Data_5_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_Rx_Data_5_.CE = receiverInst_Rx_Data_0__0 ; (1 pterm, 1 signal)
+
+receiverInst_Rx_Data_6_.D = Rx & receiverInst_m_4_.Q & receiverInst_m_5_.Q
+       & receiverInst_m_6_.Q
+    # !receiverInst_m_6_.Q & receiverInst_Rx_Data_6_.Q
+    # !receiverInst_m_5_.Q & receiverInst_Rx_Data_6_.Q
+    # !receiverInst_m_4_.Q & receiverInst_Rx_Data_6_.Q ; (4 pterms, 5 signals)
+receiverInst_Rx_Data_6_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_Rx_Data_6_.CE = receiverInst_Rx_Data_0__0 ; (1 pterm, 1 signal)
+
+receiverInst_Rx_Data_7_.D = Rx & receiverInst_m_7_.Q
+    # !receiverInst_m_7_.Q & receiverInst_Rx_Data_7_.Q ; (2 pterms, 3 signals)
+receiverInst_Rx_Data_7_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_Rx_Data_7_.CE = receiverInst_Rx_Data_0__0 ; (1 pterm, 1 signal)
+
+receiverInst_Rx_Valid.D = receiverInst_m_4_.Q ; (1 pterm, 1 signal)
+receiverInst_Rx_Valid.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_Rx_Valid.CE = receiverInst_Rx_Valid_0 ; (1 pterm, 1 signal)
+receiverInst_Rx_Valid.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_Rx_Valid_0 = !receiverInst_m_1_.Q & !receiverInst_m_2_.Q
+       & receiverInst_m_3_.Q & !receiverInst_m_4_.Q & receiverInst_m_5_.Q
+       & !receiverInst_m_6_.Q & receiverInst_m_7_.Q
+    # !receiverInst_m_0_.Q & !receiverInst_m_1_.Q & !receiverInst_m_2_.Q
+       & receiverInst_m_3_.Q & receiverInst_m_4_.Q & !receiverInst_m_5_.Q
+       & !receiverInst_m_6_.Q & receiverInst_m_7_.Q
+    # Rx & !receiverInst_m_0_.Q & !receiverInst_m_1_.Q & !receiverInst_m_2_.Q
+       & !receiverInst_m_3_.Q & !receiverInst_m_4_.Q & !receiverInst_m_5_.Q
+       & !receiverInst_m_6_.Q & !receiverInst_m_7_.Q ; (3 pterms, 9 signals)
+
+receiverInst_m_0_.D = !( Rx & !receiverInst_m_1_.Q & !receiverInst_m_2_.Q
+       & !receiverInst_m_3_.Q & !receiverInst_m_4_.Q & !receiverInst_m_5_.Q
+       & !receiverInst_m_6_.Q & !receiverInst_m_7_.Q
+    # !receiverInst_m_1_.Q & !receiverInst_m_2_.Q & receiverInst_m_3_.Q
+       & !receiverInst_m_4_.Q & receiverInst_m_5_.Q & !receiverInst_m_6_.Q
+       & receiverInst_m_7_.Q
+    # receiverInst_m_0_.Q ) ; (3 pterms, 9 signals)
+receiverInst_m_0_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_m_0_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_m_1_.D = receiverInst_m_0_.Q & !receiverInst_m_1_.Q
+    # !receiverInst_m_0_.Q & receiverInst_m_1_.Q ; (2 pterms, 2 signals)
+receiverInst_m_1_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_m_1_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_m_2_.D = receiverInst_m_0_.Q & receiverInst_m_1_.Q
+       & !receiverInst_m_2_.Q
+    # !receiverInst_m_1_.Q & receiverInst_m_2_.Q
+    # !receiverInst_m_0_.Q & receiverInst_m_2_.Q ; (3 pterms, 3 signals)
+receiverInst_m_2_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_m_2_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_m_3_.D.X1 = receiverInst_m_0_.Q & receiverInst_m_1_.Q
+       & receiverInst_m_2_.Q
+    # !receiverInst_m_1_.Q & !receiverInst_m_2_.Q & receiverInst_m_3_.Q
+       & !receiverInst_m_4_.Q & receiverInst_m_5_.Q & !receiverInst_m_6_.Q
+       & receiverInst_m_7_.Q ; (2 pterms, 8 signals)
+receiverInst_m_3_.D.X2 = receiverInst_m_3_.Q ; (1 pterm, 1 signal)
+receiverInst_m_3_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_m_3_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_m_4_.D.X1 = receiverInst_m_0_.Q & receiverInst_m_1_.Q
+       & receiverInst_m_2_.Q & receiverInst_m_3_.Q ; (1 pterm, 4 signals)
+receiverInst_m_4_.D.X2 = receiverInst_m_4_.Q ; (1 pterm, 1 signal)
+receiverInst_m_4_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_m_4_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_m_5_.T = !receiverInst_m_1_.Q & !receiverInst_m_2_.Q
+       & receiverInst_m_3_.Q & !receiverInst_m_4_.Q & receiverInst_m_5_.Q
+       & !receiverInst_m_6_.Q & receiverInst_m_7_.Q
+    # receiverInst_m_0_.Q & receiverInst_m_1_.Q & receiverInst_m_2_.Q
+       & receiverInst_m_3_.Q & receiverInst_m_4_.Q ; (2 pterms, 8 signals)
+receiverInst_m_5_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_m_5_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_m_6_.T = receiverInst_m_0_.Q & receiverInst_m_1_.Q
+       & receiverInst_m_2_.Q & receiverInst_m_3_.Q & receiverInst_m_4_.Q
+       & receiverInst_m_5_.Q ; (1 pterm, 6 signals)
+receiverInst_m_6_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_m_6_.AR = !reset ; (1 pterm, 1 signal)
+
+receiverInst_m_7_.T = !receiverInst_m_1_.Q & !receiverInst_m_2_.Q
+       & receiverInst_m_3_.Q & !receiverInst_m_4_.Q & receiverInst_m_5_.Q
+       & !receiverInst_m_6_.Q & receiverInst_m_7_.Q
+    # receiverInst_m_0_.Q & receiverInst_m_1_.Q & receiverInst_m_2_.Q
+       & receiverInst_m_3_.Q & receiverInst_m_4_.Q & receiverInst_m_5_.Q
+       & receiverInst_m_6_.Q ; (2 pterms, 8 signals)
+receiverInst_m_7_.C = !clkGenerator_FreqDivide_4_q_1_.Q
+       & clkGenerator_FreqDivide_4_q_2_.Q & clkGenerator_FreqDivide_4_q_3_.Q
+       & !clkGenerator_FreqDivide_4_q_4_.Q & !clkGenerator_FreqDivide_4_q_5_.Q
+       & clkGenerator_FreqDivide_4_q_6_.Q ; (1 pterm, 6 signals)
+receiverInst_m_7_.AR = !reset ; (1 pterm, 1 signal)
+
+senderInst_Send_count_0_.D = !senderInst_Send_count_1_.Q
+       & !senderInst_Send_count_2_.Q & senderInst_Send_count_3_.Q
+    # !senderInst_Send_count_0_.Q ; (2 pterms, 4 signals)
+senderInst_Send_count_0_.C = !clkGenerator_FreqDivide_3_q_1_.Q
+       & !clkGenerator_FreqDivide_3_q_2_.Q & !clkGenerator_FreqDivide_3_q_3_.Q
+       & !clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q & clkGenerator_FreqDivide_3_q_7_.Q
+       & !clkGenerator_FreqDivide_3_q_8_.Q & !clkGenerator_FreqDivide_3_q_9_.Q
+       & clkGenerator_FreqDivide_3_q_10_.Q ; (1 pterm, 10 signals)
+senderInst_Send_count_0_.AR = !senderInst_Send_data_4_.Q ; (1 pterm, 1 signal)
+
+senderInst_Send_count_1_.D = senderInst_Send_count_0_.Q
+       & !senderInst_Send_count_1_.Q & senderInst_Send_count_2_.Q
+    # senderInst_Send_count_0_.Q & !senderInst_Send_count_1_.Q
+       & !senderInst_Send_count_3_.Q
+    # !senderInst_Send_count_0_.Q & senderInst_Send_count_1_.Q ; (3 pterms, 4 signals)
+senderInst_Send_count_1_.C = !clkGenerator_FreqDivide_3_q_1_.Q
+       & !clkGenerator_FreqDivide_3_q_2_.Q & !clkGenerator_FreqDivide_3_q_3_.Q
+       & !clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q & clkGenerator_FreqDivide_3_q_7_.Q
+       & !clkGenerator_FreqDivide_3_q_8_.Q & !clkGenerator_FreqDivide_3_q_9_.Q
+       & clkGenerator_FreqDivide_3_q_10_.Q ; (1 pterm, 10 signals)
+senderInst_Send_count_1_.AR = !senderInst_Send_data_4_.Q ; (1 pterm, 1 signal)
+
+senderInst_Send_count_2_.D = senderInst_Send_count_0_.Q
+       & senderInst_Send_count_1_.Q & !senderInst_Send_count_2_.Q
+    # !senderInst_Send_count_1_.Q & senderInst_Send_count_2_.Q
+    # !senderInst_Send_count_0_.Q & senderInst_Send_count_2_.Q ; (3 pterms, 3 signals)
+senderInst_Send_count_2_.C = !clkGenerator_FreqDivide_3_q_1_.Q
+       & !clkGenerator_FreqDivide_3_q_2_.Q & !clkGenerator_FreqDivide_3_q_3_.Q
+       & !clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q & clkGenerator_FreqDivide_3_q_7_.Q
+       & !clkGenerator_FreqDivide_3_q_8_.Q & !clkGenerator_FreqDivide_3_q_9_.Q
+       & clkGenerator_FreqDivide_3_q_10_.Q ; (1 pterm, 10 signals)
+senderInst_Send_count_2_.AR = !senderInst_Send_data_4_.Q ; (1 pterm, 1 signal)
+
+senderInst_Send_count_3_.D = senderInst_Send_count_0_.Q
+       & senderInst_Send_count_1_.Q & senderInst_Send_count_2_.Q
+       & !senderInst_Send_count_3_.Q
+    # !senderInst_Send_count_2_.Q & senderInst_Send_count_3_.Q
+    # !senderInst_Send_count_1_.Q & senderInst_Send_count_3_.Q
+    # !senderInst_Send_count_0_.Q & senderInst_Send_count_3_.Q ; (4 pterms, 4 signals)
+senderInst_Send_count_3_.C = !clkGenerator_FreqDivide_3_q_1_.Q
+       & !clkGenerator_FreqDivide_3_q_2_.Q & !clkGenerator_FreqDivide_3_q_3_.Q
+       & !clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q & clkGenerator_FreqDivide_3_q_7_.Q
+       & !clkGenerator_FreqDivide_3_q_8_.Q & !clkGenerator_FreqDivide_3_q_9_.Q
+       & clkGenerator_FreqDivide_3_q_10_.Q ; (1 pterm, 10 signals)
+senderInst_Send_count_3_.AR = !senderInst_Send_data_4_.Q ; (1 pterm, 1 signal)
+
+senderInst_Send_data_4_.D = 1 ; (1 pterm, 0 signal)
+senderInst_Send_data_4_.C = senderInst_Send_data_4__0 ; (1 pterm, 1 signal)
+senderInst_Send_data_4_.AR = senderInst_Send_data_4__1 ; (1 pterm, 1 signal)
+
+senderInst_Send_data_4__0 = !debouncer_Inst_widthTransInst_q_0_.Q
+       & debouncer_Inst_controllerInst_state_1_.Q
+    # !debouncer_Inst_widthTransInst_q_0_.Q
+       & debouncer_Inst_controllerInst_state_0_.Q ; (2 pterms, 3 signals)
+
+senderInst_Send_data_4__1 = !( reset & senderInst_Send_over.Q ) ; (1 pterm, 2 signals)
+
+senderInst_Send_over.D = !( senderInst_Send_count_0_.Q
+       & !senderInst_Send_count_1_.Q & !senderInst_Send_count_2_.Q
+       & senderInst_Send_count_3_.Q
+    # !senderInst_Send_over.Q ) ; (2 pterms, 5 signals)
+senderInst_Send_over.C = !clkGenerator_FreqDivide_3_q_1_.Q
+       & !clkGenerator_FreqDivide_3_q_2_.Q & !clkGenerator_FreqDivide_3_q_3_.Q
+       & !clkGenerator_FreqDivide_3_q_4_.Q & clkGenerator_FreqDivide_3_q_5_.Q
+       & clkGenerator_FreqDivide_3_q_6_.Q & clkGenerator_FreqDivide_3_q_7_.Q
+       & !clkGenerator_FreqDivide_3_q_8_.Q & !clkGenerator_FreqDivide_3_q_9_.Q
+       & clkGenerator_FreqDivide_3_q_10_.Q ; (1 pterm, 10 signals)
+senderInst_Send_over.AP = !senderInst_Send_data_4_.Q ; (1 pterm, 1 signal)
+

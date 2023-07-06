@@ -1,0 +1,1468 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Sat Apr 22 21:58:33 2023
+#$ MODULE isp_lab2
+#$ PINS 17 clk clk_low resetIn ButtonIn LED_A LED_B LED_C LED_D LED_E LED_F LED_G \
+#  LED_VCC1 LED_VCC2 LED_VCC3 LED_VCC4 light_1 light_2
+#$ NODES 271 buttoninst_2_timer_n_27_i_n vcc_n_n clkGenerate_scancnt_1_ \
+#  buttoninst_2_timer_n_25_i_n pulse1kHz buttoninst_2_timer_n_26_i_n resetOut \
+#  clkGenerate_scancnt_0_ buttoninst_1_debouncer_timer_n_29_i_n \
+#  randomNumGenetate_oddreg randomNumGenetate_num_1_ \
+#  buttoninst_1_debouncer_timer_n_27_i_n randomNumGenetate_num_2_ \
+#  randomNumGenetate_num_3_ buttoninst_1_debouncer_timer_n_25_i_n gnd_n_n \
+#  buttoninst_1_debouncer_timer_n_26_i_n randomNumGenetate_conter_9_q_1_ \
+#  randomNumGenetate_conter_9_q_2_ N_2_1 randomNumGenetate_conter_9_q_3_ N_2_2 \
+#  randomNumGenetate_conter_9_q_4_ pulse1kHz_1 randomNumGenetate_conter_9_q_n2 \
+#  pulse1kHz_2 randomNumGenetate_conter_9_q_n3 pulse1kHz_3 \
+#  randomNumGenetate_conter_9_q_n1 pulse1kHz_4 clkGenerate_FreqDivide_q_1_ \
+#  pulse1kHz_5 clkGenerate_FreqDivide_q_2_ pulse1kHz_6 clkGenerate_FreqDivide_q_3_ \
+#  pulse1kHz_7 clkGenerate_FreqDivide_q_4_ pulse1kHz_8 clkGenerate_FreqDivide_q_5_ \
+#  pulse1kHz_9 clkGenerate_FreqDivide_q_6_ pulse1kHz_10 clkGenerate_FreqDivide_q_7_ \
+#  ledscaninst_led_f_6_0_1_n clkGenerate_FreqDivide_q_8_ ledscaninst_led_f_6_0_2_n \
+#  clkGenerate_FreqDivide_q_9_ ledscaninst_led_f_6_0_3_n \
+#  clkGenerate_FreqDivide_q_10_ ledscaninst_led_e_6_0_1_n \
+#  clkGenerate_FreqDivide_q_11_ ledscaninst_led_e_6_0_2_n \
+#  clkGenerate_FreqDivide_q_12_ ledscaninst_led_g_6_0_1_n \
+#  clkGenerate_FreqDivide_q_13_ ledscaninst_led_g_6_0_2_n ledscaninst_led_g_6_0_3_n \
+#  clkgenerate_scancnt_3_0__n ledscaninst_n_35_1_n N_2 buttoninst_2_timer_n_19_0_1_n \
+#  N_11 buttoninst_2_timer_n_31_0_1_n N_10 buttoninst_2_timer_n_8_0_1_n N_5 \
+#  buttoninst_2_timer_done_1_n randomnumgenetate_conter_9_q_c1_n \
+#  buttoninst_2_timer_done_2_n buttoninst_2_timer_done_3_n \
+#  buttoninst_2_timer_n_34_1_n buttoninst_2_timer_n_34_2_n \
+#  buttoninst_1_debouncer_timer_n_19_0_1_n buttoninst_1_debouncer_timer_n_31_0_1_n \
+#  buttoninst_1_debouncer_timer_n_8_0_1_n buttoninst_1_debouncer_timer_done_1_n \
+#  buttoninst_1_debouncer_timer_done_2_n ledscaninst_n_26_n \
+#  buttoninst_1_debouncer_timer_done_3_n ledscaninst_n_27_n \
+#  buttoninst_1_debouncer_timer_n_34_1_n ledscaninst_n_28_n \
+#  buttoninst_1_debouncer_timer_n_34_2_n ledscaninst_n_33_n \
+#  buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un3_n ledscaninst_n_34_n \
+#  buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un1_n ledscaninst_n_35_n \
+#  buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un0_n ledscaninst_n_39_n \
+#  buttoninst_2_controlinst_state_ns_1_0__m3_un3_n ledscaninst_n_42_n \
+#  buttoninst_2_controlinst_state_ns_1_0__m3_un1_n ledscaninst_n_44_n \
+#  buttoninst_2_controlinst_state_ns_1_0__m3_un0_n ledscaninst_n_45_n \
+#  clkGenerate_FreqDivide_q_n10 clkGenerate_FreqDivide_q_n11 \
+#  clkGenerate_FreqDivide_q_n12 clkGenerate_FreqDivide_q_n7 \
+#  clkGenerate_FreqDivide_q_n8 clkGenerate_FreqDivide_q_n9 \
+#  clkGenerate_FreqDivide_q_n5 clkGenerate_FreqDivide_q_n6 \
+#  clkGenerate_FreqDivide_q_n2 clkGenerate_FreqDivide_q_n3 \
+#  clkGenerate_FreqDivide_q_n4 clkGenerate_FreqDivide_q_n1 buttonInst_2_Timer_q_1_ \
+#  buttonInst_2_Timer_q_2_ buttonInst_2_Timer_q_3_ buttonInst_2_Timer_q_4_ \
+#  buttoninst_2_timer_done_n buttonInst_2_ControlInst_state_0_ \
+#  buttonInst_2_ControlInst_state_1_ buttonInst_2_ControlInst_state_ns_1_0__m5 \
+#  buttoninst_2_timer_n_22_n buttoninst_2_timer_n_23_n buttoninst_2_timer_n_24_n \
+#  buttoninst_2_timer_n_25_n buttoninst_2_timer_n_26_n buttoninst_2_timer_n_27_n \
+#  buttoninst_2_timer_n_29_n buttoninst_2_timer_n_34_n buttoninst_1_debouncer_out_n \
+#  buttoninst_1_width_transinst_un1_out_n buttonInst_1_Width_TransInst_q \
+#  buttonInst_1_Debouncer_Timer_q_1_ buttonInst_1_Debouncer_Timer_q_2_ \
+#  buttonInst_1_Debouncer_Timer_q_3_ buttonInst_1_Debouncer_Timer_q_4_ \
+#  buttoninst_1_debouncer_timer_done_n buttonInst_1_Debouncer_ControlInst_state_0_ \
+#  buttonInst_1_Debouncer_ControlInst_state_1_ \
+#  buttonInst_1_Debouncer_ControlInst_state_ns_1_0__m5 \
+#  buttoninst_1_debouncer_timer_n_22_n buttoninst_1_debouncer_timer_n_23_n \
+#  buttoninst_1_debouncer_timer_n_24_n buttoninst_1_debouncer_timer_n_25_n \
+#  buttoninst_1_debouncer_timer_n_26_n buttoninst_1_debouncer_timer_n_27_n \
+#  buttoninst_1_debouncer_timer_n_29_n buttoninst_1_debouncer_timer_n_34_n \
+#  clkgenerate_n_6_n ledscaninst_n_37_n ledscaninst_n_15_n ledscaninst_n_40_n \
+#  ledscaninst_n_43_n ledscaninst_n_36_n ledscaninst_n_13_n ledscaninst_n_32_n \
+#  ledscaninst_n_31_n ledscaninst_n_30_n ledscaninst_n_29_n ledscaninst_n_41_n \
+#  ledscaninst_n_38_n buttonInst_2_ControlInst_state_ns_1_0__m1 \
+#  buttoninst_2_controlinst_state_ns_1_0__n_7_n clkgenerate_freqdivide_n_12_n \
+#  clkgenerate_freqdivide_q_c1_n clkgenerate_freqdivide_q_c2_n \
+#  clkgenerate_freqdivide_n_14_n clkgenerate_freqdivide_q_c3_n \
+#  clkgenerate_freqdivide_q_c4_n clkgenerate_freqdivide_q_c5_n \
+#  clkgenerate_freqdivide_q_c6_n clkgenerate_freqdivide_q_c7_n \
+#  clkgenerate_freqdivide_q_c8_n clkgenerate_freqdivide_q_c9_n \
+#  clkgenerate_freqdivide_q_c10_n clkgenerate_freqdivide_n_9_n \
+#  clkgenerate_freqdivide_n_11_n clkgenerate_freqdivide_n_13_n \
+#  clkgenerate_freqdivide_n_19_n clkgenerate_freqdivide_n_21_n \
+#  clkgenerate_freqdivide_n_23_n clkgenerate_freqdivide_n_25_n \
+#  clkgenerate_freqdivide_n_27_n clkgenerate_freqdivide_n_32_n \
+#  buttonInst_1_Debouncer_ControlInst_state_ns_1_0__m1 \
+#  buttoninst_1_debouncer_controlinst_state_ns_1_0__n_7_n light_1_i pulse1kHz_i \
+#  buttoninst_1_debouncer_un1_timer_i_3__n buttoninst_1_debouncer_un1_timer_i_2__n \
+#  buttoninst_1_debouncer_un1_timer_i_0__n buttoninst_1_debouncer_un1_timer_i_1__n \
+#  buttoninst_1_debouncer_timer_r_i_0_i_n \
+#  buttoninst_1_debouncer_controlinst_n_30_i_n \
+#  buttoninst_1_debouncer_timer_done_i_n \
+#  buttoninst_1_debouncer_controlinst_state_i_1__n buttoninst_1_debouncer_out_i_n \
+#  clkgenerate_un1_freqdivide_i_4__n clkgenerate_un1_freqdivide_i_11__n \
+#  clkgenerate_un1_freqdivide_i_10__n clkgenerate_un1_freqdivide_i_3__n \
+#  clkgenerate_un1_freqdivide_i_12__n buttoninst_2_un1_timer_i_3__n \
+#  buttoninst_2_un1_timer_i_2__n buttoninst_2_un1_timer_i_0__n \
+#  buttoninst_2_un1_timer_i_1__n buttoninst_2_timer_r_i_0_i_n \
+#  buttoninst_2_controlinst_n_30_i_n buttoninst_2_timer_done_i_n \
+#  buttoninst_2_controlinst_state_i_1__n data0_i_1__n selLED_i data0_i_2__n \
+#  data0_i_3__n un1_clkgenerate_i_1__n N_2_i randomnumgenetate_numnow_i_1__n \
+#  randomnumgenetate_numnow_i_2__n buttoninst_1_width_transinst_un1_out_i_n \
+#  buttoninst_2_timer_n_24_i_0_n buttoninst_1_debouncer_timer_n_24_i_0_n clk_c \
+#  clk_low_c resetIn_c ButtonIn_c LEDscanInst_LED_Areg LEDscanInst_LED_Breg \
+#  LEDscanInst_LED_Creg LEDscanInst_LED_Dreg LEDscanInst_LED_Ereg \
+#  LEDscanInst_LED_Freg LEDscanInst_LED_Greg LEDscanInst_LED_VCC1reg \
+#  LEDscanInst_LED_VCC3reg LEDscanInst_LED_VCC4reg \
+#  buttoninst_1_debouncer_timer_n_34_i_n buttoninst_1_debouncer_timer_n_18_i_n \
+#  buttoninst_1_debouncer_timer_n_22_0_n buttoninst_1_debouncer_timer_n_23_0_n \
+#  buttoninst_2_timer_n_34_i_n buttoninst_2_timer_n_18_i_n \
+#  buttoninst_2_timer_n_22_0_n buttoninst_2_timer_n_23_0_n ledscaninst_n_29_i_n \
+#  ledscaninst_led_a_6_0_n ledscaninst_n_30_i_n ledscaninst_led_b_6_0_n \
+#  ledscaninst_n_31_i_n ledscaninst_led_c_6_0_n ledscaninst_n_32_i_n \
+#  ledscaninst_led_d_6_0_n ledscaninst_n_13_0_n ledscaninst_n_36_i_n \
+#  ledscaninst_n_14_i_n ledscaninst_n_43_i_n ledscaninst_n_40_i_n \
+#  ledscaninst_n_15_0_n ledscaninst_n_37_i_n ledscaninst_n_16_i_n \
+#  clkgenerate_scancnt_3_i_0__n clkgenerate_n_6_i_n \
+#  clkgenerate_un2_scancnt_1_0_1__n ledscaninst_n_33_i_n ledscaninst_n_34_i_n \
+#  ledscaninst_n_35_i_n ledscaninst_n_42_i_n ledscaninst_led_f_6_0_n \
+#  ledscaninst_n_27_i_n ledscaninst_n_28_i_n ledscaninst_n_39_i_n \
+#  ledscaninst_led_e_6_0_n ledscaninst_n_26_i_n ledscaninst_n_44_i_n \
+#  ledscaninst_n_45_i_n ledscaninst_led_g_6_0_n buttoninst_2_timer_n_29_i_n
+.model top_level
+.inputs clk.BLIF clk_low.BLIF resetIn.BLIF ButtonIn.BLIF \
+buttoninst_2_timer_n_27_i_n.BLIF vcc_n_n.BLIF clkGenerate_scancnt_1_.BLIF \
+buttoninst_2_timer_n_25_i_n.BLIF pulse1kHz.BLIF \
+buttoninst_2_timer_n_26_i_n.BLIF resetOut.BLIF clkGenerate_scancnt_0_.BLIF \
+buttoninst_1_debouncer_timer_n_29_i_n.BLIF randomNumGenetate_oddreg.BLIF \
+randomNumGenetate_num_1_.BLIF buttoninst_1_debouncer_timer_n_27_i_n.BLIF \
+randomNumGenetate_num_2_.BLIF randomNumGenetate_num_3_.BLIF \
+buttoninst_1_debouncer_timer_n_25_i_n.BLIF gnd_n_n.BLIF \
+buttoninst_1_debouncer_timer_n_26_i_n.BLIF \
+randomNumGenetate_conter_9_q_1_.BLIF randomNumGenetate_conter_9_q_2_.BLIF \
+N_2_1.BLIF randomNumGenetate_conter_9_q_3_.BLIF N_2_2.BLIF \
+randomNumGenetate_conter_9_q_4_.BLIF pulse1kHz_1.BLIF \
+randomNumGenetate_conter_9_q_n2.BLIF pulse1kHz_2.BLIF \
+randomNumGenetate_conter_9_q_n3.BLIF pulse1kHz_3.BLIF \
+randomNumGenetate_conter_9_q_n1.BLIF pulse1kHz_4.BLIF \
+clkGenerate_FreqDivide_q_1_.BLIF pulse1kHz_5.BLIF \
+clkGenerate_FreqDivide_q_2_.BLIF pulse1kHz_6.BLIF \
+clkGenerate_FreqDivide_q_3_.BLIF pulse1kHz_7.BLIF \
+clkGenerate_FreqDivide_q_4_.BLIF pulse1kHz_8.BLIF \
+clkGenerate_FreqDivide_q_5_.BLIF pulse1kHz_9.BLIF \
+clkGenerate_FreqDivide_q_6_.BLIF pulse1kHz_10.BLIF \
+clkGenerate_FreqDivide_q_7_.BLIF ledscaninst_led_f_6_0_1_n.BLIF \
+clkGenerate_FreqDivide_q_8_.BLIF ledscaninst_led_f_6_0_2_n.BLIF \
+clkGenerate_FreqDivide_q_9_.BLIF ledscaninst_led_f_6_0_3_n.BLIF \
+clkGenerate_FreqDivide_q_10_.BLIF ledscaninst_led_e_6_0_1_n.BLIF \
+clkGenerate_FreqDivide_q_11_.BLIF ledscaninst_led_e_6_0_2_n.BLIF \
+clkGenerate_FreqDivide_q_12_.BLIF ledscaninst_led_g_6_0_1_n.BLIF \
+clkGenerate_FreqDivide_q_13_.BLIF ledscaninst_led_g_6_0_2_n.BLIF \
+ledscaninst_led_g_6_0_3_n.BLIF clkgenerate_scancnt_3_0__n.BLIF \
+ledscaninst_n_35_1_n.BLIF N_2.BLIF buttoninst_2_timer_n_19_0_1_n.BLIF \
+N_11.BLIF buttoninst_2_timer_n_31_0_1_n.BLIF N_10.BLIF \
+buttoninst_2_timer_n_8_0_1_n.BLIF N_5.BLIF buttoninst_2_timer_done_1_n.BLIF \
+randomnumgenetate_conter_9_q_c1_n.BLIF buttoninst_2_timer_done_2_n.BLIF \
+buttoninst_2_timer_done_3_n.BLIF buttoninst_2_timer_n_34_1_n.BLIF \
+buttoninst_2_timer_n_34_2_n.BLIF buttoninst_1_debouncer_timer_n_19_0_1_n.BLIF \
+buttoninst_1_debouncer_timer_n_31_0_1_n.BLIF \
+buttoninst_1_debouncer_timer_n_8_0_1_n.BLIF \
+buttoninst_1_debouncer_timer_done_1_n.BLIF \
+buttoninst_1_debouncer_timer_done_2_n.BLIF ledscaninst_n_26_n.BLIF \
+buttoninst_1_debouncer_timer_done_3_n.BLIF ledscaninst_n_27_n.BLIF \
+buttoninst_1_debouncer_timer_n_34_1_n.BLIF ledscaninst_n_28_n.BLIF \
+buttoninst_1_debouncer_timer_n_34_2_n.BLIF ledscaninst_n_33_n.BLIF \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un3_n.BLIF \
+ledscaninst_n_34_n.BLIF \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un1_n.BLIF \
+ledscaninst_n_35_n.BLIF \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un0_n.BLIF \
+ledscaninst_n_39_n.BLIF buttoninst_2_controlinst_state_ns_1_0__m3_un3_n.BLIF \
+ledscaninst_n_42_n.BLIF buttoninst_2_controlinst_state_ns_1_0__m3_un1_n.BLIF \
+ledscaninst_n_44_n.BLIF buttoninst_2_controlinst_state_ns_1_0__m3_un0_n.BLIF \
+ledscaninst_n_45_n.BLIF clkGenerate_FreqDivide_q_n10.BLIF \
+clkGenerate_FreqDivide_q_n11.BLIF clkGenerate_FreqDivide_q_n12.BLIF \
+clkGenerate_FreqDivide_q_n7.BLIF clkGenerate_FreqDivide_q_n8.BLIF \
+clkGenerate_FreqDivide_q_n9.BLIF clkGenerate_FreqDivide_q_n5.BLIF \
+clkGenerate_FreqDivide_q_n6.BLIF clkGenerate_FreqDivide_q_n2.BLIF \
+clkGenerate_FreqDivide_q_n3.BLIF clkGenerate_FreqDivide_q_n4.BLIF \
+clkGenerate_FreqDivide_q_n1.BLIF buttonInst_2_Timer_q_1_.BLIF \
+buttonInst_2_Timer_q_2_.BLIF buttonInst_2_Timer_q_3_.BLIF \
+buttonInst_2_Timer_q_4_.BLIF buttoninst_2_timer_done_n.BLIF \
+buttonInst_2_ControlInst_state_0_.BLIF buttonInst_2_ControlInst_state_1_.BLIF \
+buttonInst_2_ControlInst_state_ns_1_0__m5.BLIF buttoninst_2_timer_n_22_n.BLIF \
+buttoninst_2_timer_n_23_n.BLIF buttoninst_2_timer_n_24_n.BLIF \
+buttoninst_2_timer_n_25_n.BLIF buttoninst_2_timer_n_26_n.BLIF \
+buttoninst_2_timer_n_27_n.BLIF buttoninst_2_timer_n_29_n.BLIF \
+buttoninst_2_timer_n_34_n.BLIF buttoninst_1_debouncer_out_n.BLIF \
+buttoninst_1_width_transinst_un1_out_n.BLIF \
+buttonInst_1_Width_TransInst_q.BLIF buttonInst_1_Debouncer_Timer_q_1_.BLIF \
+buttonInst_1_Debouncer_Timer_q_2_.BLIF buttonInst_1_Debouncer_Timer_q_3_.BLIF \
+buttonInst_1_Debouncer_Timer_q_4_.BLIF \
+buttoninst_1_debouncer_timer_done_n.BLIF \
+buttonInst_1_Debouncer_ControlInst_state_0_.BLIF \
+buttonInst_1_Debouncer_ControlInst_state_1_.BLIF \
+buttonInst_1_Debouncer_ControlInst_state_ns_1_0__m5.BLIF \
+buttoninst_1_debouncer_timer_n_22_n.BLIF \
+buttoninst_1_debouncer_timer_n_23_n.BLIF \
+buttoninst_1_debouncer_timer_n_24_n.BLIF \
+buttoninst_1_debouncer_timer_n_25_n.BLIF \
+buttoninst_1_debouncer_timer_n_26_n.BLIF \
+buttoninst_1_debouncer_timer_n_27_n.BLIF \
+buttoninst_1_debouncer_timer_n_29_n.BLIF \
+buttoninst_1_debouncer_timer_n_34_n.BLIF clkgenerate_n_6_n.BLIF \
+ledscaninst_n_37_n.BLIF ledscaninst_n_15_n.BLIF ledscaninst_n_40_n.BLIF \
+ledscaninst_n_43_n.BLIF ledscaninst_n_36_n.BLIF ledscaninst_n_13_n.BLIF \
+ledscaninst_n_32_n.BLIF ledscaninst_n_31_n.BLIF ledscaninst_n_30_n.BLIF \
+ledscaninst_n_29_n.BLIF ledscaninst_n_41_n.BLIF ledscaninst_n_38_n.BLIF \
+buttonInst_2_ControlInst_state_ns_1_0__m1.BLIF \
+buttoninst_2_controlinst_state_ns_1_0__n_7_n.BLIF \
+clkgenerate_freqdivide_n_12_n.BLIF clkgenerate_freqdivide_q_c1_n.BLIF \
+clkgenerate_freqdivide_q_c2_n.BLIF clkgenerate_freqdivide_n_14_n.BLIF \
+clkgenerate_freqdivide_q_c3_n.BLIF clkgenerate_freqdivide_q_c4_n.BLIF \
+clkgenerate_freqdivide_q_c5_n.BLIF clkgenerate_freqdivide_q_c6_n.BLIF \
+clkgenerate_freqdivide_q_c7_n.BLIF clkgenerate_freqdivide_q_c8_n.BLIF \
+clkgenerate_freqdivide_q_c9_n.BLIF clkgenerate_freqdivide_q_c10_n.BLIF \
+clkgenerate_freqdivide_n_9_n.BLIF clkgenerate_freqdivide_n_11_n.BLIF \
+clkgenerate_freqdivide_n_13_n.BLIF clkgenerate_freqdivide_n_19_n.BLIF \
+clkgenerate_freqdivide_n_21_n.BLIF clkgenerate_freqdivide_n_23_n.BLIF \
+clkgenerate_freqdivide_n_25_n.BLIF clkgenerate_freqdivide_n_27_n.BLIF \
+clkgenerate_freqdivide_n_32_n.BLIF \
+buttonInst_1_Debouncer_ControlInst_state_ns_1_0__m1.BLIF \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__n_7_n.BLIF light_1_i.BLIF \
+pulse1kHz_i.BLIF buttoninst_1_debouncer_un1_timer_i_3__n.BLIF \
+buttoninst_1_debouncer_un1_timer_i_2__n.BLIF \
+buttoninst_1_debouncer_un1_timer_i_0__n.BLIF \
+buttoninst_1_debouncer_un1_timer_i_1__n.BLIF \
+buttoninst_1_debouncer_timer_r_i_0_i_n.BLIF \
+buttoninst_1_debouncer_controlinst_n_30_i_n.BLIF \
+buttoninst_1_debouncer_timer_done_i_n.BLIF \
+buttoninst_1_debouncer_controlinst_state_i_1__n.BLIF \
+buttoninst_1_debouncer_out_i_n.BLIF clkgenerate_un1_freqdivide_i_4__n.BLIF \
+clkgenerate_un1_freqdivide_i_11__n.BLIF \
+clkgenerate_un1_freqdivide_i_10__n.BLIF clkgenerate_un1_freqdivide_i_3__n.BLIF \
+clkgenerate_un1_freqdivide_i_12__n.BLIF buttoninst_2_un1_timer_i_3__n.BLIF \
+buttoninst_2_un1_timer_i_2__n.BLIF buttoninst_2_un1_timer_i_0__n.BLIF \
+buttoninst_2_un1_timer_i_1__n.BLIF buttoninst_2_timer_r_i_0_i_n.BLIF \
+buttoninst_2_controlinst_n_30_i_n.BLIF buttoninst_2_timer_done_i_n.BLIF \
+buttoninst_2_controlinst_state_i_1__n.BLIF data0_i_1__n.BLIF selLED_i.BLIF \
+data0_i_2__n.BLIF data0_i_3__n.BLIF un1_clkgenerate_i_1__n.BLIF N_2_i.BLIF \
+randomnumgenetate_numnow_i_1__n.BLIF randomnumgenetate_numnow_i_2__n.BLIF \
+buttoninst_1_width_transinst_un1_out_i_n.BLIF \
+buttoninst_2_timer_n_24_i_0_n.BLIF \
+buttoninst_1_debouncer_timer_n_24_i_0_n.BLIF clk_c.BLIF clk_low_c.BLIF \
+resetIn_c.BLIF ButtonIn_c.BLIF LEDscanInst_LED_Areg.BLIF \
+LEDscanInst_LED_Breg.BLIF LEDscanInst_LED_Creg.BLIF LEDscanInst_LED_Dreg.BLIF \
+LEDscanInst_LED_Ereg.BLIF LEDscanInst_LED_Freg.BLIF LEDscanInst_LED_Greg.BLIF \
+LEDscanInst_LED_VCC1reg.BLIF LEDscanInst_LED_VCC3reg.BLIF \
+LEDscanInst_LED_VCC4reg.BLIF buttoninst_1_debouncer_timer_n_34_i_n.BLIF \
+buttoninst_1_debouncer_timer_n_18_i_n.BLIF \
+buttoninst_1_debouncer_timer_n_22_0_n.BLIF \
+buttoninst_1_debouncer_timer_n_23_0_n.BLIF buttoninst_2_timer_n_34_i_n.BLIF \
+buttoninst_2_timer_n_18_i_n.BLIF buttoninst_2_timer_n_22_0_n.BLIF \
+buttoninst_2_timer_n_23_0_n.BLIF ledscaninst_n_29_i_n.BLIF \
+ledscaninst_led_a_6_0_n.BLIF ledscaninst_n_30_i_n.BLIF \
+ledscaninst_led_b_6_0_n.BLIF ledscaninst_n_31_i_n.BLIF \
+ledscaninst_led_c_6_0_n.BLIF ledscaninst_n_32_i_n.BLIF \
+ledscaninst_led_d_6_0_n.BLIF ledscaninst_n_13_0_n.BLIF \
+ledscaninst_n_36_i_n.BLIF ledscaninst_n_14_i_n.BLIF ledscaninst_n_43_i_n.BLIF \
+ledscaninst_n_40_i_n.BLIF ledscaninst_n_15_0_n.BLIF ledscaninst_n_37_i_n.BLIF \
+ledscaninst_n_16_i_n.BLIF clkgenerate_scancnt_3_i_0__n.BLIF \
+clkgenerate_n_6_i_n.BLIF clkgenerate_un2_scancnt_1_0_1__n.BLIF \
+ledscaninst_n_33_i_n.BLIF ledscaninst_n_34_i_n.BLIF ledscaninst_n_35_i_n.BLIF \
+ledscaninst_n_42_i_n.BLIF ledscaninst_led_f_6_0_n.BLIF \
+ledscaninst_n_27_i_n.BLIF ledscaninst_n_28_i_n.BLIF ledscaninst_n_39_i_n.BLIF \
+ledscaninst_led_e_6_0_n.BLIF ledscaninst_n_26_i_n.BLIF \
+ledscaninst_n_44_i_n.BLIF ledscaninst_n_45_i_n.BLIF \
+ledscaninst_led_g_6_0_n.BLIF buttoninst_2_timer_n_29_i_n.BLIF
+.outputs LED_A LED_B LED_C LED_D LED_E LED_F LED_G LED_VCC1 LED_VCC2 LED_VCC3 \
+LED_VCC4 light_1 light_2 buttonInst_1_Debouncer_Timer_q_3_.D \
+buttonInst_1_Debouncer_Timer_q_3_.CE buttonInst_1_Debouncer_Timer_q_3_.C \
+buttonInst_1_Debouncer_Timer_q_4_.D buttonInst_1_Debouncer_Timer_q_4_.CE \
+buttonInst_1_Debouncer_Timer_q_4_.C buttonInst_1_Debouncer_Timer_q_1_.D \
+buttonInst_1_Debouncer_Timer_q_1_.CE buttonInst_1_Debouncer_Timer_q_1_.C \
+buttonInst_1_Debouncer_Timer_q_2_.D buttonInst_1_Debouncer_Timer_q_2_.CE \
+buttonInst_1_Debouncer_Timer_q_2_.C \
+buttonInst_1_Debouncer_ControlInst_state_1_.D \
+buttonInst_1_Debouncer_ControlInst_state_1_.C \
+buttonInst_1_Debouncer_ControlInst_state_0_.D \
+buttonInst_1_Debouncer_ControlInst_state_0_.C buttonInst_1_Width_TransInst_q.D \
+buttonInst_1_Width_TransInst_q.C buttonInst_2_Timer_q_3_.D \
+buttonInst_2_Timer_q_3_.CE buttonInst_2_Timer_q_3_.C buttonInst_2_Timer_q_4_.D \
+buttonInst_2_Timer_q_4_.CE buttonInst_2_Timer_q_4_.C buttonInst_2_Timer_q_1_.D \
+buttonInst_2_Timer_q_1_.CE buttonInst_2_Timer_q_1_.C buttonInst_2_Timer_q_2_.D \
+buttonInst_2_Timer_q_2_.CE buttonInst_2_Timer_q_2_.C \
+buttonInst_2_ControlInst_state_1_.D buttonInst_2_ControlInst_state_1_.C \
+buttonInst_2_ControlInst_state_0_.D buttonInst_2_ControlInst_state_0_.C \
+clkGenerate_FreqDivide_q_11_.D clkGenerate_FreqDivide_q_11_.CE \
+clkGenerate_FreqDivide_q_11_.C clkGenerate_FreqDivide_q_12_.D \
+clkGenerate_FreqDivide_q_12_.CE clkGenerate_FreqDivide_q_12_.C \
+clkGenerate_FreqDivide_q_13_.D clkGenerate_FreqDivide_q_13_.CE \
+clkGenerate_FreqDivide_q_13_.C clkGenerate_FreqDivide_q_8_.D \
+clkGenerate_FreqDivide_q_8_.CE clkGenerate_FreqDivide_q_8_.C \
+clkGenerate_FreqDivide_q_9_.D clkGenerate_FreqDivide_q_9_.CE \
+clkGenerate_FreqDivide_q_9_.C clkGenerate_FreqDivide_q_10_.D \
+clkGenerate_FreqDivide_q_10_.CE clkGenerate_FreqDivide_q_10_.C \
+clkGenerate_FreqDivide_q_6_.D clkGenerate_FreqDivide_q_6_.CE \
+clkGenerate_FreqDivide_q_6_.C clkGenerate_FreqDivide_q_7_.D \
+clkGenerate_FreqDivide_q_7_.CE clkGenerate_FreqDivide_q_7_.C \
+clkGenerate_FreqDivide_q_3_.D clkGenerate_FreqDivide_q_3_.CE \
+clkGenerate_FreqDivide_q_3_.C clkGenerate_FreqDivide_q_4_.D \
+clkGenerate_FreqDivide_q_4_.CE clkGenerate_FreqDivide_q_4_.C \
+clkGenerate_FreqDivide_q_5_.D clkGenerate_FreqDivide_q_5_.CE \
+clkGenerate_FreqDivide_q_5_.C clkGenerate_FreqDivide_q_1_.D \
+clkGenerate_FreqDivide_q_1_.CE clkGenerate_FreqDivide_q_1_.C \
+clkGenerate_FreqDivide_q_2_.D clkGenerate_FreqDivide_q_2_.CE \
+clkGenerate_FreqDivide_q_2_.C clkGenerate_scancnt_0_.D \
+clkGenerate_scancnt_0_.C clkGenerate_scancnt_1_.D clkGenerate_scancnt_1_.C \
+LEDscanInst_LED_Areg.D LEDscanInst_LED_Areg.C LEDscanInst_LED_Breg.D \
+LEDscanInst_LED_Breg.C LEDscanInst_LED_Creg.D LEDscanInst_LED_Creg.C \
+LEDscanInst_LED_Dreg.D LEDscanInst_LED_Dreg.C LEDscanInst_LED_Ereg.D \
+LEDscanInst_LED_Ereg.C LEDscanInst_LED_Freg.D LEDscanInst_LED_Freg.C \
+LEDscanInst_LED_Greg.D LEDscanInst_LED_Greg.C LEDscanInst_LED_VCC1reg.D \
+LEDscanInst_LED_VCC1reg.C LEDscanInst_LED_VCC3reg.D LEDscanInst_LED_VCC3reg.C \
+LEDscanInst_LED_VCC4reg.D LEDscanInst_LED_VCC4reg.C \
+randomNumGenetate_conter_9_q_3_.D randomNumGenetate_conter_9_q_3_.CE \
+randomNumGenetate_conter_9_q_3_.C randomNumGenetate_conter_9_q_4_.D \
+randomNumGenetate_conter_9_q_4_.CE randomNumGenetate_conter_9_q_4_.C \
+randomNumGenetate_num_1_.D randomNumGenetate_num_1_.C \
+randomNumGenetate_num_2_.D randomNumGenetate_num_2_.C \
+randomNumGenetate_num_3_.D randomNumGenetate_num_3_.C \
+randomNumGenetate_conter_9_q_1_.D randomNumGenetate_conter_9_q_1_.CE \
+randomNumGenetate_conter_9_q_1_.C randomNumGenetate_conter_9_q_2_.D \
+randomNumGenetate_conter_9_q_2_.CE randomNumGenetate_conter_9_q_2_.C \
+randomNumGenetate_oddreg.D randomNumGenetate_oddreg.C \
+buttoninst_2_timer_n_27_i_n vcc_n_n buttoninst_2_timer_n_25_i_n pulse1kHz \
+buttoninst_2_timer_n_26_i_n resetOut buttoninst_1_debouncer_timer_n_29_i_n \
+buttoninst_1_debouncer_timer_n_27_i_n buttoninst_1_debouncer_timer_n_25_i_n \
+gnd_n_n buttoninst_1_debouncer_timer_n_26_i_n N_2_1 N_2_2 pulse1kHz_1 \
+pulse1kHz_2 pulse1kHz_3 pulse1kHz_4 pulse1kHz_5 pulse1kHz_6 pulse1kHz_7 \
+pulse1kHz_8 pulse1kHz_9 pulse1kHz_10 ledscaninst_led_f_6_0_1_n \
+ledscaninst_led_f_6_0_2_n ledscaninst_led_f_6_0_3_n ledscaninst_led_e_6_0_1_n \
+ledscaninst_led_e_6_0_2_n ledscaninst_led_g_6_0_1_n ledscaninst_led_g_6_0_2_n \
+ledscaninst_led_g_6_0_3_n clkgenerate_scancnt_3_0__n ledscaninst_n_35_1_n N_2 \
+buttoninst_2_timer_n_19_0_1_n N_11 buttoninst_2_timer_n_31_0_1_n N_10 \
+buttoninst_2_timer_n_8_0_1_n N_5 buttoninst_2_timer_done_1_n \
+randomnumgenetate_conter_9_q_c1_n buttoninst_2_timer_done_2_n \
+buttoninst_2_timer_done_3_n buttoninst_2_timer_n_34_1_n \
+buttoninst_2_timer_n_34_2_n buttoninst_1_debouncer_timer_n_19_0_1_n \
+buttoninst_1_debouncer_timer_n_31_0_1_n buttoninst_1_debouncer_timer_n_8_0_1_n \
+buttoninst_1_debouncer_timer_done_1_n buttoninst_1_debouncer_timer_done_2_n \
+ledscaninst_n_26_n buttoninst_1_debouncer_timer_done_3_n ledscaninst_n_27_n \
+buttoninst_1_debouncer_timer_n_34_1_n ledscaninst_n_28_n \
+buttoninst_1_debouncer_timer_n_34_2_n ledscaninst_n_33_n \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un3_n ledscaninst_n_34_n \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un1_n ledscaninst_n_35_n \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un0_n ledscaninst_n_39_n \
+buttoninst_2_controlinst_state_ns_1_0__m3_un3_n ledscaninst_n_42_n \
+buttoninst_2_controlinst_state_ns_1_0__m3_un1_n ledscaninst_n_44_n \
+buttoninst_2_controlinst_state_ns_1_0__m3_un0_n ledscaninst_n_45_n \
+buttoninst_2_timer_done_n buttoninst_2_timer_n_22_n buttoninst_2_timer_n_23_n \
+buttoninst_2_timer_n_24_n buttoninst_2_timer_n_25_n buttoninst_2_timer_n_26_n \
+buttoninst_2_timer_n_27_n buttoninst_2_timer_n_29_n buttoninst_2_timer_n_34_n \
+buttoninst_1_debouncer_out_n buttoninst_1_width_transinst_un1_out_n \
+buttoninst_1_debouncer_timer_done_n buttoninst_1_debouncer_timer_n_22_n \
+buttoninst_1_debouncer_timer_n_23_n buttoninst_1_debouncer_timer_n_24_n \
+buttoninst_1_debouncer_timer_n_25_n buttoninst_1_debouncer_timer_n_26_n \
+buttoninst_1_debouncer_timer_n_27_n buttoninst_1_debouncer_timer_n_29_n \
+buttoninst_1_debouncer_timer_n_34_n clkgenerate_n_6_n ledscaninst_n_37_n \
+ledscaninst_n_15_n ledscaninst_n_40_n ledscaninst_n_43_n ledscaninst_n_36_n \
+ledscaninst_n_13_n ledscaninst_n_32_n ledscaninst_n_31_n ledscaninst_n_30_n \
+ledscaninst_n_29_n ledscaninst_n_41_n ledscaninst_n_38_n \
+buttoninst_2_controlinst_state_ns_1_0__n_7_n clkgenerate_freqdivide_n_12_n \
+clkgenerate_freqdivide_q_c1_n clkgenerate_freqdivide_q_c2_n \
+clkgenerate_freqdivide_n_14_n clkgenerate_freqdivide_q_c3_n \
+clkgenerate_freqdivide_q_c4_n clkgenerate_freqdivide_q_c5_n \
+clkgenerate_freqdivide_q_c6_n clkgenerate_freqdivide_q_c7_n \
+clkgenerate_freqdivide_q_c8_n clkgenerate_freqdivide_q_c9_n \
+clkgenerate_freqdivide_q_c10_n clkgenerate_freqdivide_n_9_n \
+clkgenerate_freqdivide_n_11_n clkgenerate_freqdivide_n_13_n \
+clkgenerate_freqdivide_n_19_n clkgenerate_freqdivide_n_21_n \
+clkgenerate_freqdivide_n_23_n clkgenerate_freqdivide_n_25_n \
+clkgenerate_freqdivide_n_27_n clkgenerate_freqdivide_n_32_n \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__n_7_n light_1_i pulse1kHz_i \
+buttoninst_1_debouncer_un1_timer_i_3__n \
+buttoninst_1_debouncer_un1_timer_i_2__n \
+buttoninst_1_debouncer_un1_timer_i_0__n \
+buttoninst_1_debouncer_un1_timer_i_1__n buttoninst_1_debouncer_timer_r_i_0_i_n \
+buttoninst_1_debouncer_controlinst_n_30_i_n \
+buttoninst_1_debouncer_timer_done_i_n \
+buttoninst_1_debouncer_controlinst_state_i_1__n buttoninst_1_debouncer_out_i_n \
+clkgenerate_un1_freqdivide_i_4__n clkgenerate_un1_freqdivide_i_11__n \
+clkgenerate_un1_freqdivide_i_10__n clkgenerate_un1_freqdivide_i_3__n \
+clkgenerate_un1_freqdivide_i_12__n buttoninst_2_un1_timer_i_3__n \
+buttoninst_2_un1_timer_i_2__n buttoninst_2_un1_timer_i_0__n \
+buttoninst_2_un1_timer_i_1__n buttoninst_2_timer_r_i_0_i_n \
+buttoninst_2_controlinst_n_30_i_n buttoninst_2_timer_done_i_n \
+buttoninst_2_controlinst_state_i_1__n data0_i_1__n selLED_i data0_i_2__n \
+data0_i_3__n un1_clkgenerate_i_1__n N_2_i randomnumgenetate_numnow_i_1__n \
+randomnumgenetate_numnow_i_2__n buttoninst_1_width_transinst_un1_out_i_n \
+buttoninst_2_timer_n_24_i_0_n buttoninst_1_debouncer_timer_n_24_i_0_n clk_c \
+clk_low_c resetIn_c ButtonIn_c buttoninst_1_debouncer_timer_n_34_i_n \
+buttoninst_1_debouncer_timer_n_18_i_n buttoninst_1_debouncer_timer_n_22_0_n \
+buttoninst_1_debouncer_timer_n_23_0_n buttoninst_2_timer_n_34_i_n \
+buttoninst_2_timer_n_18_i_n buttoninst_2_timer_n_22_0_n \
+buttoninst_2_timer_n_23_0_n ledscaninst_n_29_i_n ledscaninst_led_a_6_0_n \
+ledscaninst_n_30_i_n ledscaninst_led_b_6_0_n ledscaninst_n_31_i_n \
+ledscaninst_led_c_6_0_n ledscaninst_n_32_i_n ledscaninst_led_d_6_0_n \
+ledscaninst_n_13_0_n ledscaninst_n_36_i_n ledscaninst_n_14_i_n \
+ledscaninst_n_43_i_n ledscaninst_n_40_i_n ledscaninst_n_15_0_n \
+ledscaninst_n_37_i_n ledscaninst_n_16_i_n clkgenerate_scancnt_3_i_0__n \
+clkgenerate_n_6_i_n clkgenerate_un2_scancnt_1_0_1__n ledscaninst_n_33_i_n \
+ledscaninst_n_34_i_n ledscaninst_n_35_i_n ledscaninst_n_42_i_n \
+ledscaninst_led_f_6_0_n ledscaninst_n_27_i_n ledscaninst_n_28_i_n \
+ledscaninst_n_39_i_n ledscaninst_led_e_6_0_n ledscaninst_n_26_i_n \
+ledscaninst_n_44_i_n ledscaninst_n_45_i_n ledscaninst_led_g_6_0_n \
+buttoninst_2_timer_n_29_i_n randomNumGenetate_conter_9_q_n2 \
+randomNumGenetate_conter_9_q_n3 randomNumGenetate_conter_9_q_n1 \
+clkGenerate_FreqDivide_q_n10 clkGenerate_FreqDivide_q_n11 \
+clkGenerate_FreqDivide_q_n12 clkGenerate_FreqDivide_q_n7 \
+clkGenerate_FreqDivide_q_n8 clkGenerate_FreqDivide_q_n9 \
+clkGenerate_FreqDivide_q_n5 clkGenerate_FreqDivide_q_n6 \
+clkGenerate_FreqDivide_q_n2 clkGenerate_FreqDivide_q_n3 \
+clkGenerate_FreqDivide_q_n4 clkGenerate_FreqDivide_q_n1 \
+buttonInst_2_ControlInst_state_ns_1_0__m5 \
+buttonInst_1_Debouncer_ControlInst_state_ns_1_0__m5 \
+buttonInst_2_ControlInst_state_ns_1_0__m1 \
+buttonInst_1_Debouncer_ControlInst_state_ns_1_0__m1
+.names buttoninst_1_debouncer_timer_n_31_0_1_n.BLIF \
+buttoninst_1_debouncer_timer_n_23_n.BLIF buttonInst_1_Debouncer_Timer_q_3_.D
+11 1
+.names buttoninst_1_debouncer_timer_n_8_0_1_n.BLIF \
+buttoninst_1_debouncer_timer_n_26_i_n.BLIF buttonInst_1_Debouncer_Timer_q_4_.D
+11 1
+.names buttoninst_1_debouncer_timer_n_18_i_n.BLIF \
+buttoninst_1_debouncer_un1_timer_i_0__n.BLIF \
+buttonInst_1_Debouncer_Timer_q_1_.D
+11 1
+.names buttoninst_1_debouncer_timer_n_19_0_1_n.BLIF \
+buttoninst_1_debouncer_timer_n_29_i_n.BLIF buttonInst_1_Debouncer_Timer_q_2_.D
+11 1
+.names buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un1_n.BLIF \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un0_n.BLIF \
+buttonInst_1_Debouncer_ControlInst_state_0_.D
+1- 1
+-1 1
+.names buttoninst_2_timer_n_31_0_1_n.BLIF buttoninst_2_timer_n_23_n.BLIF \
+buttonInst_2_Timer_q_3_.D
+11 1
+.names buttoninst_2_timer_n_8_0_1_n.BLIF buttoninst_2_timer_n_26_i_n.BLIF \
+buttonInst_2_Timer_q_4_.D
+11 1
+.names buttoninst_2_timer_n_18_i_n.BLIF buttoninst_2_un1_timer_i_0__n.BLIF \
+buttonInst_2_Timer_q_1_.D
+11 1
+.names buttoninst_2_timer_n_19_0_1_n.BLIF buttoninst_2_timer_n_29_i_n.BLIF \
+buttonInst_2_Timer_q_2_.D
+11 1
+.names buttoninst_2_controlinst_state_ns_1_0__m3_un1_n.BLIF \
+buttoninst_2_controlinst_state_ns_1_0__m3_un0_n.BLIF \
+buttonInst_2_ControlInst_state_0_.D
+1- 1
+-1 1
+.names clkGenerate_FreqDivide_q_1_.BLIF clkGenerate_FreqDivide_q_1_.D
+0 1
+.names clkgenerate_un2_scancnt_1_0_1__n.BLIF clkGenerate_scancnt_1_.D
+0 1
+.names ledscaninst_led_a_6_0_n.BLIF LEDscanInst_LED_Areg.D
+0 1
+.names ledscaninst_led_b_6_0_n.BLIF LEDscanInst_LED_Breg.D
+0 1
+.names ledscaninst_led_c_6_0_n.BLIF LEDscanInst_LED_Creg.D
+0 1
+.names ledscaninst_led_d_6_0_n.BLIF LEDscanInst_LED_Dreg.D
+0 1
+.names ledscaninst_led_e_6_0_n.BLIF LEDscanInst_LED_Ereg.D
+0 1
+.names ledscaninst_led_f_6_0_n.BLIF LEDscanInst_LED_Freg.D
+0 1
+.names ledscaninst_led_g_6_0_n.BLIF LEDscanInst_LED_Greg.D
+0 1
+.names resetOut.BLIF clkGenerate_scancnt_0_.BLIF LEDscanInst_LED_VCC3reg.D
+11 1
+.names resetOut.BLIF selLED_i.BLIF LEDscanInst_LED_VCC4reg.D
+11 1
+.names randomNumGenetate_conter_9_q_1_.BLIF randomNumGenetate_conter_9_q_1_.D
+0 1
+.names buttoninst_2_timer_n_27_n.BLIF buttoninst_2_timer_n_27_i_n
+0 1
+.names vcc_n_n
+ 1
+.names buttoninst_2_timer_n_25_n.BLIF buttoninst_2_timer_n_25_i_n
+0 1
+.names pulse1kHz_10.BLIF pulse1kHz_9.BLIF pulse1kHz
+11 1
+.names buttoninst_2_timer_n_26_n.BLIF buttoninst_2_timer_n_26_i_n
+0 1
+.names buttoninst_2_controlinst_state_i_1__n.BLIF \
+buttoninst_2_timer_r_i_0_i_n.BLIF resetOut
+11 1
+.names buttoninst_1_debouncer_timer_n_29_n.BLIF \
+buttoninst_1_debouncer_timer_n_29_i_n
+0 1
+.names buttoninst_1_debouncer_timer_n_27_n.BLIF \
+buttoninst_1_debouncer_timer_n_27_i_n
+0 1
+.names buttoninst_1_debouncer_timer_n_25_n.BLIF \
+buttoninst_1_debouncer_timer_n_25_i_n
+0 1
+.names gnd_n_n
+.names buttoninst_1_debouncer_timer_n_26_n.BLIF \
+buttoninst_1_debouncer_timer_n_26_i_n
+0 1
+.names randomNumGenetate_conter_9_q_1_.BLIF \
+randomNumGenetate_conter_9_q_4_.BLIF N_2_1
+11 1
+.names randomnumgenetate_numnow_i_1__n.BLIF \
+randomnumgenetate_numnow_i_2__n.BLIF N_2_2
+11 1
+.names clkgenerate_un1_freqdivide_i_4__n.BLIF \
+clkgenerate_un1_freqdivide_i_10__n.BLIF pulse1kHz_1
+11 1
+.names clkgenerate_un1_freqdivide_i_11__n.BLIF \
+clkgenerate_un1_freqdivide_i_12__n.BLIF pulse1kHz_2
+11 1
+.names clkgenerate_freqdivide_q_c1_n.BLIF clkGenerate_FreqDivide_q_3_.BLIF \
+pulse1kHz_3
+11 1
+.names clkGenerate_FreqDivide_q_6_.BLIF clkGenerate_FreqDivide_q_7_.BLIF \
+pulse1kHz_4
+11 1
+.names clkGenerate_FreqDivide_q_8_.BLIF clkGenerate_FreqDivide_q_9_.BLIF \
+pulse1kHz_5
+11 1
+.names clkGenerate_FreqDivide_q_10_.BLIF \
+clkgenerate_un1_freqdivide_i_3__n.BLIF pulse1kHz_6
+11 1
+.names pulse1kHz_1.BLIF pulse1kHz_2.BLIF pulse1kHz_7
+11 1
+.names pulse1kHz_3.BLIF pulse1kHz_4.BLIF pulse1kHz_8
+11 1
+.names pulse1kHz_5.BLIF pulse1kHz_6.BLIF pulse1kHz_9
+11 1
+.names pulse1kHz_7.BLIF pulse1kHz_8.BLIF pulse1kHz_10
+11 1
+.names ledscaninst_n_33_i_n.BLIF ledscaninst_n_34_i_n.BLIF \
+ledscaninst_led_f_6_0_1_n
+11 1
+.names ledscaninst_n_35_i_n.BLIF ledscaninst_n_42_i_n.BLIF \
+ledscaninst_led_f_6_0_2_n
+11 1
+.names ledscaninst_led_f_6_0_1_n.BLIF ledscaninst_led_f_6_0_2_n.BLIF \
+ledscaninst_led_f_6_0_3_n
+11 1
+.names ledscaninst_n_27_i_n.BLIF ledscaninst_n_28_i_n.BLIF \
+ledscaninst_led_e_6_0_1_n
+11 1
+.names ledscaninst_n_39_i_n.BLIF resetOut.BLIF ledscaninst_led_e_6_0_2_n
+11 1
+.names ledscaninst_n_26_i_n.BLIF ledscaninst_n_44_i_n.BLIF \
+ledscaninst_led_g_6_0_1_n
+11 1
+.names ledscaninst_n_45_i_n.BLIF resetOut.BLIF ledscaninst_led_g_6_0_2_n
+11 1
+.names ledscaninst_led_g_6_0_1_n.BLIF ledscaninst_led_g_6_0_2_n.BLIF \
+ledscaninst_led_g_6_0_3_n
+11 1
+.names selLED_i.BLIF clkGenerate_scancnt_1_.BLIF clkgenerate_scancnt_3_0__n
+11 1
+.names data0_i_2__n.BLIF data0_i_3__n.BLIF ledscaninst_n_35_1_n
+11 1
+.names N_2_1.BLIF N_2_2.BLIF N_2
+11 1
+.names buttoninst_2_timer_n_18_i_n.BLIF buttoninst_2_timer_n_22_n.BLIF \
+buttoninst_2_timer_n_19_0_1_n
+11 1
+.names N_2_i.BLIF randomNumGenetate_conter_9_q_4_.BLIF N_11
+11 1
+.names buttoninst_2_timer_n_27_i_n.BLIF buttoninst_2_timer_n_18_i_n.BLIF \
+buttoninst_2_timer_n_31_0_1_n
+11 1
+.names randomnumgenetate_conter_9_q_c1_n.BLIF \
+randomNumGenetate_conter_9_q_3_.BLIF N_10
+11 1
+.names buttoninst_2_timer_n_18_i_n.BLIF buttoninst_2_timer_n_25_i_n.BLIF \
+buttoninst_2_timer_n_8_0_1_n
+11 1
+.names N_2_i.BLIF randomNumGenetate_conter_9_q_1_.BLIF N_5
+11 1
+.names buttonInst_2_Timer_q_1_.BLIF buttonInst_2_Timer_q_4_.BLIF \
+buttoninst_2_timer_done_1_n
+11 1
+.names randomNumGenetate_conter_9_q_1_.BLIF \
+randomNumGenetate_conter_9_q_2_.BLIF randomnumgenetate_conter_9_q_c1_n
+11 1
+.names buttoninst_2_un1_timer_i_1__n.BLIF buttoninst_2_un1_timer_i_2__n.BLIF \
+buttoninst_2_timer_done_2_n
+11 1
+.names buttoninst_2_timer_done_1_n.BLIF buttoninst_2_timer_done_2_n.BLIF \
+buttoninst_2_timer_done_3_n
+11 1
+.names buttonInst_2_Timer_q_1_.BLIF buttonInst_2_Timer_q_4_.BLIF \
+buttoninst_2_timer_n_34_1_n
+11 1
+.names buttoninst_2_un1_timer_i_1__n.BLIF buttoninst_2_un1_timer_i_2__n.BLIF \
+buttoninst_2_timer_n_34_2_n
+11 1
+.names buttoninst_1_debouncer_timer_n_18_i_n.BLIF \
+buttoninst_1_debouncer_timer_n_22_n.BLIF \
+buttoninst_1_debouncer_timer_n_19_0_1_n
+11 1
+.names buttoninst_1_debouncer_timer_n_27_i_n.BLIF \
+buttoninst_1_debouncer_timer_n_18_i_n.BLIF \
+buttoninst_1_debouncer_timer_n_31_0_1_n
+11 1
+.names buttoninst_1_debouncer_timer_n_18_i_n.BLIF \
+buttoninst_1_debouncer_timer_n_25_i_n.BLIF \
+buttoninst_1_debouncer_timer_n_8_0_1_n
+11 1
+.names buttonInst_1_Debouncer_Timer_q_1_.BLIF \
+buttonInst_1_Debouncer_Timer_q_4_.BLIF buttoninst_1_debouncer_timer_done_1_n
+11 1
+.names buttoninst_1_debouncer_un1_timer_i_1__n.BLIF \
+buttoninst_1_debouncer_un1_timer_i_2__n.BLIF \
+buttoninst_1_debouncer_timer_done_2_n
+11 1
+.names randomNumGenetate_num_2_.BLIF ledscaninst_n_43_n.BLIF \
+ledscaninst_n_26_n
+11 1
+.names buttoninst_1_debouncer_timer_done_1_n.BLIF \
+buttoninst_1_debouncer_timer_done_2_n.BLIF \
+buttoninst_1_debouncer_timer_done_3_n
+11 1
+.names randomNumGenetate_num_3_.BLIF ledscaninst_n_41_n.BLIF \
+ledscaninst_n_27_n
+11 1
+.names buttonInst_1_Debouncer_Timer_q_1_.BLIF \
+buttonInst_1_Debouncer_Timer_q_4_.BLIF buttoninst_1_debouncer_timer_n_34_1_n
+11 1
+.names data0_i_1__n.BLIF ledscaninst_n_38_n.BLIF ledscaninst_n_28_n
+11 1
+.names buttoninst_1_debouncer_un1_timer_i_1__n.BLIF \
+buttoninst_1_debouncer_un1_timer_i_2__n.BLIF \
+buttoninst_1_debouncer_timer_n_34_2_n
+11 1
+.names randomNumGenetate_num_3_.BLIF ledscaninst_n_38_n.BLIF \
+ledscaninst_n_33_n
+11 1
+.names buttonInst_1_Debouncer_ControlInst_state_0_.BLIF \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un3_n
+0 1
+.names randomNumGenetate_num_1_.BLIF ledscaninst_n_39_n.BLIF \
+ledscaninst_n_34_n
+11 1
+.names buttoninst_1_debouncer_timer_done_i_n.BLIF \
+buttonInst_1_Debouncer_ControlInst_state_0_.BLIF \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un1_n
+11 1
+.names ledscaninst_n_35_1_n.BLIF ledscaninst_n_39_n.BLIF ledscaninst_n_35_n
+11 1
+.names buttoninst_1_debouncer_controlinst_n_30_i_n.BLIF \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un3_n.BLIF \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__m3_un0_n
+11 1
+.names randomNumGenetate_oddreg.BLIF selLED_i.BLIF ledscaninst_n_39_n
+11 1
+.names buttonInst_2_ControlInst_state_0_.BLIF \
+buttoninst_2_controlinst_state_ns_1_0__m3_un3_n
+0 1
+.names data0_i_2__n.BLIF ledscaninst_n_41_n.BLIF ledscaninst_n_42_n
+11 1
+.names buttoninst_2_timer_done_i_n.BLIF buttonInst_2_ControlInst_state_0_.BLIF \
+buttoninst_2_controlinst_state_ns_1_0__m3_un1_n
+11 1
+.names randomNumGenetate_num_3_.BLIF ledscaninst_n_13_n.BLIF \
+ledscaninst_n_44_n
+11 1
+.names buttoninst_2_controlinst_n_30_i_n.BLIF \
+buttoninst_2_controlinst_state_ns_1_0__m3_un3_n.BLIF \
+buttoninst_2_controlinst_state_ns_1_0__m3_un0_n
+11 1
+.names data0_i_3__n.BLIF ledscaninst_n_13_0_n.BLIF ledscaninst_n_45_n
+11 1
+.names buttoninst_2_timer_done_3_n.BLIF pulse1kHz.BLIF \
+buttoninst_2_timer_done_n
+11 1
+.names buttoninst_2_timer_n_22_0_n.BLIF buttoninst_2_timer_n_22_n
+0 1
+.names buttoninst_2_timer_n_23_0_n.BLIF buttoninst_2_timer_n_23_n
+0 1
+.names buttonInst_2_ControlInst_state_0_.BLIF pulse1kHz_i.BLIF \
+buttoninst_2_timer_n_24_n
+11 1
+.names buttoninst_2_timer_n_23_n.BLIF buttoninst_2_un1_timer_i_3__n.BLIF \
+buttoninst_2_timer_n_25_n
+11 1
+.names buttoninst_2_timer_n_23_0_n.BLIF buttonInst_2_Timer_q_4_.BLIF \
+buttoninst_2_timer_n_26_n
+11 1
+.names buttoninst_2_timer_n_22_n.BLIF buttoninst_2_un1_timer_i_2__n.BLIF \
+buttoninst_2_timer_n_27_n
+11 1
+.names buttoninst_2_un1_timer_i_0__n.BLIF buttoninst_2_un1_timer_i_1__n.BLIF \
+buttoninst_2_timer_n_29_n
+11 1
+.names buttoninst_2_timer_n_34_1_n.BLIF buttoninst_2_timer_n_34_2_n.BLIF \
+buttoninst_2_timer_n_34_n
+11 1
+.names buttoninst_1_debouncer_controlinst_state_i_1__n.BLIF \
+buttoninst_1_debouncer_timer_r_i_0_i_n.BLIF buttoninst_1_debouncer_out_n
+11 1
+.names buttonInst_1_Width_TransInst_q.BLIF buttoninst_1_debouncer_out_i_n.BLIF \
+buttoninst_1_width_transinst_un1_out_n
+11 1
+.names buttoninst_1_debouncer_timer_done_3_n.BLIF pulse1kHz.BLIF \
+buttoninst_1_debouncer_timer_done_n
+11 1
+.names buttoninst_1_debouncer_timer_n_22_0_n.BLIF \
+buttoninst_1_debouncer_timer_n_22_n
+0 1
+.names buttoninst_1_debouncer_timer_n_23_0_n.BLIF \
+buttoninst_1_debouncer_timer_n_23_n
+0 1
+.names buttonInst_1_Debouncer_ControlInst_state_0_.BLIF pulse1kHz_i.BLIF \
+buttoninst_1_debouncer_timer_n_24_n
+11 1
+.names buttoninst_1_debouncer_timer_n_23_n.BLIF \
+buttoninst_1_debouncer_un1_timer_i_3__n.BLIF \
+buttoninst_1_debouncer_timer_n_25_n
+11 1
+.names buttoninst_1_debouncer_timer_n_23_0_n.BLIF \
+buttonInst_1_Debouncer_Timer_q_4_.BLIF buttoninst_1_debouncer_timer_n_26_n
+11 1
+.names buttoninst_1_debouncer_timer_n_22_n.BLIF \
+buttoninst_1_debouncer_un1_timer_i_2__n.BLIF \
+buttoninst_1_debouncer_timer_n_27_n
+11 1
+.names buttoninst_1_debouncer_un1_timer_i_0__n.BLIF \
+buttoninst_1_debouncer_un1_timer_i_1__n.BLIF \
+buttoninst_1_debouncer_timer_n_29_n
+11 1
+.names buttoninst_1_debouncer_timer_n_34_1_n.BLIF \
+buttoninst_1_debouncer_timer_n_34_2_n.BLIF buttoninst_1_debouncer_timer_n_34_n
+11 1
+.names clkGenerate_scancnt_0_.BLIF un1_clkgenerate_i_1__n.BLIF \
+clkgenerate_n_6_n
+11 1
+.names ledscaninst_n_39_n.BLIF ledscaninst_n_45_n.BLIF ledscaninst_n_37_n
+11 1
+.names ledscaninst_n_15_0_n.BLIF ledscaninst_n_15_n
+0 1
+.names data0_i_1__n.BLIF light_1_i.BLIF ledscaninst_n_40_n
+11 1
+.names randomNumGenetate_oddreg.BLIF randomNumGenetate_num_1_.BLIF \
+ledscaninst_n_43_n
+11 1
+.names ledscaninst_n_44_n.BLIF selLED_i.BLIF ledscaninst_n_36_n
+11 1
+.names ledscaninst_n_13_0_n.BLIF ledscaninst_n_13_n
+0 1
+.names ledscaninst_n_15_n.BLIF ledscaninst_n_38_n.BLIF ledscaninst_n_32_n
+11 1
+.names ledscaninst_n_42_n.BLIF light_1_i.BLIF ledscaninst_n_31_n
+11 1
+.names ledscaninst_n_15_0_n.BLIF ledscaninst_n_38_n.BLIF ledscaninst_n_30_n
+11 1
+.names ledscaninst_n_38_n.BLIF ledscaninst_n_40_n.BLIF ledscaninst_n_29_n
+11 1
+.names randomNumGenetate_num_1_.BLIF selLED_i.BLIF ledscaninst_n_41_n
+11 1
+.names randomNumGenetate_num_2_.BLIF selLED_i.BLIF ledscaninst_n_38_n
+11 1
+.names buttonInst_2_ControlInst_state_0_.BLIF buttoninst_2_timer_done_n.BLIF \
+buttoninst_2_controlinst_state_ns_1_0__n_7_n
+11 1
+.names clkgenerate_freqdivide_q_c1_n.BLIF pulse1kHz_i.BLIF \
+clkgenerate_freqdivide_n_12_n
+11 1
+.names clkGenerate_FreqDivide_q_1_.BLIF clkGenerate_FreqDivide_q_2_.BLIF \
+clkgenerate_freqdivide_q_c1_n
+11 1
+.names clkgenerate_freqdivide_q_c1_n.BLIF clkGenerate_FreqDivide_q_3_.BLIF \
+clkgenerate_freqdivide_q_c2_n
+11 1
+.names clkgenerate_freqdivide_q_c2_n.BLIF pulse1kHz_i.BLIF \
+clkgenerate_freqdivide_n_14_n
+11 1
+.names clkgenerate_freqdivide_q_c2_n.BLIF clkGenerate_FreqDivide_q_4_.BLIF \
+clkgenerate_freqdivide_q_c3_n
+11 1
+.names clkgenerate_freqdivide_q_c3_n.BLIF clkGenerate_FreqDivide_q_5_.BLIF \
+clkgenerate_freqdivide_q_c4_n
+11 1
+.names clkgenerate_freqdivide_q_c4_n.BLIF clkGenerate_FreqDivide_q_6_.BLIF \
+clkgenerate_freqdivide_q_c5_n
+11 1
+.names clkgenerate_freqdivide_q_c5_n.BLIF clkGenerate_FreqDivide_q_7_.BLIF \
+clkgenerate_freqdivide_q_c6_n
+11 1
+.names clkgenerate_freqdivide_q_c6_n.BLIF clkGenerate_FreqDivide_q_8_.BLIF \
+clkgenerate_freqdivide_q_c7_n
+11 1
+.names clkgenerate_freqdivide_q_c7_n.BLIF clkGenerate_FreqDivide_q_9_.BLIF \
+clkgenerate_freqdivide_q_c8_n
+11 1
+.names clkgenerate_freqdivide_q_c8_n.BLIF clkGenerate_FreqDivide_q_10_.BLIF \
+clkgenerate_freqdivide_q_c9_n
+11 1
+.names clkgenerate_freqdivide_q_c9_n.BLIF clkGenerate_FreqDivide_q_11_.BLIF \
+clkgenerate_freqdivide_q_c10_n
+11 1
+.names clkGenerate_FreqDivide_q_1_.BLIF pulse1kHz_i.BLIF \
+clkgenerate_freqdivide_n_9_n
+11 1
+.names clkGenerate_FreqDivide_q_2_.BLIF pulse1kHz_i.BLIF \
+clkgenerate_freqdivide_n_11_n
+11 1
+.names clkGenerate_FreqDivide_q_3_.BLIF pulse1kHz_i.BLIF \
+clkgenerate_freqdivide_n_13_n
+11 1
+.names clkGenerate_FreqDivide_q_6_.BLIF pulse1kHz_i.BLIF \
+clkgenerate_freqdivide_n_19_n
+11 1
+.names clkGenerate_FreqDivide_q_7_.BLIF pulse1kHz_i.BLIF \
+clkgenerate_freqdivide_n_21_n
+11 1
+.names clkGenerate_FreqDivide_q_8_.BLIF pulse1kHz_i.BLIF \
+clkgenerate_freqdivide_n_23_n
+11 1
+.names clkGenerate_FreqDivide_q_9_.BLIF pulse1kHz_i.BLIF \
+clkgenerate_freqdivide_n_25_n
+11 1
+.names clkGenerate_FreqDivide_q_10_.BLIF pulse1kHz_i.BLIF \
+clkgenerate_freqdivide_n_27_n
+11 1
+.names clkgenerate_freqdivide_q_c10_n.BLIF clkGenerate_FreqDivide_q_12_.BLIF \
+clkgenerate_freqdivide_n_32_n
+11 1
+.names buttonInst_1_Debouncer_ControlInst_state_0_.BLIF \
+buttoninst_1_debouncer_timer_done_n.BLIF \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__n_7_n
+11 1
+.names randomNumGenetate_oddreg.BLIF light_1_i
+0 1
+.names pulse1kHz.BLIF pulse1kHz_i
+0 1
+.names buttonInst_1_Debouncer_Timer_q_4_.BLIF \
+buttoninst_1_debouncer_un1_timer_i_3__n
+0 1
+.names buttonInst_1_Debouncer_Timer_q_3_.BLIF \
+buttoninst_1_debouncer_un1_timer_i_2__n
+0 1
+.names buttonInst_1_Debouncer_Timer_q_1_.BLIF \
+buttoninst_1_debouncer_un1_timer_i_0__n
+0 1
+.names buttonInst_1_Debouncer_Timer_q_2_.BLIF \
+buttoninst_1_debouncer_un1_timer_i_1__n
+0 1
+.names buttonInst_1_Debouncer_ControlInst_state_0_.BLIF \
+buttoninst_1_debouncer_timer_r_i_0_i_n
+0 1
+.names buttonInst_1_Debouncer_ControlInst_state_ns_1_0__m1.BLIF \
+buttoninst_1_debouncer_controlinst_n_30_i_n
+0 1
+.names buttoninst_1_debouncer_timer_done_n.BLIF \
+buttoninst_1_debouncer_timer_done_i_n
+0 1
+.names buttonInst_1_Debouncer_ControlInst_state_1_.BLIF \
+buttoninst_1_debouncer_controlinst_state_i_1__n
+0 1
+.names buttoninst_1_debouncer_out_n.BLIF buttoninst_1_debouncer_out_i_n
+0 1
+.names clkGenerate_FreqDivide_q_5_.BLIF clkgenerate_un1_freqdivide_i_4__n
+0 1
+.names clkGenerate_FreqDivide_q_12_.BLIF clkgenerate_un1_freqdivide_i_11__n
+0 1
+.names clkGenerate_FreqDivide_q_11_.BLIF clkgenerate_un1_freqdivide_i_10__n
+0 1
+.names clkGenerate_FreqDivide_q_4_.BLIF clkgenerate_un1_freqdivide_i_3__n
+0 1
+.names clkGenerate_FreqDivide_q_13_.BLIF clkgenerate_un1_freqdivide_i_12__n
+0 1
+.names buttonInst_2_Timer_q_4_.BLIF buttoninst_2_un1_timer_i_3__n
+0 1
+.names buttonInst_2_Timer_q_3_.BLIF buttoninst_2_un1_timer_i_2__n
+0 1
+.names buttonInst_2_Timer_q_1_.BLIF buttoninst_2_un1_timer_i_0__n
+0 1
+.names buttonInst_2_Timer_q_2_.BLIF buttoninst_2_un1_timer_i_1__n
+0 1
+.names buttonInst_2_ControlInst_state_0_.BLIF buttoninst_2_timer_r_i_0_i_n
+0 1
+.names buttonInst_2_ControlInst_state_ns_1_0__m1.BLIF \
+buttoninst_2_controlinst_n_30_i_n
+0 1
+.names buttoninst_2_timer_done_n.BLIF buttoninst_2_timer_done_i_n
+0 1
+.names buttonInst_2_ControlInst_state_1_.BLIF \
+buttoninst_2_controlinst_state_i_1__n
+0 1
+.names randomNumGenetate_num_1_.BLIF data0_i_1__n
+0 1
+.names clkGenerate_scancnt_0_.BLIF selLED_i
+0 1
+.names randomNumGenetate_num_2_.BLIF data0_i_2__n
+0 1
+.names randomNumGenetate_num_3_.BLIF data0_i_3__n
+0 1
+.names clkGenerate_scancnt_1_.BLIF un1_clkgenerate_i_1__n
+0 1
+.names N_2.BLIF N_2_i
+0 1
+.names randomNumGenetate_conter_9_q_2_.BLIF randomnumgenetate_numnow_i_1__n
+0 1
+.names randomNumGenetate_conter_9_q_3_.BLIF randomnumgenetate_numnow_i_2__n
+0 1
+.names buttoninst_1_width_transinst_un1_out_n.BLIF \
+buttoninst_1_width_transinst_un1_out_i_n
+0 1
+.names buttoninst_2_timer_n_24_n.BLIF buttoninst_2_timer_n_24_i_0_n
+0 1
+.names buttoninst_1_debouncer_timer_n_24_n.BLIF \
+buttoninst_1_debouncer_timer_n_24_i_0_n
+0 1
+.names buttoninst_1_debouncer_timer_n_34_n.BLIF \
+buttoninst_1_debouncer_timer_n_34_i_n
+0 1
+.names buttoninst_1_debouncer_timer_n_34_i_n.BLIF \
+buttonInst_1_Debouncer_ControlInst_state_0_.BLIF \
+buttoninst_1_debouncer_timer_n_18_i_n
+11 1
+.names buttonInst_1_Debouncer_Timer_q_1_.BLIF \
+buttonInst_1_Debouncer_Timer_q_2_.BLIF buttoninst_1_debouncer_timer_n_22_0_n
+11 1
+.names buttoninst_1_debouncer_timer_n_22_0_n.BLIF \
+buttonInst_1_Debouncer_Timer_q_3_.BLIF buttoninst_1_debouncer_timer_n_23_0_n
+11 1
+.names buttoninst_2_timer_n_34_n.BLIF buttoninst_2_timer_n_34_i_n
+0 1
+.names buttoninst_2_timer_n_34_i_n.BLIF buttonInst_2_ControlInst_state_0_.BLIF \
+buttoninst_2_timer_n_18_i_n
+11 1
+.names buttonInst_2_Timer_q_1_.BLIF buttonInst_2_Timer_q_2_.BLIF \
+buttoninst_2_timer_n_22_0_n
+11 1
+.names buttoninst_2_timer_n_22_0_n.BLIF buttonInst_2_Timer_q_3_.BLIF \
+buttoninst_2_timer_n_23_0_n
+11 1
+.names ledscaninst_n_29_n.BLIF ledscaninst_n_29_i_n
+0 1
+.names ledscaninst_n_16_i_n.BLIF ledscaninst_n_29_i_n.BLIF \
+ledscaninst_led_a_6_0_n
+11 1
+.names ledscaninst_n_30_n.BLIF ledscaninst_n_30_i_n
+0 1
+.names ledscaninst_n_14_i_n.BLIF ledscaninst_n_30_i_n.BLIF \
+ledscaninst_led_b_6_0_n
+11 1
+.names ledscaninst_n_31_n.BLIF ledscaninst_n_31_i_n
+0 1
+.names ledscaninst_n_14_i_n.BLIF ledscaninst_n_31_i_n.BLIF \
+ledscaninst_led_c_6_0_n
+11 1
+.names ledscaninst_n_32_n.BLIF ledscaninst_n_32_i_n
+0 1
+.names ledscaninst_n_16_i_n.BLIF ledscaninst_n_32_i_n.BLIF \
+ledscaninst_led_d_6_0_n
+11 1
+.names data0_i_1__n.BLIF data0_i_2__n.BLIF ledscaninst_n_13_0_n
+11 1
+.names ledscaninst_n_36_n.BLIF ledscaninst_n_36_i_n
+0 1
+.names ledscaninst_n_36_i_n.BLIF resetOut.BLIF ledscaninst_n_14_i_n
+11 1
+.names ledscaninst_n_43_n.BLIF ledscaninst_n_43_i_n
+0 1
+.names ledscaninst_n_40_n.BLIF ledscaninst_n_40_i_n
+0 1
+.names ledscaninst_n_40_i_n.BLIF ledscaninst_n_43_i_n.BLIF \
+ledscaninst_n_15_0_n
+11 1
+.names ledscaninst_n_37_n.BLIF ledscaninst_n_37_i_n
+0 1
+.names ledscaninst_n_14_i_n.BLIF ledscaninst_n_37_i_n.BLIF \
+ledscaninst_n_16_i_n
+11 1
+.names clkgenerate_scancnt_3_0__n.BLIF clkgenerate_scancnt_3_i_0__n
+0 1
+.names clkgenerate_n_6_n.BLIF clkgenerate_n_6_i_n
+0 1
+.names clkgenerate_n_6_i_n.BLIF clkgenerate_scancnt_3_i_0__n.BLIF \
+clkgenerate_un2_scancnt_1_0_1__n
+11 1
+.names ledscaninst_n_33_n.BLIF ledscaninst_n_33_i_n
+0 1
+.names ledscaninst_n_34_n.BLIF ledscaninst_n_34_i_n
+0 1
+.names ledscaninst_n_35_n.BLIF ledscaninst_n_35_i_n
+0 1
+.names ledscaninst_n_42_n.BLIF ledscaninst_n_42_i_n
+0 1
+.names ledscaninst_led_f_6_0_3_n.BLIF resetOut.BLIF ledscaninst_led_f_6_0_n
+11 1
+.names ledscaninst_n_27_n.BLIF ledscaninst_n_27_i_n
+0 1
+.names ledscaninst_n_28_n.BLIF ledscaninst_n_28_i_n
+0 1
+.names ledscaninst_n_39_n.BLIF ledscaninst_n_39_i_n
+0 1
+.names ledscaninst_led_e_6_0_1_n.BLIF ledscaninst_led_e_6_0_2_n.BLIF \
+ledscaninst_led_e_6_0_n
+11 1
+.names ledscaninst_n_26_n.BLIF ledscaninst_n_26_i_n
+0 1
+.names ledscaninst_n_44_n.BLIF ledscaninst_n_44_i_n
+0 1
+.names ledscaninst_n_45_n.BLIF ledscaninst_n_45_i_n
+0 1
+.names ledscaninst_led_g_6_0_3_n.BLIF selLED_i.BLIF ledscaninst_led_g_6_0_n
+11 1
+.names buttoninst_2_timer_n_29_n.BLIF buttoninst_2_timer_n_29_i_n
+0 1
+.names randomNumGenetate_conter_9_q_3_.BLIF \
+randomnumgenetate_conter_9_q_c1_n.BLIF randomNumGenetate_conter_9_q_n2
+01 1
+10 1
+11 0
+00 0
+.names N_11.BLIF N_10.BLIF randomNumGenetate_conter_9_q_n3
+01 1
+10 1
+11 0
+00 0
+.names randomNumGenetate_conter_9_q_2_.BLIF N_5.BLIF \
+randomNumGenetate_conter_9_q_n1
+01 1
+10 1
+11 0
+00 0
+.names clkGenerate_FreqDivide_q_11_.BLIF clkgenerate_freqdivide_q_c9_n.BLIF \
+clkGenerate_FreqDivide_q_n10
+01 1
+10 1
+11 0
+00 0
+.names clkGenerate_FreqDivide_q_12_.BLIF clkgenerate_freqdivide_q_c10_n.BLIF \
+clkGenerate_FreqDivide_q_n11
+01 1
+10 1
+11 0
+00 0
+.names clkGenerate_FreqDivide_q_13_.BLIF clkgenerate_freqdivide_n_32_n.BLIF \
+clkGenerate_FreqDivide_q_n12
+01 1
+10 1
+11 0
+00 0
+.names clkgenerate_freqdivide_q_c6_n.BLIF clkgenerate_freqdivide_n_23_n.BLIF \
+clkGenerate_FreqDivide_q_n7
+01 1
+10 1
+11 0
+00 0
+.names clkgenerate_freqdivide_q_c7_n.BLIF clkgenerate_freqdivide_n_25_n.BLIF \
+clkGenerate_FreqDivide_q_n8
+01 1
+10 1
+11 0
+00 0
+.names clkgenerate_freqdivide_q_c8_n.BLIF clkgenerate_freqdivide_n_27_n.BLIF \
+clkGenerate_FreqDivide_q_n9
+01 1
+10 1
+11 0
+00 0
+.names clkgenerate_freqdivide_q_c4_n.BLIF clkgenerate_freqdivide_n_19_n.BLIF \
+clkGenerate_FreqDivide_q_n5
+01 1
+10 1
+11 0
+00 0
+.names clkgenerate_freqdivide_q_c5_n.BLIF clkgenerate_freqdivide_n_21_n.BLIF \
+clkGenerate_FreqDivide_q_n6
+01 1
+10 1
+11 0
+00 0
+.names clkgenerate_freqdivide_n_12_n.BLIF clkgenerate_freqdivide_n_13_n.BLIF \
+clkGenerate_FreqDivide_q_n2
+01 1
+10 1
+11 0
+00 0
+.names clkGenerate_FreqDivide_q_4_.BLIF clkgenerate_freqdivide_n_14_n.BLIF \
+clkGenerate_FreqDivide_q_n3
+01 1
+10 1
+11 0
+00 0
+.names clkGenerate_FreqDivide_q_5_.BLIF clkgenerate_freqdivide_q_c3_n.BLIF \
+clkGenerate_FreqDivide_q_n4
+01 1
+10 1
+11 0
+00 0
+.names clkgenerate_freqdivide_n_9_n.BLIF clkgenerate_freqdivide_n_11_n.BLIF \
+clkGenerate_FreqDivide_q_n1
+01 1
+10 1
+11 0
+00 0
+.names buttonInst_2_ControlInst_state_1_.BLIF \
+buttoninst_2_controlinst_state_ns_1_0__n_7_n.BLIF \
+buttonInst_2_ControlInst_state_ns_1_0__m5
+01 1
+10 1
+11 0
+00 0
+.names buttonInst_1_Debouncer_ControlInst_state_1_.BLIF \
+buttoninst_1_debouncer_controlinst_state_ns_1_0__n_7_n.BLIF \
+buttonInst_1_Debouncer_ControlInst_state_ns_1_0__m5
+01 1
+10 1
+11 0
+00 0
+.names buttonInst_2_ControlInst_state_1_.BLIF resetIn_c.BLIF \
+buttonInst_2_ControlInst_state_ns_1_0__m1
+01 1
+10 1
+11 0
+00 0
+.names buttonInst_1_Debouncer_ControlInst_state_1_.BLIF ButtonIn_c.BLIF \
+buttonInst_1_Debouncer_ControlInst_state_ns_1_0__m1
+01 1
+10 1
+11 0
+00 0
+.names LEDscanInst_LED_Areg.BLIF LED_A
+1 1
+0 0
+.names LEDscanInst_LED_Breg.BLIF LED_B
+1 1
+0 0
+.names LEDscanInst_LED_Creg.BLIF LED_C
+1 1
+0 0
+.names LEDscanInst_LED_Dreg.BLIF LED_D
+1 1
+0 0
+.names LEDscanInst_LED_Ereg.BLIF LED_E
+1 1
+0 0
+.names LEDscanInst_LED_Freg.BLIF LED_F
+1 1
+0 0
+.names LEDscanInst_LED_Greg.BLIF LED_G
+1 1
+0 0
+.names LEDscanInst_LED_VCC1reg.BLIF LED_VCC1
+1 1
+0 0
+.names gnd_n_n.BLIF LED_VCC2
+1 1
+0 0
+.names LEDscanInst_LED_VCC3reg.BLIF LED_VCC3
+1 1
+0 0
+.names LEDscanInst_LED_VCC4reg.BLIF LED_VCC4
+1 1
+0 0
+.names randomNumGenetate_oddreg.BLIF light_1
+1 1
+0 0
+.names light_1_i.BLIF light_2
+1 1
+0 0
+.names buttoninst_1_debouncer_timer_n_24_i_0_n.BLIF \
+buttonInst_1_Debouncer_Timer_q_3_.CE
+1 1
+0 0
+.names clk_c.BLIF buttonInst_1_Debouncer_Timer_q_3_.C
+1 1
+0 0
+.names buttoninst_1_debouncer_timer_n_24_i_0_n.BLIF \
+buttonInst_1_Debouncer_Timer_q_4_.CE
+1 1
+0 0
+.names clk_c.BLIF buttonInst_1_Debouncer_Timer_q_4_.C
+1 1
+0 0
+.names buttoninst_1_debouncer_timer_n_24_i_0_n.BLIF \
+buttonInst_1_Debouncer_Timer_q_1_.CE
+1 1
+0 0
+.names clk_c.BLIF buttonInst_1_Debouncer_Timer_q_1_.C
+1 1
+0 0
+.names buttoninst_1_debouncer_timer_n_24_i_0_n.BLIF \
+buttonInst_1_Debouncer_Timer_q_2_.CE
+1 1
+0 0
+.names clk_c.BLIF buttonInst_1_Debouncer_Timer_q_2_.C
+1 1
+0 0
+.names buttonInst_1_Debouncer_ControlInst_state_ns_1_0__m5.BLIF \
+buttonInst_1_Debouncer_ControlInst_state_1_.D
+1 1
+0 0
+.names clk_c.BLIF buttonInst_1_Debouncer_ControlInst_state_1_.C
+1 1
+0 0
+.names clk_c.BLIF buttonInst_1_Debouncer_ControlInst_state_0_.C
+1 1
+0 0
+.names buttoninst_1_debouncer_out_n.BLIF buttonInst_1_Width_TransInst_q.D
+1 1
+0 0
+.names clk_c.BLIF buttonInst_1_Width_TransInst_q.C
+1 1
+0 0
+.names buttoninst_2_timer_n_24_i_0_n.BLIF buttonInst_2_Timer_q_3_.CE
+1 1
+0 0
+.names clk_c.BLIF buttonInst_2_Timer_q_3_.C
+1 1
+0 0
+.names buttoninst_2_timer_n_24_i_0_n.BLIF buttonInst_2_Timer_q_4_.CE
+1 1
+0 0
+.names clk_c.BLIF buttonInst_2_Timer_q_4_.C
+1 1
+0 0
+.names buttoninst_2_timer_n_24_i_0_n.BLIF buttonInst_2_Timer_q_1_.CE
+1 1
+0 0
+.names clk_c.BLIF buttonInst_2_Timer_q_1_.C
+1 1
+0 0
+.names buttoninst_2_timer_n_24_i_0_n.BLIF buttonInst_2_Timer_q_2_.CE
+1 1
+0 0
+.names clk_c.BLIF buttonInst_2_Timer_q_2_.C
+1 1
+0 0
+.names buttonInst_2_ControlInst_state_ns_1_0__m5.BLIF \
+buttonInst_2_ControlInst_state_1_.D
+1 1
+0 0
+.names clk_c.BLIF buttonInst_2_ControlInst_state_1_.C
+1 1
+0 0
+.names clk_c.BLIF buttonInst_2_ControlInst_state_0_.C
+1 1
+0 0
+.names clkGenerate_FreqDivide_q_n10.BLIF clkGenerate_FreqDivide_q_11_.D
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_11_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_11_.C
+1 1
+0 0
+.names clkGenerate_FreqDivide_q_n11.BLIF clkGenerate_FreqDivide_q_12_.D
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_12_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_12_.C
+1 1
+0 0
+.names clkGenerate_FreqDivide_q_n12.BLIF clkGenerate_FreqDivide_q_13_.D
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_13_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_13_.C
+1 1
+0 0
+.names clkGenerate_FreqDivide_q_n7.BLIF clkGenerate_FreqDivide_q_8_.D
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_8_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_8_.C
+1 1
+0 0
+.names clkGenerate_FreqDivide_q_n8.BLIF clkGenerate_FreqDivide_q_9_.D
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_9_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_9_.C
+1 1
+0 0
+.names clkGenerate_FreqDivide_q_n9.BLIF clkGenerate_FreqDivide_q_10_.D
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_10_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_10_.C
+1 1
+0 0
+.names clkGenerate_FreqDivide_q_n5.BLIF clkGenerate_FreqDivide_q_6_.D
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_6_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_6_.C
+1 1
+0 0
+.names clkGenerate_FreqDivide_q_n6.BLIF clkGenerate_FreqDivide_q_7_.D
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_7_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_7_.C
+1 1
+0 0
+.names clkGenerate_FreqDivide_q_n2.BLIF clkGenerate_FreqDivide_q_3_.D
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_3_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_3_.C
+1 1
+0 0
+.names clkGenerate_FreqDivide_q_n3.BLIF clkGenerate_FreqDivide_q_4_.D
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_4_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_4_.C
+1 1
+0 0
+.names clkGenerate_FreqDivide_q_n4.BLIF clkGenerate_FreqDivide_q_5_.D
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_5_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_5_.C
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_1_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_1_.C
+1 1
+0 0
+.names clkGenerate_FreqDivide_q_n1.BLIF clkGenerate_FreqDivide_q_2_.D
+1 1
+0 0
+.names vcc_n_n.BLIF clkGenerate_FreqDivide_q_2_.CE
+1 1
+0 0
+.names clk_c.BLIF clkGenerate_FreqDivide_q_2_.C
+1 1
+0 0
+.names clkgenerate_scancnt_3_0__n.BLIF clkGenerate_scancnt_0_.D
+1 1
+0 0
+.names pulse1kHz.BLIF clkGenerate_scancnt_0_.C
+1 1
+0 0
+.names pulse1kHz.BLIF clkGenerate_scancnt_1_.C
+1 1
+0 0
+.names pulse1kHz.BLIF LEDscanInst_LED_Areg.C
+1 1
+0 0
+.names pulse1kHz.BLIF LEDscanInst_LED_Breg.C
+1 1
+0 0
+.names pulse1kHz.BLIF LEDscanInst_LED_Creg.C
+1 1
+0 0
+.names pulse1kHz.BLIF LEDscanInst_LED_Dreg.C
+1 1
+0 0
+.names pulse1kHz.BLIF LEDscanInst_LED_Ereg.C
+1 1
+0 0
+.names pulse1kHz.BLIF LEDscanInst_LED_Freg.C
+1 1
+0 0
+.names pulse1kHz.BLIF LEDscanInst_LED_Greg.C
+1 1
+0 0
+.names gnd_n_n.BLIF LEDscanInst_LED_VCC1reg.D
+1 1
+0 0
+.names pulse1kHz.BLIF LEDscanInst_LED_VCC1reg.C
+1 1
+0 0
+.names pulse1kHz.BLIF LEDscanInst_LED_VCC3reg.C
+1 1
+0 0
+.names pulse1kHz.BLIF LEDscanInst_LED_VCC4reg.C
+1 1
+0 0
+.names randomNumGenetate_conter_9_q_n2.BLIF randomNumGenetate_conter_9_q_3_.D
+1 1
+0 0
+.names vcc_n_n.BLIF randomNumGenetate_conter_9_q_3_.CE
+1 1
+0 0
+.names clk_low_c.BLIF randomNumGenetate_conter_9_q_3_.C
+1 1
+0 0
+.names randomNumGenetate_conter_9_q_n3.BLIF randomNumGenetate_conter_9_q_4_.D
+1 1
+0 0
+.names vcc_n_n.BLIF randomNumGenetate_conter_9_q_4_.CE
+1 1
+0 0
+.names clk_low_c.BLIF randomNumGenetate_conter_9_q_4_.C
+1 1
+0 0
+.names randomNumGenetate_conter_9_q_2_.BLIF randomNumGenetate_num_1_.D
+1 1
+0 0
+.names buttoninst_1_width_transinst_un1_out_i_n.BLIF \
+randomNumGenetate_num_1_.C
+1 1
+0 0
+.names randomNumGenetate_conter_9_q_3_.BLIF randomNumGenetate_num_2_.D
+1 1
+0 0
+.names buttoninst_1_width_transinst_un1_out_i_n.BLIF \
+randomNumGenetate_num_2_.C
+1 1
+0 0
+.names randomNumGenetate_conter_9_q_4_.BLIF randomNumGenetate_num_3_.D
+1 1
+0 0
+.names buttoninst_1_width_transinst_un1_out_i_n.BLIF \
+randomNumGenetate_num_3_.C
+1 1
+0 0
+.names vcc_n_n.BLIF randomNumGenetate_conter_9_q_1_.CE
+1 1
+0 0
+.names clk_low_c.BLIF randomNumGenetate_conter_9_q_1_.C
+1 1
+0 0
+.names randomNumGenetate_conter_9_q_n1.BLIF randomNumGenetate_conter_9_q_2_.D
+1 1
+0 0
+.names vcc_n_n.BLIF randomNumGenetate_conter_9_q_2_.CE
+1 1
+0 0
+.names clk_low_c.BLIF randomNumGenetate_conter_9_q_2_.C
+1 1
+0 0
+.names randomNumGenetate_conter_9_q_1_.BLIF randomNumGenetate_oddreg.D
+1 1
+0 0
+.names buttoninst_1_width_transinst_un1_out_i_n.BLIF \
+randomNumGenetate_oddreg.C
+1 1
+0 0
+.names clk.BLIF clk_c
+1 1
+0 0
+.names clk_low.BLIF clk_low_c
+1 1
+0 0
+.names resetIn.BLIF resetIn_c
+1 1
+0 0
+.names ButtonIn.BLIF ButtonIn_c
+1 1
+0 0
+.end

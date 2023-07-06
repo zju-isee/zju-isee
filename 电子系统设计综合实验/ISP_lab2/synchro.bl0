@@ -1,0 +1,21 @@
+#$ DATE Fri Apr 21 11:12:53 2023
+#$ TOOL EDIF2BLIF version IspLever 1.0 
+#$ MODULE synchro
+#$ PINS 3 async_in clk sync_out
+#$ NODES 3 D1_q_1_ clk_c D2_q_1_reg 
+.model synchro
+.inputs async_in.BLIF clk.BLIF D1_q_1_.BLIF clk_c.BLIF D2_q_1_reg.BLIF  
+.outputs sync_out D1_q_1_.D D1_q_1_.C D2_q_1_reg.D D2_q_1_reg.C clk_c
+.names  async_in.BLIF D1_q_1_.D
+1 1
+.names  clk.BLIF clk_c
+1 1
+.names  D2_q_1_reg.BLIF sync_out
+1 1
+.names  clk_c.BLIF D1_q_1_.C
+1 1
+.names  clk_c.BLIF D2_q_1_reg.C
+1 1
+.names  D1_q_1_.BLIF D2_q_1_reg.D
+1 1
+.end

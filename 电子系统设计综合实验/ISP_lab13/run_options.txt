@@ -1,0 +1,66 @@
+#--  Synopsys, Inc.
+#--  Version I-2014.03LC 
+#--  Project file D:\myducuments\_junior_1\electricsystemdesign\isp_lab13\run_options.txt
+#--  Written on Mon May 29 11:06:26 2023
+
+
+#project files
+add_file -verilog "D:/ispLEVER_Classic2_1/ispcpld/../cae_library/synthesis/verilog/mach.v"
+add_file -verilog "./isp_lab13.h"
+add_file -verilog "./temp.v"
+
+
+
+#implementation: "isp_lab13"
+impl -add isp_lab13 -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+set_option -num_critical_paths 3
+set_option -num_startend_points 0
+
+#device options
+set_option -technology ispmach4000b
+set_option -part LC4064B
+set_option -package T44C
+set_option -speed_grade -2.5
+set_option -part_companion ""
+
+#compilation/mapping options
+set_option -top_module "LCD"
+
+# mapper_options
+set_option -frequency 200
+set_option -auto_constrain_io 1
+set_option -write_verilog 0
+set_option -write_vhdl 0
+set_option -srs_instrumentation 1
+
+# Lattice ispMACH4000
+set_option -maxfanin 20
+set_option -RWCheckOnRam 1
+set_option -maxterms 16
+set_option -areadelay 0
+set_option -disable_io_insertion 0
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 1
+set_option -resource_sharing 1
+
+# Compiler Options
+set_option -auto_infer_blackbox 0
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "./LCD.edi"
+
+#set log file 
+set_option log_file "D:/myducuments/_junior_1/electricsystemdesign/isp_lab13/lcd.srf" 
+impl -active "isp_lab13"

@@ -1,0 +1,1755 @@
+<HTML>
+<HEAD><TITLE>HTML_REPORT_FILE</TITLE>
+<STYLE TYPE="text/css">
+<!--
+.blink {text-decoration:blink}
+.ms  {font-size: 10pt; font-family: monospace; font-weight: normal}
+.msb {font-size: 10pt; font-family: monospace; font-weight: bold  }
+-->
+</STYLE>
+</HEAD>
+<PRE>
+<A name="Top"></A><H2 align=center> ispLEVER Classic 2.1.00.02.49.20 Fitter Report File </H2>
+<H2 align=center>Copyright(C), 1992-2012, Lattice Semiconductor Corporation</H2>
+<H2 align=center>All Rights Reserved</H2>
+
+
+The Basic/Detailed Report Format can be selected in the dialog box
+Tools->Fitter Report File Format...
+
+<A name="Project_Summary"></A><FONT COLOR=maroon><U><B><big>Project_Summary</big></B></U></FONT>
+<BR>
+Project Name         :  isp_lab11
+Project Path         :  D:\MyDucuments\_Junior_1\ElectricSystemDesign\ISP_lab11
+Project Fitted on    :  Fri Jun 02 08:33:19 2023
+
+Device               :  M4256_64
+Package              :  100
+GLB Input Mux Size   :  33
+Available Blocks     :  16
+Speed                :  -7.5
+Part Number          :  LC4256V-75T100I
+Source Format        :  Schematic_Verilog_HDL
+
+
+<font color=green size=4><span class=blink><strong><B>Project 'isp_lab11' Fit Successfully!</B></strong></span></font>
+
+
+<A name="Compilation_Times"></A><FONT COLOR=maroon><U><B><big>Compilation_Times</big></B></U></FONT>
+<BR>
+Prefit Time                     0 secs
+Load Design Time                0.06 secs
+Partition Time                  0.06 secs
+Place Time                      0.00 secs
+Route Time                      0.00 secs
+Total Fit Time                  00:00:01
+
+
+<A name="Design_Summary"></A><FONT COLOR=maroon><U><B><big>Design_Summary</big></B></U></FONT>
+<BR>
+Total Input Pins                8
+Total Logic Functions           88
+  Total Output Pins             16
+  Total Bidir I/O Pins          1
+  Total Buried Nodes            71
+Total Flip-Flops                83
+  Total D Flip-Flops            65
+  Total T Flip-Flops            18
+  Total Latches                 0
+Total Product Terms             488
+
+Total Reserved Pins             0
+Total Locked Pins               25
+Total Locked Nodes              0
+
+Total Unique Output Enables     1
+Total Unique Clocks             3
+Total Unique Clock Enables      9
+Total Unique Resets             1
+Total Unique Presets            0
+
+Fmax Logic Levels               2
+
+
+<A name="Device_Resource_Summary"></A><FONT COLOR=maroon><U><B><big>Device_Resource_Summary</big></B></U></FONT>
+<BR>
+<B>                                 Device
+                                 Total    Used   Not Used   Utilization
+-----------------------------------------------------------------------
+</B>Dedicated Pins
+  Clock/Input Pins                  4        2      2    -->    50
+  Input-Only Pins                   6        0      6    -->     0
+  I/O / Enable Pins                 2        0      2    -->     0
+I/O Pins                           62       23     39    -->    37
+Logic Functions                   256       88    168    -->    34
+  Input Registers                  64        0     64    -->     0
+
+GLB Inputs                        576      288    288    -->    50
+Logical Product Terms            1280      366    914    -->    28
+Occupied GLBs                      16       16      0    -->   100
+Macrocells                        256       88    168    -->    34
+
+Control Product Terms:
+  GLB Clock/Clock Enables          16       15      1    -->    93
+  GLB Reset/Presets                16        0     16    -->     0
+  Macrocell Clocks                256        3    253    -->     1
+  Macrocell Clock Enables         256       27    229    -->    10
+  Macrocell Enables               256        0    256    -->     0
+  Macrocell Resets                256        0    256    -->     0
+  Macrocell Presets               256        0    256    -->     0
+
+Global Routing Pool               324       84    240    -->    25
+  GRP from IFB                     ..        8     ..    -->    ..
+    (from input signals)           ..        7     ..    -->    ..
+    (from output signals)          ..        0     ..    -->    ..
+    (from bidir signals)           ..        1     ..    -->    ..
+  GRP from MFB                     ..       76     ..    -->    ..
+----------------------------------------------------------------------
+
+&lt;Note&gt; 1 : The available PT is the product term that has not been used.
+&lt;Note&gt; 2 : IFB is I/O feedback.
+&lt;Note&gt; 3 : MFB is macrocell feedback.
+
+
+<A name="GLB_Resource_Summary"></A><FONT COLOR=maroon><U><B><big>GLB_Resource_Summary</big></B></U></FONT>
+<BR>
+<B>                                                                                     # of PT
+               ---  Fanin  ---    I/O    Input  Macrocells       Macrocells   Logic  clusters
+             Unique Shared Total  Pins    Regs Used Inaccessible  available    PTs   used
+-------------------------------------------------------------------------------------------
+Maximum
+  GLB                      36      *(1)     8   --     --             16       80       16
+</B>-------------------------------------------------------------------------------------------
+  GLB    A      2     5     7      0/4      0    9      0              7       16        9
+  GLB    B      0    10    10      0/4      0    3      0             13       19        5
+  GLB    C     19     0    19      2/4      0    2      4             10       37        8
+  GLB    D     10     4    14      4/4      0    3      0             13       15        4
+-------------------------------------------------------------------------------------------
+  GLB    E      2    15    17      0/4      0    7      0              9       25        7
+  GLB    F      0    20    20      2/4      0    9      0              7       32       10
+  GLB    G      3    14    17      2/4      0    6      0             10       16        7
+  GLB    H      0    11    11      0/4      0    2      0             14       24        5
+-------------------------------------------------------------------------------------------
+  GLB    I      7     8    15      0/4      0    6      0             10       19        6
+  GLB    J      0    25    25      2/4      0   10      1              5       30       11
+  GLB    K      8    22    30      3/4      0    9      0              7       24        9
+  GLB    L      0    24    24      3/4      0    3      0             13       24        6
+-------------------------------------------------------------------------------------------
+  GLB    M      0    26    26      3/4      0    5      0             11       24        7
+  GLB    N      0    16    16      1/4      0    6      0             10       17        6
+  GLB    O     17    10    27      1/4      0    3      1             12       25        7
+  GLB    P      2     8    10      0/4      0    5      0             11       19        6
+-------------------------------------------------------------------------------------------
+TOTALS:        70   218   288     23/64     0   88      6            162      366      113
+
+&lt;Note&gt; 1 : For ispMACH 4000 devices, the number of IOs depends on the GLB.
+&lt;Note&gt; 2 : Four rightmost columns above reflect last status of the placement process.
+
+
+<A name="GLB_Control_Summary"></A><FONT COLOR=maroon><U><B><big>GLB_Control_Summary</big></B></U></FONT>
+<BR>
+<B>           Shared Shared | Mcell  Mcell  Mcell  Mcell  Mcell 
+           Clk/CE Rst/Pr | Clock  CE     Enable Reset  Preset
+------------------------------------------------------------------------------
+Maximum
+  GLB        1      1        16     16     16     16     16  
+==============================================================================
+</B>  GLB    A   0      0         0      0      0      0      0
+  GLB    B   1      0         0      0      0      0      0
+  GLB    C   1      0         0      1      0      0      0
+  GLB    D   1      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    E   1      0         0      7      0      0      0
+  GLB    F   1      0         2      6      0      0      0
+  GLB    G   1      0         0      0      0      0      0
+  GLB    H   1      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    I   1      0         0      2      0      0      0
+  GLB    J   1      0         0      0      0      0      0
+  GLB    K   1      0         0      5      0      0      0
+  GLB    L   1      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    M   1      0         0      2      0      0      0
+  GLB    N   1      0         0      4      0      0      0
+  GLB    O   1      0         1      0      0      0      0
+  GLB    P   1      0         0      0      0      0      0
+------------------------------------------------------------------------------
+
+&lt;Note&gt; 1 : For ispMACH 4000 devices, the number of output enables depends on the GLB.
+
+
+<A name="Optimizer_and_Fitter_Options"></A><FONT COLOR=maroon><U><B><big>Optimizer_and_Fitter_Options</big></B></U></FONT>
+<BR>
+Pin Assignment :                       Yes
+Group Assignment :                     No
+Pin Reservation :                      No
+
+@Ignore_Project_Constraints :
+  Pin Assignments :                    No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+  Group Assignments :                  No
+  Macrocell Assignment :               No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+
+@Backannotate_Project_Constraints
+  Pin Assignments :                    No
+  Pin And Block Assignments :          No
+  Pin, Macrocell and Block :           No
+
+@Timing_Constraints :                  No
+
+@Global_Project_Optimization :
+  Balanced Partitioning :              Yes
+  Spread Placement :                   Yes
+
+  Note :
+    Pack Design :
+       Balanced Partitioning = No
+       Spread Placement      = No
+    Spread Design :
+       Balanced Partitioning = Yes
+       Spread Placement      = Yes
+
+
+@Logic_Synthesis :
+  Logic Reduction :                    Yes
+  Node Collapsing :                    FMAX
+  Fmax_Logic_Level :                   1
+  D/T Synthesis :                      Yes
+  XOR Synthesis :                      Yes
+  Max. P-Term for Collapsing :         16
+  Max. P-Term for Splitting :          80
+  Max Symbols :                        24
+
+@Utilization_options
+  Max. % of Macrocells used :          100
+@Usercode                               (HEX)
+@IO_Types                              Default = LVCMOS18 (2)
+@Output_Slew_Rate                      Default = FAST (2)
+@Power                                 Default = HIGH (2)
+@Pull                                  Default = PULLUP_UP (2)
+@Fast_Bypass                           Default = None (2)
+@ORP_Bypass                            Default = None
+@Input_Registers                       Default = None (2)
+@Register_Powerup                      Default = None
+
+Device Options:
+&lt;Note&gt; 1 : Reserved unused I/Os can be independently driven to Low or High, and does not
+           follow the drive level set for the Global Configure Unused I/O Option.
+&lt;Note&gt; 2 : For user-specified constraints on individual signals, refer to the Output,
+           Bidir and Buried Signal Lists.
+
+
+<A name="Pinout_Listing"></A><FONT COLOR=maroon><U><B><big>Pinout_Listing</big></B></U></FONT>
+<BR>
+<B>      | Pin   | Bank |GLB |Assigned|                 | Signal|
+Pin No| Type  |Number|Pad |Pin     |     I/O Type    | Type  | Signal name
+</B>----------------------------------------------------------------------------------------------
+1     | GND   |   -  |    |        |                 |       |
+2     | TDI   |   -  |    |        |                 |       |
+3     |  I_O  |   0  |C12 |        |                 |       |
+4     |  I_O  |   0  |C10 |        |                 |       |
+5     |  I_O  |   0  |C6  |    *   |LVCMOS18         | Bidir |<A href=#28>SDA</A>
+6     |  I_O  |   0  |C2  |    *   |LVCMOS18         | Output|<A href=#30>SCL</A>
+7     |GNDIO0 |   -  |    |        |                 |       |
+8     |  I_O  |   0  |D12 |    *   |LVCMOS18         | Input |<A href=#11>key_in_0_0_</A>
+9     |  I_O  |   0  |D10 |    *   |LVCMOS18         | Input |<A href=#10>key_in_0_1_</A>
+10    |  I_O  |   0  |D6  |    *   |LVCMOS18         | Input |<A href=#9>key_in_0_2_</A>
+11    |  I_O  |   0  |D4  |    *   |LVCMOS18         | Input |<A href=#6>key_in_0_3_</A>
+12    | IN0   |   0  |    |        |                 |       |
+13    |VCCIO0 |   -  |    |        |                 |       |
+14    |  I_O  |   0  |E4  |        |                 |       |
+15    |  I_O  |   0  |E6  |        |                 |       |
+16    |  I_O  |   0  |E10 |        |                 |       |
+17    |  I_O  |   0  |E12 |        |                 |       |
+18    |GNDIO0 |   -  |    |        |                 |       |
+19    |  I_O  |   0  |F2  |        |                 |       |
+20    |  I_O  |   0  |F6  |        |                 |       |
+21    |  I_O  |   0  |F10 |    *   |LVCMOS18         | Output|<A href=#29>key_out_0_</A>
+22    |  I_O  |   0  |F12 |    *   |LVCMOS18         | Output|<A href=#27>key_out_1_</A>
+23    | IN1   |   0  |    |        |                 |       |
+24    | TCK   |   -  |    |        |                 |       |
+25    | VCC   |   -  |    |        |                 |       |
+26    | GND   |   -  |    |        |                 |       |
+27    | IN2   |   0  |    |        |                 |       |
+28    |  I_O  |   0  |G12 |    *   |LVCMOS18         | Output|<A href=#25>key_out_2_</A>
+29    |  I_O  |   0  |G10 |    *   |LVCMOS18         | Output|<A href=#14>key_out_3_</A>
+30    |  I_O  |   0  |G6  |        |                 |       |
+31    |  I_O  |   0  |G2  |        |                 |       |
+32    |GNDIO0 |   -  |    |        |                 |       |
+33    |VCCIO0 |   -  |    |        |                 |       |
+34    |  I_O  |   0  |H12 |        |                 |       |
+35    |  I_O  |   0  |H10 |        |                 |       |
+36    |  I_O  |   0  |H6  |        |                 |       |
+37    |  I_O  |   0  |H2  |        |                 |       |
+38    |INCLK1 |   0  |    |    *   |LVCMOS18         | Input |<A href=#8>reset</A>
+39    |INCLK2 |   1  |    |        |                 |       |
+40    | VCC   |   -  |    |        |                 |       |
+41    |  I_O  |   1  |I2  |        |                 |       |
+42    |  I_O  |   1  |I6  |        |                 |       |
+43    |  I_O  |   1  |I10 |        |                 |       |
+44    |  I_O  |   1  |I12 |        |                 |       |
+45    |VCCIO1 |   -  |    |        |                 |       |
+46    |GNDIO1 |   -  |    |        |                 |       |
+47    |  I_O  |   1  |J2  |        |                 |       |
+48    |  I_O  |   1  |J6  |    *   |LVCMOS18         | Input |<A href=#12>CMD_RD</A>
+49    |  I_O  |   1  |J10 |    *   |LVCMOS18         | Input |<A href=#13>CMD_WR</A>
+50    |  I_O  |   1  |J12 |        |                 |       |
+51    | GND   |   -  |    |        |                 |       |
+52    | TMS   |   -  |    |        |                 |       |
+53    |  I_O  |   1  |K12 |        |                 |       |
+54    |  I_O  |   1  |K10 |    *   |LVCMOS18         | Output|<A href=#26>LED_VCC4</A>
+55    |  I_O  |   1  |K6  |    *   |LVCMOS18         | Output|<A href=#24>LED_VCC3</A>
+56    |  I_O  |   1  |K2  |    *   |LVCMOS18         | Output|<A href=#16>LED_B</A>
+57    |GNDIO1 |   -  |    |        |                 |       |
+58    |  I_O  |   1  |L12 |    *   |LVCMOS18         | Output|<A href=#21>LED_G</A>
+59    |  I_O  |   1  |L10 |        |                 |       |
+60    |  I_O  |   1  |L6  |    *   |LVCMOS18         | Output|<A href=#20>LED_F</A>
+61    |  I_O  |   1  |L4  |    *   |LVCMOS18         | Output|<A href=#15>LED_A</A>
+62    | IN3   |   1  |    |        |                 |       |
+63    |VCCIO1 |   -  |    |        |                 |       |
+64    |  I_O  |   1  |M4  |    *   |LVCMOS18         | Output|<A href=#18>LED_D</A>
+65    |  I_O  |   1  |M6  |    *   |LVCMOS18         | Output|<A href=#19>LED_E</A>
+66    |  I_O  |   1  |M10 |    *   |LVCMOS18         | Output|<A href=#17>LED_C</A>
+67    |  I_O  |   1  |M12 |        |                 |       |
+68    |GNDIO1 |   -  |    |        |                 |       |
+69    |  I_O  |   1  |N2  |        |                 |       |
+70    |  I_O  |   1  |N6  |        |                 |       |
+71    |  I_O  |   1  |N10 |        |                 |       |
+72    |  I_O  |   1  |N12 |    *   |LVCMOS18         | Output|<A href=#22>LED_VCC1</A>
+73    | IN4   |   1  |    |        |                 |       |
+74    | TDO   |   -  |    |        |                 |       |
+75    | VCC   |   -  |    |        |                 |       |
+76    | GND   |   -  |    |        |                 |       |
+77    | IN5   |   1  |    |        |                 |       |
+78    |  I_O  |   1  |O12 |    *   |LVCMOS18         | Output|<A href=#23>LED_VCC2</A>
+79    |  I_O  |   1  |O10 |        |                 |       |
+80    |  I_O  |   1  |O6  |        |                 |       |
+81    |  I_O  |   1  |O2  |        |                 |       |
+82    |GNDIO1 |   -  |    |        |                 |       |
+83    |VCCIO1 |   -  |    |        |                 |       |
+84    |  I_O  |   1  |P12 |        |                 |       |
+85    |  I_O  |   1  |P10 |        |                 |       |
+86    |  I_O  |   1  |P6  |        |                 |       |
+87    | I_O/OE|   1  |P2  |        |                 |       |
+88    |INCLK3 |   1  |    |    *   |LVCMOS18         | Input |<A href=#7>clk</A>
+89    |INCLK0 |   0  |    |        |                 |       |
+90    | VCC   |   -  |    |        |                 |       |
+91    | I_O/OE|   0  |A2  |        |                 |       |
+92    |  I_O  |   0  |A6  |        |                 |       |
+93    |  I_O  |   0  |A10 |        |                 |       |
+94    |  I_O  |   0  |A12 |        |                 |       |
+95    |VCCIO0 |   -  |    |        |                 |       |
+96    |GNDIO0 |   -  |    |        |                 |       |
+97    |  I_O  |   0  |B2  |        |                 |       |
+98    |  I_O  |   0  |B6  |        |                 |       |
+99    |  I_O  |   0  |B10 |        |                 |       |
+100   |  I_O  |   0  |B12 |        |                 |       |
+----------------------------------------------------------------------------------------------
+
+&lt;Note&gt; GLB Pad : This notation refers to the GLB I/O pad number in the device.
+&lt;Note&gt; Assigned Pin : user or dedicated input assignment (E.g. Clock pins).
+&lt;Note&gt; Pin Type : 
+          ClkIn : Dedicated input or clock pin 
+           CLK  : Dedicated clock pin
+           I_O  : Input/Output pin
+           INP  : Dedicated input pin
+           JTAG : JTAG Control and test pin
+           NC   : No connected
+
+
+<A name="Input_Signal_List"></A><FONT COLOR=maroon><U><B><big>Input_Signal_List</big></B></U></FONT>
+<BR>
+<B>                Input
+         Pin    Fanout
+ Pin GLB Type                       Pullup Signal
+</B>------------------------------------------------------
+  48   J  I/O   1  ---------J------      Up <A name=12>CMD_RD</A>
+  49   J  I/O   1  ---------J------      Up <A name=13>CMD_WR</A>
+  88  -- INCLK     ----------------      Up <A name=7>clk</A>
+   8   D  I/O   1  ---------------P      Up <A name=11>key_in_0_0_</A>
+   9   D  I/O   1  ---------------P      Up <A name=10>key_in_0_1_</A>
+  10   D  I/O   1  ---------------P      Up <A name=9>key_in_0_2_</A>
+  11   D  I/O   1  ---------------P      Up <A name=6>key_in_0_3_</A>
+  38  -- INCLK  15 ABCDEFGH-JKLMNOP      Up <A name=8>reset</A>
+------------------------------------------------------
+
+
+<A name="Output_Signal_List"></A><FONT COLOR=maroon><U><B><big>Output_Signal_List</big></B></U></FONT>
+<BR>
+<B>          I         C      P R P       O Output
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+</B>-----------------------------------------------------------------------------------
+  61   L 24  1   8  2 DFF      R            ----------------  Fast     Up <A href=#15>LED_A</A>
+  56   K 24  1   8  2 DFF      R            ----------------  Fast     Up <A href=#16>LED_B</A>
+  66   M 24  1   6  2 DFF      R            ----------------  Fast     Up <A href=#17>LED_C</A>
+  64   M 24  1  10  2 DFF      R            ----------------  Fast     Up <A href=#18>LED_D</A>
+  65   M 24  1   4  1 DFF      R            ----------------  Fast     Up <A href=#19>LED_E</A>
+  60   L 24  1   8  2 DFF      R            ----------------  Fast     Up <A href=#20>LED_F</A>
+  58   L 24  1   8  2 DFF      R            ----------------  Fast     Up <A href=#21>LED_G</A>
+  72   N 16  1   1  1 DFF      R            ----------------  Fast     Up <A href=#22>LED_VCC1</A>
+  78   O 16  1   2  1 DFF      R            ----------------  Fast     Up <A href=#23>LED_VCC2</A>
+  55   K 16  1   1  1 DFF      R            ----------------  Fast     Up <A href=#24>LED_VCC3</A>
+  54   K 16  1   1  1 DFF      R            ----------------  Fast     Up <A href=#26>LED_VCC4</A>
+   6   C  2  1   2  1 DFF      R *          ----------------  Fast     Up <A href=#30>SCL</A>
+  21   F  6  1   1  1 DFF      R         1  ---------------P  Fast     Up <A href=#29>key_out_0_</A>
+  22   F  6  1   1  1 DFF      R         1  ---------------P  Fast     Up <A href=#27>key_out_1_</A>
+  28   G  6  1   1  1 DFF      R         1  ---------------P  Fast     Up <A href=#25>key_out_2_</A>
+  29   G  6  1   1  1 DFF      R         1  ---------------P  Fast     Up <A href=#14>key_out_3_</A>
+-----------------------------------------------------------------------------------
+
+&lt;Note&gt; CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+<A name="Bidir_Signal_List"></A><FONT COLOR=maroon><U><B><big>Bidir_Signal_List</big></B></U></FONT>
+<BR>
+<B>          I         C      P R P       O Bidir
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+</B>-------------------------------------------------------------------------------
+   5   C 17  1  35  7 DFF      R * *     1  --------I-------  Fast     Up <A href=#28>SDA</A>
+-------------------------------------------------------------------------------
+
+&lt;Note&gt; CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+<A name="Buried_Signal_List"></A><FONT COLOR=maroon><U><B><big>Buried_Signal_List</big></B></U></FONT>
+<BR>
+<B>        I         C      P R P       Node
+        N         L Mc   R E U C I F Fanout
+Mc GLB  P LL PTs  S Type E S P E R P                     Signal
+</B>----------------------------------------------------------------------------------------
+ 1   K  4  1   3  1 DFF      R *     3  ----------KLM---  <A href=#37>I2CInst_DataLED_0_</A>
+12   O 10  -   2  1 COM              2  --------I-K-----  <A href=#99>I2CInst_DataLED_0__0</A>
+ 4   K  4  1   3  1 DFF      R *     3  ----------KLM---  <A href=#38>I2CInst_DataLED_1_</A>
+ 5   I  4  1   3  1 DFF      R *     3  ----------KLM---  <A href=#39>I2CInst_DataLED_2_</A>
+ 5   K  4  1   3  1 DFF      R *     3  ----------KLM---  <A href=#40>I2CInst_DataLED_3_</A>
+ 9   O 12  1  21  5 DFF      R *     3  --C----H------O-  <A href=#81>I2CInst_Flag_RW</A>
+ 7   I  6  1   3  1 DFF      R *     2  --------I-K-----  <A href=#75>I2CInst_RdData_0_</A>
+ 9   G  7  -   3  1 COM              1  --------I-------  <A href=#100>I2CInst_RdData_0__0</A>
+ 1   I  7  1   4  1 DFF      R *     2  --------I-K-----  <A href=#76>I2CInst_RdData_1_</A>
+ 3   I  7  1   4  1 DFF      R *     1  --------I-------  <A href=#77>I2CInst_RdData_2_</A>
+ 9   I  6  1   3  1 DFF      R *     2  --------I-K-----  <A href=#78>I2CInst_RdData_3_</A>
+ 3   M  4  1   2  1 DFF      R *     1  --C-------------  <A href=#84>I2CInst_WrData_0_</A>
+ 3   K  4  1   2  1 DFF      R *     1  --C-------------  <A href=#85>I2CInst_WrData_1_</A>
+11   M  4  1   2  1 DFF      R *     1  --C-------------  <A href=#86>I2CInst_WrData_2_</A>
+ 9   K  4  1   2  1 DFF      R *     1  --C-------------  <A href=#87>I2CInst_WrData_3_</A>
+ 3   H 11  1  15  3 DFF      R *     8  -BCD--GHIJ----O-  <A href=#89>I2CInst_bit_state_0_</A>
+ 2   B 10  1  11  3 DFF      R *     8  -BCD--GHIJ----O-  <A href=#90>I2CInst_bit_state_1_</A>
+ 7   H 11  1   9  2 DFF      R *     8  -BCD--GHIJ----O-  <A href=#91>I2CInst_bit_state_2_</A>
+ 5   B  9  1   4  1 TFF      R *     7  -BCD--GH-J----O-  <A href=#92>I2CInst_bit_state_3_</A>
+ 2   D 10  1   8  2 DFF      R *     7  -BCD--GH-J----O-  <A href=#93>I2CInst_bit_state_4_</A>
+10   B  9  1   4  1 DFF      R *     7  -BCD--GH-J----O-  <A href=#94>I2CInst_bit_state_5_</A>
+12   A  2  1   1  1 DFF    * R       1  A---------------  <A href=#82>I2CInst_clk_div_0_</A>
+ 3   A  3  1   2  1 DFF    * R       1  A---------------  <A href=#83>I2CInst_clk_div_1_</A>
+ 1   A  4  1   3  1 DFF    * R       1  A---------------  <A href=#63>I2CInst_clk_div_2_</A>
+ 0   A  5  1   4  1 DFF    * R       1  A---------------  <A href=#64>I2CInst_clk_div_3_</A>
+ 1   J 23  1  10  2 TFF    * R       10 -BCD--GHIJK-M-O-  <A href=#95>I2CInst_eeprom_state_0_</A>
+ 2   J 24  1   9  2 TFF    * R       10 -BCD--GHIJK-M-O-  <A href=#96>I2CInst_eeprom_state_1_</A>
+ 2   A  3  1   2  1 DFF    * R       3  A--D-----J------  <A href=#71>I2CInst_key_delay_0_</A>
+10   D  4  1   3  1 DFF    * R       2  ---D-----J------  <A href=#73>I2CInst_key_delay_1_</A>
+ 5   D  5  1   4  1 DFF    * R       2  ---D-----J------  <A href=#68>I2CInst_key_delay_2_</A>
+ 4   J  6  1   2  2 DFF    * R       1  ---------J------  <A href=#74>I2CInst_key_delay_3_</A>
+ 9   J  6  1   1  1 TFF    * R       1  ---------J------  <A href=#70>I2CInst_key_delay_4_</A>
+ 5   J  7  1   1  1 TFF    * R       1  ---------J------  <A href=#65>I2CInst_key_delay_5_</A>
+ 8   J  8  1   1  1 TFF    * R       1  ---------J------  <A href=#69>I2CInst_key_delay_6_</A>
+12   J  9  1   1  1 TFF    * R       1  ---------J------  <A href=#72>I2CInst_key_delay_7_</A>
+ 6   J 10  1   1  1 TFF    * R       1  ---------J------  <A href=#66>I2CInst_key_delay_8_</A>
+ 7   J 11  1   1  1 TFF    * R       1  ---------J------  <A href=#67>I2CInst_key_delay_9_</A>
+ 9   A  5  1   1  1 DFF    * R       1  ------G---------  <A href=#79>I2CInst_phase0</A>
+ 4   A  5  1   1  1 DFF    * R       4  --C-----IJ----O-  <A href=#60>I2CInst_phase1</A>
+ 7   A  5  1   1  1 DFF    * R       2  --C---G---------  <A href=#62>I2CInst_phase2</A>
+ 5   A  5  1   1  1 DFF    * R       6  -BCD---H-J----O-  <A href=#61>I2CInst_phase3</A>
+12   I  2  -   2  1 DFF      R *     1  ---------J------  <A href=#80>I2CInst_sda_tem</A>
+ 5   G 10  -   6  2 COM              1  --------I-------  <A href=#101>I2CInst_sda_tem_0</A>
+ 0   J 16  1   3  1 TFF    * R *     3  A--D-----J------  <A href=#88>I2CInst_start_delay</A>
+ 7   G  5  -   3  1 COM              1  --C-------------  <A href=#97>SCL_0</A>
+ 3   E 14  1   4  1 TFF      R *     7  ----EF----KLMNO-  <A href=#50>clkGenerator_FreqDivide_1_q_10_</A>
+ 5   N 14  1   4  1 TFF      R *     7  ----EF----KLMNO-  <A href=#51>clkGenerator_FreqDivide_1_q_11_</A>
+ 9   F 13  1   3  1 TFF      R *     7  ----EF----KLMNO-  <A href=#52>clkGenerator_FreqDivide_1_q_12_</A>
+ 5   E 14  1   4  1 TFF      R *     7  ----EF----KLMNO-  <A href=#53>clkGenerator_FreqDivide_1_q_13_</A>
+ 9   E  2  1   2  1 DFF      R *     7  ----EF----KLMNO-  <A href=#41>clkGenerator_FreqDivide_1_q_1_</A>
+ 7   N  3  1   3  1 DFF      R *     7  ----EF----KLMNO-  <A href=#42>clkGenerator_FreqDivide_1_q_2_</A>
+ 4   F  4  1   4  2 DFF      R *     7  ----EF----KLMNO-  <A href=#43>clkGenerator_FreqDivide_1_q_3_</A>
+ 0   E  5  1   5  1 DFF      R *     7  ----EF----KLMNO-  <A href=#44>clkGenerator_FreqDivide_1_q_4_</A>
+ 2   F 14  1   7  2 DFF      R *     7  ----EF----KLMNO-  <A href=#45>clkGenerator_FreqDivide_1_q_5_</A>
+ 1   E 14  1   4  1 TFF      R *     7  ----EF----KLMNO-  <A href=#46>clkGenerator_FreqDivide_1_q_6_</A>
+ 3   N 14  1   4  1 TFF      R *     7  ----EF----KLMNO-  <A href=#47>clkGenerator_FreqDivide_1_q_7_</A>
+ 9   N  9  1   3  1 TFF      R *     7  ----EF----KLMNO-  <A href=#48>clkGenerator_FreqDivide_1_q_8_</A>
+ 7   F 14  1   4  1 TFF      R *     7  ----EF----KLMNO-  <A href=#49>clkGenerator_FreqDivide_1_q_9_</A>
+12   E 15  1   2  1 DFF      R *     3  ----EFG---------  <A href=#55>clkGenerator_FreqDivide_2_q_1_</A>
+ 5   F 18  1   5  2 DFF      R *     3  ----EFG---------  <A href=#57>clkGenerator_FreqDivide_2_q_2_</A>
+ 7   E 17  1   4  1 DFF      R *     3  ----EFG---------  <A href=#58>clkGenerator_FreqDivide_2_q_3_</A>
+ 3   F 18  1   6  2 DFF      R *     2  -----FG---------  <A href=#59>clkGenerator_FreqDivide_2_q_4_</A>
+12   K 14  1   1  1 DFF      R       5  ----------KLMNO-  <A href=#31>clkGenerator_scancnt_0_</A>
+12   N 15  1   2  1 DFF      R       5  ----------KLMNO-  <A href=#32>clkGenerator_scancnt_1_</A>
+ 3   P  5  1   3  1 DFF    * R *     3  ----------KLM---  <A href=#33>scanButtonsInst_int_Data0_0_</A>
+ 1   P  8  -  10  2 COM              1  ---------------P  <A href=#98>scanButtonsInst_int_Data0_0__0</A>
+ 5   P  6  1   3  1 DFF    * R *     3  ----------KLM---  <A href=#34>scanButtonsInst_int_Data0_1_</A>
+ 7   P  6  1   2  1 DFF    * R *     4  --------I-KLM---  <A href=#35>scanButtonsInst_int_Data0_2_</A>
+11   P  5  1   1  1 DFF    * R *     3  ----------KLM---  <A href=#36>scanButtonsInst_int_Data0_3_</A>
+12   F  5  1   1  1 DFF      R       2  -----FG---------  <A href=#54>scanButtonsInst_scanvalue_0_</A>
+12   G  6  1   2  1 DFF      R       2  -----FG---------  <A href=#56>scanButtonsInst_scanvalue_1_</A>
+--   O  1   1  0 PTOE              ----------------     <A href=#102>SDA.OE</A>
+----------------------------------------------------------------------------------------
+
+&lt;Note&gt; CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        IR = Input register
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+<A name="PostFit_Equations"></A><FONT COLOR=maroon><U><B><big>PostFit_Equations</big></B></U></FONT>
+<BR>
+<A name=37>I2CInst_DataLED_0_.D</A> = <A href=#75>I2CInst_RdData_0_.Q</A> & !<A href=#95>I2CInst_eeprom_state_0_.Q</A>
+    # <A href=#33>scanButtonsInst_int_Data0_0_.Q</A> & I2CInst_eeprom_state_0_.Q ; (2 pterms, 3 signals)
+I2CInst_DataLED_0_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_DataLED_0_.CE = <A href=#99>I2CInst_DataLED_0__0</A> ; (1 pterm, 1 signal)
+
+<A name=99>I2CInst_DataLED_0__0</A> = <A href=#8>reset</A> & <A href=#61>I2CInst_phase3.Q</A> & !<A href=#90>I2CInst_bit_state_1_.Q</A>
+       & <A href=#91>I2CInst_bit_state_2_.Q</A> & <A href=#94>I2CInst_bit_state_5_.Q</A>
+       & <A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # reset & I2CInst_phase3.Q & !<A href=#89>I2CInst_bit_state_0_.Q</A>
+       & I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & !<A href=#92>I2CInst_bit_state_3_.Q</A> & <A href=#93>I2CInst_bit_state_4_.Q</A>
+       & !I2CInst_bit_state_5_.Q & <A href=#95>I2CInst_eeprom_state_0_.Q</A> ; (2 pterms, 10 signals)
+
+<A name=38>I2CInst_DataLED_1_.D</A> = <A href=#76>I2CInst_RdData_1_.Q</A> & !<A href=#95>I2CInst_eeprom_state_0_.Q</A>
+    # <A href=#34>scanButtonsInst_int_Data0_1_.Q</A> & I2CInst_eeprom_state_0_.Q ; (2 pterms, 3 signals)
+I2CInst_DataLED_1_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_DataLED_1_.CE = <A href=#99>I2CInst_DataLED_0__0</A> ; (1 pterm, 1 signal)
+
+<A name=39>I2CInst_DataLED_2_.D</A> = <A href=#77>I2CInst_RdData_2_.Q</A> & !<A href=#95>I2CInst_eeprom_state_0_.Q</A>
+    # <A href=#35>scanButtonsInst_int_Data0_2_.Q</A> & I2CInst_eeprom_state_0_.Q ; (2 pterms, 3 signals)
+I2CInst_DataLED_2_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_DataLED_2_.CE = <A href=#99>I2CInst_DataLED_0__0</A> ; (1 pterm, 1 signal)
+
+<A name=40>I2CInst_DataLED_3_.D</A> = <A href=#78>I2CInst_RdData_3_.Q</A> & !<A href=#95>I2CInst_eeprom_state_0_.Q</A>
+    # <A href=#36>scanButtonsInst_int_Data0_3_.Q</A> & I2CInst_eeprom_state_0_.Q ; (2 pterms, 3 signals)
+I2CInst_DataLED_3_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_DataLED_3_.CE = <A href=#99>I2CInst_DataLED_0__0</A> ; (1 pterm, 1 signal)
+
+<A name=81>I2CInst_Flag_RW.D</A> = !( !<A href=#81>I2CInst_Flag_RW.Q</A> & !<A href=#92>I2CInst_bit_state_3_.Q</A>
+       & <A href=#93>I2CInst_bit_state_4_.Q</A> & <A href=#94>I2CInst_bit_state_5_.Q</A>
+       & !<A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # <A href=#61>I2CInst_phase3.Q</A> & <A href=#89>I2CInst_bit_state_0_.Q</A> & <A href=#90>I2CInst_bit_state_1_.Q</A>
+       & <A href=#91>I2CInst_bit_state_2_.Q</A> & !I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q & !I2CInst_bit_state_5_.Q
+       & <A href=#95>I2CInst_eeprom_state_0_.Q</A>
+    # !I2CInst_phase3.Q & !I2CInst_Flag_RW.Q & I2CInst_bit_state_3_.Q
+       & !I2CInst_eeprom_state_1_.Q
+    # !I2CInst_Flag_RW.Q & !I2CInst_bit_state_0_.Q & I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_5_.Q & !I2CInst_eeprom_state_1_.Q
+    # !I2CInst_phase3.Q & !I2CInst_Flag_RW.Q & !I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_3_.Q
+    # !I2CInst_phase3.Q & !I2CInst_Flag_RW.Q & I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_4_.Q
+    # !I2CInst_Flag_RW.Q & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_5_.Q
+    # !I2CInst_Flag_RW.Q & !I2CInst_bit_state_0_.Q & I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_4_.Q & I2CInst_bit_state_5_.Q
+    # !<A href=#60>I2CInst_phase1.Q</A> & !I2CInst_Flag_RW.Q & !I2CInst_bit_state_0_.Q
+       & I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_4_.Q & !I2CInst_eeprom_state_0_.Q
+    # I2CInst_phase3.Q & !I2CInst_bit_state_0_.Q & I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # I2CInst_phase3.Q & I2CInst_bit_state_0_.Q & !I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_2_.Q & I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q
+    # I2CInst_phase3.Q & !I2CInst_bit_state_0_.Q & !I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_2_.Q & I2CInst_bit_state_3_.Q
+       & !I2CInst_bit_state_4_.Q
+    # !I2CInst_phase1.Q & !I2CInst_Flag_RW.Q & !I2CInst_bit_state_0_.Q
+       & !I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q
+    # !I2CInst_Flag_RW.Q & !I2CInst_bit_state_2_.Q & !I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q
+    # !I2CInst_Flag_RW.Q & I2CInst_bit_state_0_.Q & !I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_5_.Q
+    # !I2CInst_phase1.Q & !I2CInst_Flag_RW.Q & !I2CInst_bit_state_0_.Q
+       & I2CInst_bit_state_5_.Q
+    # !I2CInst_Flag_RW.Q & !I2CInst_bit_state_0_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_5_.Q
+    # !I2CInst_phase1.Q & !I2CInst_phase3.Q & !I2CInst_Flag_RW.Q
+    # !I2CInst_phase3.Q & !I2CInst_Flag_RW.Q & I2CInst_bit_state_2_.Q
+    # !I2CInst_phase3.Q & !I2CInst_Flag_RW.Q & I2CInst_bit_state_0_.Q
+    # !I2CInst_eeprom_state_0_.Q & !I2CInst_eeprom_state_1_.Q ) ; (21 pterms, 11 signals)
+I2CInst_Flag_RW.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_Flag_RW.CE = <A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=75>I2CInst_RdData_0_.D</A> = <A href=#28>SDA.PIN</A> & <A href=#60>I2CInst_phase1.Q</A> & <A href=#91>I2CInst_bit_state_2_.Q</A>
+       & <A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # <A href=#75>I2CInst_RdData_0_.Q</A> & !I2CInst_bit_state_2_.Q
+       & I2CInst_eeprom_state_1_.Q
+    # !I2CInst_phase1.Q & I2CInst_RdData_0_.Q & I2CInst_eeprom_state_1_.Q ; (3 pterms, 5 signals)
+I2CInst_RdData_0_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_RdData_0_.CE = <A href=#100>I2CInst_RdData_0__0</A> ; (1 pterm, 1 signal)
+
+<A name=100>I2CInst_RdData_0__0</A> = <A href=#8>reset</A> & !<A href=#95>I2CInst_eeprom_state_0_.Q</A>
+       & !<A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # reset & !<A href=#89>I2CInst_bit_state_0_.Q</A> & <A href=#90>I2CInst_bit_state_1_.Q</A>
+       & <A href=#94>I2CInst_bit_state_5_.Q</A> & !I2CInst_eeprom_state_0_.Q
+    # reset & I2CInst_bit_state_0_.Q & !<A href=#91>I2CInst_bit_state_2_.Q</A>
+       & I2CInst_bit_state_5_.Q & !I2CInst_eeprom_state_0_.Q ; (3 pterms, 7 signals)
+
+<A name=76>I2CInst_RdData_1_.D</A> = <A href=#28>SDA.PIN</A> & <A href=#60>I2CInst_phase1.Q</A> & !<A href=#89>I2CInst_bit_state_0_.Q</A>
+       & !<A href=#91>I2CInst_bit_state_2_.Q</A> & <A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # <A href=#76>I2CInst_RdData_1_.Q</A> & I2CInst_bit_state_2_.Q & I2CInst_eeprom_state_1_.Q
+    # I2CInst_RdData_1_.Q & I2CInst_bit_state_0_.Q & I2CInst_eeprom_state_1_.Q
+    # !I2CInst_phase1.Q & I2CInst_RdData_1_.Q & I2CInst_eeprom_state_1_.Q ; (4 pterms, 6 signals)
+I2CInst_RdData_1_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_RdData_1_.CE = <A href=#100>I2CInst_RdData_0__0</A> ; (1 pterm, 1 signal)
+
+<A name=77>I2CInst_RdData_2_.D</A> = <A href=#28>SDA.PIN</A> & <A href=#60>I2CInst_phase1.Q</A> & <A href=#89>I2CInst_bit_state_0_.Q</A>
+       & <A href=#90>I2CInst_bit_state_1_.Q</A> & <A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # <A href=#77>I2CInst_RdData_2_.Q</A> & !I2CInst_bit_state_1_.Q
+       & I2CInst_eeprom_state_1_.Q
+    # I2CInst_RdData_2_.Q & !I2CInst_bit_state_0_.Q
+       & I2CInst_eeprom_state_1_.Q
+    # !I2CInst_phase1.Q & I2CInst_RdData_2_.Q & I2CInst_eeprom_state_1_.Q ; (4 pterms, 6 signals)
+I2CInst_RdData_2_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_RdData_2_.CE = <A href=#100>I2CInst_RdData_0__0</A> ; (1 pterm, 1 signal)
+
+<A name=78>I2CInst_RdData_3_.D</A> = <A href=#28>SDA.PIN</A> & <A href=#60>I2CInst_phase1.Q</A> & !<A href=#90>I2CInst_bit_state_1_.Q</A>
+       & <A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # <A href=#78>I2CInst_RdData_3_.Q</A> & I2CInst_bit_state_1_.Q & I2CInst_eeprom_state_1_.Q
+    # !I2CInst_phase1.Q & I2CInst_RdData_3_.Q & I2CInst_eeprom_state_1_.Q ; (3 pterms, 5 signals)
+I2CInst_RdData_3_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_RdData_3_.CE = <A href=#100>I2CInst_RdData_0__0</A> ; (1 pterm, 1 signal)
+
+<A name=84>I2CInst_WrData_0_.D</A> = <A href=#33>scanButtonsInst_int_Data0_0_.Q</A> ; (1 pterm, 1 signal)
+I2CInst_WrData_0_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_WrData_0_.CE = <A href=#8>reset</A> & !<A href=#95>I2CInst_eeprom_state_0_.Q</A>
+       & !<A href=#96>I2CInst_eeprom_state_1_.Q</A> ; (1 pterm, 3 signals)
+
+<A name=85>I2CInst_WrData_1_.D</A> = <A href=#34>scanButtonsInst_int_Data0_1_.Q</A> ; (1 pterm, 1 signal)
+I2CInst_WrData_1_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_WrData_1_.CE = <A href=#8>reset</A> & !<A href=#95>I2CInst_eeprom_state_0_.Q</A>
+       & !<A href=#96>I2CInst_eeprom_state_1_.Q</A> ; (1 pterm, 3 signals)
+
+<A name=86>I2CInst_WrData_2_.D</A> = <A href=#35>scanButtonsInst_int_Data0_2_.Q</A> ; (1 pterm, 1 signal)
+I2CInst_WrData_2_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_WrData_2_.CE = <A href=#8>reset</A> & !<A href=#95>I2CInst_eeprom_state_0_.Q</A>
+       & !<A href=#96>I2CInst_eeprom_state_1_.Q</A> ; (1 pterm, 3 signals)
+
+<A name=87>I2CInst_WrData_3_.D</A> = <A href=#36>scanButtonsInst_int_Data0_3_.Q</A> ; (1 pterm, 1 signal)
+I2CInst_WrData_3_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_WrData_3_.CE = <A href=#8>reset</A> & !<A href=#95>I2CInst_eeprom_state_0_.Q</A>
+       & !<A href=#96>I2CInst_eeprom_state_1_.Q</A> ; (1 pterm, 3 signals)
+
+<A name=89>I2CInst_bit_state_0_.D</A> = !( !<A href=#81>I2CInst_Flag_RW.Q</A> & !<A href=#89>I2CInst_bit_state_0_.Q</A>
+       & !<A href=#90>I2CInst_bit_state_1_.Q</A> & !<A href=#91>I2CInst_bit_state_2_.Q</A>
+       & !<A href=#93>I2CInst_bit_state_4_.Q</A>
+    # <A href=#61>I2CInst_phase3.Q</A> & I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & !<A href=#92>I2CInst_bit_state_3_.Q</A> & I2CInst_bit_state_4_.Q
+       & !<A href=#94>I2CInst_bit_state_5_.Q</A>
+    # I2CInst_phase3.Q & !I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q
+    # I2CInst_phase3.Q & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+    # I2CInst_phase3.Q & I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+    # I2CInst_phase3.Q & I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+    # I2CInst_phase3.Q & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+    # I2CInst_phase3.Q & I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+    # I2CInst_phase3.Q & !I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+    # I2CInst_phase3.Q & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_5_.Q
+    # I2CInst_phase3.Q & I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_5_.Q
+    # !I2CInst_bit_state_2_.Q & !I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q & !<A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # !I2CInst_phase3.Q & !I2CInst_bit_state_0_.Q
+    # !<A href=#95>I2CInst_eeprom_state_0_.Q</A> & !I2CInst_eeprom_state_1_.Q
+    # I2CInst_bit_state_5_.Q & !I2CInst_eeprom_state_1_.Q ) ; (15 pterms, 10 signals)
+I2CInst_bit_state_0_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_bit_state_0_.CE = <A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=90>I2CInst_bit_state_1_.D</A> = !( <A href=#61>I2CInst_phase3.Q</A> & <A href=#89>I2CInst_bit_state_0_.Q</A>
+       & !<A href=#91>I2CInst_bit_state_2_.Q</A> & !<A href=#92>I2CInst_bit_state_3_.Q</A>
+       & <A href=#93>I2CInst_bit_state_4_.Q</A> & !<A href=#94>I2CInst_bit_state_5_.Q</A>
+    # I2CInst_phase3.Q & I2CInst_bit_state_0_.Q & !I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+    # I2CInst_phase3.Q & I2CInst_bit_state_0_.Q & I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+    # I2CInst_phase3.Q & I2CInst_bit_state_0_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+    # I2CInst_phase3.Q & I2CInst_bit_state_0_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_5_.Q
+    # I2CInst_bit_state_0_.Q & !I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & !<A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # I2CInst_phase3.Q & !I2CInst_bit_state_2_.Q & !I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q & !I2CInst_eeprom_state_1_.Q
+    # !I2CInst_bit_state_0_.Q & !<A href=#90>I2CInst_bit_state_1_.Q</A>
+    # !I2CInst_phase3.Q & !I2CInst_bit_state_1_.Q
+    # !<A href=#95>I2CInst_eeprom_state_0_.Q</A> & !I2CInst_eeprom_state_1_.Q
+    # I2CInst_bit_state_5_.Q & !I2CInst_eeprom_state_1_.Q ) ; (11 pterms, 9 signals)
+I2CInst_bit_state_1_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_bit_state_1_.CE = <A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=91>I2CInst_bit_state_2_.D</A> = !( !<A href=#81>I2CInst_Flag_RW.Q</A> & !<A href=#91>I2CInst_bit_state_2_.Q</A>
+       & <A href=#93>I2CInst_bit_state_4_.Q</A> & !<A href=#94>I2CInst_bit_state_5_.Q</A>
+       & <A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # <A href=#61>I2CInst_phase3.Q</A> & !<A href=#89>I2CInst_bit_state_0_.Q</A> & <A href=#90>I2CInst_bit_state_1_.Q</A>
+       & !<A href=#92>I2CInst_bit_state_3_.Q</A> & I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q
+    # I2CInst_phase3.Q & !I2CInst_bit_state_0_.Q & I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+    # I2CInst_phase3.Q & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_5_.Q
+    # I2CInst_bit_state_0_.Q & !I2CInst_bit_state_2_.Q
+    # !I2CInst_phase3.Q & !I2CInst_bit_state_2_.Q
+    # !I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+    # !<A href=#95>I2CInst_eeprom_state_0_.Q</A> & !I2CInst_eeprom_state_1_.Q
+    # I2CInst_bit_state_5_.Q & !I2CInst_eeprom_state_1_.Q ) ; (9 pterms, 10 signals)
+I2CInst_bit_state_2_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_bit_state_2_.CE = <A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=92>I2CInst_bit_state_3_.T</A> = <A href=#61>I2CInst_phase3.Q</A> & !<A href=#89>I2CInst_bit_state_0_.Q</A>
+       & !<A href=#90>I2CInst_bit_state_1_.Q</A> & <A href=#91>I2CInst_bit_state_2_.Q</A>
+       & !<A href=#92>I2CInst_bit_state_3_.Q</A> & !<A href=#93>I2CInst_bit_state_4_.Q</A>
+       & <A href=#95>I2CInst_eeprom_state_0_.Q</A>
+    # I2CInst_phase3.Q & !I2CInst_bit_state_0_.Q & !I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_2_.Q & !I2CInst_bit_state_3_.Q
+       & !I2CInst_bit_state_4_.Q & <A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # I2CInst_phase3.Q & !I2CInst_bit_state_0_.Q & !I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_2_.Q & I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q
+    # I2CInst_bit_state_3_.Q & !I2CInst_eeprom_state_0_.Q
+       & !I2CInst_eeprom_state_1_.Q ; (4 pterms, 8 signals)
+I2CInst_bit_state_3_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_bit_state_3_.CE = <A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=93>I2CInst_bit_state_4_.D.X1</A> = <A href=#93>I2CInst_bit_state_4_.Q</A> & <A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # <A href=#92>I2CInst_bit_state_3_.Q</A> & I2CInst_bit_state_4_.Q
+       & !<A href=#94>I2CInst_bit_state_5_.Q</A> & <A href=#95>I2CInst_eeprom_state_0_.Q</A>
+       & !I2CInst_eeprom_state_1_.Q
+    # <A href=#91>I2CInst_bit_state_2_.Q</A> & I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_0_.Q
+       & !I2CInst_eeprom_state_1_.Q
+    # !<A href=#61>I2CInst_phase3.Q</A> & !<A href=#89>I2CInst_bit_state_0_.Q</A> & <A href=#90>I2CInst_bit_state_1_.Q</A>
+       & I2CInst_bit_state_4_.Q & !I2CInst_bit_state_5_.Q
+       & I2CInst_eeprom_state_0_.Q & !I2CInst_eeprom_state_1_.Q
+    # I2CInst_phase3.Q & !I2CInst_bit_state_0_.Q & !I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_2_.Q & I2CInst_bit_state_3_.Q
+       & !I2CInst_bit_state_4_.Q & I2CInst_eeprom_state_1_.Q
+    # I2CInst_phase3.Q & !I2CInst_bit_state_0_.Q & !I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_2_.Q & I2CInst_bit_state_3_.Q
+       & !I2CInst_bit_state_4_.Q & !I2CInst_bit_state_5_.Q
+       & I2CInst_eeprom_state_0_.Q & !I2CInst_eeprom_state_1_.Q ; (6 pterms, 9 signals)
+I2CInst_bit_state_4_.D.X2 = <A href=#61>I2CInst_phase3.Q</A> & !<A href=#90>I2CInst_bit_state_1_.Q</A>
+       & <A href=#91>I2CInst_bit_state_2_.Q</A> & <A href=#93>I2CInst_bit_state_4_.Q</A>
+       & <A href=#94>I2CInst_bit_state_5_.Q</A> & <A href=#96>I2CInst_eeprom_state_1_.Q</A> ; (1 pterm, 6 signals)
+I2CInst_bit_state_4_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_bit_state_4_.CE = <A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=94>I2CInst_bit_state_5_.D</A> = <A href=#61>I2CInst_phase3.Q</A> & !<A href=#89>I2CInst_bit_state_0_.Q</A>
+       & !<A href=#90>I2CInst_bit_state_1_.Q</A> & !<A href=#91>I2CInst_bit_state_2_.Q</A>
+       & !<A href=#92>I2CInst_bit_state_3_.Q</A> & <A href=#93>I2CInst_bit_state_4_.Q</A>
+       & <A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # I2CInst_bit_state_1_.Q & !I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q & <A href=#94>I2CInst_bit_state_5_.Q</A>
+       & I2CInst_eeprom_state_1_.Q
+    # !I2CInst_phase3.Q & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # !I2CInst_bit_state_2_.Q & !I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q & I2CInst_bit_state_5_.Q
+       & I2CInst_eeprom_state_1_.Q ; (4 pterms, 8 signals)
+I2CInst_bit_state_5_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_bit_state_5_.CE = <A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=82>I2CInst_clk_div_0_.D</A> = !<A href=#82>I2CInst_clk_div_0_.Q</A> ; (1 pterm, 1 signal)
+I2CInst_clk_div_0_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_clk_div_0_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=83>I2CInst_clk_div_1_.D</A> = <A href=#82>I2CInst_clk_div_0_.Q</A> & !<A href=#83>I2CInst_clk_div_1_.Q</A>
+    # !I2CInst_clk_div_0_.Q & I2CInst_clk_div_1_.Q ; (2 pterms, 2 signals)
+I2CInst_clk_div_1_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_clk_div_1_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=63>I2CInst_clk_div_2_.D</A> = !<A href=#63>I2CInst_clk_div_2_.Q</A> & <A href=#82>I2CInst_clk_div_0_.Q</A>
+       & <A href=#83>I2CInst_clk_div_1_.Q</A>
+    # I2CInst_clk_div_2_.Q & !I2CInst_clk_div_0_.Q
+    # I2CInst_clk_div_2_.Q & !I2CInst_clk_div_1_.Q ; (3 pterms, 3 signals)
+I2CInst_clk_div_2_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_clk_div_2_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=64>I2CInst_clk_div_3_.D</A> = <A href=#63>I2CInst_clk_div_2_.Q</A> & !<A href=#64>I2CInst_clk_div_3_.Q</A>
+       & <A href=#82>I2CInst_clk_div_0_.Q</A> & <A href=#83>I2CInst_clk_div_1_.Q</A>
+    # I2CInst_clk_div_3_.Q & !I2CInst_clk_div_0_.Q
+    # !I2CInst_clk_div_2_.Q & I2CInst_clk_div_3_.Q
+    # I2CInst_clk_div_3_.Q & !I2CInst_clk_div_1_.Q ; (4 pterms, 4 signals)
+I2CInst_clk_div_3_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_clk_div_3_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=95>I2CInst_eeprom_state_0_.T</A> = !<A href=#13>CMD_WR</A> & !<A href=#65>I2CInst_key_delay_5_.Q</A>
+       & !<A href=#66>I2CInst_key_delay_8_.Q</A> & <A href=#67>I2CInst_key_delay_9_.Q</A>
+       & !<A href=#68>I2CInst_key_delay_2_.Q</A> & !<A href=#69>I2CInst_key_delay_6_.Q</A>
+       & !<A href=#70>I2CInst_key_delay_4_.Q</A> & !<A href=#71>I2CInst_key_delay_0_.Q</A>
+       & !<A href=#72>I2CInst_key_delay_7_.Q</A> & !<A href=#73>I2CInst_key_delay_1_.Q</A>
+       & !<A href=#74>I2CInst_key_delay_3_.Q</A> & !<A href=#95>I2CInst_eeprom_state_0_.Q</A>
+       & !<A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # <A href=#60>I2CInst_phase1.Q</A> & <A href=#80>I2CInst_sda_tem.Q</A> & <A href=#89>I2CInst_bit_state_0_.Q</A>
+       & !<A href=#90>I2CInst_bit_state_1_.Q</A> & <A href=#91>I2CInst_bit_state_2_.Q</A>
+       & <A href=#92>I2CInst_bit_state_3_.Q</A> & !<A href=#93>I2CInst_bit_state_4_.Q</A>
+       & !<A href=#94>I2CInst_bit_state_5_.Q</A> & I2CInst_eeprom_state_0_.Q
+    # I2CInst_phase1.Q & I2CInst_sda_tem.Q & I2CInst_bit_state_0_.Q
+       & I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_4_.Q & !I2CInst_bit_state_5_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # I2CInst_phase1.Q & I2CInst_sda_tem.Q & !I2CInst_bit_state_0_.Q
+       & I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # !I2CInst_bit_state_0_.Q & I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_4_.Q & I2CInst_bit_state_5_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # <A href=#61>I2CInst_phase3.Q</A> & !I2CInst_bit_state_2_.Q & !I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q & I2CInst_eeprom_state_0_.Q
+    # !I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # I2CInst_bit_state_0_.Q & !I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # I2CInst_bit_state_2_.Q & I2CInst_bit_state_4_.Q & I2CInst_bit_state_5_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # I2CInst_eeprom_state_0_.Q & I2CInst_eeprom_state_1_.Q ; (10 pterms, 22 signals)
+I2CInst_eeprom_state_0_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_eeprom_state_0_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=96>I2CInst_eeprom_state_1_.T</A> = !<A href=#12>CMD_RD</A> & <A href=#13>CMD_WR</A> & !<A href=#65>I2CInst_key_delay_5_.Q</A>
+       & !<A href=#66>I2CInst_key_delay_8_.Q</A> & <A href=#67>I2CInst_key_delay_9_.Q</A>
+       & !<A href=#68>I2CInst_key_delay_2_.Q</A> & !<A href=#69>I2CInst_key_delay_6_.Q</A>
+       & !<A href=#70>I2CInst_key_delay_4_.Q</A> & !<A href=#71>I2CInst_key_delay_0_.Q</A>
+       & !<A href=#72>I2CInst_key_delay_7_.Q</A> & !<A href=#73>I2CInst_key_delay_1_.Q</A>
+       & !<A href=#74>I2CInst_key_delay_3_.Q</A> & !<A href=#95>I2CInst_eeprom_state_0_.Q</A>
+       & !<A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # <A href=#60>I2CInst_phase1.Q</A> & <A href=#80>I2CInst_sda_tem.Q</A> & !<A href=#89>I2CInst_bit_state_0_.Q</A>
+       & <A href=#90>I2CInst_bit_state_1_.Q</A> & !<A href=#91>I2CInst_bit_state_2_.Q</A>
+       & !<A href=#92>I2CInst_bit_state_3_.Q</A> & <A href=#93>I2CInst_bit_state_4_.Q</A>
+       & !<A href=#94>I2CInst_bit_state_5_.Q</A> & I2CInst_eeprom_state_1_.Q
+    # I2CInst_phase1.Q & I2CInst_sda_tem.Q & I2CInst_bit_state_0_.Q
+       & I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # I2CInst_phase1.Q & I2CInst_sda_tem.Q & I2CInst_bit_state_0_.Q
+       & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+       & I2CInst_eeprom_state_1_.Q
+    # !I2CInst_bit_state_0_.Q & !I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_2_.Q & !I2CInst_bit_state_4_.Q
+       & I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # !I2CInst_bit_state_0_.Q & !I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_2_.Q & I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # <A href=#61>I2CInst_phase3.Q</A> & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+       & I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # I2CInst_eeprom_state_0_.Q & I2CInst_eeprom_state_1_.Q ; (9 pterms, 23 signals)
+I2CInst_eeprom_state_1_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_eeprom_state_1_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=71>I2CInst_key_delay_0_.D</A> = <A href=#71>I2CInst_key_delay_0_.Q</A> & !<A href=#88>I2CInst_start_delay.Q</A>
+    # !I2CInst_key_delay_0_.Q & I2CInst_start_delay.Q ; (2 pterms, 2 signals)
+I2CInst_key_delay_0_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_key_delay_0_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=73>I2CInst_key_delay_1_.D</A> = <A href=#71>I2CInst_key_delay_0_.Q</A> & !<A href=#73>I2CInst_key_delay_1_.Q</A>
+       & <A href=#88>I2CInst_start_delay.Q</A>
+    # !I2CInst_key_delay_0_.Q & I2CInst_key_delay_1_.Q
+    # I2CInst_key_delay_1_.Q & !I2CInst_start_delay.Q ; (3 pterms, 3 signals)
+I2CInst_key_delay_1_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_key_delay_1_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=68>I2CInst_key_delay_2_.D</A> = !<A href=#68>I2CInst_key_delay_2_.Q</A> & <A href=#71>I2CInst_key_delay_0_.Q</A>
+       & <A href=#73>I2CInst_key_delay_1_.Q</A> & <A href=#88>I2CInst_start_delay.Q</A>
+    # I2CInst_key_delay_2_.Q & !I2CInst_key_delay_1_.Q
+    # I2CInst_key_delay_2_.Q & !I2CInst_key_delay_0_.Q
+    # I2CInst_key_delay_2_.Q & !I2CInst_start_delay.Q ; (4 pterms, 4 signals)
+I2CInst_key_delay_2_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_key_delay_2_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=74>I2CInst_key_delay_3_.D.X1</A> = <A href=#68>I2CInst_key_delay_2_.Q</A> & <A href=#71>I2CInst_key_delay_0_.Q</A>
+       & <A href=#73>I2CInst_key_delay_1_.Q</A> & <A href=#88>I2CInst_start_delay.Q</A> ; (1 pterm, 4 signals)
+I2CInst_key_delay_3_.D.X2 = <A href=#74>I2CInst_key_delay_3_.Q</A> ; (1 pterm, 1 signal)
+I2CInst_key_delay_3_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_key_delay_3_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=70>I2CInst_key_delay_4_.T</A> = <A href=#68>I2CInst_key_delay_2_.Q</A> & <A href=#71>I2CInst_key_delay_0_.Q</A>
+       & <A href=#73>I2CInst_key_delay_1_.Q</A> & <A href=#74>I2CInst_key_delay_3_.Q</A>
+       & <A href=#88>I2CInst_start_delay.Q</A> ; (1 pterm, 5 signals)
+I2CInst_key_delay_4_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_key_delay_4_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=65>I2CInst_key_delay_5_.T</A> = <A href=#68>I2CInst_key_delay_2_.Q</A> & <A href=#70>I2CInst_key_delay_4_.Q</A>
+       & <A href=#71>I2CInst_key_delay_0_.Q</A> & <A href=#73>I2CInst_key_delay_1_.Q</A>
+       & <A href=#74>I2CInst_key_delay_3_.Q</A> & <A href=#88>I2CInst_start_delay.Q</A> ; (1 pterm, 6 signals)
+I2CInst_key_delay_5_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_key_delay_5_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=69>I2CInst_key_delay_6_.T</A> = <A href=#65>I2CInst_key_delay_5_.Q</A> & <A href=#68>I2CInst_key_delay_2_.Q</A>
+       & <A href=#70>I2CInst_key_delay_4_.Q</A> & <A href=#71>I2CInst_key_delay_0_.Q</A>
+       & <A href=#73>I2CInst_key_delay_1_.Q</A> & <A href=#74>I2CInst_key_delay_3_.Q</A>
+       & <A href=#88>I2CInst_start_delay.Q</A> ; (1 pterm, 7 signals)
+I2CInst_key_delay_6_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_key_delay_6_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=72>I2CInst_key_delay_7_.T</A> = <A href=#65>I2CInst_key_delay_5_.Q</A> & <A href=#68>I2CInst_key_delay_2_.Q</A>
+       & <A href=#69>I2CInst_key_delay_6_.Q</A> & <A href=#70>I2CInst_key_delay_4_.Q</A>
+       & <A href=#71>I2CInst_key_delay_0_.Q</A> & <A href=#73>I2CInst_key_delay_1_.Q</A>
+       & <A href=#74>I2CInst_key_delay_3_.Q</A> & <A href=#88>I2CInst_start_delay.Q</A> ; (1 pterm, 8 signals)
+I2CInst_key_delay_7_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_key_delay_7_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=66>I2CInst_key_delay_8_.T</A> = <A href=#65>I2CInst_key_delay_5_.Q</A> & <A href=#68>I2CInst_key_delay_2_.Q</A>
+       & <A href=#69>I2CInst_key_delay_6_.Q</A> & <A href=#70>I2CInst_key_delay_4_.Q</A>
+       & <A href=#71>I2CInst_key_delay_0_.Q</A> & <A href=#72>I2CInst_key_delay_7_.Q</A>
+       & <A href=#73>I2CInst_key_delay_1_.Q</A> & <A href=#74>I2CInst_key_delay_3_.Q</A>
+       & <A href=#88>I2CInst_start_delay.Q</A> ; (1 pterm, 9 signals)
+I2CInst_key_delay_8_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_key_delay_8_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=67>I2CInst_key_delay_9_.T</A> = <A href=#65>I2CInst_key_delay_5_.Q</A> & <A href=#66>I2CInst_key_delay_8_.Q</A>
+       & <A href=#68>I2CInst_key_delay_2_.Q</A> & <A href=#69>I2CInst_key_delay_6_.Q</A>
+       & <A href=#70>I2CInst_key_delay_4_.Q</A> & <A href=#71>I2CInst_key_delay_0_.Q</A>
+       & <A href=#72>I2CInst_key_delay_7_.Q</A> & <A href=#73>I2CInst_key_delay_1_.Q</A>
+       & <A href=#74>I2CInst_key_delay_3_.Q</A> & <A href=#88>I2CInst_start_delay.Q</A> ; (1 pterm, 10 signals)
+I2CInst_key_delay_9_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_key_delay_9_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=79>I2CInst_phase0.D</A> = <A href=#63>I2CInst_clk_div_2_.Q</A> & <A href=#64>I2CInst_clk_div_3_.Q</A>
+       & <A href=#82>I2CInst_clk_div_0_.Q</A> & <A href=#83>I2CInst_clk_div_1_.Q</A> ; (1 pterm, 4 signals)
+I2CInst_phase0.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_phase0.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=60>I2CInst_phase1.D</A> = !<A href=#63>I2CInst_clk_div_2_.Q</A> & !<A href=#64>I2CInst_clk_div_3_.Q</A>
+       & <A href=#82>I2CInst_clk_div_0_.Q</A> & <A href=#83>I2CInst_clk_div_1_.Q</A> ; (1 pterm, 4 signals)
+I2CInst_phase1.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_phase1.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=62>I2CInst_phase2.D</A> = <A href=#63>I2CInst_clk_div_2_.Q</A> & !<A href=#64>I2CInst_clk_div_3_.Q</A>
+       & <A href=#82>I2CInst_clk_div_0_.Q</A> & <A href=#83>I2CInst_clk_div_1_.Q</A> ; (1 pterm, 4 signals)
+I2CInst_phase2.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_phase2.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=61>I2CInst_phase3.D</A> = !<A href=#63>I2CInst_clk_div_2_.Q</A> & <A href=#64>I2CInst_clk_div_3_.Q</A>
+       & <A href=#82>I2CInst_clk_div_0_.Q</A> & <A href=#83>I2CInst_clk_div_1_.Q</A> ; (1 pterm, 4 signals)
+I2CInst_phase3.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_phase3.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=80>I2CInst_sda_tem.D</A> = <A href=#28>SDA.PIN</A> ; (1 pterm, 1 signal)
+I2CInst_sda_tem.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_sda_tem.CE = <A href=#101>I2CInst_sda_tem_0</A> ; (1 pterm, 1 signal)
+
+<A name=101>I2CInst_sda_tem_0</A> = <A href=#8>reset</A> & <A href=#79>I2CInst_phase0.Q</A> & <A href=#89>I2CInst_bit_state_0_.Q</A>
+       & <A href=#90>I2CInst_bit_state_1_.Q</A> & !<A href=#91>I2CInst_bit_state_2_.Q</A>
+       & <A href=#92>I2CInst_bit_state_3_.Q</A> & <A href=#93>I2CInst_bit_state_4_.Q</A>
+       & !<A href=#94>I2CInst_bit_state_5_.Q</A> & <A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # reset & I2CInst_phase0.Q & !I2CInst_bit_state_0_.Q
+       & I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # reset & I2CInst_phase0.Q & I2CInst_bit_state_0_.Q
+       & I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q & <A href=#95>I2CInst_eeprom_state_0_.Q</A>
+    # reset & I2CInst_phase0.Q & I2CInst_bit_state_0_.Q
+       & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # reset & I2CInst_phase0.Q & !I2CInst_bit_state_0_.Q
+       & I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_0_.Q
+    # reset & I2CInst_phase0.Q & I2CInst_bit_state_0_.Q
+       & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_0_.Q ; (6 pterms, 10 signals)
+
+<A name=88>I2CInst_start_delay.T</A> = !<A href=#13>CMD_WR</A> & !<A href=#65>I2CInst_key_delay_5_.Q</A>
+       & !<A href=#66>I2CInst_key_delay_8_.Q</A> & !<A href=#67>I2CInst_key_delay_9_.Q</A>
+       & !<A href=#68>I2CInst_key_delay_2_.Q</A> & !<A href=#69>I2CInst_key_delay_6_.Q</A>
+       & !<A href=#70>I2CInst_key_delay_4_.Q</A> & !<A href=#71>I2CInst_key_delay_0_.Q</A>
+       & !<A href=#72>I2CInst_key_delay_7_.Q</A> & !<A href=#73>I2CInst_key_delay_1_.Q</A>
+       & !<A href=#74>I2CInst_key_delay_3_.Q</A> & !<A href=#88>I2CInst_start_delay.Q</A>
+    # !<A href=#12>CMD_RD</A> & !I2CInst_key_delay_5_.Q & !I2CInst_key_delay_8_.Q
+       & !I2CInst_key_delay_9_.Q & !I2CInst_key_delay_2_.Q
+       & !I2CInst_key_delay_6_.Q & !I2CInst_key_delay_4_.Q
+       & !I2CInst_key_delay_0_.Q & !I2CInst_key_delay_7_.Q
+       & !I2CInst_key_delay_1_.Q & !I2CInst_key_delay_3_.Q
+       & !I2CInst_start_delay.Q
+    # !I2CInst_key_delay_5_.Q & !I2CInst_key_delay_8_.Q
+       & I2CInst_key_delay_9_.Q & !I2CInst_key_delay_2_.Q
+       & !I2CInst_key_delay_6_.Q & !I2CInst_key_delay_4_.Q
+       & !I2CInst_key_delay_0_.Q & !I2CInst_key_delay_7_.Q
+       & !I2CInst_key_delay_1_.Q & !I2CInst_key_delay_3_.Q
+       & I2CInst_start_delay.Q ; (3 pterms, 13 signals)
+I2CInst_start_delay.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+I2CInst_start_delay.CE = !<A href=#95>I2CInst_eeprom_state_0_.Q</A>
+       & !<A href=#96>I2CInst_eeprom_state_1_.Q</A> ; (1 pterm, 2 signals)
+I2CInst_start_delay.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=15>LED_A.D</A> = !( <A href=#8>reset</A> & !<A href=#31>clkGenerator_scancnt_0_.Q</A> & !<A href=#32>clkGenerator_scancnt_1_.Q</A>
+       & !<A href=#37>I2CInst_DataLED_0_.Q</A> & !<A href=#39>I2CInst_DataLED_2_.Q</A> & !<A href=#40>I2CInst_DataLED_3_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !<A href=#33>scanButtonsInst_int_Data0_0_.Q</A> & !<A href=#34>scanButtonsInst_int_Data0_1_.Q</A>
+       & !<A href=#35>scanButtonsInst_int_Data0_2_.Q</A>
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & !<A href=#38>I2CInst_DataLED_1_.Q</A> & !I2CInst_DataLED_2_.Q & I2CInst_DataLED_3_.Q
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & I2CInst_DataLED_0_.Q & I2CInst_DataLED_2_.Q & !I2CInst_DataLED_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & scanButtonsInst_int_Data0_0_.Q & scanButtonsInst_int_Data0_2_.Q
+       & !<A href=#36>scanButtonsInst_int_Data0_3_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !scanButtonsInst_int_Data0_1_.Q & !scanButtonsInst_int_Data0_2_.Q
+       & scanButtonsInst_int_Data0_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & scanButtonsInst_int_Data0_1_.Q & !scanButtonsInst_int_Data0_3_.Q
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & I2CInst_DataLED_1_.Q & !I2CInst_DataLED_3_.Q ) ; (8 pterms, 11 signals)
+LED_A.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A> & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A>
+       & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A> & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A>
+       & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A> & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A>
+       & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A> & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A>
+       & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A> & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A>
+       & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=16>LED_B.D</A> = !( <A href=#8>reset</A> & !<A href=#31>clkGenerator_scancnt_0_.Q</A> & !<A href=#32>clkGenerator_scancnt_1_.Q</A>
+       & <A href=#37>I2CInst_DataLED_0_.Q</A> & <A href=#38>I2CInst_DataLED_1_.Q</A> & !<A href=#40>I2CInst_DataLED_3_.Q</A>
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & !I2CInst_DataLED_1_.Q & !<A href=#39>I2CInst_DataLED_2_.Q</A>
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & !I2CInst_DataLED_0_.Q & !I2CInst_DataLED_1_.Q & !I2CInst_DataLED_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & <A href=#33>scanButtonsInst_int_Data0_0_.Q</A> & <A href=#34>scanButtonsInst_int_Data0_1_.Q</A>
+       & !<A href=#36>scanButtonsInst_int_Data0_3_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !scanButtonsInst_int_Data0_0_.Q & !scanButtonsInst_int_Data0_1_.Q
+       & !scanButtonsInst_int_Data0_3_.Q
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & !I2CInst_DataLED_2_.Q & !I2CInst_DataLED_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !scanButtonsInst_int_Data0_1_.Q & !<A href=#35>scanButtonsInst_int_Data0_2_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !scanButtonsInst_int_Data0_2_.Q & !scanButtonsInst_int_Data0_3_.Q ) ; (8 pterms, 11 signals)
+LED_B.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A> & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A>
+       & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A> & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A>
+       & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A> & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A>
+       & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A> & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A>
+       & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A> & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A>
+       & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=17>LED_C.D</A> = !( <A href=#8>reset</A> & !<A href=#31>clkGenerator_scancnt_0_.Q</A> & !<A href=#32>clkGenerator_scancnt_1_.Q</A>
+       & !<A href=#38>I2CInst_DataLED_1_.Q</A> & !<A href=#39>I2CInst_DataLED_2_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !<A href=#34>scanButtonsInst_int_Data0_1_.Q</A> & !<A href=#35>scanButtonsInst_int_Data0_2_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & scanButtonsInst_int_Data0_2_.Q & !<A href=#36>scanButtonsInst_int_Data0_3_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & <A href=#33>scanButtonsInst_int_Data0_0_.Q</A> & !scanButtonsInst_int_Data0_3_.Q
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & I2CInst_DataLED_2_.Q & !<A href=#40>I2CInst_DataLED_3_.Q</A>
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & <A href=#37>I2CInst_DataLED_0_.Q</A> & !I2CInst_DataLED_3_.Q ) ; (6 pterms, 11 signals)
+LED_C.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A> & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A>
+       & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A> & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A>
+       & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A> & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A>
+       & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A> & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A>
+       & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A> & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A>
+       & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=18>LED_D.D</A> = !( <A href=#8>reset</A> & !<A href=#31>clkGenerator_scancnt_0_.Q</A> & !<A href=#32>clkGenerator_scancnt_1_.Q</A>
+       & !<A href=#37>I2CInst_DataLED_0_.Q</A> & !<A href=#39>I2CInst_DataLED_2_.Q</A> & !<A href=#40>I2CInst_DataLED_3_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !<A href=#33>scanButtonsInst_int_Data0_0_.Q</A> & !<A href=#34>scanButtonsInst_int_Data0_1_.Q</A>
+       & !<A href=#35>scanButtonsInst_int_Data0_2_.Q</A>
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & I2CInst_DataLED_0_.Q & !<A href=#38>I2CInst_DataLED_1_.Q</A> & I2CInst_DataLED_2_.Q
+       & !I2CInst_DataLED_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & scanButtonsInst_int_Data0_0_.Q & !scanButtonsInst_int_Data0_1_.Q
+       & scanButtonsInst_int_Data0_2_.Q & !<A href=#36>scanButtonsInst_int_Data0_3_.Q</A>
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & !I2CInst_DataLED_1_.Q & !I2CInst_DataLED_2_.Q & I2CInst_DataLED_3_.Q
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & !I2CInst_DataLED_0_.Q & I2CInst_DataLED_1_.Q & !I2CInst_DataLED_3_.Q
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & I2CInst_DataLED_1_.Q & !I2CInst_DataLED_2_.Q & !I2CInst_DataLED_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !scanButtonsInst_int_Data0_0_.Q & scanButtonsInst_int_Data0_1_.Q
+       & !scanButtonsInst_int_Data0_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !scanButtonsInst_int_Data0_1_.Q & !scanButtonsInst_int_Data0_2_.Q
+       & scanButtonsInst_int_Data0_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & scanButtonsInst_int_Data0_1_.Q & !scanButtonsInst_int_Data0_2_.Q
+       & !scanButtonsInst_int_Data0_3_.Q ) ; (10 pterms, 11 signals)
+LED_D.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A> & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A>
+       & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A> & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A>
+       & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A> & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A>
+       & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A> & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A>
+       & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A> & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A>
+       & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=19>LED_E.D</A> = !( <A href=#8>reset</A> & !<A href=#31>clkGenerator_scancnt_0_.Q</A> & !<A href=#32>clkGenerator_scancnt_1_.Q</A>
+       & !<A href=#37>I2CInst_DataLED_0_.Q</A> & !<A href=#38>I2CInst_DataLED_1_.Q</A> & !<A href=#39>I2CInst_DataLED_2_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !<A href=#33>scanButtonsInst_int_Data0_0_.Q</A> & <A href=#34>scanButtonsInst_int_Data0_1_.Q</A>
+       & !<A href=#36>scanButtonsInst_int_Data0_3_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !scanButtonsInst_int_Data0_0_.Q & !scanButtonsInst_int_Data0_1_.Q
+       & !<A href=#35>scanButtonsInst_int_Data0_2_.Q</A>
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & !I2CInst_DataLED_0_.Q & I2CInst_DataLED_1_.Q & !<A href=#40>I2CInst_DataLED_3_.Q</A> ) ; (4 pterms, 11 signals)
+LED_E.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A> & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A>
+       & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A> & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A>
+       & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A> & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A>
+       & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A> & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A>
+       & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A> & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A>
+       & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=20>LED_F.D</A> = !( <A href=#8>reset</A> & !<A href=#31>clkGenerator_scancnt_0_.Q</A> & !<A href=#32>clkGenerator_scancnt_1_.Q</A>
+       & !<A href=#37>I2CInst_DataLED_0_.Q</A> & !<A href=#38>I2CInst_DataLED_1_.Q</A> & !<A href=#40>I2CInst_DataLED_3_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !<A href=#33>scanButtonsInst_int_Data0_0_.Q</A> & !<A href=#34>scanButtonsInst_int_Data0_1_.Q</A>
+       & !<A href=#36>scanButtonsInst_int_Data0_3_.Q</A>
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & !I2CInst_DataLED_1_.Q & !<A href=#39>I2CInst_DataLED_2_.Q</A> & I2CInst_DataLED_3_.Q
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & !I2CInst_DataLED_0_.Q & I2CInst_DataLED_2_.Q & !I2CInst_DataLED_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !scanButtonsInst_int_Data0_1_.Q & !<A href=#35>scanButtonsInst_int_Data0_2_.Q</A>
+       & scanButtonsInst_int_Data0_3_.Q
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & !I2CInst_DataLED_1_.Q & I2CInst_DataLED_2_.Q & !I2CInst_DataLED_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !scanButtonsInst_int_Data0_0_.Q & scanButtonsInst_int_Data0_2_.Q
+       & !scanButtonsInst_int_Data0_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !scanButtonsInst_int_Data0_1_.Q & scanButtonsInst_int_Data0_2_.Q
+       & !scanButtonsInst_int_Data0_3_.Q ) ; (8 pterms, 11 signals)
+LED_F.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A> & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A>
+       & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A> & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A>
+       & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A> & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A>
+       & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A> & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A>
+       & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A> & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A>
+       & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=21>LED_G.D</A> = !( <A href=#8>reset</A> & !<A href=#31>clkGenerator_scancnt_0_.Q</A> & !<A href=#32>clkGenerator_scancnt_1_.Q</A>
+       & !<A href=#37>I2CInst_DataLED_0_.Q</A> & <A href=#38>I2CInst_DataLED_1_.Q</A> & !<A href=#40>I2CInst_DataLED_3_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !<A href=#33>scanButtonsInst_int_Data0_0_.Q</A> & <A href=#34>scanButtonsInst_int_Data0_1_.Q</A>
+       & !<A href=#36>scanButtonsInst_int_Data0_3_.Q</A>
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & scanButtonsInst_int_Data0_0_.Q & scanButtonsInst_int_Data0_1_.Q
+       & !<A href=#35>scanButtonsInst_int_Data0_2_.Q</A>
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & !I2CInst_DataLED_1_.Q & !<A href=#39>I2CInst_DataLED_2_.Q</A> & I2CInst_DataLED_3_.Q
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & !I2CInst_DataLED_1_.Q & I2CInst_DataLED_2_.Q & !I2CInst_DataLED_3_.Q
+    # reset & !clkGenerator_scancnt_0_.Q & !clkGenerator_scancnt_1_.Q
+       & I2CInst_DataLED_1_.Q & !I2CInst_DataLED_2_.Q & !I2CInst_DataLED_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !scanButtonsInst_int_Data0_1_.Q & scanButtonsInst_int_Data0_2_.Q
+       & !scanButtonsInst_int_Data0_3_.Q
+    # reset & clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q
+       & !scanButtonsInst_int_Data0_1_.Q & !scanButtonsInst_int_Data0_2_.Q
+       & scanButtonsInst_int_Data0_3_.Q ) ; (8 pterms, 11 signals)
+LED_G.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A> & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A>
+       & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A> & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A>
+       & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A> & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A>
+       & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A> & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A>
+       & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A> & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A>
+       & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=22>LED_VCC1.D</A> = <A href=#8>reset</A> & <A href=#31>clkGenerator_scancnt_0_.Q</A> & <A href=#32>clkGenerator_scancnt_1_.Q</A> ; (1 pterm, 3 signals)
+LED_VCC1.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=23>LED_VCC2.D</A> = <A href=#8>reset</A> & !<A href=#31>clkGenerator_scancnt_0_.Q</A> & <A href=#32>clkGenerator_scancnt_1_.Q</A> ; (1 pterm, 3 signals)
+LED_VCC2.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=24>LED_VCC3.D</A> = <A href=#8>reset</A> & <A href=#31>clkGenerator_scancnt_0_.Q</A> & !<A href=#32>clkGenerator_scancnt_1_.Q</A> ; (1 pterm, 3 signals)
+LED_VCC3.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=26>LED_VCC4.D</A> = <A href=#8>reset</A> & !<A href=#31>clkGenerator_scancnt_0_.Q</A> & !<A href=#32>clkGenerator_scancnt_1_.Q</A> ; (1 pterm, 3 signals)
+LED_VCC4.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=30>SCL.D</A> = !<A href=#62>I2CInst_phase2.Q</A> ; (1 pterm, 1 signal)
+SCL.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+SCL.CE = !( <A href=#97>SCL_0</A> ) ; (1 pterm, 1 signal)
+
+<A name=97>SCL_0</A> = !<A href=#8>reset</A>
+    # !<A href=#95>I2CInst_eeprom_state_0_.Q</A> & !<A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # !<A href=#62>I2CInst_phase2.Q</A> & !<A href=#79>I2CInst_phase0.Q</A> ; (3 pterms, 5 signals)
+
+<A name=28>SDA.D</A> = <A href=#28>SDA.Q</A> & !<A href=#60>I2CInst_phase1.Q</A> & !<A href=#61>I2CInst_phase3.Q</A>
+       & !<A href=#91>I2CInst_bit_state_2_.Q</A>
+    # SDA.Q & !I2CInst_phase3.Q & !<A href=#89>I2CInst_bit_state_0_.Q</A>
+       & I2CInst_bit_state_2_.Q & <A href=#96>I2CInst_eeprom_state_1_.Q</A>
+    # SDA.Q & !<A href=#92>I2CInst_bit_state_3_.Q</A> & <A href=#93>I2CInst_bit_state_4_.Q</A>
+       & <A href=#94>I2CInst_bit_state_5_.Q</A> & <A href=#95>I2CInst_eeprom_state_0_.Q</A>
+    # SDA.Q & !I2CInst_phase1.Q & !I2CInst_bit_state_0_.Q
+       & !<A href=#90>I2CInst_bit_state_1_.Q</A> & !I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q
+    # SDA.Q & I2CInst_bit_state_0_.Q & I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # SDA.Q & !I2CInst_bit_state_0_.Q & I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_2_.Q & !I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_0_.Q
+    # SDA.Q & I2CInst_bit_state_0_.Q & !I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_2_.Q & I2CInst_bit_state_3_.Q
+    # SDA.Q & !I2CInst_bit_state_0_.Q & I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & I2CInst_eeprom_state_1_.Q
+    # SDA.Q & !I2CInst_phase3.Q & I2CInst_bit_state_0_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # SDA.Q & !I2CInst_phase3.Q & I2CInst_bit_state_1_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # SDA.Q & !I2CInst_phase3.Q & !I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_3_.Q
+    # SDA.Q & !I2CInst_phase3.Q & !I2CInst_bit_state_0_.Q
+       & I2CInst_bit_state_1_.Q & !I2CInst_bit_state_4_.Q
+    # I2CInst_phase3.Q & <A href=#84>I2CInst_WrData_0_.Q</A> & I2CInst_bit_state_0_.Q
+       & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_0_.Q
+    # I2CInst_phase3.Q & <A href=#87>I2CInst_WrData_3_.Q</A> & I2CInst_bit_state_0_.Q
+       & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # I2CInst_phase1.Q & !I2CInst_bit_state_0_.Q & I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_2_.Q & !I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q & !I2CInst_bit_state_5_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # I2CInst_phase3.Q & <A href=#86>I2CInst_WrData_2_.Q</A> & !I2CInst_bit_state_0_.Q
+       & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # I2CInst_phase3.Q & <A href=#85>I2CInst_WrData_1_.Q</A> & !I2CInst_bit_state_0_.Q
+       & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # I2CInst_phase3.Q & <A href=#81>I2CInst_Flag_RW.Q</A> & I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_2_.Q & I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q & !I2CInst_bit_state_5_.Q
+       & I2CInst_eeprom_state_1_.Q
+    # I2CInst_phase3.Q & I2CInst_Flag_RW.Q & !I2CInst_bit_state_0_.Q
+       & !I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_4_.Q & I2CInst_eeprom_state_0_.Q
+    # I2CInst_phase3.Q & I2CInst_bit_state_0_.Q & I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_2_.Q & !I2CInst_bit_state_3_.Q
+       & !I2CInst_bit_state_4_.Q & I2CInst_eeprom_state_0_.Q
+    # SDA.Q & !I2CInst_phase1.Q & !I2CInst_Flag_RW.Q & !I2CInst_bit_state_0_.Q
+       & I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_4_.Q & I2CInst_eeprom_state_1_.Q
+    # I2CInst_phase3.Q & I2CInst_Flag_RW.Q & !I2CInst_bit_state_0_.Q
+       & !I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_4_.Q & I2CInst_eeprom_state_1_.Q
+    # I2CInst_phase3.Q & I2CInst_bit_state_0_.Q & I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_3_.Q & I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # I2CInst_phase3.Q & I2CInst_bit_state_0_.Q & I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_2_.Q & I2CInst_bit_state_4_.Q
+       & !I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # I2CInst_phase3.Q & !I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+       & I2CInst_eeprom_state_0_.Q
+    # I2CInst_phase3.Q & I2CInst_bit_state_0_.Q & I2CInst_bit_state_1_.Q
+       & !I2CInst_bit_state_2_.Q & !I2CInst_bit_state_3_.Q
+       & !I2CInst_bit_state_4_.Q & I2CInst_eeprom_state_1_.Q
+    # I2CInst_phase3.Q & !I2CInst_bit_state_1_.Q & !I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+       & I2CInst_eeprom_state_1_.Q
+    # SDA.Q & !I2CInst_bit_state_0_.Q & !I2CInst_bit_state_1_.Q
+       & I2CInst_bit_state_3_.Q & !I2CInst_bit_state_4_.Q
+    # I2CInst_phase1.Q & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # SDA.Q & !I2CInst_phase3.Q & I2CInst_bit_state_2_.Q
+       & !I2CInst_bit_state_5_.Q
+    # SDA.Q & !I2CInst_bit_state_1_.Q & I2CInst_bit_state_2_.Q
+       & I2CInst_bit_state_5_.Q & I2CInst_eeprom_state_1_.Q
+    # SDA.Q & !I2CInst_phase3.Q & I2CInst_bit_state_0_.Q
+       & !I2CInst_bit_state_2_.Q
+    # SDA.Q & !I2CInst_phase3.Q & !I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q
+    # SDA.Q & !I2CInst_bit_state_2_.Q & !I2CInst_bit_state_3_.Q
+       & I2CInst_bit_state_4_.Q
+    # SDA.Q & !I2CInst_eeprom_state_0_.Q & !I2CInst_eeprom_state_1_.Q ; (35 pterms, 16 signals)
+SDA.OE = <A href=#81>I2CInst_Flag_RW.Q</A> ; (1 pterm, 1 signal)
+SDA.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+SDA.CE = <A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=50>clkGenerator_FreqDivide_1_q_10_.T</A> = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A>
+    # <A href=#8>reset</A> & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_10_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_10_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_10_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=51>clkGenerator_FreqDivide_1_q_11_.T</A> = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A>
+    # <A href=#8>reset</A> & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_11_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_11_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_11_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=52>clkGenerator_FreqDivide_1_q_12_.T</A> = <A href=#8>reset</A> & <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & <A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & <A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+    # !reset & <A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A> ; (2 pterms, 13 signals)
+clkGenerator_FreqDivide_1_q_12_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_12_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=53>clkGenerator_FreqDivide_1_q_13_.T</A> = <A href=#8>reset</A> & <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & <A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & <A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & <A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+    # clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A>
+    # !reset & clkGenerator_FreqDivide_1_q_13_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_13_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_13_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=41>clkGenerator_FreqDivide_1_q_1_.D</A> = <A href=#8>reset</A> & !<A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A> ; (1 pterm, 2 signals)
+clkGenerator_FreqDivide_1_q_1_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=42>clkGenerator_FreqDivide_1_q_2_.D</A> = <A href=#8>reset</A> & <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & !<A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A>
+    # reset & !clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q ; (2 pterms, 3 signals)
+clkGenerator_FreqDivide_1_q_2_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=43>clkGenerator_FreqDivide_1_q_3_.D</A> = <A href=#8>reset</A> & <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & !<A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+    # reset & !clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q ; (3 pterms, 4 signals)
+clkGenerator_FreqDivide_1_q_3_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=44>clkGenerator_FreqDivide_1_q_4_.D</A> = <A href=#8>reset</A> & <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & !<A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A>
+    # reset & !clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q ; (4 pterms, 5 signals)
+clkGenerator_FreqDivide_1_q_4_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=45>clkGenerator_FreqDivide_1_q_5_.D.X1</A> = <A href=#8>reset</A>
+       & !<A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & <A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+    # reset & !<A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & clkGenerator_FreqDivide_1_q_5_.Q
+    # reset & !<A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A>
+       & clkGenerator_FreqDivide_1_q_5_.Q
+    # reset & !<A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & clkGenerator_FreqDivide_1_q_5_.Q
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q ; (5 pterms, 6 signals)
+clkGenerator_FreqDivide_1_q_5_.D.X2 = <A href=#8>reset</A> & <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 14 signals)
+clkGenerator_FreqDivide_1_q_5_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_5_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=46>clkGenerator_FreqDivide_1_q_6_.T</A> = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A>
+       & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A> & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A>
+       & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A> & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A>
+       & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A>
+    # <A href=#8>reset</A> & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & <A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+    # !reset & clkGenerator_FreqDivide_1_q_6_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_6_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_6_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=47>clkGenerator_FreqDivide_1_q_7_.T</A> = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A>
+       & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A> & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A>
+       & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A> & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A>
+       & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A>
+    # <A href=#8>reset</A> & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & <A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & clkGenerator_FreqDivide_1_q_6_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_7_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_7_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_7_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=48>clkGenerator_FreqDivide_1_q_8_.T</A> = <A href=#8>reset</A> & <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & <A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+    # !reset & <A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> ; (2 pterms, 9 signals)
+clkGenerator_FreqDivide_1_q_8_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_8_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=49>clkGenerator_FreqDivide_1_q_9_.T</A> = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A>
+    # <A href=#8>reset</A> & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_9_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_9_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_9_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=55>clkGenerator_FreqDivide_2_q_1_.D</A> = <A href=#8>reset</A> & !<A href=#55>clkGenerator_FreqDivide_2_q_1_.Q</A> ; (1 pterm, 2 signals)
+clkGenerator_FreqDivide_2_q_1_.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+clkGenerator_FreqDivide_2_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=57>clkGenerator_FreqDivide_2_q_2_.D</A> = <A href=#8>reset</A> & <A href=#55>clkGenerator_FreqDivide_2_q_1_.Q</A>
+       & !<A href=#57>clkGenerator_FreqDivide_2_q_2_.Q</A> & <A href=#58>clkGenerator_FreqDivide_2_q_3_.Q</A>
+    # reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & !clkGenerator_FreqDivide_2_q_2_.Q & !<A href=#59>clkGenerator_FreqDivide_2_q_4_.Q</A>
+    # reset & !clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q ; (3 pterms, 5 signals)
+clkGenerator_FreqDivide_2_q_2_.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+clkGenerator_FreqDivide_2_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=58>clkGenerator_FreqDivide_2_q_3_.D</A> = <A href=#8>reset</A> & <A href=#55>clkGenerator_FreqDivide_2_q_1_.Q</A>
+       & <A href=#57>clkGenerator_FreqDivide_2_q_2_.Q</A> & !<A href=#58>clkGenerator_FreqDivide_2_q_3_.Q</A>
+    # reset & !clkGenerator_FreqDivide_2_q_2_.Q
+       & clkGenerator_FreqDivide_2_q_3_.Q
+    # reset & !clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_3_.Q ; (3 pterms, 4 signals)
+clkGenerator_FreqDivide_2_q_3_.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+clkGenerator_FreqDivide_2_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=59>clkGenerator_FreqDivide_2_q_4_.D</A> = <A href=#8>reset</A> & <A href=#55>clkGenerator_FreqDivide_2_q_1_.Q</A>
+       & <A href=#57>clkGenerator_FreqDivide_2_q_2_.Q</A> & <A href=#58>clkGenerator_FreqDivide_2_q_3_.Q</A>
+       & !<A href=#59>clkGenerator_FreqDivide_2_q_4_.Q</A>
+    # reset & clkGenerator_FreqDivide_2_q_2_.Q
+       & !clkGenerator_FreqDivide_2_q_3_.Q & clkGenerator_FreqDivide_2_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_2_q_2_.Q
+       & clkGenerator_FreqDivide_2_q_3_.Q & clkGenerator_FreqDivide_2_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_4_.Q ; (4 pterms, 5 signals)
+clkGenerator_FreqDivide_2_q_4_.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+clkGenerator_FreqDivide_2_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+<A name=31>clkGenerator_scancnt_0_.D</A> = !<A href=#31>clkGenerator_scancnt_0_.Q</A> ; (1 pterm, 1 signal)
+clkGenerator_scancnt_0_.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=32>clkGenerator_scancnt_1_.D</A> = <A href=#31>clkGenerator_scancnt_0_.Q</A>
+       & !<A href=#32>clkGenerator_scancnt_1_.Q</A>
+    # !clkGenerator_scancnt_0_.Q & clkGenerator_scancnt_1_.Q ; (2 pterms, 2 signals)
+clkGenerator_scancnt_1_.C = <A href=#41>clkGenerator_FreqDivide_1_q_1_.Q</A>
+       & <A href=#42>clkGenerator_FreqDivide_1_q_2_.Q</A> & <A href=#43>clkGenerator_FreqDivide_1_q_3_.Q</A>
+       & <A href=#44>clkGenerator_FreqDivide_1_q_4_.Q</A> & !<A href=#45>clkGenerator_FreqDivide_1_q_5_.Q</A>
+       & <A href=#46>clkGenerator_FreqDivide_1_q_6_.Q</A> & <A href=#47>clkGenerator_FreqDivide_1_q_7_.Q</A>
+       & !<A href=#48>clkGenerator_FreqDivide_1_q_8_.Q</A> & <A href=#49>clkGenerator_FreqDivide_1_q_9_.Q</A>
+       & <A href=#50>clkGenerator_FreqDivide_1_q_10_.Q</A> & <A href=#51>clkGenerator_FreqDivide_1_q_11_.Q</A>
+       & !<A href=#52>clkGenerator_FreqDivide_1_q_12_.Q</A>
+       & <A href=#53>clkGenerator_FreqDivide_1_q_13_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=29>key_out_0_.D</A> = !<A href=#54>scanButtonsInst_scanvalue_0_.Q</A>
+       & !<A href=#56>scanButtonsInst_scanvalue_1_.Q</A> ; (1 pterm, 2 signals)
+key_out_0_.C = <A href=#55>clkGenerator_FreqDivide_2_q_1_.Q</A>
+       & !<A href=#57>clkGenerator_FreqDivide_2_q_2_.Q</A> & !<A href=#58>clkGenerator_FreqDivide_2_q_3_.Q</A>
+       & <A href=#59>clkGenerator_FreqDivide_2_q_4_.Q</A> ; (1 pterm, 4 signals)
+
+<A name=27>key_out_1_.D</A> = <A href=#54>scanButtonsInst_scanvalue_0_.Q</A>
+       & !<A href=#56>scanButtonsInst_scanvalue_1_.Q</A> ; (1 pterm, 2 signals)
+key_out_1_.C = <A href=#55>clkGenerator_FreqDivide_2_q_1_.Q</A>
+       & !<A href=#57>clkGenerator_FreqDivide_2_q_2_.Q</A> & !<A href=#58>clkGenerator_FreqDivide_2_q_3_.Q</A>
+       & <A href=#59>clkGenerator_FreqDivide_2_q_4_.Q</A> ; (1 pterm, 4 signals)
+
+<A name=25>key_out_2_.D</A> = !<A href=#54>scanButtonsInst_scanvalue_0_.Q</A>
+       & <A href=#56>scanButtonsInst_scanvalue_1_.Q</A> ; (1 pterm, 2 signals)
+key_out_2_.C = <A href=#55>clkGenerator_FreqDivide_2_q_1_.Q</A>
+       & !<A href=#57>clkGenerator_FreqDivide_2_q_2_.Q</A> & !<A href=#58>clkGenerator_FreqDivide_2_q_3_.Q</A>
+       & <A href=#59>clkGenerator_FreqDivide_2_q_4_.Q</A> ; (1 pterm, 4 signals)
+
+<A name=14>key_out_3_.D</A> = <A href=#54>scanButtonsInst_scanvalue_0_.Q</A> & <A href=#56>scanButtonsInst_scanvalue_1_.Q</A> ; (1 pterm, 2 signals)
+key_out_3_.C = <A href=#55>clkGenerator_FreqDivide_2_q_1_.Q</A>
+       & !<A href=#57>clkGenerator_FreqDivide_2_q_2_.Q</A> & !<A href=#58>clkGenerator_FreqDivide_2_q_3_.Q</A>
+       & <A href=#59>clkGenerator_FreqDivide_2_q_4_.Q</A> ; (1 pterm, 4 signals)
+
+<A name=33>scanButtonsInst_int_Data0_0_.D</A> = <A href=#10>key_in_0_1_</A> & !<A href=#25>key_out_2_.Q</A> & !<A href=#29>key_out_0_.Q</A>
+    # !key_in_0_1_ & key_out_0_.Q
+    # !key_in_0_1_ & key_out_2_.Q ; (3 pterms, 3 signals)
+scanButtonsInst_int_Data0_0_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+scanButtonsInst_int_Data0_0_.CE = <A href=#98>scanButtonsInst_int_Data0_0__0</A> ; (1 pterm, 1 signal)
+scanButtonsInst_int_Data0_0_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=98>scanButtonsInst_int_Data0_0__0</A> = !<A href=#6>key_in_0_3_</A> & !<A href=#9>key_in_0_2_</A> & !<A href=#10>key_in_0_1_</A>
+       & <A href=#11>key_in_0_0_</A> & !<A href=#14>key_out_3_.Q</A> & !<A href=#27>key_out_1_.Q</A> & !<A href=#29>key_out_0_.Q</A>
+    # !key_in_0_3_ & !key_in_0_2_ & !key_in_0_1_ & key_in_0_0_ & !key_out_3_.Q
+       & !<A href=#25>key_out_2_.Q</A> & !key_out_0_.Q
+    # !key_in_0_3_ & !key_in_0_2_ & !key_in_0_1_ & key_in_0_0_ & !key_out_3_.Q
+       & !key_out_2_.Q & !key_out_1_.Q
+    # !key_in_0_3_ & !key_in_0_2_ & key_in_0_1_ & !key_in_0_0_ & !key_out_3_.Q
+       & !key_out_1_.Q & !key_out_0_.Q
+    # !key_in_0_3_ & key_in_0_2_ & !key_in_0_1_ & !key_in_0_0_ & !key_out_3_.Q
+       & !key_out_1_.Q & !key_out_0_.Q
+    # !key_in_0_3_ & !key_in_0_2_ & key_in_0_1_ & !key_in_0_0_ & !key_out_3_.Q
+       & !key_out_2_.Q & !key_out_0_.Q
+    # !key_in_0_3_ & key_in_0_2_ & !key_in_0_1_ & !key_in_0_0_ & !key_out_3_.Q
+       & !key_out_2_.Q & !key_out_0_.Q
+    # !key_in_0_3_ & !key_in_0_2_ & key_in_0_1_ & !key_in_0_0_ & !key_out_3_.Q
+       & !key_out_2_.Q & !key_out_1_.Q
+    # !key_in_0_3_ & key_in_0_2_ & !key_in_0_1_ & !key_in_0_0_ & !key_out_3_.Q
+       & !key_out_2_.Q & !key_out_1_.Q
+    # !key_in_0_3_ & !key_in_0_2_ & !key_in_0_1_ & key_in_0_0_ & !key_out_2_.Q
+       & !key_out_1_.Q & !key_out_0_.Q ; (10 pterms, 8 signals)
+
+<A name=34>scanButtonsInst_int_Data0_1_.D</A> = !( <A href=#10>key_in_0_1_</A> & <A href=#27>key_out_1_.Q</A>
+    # <A href=#11>key_in_0_0_</A> & !<A href=#25>key_out_2_.Q</A>
+    # !key_in_0_0_ & key_out_2_.Q ) ; (3 pterms, 4 signals)
+scanButtonsInst_int_Data0_1_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+scanButtonsInst_int_Data0_1_.CE = <A href=#98>scanButtonsInst_int_Data0_0__0</A> ; (1 pterm, 1 signal)
+scanButtonsInst_int_Data0_1_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=35>scanButtonsInst_int_Data0_2_.D</A> = !<A href=#14>key_out_3_.Q</A> & !<A href=#25>key_out_2_.Q</A> & !<A href=#29>key_out_0_.Q</A>
+    # <A href=#11>key_in_0_0_</A> & !key_out_3_.Q & !key_out_0_.Q ; (2 pterms, 4 signals)
+scanButtonsInst_int_Data0_2_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+scanButtonsInst_int_Data0_2_.CE = <A href=#98>scanButtonsInst_int_Data0_0__0</A> ; (1 pterm, 1 signal)
+scanButtonsInst_int_Data0_2_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=36>scanButtonsInst_int_Data0_3_.D</A> = !<A href=#11>key_in_0_0_</A> & !<A href=#27>key_out_1_.Q</A> & !<A href=#29>key_out_0_.Q</A> ; (1 pterm, 3 signals)
+scanButtonsInst_int_Data0_3_.C = <A href=#7>clk</A> ; (1 pterm, 1 signal)
+scanButtonsInst_int_Data0_3_.CE = <A href=#98>scanButtonsInst_int_Data0_0__0</A> ; (1 pterm, 1 signal)
+scanButtonsInst_int_Data0_3_.AR = !<A href=#8>reset</A> ; (1 pterm, 1 signal)
+
+<A name=54>scanButtonsInst_scanvalue_0_.D</A> = !<A href=#54>scanButtonsInst_scanvalue_0_.Q</A> ; (1 pterm, 1 signal)
+scanButtonsInst_scanvalue_0_.C = <A href=#55>clkGenerator_FreqDivide_2_q_1_.Q</A>
+       & !<A href=#57>clkGenerator_FreqDivide_2_q_2_.Q</A> & !<A href=#58>clkGenerator_FreqDivide_2_q_3_.Q</A>
+       & <A href=#59>clkGenerator_FreqDivide_2_q_4_.Q</A> ; (1 pterm, 4 signals)
+
+<A name=56>scanButtonsInst_scanvalue_1_.D</A> = <A href=#54>scanButtonsInst_scanvalue_0_.Q</A>
+       & !<A href=#56>scanButtonsInst_scanvalue_1_.Q</A>
+    # !scanButtonsInst_scanvalue_0_.Q & scanButtonsInst_scanvalue_1_.Q ; (2 pterms, 2 signals)
+scanButtonsInst_scanvalue_1_.C = <A href=#55>clkGenerator_FreqDivide_2_q_1_.Q</A>
+       & !<A href=#57>clkGenerator_FreqDivide_2_q_2_.Q</A> & !<A href=#58>clkGenerator_FreqDivide_2_q_3_.Q</A>
+       & <A href=#59>clkGenerator_FreqDivide_2_q_4_.Q</A> ; (1 pterm, 4 signals)
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+
+

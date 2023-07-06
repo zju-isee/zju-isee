@@ -1,0 +1,585 @@
+|--------------------------------------------------- ----------|
+|- ispLEVER Classic 2.1.00.02.49.20 Equations File            -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+Equations:
+
+LED_A.D = !( reset & !PS2_Receiver_Inst_PS_Data_0_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q & PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_0_.Q & PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (4 pterms, 5 signals)
+LED_A.C = clk_low ; (1 pterm, 1 signal)
+
+LED_B.D = !( reset & PS2_Receiver_Inst_PS_Data_0_.Q
+       & PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_0_.Q
+       & !PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (4 pterms, 5 signals)
+LED_B.C = clk_low ; (1 pterm, 1 signal)
+
+LED_C.D = !( reset & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_2_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_0_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (3 pterms, 5 signals)
+LED_C.C = clk_low ; (1 pterm, 1 signal)
+
+LED_D.D = !( reset & !PS2_Receiver_Inst_PS_Data_0_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_0_.Q & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & PS2_Receiver_Inst_PS_Data_2_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q & PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_0_.Q & PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (5 pterms, 5 signals)
+LED_D.C = clk_low ; (1 pterm, 1 signal)
+
+LED_E.D = !( reset & !PS2_Receiver_Inst_PS_Data_0_.Q
+       & !PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_2_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_0_.Q & PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (2 pterms, 5 signals)
+LED_E.C = clk_low ; (1 pterm, 1 signal)
+
+LED_F.D = !( reset & !PS2_Receiver_Inst_PS_Data_0_.Q
+       & !PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q & PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_0_.Q & PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q & PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (4 pterms, 5 signals)
+LED_F.C = clk_low ; (1 pterm, 1 signal)
+
+LED_G.D = !( reset & !PS2_Receiver_Inst_PS_Data_0_.Q
+       & PS2_Receiver_Inst_PS_Data_2_.Q & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q
+       & !PS2_Receiver_Inst_PS_Data_2_.Q & PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & PS2_Receiver_Inst_PS_Data_1_.Q & !PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q
+    # reset & !PS2_Receiver_Inst_PS_Data_1_.Q & PS2_Receiver_Inst_PS_Data_2_.Q
+       & !PS2_Receiver_Inst_PS_Data_3_.Q ) ; (4 pterms, 5 signals)
+LED_G.C = clk_low ; (1 pterm, 1 signal)
+
+LED_VCC1 = 0 ; (0 pterm, 0 signal)
+
+LED_VCC2 = 0 ; (0 pterm, 0 signal)
+
+LED_VCC3 = 0 ; (0 pterm, 0 signal)
+
+LED_VCC4.D = reset ; (1 pterm, 1 signal)
+LED_VCC4.C = clk_low ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_KeyClock_r0.D = KeyClock ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_KeyClock_r0.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_KeyClock_r0.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_KeyClock_r1.D = PS2_Receiver_Inst_KeyClock_r0.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_KeyClock_r1.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_KeyClock_r1.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_KeyClock_r2.D = PS2_Receiver_Inst_KeyClock_r1.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_KeyClock_r2.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_KeyClock_r2.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_0_.D = PS2_Receiver_Inst_RxData_1_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_0_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_0_.AP = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_1_.D = PS2_Receiver_Inst_RxData_2_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_1_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_1_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_2_.D = PS2_Receiver_Inst_RxData_3_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_2_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_2_.AP = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_3_.D = PS2_Receiver_Inst_RxData_4_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_3_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_3_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_4_.D = PS2_Receiver_Inst_RxData_5_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_4_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_4_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_5_.D = PS2_Receiver_Inst_RxData_6_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_5_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_5_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_6_.D = PS2_Receiver_Inst_RxData_7_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_6_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_6_.AP = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LastRxData_7_.D = PS2_Receiver_Inst_RxData_8_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_7_.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LastRxData_7_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_LedEn.D = !PS2_Receiver_Inst_LastRxData_0_.Q
+       & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & !PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_LastRxData_7_.Q ; (1 pterm, 8 signals)
+PS2_Receiver_Inst_LedEn.C = !PS2_Receiver_Inst_RxEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_LedEn.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_PS_Data_0_.D = !PS2_Receiver_Inst_LastRxData_0_.Q
+       & !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_1_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_3_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_0_.Q ; (13 pterms, 9 signals)
+PS2_Receiver_Inst_PS_Data_0_.LH = !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_PS_Data_0_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_PS_Data_1_.D = !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_3_.Q & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_4_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_3_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_1_.Q ; (13 pterms, 9 signals)
+PS2_Receiver_Inst_PS_Data_1_.LH = !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_PS_Data_1_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_PS_Data_2_.D = !PS2_Receiver_Inst_LastRxData_1_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_3_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_4_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_2_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_2_.Q ; (13 pterms, 9 signals)
+PS2_Receiver_Inst_PS_Data_2_.LH = !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_PS_Data_2_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_PS_Data_3_.D = !PS2_Receiver_Inst_LastRxData_1_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_3_.Q
+    # PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_3_.Q ; (12 pterms, 9 signals)
+PS2_Receiver_Inst_PS_Data_3_.LH = !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_PS_Data_3_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_RxData_1_.D.X1 = !KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_1_.Q
+    # KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_1_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_1_.D.X2 = PS2_Receiver_Inst_RxData_1_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_1_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_1_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_2_.D.X1 = !KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_2_.Q
+    # KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_2_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_2_.D.X2 = PS2_Receiver_Inst_RxData_2_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_2_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_2_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_3_.D.X1 = !KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_3_.Q
+    # KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_3_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_3_.D.X2 = PS2_Receiver_Inst_RxData_3_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_3_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_3_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_4_.D.X1 = !KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_4_.Q
+    # KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_4_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_4_.D.X2 = PS2_Receiver_Inst_RxData_4_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_4_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_4_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_5_.D.X1 = !KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_5_.Q
+    # KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_5_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_5_.D.X2 = PS2_Receiver_Inst_RxData_5_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_5_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_5_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_6_.D.X1 = !KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_6_.Q
+    # KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_6_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_6_.D.X2 = PS2_Receiver_Inst_RxData_6_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_6_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_6_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_7_.D.X1 = !KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_7_.Q
+    # KeyData & PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_7_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_7_.D.X2 = PS2_Receiver_Inst_RxData_7_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_7_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_7_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxData_8_.D.X1 = !KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & PS2_Receiver_Inst_counter_3_.Q & PS2_Receiver_Inst_RxData_8_.Q
+    # KeyData & !PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & PS2_Receiver_Inst_counter_3_.Q & !PS2_Receiver_Inst_RxData_8_.Q ; (2 pterms, 6 signals)
+PS2_Receiver_Inst_RxData_8_.D.X2 = PS2_Receiver_Inst_RxData_8_.Q ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_8_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxData_8_.CE = reset & !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 3 signals)
+
+PS2_Receiver_Inst_RxEn.D = !PS2_Receiver_Inst_counter_1_.Q
+       & !PS2_Receiver_Inst_counter_2_.Q
+    # !PS2_Receiver_Inst_counter_3_.Q ; (2 pterms, 3 signals)
+PS2_Receiver_Inst_RxEn.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_RxEn.CE = !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 2 signals)
+PS2_Receiver_Inst_RxEn.AP = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_counter_0_.D = !PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+    # !PS2_Receiver_Inst_counter_0_.Q & !PS2_Receiver_Inst_counter_3_.Q ; (2 pterms, 4 signals)
+PS2_Receiver_Inst_counter_0_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_counter_0_.CE = !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 2 signals)
+PS2_Receiver_Inst_counter_0_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_counter_1_.D = PS2_Receiver_Inst_counter_0_.Q
+       & !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+    # !PS2_Receiver_Inst_counter_0_.Q & PS2_Receiver_Inst_counter_1_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q
+    # PS2_Receiver_Inst_counter_0_.Q & !PS2_Receiver_Inst_counter_1_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q ; (3 pterms, 4 signals)
+PS2_Receiver_Inst_counter_1_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_counter_1_.CE = !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 2 signals)
+PS2_Receiver_Inst_counter_1_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_counter_2_.D = PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q
+    # !PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q
+    # !PS2_Receiver_Inst_counter_0_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q ; (3 pterms, 4 signals)
+PS2_Receiver_Inst_counter_2_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_counter_2_.CE = !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 2 signals)
+PS2_Receiver_Inst_counter_2_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_counter_3_.D = PS2_Receiver_Inst_counter_0_.Q
+       & PS2_Receiver_Inst_counter_1_.Q & PS2_Receiver_Inst_counter_2_.Q
+       & !PS2_Receiver_Inst_counter_3_.Q
+    # !PS2_Receiver_Inst_counter_1_.Q & !PS2_Receiver_Inst_counter_2_.Q
+       & PS2_Receiver_Inst_counter_3_.Q ; (2 pterms, 4 signals)
+PS2_Receiver_Inst_counter_3_.C = clk ; (1 pterm, 1 signal)
+PS2_Receiver_Inst_counter_3_.CE = !PS2_Receiver_Inst_KeyClock_r1.Q
+       & PS2_Receiver_Inst_KeyClock_r2.Q ; (1 pterm, 2 signals)
+PS2_Receiver_Inst_counter_3_.AR = !reset ; (1 pterm, 1 signal)
+
+PS2_Receiver_Inst_save_0_.D = !PS2_Receiver_Inst_LastRxData_0_.Q
+       & !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_1_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_0_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_0_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_0_.Q ; (13 pterms, 9 signals)
+PS2_Receiver_Inst_save_0_.LH = reset & !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 2 signals)
+
+PS2_Receiver_Inst_save_1_.D = !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_3_.Q & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_3_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_4_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_1_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_1_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_1_.Q ; (13 pterms, 9 signals)
+PS2_Receiver_Inst_save_1_.LH = reset & !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 2 signals)
+
+PS2_Receiver_Inst_save_2_.D = !PS2_Receiver_Inst_LastRxData_1_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_3_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_4_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_2_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_2_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_2_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_2_.Q ; (13 pterms, 9 signals)
+PS2_Receiver_Inst_save_2_.LH = reset & !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 2 signals)
+
+PS2_Receiver_Inst_save_3_.D = !PS2_Receiver_Inst_LastRxData_1_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_1_.Q & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q & PS2_Receiver_Inst_save_3_.Q
+    # PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_LastRxData_3_.Q
+       & PS2_Receiver_Inst_LastRxData_4_.Q & PS2_Receiver_Inst_LastRxData_5_.Q
+       & !PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_LastRxData_2_.Q
+       & !PS2_Receiver_Inst_LastRxData_3_.Q
+       & !PS2_Receiver_Inst_LastRxData_4_.Q
+       & !PS2_Receiver_Inst_LastRxData_5_.Q
+       & PS2_Receiver_Inst_LastRxData_6_.Q
+       & !PS2_Receiver_Inst_LastRxData_7_.Q
+    # PS2_Receiver_Inst_LastRxData_5_.Q & PS2_Receiver_Inst_LastRxData_6_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_0_.Q & !PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # PS2_Receiver_Inst_LastRxData_0_.Q & PS2_Receiver_Inst_LastRxData_1_.Q
+       & PS2_Receiver_Inst_save_3_.Q
+    # PS2_Receiver_Inst_LastRxData_7_.Q & PS2_Receiver_Inst_save_3_.Q
+    # !PS2_Receiver_Inst_LastRxData_2_.Q & PS2_Receiver_Inst_save_3_.Q ; (12 pterms, 9 signals)
+PS2_Receiver_Inst_save_3_.LH = reset & !PS2_Receiver_Inst_LedEn.Q ; (1 pterm, 2 signals)
+
