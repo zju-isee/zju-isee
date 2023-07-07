@@ -1,0 +1,26 @@
+MODULE AD2BCD
+
+S7..S0 pin;
+D11..D0 pin;
+score =[S7..S0];
+bcd3 =[D3..D0];
+bcd2 =[D7..D4];
+bcd1 =[D11..D8];
+
+x=.x.;
+binary = 0;
+voltage = 0;
+clear macro (a) {@const ?a=0;};
+inc macro (a){@const ?a=?a+1;};
+bin2vol macro(a,b){@const ?b=(?a*507)/256;};
+
+truth_table (score -> [bcd3,bcd2,bcd1])
+clear(binary);
+@repeat 256 {
+bin2vol(binary,voltage);binary -> [voltage/100,(voltage%100)/10,voltage%10];inc(binary);}
+test_vectors (score ->[bcd3,bcd2,bcd1])
+clear(binary);
+@repeat 256{
+binary ->[x,x,x];inc(binary);}
+END 
+

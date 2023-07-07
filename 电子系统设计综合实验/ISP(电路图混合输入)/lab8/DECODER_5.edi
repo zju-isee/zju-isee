@@ -1,0 +1,215 @@
+(edif root
+  (edifVersion 2 0 0)
+  (edifLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timeStamp 2023 5 1 9 8 9)
+      (author "Lattice Semiconductor Corp.")
+      (program "EDIF Writer"(version "lse"))
+    )
+  )
+  (external mach
+    (edifLevel 0)
+    (technology (numberDefinition))
+    (cell OBUF
+      (cellType generic)
+      (view (rename INTERFACE_c "INTERFACE")
+        (viewType netlist)
+        (interface
+          (port O (direction OUTPUT))
+          (port I0 (direction INPUT))
+        )
+        (property black_box_pad_pin (string "O"))
+      )
+    )
+    (cell IBUF
+      (cellType generic)
+      (view (rename INTERFACE_c "INTERFACE")
+        (viewType netlist)
+        (interface
+          (port O (direction OUTPUT))
+          (port I0 (direction INPUT))
+        )
+        (property black_box_pad_pin (string "I0"))
+      )
+    )
+    (cell VCC
+      (cellType generic)
+      (view (rename uNoName_ "<NoName>")
+        (viewType netlist)
+        (interface
+          (port X (direction OUTPUT))
+        )
+      )
+    )
+    (cell GND
+      (cellType generic)
+      (view (rename uNoName_ "<NoName>")
+        (viewType netlist)
+        (interface
+          (port X (direction OUTPUT))
+        )
+      )
+    )
+  )
+  (library work
+    (edifLevel 0)
+    (technology (numberDefinition))
+    (cell DECODER_5
+      (cellType generic)
+      (view TECH
+        (viewType netlist)
+        (interface
+          (port (array (rename in "in[4:0]") 5) (direction INPUT))
+          (port Q0 (direction OUTPUT))
+          (port Q1 (direction OUTPUT))
+          (port Q2 (direction OUTPUT))
+          (port Q3 (direction OUTPUT))
+          (port Q4 (direction OUTPUT))
+        )
+        (contents
+          (instance Q0_pad
+            (viewRef INTERFACE_c (cellRef OBUF (libraryref mach)))
+          )
+          (instance Q2_pad
+            (viewRef INTERFACE_c (cellRef OBUF (libraryref mach)))
+          )
+          (instance Q3_pad
+            (viewRef INTERFACE_c (cellRef OBUF (libraryref mach)))
+          )
+          (instance Q4_pad
+            (viewRef INTERFACE_c (cellRef OBUF (libraryref mach)))
+          )
+          (instance Q4_c_4_pad
+            (viewRef INTERFACE_c (cellRef IBUF (libraryref mach)))
+          )
+          (instance Q3_c_3_pad
+            (viewRef INTERFACE_c (cellRef IBUF (libraryref mach)))
+          )
+          (instance Q2_c_2_pad
+            (viewRef INTERFACE_c (cellRef IBUF (libraryref mach)))
+          )
+          (instance Q1_c_1_pad
+            (viewRef INTERFACE_c (cellRef IBUF (libraryref mach)))
+          )
+          (instance Q0_c_0_pad
+            (viewRef INTERFACE_c (cellRef IBUF (libraryref mach)))
+          )
+          (instance i37
+            (viewRef uNoName_ (cellRef VCC (libraryref mach)))
+          )
+          (instance Q1_pad
+            (viewRef INTERFACE_c (cellRef OBUF (libraryref mach)))
+          )
+          (instance i36
+            (viewRef uNoName_ (cellRef GND (libraryref mach)))
+          )
+          (net Q4_c_4_c
+            (joined
+              (portRef I0 (instanceRef Q4_pad))
+              (portRef O (instanceRef Q4_c_4_pad))
+            )
+          )
+          (net Q3_c_3_c
+            (joined
+              (portRef I0 (instanceRef Q3_pad))
+              (portRef O (instanceRef Q3_c_3_pad))
+            )
+          )
+          (net Q2_c_2_c
+            (joined
+              (portRef I0 (instanceRef Q2_pad))
+              (portRef O (instanceRef Q2_c_2_pad))
+            )
+          )
+          (net Q1_c_1_c
+            (joined
+              (portRef I0 (instanceRef Q1_pad))
+              (portRef O (instanceRef Q1_c_1_pad))
+            )
+          )
+          (net Q0_c_0_c
+            (joined
+              (portRef I0 (instanceRef Q0_pad))
+              (portRef O (instanceRef Q0_c_0_pad))
+            )
+          )
+          (net Q1
+            (joined
+              (portRef Q1)
+              (portRef O (instanceRef Q1_pad))
+            )
+          )
+          (net Q0
+            (joined
+              (portRef Q0)
+              (portRef O (instanceRef Q0_pad))
+            )
+          )
+          (net Q2
+            (joined
+              (portRef Q2)
+              (portRef O (instanceRef Q2_pad))
+            )
+          )
+          (net Q3
+            (joined
+              (portRef Q3)
+              (portRef O (instanceRef Q3_pad))
+            )
+          )
+          (net Q4
+            (joined
+              (portRef Q4)
+              (portRef O (instanceRef Q4_pad))
+            )
+          )
+          (net (rename in_4_ "in[4]")
+            (joined
+              (portRef (member in 0))
+              (portRef I0 (instanceRef Q4_c_4_pad))
+            )
+          )
+          (net (rename in_3_ "in[3]")
+            (joined
+              (portRef (member in 1))
+              (portRef I0 (instanceRef Q3_c_3_pad))
+            )
+          )
+          (net (rename in_2_ "in[2]")
+            (joined
+              (portRef (member in 2))
+              (portRef I0 (instanceRef Q2_c_2_pad))
+            )
+          )
+          (net (rename in_1_ "in[1]")
+            (joined
+              (portRef (member in 3))
+              (portRef I0 (instanceRef Q1_c_1_pad))
+            )
+          )
+          (net (rename in_0_ "in[0]")
+            (joined
+              (portRef (member in 4))
+              (portRef I0 (instanceRef Q0_c_0_pad))
+            )
+          )
+          (net pwr
+            (joined
+              (portRef X (instanceRef i37))
+            )
+          )
+          (net gnd
+            (joined
+              (portRef X (instanceRef i36))
+            )
+          )
+        )
+      )
+    )
+  )
+  (design TECH
+    (cellRef DECODER_5 (libraryref work))
+  )
+)

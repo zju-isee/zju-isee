@@ -1,0 +1,1098 @@
+<HTML>
+<HEAD><TITLE>HTML_REPORT_FILE</TITLE>
+<STYLE TYPE="text/css">
+<!--
+.blink {text-decoration:blink}
+.ms  {font-size: 10pt; font-family: monospace; font-weight: normal}
+.msb {font-size: 10pt; font-family: monospace; font-weight: bold  }
+-->
+</STYLE>
+</HEAD>
+<PRE>
+<A name="Top"></A><H2 align=center> ispLEVER Classic 2.1.00.02.49.20 Fitter Report File </H2>
+<H2 align=center>Copyright(C), 1992-2012, Lattice Semiconductor Corporation</H2>
+<H2 align=center>All Rights Reserved</H2>
+
+
+The Basic/Detailed Report Format can be selected in the dialog box
+Tools->Fitter Report File Format...
+
+<A name="Project_Summary"></A><FONT COLOR=maroon><U><B><big>Project_Summary</big></B></U></FONT>
+<BR>
+Project Name         :  lab6
+Project Path         :  D:\isp\lab6_debug
+Project Fitted on    :  Thu Jun 01 10:07:24 2023
+
+Device               :  M4256_64
+Package              :  100
+GLB Input Mux Size   :  33
+Available Blocks     :  16
+Speed                :  -7.5
+Part Number          :  LC4256V-75T100I
+Source Format        :  ABEL_Schematic
+
+
+<font color=green size=4><span class=blink><strong><B>Project 'lab6' Fit Successfully!</B></strong></span></font>
+
+
+<A name="Compilation_Times"></A><FONT COLOR=maroon><U><B><big>Compilation_Times</big></B></U></FONT>
+<BR>
+Prefit Time                     0 secs
+Load Design Time                0.05 secs
+Partition Time                  0.03 secs
+Place Time                      0.00 secs
+Route Time                      0.00 secs
+Total Fit Time                  00:00:01
+
+
+<A name="Design_Summary"></A><FONT COLOR=maroon><U><B><big>Design_Summary</big></B></U></FONT>
+<BR>
+Total Input Pins                12
+Total Logic Functions           61
+  Total Output Pins             22
+  Total Bidir I/O Pins          0
+  Total Buried Nodes            39
+Total Flip-Flops                27
+  Total D Flip-Flops            27
+  Total T Flip-Flops            0
+  Total Latches                 0
+Total Product Terms             440
+
+Total Reserved Pins             0
+Total Locked Pins               28
+Total Locked Nodes              0
+
+Total Unique Output Enables     0
+Total Unique Clocks             6
+Total Unique Clock Enables      0
+Total Unique Resets             1
+Total Unique Presets            2
+
+Fmax Logic Levels               1
+
+
+<A name="Device_Resource_Summary"></A><FONT COLOR=maroon><U><B><big>Device_Resource_Summary</big></B></U></FONT>
+<BR>
+<B>                                 Device
+                                 Total    Used   Not Used   Utilization
+-----------------------------------------------------------------------
+</B>Dedicated Pins
+  Clock/Input Pins                  4        2      2    -->    50
+  Input-Only Pins                   6        1      5    -->    16
+  I/O / Enable Pins                 2        2      0    -->   100
+I/O Pins                           62       29     33    -->    46
+Logic Functions                   256       61    195    -->    23
+  Input Registers                  64        0     64    -->     0
+
+GLB Inputs                        576      155    421    -->    26
+Logical Product Terms            1280      417    863    -->    32
+Occupied GLBs                      16       16      0    -->   100
+Macrocells                        256       61    195    -->    23
+
+Control Product Terms:
+  GLB Clock/Clock Enables          16        3     13    -->    18
+  GLB Reset/Presets                16        0     16    -->     0
+  Macrocell Clocks                256        4    252    -->     1
+  Macrocell Clock Enables         256        0    256    -->     0
+  Macrocell Enables               256        0    256    -->     0
+  Macrocell Resets                256        2    254    -->     0
+  Macrocell Presets               256        3    253    -->     1
+
+Global Routing Pool               324       56    268    -->    17
+  GRP from IFB                     ..        9     ..    -->    ..
+    (from input signals)           ..        9     ..    -->    ..
+    (from output signals)          ..        0     ..    -->    ..
+    (from bidir signals)           ..        0     ..    -->    ..
+  GRP from MFB                     ..       47     ..    -->    ..
+----------------------------------------------------------------------
+
+&lt;Note&gt; 1 : The available PT is the product term that has not been used.
+&lt;Note&gt; 2 : IFB is I/O feedback.
+&lt;Note&gt; 3 : MFB is macrocell feedback.
+
+
+<A name="GLB_Resource_Summary"></A><FONT COLOR=maroon><U><B><big>GLB_Resource_Summary</big></B></U></FONT>
+<BR>
+<B>                                                                                     # of PT
+               ---  Fanin  ---    I/O    Input  Macrocells       Macrocells   Logic  clusters
+             Unique Shared Total  Pins    Regs Used Inaccessible  available    PTs   used
+-------------------------------------------------------------------------------------------
+Maximum
+  GLB                      36      *(1)     8   --     --             16       80       16
+</B>-------------------------------------------------------------------------------------------
+  GLB    A      8     1     9      3/4      0    8      0              8       10        8
+  GLB    B      0     4     4      0/4      0    5      0             11       12        5
+  GLB    C      9     0     9      1/4      0    2      9              5       64       13
+  GLB    D      1     6     7      2/4      0    3      0             13        9        3
+-------------------------------------------------------------------------------------------
+  GLB    E      2     6     8      1/4      0    2      0             14       10        3
+  GLB    F      8     0     8      0/4      0    1      0             15       12        3
+  GLB    G      8     0     8      0/4      0    1      0             15       16        4
+  GLB    H      8     0     8      0/4      0    1      8              7       59       12
+-------------------------------------------------------------------------------------------
+  GLB    I     12     3    15      1/4      0    7      0              9       16        7
+  GLB    J     13     0    13      2/4      0    3      0             13       16        5
+  GLB    K     12     2    14      3/4      0    4      0             12       25        7
+  GLB    L      8     4    12      3/4      0    4      3              9       40        9
+-------------------------------------------------------------------------------------------
+  GLB    M      0     4     4      3/4      0    3      0             13       10        3
+  GLB    N      9     2    11      3/4      0    4      6              6       51       12
+  GLB    O      8     9    17      4/4      0   12      0              4       20       12
+  GLB    P      8     0     8      3/4      0    1      6              9       47       10
+-------------------------------------------------------------------------------------------
+TOTALS:       114    41   155     29/64     0   61     32            163      417      116
+
+&lt;Note&gt; 1 : For ispMACH 4000 devices, the number of IOs depends on the GLB.
+&lt;Note&gt; 2 : Four rightmost columns above reflect last status of the placement process.
+
+
+<A name="GLB_Control_Summary"></A><FONT COLOR=maroon><U><B><big>GLB_Control_Summary</big></B></U></FONT>
+<BR>
+<B>           Shared Shared | Mcell  Mcell  Mcell  Mcell  Mcell 
+           Clk/CE Rst/Pr | Clock  CE     Enable Reset  Preset
+------------------------------------------------------------------------------
+Maximum
+  GLB        1      1        16     16     16     16     16  
+==============================================================================
+</B>  GLB    A   1      0         0      0      0      1      1
+  GLB    B   0      0         0      0      0      0      0
+  GLB    C   0      0         0      0      0      0      0
+  GLB    D   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    E   0      0         0      0      0      0      0
+  GLB    F   0      0         0      0      0      0      0
+  GLB    G   0      0         0      0      0      0      0
+  GLB    H   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    I   1      0         0      0      0      0      0
+  GLB    J   0      0         0      0      0      0      0
+  GLB    K   0      0         0      0      0      0      0
+  GLB    L   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    M   0      0         0      0      0      0      0
+  GLB    N   0      0         0      0      0      0      0
+  GLB    O   1      0         4      0      0      1      2
+  GLB    P   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+
+&lt;Note&gt; 1 : For ispMACH 4000 devices, the number of output enables depends on the GLB.
+
+
+<A name="Optimizer_and_Fitter_Options"></A><FONT COLOR=maroon><U><B><big>Optimizer_and_Fitter_Options</big></B></U></FONT>
+<BR>
+Pin Assignment :                       Yes
+Group Assignment :                     No
+Pin Reservation :                      No
+
+@Ignore_Project_Constraints :
+  Pin Assignments :                    No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+  Group Assignments :                  No
+  Macrocell Assignment :               No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+
+@Backannotate_Project_Constraints
+  Pin Assignments :                    No
+  Pin And Block Assignments :          No
+  Pin, Macrocell and Block :           No
+
+@Timing_Constraints :                  No
+
+@Global_Project_Optimization :
+  Balanced Partitioning :              Yes
+  Spread Placement :                   Yes
+
+  Note :
+    Pack Design :
+       Balanced Partitioning = No
+       Spread Placement      = No
+    Spread Design :
+       Balanced Partitioning = Yes
+       Spread Placement      = Yes
+
+
+@Logic_Synthesis :
+  Logic Reduction :                    Yes
+  Node Collapsing :                    FMAX
+  Fmax_Logic_Level :                   1
+  D/T Synthesis :                      Yes
+  XOR Synthesis :                      Yes
+  Max. P-Term for Collapsing :         16
+  Max. P-Term for Splitting :          80
+  Max Symbols :                        24
+
+@Utilization_options
+  Max. % of Macrocells used :          100
+@Usercode                              3AA2 (HEX)
+@IO_Types                              Default = LVCMOS33 (2)
+@Output_Slew_Rate                      Default = FAST (2)
+@Power                                 Default = HIGH (2)
+@Pull                                  Default = PULLUP_UP (2)
+@Fast_Bypass                           Default = None (2)
+@ORP_Bypass                            Default = None
+@Input_Registers                       Default = None (2)
+@Register_Powerup                      Default = None
+
+Device Options:
+&lt;Note&gt; 1 : Reserved unused I/Os can be independently driven to Low or High, and does not
+           follow the drive level set for the Global Configure Unused I/O Option.
+&lt;Note&gt; 2 : For user-specified constraints on individual signals, refer to the Output,
+           Bidir and Buried Signal Lists.
+
+
+<A name="Pinout_Listing"></A><FONT COLOR=maroon><U><B><big>Pinout_Listing</big></B></U></FONT>
+<BR>
+<B>      | Pin   | Bank |GLB |Assigned|                 | Signal|
+Pin No| Type  |Number|Pad |Pin     |     I/O Type    | Type  | Signal name
+</B>--------------------------------------------------------------------------
+1     | GND   |   -  |    |        |                 |       |
+2     | TDI   |   -  |    |        |                 |       |
+3     |  I_O  |   0  |C12 |        |                 |       |
+4     |  I_O  |   0  |C10 |        |                 |       |
+5     |  I_O  |   0  |C6  |        |LVCMOS33         | Output|<A href=#27>LED6</A>
+6     |  I_O  |   0  |C2  |        |                 |       |
+7     |GNDIO0 |   -  |    |        |                 |       |
+8     |  I_O  |   0  |D12 |        |                 |       |
+9     |  I_O  |   0  |D10 |        |                 |       |
+10    |  I_O  |   0  |D6  |        |LVCMOS33         | Output|<A href=#21>LED3</A>
+11    |  I_O  |   0  |D4  |        |LVCMOS33         | Output|<A href=#17>LED1</A>
+12    | IN0   |   0  |    |        |                 |       |
+13    |VCCIO0 |   -  |    |        |                 |       |
+14    |  I_O  |   0  |E4  |        |LVCMOS33         | Output|<A href=#19>LED2</A>
+15    |  I_O  |   0  |E6  |        |                 |       |
+16    |  I_O  |   0  |E10 |        |                 |       |
+17    |  I_O  |   0  |E12 |        |                 |       |
+18    |GNDIO0 |   -  |    |        |                 |       |
+19    |  I_O  |   0  |F2  |        |                 |       |
+20    |  I_O  |   0  |F6  |        |                 |       |
+21    |  I_O  |   0  |F10 |        |                 |       |
+22    |  I_O  |   0  |F12 |        |                 |       |
+23    | IN1   |   0  |    |        |                 |       |
+24    | TCK   |   -  |    |        |                 |       |
+25    | VCC   |   -  |    |        |                 |       |
+26    | GND   |   -  |    |        |                 |       |
+27    | IN2   |   0  |    |        |                 |       |
+28    |  I_O  |   0  |G12 |        |                 |       |
+29    |  I_O  |   0  |G10 |        |                 |       |
+30    |  I_O  |   0  |G6  |        |                 |       |
+31    |  I_O  |   0  |G2  |        |                 |       |
+32    |GNDIO0 |   -  |    |        |                 |       |
+33    |VCCIO0 |   -  |    |        |                 |       |
+34    |  I_O  |   0  |H12 |        |                 |       |
+35    |  I_O  |   0  |H10 |        |                 |       |
+36    |  I_O  |   0  |H6  |        |                 |       |
+37    |  I_O  |   0  |H2  |        |                 |       |
+38    |INCLK1 |   0  |    |        |                 |       |
+39    |INCLK2 |   1  |    |    *   |LVCMOS33         | Input |<A href=#39>CLK1</A>
+40    | VCC   |   -  |    |        |                 |       |
+41    |  I_O  |   1  |I2  |        |LVCMOS33         | Output|<A href=#24>LED4</A>
+42    |  I_O  |   1  |I6  |        |                 |       |
+43    |  I_O  |   1  |I10 |        |                 |       |
+44    |  I_O  |   1  |I12 |        |                 |       |
+45    |VCCIO1 |   -  |    |        |                 |       |
+46    |GNDIO1 |   -  |    |        |                 |       |
+47    |  I_O  |   1  |J2  |        |                 |       |
+48    |  I_O  |   1  |J6  |    *   |LVCMOS33         | Input |<A href=#10>KEY2</A>
+49    |  I_O  |   1  |J10 |    *   |LVCMOS33         | Input |<A href=#9>KEY1</A>
+50    |  I_O  |   1  |J12 |        |                 |       |
+51    | GND   |   -  |    |        |                 |       |
+52    | TMS   |   -  |    |        |                 |       |
+53    |  I_O  |   1  |K12 |        |                 |       |
+54    |  I_O  |   1  |K10 |    *   |LVCMOS33         | Output|<A href=#38>LEDVCC4</A>
+55    |  I_O  |   1  |K6  |    *   |LVCMOS33         | Output|<A href=#37>LEDVCC3</A>
+56    |  I_O  |   1  |K2  |    *   |LVCMOS33         | Output|<A href=#29>B</A>
+57    |GNDIO1 |   -  |    |        |                 |       |
+58    |  I_O  |   1  |L12 |    *   |LVCMOS33         | Output|<A href=#34>G</A>
+59    |  I_O  |   1  |L10 |        |                 |       |
+60    |  I_O  |   1  |L6  |    *   |LVCMOS33         | Output|<A href=#33>F</A>
+61    |  I_O  |   1  |L4  |    *   |LVCMOS33         | Output|<A href=#28>A</A>
+62    | IN3   |   1  |    |        |                 |       |
+63    |VCCIO1 |   -  |    |        |                 |       |
+64    |  I_O  |   1  |M4  |    *   |LVCMOS33         | Output|<A href=#31>D</A>
+65    |  I_O  |   1  |M6  |    *   |LVCMOS33         | Output|<A href=#32>E</A>
+66    |  I_O  |   1  |M10 |    *   |LVCMOS33         | Output|<A href=#30>C</A>
+67    |  I_O  |   1  |M12 |        |                 |       |
+68    |GNDIO1 |   -  |    |        |                 |       |
+69    |  I_O  |   1  |N2  |    *   |LVCMOS33         | Output|<A href=#6>point</A>
+70    |  I_O  |   1  |N6  |        |LVCMOS33         | Output|<A href=#26>LED5</A>
+71    |  I_O  |   1  |N10 |        |                 |       |
+72    |  I_O  |   1  |N12 |    *   |LVCMOS33         | Output|<A href=#35>LEDVCC1</A>
+73    | IN4   |   1  |    |        |                 |       |
+74    | TDO   |   -  |    |        |                 |       |
+75    | VCC   |   -  |    |        |                 |       |
+76    | GND   |   -  |    |        |                 |       |
+77    | IN5   |   1  |    |    *   |LVCMOS33         | Input |<A href=#25>AD7</A>
+78    |  I_O  |   1  |O12 |    *   |LVCMOS33         | Output|<A href=#36>LEDVCC2</A>
+79    |  I_O  |   1  |O10 |    *   |LVCMOS33         | Output|<A href=#12>CLOCK</A>
+80    |  I_O  |   1  |O6  |    *   |LVCMOS33         | Output|<A href=#8>OUT_B</A>
+81    |  I_O  |   1  |O2  |    *   |LVCMOS33         | Output|<A href=#7>OUT_A</A>
+82    |GNDIO1 |   -  |    |        |                 |       |
+83    |VCCIO1 |   -  |    |        |                 |       |
+84    |  I_O  |   1  |P12 |    *   |LVCMOS33         | Input |<A href=#14>AD0</A>
+85    |  I_O  |   1  |P10 |    *   |LVCMOS33         | Input |<A href=#15>AD1</A>
+86    |  I_O  |   1  |P6  |    *   |LVCMOS33         | Input |<A href=#16>AD2</A>
+87    | I_O/OE|   1  |P2  |    *   |LVCMOS33         | Input |<A href=#18>AD3</A>
+88    |INCLK3 |   1  |    |    *   |LVCMOS33         | Input |<A href=#13>CLK</A>
+89    |INCLK0 |   0  |    |        |                 |       |
+90    | VCC   |   -  |    |        |                 |       |
+91    | I_O/OE|   0  |A2  |    *   |LVCMOS33         | Input |<A href=#20>AD4</A>
+92    |  I_O  |   0  |A6  |    *   |LVCMOS33         | Input |<A href=#22>AD5</A>
+93    |  I_O  |   0  |A10 |    *   |LVCMOS33         | Input |<A href=#23>AD6</A>
+94    |  I_O  |   0  |A12 |    *   |LVCMOS33         | Output|<A href=#11>START</A>
+95    |VCCIO0 |   -  |    |        |                 |       |
+96    |GNDIO0 |   -  |    |        |                 |       |
+97    |  I_O  |   0  |B2  |        |                 |       |
+98    |  I_O  |   0  |B6  |        |                 |       |
+99    |  I_O  |   0  |B10 |        |                 |       |
+100   |  I_O  |   0  |B12 |        |                 |       |
+--------------------------------------------------------------------------
+
+&lt;Note&gt; GLB Pad : This notation refers to the GLB I/O pad number in the device.
+&lt;Note&gt; Assigned Pin : user or dedicated input assignment (E.g. Clock pins).
+&lt;Note&gt; Pin Type : 
+          ClkIn : Dedicated input or clock pin 
+           CLK  : Dedicated clock pin
+           I_O  : Input/Output pin
+           INP  : Dedicated input pin
+           JTAG : JTAG Control and test pin
+           NC   : No connected
+
+
+<A name="Input_Signal_List"></A><FONT COLOR=maroon><U><B><big>Input_Signal_List</big></B></U></FONT>
+<BR>
+<B>                Input
+         Pin    Fanout
+ Pin GLB Type                       Pullup Signal
+</B>-------------------------------------------------
+  84   P  I/O   1  A---------------      Up <A name=14>AD0</A>
+  85   P  I/O   1  A---------------      Up <A name=15>AD1</A>
+  86   P  I/O   1  --------------O-      Up <A name=16>AD2</A>
+  87   P  I/O   1  A---------------      Up <A name=18>AD3</A>
+  91   A  I/O   1  A---------------      Up <A name=20>AD4</A>
+  92   A  I/O   1  A---------------      Up <A name=22>AD5</A>
+  93   A  I/O   1  --------------O-      Up <A name=23>AD6</A>
+  77  --  IN       ----------------      Up <A name=25>AD7</A>
+  88  -- INCLK     ----------------      Up <A name=13>CLK</A>
+  39  -- INCLK     ----------------      Up <A name=39>CLK1</A>
+  49   J  I/O   1  --------------O-      Up <A name=9>KEY1</A>
+  48   J  I/O   1  --------------O-      Up <A name=10>KEY2</A>
+-------------------------------------------------
+
+
+<A name="Output_Signal_List"></A><FONT COLOR=maroon><U><B><big>Output_Signal_List</big></B></U></FONT>
+<BR>
+<B>          I         C      P R P       O Output
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+</B>--------------------------------------------------------------------------------
+  61   L  4  -   4  1 COM                   ----------------  Fast     Up <A href=#28>A</A>
+  56   K  4  -   4  1 COM                   ----------------  Fast     Up <A href=#29>B</A>
+  66   M  4  -   3  1 COM                   ----------------  Fast     Up <A href=#30>C</A>
+  79   O  2  1   2  1 DFF    * R         2  A-------------O-  Fast     Up <A href=#12>CLOCK</A>
+  64   M  4  -   4  1 COM                   ----------------  Fast     Up <A href=#31>D</A>
+  65   M  4  -   3  1 COM                   ----------------  Fast     Up <A href=#32>E</A>
+  60   L  4  -   4  1 COM                   ----------------  Fast     Up <A href=#33>F</A>
+  58   L  4  -   2  1 COM                   ----------------  Fast     Up <A href=#34>G</A>
+  11   D  6  -   3  1 COM                1  --------I-------  Fast     Up <A href=#17>LED1</A>
+  14   E  6  -   4  1 COM                1  -------------N--  Fast     Up <A href=#19>LED2</A>
+  10   D  5  -   2  1 COM                1  --C-------------  Fast     Up <A href=#21>LED3</A>
+  41   I  1  -   1  1 COM                   ----------------  Fast     Up <A href=#24>LED4</A>
+  70   N  1  -   1  1 COM                   ----------------  Fast     Up <A href=#26>LED5</A>
+   5   C  1  -   1  1 COM                   ----------------  Fast     Up <A href=#27>LED6</A>
+  72   N  2  -   1  1 COM                   ----------------  Fast     Up <A href=#35>LEDVCC1</A>
+  78   O  2  -   1  1 COM                   ----------------  Fast     Up <A href=#36>LEDVCC2</A>
+  55   K  2  -   1  1 COM                   ----------------  Fast     Up <A href=#37>LEDVCC3</A>
+  54   K  2  -   1  1 COM                   ----------------  Fast     Up <A href=#38>LEDVCC4</A>
+  81   O  7  1   3  1 DFF  *   S         2  --------I-----O-  Fast     Up <A href=#7>OUT_A</A>
+  80   O  8  1   4  1 DFF  *   S         2  --------I-----O-  Fast     Up <A href=#8>OUT_B</A>
+  94   A  3  1   3  1 DFF  *   R         1  A---------------  Fast     Up <A href=#11>START</A>
+  69   N  2  -   1  1 COM                   ----------------  Fast     Up <A href=#6>point</A>
+--------------------------------------------------------------------------------
+
+&lt;Note&gt; CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+<A name="Bidir_Signal_List"></A><FONT COLOR=maroon><U><B><big>Bidir_Signal_List</big></B></U></FONT>
+<BR>
+<B>          I         C      P R P       O Bidir
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+</B>-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+&lt;Note&gt; CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+<A name="Buried_Signal_List"></A><FONT COLOR=maroon><U><B><big>Buried_Signal_List</big></B></U></FONT>
+<BR>
+<B>        I         C      P R P       Node
+        N         L Mc   R E U C I F Fanout
+Mc GLB  P LL PTs  S Type E S P E R P                     Signal
+</B>---------------------------------------------------------------
+11   B  1  1   1  1 DFF      R       1  -B--------------  <A href=#78>C0_q0</A>
+ 5   B  4  1   3  1 DFF      R       1  -B--------------  <A href=#77>C0_q1</A>
+ 3   B  3  1   3  1 DFF      R       1  -B--------------  <A href=#76>C0_q2</A>
+ 1   B  4  1   4  1 DFF      R       1  -B--------------  <A href=#75>C0_q3</A>
+ 1   I  6  -   4  1 COM              3  ----------KLM---  <A href=#74>N0_Z0</A>
+ 0   I  6  -   4  1 COM              3  ----------KLM---  <A href=#73>N0_Z1</A>
+10   J  5  -   3  1 COM              3  ----------KLM---  <A href=#72>N0_Z2</A>
+ 3   I  5  -   3  1 COM              3  ----------KLM---  <A href=#71>N0_Z3</A>
+12   O  2  1   1  1 DFF      R       1  --------------O-  <A href=#46>N_10</A>
+ 4   F  8  -  12  3 COM              1  --------I-------  <A href=#47>N_22</A>
+ 3   E  8  -   6  2 COM              1  --------I-------  <A href=#48>N_23</A>
+ 2   D  7  -   4  1 COM              1  ---------J------  <A href=#49>N_25</A>
+ 2   J  0  -   0  1 COM              1  --------I-------  <A href=#50>N_27</A>
+ 7   B  4  1   1  1 DFF      R       1  --------------O-  <A href=#40>N_4</A>
+ 9   I  1  1   1  1 DFF      R       1  --------I-------  <A href=#51>N_40</A>
+ 1   A  1  1   1  1 DFF    * R       2  A-------------O-  <A href=#52>N_43</A>
+ 2   A  2  -   1  1 DFF      R       11 --CDEFGH-JKL-N-P  <A href=#63>N_44</A>
+ 3   O  2  -   2  1 DFF      R       11 --CDEFGH-JKL-N-P  <A href=#64>N_45</A>
+ 3   A  2  -   1  1 DFF      R       11 --CDEFGH-JKL-N-P  <A href=#65>N_46</A>
+ 5   A  2  -   1  1 DFF      R       11 --CDEFGH-JKL-N-P  <A href=#66>N_47</A>
+ 7   A  2  -   1  1 DFF      R       11 --CDEFGH-JKL-N-P  <A href=#67>N_48</A>
+ 4   O  2  -   2  1 DFF      R       11 --CDEFGH-JKL-N-P  <A href=#68>N_49</A>
+ 5   O  2  -   1  1 DFF      R       1  --------------O-  <A href=#41>N_5</A>
+ 9   A  2  -   1  1 DFF      R       11 --CDEFGH-JKL-N-P  <A href=#69>N_50</A>
+12   A  2  -   1  1 DFF      R       10 --C-EFGH-JKL-N-P  <A href=#70>N_51</A>
+12   I  2  1   1  1 DFF      R       5  --------IJK--NO-  <A href=#53>N_52</A>
+ 5   I  3  1   2  1 DFF      R       5  --------IJK--NO-  <A href=#54>N_53</A>
+ 8   P  8  -  47 10 COM              1  --------I-------  <A href=#55>N_56</A>
+12   C  8  -  63 13 COM              1  ---------J------  <A href=#56>N_57</A>
+ 9   H  8  -  59 12 COM              1  --------I-------  <A href=#57>N_58</A>
+ 5   J  8  -  13  3 COM              1  --------I-------  <A href=#58>N_59</A>
+ 7   O  2  -   1  1 DFF      R       1  --------------O-  <A href=#42>N_6</A>
+12   G  8  -  16  4 COM              1  --------I-------  <A href=#59>N_60</A>
+ 9   K  8  -  19  4 COM              1  ---------J------  <A href=#60>N_61</A>
+ 7   L  8  -  30  6 COM              1  --------I-------  <A href=#61>N_62</A>
+ 9   N  8  -  48 10 COM              1  --------I-------  <A href=#62>N_63</A>
+ 8   O  2  1   1  1 DFF      R       1  --------------O-  <A href=#43>N_7</A>
+ 9   O  2  1   1  1 DFF      R       1  --------------O-  <A href=#44>N_8</A>
+10   O  2  1   1  1 DFF      R       1  --------------O-  <A href=#45>N_9</A>
+---------------------------------------------------------------
+
+&lt;Note&gt; CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        IR = Input register
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+<A name="PostFit_Equations"></A><FONT COLOR=maroon><U><B><big>PostFit_Equations</big></B></U></FONT>
+<BR>
+<A name=28>A</A> = <A href=#71>N0_Z3</A> & !<A href=#72>N0_Z2</A> & <A href=#73>N0_Z1</A> & <A href=#74>N0_Z0</A>
+    # !N0_Z3 & !N0_Z2 & !N0_Z1 & N0_Z0
+    # N0_Z2 & !N0_Z1 & !N0_Z0
+    # N0_Z3 & N0_Z2 & !N0_Z1 ; (4 pterms, 4 signals)
+
+<A name=29>B</A> = !<A href=#71>N0_Z3</A> & <A href=#72>N0_Z2</A> & !<A href=#73>N0_Z1</A> & <A href=#74>N0_Z0</A>
+    # N0_Z3 & N0_Z1 & N0_Z0
+    # N0_Z2 & N0_Z1 & !N0_Z0
+    # N0_Z3 & N0_Z2 & !N0_Z0 ; (4 pterms, 4 signals)
+
+<A name=30>C</A> = !<A href=#71>N0_Z3</A> & !<A href=#72>N0_Z2</A> & <A href=#73>N0_Z1</A> & !<A href=#74>N0_Z0</A>
+    # N0_Z3 & N0_Z2 & N0_Z1
+    # N0_Z3 & N0_Z2 & !N0_Z0 ; (3 pterms, 4 signals)
+
+<A name=78>C0_q0.D</A> = !<A href=#78>C0_q0.Q</A> ; (1 pterm, 1 signal)
+C0_q0.C = <A href=#39>CLK1</A> ; (1 pterm, 1 signal)
+
+<A name=77>C0_q1.D</A> = <A href=#76>C0_q2.Q</A> & !<A href=#77>C0_q1.Q</A> & <A href=#78>C0_q0.Q</A>
+    # !<A href=#75>C0_q3.Q</A> & !C0_q1.Q & C0_q0.Q
+    # C0_q1.Q & !C0_q0.Q ; (3 pterms, 4 signals)
+C0_q1.C = <A href=#39>CLK1</A> ; (1 pterm, 1 signal)
+
+<A name=76>C0_q2.D</A> = !<A href=#76>C0_q2.Q</A> & <A href=#77>C0_q1.Q</A> & <A href=#78>C0_q0.Q</A>
+    # C0_q2.Q & !C0_q1.Q
+    # C0_q2.Q & !C0_q0.Q ; (3 pterms, 3 signals)
+C0_q2.C = <A href=#39>CLK1</A> ; (1 pterm, 1 signal)
+
+<A name=75>C0_q3.D</A> = !<A href=#75>C0_q3.Q</A> & <A href=#76>C0_q2.Q</A> & <A href=#77>C0_q1.Q</A> & <A href=#78>C0_q0.Q</A>
+    # C0_q3.Q & !C0_q2.Q & C0_q1.Q
+    # C0_q3.Q & C0_q2.Q & !C0_q1.Q
+    # C0_q3.Q & !C0_q0.Q ; (4 pterms, 4 signals)
+C0_q3.C = <A href=#39>CLK1</A> ; (1 pterm, 1 signal)
+
+<A name=12>CLOCK.D</A> = <A href=#12>CLOCK.Q</A> & !<A href=#52>N_43.Q</A>
+    # !CLOCK.Q & N_43.Q ; (2 pterms, 2 signals)
+CLOCK.C = <A href=#13>CLK</A> ; (1 pterm, 1 signal)
+CLOCK.AR = 0 ; (0 pterm, 0 signal)
+
+<A name=31>D</A> = <A href=#71>N0_Z3</A> & !<A href=#72>N0_Z2</A> & <A href=#73>N0_Z1</A> & !<A href=#74>N0_Z0</A>
+    # !N0_Z3 & N0_Z2 & !N0_Z1 & !N0_Z0
+    # !N0_Z3 & !N0_Z2 & !N0_Z1 & N0_Z0
+    # N0_Z2 & N0_Z1 & N0_Z0 ; (4 pterms, 4 signals)
+
+<A name=32>E</A> = !<A href=#71>N0_Z3</A> & <A href=#72>N0_Z2</A> & !<A href=#73>N0_Z1</A>
+    # !N0_Z2 & !N0_Z1 & <A href=#74>N0_Z0</A>
+    # !N0_Z3 & N0_Z0 ; (3 pterms, 4 signals)
+
+<A name=33>F</A> = <A href=#71>N0_Z3</A> & <A href=#72>N0_Z2</A> & !<A href=#73>N0_Z1</A>
+    # !N0_Z3 & !N0_Z2 & N0_Z1
+    # !N0_Z3 & N0_Z1 & <A href=#74>N0_Z0</A>
+    # !N0_Z3 & !N0_Z2 & N0_Z0 ; (4 pterms, 4 signals)
+
+<A name=34>G</A> = !<A href=#71>N0_Z3</A> & <A href=#72>N0_Z2</A> & <A href=#73>N0_Z1</A> & <A href=#74>N0_Z0</A>
+    # !N0_Z3 & !N0_Z2 & !N0_Z1 ; (2 pterms, 4 signals)
+
+<A name=17>LED1</A> = !( <A href=#65>N_46.Q</A> & <A href=#66>N_47.Q</A> & <A href=#67>N_48.Q</A> & <A href=#68>N_49.Q</A>
+    # <A href=#64>N_45.Q</A>
+    # <A href=#63>N_44.Q</A> ) ; (3 pterms, 6 signals)
+
+<A name=19>LED2</A> = !<A href=#63>N_44.Q</A> & !<A href=#64>N_45.Q</A> & <A href=#65>N_46.Q</A> & <A href=#66>N_47.Q</A> & <A href=#67>N_48.Q</A> & <A href=#68>N_49.Q</A>
+    # !N_44.Q & N_45.Q & !N_46.Q
+    # !N_44.Q & N_45.Q & !N_47.Q
+    # !N_44.Q & N_45.Q & !N_48.Q ; (4 pterms, 6 signals)
+
+<A name=21>LED3</A> = <A href=#64>N_45.Q</A> & <A href=#65>N_46.Q</A> & <A href=#66>N_47.Q</A> & <A href=#67>N_48.Q</A>
+    # <A href=#63>N_44.Q</A> ; (2 pterms, 5 signals)
+
+<A name=24>LED4</A> = !<A href=#17>LED1</A> ; (1 pterm, 1 signal)
+
+<A name=26>LED5</A> = !<A href=#19>LED2</A> ; (1 pterm, 1 signal)
+
+<A name=27>LED6</A> = !<A href=#21>LED3</A> ; (1 pterm, 1 signal)
+
+<A name=35>LEDVCC1</A> = !<A href=#53>N_52.Q</A> & !<A href=#54>N_53.Q</A> ; (1 pterm, 2 signals)
+
+<A name=36>LEDVCC2</A> = <A href=#53>N_52.Q</A> & !<A href=#54>N_53.Q</A> ; (1 pterm, 2 signals)
+
+<A name=37>LEDVCC3</A> = !<A href=#53>N_52.Q</A> & <A href=#54>N_53.Q</A> ; (1 pterm, 2 signals)
+
+<A name=38>LEDVCC4</A> = <A href=#53>N_52.Q</A> & <A href=#54>N_53.Q</A> ; (1 pterm, 2 signals)
+
+<A name=74>N0_Z0</A> = !<A href=#7>OUT_A.Q</A> & !<A href=#53>N_52.Q</A> & !<A href=#54>N_53.Q</A>
+    # !N_52.Q & N_53.Q & <A href=#62>N_63</A>
+    # <A href=#47>N_22</A> & N_52.Q & !N_53.Q
+    # N_52.Q & N_53.Q & <A href=#58>N_59</A> ; (4 pterms, 6 signals)
+
+<A name=73>N0_Z1</A> = !<A href=#8>OUT_B.Q</A> & !<A href=#53>N_52.Q</A> & !<A href=#54>N_53.Q</A>
+    # !N_52.Q & N_53.Q & <A href=#61>N_62</A>
+    # <A href=#48>N_23</A> & N_52.Q & !N_53.Q
+    # N_52.Q & N_53.Q & <A href=#57>N_58</A> ; (4 pterms, 6 signals)
+
+<A name=72>N0_Z2</A> = !<A href=#53>N_52.Q</A> & <A href=#54>N_53.Q</A> & <A href=#60>N_61</A>
+    # <A href=#49>N_25</A> & N_52.Q & !N_53.Q
+    # N_52.Q & N_53.Q & <A href=#56>N_57</A> ; (3 pterms, 5 signals)
+
+<A name=71>N0_Z3</A> = !<A href=#53>N_52.Q</A> & <A href=#54>N_53.Q</A> & <A href=#59>N_60</A>
+    # <A href=#50>N_27</A> & N_52.Q & !N_53.Q
+    # N_52.Q & N_53.Q & <A href=#55>N_56</A> ; (3 pterms, 5 signals)
+
+<A name=46>N_10.D</A> = <A href=#43>N_7.Q</A> ; (1 pterm, 1 signal)
+N_10.C = <A href=#40>N_4.Q</A> ; (1 pterm, 1 signal)
+
+<A name=47>N_22</A> = !<A href=#63>N_44.Q</A> & <A href=#64>N_45.Q</A> & !<A href=#65>N_46.Q</A>
+    # N_45.Q & !N_46.Q & !<A href=#66>N_47.Q</A> & !<A href=#67>N_48.Q</A>
+    # !N_44.Q & N_45.Q & !N_47.Q & !N_48.Q & !<A href=#68>N_49.Q</A>
+    # !N_44.Q & N_45.Q & !N_47.Q & !N_48.Q & !<A href=#69>N_50.Q</A> & !<A href=#70>N_51.Q</A>
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & N_46.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_49.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_47.Q & N_48.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_48.Q
+    # N_44.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q
+    # N_44.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_51.Q ; (12 pterms, 8 signals)
+
+<A name=48>N_23.X1</A> = !<A href=#63>N_44.Q</A> & <A href=#64>N_45.Q</A> & <A href=#65>N_46.Q</A> & !<A href=#66>N_47.Q</A> & !<A href=#67>N_48.Q</A> & !<A href=#68>N_49.Q</A>
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !<A href=#69>N_50.Q</A> & !<A href=#70>N_51.Q</A>
+    # N_44.Q & !N_45.Q
+    # N_44.Q & !N_46.Q & !N_47.Q & !N_48.Q
+    # N_44.Q & !N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q ; (5 pterms, 8 signals)
+N_23.X2 = !<A href=#63>N_44.Q</A> & <A href=#64>N_45.Q</A> & <A href=#65>N_46.Q</A> ; (1 pterm, 3 signals)
+
+<A name=49>N_25</A> = <A href=#63>N_44.Q</A> & <A href=#64>N_45.Q</A> & <A href=#67>N_48.Q</A> & <A href=#68>N_49.Q</A>
+    # N_44.Q & N_45.Q & N_48.Q & <A href=#69>N_50.Q</A>
+    # N_44.Q & N_45.Q & <A href=#65>N_46.Q</A>
+    # N_44.Q & N_45.Q & <A href=#66>N_47.Q</A> ; (4 pterms, 7 signals)
+
+<A name=50>N_27</A> = 0 ; (0 pterm, 0 signal)
+
+<A name=40>N_4.D</A> = <A href=#75>C0_q3.Q</A> & !<A href=#76>C0_q2.Q</A> & !<A href=#77>C0_q1.Q</A> & <A href=#78>C0_q0.Q</A> ; (1 pterm, 4 signals)
+N_4.C = <A href=#39>CLK1</A> ; (1 pterm, 1 signal)
+
+<A name=51>N_40.D</A> = !<A href=#51>N_40.Q</A> ; (1 pterm, 1 signal)
+N_40.C = <A href=#39>CLK1</A> ; (1 pterm, 1 signal)
+
+<A name=52>N_43.D</A> = !<A href=#52>N_43.Q</A> ; (1 pterm, 1 signal)
+N_43.C = <A href=#13>CLK</A> ; (1 pterm, 1 signal)
+N_43.AR = 0 ; (0 pterm, 0 signal)
+
+<A name=63>N_44.D</A> = !<A href=#25>AD7</A> ; (1 pterm, 1 signal)
+N_44.C = <A href=#52>N_43.Q</A> ; (1 pterm, 1 signal)
+
+<A name=64>N_45.D</A> = !<A href=#23>AD6</A> ; (1 pterm, 1 signal)
+N_45.C = <A href=#52>N_43.Q</A> ; (1 pterm, 1 signal)
+
+<A name=65>N_46.D</A> = !<A href=#22>AD5</A> ; (1 pterm, 1 signal)
+N_46.C = <A href=#52>N_43.Q</A> ; (1 pterm, 1 signal)
+
+<A name=66>N_47.D</A> = !<A href=#20>AD4</A> ; (1 pterm, 1 signal)
+N_47.C = <A href=#52>N_43.Q</A> ; (1 pterm, 1 signal)
+
+<A name=67>N_48.D</A> = !<A href=#18>AD3</A> ; (1 pterm, 1 signal)
+N_48.C = <A href=#52>N_43.Q</A> ; (1 pterm, 1 signal)
+
+<A name=68>N_49.D</A> = !<A href=#16>AD2</A> ; (1 pterm, 1 signal)
+N_49.C = <A href=#52>N_43.Q</A> ; (1 pterm, 1 signal)
+
+<A name=41>N_5.D</A> = <A href=#10>KEY2</A> ; (1 pterm, 1 signal)
+N_5.C = <A href=#40>N_4.Q</A> ; (1 pterm, 1 signal)
+
+<A name=69>N_50.D</A> = !<A href=#15>AD1</A> ; (1 pterm, 1 signal)
+N_50.C = <A href=#52>N_43.Q</A> ; (1 pterm, 1 signal)
+
+<A name=70>N_51.D</A> = !<A href=#14>AD0</A> ; (1 pterm, 1 signal)
+N_51.C = <A href=#52>N_43.Q</A> ; (1 pterm, 1 signal)
+
+<A name=53>N_52.D</A> = !<A href=#53>N_52.Q</A> ; (1 pterm, 1 signal)
+N_52.C = !<A href=#51>N_40.Q</A> ; (1 pterm, 1 signal)
+
+<A name=54>N_53.D</A> = !<A href=#53>N_52.Q</A> & <A href=#54>N_53.Q</A>
+    # N_52.Q & !N_53.Q ; (2 pterms, 2 signals)
+N_53.C = !<A href=#51>N_40.Q</A> ; (1 pterm, 1 signal)
+
+<A name=55>N_56</A> = !<A href=#63>N_44.Q</A> & <A href=#64>N_45.Q</A> & !<A href=#65>N_46.Q</A> & !<A href=#66>N_47.Q</A> & !<A href=#67>N_48.Q</A> & !<A href=#68>N_49.Q</A> & !<A href=#69>N_50.Q</A>
+       & <A href=#70>N_51.Q</A>
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+       & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & N_50.Q
+       & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & N_50.Q
+       & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+       & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+       & !N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q
+       & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q
+       & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+       & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+       & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q
+       & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q
+       & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q
+       & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+       & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_49.Q & !N_50.Q
+       & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+       & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_49.Q & !N_50.Q
+       & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+       & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+       & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q
+       & N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+       & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+       & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q
+       & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q & N_51.Q ; (47 pterms, 8 signals)
+
+<A name=56>N_57.X1</A> = !<A href=#63>N_44.Q</A> & !<A href=#65>N_46.Q</A> & !<A href=#66>N_47.Q</A> & !<A href=#67>N_48.Q</A> & <A href=#68>N_49.Q</A> & !<A href=#69>N_50.Q</A> & !<A href=#70>N_51.Q</A>
+    # !N_44.Q & <A href=#64>N_45.Q</A> & !N_46.Q & !N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_49.Q & !N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_49.Q & !N_50.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_50.Q & N_51.Q
+    # N_44.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_45.Q & N_47.Q & N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # N_45.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_48.Q & N_49.Q & !N_50.Q
+    # !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_45.Q & N_46.Q & N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+    # N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_48.Q & !N_49.Q & !N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_48.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_48.Q & !N_49.Q & N_50.Q
+    # !N_44.Q & N_45.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_48.Q & !N_49.Q & N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_48.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_47.Q & N_48.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+    # N_45.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q
+    # !N_45.Q & N_46.Q & N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_50.Q & N_51.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q ; (62 pterms, 8 signals)
+N_57.X2 = <A href=#63>N_44.Q</A> & <A href=#65>N_46.Q</A> & <A href=#67>N_48.Q</A> ; (1 pterm, 3 signals)
+
+<A name=57>N_58.X1</A> = !<A href=#64>N_45.Q</A> & <A href=#65>N_46.Q</A> & !<A href=#66>N_47.Q</A> & !<A href=#67>N_48.Q</A> & !<A href=#68>N_49.Q</A> & !<A href=#69>N_50.Q</A> & !<A href=#70>N_51.Q</A>
+    # <A href=#63>N_44.Q</A> & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & !N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & !N_50.Q & !N_51.Q
+    # !N_45.Q & !N_46.Q & N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_48.Q & N_49.Q & !N_51.Q
+    # N_45.Q & N_46.Q & N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_48.Q & N_49.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & N_51.Q
+    # !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & N_51.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_48.Q & !N_49.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & N_50.Q
+       & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_48.Q & !N_49.Q & N_51.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q & N_51.Q
+    # !N_44.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_49.Q & N_50.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q & N_50.Q ; (58 pterms, 8 signals)
+N_58.X2 = <A href=#66>N_47.Q</A> & <A href=#68>N_49.Q</A> & !<A href=#70>N_51.Q</A> ; (1 pterm, 3 signals)
+
+<A name=58>N_59</A> = !( !<A href=#63>N_44.Q</A> & !<A href=#65>N_46.Q</A> & !<A href=#66>N_47.Q</A> & !<A href=#67>N_48.Q</A> & !<A href=#68>N_49.Q</A> & !<A href=#69>N_50.Q</A> & !<A href=#70>N_51.Q</A>
+    # N_44.Q & !<A href=#64>N_45.Q</A> & N_47.Q & N_48.Q & N_50.Q
+    # !N_44.Q & N_45.Q & !N_47.Q & !N_48.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & N_47.Q & N_48.Q & N_49.Q
+    # !N_44.Q & N_45.Q & !N_47.Q & !N_48.Q & !N_49.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_49.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_48.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_50.Q & !N_51.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q
+    # !N_44.Q & N_45.Q & !N_47.Q & !N_48.Q & !N_51.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q
+    # N_44.Q & !N_45.Q & N_46.Q
+    # !N_44.Q & N_45.Q & !N_46.Q ) ; (13 pterms, 8 signals)
+
+<A name=42>N_6.D</A> = !<A href=#9>KEY1</A> ; (1 pterm, 1 signal)
+N_6.C = <A href=#40>N_4.Q</A> ; (1 pterm, 1 signal)
+
+<A name=59>N_60.X1</A> = !<A href=#63>N_44.Q</A> & <A href=#64>N_45.Q</A> & <A href=#65>N_46.Q</A> & !<A href=#66>N_47.Q</A> & !<A href=#67>N_48.Q</A> & !<A href=#68>N_49.Q</A>
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !<A href=#69>N_50.Q</A> & !<A href=#70>N_51.Q</A>
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q ; (15 pterms, 8 signals)
+N_60.X2 = !<A href=#63>N_44.Q</A> & !<A href=#64>N_45.Q</A> & <A href=#65>N_46.Q</A> & !<A href=#66>N_47.Q</A> & <A href=#67>N_48.Q</A> ; (1 pterm, 5 signals)
+
+<A name=60>N_61.X1</A> = !<A href=#63>N_44.Q</A> & <A href=#64>N_45.Q</A> & !<A href=#65>N_46.Q</A> & !<A href=#66>N_47.Q</A> & <A href=#67>N_48.Q</A>
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & <A href=#68>N_49.Q</A> & <A href=#69>N_50.Q</A> & <A href=#70>N_51.Q</A>
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_50.Q
+    # N_44.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_47.Q & N_48.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_47.Q & N_48.Q & N_49.Q
+    # N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_50.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q
+    # N_44.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_51.Q
+    # N_44.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q ; (18 pterms, 8 signals)
+N_61.X2 = !<A href=#63>N_44.Q</A> & !<A href=#65>N_46.Q</A> & <A href=#66>N_47.Q</A> ; (1 pterm, 3 signals)
+
+<A name=61>N_62</A> = !( <A href=#63>N_44.Q</A> & <A href=#64>N_45.Q</A> & !<A href=#66>N_47.Q</A> & !<A href=#68>N_49.Q</A> & !<A href=#69>N_50.Q</A> & !<A href=#70>N_51.Q</A>
+    # N_44.Q & N_45.Q & <A href=#65>N_46.Q</A> & N_47.Q & N_49.Q
+    # !N_44.Q & N_45.Q & !N_47.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & <A href=#67>N_48.Q</A> & N_50.Q & N_51.Q
+    # N_45.Q & !N_46.Q & N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & !N_50.Q
+    # N_44.Q & !N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+    # !N_44.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_48.Q & N_49.Q & N_50.Q
+    # !N_45.Q & !N_46.Q & N_47.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_47.Q & N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_48.Q & N_49.Q & N_51.Q
+    # N_44.Q & N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q
+    # !N_44.Q & N_46.Q & N_48.Q & !N_49.Q & N_50.Q
+    # !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q
+    # !N_44.Q & !N_45.Q & N_47.Q & N_48.Q & !N_49.Q
+    # !N_44.Q & N_45.Q & N_48.Q & N_49.Q
+    # N_44.Q & N_45.Q & !N_47.Q & !N_48.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & N_48.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q
+    # N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q
+    # N_44.Q & !N_46.Q & !N_48.Q & !N_49.Q ) ; (30 pterms, 8 signals)
+
+<A name=62>N_63.X1</A> = <A href=#63>N_44.Q</A> & !<A href=#64>N_45.Q</A> & !<A href=#66>N_47.Q</A> & <A href=#67>N_48.Q</A> & !<A href=#68>N_49.Q</A> & <A href=#69>N_50.Q</A>
+    # N_44.Q & !N_45.Q & <A href=#65>N_46.Q</A> & !N_47.Q & !N_49.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q
+    # !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q & <A href=#70>N_51.Q</A>
+    # !N_44.Q & !N_45.Q & N_46.Q & N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+    # !N_44.Q & !N_45.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_49.Q & N_50.Q
+    # !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_49.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_49.Q
+    # !N_44.Q & !N_45.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_49.Q & !N_50.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q
+    # !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_46.Q & N_47.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_48.Q & !N_49.Q & N_50.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_48.Q & !N_49.Q & !N_50.Q
+    # N_44.Q & N_45.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_47.Q & N_48.Q & N_49.Q
+    # N_44.Q & N_45.Q & !N_48.Q & N_49.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_49.Q & N_50.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_49.Q & !N_50.Q
+    # N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_47.Q & !N_48.Q & !N_49.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_48.Q & N_49.Q & !N_50.Q
+    # !N_44.Q & N_45.Q & N_47.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_48.Q & N_49.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_47.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_47.Q & !N_48.Q & N_49.Q & N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_49.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q ; (47 pterms, 8 signals)
+N_63.X2 = <A href=#64>N_45.Q</A> & <A href=#66>N_47.Q</A> ; (1 pterm, 2 signals)
+
+<A name=43>N_7.D</A> = <A href=#41>N_5.Q</A> ; (1 pterm, 1 signal)
+N_7.C = <A href=#40>N_4.Q</A> ; (1 pterm, 1 signal)
+
+<A name=44>N_8.D</A> = <A href=#42>N_6.Q</A> ; (1 pterm, 1 signal)
+N_8.C = <A href=#40>N_4.Q</A> ; (1 pterm, 1 signal)
+
+<A name=45>N_9.D</A> = <A href=#44>N_8.Q</A> ; (1 pterm, 1 signal)
+N_9.C = <A href=#40>N_4.Q</A> ; (1 pterm, 1 signal)
+
+<A name=7>OUT_A.D</A> = !<A href=#7>OUT_A.Q</A> ; (1 pterm, 1 signal)
+OUT_A.C = <A href=#41>N_5.Q</A> & <A href=#43>N_7.Q</A> & <A href=#46>N_10.Q</A> ; (1 pterm, 3 signals)
+OUT_A.AP = <A href=#42>N_6.Q</A> & <A href=#44>N_8.Q</A> & <A href=#45>N_9.Q</A> ; (1 pterm, 3 signals)
+
+<A name=8>OUT_B.D</A> = <A href=#7>OUT_A.Q</A> & <A href=#8>OUT_B.Q</A>
+    # !OUT_A.Q & !OUT_B.Q ; (2 pterms, 2 signals)
+OUT_B.C = <A href=#41>N_5.Q</A> & <A href=#43>N_7.Q</A> & <A href=#46>N_10.Q</A> ; (1 pterm, 3 signals)
+OUT_B.AP = <A href=#42>N_6.Q</A> & <A href=#44>N_8.Q</A> & <A href=#45>N_9.Q</A> ; (1 pterm, 3 signals)
+
+<A name=11>START.D</A> = !<A href=#11>START.Q</A> & <A href=#12>CLOCK.Q</A> & <A href=#52>N_43.Q</A>
+    # START.Q & !CLOCK.Q
+    # START.Q & !N_43.Q ; (3 pterms, 3 signals)
+START.C = <A href=#13>CLK</A> ; (1 pterm, 1 signal)
+START.AP = 0 ; (0 pterm, 0 signal)
+
+<A name=6>point</A> = !( <A href=#53>N_52.Q</A> & !<A href=#54>N_53.Q</A> ) ; (1 pterm, 2 signals)
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+
+

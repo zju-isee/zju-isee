@@ -1,0 +1,10 @@
+%MASTERCLOCKMULT = 1;
+%SMALLESTUNIT    = 9;
+%AUTOASSIGN      = 1;
+%DECIMALS        = 0;
+%ENDTIME         = 100000;
+clk { A In Default None 0 1 50 } = (1 1600 0 1600)## ;
+clk1 { A In Default None 0 1 50 } = (1 2600 0 2600)## ;
+key { A In Default None 0 1 50 } = 1 4000 0 6400 1 10800 0 11000
+   1 3600 0 7800 1 13800 0 3600 1 17800 0 2400 1 1600 0 6000 1 4600
+   0 3600 1 11000 0 12200 1 4000;

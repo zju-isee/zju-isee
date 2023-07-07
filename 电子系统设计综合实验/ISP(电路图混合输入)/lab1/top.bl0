@@ -1,0 +1,14 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Fri Apr 07 11:27:57 2023
+#$ TITLE top.bls 
+#$ MODULE top
+#$ PINS 5 TOPOUT CLK TOPIN3 TOPIN2 TOPIN1
+#$ NODES 4 N_1 N_2 N_3 N_4
+#$ INTERFACE abeltop  7 IN1'i'  IN2'i'  IN3'i'  OUT1'o'  OUT2'o'  OUT3'o'  OUT4'o' 
+#$ INTERFACE demo1  6 A'i'  B'i'  C'i'  CK'i'  D'i'  OUT'o' 
+#$ INSTANCE I1 abeltop 7 TOPIN1 TOPIN2 TOPIN3 N_4 N_3 N_2 N_1
+#$ INSTANCE I2 demo1 6 N_4 N_3 N_2 CLK N_1 TOPOUT
+.model top
+.inputs
+.outputs
+.end

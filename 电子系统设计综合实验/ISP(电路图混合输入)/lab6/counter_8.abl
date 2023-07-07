@@ -1,0 +1,16 @@
+MODULE COUNTER_8
+
+TITLE '8 进制计数器'
+"inputs
+R, EN, CLK PIN;
+"outputs
+Q2, Q1, Q0 PIN istype 'reg';
+count=[Q2..Q0];
+EQUATIONS
+count.clk=CLK;
+count.ar=R;
+when EN==1 then count:=count+1;
+else count:=count;
+
+END 
+

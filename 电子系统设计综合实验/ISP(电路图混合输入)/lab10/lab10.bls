@@ -1,0 +1,24 @@
+#$ TOOL SCH2BLF 2.1.00.02 
+#$ TITLE lab10.bls 
+#$ MODULE lab10 
+#$ PINS 19  save_0_ save_1_ save_2_ save_3_ clk KeyClock KeyData \
+#   LED_VCC4 LED_VCC3 LED_VCC2 LED_VCC1 g f e d c b a reset
+#$ NODES 4 num1_0_ num1_1_ num1_2_ num1_3_ 
+#$ INTERFACE display 29 clk'i' num1_0_'i' num1_1_'i' num1_2_'i' \
+#   num1_3_'i' num2_0_'i' num2_1_'i' num2_2_'i' num2_3_'i' \
+#   num3_0_'i' num3_1_'i' num3_2_'i' num3_3_'i' num4_0_'i' \
+#   num4_1_'i' num4_2_'i' num4_3_'i' reset'i' LED_A'o' LED_B'o' \
+#   LED_C'o' LED_D'o' LED_E'o' LED_F'o' LED_G'o' LED_VCC1'o' \
+#   LED_VCC2'o' LED_VCC3'o' LED_VCC4'o'
+#$ INTERFACE keyboard 12 KeyClock'i' KeyData'i' clk'i' reset'i' \
+#   PS_Data_0_'o' PS_Data_1_'o' PS_Data_2_'o' PS_Data_3_'o' \
+#   save_0_'o' save_1_'o' save_2_'o' save_3_'o'
+#$ INSTANCE I2 display 29 clk num1_0_ num1_1_ num1_2_ num1_3_ num1_0_ \
+#   num1_1_ num1_2_ num1_3_ num1_0_ num1_1_ num1_2_ num1_3_ num1_0_ \
+#   num1_1_ num1_2_ num1_3_ reset a b c d e f g LED_VCC1 LED_VCC2 \
+#   LED_VCC3 LED_VCC4
+#$ INSTANCE I1 keyboard 12 KeyClock KeyData clk reset num1_0_ num1_1_ \
+#   num1_2_ num1_3_ save_0_ save_1_ save_2_ save_3_
+.model lab10
+
+.end

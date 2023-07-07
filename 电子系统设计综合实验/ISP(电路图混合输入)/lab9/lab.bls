@@ -1,0 +1,27 @@
+#$ TOOL SCH2BLF 2.1.00.02 
+#$ TITLE lab.bls 
+#$ MODULE lab 
+#$ PINS 17  LED_VCC4 LED_VCC3 LED_VCC2 LED_VCC1 g f e d c b a Tx \
+#   key_in clk1 Rx reset clk
+#$ NODES 9 num2_0_ num2_1_ num2_2_ num2_3_ num1_0_ num1_1_ num1_2_  \
+#  num1_3_ N_1 
+#$ INTERFACE deshake 4 RESET'i' din'i' keyclk'i' dout'o'
+#$ INTERFACE display 29 clk'i' num1_0_'i' num1_1_'i' num1_2_'i' \
+#   num1_3_'i' num2_0_'i' num2_1_'i' num2_2_'i' num2_3_'i' \
+#   num3_0_'i' num3_1_'i' num3_2_'i' num3_3_'i' num4_0_'i' \
+#   num4_1_'i' num4_2_'i' num4_3_'i' reset'i' LED_A'o' LED_B'o' \
+#   LED_C'o' LED_D'o' LED_E'o' LED_F'o' LED_G'o' LED_VCC1'o' \
+#   LED_VCC2'o' LED_VCC3'o' LED_VCC4'o'
+#$ INTERFACE serial 13 Rx'i' clk'i' dout'i' reset'i' Data1_0_'o' \
+#   Data1_1_'o' Data1_2_'o' Data1_3_'o' Data2_0_'o' Data2_1_'o' \
+#   Data2_2_'o' Data2_3_'o' Tx'o'
+#$ INSTANCE I1 deshake 4 reset key_in clk1 N_1
+#$ INSTANCE I3 display 29 clk num1_0_ num1_1_ num1_2_ num1_3_ num2_0_ \
+#   num2_1_ num2_2_ num2_3_ num2_0_ num2_1_ num2_2_ num2_3_ num2_0_ \
+#   num2_1_ num2_2_ num2_3_ reset a b c d e f g LED_VCC1 LED_VCC2 \
+#   LED_VCC3 LED_VCC4
+#$ INSTANCE I2 serial 13 Rx clk N_1 reset num1_0_ num1_1_ num1_2_ \
+#   num1_3_ num2_0_ num2_1_ num2_2_ num2_3_ Tx
+.model lab
+
+.end

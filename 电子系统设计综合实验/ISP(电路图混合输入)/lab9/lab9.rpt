@@ -1,0 +1,1207 @@
+|--------------------------------------------------------------|
+|- ispLEVER Classic 2.1.00.02.49.20 Fitter Report File        -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+
+
+The Basic/Detailed Report Format can be selected in the dialog box
+Tools->Fitter Report File Format...
+
+Project_Summary
+~~~~~~~~~~~~~~~
+Project Name         :  lab9
+Project Path         :  D:\isp\lab9
+Project Fitted on    :  Thu May 25 00:33:21 2023
+
+Device               :  M4256_64
+Package              :  100
+GLB Input Mux Size   :  33
+Available Blocks     :  16
+Speed                :  -7.5
+Part Number          :  LC4256V-75T100I
+Source Format        :  Schematic_Verilog_HDL
+
+
+// Project 'lab9' Fit Successfully! //
+
+
+Compilation_Times
+~~~~~~~~~~~~~~~~~
+Prefit Time                     0 secs
+Load Design Time                0.05 secs
+Partition Time                  0.08 secs
+Place Time                      0.00 secs
+Route Time                      0.00 secs
+Total Fit Time                  00:00:01
+
+
+Design_Summary
+~~~~~~~~~~~~~~
+Total Input Pins                5
+Total Logic Functions           85
+  Total Output Pins             12
+  Total Bidir I/O Pins          0
+  Total Buried Nodes            73
+Total Flip-Flops                80
+  Total D Flip-Flops            60
+  Total T Flip-Flops            20
+  Total Latches                 0
+Total Product Terms             375
+
+Total Reserved Pins             0
+Total Locked Pins               17
+Total Locked Nodes              0
+
+Total Unique Output Enables     0
+Total Unique Clocks             6
+Total Unique Clock Enables      15
+Total Unique Resets             3
+Total Unique Presets            3
+
+Fmax Logic Levels               2
+
+
+Device_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~~~~
+                                 Device
+                                 Total    Used   Not Used   Utilization
+-----------------------------------------------------------------------
+Dedicated Pins
+  Clock/Input Pins                  4        3      1    -->    75
+  Input-Only Pins                   6        0      6    -->     0
+  I/O / Enable Pins                 2        0      2    -->     0
+I/O Pins                           62       14     48    -->    22
+Logic Functions                   256       85    171    -->    33
+  Input Registers                  64        0     64    -->     0
+
+GLB Inputs                        576      176    400    -->    30
+Logical Product Terms            1280      250   1030    -->    19
+Occupied GLBs                      16       16      0    -->   100
+Macrocells                        256       85    171    -->    33
+
+Control Product Terms:
+  GLB Clock/Clock Enables          16       11      5    -->    68
+  GLB Reset/Presets                16        0     16    -->     0
+  Macrocell Clocks                256        2    254    -->     0
+  Macrocell Clock Enables         256       27    229    -->    10
+  Macrocell Enables               256        0    256    -->     0
+  Macrocell Resets                256        5    251    -->     1
+  Macrocell Presets               256        0    256    -->     0
+
+Global Routing Pool               324       76    248    -->    23
+  GRP from IFB                     ..        3     ..    -->    ..
+    (from input signals)           ..        3     ..    -->    ..
+    (from output signals)          ..        0     ..    -->    ..
+    (from bidir signals)           ..        0     ..    -->    ..
+  GRP from MFB                     ..       73     ..    -->    ..
+----------------------------------------------------------------------
+
+<Note> 1 : The available PT is the product term that has not been used.
+<Note> 2 : IFB is I/O feedback.
+<Note> 3 : MFB is macrocell feedback.
+
+
+
+GLB_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~
+                                                                                     # of PT
+               ---  Fanin  ---    I/O    Input  Macrocells       Macrocells   Logic  clusters
+             Unique Shared Total  Pins    Regs Used Inaccessible  available    PTs   used
+-------------------------------------------------------------------------------------------
+Maximum
+  GLB                      36      *(1)     8   --     --             16       80       16
+-------------------------------------------------------------------------------------------
+  GLB    A      0    11    11      0/4      0   10      0              6       24       10
+  GLB    B      1     6     7      2/4      0    6      0             10       18        6
+  GLB    C      1     4     5      0/4      0    2      0             14        5        2
+  GLB    D      1    11    12      0/4      0    6      0             10       15        6
+-------------------------------------------------------------------------------------------
+  GLB    E      3    14    17      0/4      0    4      0             12        9        4
+  GLB    F      0    14    14      0/4      0    6      0             10       10        6
+  GLB    G      0    14    14      0/4      0    4      0             12        7        4
+  GLB    H      2     7     9      0/4      0    6      0             10       15        6
+-------------------------------------------------------------------------------------------
+  GLB    I      8     8    16      0/4      0   12      0              4       26       12
+  GLB    J      2     7     9      1/4      0    5      0             11       10        5
+  GLB    K      8     3    11      3/4      0    3      0             13       15        5
+  GLB    L      0    11    11      3/4      0    3      0             13       36        9
+-------------------------------------------------------------------------------------------
+  GLB    M      0    11    11      3/4      0    3      1             12       32        8
+  GLB    N      0    13    13      1/4      0    6      0             10       12        6
+  GLB    O      1     4     5      1/4      0    3      0             13        7        3
+  GLB    P      0    11    11      0/4      0    6      0             10        9        6
+-------------------------------------------------------------------------------------------
+TOTALS:        27   149   176     14/64     0   85      1            170      250       98
+
+<Note> 1 : For ispMACH 4000 devices, the number of IOs depends on the GLB.
+<Note> 2 : Four rightmost columns above reflect last status of the placement process.
+
+
+
+GLB_Control_Summary
+~~~~~~~~~~~~~~~~~~~
+           Shared Shared | Mcell  Mcell  Mcell  Mcell  Mcell 
+           Clk/CE Rst/Pr | Clock  CE     Enable Reset  Preset
+------------------------------------------------------------------------------
+Maximum
+  GLB        1      1        16     16     16     16     16  
+==============================================================================
+  GLB    A   1      0         0      6      0      3      0
+  GLB    B   1      0         0      4      0      0      0
+  GLB    C   1      0         0      0      0      0      0
+  GLB    D   1      0         0      3      0      0      0
+------------------------------------------------------------------------------
+  GLB    E   1      0         0      0      0      0      0
+  GLB    F   0      0         0      0      0      0      0
+  GLB    G   0      0         0      0      0      0      0
+  GLB    H   1      0         0      1      0      2      0
+------------------------------------------------------------------------------
+  GLB    I   1      0         0      4      0      0      0
+  GLB    J   1      0         0      0      0      0      0
+  GLB    K   0      0         0      3      0      0      0
+  GLB    L   0      0         0      3      0      0      0
+------------------------------------------------------------------------------
+  GLB    M   0      0         0      3      0      0      0
+  GLB    N   1      0         2      0      0      0      0
+  GLB    O   1      0         0      0      0      0      0
+  GLB    P   1      0         0      0      0      0      0
+------------------------------------------------------------------------------
+
+<Note> 1 : For ispMACH 4000 devices, the number of output enables depends on the GLB.
+
+
+
+Optimizer_and_Fitter_Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pin Assignment :                       Yes
+Group Assignment :                     No
+Pin Reservation :                      No
+
+@Ignore_Project_Constraints :
+  Pin Assignments :                    No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+  Group Assignments :                  No
+  Macrocell Assignment :               No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+
+@Backannotate_Project_Constraints
+  Pin Assignments :                    No
+  Pin And Block Assignments :          No
+  Pin, Macrocell and Block :           No
+
+@Timing_Constraints :                  No
+
+@Global_Project_Optimization :
+  Balanced Partitioning :              Yes
+  Spread Placement :                   Yes
+
+  Note :
+    Pack Design :
+       Balanced Partitioning = No
+       Spread Placement      = No
+    Spread Design :
+       Balanced Partitioning = Yes
+       Spread Placement      = Yes
+
+
+@Logic_Synthesis :
+  Logic Reduction :                    Yes
+  Node Collapsing :                    FMAX
+  Fmax_Logic_Level :                   1
+  D/T Synthesis :                      Yes
+  XOR Synthesis :                      Yes
+  Max. P-Term for Collapsing :         16
+  Max. P-Term for Splitting :          80
+  Max Symbols :                        24
+
+@Utilization_options
+  Max. % of Macrocells used :          100
+@Usercode                              8A77 (HEX)
+@IO_Types                              Default = LVCMOS18 (2)
+@Output_Slew_Rate                      Default = FAST (2)
+@Power                                 Default = HIGH (2)
+@Pull                                  Default = PULLUP_UP (2)
+@Fast_Bypass                           Default = None (2)
+@ORP_Bypass                            Default = None
+@Input_Registers                       Default = None (2)
+@Register_Powerup                      Default = None
+
+Device Options:
+<Note> 1 : Reserved unused I/Os can be independently driven to Low or High, and does not
+           follow the drive level set for the Global Configure Unused I/O Option.
+<Note> 2 : For user-specified constraints on individual signals, refer to the Output,
+           Bidir and Buried Signal Lists.
+
+
+
+Pinout_Listing
+~~~~~~~~~~~~~~
+      | Pin   | Bank |GLB |Assigned|                 | Signal|
+Pin No| Type  |Number|Pad |Pin     |     I/O Type    | Type  | Signal name
+---------------------------------------------------------------------------------------
+1     | GND   |   -  |    |        |                 |       |
+2     | TDI   |   -  |    |        |                 |       |
+3     |  I_O  |   0  |C12 |        |                 |       |
+4     |  I_O  |   0  |C10 |        |                 |       |
+5     |  I_O  |   0  |C6  |        |                 |       |
+6     |  I_O  |   0  |C2  |        |                 |       |
+7     |GNDIO0 |   -  |    |        |                 |       |
+8     |  I_O  |   0  |D12 |        |                 |       |
+9     |  I_O  |   0  |D10 |        |                 |       |
+10    |  I_O  |   0  |D6  |        |                 |       |
+11    |  I_O  |   0  |D4  |        |                 |       |
+12    | IN0   |   0  |    |        |                 |       |
+13    |VCCIO0 |   -  |    |        |                 |       |
+14    |  I_O  |   0  |E4  |        |                 |       |
+15    |  I_O  |   0  |E6  |        |                 |       |
+16    |  I_O  |   0  |E10 |        |                 |       |
+17    |  I_O  |   0  |E12 |        |                 |       |
+18    |GNDIO0 |   -  |    |        |                 |       |
+19    |  I_O  |   0  |F2  |        |                 |       |
+20    |  I_O  |   0  |F6  |        |                 |       |
+21    |  I_O  |   0  |F10 |        |                 |       |
+22    |  I_O  |   0  |F12 |        |                 |       |
+23    | IN1   |   0  |    |        |                 |       |
+24    | TCK   |   -  |    |        |                 |       |
+25    | VCC   |   -  |    |        |                 |       |
+26    | GND   |   -  |    |        |                 |       |
+27    | IN2   |   0  |    |        |                 |       |
+28    |  I_O  |   0  |G12 |        |                 |       |
+29    |  I_O  |   0  |G10 |        |                 |       |
+30    |  I_O  |   0  |G6  |        |                 |       |
+31    |  I_O  |   0  |G2  |        |                 |       |
+32    |GNDIO0 |   -  |    |        |                 |       |
+33    |VCCIO0 |   -  |    |        |                 |       |
+34    |  I_O  |   0  |H12 |        |                 |       |
+35    |  I_O  |   0  |H10 |        |                 |       |
+36    |  I_O  |   0  |H6  |        |                 |       |
+37    |  I_O  |   0  |H2  |        |                 |       |
+38    |INCLK1 |   0  |    |    *   |LVCMOS18         | Input |reset
+39    |INCLK2 |   1  |    |    *   |LVCMOS18         | Input |clk1
+40    | VCC   |   -  |    |        |                 |       |
+41    |  I_O  |   1  |I2  |        |                 |       |
+42    |  I_O  |   1  |I6  |        |                 |       |
+43    |  I_O  |   1  |I10 |        |                 |       |
+44    |  I_O  |   1  |I12 |        |                 |       |
+45    |VCCIO1 |   -  |    |        |                 |       |
+46    |GNDIO1 |   -  |    |        |                 |       |
+47    |  I_O  |   1  |J2  |        |                 |       |
+48    |  I_O  |   1  |J6  |        |                 |       |
+49    |  I_O  |   1  |J10 |    *   |LVCMOS18         | Input |key_in
+50    |  I_O  |   1  |J12 |        |                 |       |
+51    | GND   |   -  |    |        |                 |       |
+52    | TMS   |   -  |    |        |                 |       |
+53    |  I_O  |   1  |K12 |        |                 |       |
+54    |  I_O  |   1  |K10 |    *   |LVCMOS18         | Output|LED_VCC4
+55    |  I_O  |   1  |K6  |    *   |LVCMOS18         | Output|LED_VCC3
+56    |  I_O  |   1  |K2  |    *   |LVCMOS18         | Output|b
+57    |GNDIO1 |   -  |    |        |                 |       |
+58    |  I_O  |   1  |L12 |    *   |LVCMOS18         | Output|g
+59    |  I_O  |   1  |L10 |        |                 |       |
+60    |  I_O  |   1  |L6  |    *   |LVCMOS18         | Output|f
+61    |  I_O  |   1  |L4  |    *   |LVCMOS18         | Output|a
+62    | IN3   |   1  |    |        |                 |       |
+63    |VCCIO1 |   -  |    |        |                 |       |
+64    |  I_O  |   1  |M4  |    *   |LVCMOS18         | Output|d
+65    |  I_O  |   1  |M6  |    *   |LVCMOS18         | Output|e
+66    |  I_O  |   1  |M10 |    *   |LVCMOS18         | Output|c
+67    |  I_O  |   1  |M12 |        |                 |       |
+68    |GNDIO1 |   -  |    |        |                 |       |
+69    |  I_O  |   1  |N2  |        |                 |       |
+70    |  I_O  |   1  |N6  |        |                 |       |
+71    |  I_O  |   1  |N10 |        |                 |       |
+72    |  I_O  |   1  |N12 |    *   |LVCMOS18         | Output|LED_VCC1
+73    | IN4   |   1  |    |        |                 |       |
+74    | TDO   |   -  |    |        |                 |       |
+75    | VCC   |   -  |    |        |                 |       |
+76    | GND   |   -  |    |        |                 |       |
+77    | IN5   |   1  |    |        |                 |       |
+78    |  I_O  |   1  |O12 |    *   |LVCMOS18         | Output|LED_VCC2
+79    |  I_O  |   1  |O10 |        |                 |       |
+80    |  I_O  |   1  |O6  |        |                 |       |
+81    |  I_O  |   1  |O2  |        |                 |       |
+82    |GNDIO1 |   -  |    |        |                 |       |
+83    |VCCIO1 |   -  |    |        |                 |       |
+84    |  I_O  |   1  |P12 |        |                 |       |
+85    |  I_O  |   1  |P10 |        |                 |       |
+86    |  I_O  |   1  |P6  |        |                 |       |
+87    | I_O/OE|   1  |P2  |        |                 |       |
+88    |INCLK3 |   1  |    |    *   |LVCMOS18         | Input |clk
+89    |INCLK0 |   0  |    |        |                 |       |
+90    | VCC   |   -  |    |        |                 |       |
+91    | I_O/OE|   0  |A2  |        |                 |       |
+92    |  I_O  |   0  |A6  |        |                 |       |
+93    |  I_O  |   0  |A10 |        |                 |       |
+94    |  I_O  |   0  |A12 |        |                 |       |
+95    |VCCIO0 |   -  |    |        |                 |       |
+96    |GNDIO0 |   -  |    |        |                 |       |
+97    |  I_O  |   0  |B2  |    *   |LVCMOS18         | Output|Tx
+98    |  I_O  |   0  |B6  |    *   |LVCMOS18         | Input |Rx
+99    |  I_O  |   0  |B10 |        |                 |       |
+100   |  I_O  |   0  |B12 |        |                 |       |
+---------------------------------------------------------------------------------------
+
+<Note> GLB Pad : This notation refers to the GLB I/O pad number in the device.
+<Note> Assigned Pin : user or dedicated input assignment (E.g. Clock pins).
+<Note> Pin Type : 
+          ClkIn : Dedicated input or clock pin 
+           CLK  : Dedicated clock pin
+           I_O  : Input/Output pin
+           INP  : Dedicated input pin
+           JTAG : JTAG Control and test pin
+           NC   : No connected
+
+
+
+Input_Signal_List
+~~~~~~~~~~~~~~~~~
+                Input
+         Pin    Fanout
+ Pin GLB Type                       Pullup Signal
+-------------------------------------------------
+  98   B  I/O   2  A--D------------      Up Rx
+  88  -- INCLK     ----------------      Up clk
+  39  -- INCLK     ----------------      Up clk1
+  49   J  I/O   1  -------H--------      Up key_in
+  38  -- INCLK  15 A-CDEFGHIJKLMNOP      Up reset
+-------------------------------------------------
+
+
+
+Output_Signal_List
+~~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Output
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+---------------------------------------------------------------------------------
+  72   N  0  -   0  1 COM                   ----------------  Fast     Up LED_VCC1
+  78   O  0  -   0  1 COM                   ----------------  Fast     Up LED_VCC2
+  55   K  3  1   2  1 DFF    * R *          ----------------  Fast     Up LED_VCC3
+  54   K  3  1   2  1 DFF    * R *          ----------------  Fast     Up LED_VCC4
+  97   B  7  1   3  1 DFF  *   S            ----------------  Fast     Up Tx
+  61   L 11  1  11  3 DFF  *   S *          ----------------  Fast     Up a
+  56   K 11  1  11  3 DFF  *   S *          ----------------  Fast     Up b
+  66   M 10  1   6  2 DFF  *   S *          ----------------  Fast     Up c
+  64   M 11  1  14  3 DFF  *   S *          ----------------  Fast     Up d
+  65   M 11  1  12  3 DFF  *   S *          ----------------  Fast     Up e
+  60   L 11  1  12  3 DFF  *   S *          ----------------  Fast     Up f
+  58   L 11  1  13  3 DFF  *   S *          ----------------  Fast     Up g
+---------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Bidir_Signal_List
+~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Bidir
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Buried_Signal_List
+~~~~~~~~~~~~~~~~~~
+        I         C      P R P       Node
+        N         L Mc   R E U C I F Fanout
+Mc GLB  P LL PTs  S Type E S P E R P                     Signal
+---------------------------------------------------------------------------------
+ 5   H  3  1   2  1 DFF      R *     1  -------------N--  A0_dout_22reg
+ 7   H  3  -   2  1 COM              1  -------H--------  A0_dout_22reg_0
+12   H  3  1   1  1 DFF      R *     1  ---------J------  A0_next_s_i0
+ 9   H  3  1   1  1 DFF      R *     1  ----E-----------  A0_next_s_i1
+ 7   J  2  1   1  1 DFF      R       1  -------H--------  A0_pre_s_i0
+ 3   E  2  1   2  1 DFF      R       1  -------H--------  A0_pre_s_i1
+ 2   I  7  1   3  1 DFF      R *     3  A-CD------------  B0_Clock16_94
+12   P 11  1   1  1 DFF      R *     1  -B--------------  B0_Clock9600_92
+ 5   P 11  1   2  1 DFF      R *     3  -------------NOP  B0_ClockCount_281__i0
+ 9   N  3  1   3  1 DFF      R *     3  -------------NOP  B0_ClockCount_281__i1
+10   O  4  1   3  1 DFF      R *     3  -------------NOP  B0_ClockCount_281__i2
+ 5   O  5  1   4  1 DFF      R *     3  -------------NOP  B0_ClockCount_281__i3
+ 3   P 11  1   2  1 TFF      R *     2  -------------N-P  B0_ClockCount_281__i4
+ 1   P 11  1   2  1 TFF      R *     2  -------------N-P  B0_ClockCount_281__i5
+ 7   N 11  1   3  1 TFF      R *     2  -------------N-P  B0_ClockCount_281__i6
+ 9   P  8  1   1  1 TFF      R *     2  -------------N-P  B0_ClockCount_281__i7
+ 7   P  9  1   1  1 TFF      R *     2  -------------N-P  B0_ClockCount_281__i8
+ 5   N 11  1   3  1 TFF      R *     2  -------------N-P  B0_ClockCount_281__i9
+ 5   J  7  1   2  1 DFF      R *     2  --------IJ------  B0_ClockCount_Rx_280__i0
+ 0   I  7  1   5  1 DFF      R *     2  --------IJ------  B0_ClockCount_Rx_280__i1
+ 1   J  7  1   4  1 DFF      R *     2  --------IJ------  B0_ClockCount_Rx_280__i2
+ 1   I  5  1   6  2 DFF      R *     2  --------IJ------  B0_ClockCount_Rx_280__i3
+ 3   J  6  1   2  1 DFF      R *     2  --------IJ------  B0_ClockCount_Rx_280__i4
+ 3   I  7  1   4  1 TFF      R *     2  --------IJ------  B0_ClockCount_Rx_280__i5
+ 7   I  3  1   1  1 DFF    * R       3  ----------KLM---  B0_Data1_i1reg
+ 6   I  3  1   1  1 DFF    * R       3  ----------KLM---  B0_Data1_i2reg
+ 5   I  3  1   1  1 DFF    * R       3  ----------KLM---  B0_Data1_i3reg
+ 4   I  3  1   1  1 DFF    * R       3  ----------KLM---  B0_Data1_i4reg
+12   I  3  1   1  1 DFF    * R       3  ----------KLM---  B0_Data2_i1reg
+10   I  3  1   1  1 DFF    * R       3  ----------KLM---  B0_Data2_i2reg
+ 9   I  3  1   1  1 DFF    * R       3  ----------KLM---  B0_Data2_i3reg
+ 8   I  3  1   1  1 DFF    * R       3  ----------KLM---  B0_Data2_i4reg
+ 3   D 11  -   3  1 DFF      R *     1  --------I-------  B0_Rx_Data_i0_i0
+12   A 11  -   2  1 DFF      R *     1  --------I-------  B0_Rx_Data_i0_i1
+ 9   A 11  -   2  1 DFF      R *     1  --------I-------  B0_Rx_Data_i0_i2
+ 7   A 11  -   2  1 DFF      R *     1  --------I-------  B0_Rx_Data_i0_i3
+ 1   D 11  -   3  1 DFF      R *     1  --------I-------  B0_Rx_Data_i0_i4
+ 6   A 11  -   2  1 DFF      R *     1  --------I-------  B0_Rx_Data_i0_i5
+ 5   A 11  -   2  1 DFF      R *     1  --------I-------  B0_Rx_Data_i0_i6
+ 4   A 11  -   2  1 DFF      R *     1  --------I-------  B0_Rx_Data_i0_i7
+ 7   D 11  1   2  1 DFF    * R *     1  --------I-------  B0_Rx_Valid_102
+ 2   A  9  -   3  1 COM              1  ---D------------  B0_Rx_Valid_102_0
+12   B  6  1   2  1 DFF    * R       1  -B--------------  B0_Send_count_i0_i0
+ 9   B  6  1   3  1 DFF    * R *     1  -B--------------  B0_Send_count_i0_i1
+ 7   B  6  1   4  1 DFF    * R *     1  -B--------------  B0_Send_count_i0_i2
+ 5   B  6  1   5  1 DFF    * R *     1  -B--------------  B0_Send_count_i0_i3
+11   J  2  -   1  1 COM              1  -------------N--  B0_Send_data_9__N_42
+12   N  2  -   2  1 DFF    * R       1  -B--------------  B0_Send_data_i1
+ 3   N  2  -   1  1 DFF  *   S       1  -B--------------  B0_Send_en_100
+ 1   B  6  -   1  1 DFF  *   S *     1  ---------J------  B0_Send_over_99
+ 5   D 11  1   3  1 DFF    * R       3  A-CD------------  B0_m_i0
+ 9   C  4  1   2  1 DFF    * R       3  A-CD------------  B0_m_i1
+ 3   C  5  1   3  1 DFF    * R       3  A-CD------------  B0_m_i2
+ 0   A 10  1   4  1 DFF    * R       2  A--D------------  B0_m_i3
+ 9   D  7  1   2  1 DFF    * R       2  A--D------------  B0_m_i4
+12   D 10  1   2  1 TFF    * R       2  A--D------------  B0_m_i5
+ 3   A  8  1   2  1 TFF    * R       2  A--D------------  B0_m_i6
+ 1   A 10  1   3  1 TFF    * R       2  A--D------------  B0_m_i7
+10   G  2  1   1  1 DFF    * R       4  ----EFGH--------  C0_count_186__i0
+ 7   F  3  1   2  1 DFF    * R       4  ----EFGH--------  C0_count_186__i1
+ 6   E 14  1   2  1 TFF    * R       3  ----EFG---------  C0_count_186__i10
+ 9   F 12  1   1  1 TFF    * R       3  ----EFG---------  C0_count_186__i11
+ 3   G 14  1   2  1 TFF    * R       3  ----EFG---------  C0_count_186__i12
+ 3   H  4  1   4  1 DFF    * R       4  ----EFGH--------  C0_count_186__i2
+ 1   H  5  1   5  1 DFF    * R       4  ----EFGH--------  C0_count_186__i3
+ 1   G 14  1   2  1 TFF    * R       3  ----EFG---------  C0_count_186__i4
+ 5   F 14  1   2  1 TFF    * R       3  ----EFG---------  C0_count_186__i5
+10   E 14  1   2  1 TFF    * R       3  ----EFG---------  C0_count_186__i6
+12   F  8  1   1  1 TFF    * R       3  ----EFG---------  C0_count_186__i7
+ 6   G 14  1   2  1 TFF    * R       3  ----EFG---------  C0_count_186__i8
+ 3   F 14  1   2  1 TFF    * R       3  ----EFG---------  C0_count_186__i9
+ 1   F 14  1   2  1 TFF      R       4  ----E-----KLM---  C0_scancnt__i0
+ 1   E 16  1   3  1 DFF      R *     4  ----E-----KLM---  C0_scancnt__i1
+---------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        IR = Input register
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+PostFit_Equations
+~~~~~~~~~~~~~~~~~
+A0_dout_22reg.D = !( !key_in & !A0_pre_s_i0.Q ) ; (1 pterm, 2 signals)
+A0_dout_22reg.C = clk1 ; (1 pterm, 1 signal)
+A0_dout_22reg.CE = A0_dout_22reg_0 ; (1 pterm, 1 signal)
+
+A0_dout_22reg_0 = A0_pre_s_i1.Q & !A0_pre_s_i0.Q
+    # key_in & !A0_pre_s_i1.Q & A0_pre_s_i0.Q ; (2 pterms, 3 signals)
+
+A0_next_s_i0.D = !( !key_in & !A0_pre_s_i1.Q & A0_pre_s_i0.Q ) ; (1 pterm, 3 signals)
+A0_next_s_i0.C = clk1 ; (1 pterm, 1 signal)
+A0_next_s_i0.CE = !( !key_in & A0_pre_s_i1.Q & !A0_pre_s_i0.Q ) ; (1 pterm, 3 signals)
+
+A0_next_s_i1.D = !key_in & !A0_pre_s_i1.Q & A0_pre_s_i0.Q ; (1 pterm, 3 signals)
+A0_next_s_i1.C = clk1 ; (1 pterm, 1 signal)
+A0_next_s_i1.CE = !( !key_in & A0_pre_s_i1.Q & !A0_pre_s_i0.Q ) ; (1 pterm, 3 signals)
+
+A0_pre_s_i0.D = !( reset & !A0_next_s_i0.Q ) ; (1 pterm, 2 signals)
+A0_pre_s_i0.C = clk1 ; (1 pterm, 1 signal)
+
+A0_pre_s_i1.D = reset & A0_next_s_i1.Q ; (1 pterm, 2 signals)
+A0_pre_s_i1.C = clk1 ; (1 pterm, 1 signal)
+
+B0_Clock16_94.D = B0_ClockCount_Rx_280__i5.Q & !B0_ClockCount_Rx_280__i4.Q
+       & !B0_ClockCount_Rx_280__i3.Q & B0_ClockCount_Rx_280__i2.Q
+       & B0_ClockCount_Rx_280__i1.Q & !B0_ClockCount_Rx_280__i0.Q ; (1 pterm, 6 signals)
+B0_Clock16_94.C = clk ; (1 pterm, 1 signal)
+B0_Clock16_94.CE = reset ; (1 pterm, 1 signal)
+
+B0_Clock9600_92.D = B0_ClockCount_281__i9.Q & !B0_ClockCount_281__i8.Q
+       & !B0_ClockCount_281__i7.Q & B0_ClockCount_281__i6.Q
+       & B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & !B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i2.Q
+       & !B0_ClockCount_281__i1.Q & !B0_ClockCount_281__i0.Q ; (1 pterm, 10 signals)
+B0_Clock9600_92.C = clk ; (1 pterm, 1 signal)
+B0_Clock9600_92.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i0.D = !( B0_ClockCount_281__i9.Q
+       & !B0_ClockCount_281__i8.Q & !B0_ClockCount_281__i7.Q
+       & B0_ClockCount_281__i6.Q & B0_ClockCount_281__i5.Q
+       & B0_ClockCount_281__i4.Q & !B0_ClockCount_281__i3.Q
+       & !B0_ClockCount_281__i2.Q & !B0_ClockCount_281__i1.Q
+    # B0_ClockCount_281__i0.Q ) ; (2 pterms, 10 signals)
+B0_ClockCount_281__i0.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i0.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i1.D = B0_ClockCount_281__i1.Q & !B0_ClockCount_281__i0.Q
+    # !B0_ClockCount_281__i1.Q & B0_ClockCount_281__i0.Q ; (2 pterms, 2 signals)
+B0_ClockCount_281__i1.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i1.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i2.D = !B0_ClockCount_281__i2.Q & B0_ClockCount_281__i1.Q
+       & B0_ClockCount_281__i0.Q
+    # B0_ClockCount_281__i2.Q & !B0_ClockCount_281__i1.Q
+    # B0_ClockCount_281__i2.Q & !B0_ClockCount_281__i0.Q ; (3 pterms, 3 signals)
+B0_ClockCount_281__i2.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i2.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i3.D = !B0_ClockCount_281__i3.Q & B0_ClockCount_281__i2.Q
+       & B0_ClockCount_281__i1.Q & B0_ClockCount_281__i0.Q
+    # B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i1.Q
+    # B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i2.Q
+    # B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i0.Q ; (4 pterms, 4 signals)
+B0_ClockCount_281__i3.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i3.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i4.T = B0_ClockCount_281__i9.Q & !B0_ClockCount_281__i8.Q
+       & !B0_ClockCount_281__i7.Q & B0_ClockCount_281__i6.Q
+       & B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & !B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i2.Q
+       & !B0_ClockCount_281__i1.Q & !B0_ClockCount_281__i0.Q
+    # B0_ClockCount_281__i3.Q & B0_ClockCount_281__i2.Q
+       & B0_ClockCount_281__i1.Q & B0_ClockCount_281__i0.Q ; (2 pterms, 10 signals)
+B0_ClockCount_281__i4.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i4.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i5.T = B0_ClockCount_281__i9.Q & !B0_ClockCount_281__i8.Q
+       & !B0_ClockCount_281__i7.Q & B0_ClockCount_281__i6.Q
+       & B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & !B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i2.Q
+       & !B0_ClockCount_281__i1.Q & !B0_ClockCount_281__i0.Q
+    # B0_ClockCount_281__i4.Q & B0_ClockCount_281__i3.Q
+       & B0_ClockCount_281__i2.Q & B0_ClockCount_281__i1.Q
+       & B0_ClockCount_281__i0.Q ; (2 pterms, 10 signals)
+B0_ClockCount_281__i5.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i5.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i6.T = B0_ClockCount_281__i9.Q & !B0_ClockCount_281__i8.Q
+       & !B0_ClockCount_281__i7.Q & B0_ClockCount_281__i6.Q
+       & B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & !B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i2.Q
+       & !B0_ClockCount_281__i1.Q & !B0_ClockCount_281__i0.Q
+    # B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & B0_ClockCount_281__i3.Q & B0_ClockCount_281__i2.Q
+       & B0_ClockCount_281__i1.Q & B0_ClockCount_281__i0.Q ; (2 pterms, 10 signals)
+B0_ClockCount_281__i6.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i6.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i7.T = B0_ClockCount_281__i6.Q & B0_ClockCount_281__i5.Q
+       & B0_ClockCount_281__i4.Q & B0_ClockCount_281__i3.Q
+       & B0_ClockCount_281__i2.Q & B0_ClockCount_281__i1.Q
+       & B0_ClockCount_281__i0.Q ; (1 pterm, 7 signals)
+B0_ClockCount_281__i7.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i7.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i8.T = B0_ClockCount_281__i7.Q & B0_ClockCount_281__i6.Q
+       & B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & B0_ClockCount_281__i3.Q & B0_ClockCount_281__i2.Q
+       & B0_ClockCount_281__i1.Q & B0_ClockCount_281__i0.Q ; (1 pterm, 8 signals)
+B0_ClockCount_281__i8.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i8.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i9.T = B0_ClockCount_281__i9.Q & !B0_ClockCount_281__i8.Q
+       & !B0_ClockCount_281__i7.Q & B0_ClockCount_281__i6.Q
+       & B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & !B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i2.Q
+       & !B0_ClockCount_281__i1.Q & !B0_ClockCount_281__i0.Q
+    # B0_ClockCount_281__i8.Q & B0_ClockCount_281__i7.Q
+       & B0_ClockCount_281__i6.Q & B0_ClockCount_281__i5.Q
+       & B0_ClockCount_281__i4.Q & B0_ClockCount_281__i3.Q
+       & B0_ClockCount_281__i2.Q & B0_ClockCount_281__i1.Q
+       & B0_ClockCount_281__i0.Q ; (2 pterms, 10 signals)
+B0_ClockCount_281__i9.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i9.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_Rx_280__i0.D = !( B0_ClockCount_Rx_280__i5.Q
+       & !B0_ClockCount_Rx_280__i4.Q & !B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+    # B0_ClockCount_Rx_280__i0.Q ) ; (2 pterms, 6 signals)
+B0_ClockCount_Rx_280__i0.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i0.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_Rx_280__i1.D = !( B0_ClockCount_Rx_280__i5.Q
+       & !B0_ClockCount_Rx_280__i4.Q & !B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+    # !B0_ClockCount_Rx_280__i1.Q & !B0_ClockCount_Rx_280__i0.Q
+    # B0_ClockCount_Rx_280__i1.Q & B0_ClockCount_Rx_280__i0.Q ) ; (3 pterms, 6 signals)
+B0_ClockCount_Rx_280__i1.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i1.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_Rx_280__i2.D = !( B0_ClockCount_Rx_280__i5.Q
+       & !B0_ClockCount_Rx_280__i4.Q & !B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i1.Q & !B0_ClockCount_Rx_280__i0.Q
+    # !B0_ClockCount_Rx_280__i2.Q & !B0_ClockCount_Rx_280__i1.Q
+    # B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+       & B0_ClockCount_Rx_280__i0.Q
+    # !B0_ClockCount_Rx_280__i2.Q & !B0_ClockCount_Rx_280__i0.Q ) ; (4 pterms, 6 signals)
+B0_ClockCount_Rx_280__i2.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i2.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_Rx_280__i3.D = !B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+       & B0_ClockCount_Rx_280__i0.Q
+    # B0_ClockCount_Rx_280__i3.Q & !B0_ClockCount_Rx_280__i1.Q
+    # B0_ClockCount_Rx_280__i3.Q & !B0_ClockCount_Rx_280__i2.Q
+    # B0_ClockCount_Rx_280__i3.Q & !B0_ClockCount_Rx_280__i0.Q ; (4 pterms, 4 signals)
+B0_ClockCount_Rx_280__i3.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i3.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_Rx_280__i4.D.X1 = B0_ClockCount_Rx_280__i4.Q ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i4.D.X2 = B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+       & B0_ClockCount_Rx_280__i0.Q ; (1 pterm, 4 signals)
+B0_ClockCount_Rx_280__i4.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i4.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_Rx_280__i5.T = B0_ClockCount_Rx_280__i5.Q
+       & !B0_ClockCount_Rx_280__i4.Q & !B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+       & !B0_ClockCount_Rx_280__i0.Q
+    # B0_ClockCount_Rx_280__i4.Q & B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+       & B0_ClockCount_Rx_280__i0.Q ; (2 pterms, 6 signals)
+B0_ClockCount_Rx_280__i5.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i5.CE = reset ; (1 pterm, 1 signal)
+
+B0_Data1_i1reg.D = B0_Rx_Data_i0_i0.Q ; (1 pterm, 1 signal)
+B0_Data1_i1reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data1_i1reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data1_i2reg.D = B0_Rx_Data_i0_i1.Q ; (1 pterm, 1 signal)
+B0_Data1_i2reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data1_i2reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data1_i3reg.D = B0_Rx_Data_i0_i2.Q ; (1 pterm, 1 signal)
+B0_Data1_i3reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data1_i3reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data1_i4reg.D = B0_Rx_Data_i0_i3.Q ; (1 pterm, 1 signal)
+B0_Data1_i4reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data1_i4reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data2_i1reg.D = B0_Rx_Data_i0_i4.Q ; (1 pterm, 1 signal)
+B0_Data2_i1reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data2_i1reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data2_i2reg.D = B0_Rx_Data_i0_i5.Q ; (1 pterm, 1 signal)
+B0_Data2_i2reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data2_i2reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data2_i3reg.D = B0_Rx_Data_i0_i6.Q ; (1 pterm, 1 signal)
+B0_Data2_i3reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data2_i3reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data2_i4reg.D = B0_Rx_Data_i0_i7.Q ; (1 pterm, 1 signal)
+B0_Data2_i4reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data2_i4reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Rx_Data_i0_i0.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i0.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i0.CE = reset & !B0_m_i7.Q & !B0_m_i6.Q & !B0_m_i5.Q & B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i1.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i1.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i1.CE = reset & !B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i2.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i2.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i2.CE = reset & !B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i3.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i3.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i3.CE = reset & !B0_m_i7.Q & B0_m_i6.Q & !B0_m_i5.Q & !B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i4.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i4.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i4.CE = reset & !B0_m_i7.Q & B0_m_i6.Q & !B0_m_i5.Q & B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i5.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i5.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i5.CE = reset & !B0_m_i7.Q & B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i6.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i6.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i6.CE = reset & !B0_m_i7.Q & B0_m_i6.Q & B0_m_i5.Q & B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i7.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i7.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i7.CE = reset & B0_m_i7.Q & !B0_m_i6.Q & !B0_m_i5.Q & !B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Valid_102.D = !( !B0_m_i7.Q & !B0_m_i6.Q & !B0_m_i5.Q & !B0_m_i4.Q
+       & !B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ) ; (1 pterm, 8 signals)
+B0_Rx_Valid_102.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Valid_102.CE = B0_Rx_Valid_102_0 ; (1 pterm, 1 signal)
+B0_Rx_Valid_102.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Rx_Valid_102_0 = B0_m_i7.Q & !B0_m_i6.Q & !B0_m_i5.Q & B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q
+    # B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q & B0_m_i3.Q & !B0_m_i2.Q
+       & !B0_m_i1.Q & !B0_m_i0.Q
+    # Rx & !B0_m_i7.Q & !B0_m_i6.Q & !B0_m_i5.Q & !B0_m_i4.Q & !B0_m_i3.Q
+       & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (3 pterms, 9 signals)
+
+B0_Send_count_i0_i0.D = B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q
+       & !B0_Send_count_i0_i1.Q
+    # !B0_Send_count_i0_i0.Q ; (2 pterms, 4 signals)
+B0_Send_count_i0_i0.C = B0_Clock9600_92.Q ; (1 pterm, 1 signal)
+B0_Send_count_i0_i0.AR = B0_Send_en_100.Q ; (1 pterm, 1 signal)
+
+B0_Send_count_i0_i1.D = B0_Send_count_i0_i1.Q & !B0_Send_count_i0_i0.Q
+    # !B0_Send_count_i0_i1.Q & B0_Send_count_i0_i0.Q ; (2 pterms, 2 signals)
+B0_Send_count_i0_i1.C = B0_Clock9600_92.Q ; (1 pterm, 1 signal)
+B0_Send_count_i0_i1.CE = !( B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q
+       & !B0_Send_count_i0_i1.Q & B0_Send_count_i0_i0.Q ) ; (1 pterm, 4 signals)
+B0_Send_count_i0_i1.AR = B0_Send_en_100.Q ; (1 pterm, 1 signal)
+
+B0_Send_count_i0_i2.D = !B0_Send_count_i0_i2.Q & B0_Send_count_i0_i1.Q
+       & B0_Send_count_i0_i0.Q
+    # B0_Send_count_i0_i2.Q & !B0_Send_count_i0_i1.Q
+    # B0_Send_count_i0_i2.Q & !B0_Send_count_i0_i0.Q ; (3 pterms, 3 signals)
+B0_Send_count_i0_i2.C = B0_Clock9600_92.Q ; (1 pterm, 1 signal)
+B0_Send_count_i0_i2.CE = !( B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q
+       & !B0_Send_count_i0_i1.Q & B0_Send_count_i0_i0.Q ) ; (1 pterm, 4 signals)
+B0_Send_count_i0_i2.AR = B0_Send_en_100.Q ; (1 pterm, 1 signal)
+
+B0_Send_count_i0_i3.D = !B0_Send_count_i0_i3.Q & B0_Send_count_i0_i2.Q
+       & B0_Send_count_i0_i1.Q & B0_Send_count_i0_i0.Q
+    # B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i1.Q
+    # B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q
+    # B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i0.Q ; (4 pterms, 4 signals)
+B0_Send_count_i0_i3.C = B0_Clock9600_92.Q ; (1 pterm, 1 signal)
+B0_Send_count_i0_i3.CE = !( B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q
+       & !B0_Send_count_i0_i1.Q & B0_Send_count_i0_i0.Q ) ; (1 pterm, 4 signals)
+B0_Send_count_i0_i3.AR = B0_Send_en_100.Q ; (1 pterm, 1 signal)
+
+B0_Send_data_9__N_42 = !( reset & B0_Send_over_99.Q ) ; (1 pterm, 2 signals)
+
+B0_Send_data_i1.D = 1 ; (1 pterm, 0 signal)
+B0_Send_data_i1.C = A0_dout_22reg.Q ; (1 pterm, 1 signal)
+B0_Send_data_i1.AR = B0_Send_data_9__N_42 ; (1 pterm, 1 signal)
+
+B0_Send_en_100.D = 0 ; (0 pterm, 0 signal)
+B0_Send_en_100.C = A0_dout_22reg.Q ; (1 pterm, 1 signal)
+B0_Send_en_100.AP = B0_Send_data_9__N_42 ; (1 pterm, 1 signal)
+
+B0_Send_over_99.D = 0 ; (0 pterm, 0 signal)
+B0_Send_over_99.C = B0_Clock9600_92.Q ; (1 pterm, 1 signal)
+B0_Send_over_99.CE = B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q
+       & !B0_Send_count_i0_i1.Q & B0_Send_count_i0_i0.Q ; (1 pterm, 4 signals)
+B0_Send_over_99.AP = B0_Send_en_100.Q ; (1 pterm, 1 signal)
+
+B0_m_i0.D = !( Rx & !B0_m_i7.Q & !B0_m_i6.Q & !B0_m_i5.Q & !B0_m_i4.Q
+       & !B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q
+    # B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q & B0_m_i3.Q & !B0_m_i2.Q
+       & !B0_m_i1.Q
+    # B0_m_i0.Q ) ; (3 pterms, 9 signals)
+B0_m_i0.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i0.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i1.D = B0_m_i1.Q & !B0_m_i0.Q
+    # !B0_m_i1.Q & B0_m_i0.Q ; (2 pterms, 2 signals)
+B0_m_i1.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i1.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i2.D = !B0_m_i2.Q & B0_m_i1.Q & B0_m_i0.Q
+    # B0_m_i2.Q & !B0_m_i1.Q
+    # B0_m_i2.Q & !B0_m_i0.Q ; (3 pterms, 3 signals)
+B0_m_i2.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i2.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i3.D.X1 = B0_m_i2.Q & B0_m_i1.Q & B0_m_i0.Q
+    # B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q & B0_m_i3.Q & !B0_m_i2.Q
+       & !B0_m_i1.Q & !B0_m_i0.Q ; (2 pterms, 8 signals)
+B0_m_i3.D.X2 = B0_m_i3.Q ; (1 pterm, 1 signal)
+B0_m_i3.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i3.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i4.D.X1 = B0_m_i4.Q ; (1 pterm, 1 signal)
+B0_m_i4.D.X2 = B0_m_i3.Q & B0_m_i2.Q & B0_m_i1.Q & B0_m_i0.Q ; (1 pterm, 4 signals)
+B0_m_i4.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i4.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i5.T = B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q & B0_m_i3.Q
+       & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q
+    # B0_m_i4.Q & B0_m_i3.Q & B0_m_i2.Q & B0_m_i1.Q & B0_m_i0.Q ; (2 pterms, 8 signals)
+B0_m_i5.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i5.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i6.T = B0_m_i5.Q & B0_m_i4.Q & B0_m_i3.Q & B0_m_i2.Q & B0_m_i1.Q
+       & B0_m_i0.Q ; (1 pterm, 6 signals)
+B0_m_i6.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i6.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i7.T = B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q & B0_m_i3.Q
+       & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q
+    # B0_m_i6.Q & B0_m_i5.Q & B0_m_i4.Q & B0_m_i3.Q & B0_m_i2.Q & B0_m_i1.Q
+       & B0_m_i0.Q ; (2 pterms, 8 signals)
+B0_m_i7.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i7.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i0.D = !C0_count_186__i0.Q ; (1 pterm, 1 signal)
+C0_count_186__i0.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i0.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i1.D = C0_count_186__i1.Q & !C0_count_186__i0.Q
+    # !C0_count_186__i1.Q & C0_count_186__i0.Q ; (2 pterms, 2 signals)
+C0_count_186__i1.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i1.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i10.T = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q
+    # C0_count_186__i9.Q & C0_count_186__i8.Q & C0_count_186__i7.Q
+       & C0_count_186__i6.Q & C0_count_186__i5.Q & C0_count_186__i4.Q
+       & C0_count_186__i3.Q & C0_count_186__i2.Q & C0_count_186__i1.Q
+       & C0_count_186__i0.Q ; (2 pterms, 13 signals)
+C0_count_186__i10.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i10.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i11.T = C0_count_186__i10.Q & C0_count_186__i9.Q
+       & C0_count_186__i8.Q & C0_count_186__i7.Q & C0_count_186__i6.Q
+       & C0_count_186__i5.Q & C0_count_186__i4.Q & C0_count_186__i3.Q
+       & C0_count_186__i2.Q & C0_count_186__i1.Q & C0_count_186__i0.Q ; (1 pterm, 11 signals)
+C0_count_186__i11.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i11.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i12.T = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q
+    # C0_count_186__i11.Q & C0_count_186__i10.Q & C0_count_186__i9.Q
+       & C0_count_186__i8.Q & C0_count_186__i7.Q & C0_count_186__i6.Q
+       & C0_count_186__i5.Q & C0_count_186__i4.Q & C0_count_186__i3.Q
+       & C0_count_186__i2.Q & C0_count_186__i1.Q & C0_count_186__i0.Q ; (2 pterms, 13 signals)
+C0_count_186__i12.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i12.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i2.D = !C0_count_186__i2.Q & C0_count_186__i1.Q
+       & C0_count_186__i0.Q
+    # C0_count_186__i2.Q & !C0_count_186__i1.Q
+    # C0_count_186__i2.Q & !C0_count_186__i0.Q ; (3 pterms, 3 signals)
+C0_count_186__i2.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i2.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i3.D = !C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q
+    # C0_count_186__i3.Q & !C0_count_186__i1.Q
+    # C0_count_186__i3.Q & !C0_count_186__i2.Q
+    # C0_count_186__i3.Q & !C0_count_186__i0.Q ; (4 pterms, 4 signals)
+C0_count_186__i3.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i3.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i4.T.X1 = C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (1 pterm, 4 signals)
+C0_count_186__i4.T.X2 = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (1 pterm, 13 signals)
+C0_count_186__i4.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i4.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i5.T = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & C0_count_186__i3.Q & C0_count_186__i2.Q & C0_count_186__i1.Q
+       & C0_count_186__i0.Q
+    # C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (2 pterms, 13 signals)
+C0_count_186__i5.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i5.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i6.T = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & C0_count_186__i3.Q & C0_count_186__i2.Q & C0_count_186__i1.Q
+       & C0_count_186__i0.Q
+    # C0_count_186__i5.Q & C0_count_186__i4.Q & C0_count_186__i3.Q
+       & C0_count_186__i2.Q & C0_count_186__i1.Q & C0_count_186__i0.Q ; (2 pterms, 13 signals)
+C0_count_186__i6.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i6.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i7.T = C0_count_186__i6.Q & C0_count_186__i5.Q
+       & C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (1 pterm, 7 signals)
+C0_count_186__i7.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i7.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i8.T = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q
+    # C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (2 pterms, 13 signals)
+C0_count_186__i8.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i8.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i9.T = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q
+    # C0_count_186__i8.Q & C0_count_186__i7.Q & C0_count_186__i6.Q
+       & C0_count_186__i5.Q & C0_count_186__i4.Q & C0_count_186__i3.Q
+       & C0_count_186__i2.Q & C0_count_186__i1.Q & C0_count_186__i0.Q ; (2 pterms, 13 signals)
+C0_count_186__i9.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i9.AR = !reset ; (1 pterm, 1 signal)
+
+C0_scancnt__i0.T = reset & C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (1 pterm, 14 signals)
+C0_scancnt__i0.C = clk ; (1 pterm, 1 signal)
+
+C0_scancnt__i1.D = C0_scancnt__i1.Q & !C0_scancnt__i0.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q ; (2 pterms, 2 signals)
+C0_scancnt__i1.C = clk ; (1 pterm, 1 signal)
+C0_scancnt__i1.CE = reset & C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (1 pterm, 14 signals)
+
+LED_VCC1 = 0 ; (0 pterm, 0 signal)
+
+LED_VCC2 = 0 ; (0 pterm, 0 signal)
+
+LED_VCC3.D = !C0_scancnt__i1.Q & C0_scancnt__i0.Q ; (1 pterm, 2 signals)
+LED_VCC3.C = clk ; (1 pterm, 1 signal)
+LED_VCC3.CE = 1 ; (1 pterm, 0 signal)
+LED_VCC3.AR = !reset ; (1 pterm, 1 signal)
+
+LED_VCC4.D = !C0_scancnt__i1.Q & !C0_scancnt__i0.Q ; (1 pterm, 2 signals)
+LED_VCC4.C = clk ; (1 pterm, 1 signal)
+LED_VCC4.CE = 1 ; (1 pterm, 0 signal)
+LED_VCC4.AR = !reset ; (1 pterm, 1 signal)
+
+Tx.D = B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q & !B0_Send_count_i0_i1.Q
+       & B0_Send_count_i0_i0.Q
+    # !B0_Send_count_i0_i3.Q & B0_Send_count_i0_i2.Q & B0_Send_count_i0_i0.Q
+       & B0_Send_data_i1.Q
+    # !B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q & B0_Send_count_i0_i1.Q
+       & B0_Send_data_i1.Q ; (3 pterms, 5 signals)
+Tx.C = B0_Clock9600_92.Q ; (1 pterm, 1 signal)
+Tx.AP = B0_Send_en_100.Q ; (1 pterm, 1 signal)
+
+a.D = C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & !B0_Data2_i3reg.Q & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i2reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i3reg.Q ; (10 pterms, 10 signals)
+a.C = clk ; (1 pterm, 1 signal)
+a.CE = 1 ; (1 pterm, 0 signal)
+a.AP = !reset ; (1 pterm, 1 signal)
+
+b.D = C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & !B0_Data2_i3reg.Q & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i2reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i3reg.Q ; (10 pterms, 10 signals)
+b.C = clk ; (1 pterm, 1 signal)
+b.CE = 1 ; (1 pterm, 0 signal)
+b.AP = !reset ; (1 pterm, 1 signal)
+
+c.D = C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i3reg.Q
+       & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q & !B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i3reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i2reg.Q ; (5 pterms, 9 signals)
+c.C = clk ; (1 pterm, 1 signal)
+c.CE = 1 ; (1 pterm, 0 signal)
+c.AP = !reset ; (1 pterm, 1 signal)
+
+d.D = C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q & B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & !B0_Data2_i3reg.Q & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i2reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i3reg.Q ; (13 pterms, 10 signals)
+d.C = clk ; (1 pterm, 1 signal)
+d.CE = 1 ; (1 pterm, 0 signal)
+d.AP = !reset ; (1 pterm, 1 signal)
+
+e.D = C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & !B0_Data2_i3reg.Q & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i3reg.Q
+       & !B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i2reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i3reg.Q & !B0_Data2_i2reg.Q
+       & B0_Data2_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i1reg.Q ; (11 pterms, 10 signals)
+e.C = clk ; (1 pterm, 1 signal)
+e.CE = 1 ; (1 pterm, 0 signal)
+e.AP = !reset ; (1 pterm, 1 signal)
+
+f.D = C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & B0_Data2_i2reg.Q
+       & B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i2reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i3reg.Q
+       & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q & !B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i3reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i2reg.Q
+       & B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & B0_Data2_i1reg.Q ; (11 pterms, 10 signals)
+f.C = clk ; (1 pterm, 1 signal)
+f.CE = 1 ; (1 pterm, 0 signal)
+f.AP = !reset ; (1 pterm, 1 signal)
+
+g.D = !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i3reg.Q
+       & B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i4reg.Q
+       & B0_Data1_i2reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q
+    # C0_scancnt__i1.Q & B0_Data2_i4reg.Q & B0_Data2_i2reg.Q
+       & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & B0_Data2_i3reg.Q & B0_Data2_i2reg.Q
+       & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & B0_Data2_i4reg.Q & B0_Data2_i2reg.Q
+    # C0_scancnt__i1.Q & B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+    # C0_scancnt__i0.Q & B0_Data2_i3reg.Q & B0_Data2_i2reg.Q
+       & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & B0_Data2_i4reg.Q & B0_Data2_i3reg.Q ; (12 pterms, 10 signals)
+g.C = clk ; (1 pterm, 1 signal)
+g.CE = 1 ; (1 pterm, 0 signal)
+g.AP = !reset ; (1 pterm, 1 signal)
+
+
+
+

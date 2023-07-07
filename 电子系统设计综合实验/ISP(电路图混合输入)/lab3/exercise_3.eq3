@@ -1,0 +1,293 @@
+|--------------------------------------------------- ----------|
+|- ispLEVER Classic 2.1.00.02.49.20 Equations File            -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+Equations:
+
+E0_q0.D = !E0_q0.Q ; (1 pterm, 1 signal)
+E0_q0.C = clk1 ; (1 pterm, 1 signal)
+
+E0_q1.D = E0_q2.Q & !E0_q1.Q & E0_q0.Q
+    # !E0_q3.Q & !E0_q1.Q & E0_q0.Q
+    # E0_q1.Q & !E0_q0.Q ; (3 pterms, 4 signals)
+E0_q1.C = clk1 ; (1 pterm, 1 signal)
+
+E0_q2.D = !E0_q2.Q & E0_q1.Q & E0_q0.Q
+    # E0_q2.Q & !E0_q1.Q
+    # E0_q2.Q & !E0_q0.Q ; (3 pterms, 3 signals)
+E0_q2.C = clk1 ; (1 pterm, 1 signal)
+
+E0_q3.D = !E0_q3.Q & E0_q2.Q & E0_q1.Q & E0_q0.Q
+    # E0_q3.Q & !E0_q2.Q & E0_q1.Q
+    # E0_q3.Q & E0_q2.Q & !E0_q1.Q
+    # E0_q3.Q & !E0_q0.Q ; (4 pterms, 4 signals)
+E0_q3.C = clk1 ; (1 pterm, 1 signal)
+
+F0_q0.D = !( !F0_q3.Q & !F0_q2.Q & F0_q1.Q
+    # F0_q0.Q ) ; (2 pterms, 4 signals)
+F0_q0.C = clk1 ; (1 pterm, 1 signal)
+
+F0_q1.D = F0_q2.Q & F0_q1.Q & !F0_q0.Q
+    # !F0_q1.Q & F0_q0.Q
+    # F0_q3.Q & F0_q1.Q & !F0_q0.Q ; (3 pterms, 4 signals)
+F0_q1.C = clk1 ; (1 pterm, 1 signal)
+
+F0_q2.D = !F0_q2.Q & F0_q1.Q & F0_q0.Q
+    # F0_q2.Q & !F0_q1.Q
+    # F0_q2.Q & !F0_q0.Q ; (3 pterms, 3 signals)
+F0_q2.C = clk1 ; (1 pterm, 1 signal)
+
+F0_q3.D = !F0_q3.Q & F0_q2.Q & F0_q1.Q & F0_q0.Q
+    # F0_q3.Q & !F0_q2.Q
+    # F0_q3.Q & !F0_q1.Q
+    # F0_q3.Q & !F0_q0.Q ; (4 pterms, 4 signals)
+F0_q3.C = clk1 ; (1 pterm, 1 signal)
+
+K0_Z0 = !N_53.Q & N_54.Q & b0.Q
+    # c0.Q & N_53.Q & !N_54.Q
+    # d0.Q & N_53.Q & N_54.Q
+    # !N_53.Q & !N_54.Q & a0.Q ; (4 pterms, 6 signals)
+
+K0_Z1 = !N_53.Q & N_54.Q & b1.Q
+    # c1.Q & N_53.Q & !N_54.Q
+    # d1.Q & N_53.Q & N_54.Q
+    # !N_53.Q & !N_54.Q & a1.Q ; (4 pterms, 6 signals)
+
+K0_Z2 = !N_53.Q & N_54.Q & b2.Q
+    # c2.Q & N_53.Q & !N_54.Q
+    # d2.Q & N_53.Q & N_54.Q
+    # !N_53.Q & !N_54.Q & a2.Q ; (4 pterms, 6 signals)
+
+K0_Z3 = !N_53.Q & N_54.Q & b3.Q
+    # c3.Q & N_53.Q & !N_54.Q
+    # d3.Q & N_53.Q & N_54.Q
+    # !N_53.Q & !N_54.Q & a3.Q ; (4 pterms, 6 signals)
+
+LEDVCC1 = !N_53.Q & !N_54.Q ; (1 pterm, 2 signals)
+
+LEDVCC2 = !N_53.Q & N_54.Q ; (1 pterm, 2 signals)
+
+LEDVCC3 = N_53.Q & !N_54.Q ; (1 pterm, 2 signals)
+
+LEDVCC4 = N_53.Q & N_54.Q ; (1 pterm, 2 signals)
+
+LO = !( N_3 & N_4 & !N_6 & N_8
+    # N_3 & N_4 & N_6 & !N_8 ) ; (2 pterms, 4 signals)
+
+N_1.D = !temp & !c3.Q & !c2.Q & !c1.Q & !c0.Q ; (1 pterm, 5 signals)
+N_1.C = clk1 ; (1 pterm, 1 signal)
+
+N_17.D = !N_17.Q & N_18.Q & N_19.Q & N_20.Q
+    # N_17.Q & !N_18.Q & N_19.Q
+    # N_17.Q & N_18.Q & !N_19.Q
+    # N_17.Q & !N_20.Q ; (4 pterms, 4 signals)
+N_17.C = clk1 ; (1 pterm, 1 signal)
+
+N_18.D = !N_18.Q & N_19.Q & N_20.Q
+    # N_18.Q & !N_19.Q
+    # N_18.Q & !N_20.Q ; (3 pterms, 3 signals)
+N_18.C = clk1 ; (1 pterm, 1 signal)
+
+N_19.D = N_18.Q & !N_19.Q & N_20.Q
+    # !N_17.Q & !N_19.Q & N_20.Q
+    # N_19.Q & !N_20.Q ; (3 pterms, 4 signals)
+N_19.C = clk1 ; (1 pterm, 1 signal)
+
+N_20.D = N_17.Q & !N_18.Q & !N_19.Q
+    # !N_20.Q ; (2 pterms, 4 signals)
+N_20.C = clk1 ; (1 pterm, 1 signal)
+
+N_22.D = N_62.Q & !N_22.Q & N_23.Q
+    # N_62.Q & !N_22.Q & !N_24.Q
+    # !N_62.Q & N_22.Q ; (3 pterms, 4 signals)
+N_22.C = clk ; (1 pterm, 1 signal)
+
+N_23.D = N_62.Q & N_22.Q & !N_23.Q
+    # !N_22.Q & N_23.Q
+    # !N_62.Q & N_23.Q ; (3 pterms, 3 signals)
+N_23.C = clk ; (1 pterm, 1 signal)
+
+N_24.D = N_62.Q & N_22.Q & N_23.Q & !N_24.Q
+    # N_22.Q & !N_23.Q & N_24.Q
+    # !N_22.Q & N_23.Q & N_24.Q
+    # !N_62.Q & N_24.Q ; (4 pterms, 4 signals)
+N_24.C = clk ; (1 pterm, 1 signal)
+
+N_3 = b0.Q & !a0.Q
+    # !b0.Q & a0.Q ; (2 pterms, 2 signals)
+
+N_4.X1 = !b0.Q & !a1.Q
+    # !a1.Q & !a0.Q
+    # b0.Q & a1.Q & a0.Q ; (3 pterms, 3 signals)
+N_4.X2 = !b1.Q ; (1 pterm, 1 signal)
+
+N_45.D = !temp & N_3 & N_4 & !N_6 & N_8
+    # !temp & N_3 & N_4 & N_6 & !N_8 ; (2 pterms, 5 signals)
+N_45.C = clk1 ; (1 pterm, 1 signal)
+
+N_53.D = N_53.Q & !N_54.Q
+    # !N_53.Q & N_54.Q ; (2 pterms, 2 signals)
+N_53.C = !N_72.Q ; (1 pterm, 1 signal)
+
+N_54.D = !N_54.Q ; (1 pterm, 1 signal)
+N_54.C = !N_72.Q ; (1 pterm, 1 signal)
+
+N_6.X1 = !b1.Q & !b0.Q & !a2.Q
+    # !b1.Q & !a2.Q & !a1.Q
+    # !b0.Q & !a2.Q & !a1.Q
+    # !b1.Q & !a2.Q & !a0.Q
+    # !a2.Q & !a1.Q & !a0.Q
+    # b1.Q & a2.Q & a1.Q
+    # b1.Q & b0.Q & a2.Q & a0.Q
+    # b0.Q & a2.Q & a1.Q & a0.Q ; (8 pterms, 5 signals)
+N_6.X2 = !b2.Q ; (1 pterm, 1 signal)
+
+N_62.D = !N_22.Q & !N_23.Q & N_24.Q
+    # !N_62.Q ; (2 pterms, 4 signals)
+N_62.C = clk ; (1 pterm, 1 signal)
+
+N_72.D = !N_72.Q ; (1 pterm, 1 signal)
+N_72.C = N_73.Q ; (1 pterm, 1 signal)
+
+N_73.D = !F0_q3.Q & !F0_q2.Q & F0_q1.Q & !F0_q0.Q ; (1 pterm, 4 signals)
+N_73.C = clk1 ; (1 pterm, 1 signal)
+
+N_75.D = E0_q3.Q & !E0_q2.Q & !E0_q1.Q & E0_q0.Q ; (1 pterm, 4 signals)
+N_75.C = clk1 ; (1 pterm, 1 signal)
+
+N_77.D = !key ; (1 pterm, 1 signal)
+N_77.C = N_75.Q ; (1 pterm, 1 signal)
+
+N_78.D = N_77.Q ; (1 pterm, 1 signal)
+N_78.C = N_75.Q ; (1 pterm, 1 signal)
+
+N_79.D = N_78.Q ; (1 pterm, 1 signal)
+N_79.C = N_75.Q ; (1 pterm, 1 signal)
+
+N_8.X1 = !b2.Q & !a3.Q & !a2.Q
+    # !b2.Q & !b1.Q & !b0.Q & !a3.Q
+    # !b1.Q & !b0.Q & !a3.Q & !a2.Q
+    # !b2.Q & !b1.Q & !a3.Q & !a1.Q
+    # !b2.Q & !b0.Q & !a3.Q & !a1.Q
+    # !b1.Q & !a3.Q & !a2.Q & !a1.Q
+    # !b0.Q & !a3.Q & !a2.Q & !a1.Q
+    # !b2.Q & !b1.Q & !a3.Q & !a0.Q
+    # !b1.Q & !a3.Q & !a2.Q & !a0.Q
+    # !b2.Q & !a3.Q & !a1.Q & !a0.Q
+    # !a3.Q & !a2.Q & !a1.Q & !a0.Q
+    # b2.Q & a3.Q & a2.Q
+    # b2.Q & b1.Q & a3.Q & a1.Q
+    # b1.Q & a3.Q & a2.Q & a1.Q
+    # b2.Q & b1.Q & b0.Q & a3.Q & a0.Q
+    # b1.Q & b0.Q & a3.Q & a2.Q & a0.Q
+    # b2.Q & b0.Q & a3.Q & a1.Q & a0.Q
+    # b0.Q & a3.Q & a2.Q & a1.Q & a0.Q ; (18 pterms, 7 signals)
+N_8.X2 = !b3.Q ; (1 pterm, 1 signal)
+
+a = K0_Z3 & !K0_Z2 & K0_Z1 & K0_Z0
+    # !K0_Z3 & !K0_Z2 & !K0_Z1 & K0_Z0
+    # K0_Z2 & !K0_Z1 & !K0_Z0
+    # K0_Z3 & K0_Z2 & !K0_Z1 ; (4 pterms, 4 signals)
+
+a0.D = N_62.Q ; (1 pterm, 1 signal)
+a0.C = !temp ; (1 pterm, 1 signal)
+a0.AR = N_1.Q ; (1 pterm, 1 signal)
+
+a1.D = N_22.Q ; (1 pterm, 1 signal)
+a1.C = !temp ; (1 pterm, 1 signal)
+a1.AR = N_1.Q ; (1 pterm, 1 signal)
+
+a2.D = N_23.Q ; (1 pterm, 1 signal)
+a2.C = !temp ; (1 pterm, 1 signal)
+a2.AR = N_1.Q ; (1 pterm, 1 signal)
+
+a3.D = N_24.Q ; (1 pterm, 1 signal)
+a3.C = !temp ; (1 pterm, 1 signal)
+a3.AR = N_1.Q ; (1 pterm, 1 signal)
+
+b = !K0_Z3 & K0_Z2 & !K0_Z1 & K0_Z0
+    # K0_Z3 & K0_Z1 & K0_Z0
+    # K0_Z2 & K0_Z1 & !K0_Z0
+    # K0_Z3 & K0_Z2 & !K0_Z0 ; (4 pterms, 4 signals)
+
+b0.D = N_20.Q ; (1 pterm, 1 signal)
+b0.C = !temp ; (1 pterm, 1 signal)
+b0.AR = N_1.Q ; (1 pterm, 1 signal)
+
+b1.D = N_19.Q ; (1 pterm, 1 signal)
+b1.C = !temp ; (1 pterm, 1 signal)
+b1.AR = N_1.Q ; (1 pterm, 1 signal)
+
+b2.D = N_18.Q ; (1 pterm, 1 signal)
+b2.C = !temp ; (1 pterm, 1 signal)
+b2.AR = N_1.Q ; (1 pterm, 1 signal)
+
+b3.D = N_17.Q ; (1 pterm, 1 signal)
+b3.C = !temp ; (1 pterm, 1 signal)
+b3.AR = N_1.Q ; (1 pterm, 1 signal)
+
+c = !K0_Z3 & !K0_Z2 & K0_Z1 & !K0_Z0
+    # K0_Z3 & K0_Z2 & K0_Z1
+    # K0_Z3 & K0_Z2 & !K0_Z0 ; (3 pterms, 4 signals)
+
+c0.D = !c0.Q ; (1 pterm, 1 signal)
+c0.C = !temp ; (1 pterm, 1 signal)
+
+c1.D = c1.Q & !c0.Q
+    # !c1.Q & c0.Q ; (2 pterms, 2 signals)
+c1.C = !temp ; (1 pterm, 1 signal)
+
+c2.D = !c2.Q & c1.Q & c0.Q
+    # c2.Q & !c1.Q
+    # c2.Q & !c0.Q ; (3 pterms, 3 signals)
+c2.C = !temp ; (1 pterm, 1 signal)
+
+c3.D = !( c2.Q & c1.Q & c0.Q
+    # !c3.Q ) ; (2 pterms, 4 signals)
+c3.C = !temp ; (1 pterm, 1 signal)
+
+d = K0_Z3 & !K0_Z2 & K0_Z1 & !K0_Z0
+    # !K0_Z3 & K0_Z2 & !K0_Z1 & !K0_Z0
+    # !K0_Z3 & !K0_Z2 & !K0_Z1 & K0_Z0
+    # K0_Z2 & K0_Z1 & K0_Z0 ; (4 pterms, 4 signals)
+
+d0.D = !d0.Q ; (1 pterm, 1 signal)
+d0.C = N_45.Q ; (1 pterm, 1 signal)
+d0.AR = !c3.Q & !c2.Q & !c1.Q & !c0.Q ; (1 pterm, 4 signals)
+
+d1.D = d1.Q & !d0.Q
+    # d2.Q & !d1.Q & d0.Q
+    # !d3.Q & !d1.Q & d0.Q ; (3 pterms, 4 signals)
+d1.C = N_45.Q ; (1 pterm, 1 signal)
+d1.AR = !c3.Q & !c2.Q & !c1.Q & !c0.Q ; (1 pterm, 4 signals)
+
+d2.D = !d2.Q & d1.Q & d0.Q
+    # d2.Q & !d1.Q
+    # d2.Q & !d0.Q ; (3 pterms, 3 signals)
+d2.C = N_45.Q ; (1 pterm, 1 signal)
+d2.AR = !c3.Q & !c2.Q & !c1.Q & !c0.Q ; (1 pterm, 4 signals)
+
+d3.D = !d3.Q & d2.Q & d1.Q & d0.Q
+    # d3.Q & d2.Q & !d1.Q
+    # d3.Q & !d2.Q & d1.Q
+    # d3.Q & !d0.Q ; (4 pterms, 4 signals)
+d3.C = N_45.Q ; (1 pterm, 1 signal)
+d3.AR = !c3.Q & !c2.Q & !c1.Q & !c0.Q ; (1 pterm, 4 signals)
+
+e = !K0_Z3 & K0_Z2 & !K0_Z1
+    # !K0_Z2 & !K0_Z1 & K0_Z0
+    # !K0_Z3 & K0_Z0 ; (3 pterms, 4 signals)
+
+f = K0_Z3 & K0_Z2 & !K0_Z1
+    # !K0_Z3 & !K0_Z2 & K0_Z1
+    # !K0_Z3 & K0_Z1 & K0_Z0
+    # !K0_Z3 & !K0_Z2 & K0_Z0 ; (4 pterms, 4 signals)
+
+g = !K0_Z3 & K0_Z2 & K0_Z1 & K0_Z0
+    # !K0_Z3 & !K0_Z2 & !K0_Z1 ; (2 pterms, 4 signals)
+
+temp = N_77.Q & N_78.Q & N_79.Q ; (1 pterm, 3 signals)
+

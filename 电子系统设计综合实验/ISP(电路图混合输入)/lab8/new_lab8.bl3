@@ -1,0 +1,3843 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Mon May 29 00:01:23 2023
+#$ TITLE test_lab11.bls 
+#$ MODULE new_lab8
+#$ PINS 22 key_in0 key_in1 key_in2 key_in3 key_out4'o'  key_out3'o'  key_out2'o'  key_out1'o'  \
+#  reset a'o'  b'o'  PointTime'o'  c'o'  clk d'o'  e'o'  f'o'  g'o'  LEDVCC1'o'  LEDVCC2'o'  LEDVCC3'o'  LEDVCC4'o' 
+#$ NODES 170 I3/n6099 I3/n8386 I3/i2_adj_193 I3/timecnt_941_942__i15 \
+#  I3/timecnt_941_942__i14 I3/timecnt_941_942__i13 I3/timecnt_941_942__i12 \
+#  I3/timecnt_941_942__i11 I3/timecnt_941_942__i10 I3/timecnt_941_942__i9 \
+#  I3/timecnt_941_942__i8 I3/n9_adj_22 I3/timecnt_941_942__i7 I3/timecnt_941_942__i6 \
+#  I3/n5795 I3/timecnt_941_942__i5 I3/i2_adj_48 I3/timecnt_941_942__i4 \
+#  I3/timecnt_941_942__i3 I3/timecnt_941_942__i2 I3/int_Data__i1 \
+#  I3/timecnt_941_942__i1 I3/time10ms_215 I3/scanvalue_FSM_i0 I3/scanvalue_FSM_i1 \
+#  I3/scanvalue_FSM_i2 I3/scanvalue_FSM_i3 I3/flag_Data_i1 I3/n5869 I3/flag_Data_i0 \
+#  I3/flag_Cal_i0_i1 I3/flag_Cal_i0_i0 I3/int_Data0_i0_i7 I3/n8598 I3/int_Data0_i0_i6 \
+#  I3/int_Data0_i0_i5 I3/int_Data0_i0_i4 I3/int_Data0_i0_i3 I3/int_Data0_i0_i2 \
+#  I3/int_Data0_i0_i1 I3/int_Data0_i0_i0 I3/i1_adj_220 I3/int_Data1_i0_i3 I3/n3205 \
+#  I3/int_Data1_i0_i2 I3/int_Data1_i0_i1 I3/int_Data1_i0_i0 I3/PointTime_223reg \
+#  I3/int_Data__i8 I3/int_Data__i7 I3/int_Data__i6 I3/n9068 I3/int_Data__i5 \
+#  I3/n14_adj_107 I3/int_Data__i4 I3/int_Data__i3 I3/int_Data__i2 I3/key_out_i0_i4reg \
+#  I3/key_out_i0_i3reg I3/key_out_i0_i2reg I3/key_out_i0_i1reg \
+#  I3/led_int_Data0_i4reg I3/i1_adj_31 I3/led_int_Data0_i3reg I3/led_int_Data0_i2reg \
+#  I3/led_int_Data0_i1reg I3/led_int_Data1_i4reg I3/led_int_Data1_i3reg I3/n6181 \
+#  I3/n6_adj_164 I3/led_int_Data1_i2reg I3/led_int_Data1_i1reg \
+#  I3/led_int_Data2_i4reg I3/led_int_Data2_i1reg I3/i1_adj_214 I3/n97_adj_28 I3/n9364 \
+#  I3/n14_adj_114 I3/n4_adj_168 I3/n14_adj_169 I3/i4_adj_227 I3/i1_adj_67 \
+#  I3/n11_adj_115 I3/n4684 I3/n6_adj_171 I3/n5921 I3/i3_adj_226 I3/n85 I3/n4491 I3/n4679 \
+#  I3/n8_adj_172 I3/n8_adj_173 I3/i2_adj_253 I3/i2_adj_192 I3/n6171 I3/n8106 I3/n14 \
+#  I3/n9092 I3/n28_adj_5 I3/n8241 I3/i2_adj_194 I3/n10_adj_174 I3/n8_adj_38 I3/n8948 \
+#  I3/n5955 I3/n8071 I3/n11_adj_7 I3/n5916 I3/n9302 I3/n6_adj_182 I3/i2_adj_191 \
+#  I3/n4_adj_183 I3/n9358 I3/n11_adj_46 I3/n4490 I3/n4489 I3/n29 I3/n11_adj_10 I3/n9419 \
+#  I3/n8360 I3/n24 I3/n10_adj_58 I3/i48 I3/n8_adj_62 I3/i2_adj_197 I3/n49_adj_150 I3/n64 \
+#  I3/n9180 I3/n6_adj_67 I3/n9346 I3/n8354 I3/i2_adj_183 I3/n9211 I3/i2_adj_198 I3/n8305 \
+#  I3/led_int_Data1_3__N_385 I3/n731 I3/n4_adj_76 I3/n757 I3/n770 I3/n783 I3/n796 \
+#  I59/LED_A_108reg I59/LED_B_109reg I59/LED_C_110reg I59/LED_D_111reg \
+#  I59/LED_E_112reg I59/LED_F_113reg I59/LED_G_114reg I59/LED_VCC2_116reg \
+#  I59/LED_VCC3_117reg I59/LED_VCC4_118reg I59/scancnt__i1 I59/n853 I59/scancnt__i0 \
+#  I59/count_186__i12 I59/count_186__i11 I59/count_186__i10 I59/count_186__i9 \
+#  I59/count_186__i8 I59/count_186__i7 I59/count_186__i6 I59/count_186__i5 \
+#  I59/count_186__i4 I59/count_186__i3 I59/n818 I59/count_186__i2 I59/count_186__i1 \
+#  I59/count_186__i0 I59/n51
+.model test_lab11
+.inputs clk.BLIF reset.BLIF I3/n6099.BLIF I3/n8386.BLIF I3/i2_adj_193.BLIF \
+I3/timecnt_941_942__i15.BLIF I3/timecnt_941_942__i14.BLIF \
+I3/timecnt_941_942__i13.BLIF I3/timecnt_941_942__i12.BLIF \
+I3/timecnt_941_942__i11.BLIF I3/timecnt_941_942__i10.BLIF \
+I3/timecnt_941_942__i9.BLIF I3/timecnt_941_942__i8.BLIF I3/n9_adj_22.BLIF \
+I3/timecnt_941_942__i7.BLIF I3/timecnt_941_942__i6.BLIF I3/n5795.BLIF \
+I3/timecnt_941_942__i5.BLIF I3/i2_adj_48.BLIF I3/timecnt_941_942__i4.BLIF \
+I3/timecnt_941_942__i3.BLIF I3/timecnt_941_942__i2.BLIF I3/int_Data__i1.BLIF \
+I3/timecnt_941_942__i1.BLIF I3/time10ms_215.BLIF I3/scanvalue_FSM_i0.BLIF \
+I3/scanvalue_FSM_i1.BLIF I3/scanvalue_FSM_i2.BLIF I3/scanvalue_FSM_i3.BLIF \
+I3/flag_Data_i1.BLIF I3/n5869.BLIF I3/flag_Data_i0.BLIF I3/flag_Cal_i0_i1.BLIF \
+I3/flag_Cal_i0_i0.BLIF I3/int_Data0_i0_i7.BLIF I3/n8598.BLIF \
+I3/int_Data0_i0_i6.BLIF I3/int_Data0_i0_i5.BLIF I3/int_Data0_i0_i4.BLIF \
+I3/int_Data0_i0_i3.BLIF I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF \
+I3/int_Data0_i0_i0.BLIF I3/i1_adj_220.BLIF I3/int_Data1_i0_i3.BLIF \
+I3/n3205.BLIF I3/int_Data1_i0_i2.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/int_Data1_i0_i0.BLIF I3/PointTime_223reg.BLIF I3/int_Data__i8.BLIF \
+I3/int_Data__i7.BLIF I3/int_Data__i6.BLIF I3/n9068.BLIF I3/int_Data__i5.BLIF \
+I3/n14_adj_107.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/led_int_Data0_i4reg.BLIF \
+I3/i1_adj_31.BLIF I3/led_int_Data0_i3reg.BLIF I3/led_int_Data0_i2reg.BLIF \
+I3/led_int_Data0_i1reg.BLIF I3/led_int_Data1_i4reg.BLIF \
+I3/led_int_Data1_i3reg.BLIF I3/n6181.BLIF I3/n6_adj_164.BLIF \
+I3/led_int_Data1_i2reg.BLIF I3/led_int_Data1_i1reg.BLIF \
+I3/led_int_Data2_i4reg.BLIF I3/led_int_Data2_i1reg.BLIF I3/i1_adj_214.BLIF \
+I3/n97_adj_28.BLIF I3/n9364.BLIF I3/n14_adj_114.BLIF I3/n4_adj_168.BLIF \
+I3/n14_adj_169.BLIF I3/i4_adj_227.BLIF I3/i1_adj_67.BLIF I3/n11_adj_115.BLIF \
+I3/n4684.BLIF I3/n6_adj_171.BLIF I3/n5921.BLIF I3/i3_adj_226.BLIF I3/n85.BLIF \
+I3/n4491.BLIF I3/n4679.BLIF I3/n8_adj_172.BLIF I3/n8_adj_173.BLIF \
+I3/i2_adj_253.BLIF I3/i2_adj_192.BLIF I3/n6171.BLIF I3/n8106.BLIF I3/n14.BLIF \
+I3/n9092.BLIF I3/n28_adj_5.BLIF I3/n8241.BLIF I3/i2_adj_194.BLIF \
+I3/n10_adj_174.BLIF I3/n8_adj_38.BLIF I3/n8948.BLIF I3/n5955.BLIF \
+I3/n8071.BLIF I3/n11_adj_7.BLIF I3/n5916.BLIF I3/n9302.BLIF I3/n6_adj_182.BLIF \
+I3/i2_adj_191.BLIF I3/n4_adj_183.BLIF I3/n9358.BLIF I3/n11_adj_46.BLIF \
+I3/n4490.BLIF I3/n4489.BLIF I3/n29.BLIF I3/n11_adj_10.BLIF I3/n9419.BLIF \
+I3/n8360.BLIF I3/n24.BLIF I3/n10_adj_58.BLIF I3/i48.BLIF I3/n8_adj_62.BLIF \
+I3/i2_adj_197.BLIF I3/n49_adj_150.BLIF I3/n64.BLIF I3/n9180.BLIF \
+I3/n6_adj_67.BLIF I3/n9346.BLIF I3/n8354.BLIF I3/i2_adj_183.BLIF I3/n9211.BLIF \
+I3/i2_adj_198.BLIF I3/n8305.BLIF I3/led_int_Data1_3__N_385.BLIF I3/n731.BLIF \
+I3/n4_adj_76.BLIF I3/n757.BLIF I3/n770.BLIF I3/n783.BLIF I3/n796.BLIF \
+I59/LED_A_108reg.BLIF I59/LED_B_109reg.BLIF I59/LED_C_110reg.BLIF \
+I59/LED_D_111reg.BLIF I59/LED_E_112reg.BLIF I59/LED_F_113reg.BLIF \
+I59/LED_G_114reg.BLIF I59/LED_VCC2_116reg.BLIF I59/LED_VCC3_117reg.BLIF \
+I59/LED_VCC4_118reg.BLIF I59/scancnt__i1.BLIF I59/n853.BLIF \
+I59/scancnt__i0.BLIF I59/count_186__i12.BLIF I59/count_186__i11.BLIF \
+I59/count_186__i10.BLIF I59/count_186__i9.BLIF I59/count_186__i8.BLIF \
+I59/count_186__i7.BLIF I59/count_186__i6.BLIF I59/count_186__i5.BLIF \
+I59/count_186__i4.BLIF I59/count_186__i3.BLIF I59/n818.BLIF \
+I59/count_186__i2.BLIF I59/count_186__i1.BLIF I59/count_186__i0.BLIF \
+I59/n51.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF
+.outputs PointTime I3/n6099 I3/n8386 I3/timecnt_941_942__i15.AR \
+I3/timecnt_941_942__i15.C I3/timecnt_941_942__i14.AR I3/timecnt_941_942__i14.C \
+I3/timecnt_941_942__i13.AR I3/timecnt_941_942__i13.D I3/timecnt_941_942__i13.C \
+I3/timecnt_941_942__i12.AR I3/timecnt_941_942__i12.D I3/timecnt_941_942__i12.C \
+I3/timecnt_941_942__i11.AR I3/timecnt_941_942__i11.D I3/timecnt_941_942__i11.C \
+I3/timecnt_941_942__i10.AR I3/timecnt_941_942__i10.C I3/timecnt_941_942__i9.AR \
+I3/timecnt_941_942__i9.C I3/timecnt_941_942__i8.AR I3/timecnt_941_942__i8.D \
+I3/timecnt_941_942__i8.C I3/n9_adj_22 I3/timecnt_941_942__i7.AR \
+I3/timecnt_941_942__i7.D I3/timecnt_941_942__i7.C I3/timecnt_941_942__i6.AR \
+I3/timecnt_941_942__i6.D I3/timecnt_941_942__i6.C I3/n5795 \
+I3/timecnt_941_942__i5.AR I3/timecnt_941_942__i5.C I3/timecnt_941_942__i4.AR \
+I3/timecnt_941_942__i4.D I3/timecnt_941_942__i4.C I3/timecnt_941_942__i3.AR \
+I3/timecnt_941_942__i3.D I3/timecnt_941_942__i3.C I3/timecnt_941_942__i2.AR \
+I3/timecnt_941_942__i2.D I3/timecnt_941_942__i2.C I3/int_Data__i1.CE \
+I3/int_Data__i1.AR I3/int_Data__i1.D I3/int_Data__i1.C \
+I3/timecnt_941_942__i1.AR I3/timecnt_941_942__i1.D I3/timecnt_941_942__i1.C \
+I3/time10ms_215.CE I3/time10ms_215.D I3/time10ms_215.C I3/scanvalue_FSM_i0.AR \
+I3/scanvalue_FSM_i0.D I3/scanvalue_FSM_i0.C I3/scanvalue_FSM_i1.AR \
+I3/scanvalue_FSM_i1.D I3/scanvalue_FSM_i1.C I3/scanvalue_FSM_i2.AR \
+I3/scanvalue_FSM_i2.D I3/scanvalue_FSM_i2.C I3/scanvalue_FSM_i3.D \
+I3/scanvalue_FSM_i3.AP I3/scanvalue_FSM_i3.C I3/flag_Data_i1.CE \
+I3/flag_Data_i1.AR I3/flag_Data_i1.D I3/flag_Data_i1.C I3/n5869 \
+I3/flag_Data_i0.CE I3/flag_Data_i0.AR I3/flag_Data_i0.D I3/flag_Data_i0.C \
+I3/flag_Cal_i0_i1.CE I3/flag_Cal_i0_i1.AR I3/flag_Cal_i0_i1.D \
+I3/flag_Cal_i0_i1.C I3/flag_Cal_i0_i0.CE I3/flag_Cal_i0_i0.AR \
+I3/flag_Cal_i0_i0.D I3/flag_Cal_i0_i0.C I3/int_Data0_i0_i7.CE \
+I3/int_Data0_i0_i7.AR I3/int_Data0_i0_i7.C I3/n8598 I3/int_Data0_i0_i6.CE \
+I3/int_Data0_i0_i6.AR I3/int_Data0_i0_i6.C I3/int_Data0_i0_i5.CE \
+I3/int_Data0_i0_i5.AR I3/int_Data0_i0_i5.C I3/int_Data0_i0_i4.CE \
+I3/int_Data0_i0_i4.AR I3/int_Data0_i0_i4.C I3/int_Data0_i0_i3.CE \
+I3/int_Data0_i0_i3.AR I3/int_Data0_i0_i3.C I3/int_Data0_i0_i2.CE \
+I3/int_Data0_i0_i2.AR I3/int_Data0_i0_i2.D I3/int_Data0_i0_i2.C \
+I3/int_Data0_i0_i1.CE I3/int_Data0_i0_i1.AR I3/int_Data0_i0_i1.D \
+I3/int_Data0_i0_i1.C I3/int_Data0_i0_i0.CE I3/int_Data0_i0_i0.AR \
+I3/int_Data0_i0_i0.D I3/int_Data0_i0_i0.C I3/int_Data1_i0_i3.CE \
+I3/int_Data1_i0_i3.AR I3/int_Data1_i0_i3.D I3/int_Data1_i0_i3.C I3/n3205 \
+I3/int_Data1_i0_i2.CE I3/int_Data1_i0_i2.AR I3/int_Data1_i0_i2.D \
+I3/int_Data1_i0_i2.C I3/int_Data1_i0_i1.CE I3/int_Data1_i0_i1.AR \
+I3/int_Data1_i0_i1.C I3/int_Data1_i0_i0.CE I3/int_Data1_i0_i0.AR \
+I3/int_Data1_i0_i0.D I3/int_Data1_i0_i0.C I3/PointTime_223reg.CE \
+I3/PointTime_223reg.D I3/PointTime_223reg.AP I3/PointTime_223reg.C \
+I3/int_Data__i8.CE I3/int_Data__i8.AR I3/int_Data__i8.C I3/int_Data__i7.CE \
+I3/int_Data__i7.AR I3/int_Data__i7.D I3/int_Data__i7.C I3/int_Data__i6.CE \
+I3/int_Data__i6.AR I3/int_Data__i6.D I3/int_Data__i6.C I3/n9068 \
+I3/int_Data__i5.CE I3/int_Data__i5.AR I3/int_Data__i5.C I3/n14_adj_107 \
+I3/int_Data__i4.CE I3/int_Data__i4.AR I3/int_Data__i4.C I3/int_Data__i3.CE \
+I3/int_Data__i3.AR I3/int_Data__i3.C I3/int_Data__i2.CE I3/int_Data__i2.AR \
+I3/int_Data__i2.D I3/int_Data__i2.C I3/key_out_i0_i4reg.CE \
+I3/key_out_i0_i4reg.D I3/key_out_i0_i4reg.C I3/key_out_i0_i3reg.CE \
+I3/key_out_i0_i3reg.D I3/key_out_i0_i3reg.C I3/key_out_i0_i2reg.CE \
+I3/key_out_i0_i2reg.D I3/key_out_i0_i2reg.C I3/key_out_i0_i1reg.CE \
+I3/key_out_i0_i1reg.D I3/key_out_i0_i1reg.C I3/led_int_Data0_i4reg.AR \
+I3/led_int_Data0_i4reg.C I3/led_int_Data0_i3reg.AR I3/led_int_Data0_i3reg.C \
+I3/led_int_Data0_i2reg.AR I3/led_int_Data0_i2reg.C I3/led_int_Data0_i1reg.AR \
+I3/led_int_Data0_i1reg.D I3/led_int_Data0_i1reg.C I3/led_int_Data1_i4reg.AR \
+I3/led_int_Data1_i4reg.C I3/led_int_Data1_i3reg.AR I3/led_int_Data1_i3reg.C \
+I3/n6181 I3/n6_adj_164 I3/led_int_Data1_i2reg.AR I3/led_int_Data1_i2reg.D \
+I3/led_int_Data1_i2reg.C I3/led_int_Data1_i1reg.AR I3/led_int_Data1_i1reg.D \
+I3/led_int_Data1_i1reg.C I3/led_int_Data2_i4reg.CE I3/led_int_Data2_i4reg.D \
+I3/led_int_Data2_i4reg.AP I3/led_int_Data2_i4reg.C I3/led_int_Data2_i1reg.CE \
+I3/led_int_Data2_i1reg.AR I3/led_int_Data2_i1reg.D I3/led_int_Data2_i1reg.C \
+I3/n97_adj_28 I3/n14_adj_114 I3/n4_adj_168 I3/n14_adj_169 I3/n11_adj_115 \
+I3/n4684 I3/n6_adj_171 I3/n5921 I3/n85 I3/n4491 I3/n4679 I3/n8_adj_173 \
+I3/n6171 I3/n8106 I3/n14 I3/n9092 I3/n28_adj_5 I3/n8241 I3/n10_adj_174 \
+I3/n8_adj_38 I3/n8948 I3/n5955 I3/n8071 I3/n11_adj_7 I3/n5916 I3/n6_adj_182 \
+I3/n4_adj_183 I3/n11_adj_46 I3/n4490 I3/n4489 I3/n29 I3/n11_adj_10 I3/n9419 \
+I3/n8360 I3/n24 I3/n10_adj_58 I3/i48 I3/n8_adj_62 I3/n49_adj_150 I3/n64 \
+I3/n9180 I3/n6_adj_67 I3/n8354 I3/n9211 I3/n8305 I3/led_int_Data1_3__N_385 \
+I3/n731 I3/n4_adj_76 I3/n757 I3/n770 I3/n783 I3/n796 key_out1 key_out2 \
+key_out3 key_out4 a b c d e f g LEDVCC1 LEDVCC2 LEDVCC3 LEDVCC4 \
+I59/LED_A_108reg.CE I59/LED_A_108reg.D I59/LED_A_108reg.AP I59/LED_A_108reg.C \
+I59/LED_B_109reg.CE I59/LED_B_109reg.D I59/LED_B_109reg.AP I59/LED_B_109reg.C \
+I59/LED_C_110reg.CE I59/LED_C_110reg.D I59/LED_C_110reg.AP I59/LED_C_110reg.C \
+I59/LED_D_111reg.CE I59/LED_D_111reg.D I59/LED_D_111reg.AP I59/LED_D_111reg.C \
+I59/LED_E_112reg.CE I59/LED_E_112reg.D I59/LED_E_112reg.AP I59/LED_E_112reg.C \
+I59/LED_F_113reg.CE I59/LED_F_113reg.D I59/LED_F_113reg.AP I59/LED_F_113reg.C \
+I59/LED_G_114reg.CE I59/LED_G_114reg.D I59/LED_G_114reg.AP I59/LED_G_114reg.C \
+I59/LED_VCC2_116reg.CE I59/LED_VCC2_116reg.AR I59/LED_VCC2_116reg.D \
+I59/LED_VCC2_116reg.C I59/LED_VCC3_117reg.CE I59/LED_VCC3_117reg.AR \
+I59/LED_VCC3_117reg.D I59/LED_VCC3_117reg.C I59/LED_VCC4_118reg.CE \
+I59/LED_VCC4_118reg.AR I59/LED_VCC4_118reg.D I59/LED_VCC4_118reg.C \
+I59/scancnt__i1.CE I59/scancnt__i1.D I59/scancnt__i1.C I59/n853 \
+I59/scancnt__i0.C I59/count_186__i12.AR I59/count_186__i12.C \
+I59/count_186__i11.AR I59/count_186__i11.C I59/count_186__i10.AR \
+I59/count_186__i10.D I59/count_186__i10.C I59/count_186__i9.AR \
+I59/count_186__i9.D I59/count_186__i9.C I59/count_186__i8.AR \
+I59/count_186__i8.D I59/count_186__i8.C I59/count_186__i7.AR \
+I59/count_186__i7.C I59/count_186__i6.AR I59/count_186__i6.C \
+I59/count_186__i5.AR I59/count_186__i5.D I59/count_186__i5.C \
+I59/count_186__i4.AR I59/count_186__i4.D I59/count_186__i4.C \
+I59/count_186__i3.AR I59/count_186__i3.D I59/count_186__i3.C I59/n818 \
+I59/count_186__i2.AR I59/count_186__i2.D I59/count_186__i2.C \
+I59/count_186__i1.AR I59/count_186__i1.D I59/count_186__i1.C \
+I59/count_186__i0.AR I59/count_186__i0.D I59/count_186__i0.C I59/n51 \
+I3/i2_adj_193.X1 I3/i2_adj_193.X2 I3/timecnt_941_942__i15.D.X1 \
+I3/timecnt_941_942__i15.D.X2 I3/timecnt_941_942__i14.D.X1 \
+I3/timecnt_941_942__i14.D.X2 I3/timecnt_941_942__i10.D.X1 \
+I3/timecnt_941_942__i10.D.X2 I3/timecnt_941_942__i9.D.X1 \
+I3/timecnt_941_942__i9.D.X2 I3/timecnt_941_942__i5.D.X1 \
+I3/timecnt_941_942__i5.D.X2 I3/i2_adj_48.X1 I3/i2_adj_48.X2 \
+I3/int_Data0_i0_i7.D.X1 I3/int_Data0_i0_i7.D.X2 I3/int_Data0_i0_i6.D.X1 \
+I3/int_Data0_i0_i6.D.X2 I3/int_Data0_i0_i5.D.X1 I3/int_Data0_i0_i5.D.X2 \
+I3/int_Data0_i0_i4.D.X1 I3/int_Data0_i0_i4.D.X2 I3/int_Data0_i0_i3.D.X1 \
+I3/int_Data0_i0_i3.D.X2 I3/i1_adj_220.X1 I3/i1_adj_220.X2 \
+I3/int_Data1_i0_i1.D.X1 I3/int_Data1_i0_i1.D.X2 I3/int_Data__i8.D.X1 \
+I3/int_Data__i8.D.X2 I3/int_Data__i5.D.X1 I3/int_Data__i5.D.X2 \
+I3/int_Data__i4.D.X1 I3/int_Data__i4.D.X2 I3/int_Data__i3.D.X1 \
+I3/int_Data__i3.D.X2 I3/led_int_Data0_i4reg.D.X1 I3/led_int_Data0_i4reg.D.X2 \
+I3/i1_adj_31.X1 I3/i1_adj_31.X2 I3/led_int_Data0_i3reg.D.X1 \
+I3/led_int_Data0_i3reg.D.X2 I3/led_int_Data0_i2reg.D.X1 \
+I3/led_int_Data0_i2reg.D.X2 I3/led_int_Data1_i4reg.D.X1 \
+I3/led_int_Data1_i4reg.D.X2 I3/led_int_Data1_i3reg.D.X1 \
+I3/led_int_Data1_i3reg.D.X2 I3/i1_adj_214.X1 I3/i1_adj_214.X2 I3/n9364.X1 \
+I3/n9364.X2 I3/i4_adj_227.X1 I3/i4_adj_227.X2 I3/i1_adj_67.X1 I3/i1_adj_67.X2 \
+I3/i3_adj_226.X1 I3/i3_adj_226.X2 I3/n8_adj_172.X1 I3/n8_adj_172.X2 \
+I3/i2_adj_253.X1 I3/i2_adj_253.X2 I3/i2_adj_192.X1 I3/i2_adj_192.X2 \
+I3/i2_adj_194.X1 I3/i2_adj_194.X2 I3/n9302.X1 I3/n9302.X2 I3/i2_adj_191.X1 \
+I3/i2_adj_191.X2 I3/n9358.X1 I3/n9358.X2 I3/i2_adj_197.X1 I3/i2_adj_197.X2 \
+I3/n9346.X1 I3/n9346.X2 I3/i2_adj_183.X1 I3/i2_adj_183.X2 I3/i2_adj_198.X1 \
+I3/i2_adj_198.X2 I59/scancnt__i0.D.X1 I59/scancnt__i0.D.X2 \
+I59/count_186__i12.D.X1 I59/count_186__i12.D.X2 I59/count_186__i11.D.X1 \
+I59/count_186__i11.D.X2 I59/count_186__i7.D.X1 I59/count_186__i7.D.X2 \
+I59/count_186__i6.D.X1 I59/count_186__i6.D.X2
+.names I3/int_Data0_i0_i3.BLIF I3/int_Data1_i0_i3.BLIF I3/n6_adj_171.BLIF \
+I3/n5955.BLIF I3/n6099
+000- 1
+110- 1
+101- 1
+011- 1
+---1 1
+1000 0
+0100 0
+0010 0
+1110 0
+.names I3/n3205.BLIF I3/int_Data__i8.BLIF I3/int_Data__i7.BLIF \
+I3/int_Data__i6.BLIF I3/int_Data__i5.BLIF I3/int_Data__i4.BLIF \
+I3/int_Data__i3.BLIF I3/int_Data__i2.BLIF I3/n8386
+-0001111 1
+-00100-- 1
+1------- 1
+0----10- 0
+0----1-0 0
+0--0-0-- 0
+0---01-- 0
+0--11--- 0
+0-1----- 0
+01------ 0
+.names reset.BLIF I3/timecnt_941_942__i15.AR
+0 1
+1 0
+.names reset.BLIF I3/timecnt_941_942__i14.AR
+0 1
+1 0
+.names reset.BLIF I3/timecnt_941_942__i13.AR
+0 1
+1 0
+.names I3/timecnt_941_942__i13.BLIF I3/timecnt_941_942__i12.BLIF \
+I3/timecnt_941_942__i11.BLIF I3/n8106.BLIF I3/n29.BLIF \
+I3/timecnt_941_942__i13.D
+01111 1
+1--01 1
+1-0-1 1
+10--1 1
+1111- 0
+0--0- 0
+0-0-- 0
+00--- 0
+----0 0
+.names reset.BLIF I3/timecnt_941_942__i12.AR
+0 1
+1 0
+.names I3/timecnt_941_942__i12.BLIF I3/timecnt_941_942__i11.BLIF I3/n8106.BLIF \
+I3/n29.BLIF I3/timecnt_941_942__i12.D
+0111 1
+1-01 1
+10-1 1
+111- 0
+0-0- 0
+00-- 0
+---0 0
+.names reset.BLIF I3/timecnt_941_942__i11.AR
+0 1
+1 0
+.names I3/timecnt_941_942__i11.BLIF I3/n8106.BLIF I3/n29.BLIF \
+I3/timecnt_941_942__i11.D
+101 1
+011 1
+00- 0
+11- 0
+--0 0
+.names reset.BLIF I3/timecnt_941_942__i10.AR
+0 1
+1 0
+.names reset.BLIF I3/timecnt_941_942__i9.AR
+0 1
+1 0
+.names reset.BLIF I3/timecnt_941_942__i8.AR
+0 1
+1 0
+.names I3/timecnt_941_942__i8.BLIF I3/timecnt_941_942__i7.BLIF \
+I3/timecnt_941_942__i6.BLIF I3/n8071.BLIF I3/n29.BLIF I3/timecnt_941_942__i8.D
+01111 1
+1--01 1
+1-0-1 1
+10--1 1
+1111- 0
+0--0- 0
+0-0-- 0
+00--- 0
+----0 0
+.names I3/flag_Data_i0.BLIF I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF key_in0.BLIF key_in1.BLIF \
+key_in2.BLIF key_in3.BLIF I3/n9_adj_22
+---0-0--- 1
+-----000- 1
+--00----- 1
+--11----- 1
+-----1-1- 1
+-----11-- 1
+------11- 1
+----1---- 1
+-1------- 1
+1-------- 1
+--------1 1
+001001000 0
+000100100 0
+000100010 0
+000101000 0
+.names reset.BLIF I3/timecnt_941_942__i7.AR
+0 1
+1 0
+.names I3/timecnt_941_942__i7.BLIF I3/timecnt_941_942__i6.BLIF I3/n8071.BLIF \
+I3/n29.BLIF I3/timecnt_941_942__i7.D
+0111 1
+1-01 1
+10-1 1
+111- 0
+0-0- 0
+00-- 0
+---0 0
+.names reset.BLIF I3/timecnt_941_942__i6.AR
+0 1
+1 0
+.names I3/timecnt_941_942__i6.BLIF I3/n8071.BLIF I3/n29.BLIF \
+I3/timecnt_941_942__i6.D
+101 1
+011 1
+00- 0
+11- 0
+--0 0
+.names I3/n11_adj_115.BLIF I3/n11_adj_46.BLIF key_in0.BLIF key_in1.BLIF \
+key_in2.BLIF key_in3.BLIF I3/n5795
+11---- 1
+----1- 1
+---1-- 1
+--1--- 1
+-----0 1
+-00001 0
+0-0001 0
+.names reset.BLIF I3/timecnt_941_942__i5.AR
+0 1
+1 0
+.names reset.BLIF I3/timecnt_941_942__i4.AR
+0 1
+1 0
+.names I3/timecnt_941_942__i4.BLIF I3/timecnt_941_942__i3.BLIF \
+I3/timecnt_941_942__i2.BLIF I3/timecnt_941_942__i1.BLIF I3/n29.BLIF \
+I3/timecnt_941_942__i4.D
+01111 1
+1--01 1
+1-0-1 1
+10--1 1
+1111- 0
+0--0- 0
+0-0-- 0
+00--- 0
+----0 0
+.names reset.BLIF I3/timecnt_941_942__i3.AR
+0 1
+1 0
+.names I3/timecnt_941_942__i3.BLIF I3/timecnt_941_942__i2.BLIF \
+I3/timecnt_941_942__i1.BLIF I3/n29.BLIF I3/timecnt_941_942__i3.D
+0111 1
+1-01 1
+10-1 1
+111- 0
+0-0- 0
+00-- 0
+---0 0
+.names reset.BLIF I3/timecnt_941_942__i2.AR
+0 1
+1 0
+.names I3/timecnt_941_942__i2.BLIF I3/timecnt_941_942__i1.BLIF I3/n29.BLIF \
+I3/timecnt_941_942__i2.D
+101 1
+011 1
+00- 0
+11- 0
+--0 0
+.names reset.BLIF I3/int_Data__i1.AR
+0 1
+1 0
+.names I3/n5869.BLIF I3/flag_Data_i0.BLIF I3/int_Data0_i0_i0.BLIF \
+I3/int_Data1_i0_i0.BLIF I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/n6181.BLIF I3/n4489.BLIF \
+I3/n8354.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF \
+I3/int_Data__i1.D
+0----0-01--0-0- 1
+0-----0-1--1--- 1
+0-----0-1----1- 1
+0----1--1---0-- 1
+0------11---0-- 1
+0-----1-1---1-- 1
+1-11-----11---- 1
+1-10------0---- 1
+1-01------0---- 1
+1-10-----0----- 1
+1-01-----0----- 1
+0-------1--1-1- 1
+0----1-11------ 1
+0---1---1------ 1
+01------1------ 1
+0-------1-----1 1
+00--0010---1000 0
+00--0100---0100 0
+00--0001---0100 0
+00--0010---0010 0
+1-11------0---- 0
+1-11-----0----- 0
+1--0-----11---- 0
+1-0------11---- 0
+1-00----------- 0
+0-------0------ 0
+.names reset.BLIF I3/timecnt_941_942__i1.AR
+0 1
+1 0
+.names reset.BLIF I3/scanvalue_FSM_i0.AR
+0 1
+1 0
+.names reset.BLIF I3/scanvalue_FSM_i1.AR
+0 1
+1 0
+.names reset.BLIF I3/scanvalue_FSM_i2.AR
+0 1
+1 0
+.names reset.BLIF I3/scanvalue_FSM_i3.AP
+0 1
+1 0
+.names I3/n8598.BLIF I3/n8360.BLIF I3/flag_Data_i1.CE
+10 1
+0- 0
+-1 0
+.names reset.BLIF I3/flag_Data_i1.AR
+0 1
+1 0
+.names I3/flag_Data_i0.BLIF I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/n6181.BLIF key_in0.BLIF \
+key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n5869
+-----1000- 1
+--0001---- 1
+-----1-11- 1
+-----11-1- 1
+-----111-- 1
+---111---- 1
+--1-11---- 1
+--11-1---- 1
+-1---1---- 1
+1----1---- 1
+-----1---1 1
+00100-1000 0
+00010-1000 0
+00001-1000 0
+00100-0100 0
+00010-0100 0
+00001-0100 0
+00100-0010 0
+00010-0010 0
+00001-0010 0
+-----0---- 0
+.names I3/n5795.BLIF I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/n5921.BLIF \
+I3/n8360.BLIF I3/flag_Data_i0.CE
+---00 1
+--0-0 1
+-1--0 1
+0---0 1
+1011- 0
+----1 0
+.names reset.BLIF I3/flag_Data_i0.AR
+0 1
+1 0
+.names I3/n5795.BLIF I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/n5921.BLIF \
+I3/flag_Data_i0.D
+111- 1
+1-01 1
+-01- 0
+--00 0
+0--- 0
+.names reset.BLIF I3/flag_Cal_i0_i1.AR
+0 1
+1 0
+.names reset.BLIF I3/flag_Cal_i0_i0.AR
+0 1
+1 0
+.names I3/n14_adj_107.BLIF I3/n11_adj_7.BLIF I3/n11_adj_46.BLIF key_in0.BLIF \
+key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/flag_Cal_i0_i0.D
+-0-0001 1
+0-0---- 1
+--1--1- 0
+1----1- 0
+--1-1-- 0
+1---1-- 0
+--11--- 0
+1--1--- 0
+-11---- 0
+11----- 0
+--1---0 0
+1-----0 0
+.names reset.BLIF I3/int_Data0_i0_i7.AR
+0 1
+1 0
+.names I3/n5795.BLIF I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/n5921.BLIF \
+I3/n8598
+-010 1
+-101 1
+0--- 1
+11-0 0
+1-11 0
+100- 0
+.names reset.BLIF I3/int_Data0_i0_i6.AR
+0 1
+1 0
+.names reset.BLIF I3/int_Data0_i0_i5.AR
+0 1
+1 0
+.names reset.BLIF I3/int_Data0_i0_i4.AR
+0 1
+1 0
+.names reset.BLIF I3/int_Data0_i0_i3.AR
+0 1
+1 0
+.names reset.BLIF I3/int_Data0_i0_i2.AR
+0 1
+1 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/int_Data0_i0_i2.BLIF \
+I3/n14_adj_107.BLIF I3/n14_adj_114.BLIF I3/n11_adj_115.BLIF I3/n14.BLIF \
+I3/n11_adj_7.BLIF I3/n11_adj_46.BLIF I3/n11_adj_10.BLIF I3/int_Data0_i0_i2.D
+00--00---- 1
+00----0--0 1
+00-0-----0 1
+00--0----0 1
+1-1-0---0- 1
+1-1---00-- 1
+1-10---0-- 1
+1-1--00--- 1
+1-10-0---- 1
+1-1-0--0-- 1
+1-1-00---- 1
+1-1---0--0 1
+1-10-----0 1
+1-1-0----0 1
+---11-1--- 0
+-----1-111 0
+----11-1-1 0
+1-0------- 0
+01-------- 0
+0----1---1 0
+0---1----1 0
+.names reset.BLIF I3/int_Data0_i0_i1.AR
+0 1
+1 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/int_Data0_i0_i1.BLIF \
+I3/n14_adj_107.BLIF I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/n14_adj_114.BLIF \
+I3/n11_adj_115.BLIF I3/n14.BLIF I3/n11_adj_7.BLIF I3/n11_adj_46.BLIF \
+I3/n11_adj_10.BLIF I3/int_Data0_i0_i1.D
+00--0010--0--- 1
+00--0001--0--- 1
+1-1-0010--0--- 1
+1-1-0001--0--- 1
+00-0-------0-- 1
+00------00---- 1
+1-1-----0---0- 1
+1-10-------0-- 1
+1-1-----0--0-- 1
+1-10-----0---- 1
+1-1-----00---- 1
+1-1------00--- 1
+1-10---------0 1
+1-1-----0----0 1
+------00-1-111 0
+------11-1-111 0
+---1--0011---- 0
+---1--1111---- 0
+0--1--001----- 0
+0--1--111----- 0
+0-----001--1-- 0
+0-----111--1-- 0
+0--1--00-1---- 0
+0--1--11-1---- 0
+0-----00-1-1-- 0
+0-----11-1-1-- 0
+------0011-1-1 0
+------1111-1-1 0
+---------11111 0
+-----1---1-111 0
+----1----1-111 0
+---1-1--11---- 0
+---11---11---- 0
+0-------1-11-- 0
+0--1-1--1----- 0
+0--11---1----- 0
+0----1--1--1-- 0
+0---1---1--1-- 0
+0--1-----11--- 0
+0--------111-- 0
+0--1-1---1---- 0
+0--11----1---- 0
+0----1---1-1-- 0
+0---1----1-1-- 0
+--------1111-1 0
+-----1--11-1-1 0
+----1---11-1-1 0
+1-0----------- 0
+---1----1-1--- 0
+01------------ 0
+.names reset.BLIF I3/int_Data0_i0_i0.AR
+0 1
+1 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/int_Data0_i0_i0.BLIF \
+I3/n14_adj_107.BLIF I3/n14_adj_114.BLIF I3/n11_adj_115.BLIF I3/n14.BLIF \
+I3/n11_adj_7.BLIF I3/n11_adj_46.BLIF I3/n11_adj_10.BLIF I3/int_Data0_i0_i0.D
+00----00-- 1
+00---00--- 1
+1-1-0---0- 1
+00--0--0-- 1
+00--00---- 1
+1-10---0-- 1
+1-10-0---- 1
+1-1---00-- 1
+1-1--00--- 1
+1-1-0--0-- 1
+1-1-00---- 1
+00-0-----0 1
+1-10-----0 1
+1-1---0--0 1
+1-1-0----0 1
+0--1-1-1-- 0
+---11-1--- 0
+-----1-111 0
+1-0------- 0
+----11-1-1 0
+0---1-1--1 0
+0----1-1-1 0
+01-------- 0
+.names reset.BLIF I3/int_Data1_i0_i3.AR
+0 1
+1 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/int_Data1_i0_i3.BLIF \
+I3/n14_adj_107.BLIF I3/n14_adj_114.BLIF I3/n11_adj_115.BLIF I3/n14.BLIF \
+I3/n11_adj_7.BLIF I3/n11_adj_46.BLIF I3/n11_adj_10.BLIF I3/int_Data1_i0_i3.D
+001-0---0- 1
+111-0---0- 1
+001-0--0-- 1
+111-0--0-- 1
+001---00-- 1
+111---00-- 1
+0010---0-- 1
+1110---0-- 1
+001-00---- 1
+111-00---- 1
+10---00--- 1
+10-0-0---- 1
+001-0----0 1
+111-0----0 1
+001---0--0 1
+111---0--0 1
+0010-----0 1
+1110-----0 1
+-01--00--- 1
+1-1--00--- 1
+-010-0---- 1
+1-10-0---- 1
+10-1--1--- 0
+-----1-111 0
+---11-1--- 0
+----11-1-1 0
+10---1---- 0
+-10------- 0
+0-0------- 0
+01-------- 0
+.names I3/int_Data__i8.BLIF I3/int_Data__i7.BLIF I3/int_Data__i6.BLIF \
+I3/int_Data__i5.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/n3205
+000-110 1
+00001-1 1
+0001-0- 1
+00010-- 1
+---1111 0
+---0-00 0
+---00-- 0
+--1---- 0
+-1----- 0
+1------ 0
+.names reset.BLIF I3/int_Data1_i0_i2.AR
+0 1
+1 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/int_Data1_i0_i2.BLIF \
+I3/n14_adj_107.BLIF I3/n14_adj_114.BLIF I3/n11_adj_115.BLIF I3/n14.BLIF \
+I3/n11_adj_7.BLIF I3/n11_adj_46.BLIF I3/n11_adj_10.BLIF I3/int_Data1_i0_i2.D
+001-0---0- 1
+111-0---0- 1
+001---00-- 1
+111---00-- 1
+0010---0-- 1
+1110---0-- 1
+001--00--- 1
+111--00--- 1
+0010-0---- 1
+1110-0---- 1
+001-0--0-- 1
+111-0--0-- 1
+10--00---- 1
+-01-00---- 1
+1-1-00---- 1
+10----0--0 1
+10-0-----0 1
+10--0----0 1
+-01---0--0 1
+1-1---0--0 1
+-010-----0 1
+1-10-----0 1
+-01-0----0 1
+1-1-0----0 1
+---11-1--- 0
+-----1-111 0
+10---1---1 0
+10--1----1 0
+----11-1-1 0
+-10------- 0
+0-0------- 0
+01-------- 0
+.names reset.BLIF I3/int_Data1_i0_i1.AR
+0 1
+1 0
+.names reset.BLIF I3/int_Data1_i0_i0.AR
+0 1
+1 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/int_Data1_i0_i0.BLIF \
+I3/n14_adj_107.BLIF I3/n14_adj_114.BLIF I3/n11_adj_115.BLIF I3/n14.BLIF \
+I3/n11_adj_7.BLIF I3/n11_adj_46.BLIF I3/n11_adj_10.BLIF I3/int_Data1_i0_i0.D
+001-0---0- 1
+111-0---0- 1
+0010---0-- 1
+1110---0-- 1
+0010-0---- 1
+1110-0---- 1
+001---0--0 1
+111---0--0 1
+001-0----0 1
+111-0----0 1
+10----00-- 1
+10---00--- 1
+10--0--0-- 1
+10--00---- 1
+-01---00-- 1
+1-1---00-- 1
+-01--00--- 1
+1-1--00--- 1
+-01-0--0-- 1
+1-1-0--0-- 1
+-01-00---- 1
+1-1-00---- 1
+10-0-----0 1
+-010-----0 1
+1-10-----0 1
+10-1-1-1-- 0
+10--1-1--1 0
+10---1-1-1 0
+---11-1--- 0
+-----1-111 0
+----11-1-1 0
+-10------- 0
+0-0------- 0
+01-------- 0
+.names I3/n9092.BLIF I3/n9419.BLIF I3/i48.BLIF I3/n49_adj_150.BLIF \
+key_in2.BLIF key_in3.BLIF I3/PointTime_223reg.CE
+-01100 1
+10---- 1
+0---1- 0
+0--0-- 0
+0-0--- 0
+-1---- 0
+0----1 0
+.names I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/i48.BLIF key_in0.BLIF \
+key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/PointTime_223reg.D
+--00---01 1
+0000---0- 1
+--11---0- 1
+-1-1---0- 1
+1--1---0- 1
+-11----0- 1
+1-1----0- 1
+11-----0- 1
+------101 1
+-----1-01 1
+----0--00 1
+0010-00-1 0
+0001-00-1 0
+10001---0 0
+01001---0 0
+00101---0 0
+00011---0 0
+-------1- 0
+.names reset.BLIF I3/PointTime_223reg.AP
+0 1
+1 0
+.names reset.BLIF I3/int_Data__i8.AR
+0 1
+1 0
+.names reset.BLIF I3/int_Data__i7.AR
+0 1
+1 0
+.names I3/n5869.BLIF I3/int_Data0_i0_i6.BLIF I3/int_Data0_i0_i5.BLIF \
+I3/int_Data0_i0_i4.BLIF I3/int_Data1_i0_i0.BLIF I3/i1_adj_31.BLIF \
+I3/i1_adj_214.BLIF I3/n4491.BLIF I3/n8_adj_173.BLIF I3/n6171.BLIF \
+I3/n4490.BLIF I3/n10_adj_58.BLIF I3/n8354.BLIF I3/i2_adj_198.BLIF \
+I3/int_Data__i7.D
+1011----1---0- 1
+1----10--00-1- 1
+11--1--1--1010 1
+11--1--1--1111 1
+1---0--1--1110 1
+1---0--1--1011 1
+1-----11-10-1- 1
+1----011--0-1- 1
+10-----1--1110 1
+10-----1--1011 1
+11------0---0- 1
+11-0--------0- 1
+110---------0- 1
+1-----00----1- 1
+-1--1--1--1110 0
+-1--1--1--1011 0
+-111----1---0- 0
+-----11--00-1- 0
+----0--1--1010 0
+----0--1--1111 0
+------01-10-1- 0
+-----001--0-1- 0
+-0-----1--1010 0
+-0-----1--1111 0
+-0------0---0- 0
+-0-0--------0- 0
+-00---------0- 0
+------10----1- 0
+0------------- 0
+.names reset.BLIF I3/int_Data__i6.AR
+0 1
+1 0
+.names I3/n5869.BLIF I3/int_Data0_i0_i5.BLIF I3/int_Data0_i0_i4.BLIF \
+I3/int_Data1_i0_i0.BLIF I3/i1_adj_31.BLIF I3/n4491.BLIF I3/n8_adj_173.BLIF \
+I3/i2_adj_192.BLIF I3/n6171.BLIF I3/n4490.BLIF I3/n8_adj_62.BLIF I3/n8354.BLIF \
+I3/int_Data__i6.D
+11-1-1-0-101 1
+11-1-1-1-111 1
+1--0-1-1-101 1
+1--0-1-0-111 1
+101---1----0 1
+10---1-1-101 1
+10---1-0-111 1
+1---11--10-1 1
+1---0---00-1 1
+11----0----0 1
+110--------0 1
+1---00-----1 1
+-1-1-1-1-101 0
+-1-1-1-0-111 0
+---0-1-0-101 0
+---0-1-1-111 0
+-0---1-0-101 0
+-0---1-1-111 0
+----01--10-1 0
+-11---1----0 0
+----1---00-1 0
+-0----0----0 0
+-00--------0 0
+----10-----1 0
+0----------- 0
+.names I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF key_in0.BLIF \
+key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n9068
+---00- 1
+---11- 1
+--1--- 1
+-0---- 1
+1----- 1
+-----1 1
+010100 0
+010010 0
+.names reset.BLIF I3/int_Data__i5.AR
+0 1
+1 0
+.names key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n14_adj_107
+--1- 1
+-0-- 1
+1--- 1
+---1 1
+0100 0
+.names reset.BLIF I3/int_Data__i4.AR
+0 1
+1 0
+.names reset.BLIF I3/int_Data__i3.AR
+0 1
+1 0
+.names reset.BLIF I3/int_Data__i2.AR
+0 1
+1 0
+.names I3/n5869.BLIF I3/flag_Data_i0.BLIF I3/key_out_i0_i4reg.BLIF \
+I3/key_out_i0_i3reg.BLIF I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF \
+I3/n9302.BLIF I3/n9211.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF \
+key_in3.BLIF I3/int_Data__i2.D
+000100-11000 1
+000001-10100 1
+000010-10010 1
+000001-10010 1
+------1----- 1
+-----10--00- 0
+------0-11-- 0
+------0-1-1- 0
+----1-0---0- 0
+---0000----- 0
+---1--0-0--- 0
+------0--11- 0
+----110----- 0
+------00---- 0
+--1---0----- 0
+-1----0----- 0
+1-----0----- 0
+------0----1 0
+.names reset.BLIF I3/led_int_Data0_i4reg.AR
+0 1
+1 0
+.names reset.BLIF I3/led_int_Data0_i3reg.AR
+0 1
+1 0
+.names reset.BLIF I3/led_int_Data0_i2reg.AR
+0 1
+1 0
+.names reset.BLIF I3/led_int_Data0_i1reg.AR
+0 1
+1 0
+.names reset.BLIF I3/led_int_Data1_i4reg.AR
+0 1
+1 0
+.names reset.BLIF I3/led_int_Data1_i3reg.AR
+0 1
+1 0
+.names I3/flag_Data_i0.BLIF I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF key_in0.BLIF key_in1.BLIF \
+key_in2.BLIF key_in3.BLIF I3/n6181
+1----1--- 1
+--1-----0 1
+-----1--1 1
+-1---0--- 1
+-00------ 1
+-------1- 1
+------1-- 1
+----1---- 1
+---1----- 1
+010001000 0
+-01000001 0
+.names I3/int_Data0_i0_i2.BLIF I3/int_Data1_i0_i2.BLIF I3/n4_adj_168.BLIF \
+I3/n6_adj_164
+11- 1
+-11 1
+1-1 1
+00- 0
+-00 0
+0-0 0
+.names reset.BLIF I3/led_int_Data1_i2reg.AR
+0 1
+1 0
+.names I3/int_Data__i8.BLIF I3/int_Data__i7.BLIF I3/int_Data__i6.BLIF \
+I3/int_Data__i5.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/led_int_Data1_3__N_385.BLIF I3/n731.BLIF I3/n757.BLIF \
+I3/n770.BLIF I3/led_int_Data1_i2reg.D
+00011110--- 1
+00100--0--- 1
+----1-10-00 1
+----11-0-00 1
+1------0-00 1
+-------01-- 1
+---0---0-00 1
+--1----0-00 1
+-0-----0-00 1
+---01---01- 0
+---01---0-1 0
+----10--01- 0
+--0-0---01- 0
+--11----01- 0
+----10--0-1 0
+----1-0-01- 0
+--0-0---0-1 0
+--11----0-1 0
+----1-0-0-1 0
+0101-00-0-- 0
+01010---0-- 0
+1-------01- 0
+-1------01- 0
+1-------0-1 0
+-1------0-1 0
+-------1--- 0
+.names reset.BLIF I3/led_int_Data1_i1reg.AR
+0 1
+1 0
+.names I3/int_Data__i8.BLIF I3/int_Data__i7.BLIF I3/int_Data__i6.BLIF \
+I3/int_Data__i5.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/led_int_Data1_3__N_385.BLIF I3/n731.BLIF I3/n757.BLIF \
+I3/n770.BLIF I3/n796.BLIF I3/led_int_Data1_i1reg.D
+0001111-0--- 1
+00100---0--- 1
+--------001- 1
+--------00-1 1
+-------1---- 1
+--00---0--00 0
+--0--0-0--00 0
+---10--0--00 0
+--1-1--0--00 0
+--00---0-1-- 0
+--0---00--00 0
+--0--0-0-1-- 0
+---10--0-1-- 0
+--1-1--0-1-- 0
+--0---00-1-- 0
+-1-----0--00 0
+1------0--00 0
+-1-----0-1-- 0
+1------0-1-- 0
+-------01--- 0
+.names I3/flag_Cal_i0_i1.BLIF I3/flag_Cal_i0_i0.BLIF I3/n11_adj_46.BLIF \
+I3/n24.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF \
+I3/led_int_Data2_i4reg.CE
+-10-0001 1
+1-0-0001 1
+---0--1- 1
+---0-1-- 1
+---01--- 1
+--10---- 1
+---0---0 1
+000-0001 0
+---1--1- 0
+---1-1-- 0
+---11--- 0
+--11---- 0
+---1---0 0
+.names I3/n5795.BLIF I3/flag_Data_i0.BLIF I3/led_int_Data2_i4reg.D
+0- 1
+-0 1
+11 0
+.names reset.BLIF I3/led_int_Data2_i4reg.AP
+0 1
+1 0
+.names I3/flag_Cal_i0_i1.BLIF I3/flag_Cal_i0_i0.BLIF I3/n4684.BLIF \
+I3/n11_adj_46.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF \
+I3/led_int_Data2_i1reg.CE
+--1---1- 1
+--1--1-- 1
+--1-1--- 1
+--11---- 1
+-11----- 1
+1-1----- 1
+--1----0 1
+00-00001 0
+--0----- 0
+.names reset.BLIF I3/led_int_Data2_i1reg.AR
+0 1
+1 0
+.names I3/flag_Cal_i0_i0.BLIF I3/int_Data0_i0_i7.BLIF I3/n14_adj_169.BLIF \
+I3/n11_adj_46.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF \
+I3/led_int_Data2_i1reg.D
+00000001 1
+------1- 0
+-----1-- 0
+----1--- 0
+---1---- 0
+--1----- 0
+-1------ 0
+1------- 0
+-------0 0
+.names I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/n97_adj_28
+1000 1
+0100 1
+0010 1
+0001 1
+0000 0
+-11- 0
+1-1- 0
+11-- 0
+--11 0
+-1-1 0
+1--1 0
+.names key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n14_adj_114
+--1- 1
+-1-- 1
+0--- 1
+---1 1
+1000 0
+.names I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/int_Data1_i0_i0.BLIF I3/n4_adj_168
+1-1- 1
+-111 1
+11-1 1
+-00- 0
+00-- 0
+0-0- 0
+--00 0
+0--0 0
+.names I3/int_Data0_i0_i6.BLIF I3/int_Data0_i0_i5.BLIF I3/int_Data0_i0_i4.BLIF \
+I3/int_Data0_i0_i3.BLIF I3/int_Data1_i0_i3.BLIF I3/n6_adj_171.BLIF \
+I3/n14_adj_169
+---10- 1
+--1--- 1
+-1---- 1
+1----- 1
+----01 1
+---1-1 1
+00001- 0
+000-10 0
+0000-0 0
+.names I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/n11_adj_115
+--1- 1
+-0-- 1
+1--- 1
+---1 1
+0100 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/n11_adj_115.BLIF \
+I3/n85.BLIF I3/n11_adj_46.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF \
+key_in3.BLIF I3/n4684
+--01-0001 1
+----00001 1
+00-1----- 1
+-11-1---- 0
+1-1-1---- 0
+---0---1- 0
+-1-----1- 0
+1------1- 0
+---0--1-- 0
+-1----1-- 0
+1-----1-- 0
+---0-1--- 0
+-1---1--- 0
+1----1--- 0
+---01---- 0
+---0----0 0
+-1------0 0
+1-------0 0
+.names I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF \
+I3/int_Data1_i0_i2.BLIF I3/int_Data1_i0_i1.BLIF I3/int_Data1_i0_i0.BLIF \
+I3/n6_adj_171
+--100- 1
+1-1-0- 1
+-110-- 1
+111--- 1
+-1-00- 1
+11--0- 1
+---000 1
+1---00 1
+-1-0-0 1
+11---0 1
+1--0-- 1
+-0-11- 0
+00--1- 0
+--0111 0
+0-0-11 0
+-001-1 0
+000--1 0
+0--1-- 0
+.names I3/n14_adj_107.BLIF I3/n14.BLIF I3/n11_adj_7.BLIF I3/n11_adj_46.BLIF \
+key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n5921
+11----1- 1
+11---1-- 1
+11--1--- 1
+111----- 1
+11-----0 1
+---1--1- 1
+---1-1-- 1
+---11--- 1
+--11---- 1
+---1---0 1
+--0-0001 0
+-0-0---- 0
+0--0---- 0
+.names I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF key_in0.BLIF key_in1.BLIF \
+key_in2.BLIF key_in3.BLIF I3/n85
+10000001 1
+10001000 1
+00100100 1
+00010100 1
+00100010 1
+00010010 1
+01000001 1
+00101000 1
+00011000 1
+01000100 1
+01000010 1
+01001000 1
+1---0--0 0
+00-----1 0
+----0000 0
+0000---- 0
+------11 0
+----1-1- 0
+----11-- 0
+-----1-1 0
+--11---- 0
+-----11- 0
+-1-1---- 0
+-11----- 0
+11------ 0
+1--1---- 0
+1-1----- 0
+----1--1 0
+.names I3/int_Data0_i0_i7.BLIF I3/int_Data0_i0_i6.BLIF I3/int_Data0_i0_i5.BLIF \
+I3/int_Data0_i0_i4.BLIF I3/int_Data0_i0_i3.BLIF I3/int_Data1_i0_i3.BLIF \
+I3/n6_adj_171.BLIF I3/n4489.BLIF I3/n4491
+0000-10- 1
+00000-0- 1
+000001-- 1
+-------1 1
+-----010 0
+----1-10 0
+----10-0 0
+---1---0 0
+--1----0 0
+-1-----0 0
+1------0 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/n9068.BLIF \
+I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF I3/key_out_i0_i2reg.BLIF \
+I3/key_out_i0_i1reg.BLIF I3/n64.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF \
+key_in3.BLIF I3/n4679
+--1----0000- 1
+--1--000-1-- 1
+--1--000--1- 1
+--100000---- 1
+------10000- 1
+-----1-0000- 1
+------101-1- 1
+-----1-01-1- 1
+------1011-- 1
+-----1-011-- 1
+------10-11- 1
+-----1-0-11- 1
+--111--0---- 1
+-0-----0---- 1
+1------0---- 1
+----1-10---- 1
+---1--10---- 1
+----11-0---- 1
+---1-1-0---- 1
+-----110---- 1
+------10---1 1
+-----1-0---1 1
+--1----0---1 1
+01-0010-0100 0
+01-0001-0100 0
+01-0010-0010 0
+01-0001-0010 0
+01-1000-1000 0
+01-0100-1000 0
+01-0010-1000 0
+01-0001-1000 0
+010--00----- 0
+-------1---- 0
+.names I3/int_Data0_i0_i3.BLIF I3/int_Data1_i0_i3.BLIF I3/n6_adj_164.BLIF \
+I3/n8_adj_173
+11- 1
+-11 1
+1-1 1
+00- 0
+-00 0
+0-0 0
+.names I3/int_Data0_i0_i4.BLIF I3/int_Data0_i0_i3.BLIF I3/int_Data1_i0_i3.BLIF \
+I3/n6_adj_171.BLIF I3/n8_adj_172.BLIF I3/n5955.BLIF I3/n6171
+-000-- 1
+-110-- 1
+-101-- 1
+-011-- 1
+0---0- 1
+1---1- 1
+-----1 1
+110000 0
+101000 0
+100100 0
+111100 0
+010010 0
+001010 0
+000110 0
+011110 0
+.names I3/timecnt_941_942__i10.BLIF I3/timecnt_941_942__i9.BLIF \
+I3/timecnt_941_942__i8.BLIF I3/timecnt_941_942__i7.BLIF \
+I3/timecnt_941_942__i6.BLIF I3/n8071.BLIF I3/n8106
+111111 1
+----0- 0
+---0-- 0
+--0--- 0
+-0---- 0
+0----- 0
+-----0 0
+.names key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n14
+--0- 1
+-1-- 1
+1--- 1
+---1 1
+0010 0
+.names I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF key_in0.BLIF key_in1.BLIF \
+key_in2.BLIF key_in3.BLIF I3/n9092
+10000010 1
+01000010 1
+00100010 1
+00010010 1
+10000001 1
+01000001 1
+00100001 1
+00010001 1
+0000---- 0
+--11---- 0
+-1-1---- 0
+1--1---- 0
+-11----- 0
+1-1----- 0
+11------ 0
+------00 0
+------11 0
+-----1-- 0
+----1--- 0
+.names I3/int_Data1_i0_i1.BLIF I3/int_Data0_i0_i1.BLIF I3/n28_adj_5
+11 1
+0- 0
+-0 0
+.names I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/int_Data1_i0_i0.BLIF I3/n8241
+1111 1
+--0- 0
+-0-- 0
+0--- 0
+---0 0
+.names I3/int_Data0_i0_i5.BLIF I3/int_Data0_i0_i4.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/i2_adj_194.BLIF I3/n6_adj_182.BLIF I3/i2_adj_183.BLIF I3/n10_adj_174
+1-111- 1
+111-1- 1
+1111-- 1
+-11-11 1
+-111-1 1
+---111 1
+1-1--1 1
+00--0- 0
+00-0-- 0
+0--00- 0
+--0-0- 0
+--00-- 0
+-0--00 0
+-0-0-0 0
+---000 0
+--0--0 0
+0----0 0
+.names I3/int_Data1_i0_i2.BLIF I3/int_Data0_i0_i0.BLIF I3/n8_adj_38
+11 1
+0- 0
+-0 0
+.names I3/flag_Data_i0.BLIF I3/flag_Cal_i0_i1.BLIF I3/flag_Cal_i0_i0.BLIF \
+I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF I3/key_out_i0_i2reg.BLIF \
+I3/key_out_i0_i1reg.BLIF I3/n97_adj_28.BLIF key_in0.BLIF key_in1.BLIF \
+key_in2.BLIF key_in3.BLIF I3/n8948
+-001000-0001 1
+1--0100-0100 1
+1--0010-0100 1
+1--0001-0100 1
+1--0100-0010 1
+1--0010-0010 1
+1--0001-0010 1
+1------11000 1
+-------01--- 0
+-----1-----1 0
+------1----1 0
+----1------1 0
+--------0000 0
+---0000-0--- 0
+---1-----1-- 0
+---1------1- 0
+-1---------1 0
+----11--0--- 0
+----1-1-0--- 0
+0----------0 0
+--1--------1 0
+-----11-0--- 0
+--------1-1- 0
+--------11-- 0
+---------11- 0
+--------1--1 0
+.names I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF \
+I3/int_Data1_i0_i2.BLIF I3/int_Data1_i0_i1.BLIF I3/int_Data1_i0_i0.BLIF \
+I3/n5955
+-1--0- 1
+-0--1- 1
+1--0-- 1
+0--1-- 1
+--1--0 1
+--0--1 1
+000000 0
+100100 0
+010010 0
+110110 0
+001001 0
+101101 0
+011011 0
+111111 0
+.names I3/timecnt_941_942__i5.BLIF I3/timecnt_941_942__i4.BLIF \
+I3/timecnt_941_942__i3.BLIF I3/timecnt_941_942__i2.BLIF \
+I3/timecnt_941_942__i1.BLIF I3/n8071
+11111 1
+---0- 0
+--0-- 0
+-0--- 0
+0---- 0
+----0 0
+.names I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/n11_adj_7
+--1- 1
+-1-- 1
+1--- 1
+---0 1
+0001 0
+.names I3/n11_adj_10.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF \
+I3/n5916
+-00-- 1
+-11-- 1
+---1- 1
+1---- 1
+----1 1
+01000 0
+00100 0
+.names I3/int_Data0_i0_i3.BLIF I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF \
+I3/int_Data0_i0_i0.BLIF I3/int_Data1_i0_i3.BLIF I3/int_Data1_i0_i2.BLIF \
+I3/int_Data1_i0_i1.BLIF I3/n6_adj_182
+1-11011 1
+1-1-101 1
+-11-011 1
+1-101-1 1
+-1-1111 1
+-1111-1 1
+11-11-1 1
+11---11 1
+-0-111- 0
+0--01-- 0
+--00-0- 0
+-0-00-- 0
+0-0--0- 0
+0-0-0-- 0
+----00- 0
+-00---- 0
+00----- 0
+------0 0
+.names I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF \
+I3/int_Data1_i0_i3.BLIF I3/int_Data1_i0_i2.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/n4_adj_183
+-11011 1
+1-11-1 1
+11--11 1
+0--1-- 0
+---00- 0
+-0-0-- 0
+--0-0- 0
+-00--- 0
+0-0--- 0
+-----0 0
+.names I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/n11_adj_46
+--1- 1
+-1-- 1
+0--- 1
+---1 1
+1000 0
+.names I3/flag_Cal_i0_i1.BLIF I3/flag_Cal_i0_i0.BLIF I3/int_Data0_i0_i7.BLIF \
+I3/int_Data0_i0_i6.BLIF I3/int_Data0_i0_i5.BLIF I3/int_Data0_i0_i4.BLIF \
+I3/int_Data0_i0_i3.BLIF I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF \
+I3/int_Data0_i0_i0.BLIF I3/int_Data1_i0_i3.BLIF I3/int_Data1_i0_i2.BLIF \
+I3/int_Data1_i0_i1.BLIF I3/int_Data1_i0_i0.BLIF I3/key_out_i0_i4reg.BLIF \
+I3/key_out_i0_i3reg.BLIF I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF \
+key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n4490
+----------0000-------- 1
+------1----000-------- 1
+-------1--0-00-------- 1
+------11----00-------- 1
+--------1-00-0-------- 1
+------1-1--0-0-------- 1
+-------11-0--0-------- 1
+------111----0-------- 1
+---------1000--------- 1
+------1--1-00--------- 1
+-------1-10-0--------- 1
+------11-1--0--------- 1
+--------1100---------- 1
+------1-11-0---------- 1
+-------1110----------- 1
+------1111------------ 1
+--------1-000--------- 1
+------1-1--00--------- 1
+-------11-0-0--------- 1
+------111---0--------- 1
+-------1--00---------- 1
+------11---0---------- 1
+------1---0----------- 1
+--------------------1- 1
+-------------------1-- 1
+------------------1--- 1
+-----------------1---- 1
+----------------1----- 1
+---------------1------ 1
+--------------0------- 1
+-----1---------------- 1
+----1----------------- 1
+---1------------------ 1
+--1------------------- 1
+-1-------------------- 1
+0--------------------- 1
+---------------------0 1
+100000---0111110000001 0
+1000000--0-11110000001 0
+100000-0-01-1110000001 0
+10000000-0--1110000001 0
+100000--0011-110000001 0
+1000000-00-1-110000001 0
+100000-0001--110000001 0
+1000000000---110000001 0
+100000--0-111-10000001 0
+1000000-0--11-10000001 0
+100000-00-1-1-10000001 0
+100000000---1-10000001 0
+100000-0--11--10000001 0
+10000000---1--10000001 0
+1000000---1---10000001 0
+.names I3/flag_Cal_i0_i1.BLIF I3/flag_Cal_i0_i0.BLIF I3/key_out_i0_i4reg.BLIF \
+I3/key_out_i0_i3reg.BLIF I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF \
+key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n4489
+--------1- 1
+-------1-- 1
+------1--- 1
+-----1---- 1
+----1----- 1
+---1------ 1
+--0------- 1
+-1-------- 1
+0--------- 1
+---------0 1
+1010000001 0
+.names I3/timecnt_941_942__i15.BLIF I3/timecnt_941_942__i14.BLIF \
+I3/timecnt_941_942__i13.BLIF I3/timecnt_941_942__i12.BLIF \
+I3/timecnt_941_942__i11.BLIF I3/timecnt_941_942__i10.BLIF \
+I3/timecnt_941_942__i9.BLIF I3/timecnt_941_942__i8.BLIF \
+I3/timecnt_941_942__i7.BLIF I3/timecnt_941_942__i6.BLIF \
+I3/timecnt_941_942__i5.BLIF I3/timecnt_941_942__i4.BLIF \
+I3/timecnt_941_942__i3.BLIF I3/timecnt_941_942__i2.BLIF \
+I3/timecnt_941_942__i1.BLIF I3/n29
+-------------0- 1
+------------0-- 1
+-----------0--- 1
+----------1---- 1
+---------0----- 1
+--------1------ 1
+-------1------- 1
+------0-------- 1
+-----1--------- 1
+----0---------- 1
+---1----------- 1
+--0------------ 1
+-0------------- 1
+0-------------- 1
+--------------0 1
+111010100101111 0
+.names I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/n11_adj_10
+--0- 1
+-1-- 1
+1--- 1
+---1 1
+0010 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/key_out_i0_i4reg.BLIF \
+I3/key_out_i0_i3reg.BLIF I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF \
+I3/i48.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n9419
+-00001-00-1 1
+1-0001-00-1 1
+--0010-0001 1
+--100011-00 1
+-010001---0 1
+1-10001---0 1
+--0-10-0010 1
+--0-01-0010 1
+--01001---0 1
+--00101--00 1
+--00011--00 1
+---1-----1- 1
+-0-------1- 1
+1--------1- 1
+01-0-1----1 0
+0110---0--- 0
+01-000-0--- 0
+----00---01 0
+--0000---0- 0
+01-0----11- 0
+01-0---1-1- 0
+01-011----- 0
+01-0-----11 0
+----11---0- 0
+---11----0- 0
+--11-----0- 0
+---1-1---0- 0
+--1-1----0- 0
+--1--1---0- 0
+--------101 0
+-------1-01 0
+------0--00 0
+.names I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF key_in0.BLIF key_in1.BLIF \
+key_in2.BLIF key_in3.BLIF I3/n8360
+--1----1 1
+0000---- 1
+----0000 1
+-----11- 1
+----1-1- 1
+----11-- 1
+-1-1---- 1
+1--1---- 1
+11------ 1
+--11---- 1
+-11----- 1
+1-1----- 1
+------11 1
+-----1-1 1
+----1--1 1
+00101000 0
+00100100 0
+00100010 0
+10000001 0
+01000001 0
+00010001 0
+10001000 0
+01001000 0
+00011000 0
+10000100 0
+01000100 0
+00010100 0
+10000010 0
+01000010 0
+00010010 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/key_out_i0_i4reg.BLIF \
+I3/key_out_i0_i3reg.BLIF I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF \
+I3/n11_adj_115.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n24
+--1----0--0 1
+--00------1 1
+1---------0 1
+-1--------0 1
+-------0000 1
+--0000----- 1
+--------1-1 1
+-1----1---- 1
+1-----1---- 1
+-------11-- 1
+-------1-1- 1
+----11----- 1
+---11------ 1
+--1-1------ 1
+---1-1----- 1
+---------11 1
+--------11- 1
+--1--1----- 1
+--11------- 1
+-------1--1 1
+--100000001 0
+--010000001 0
+000010-0100 0
+000001-0100 0
+000010-0010 0
+000001-0010 0
+001000-1000 0
+000010-1000 0
+000001-1000 0
+001000-0001 0
+000100-0100 0
+000100-0010 0
+000100-1000 0
+000100-0001 0
+.names I3/int_Data0_i0_i5.BLIF I3/int_Data1_i0_i0.BLIF I3/i2_adj_192.BLIF \
+I3/n8_adj_62.BLIF I3/n10_adj_58
+111- 1
+11-1 1
+--11 1
+-00- 0
+0-0- 0
+-0-0 0
+0--0 0
+--00 0
+.names key_in0.BLIF key_in1.BLIF I3/i48
+10 1
+01 1
+00 0
+11 0
+.names I3/int_Data0_i0_i4.BLIF I3/int_Data0_i0_i3.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/int_Data1_i0_i0.BLIF I3/i2_adj_253.BLIF I3/i2_adj_191.BLIF \
+I3/n4_adj_183.BLIF I3/n4_adj_76.BLIF I3/n8_adj_62
+-111010- 1
+-111111- 1
+11110-0- 1
+11111-1- 1
+-101110- 1
+-101011- 1
+-11-0101 1
+-11-1111 1
+10-11-0- 1
+10-10-1- 1
+1-011-0- 1
+1-010-1- 1
+-1110-01 1
+-1111-11 1
+-0--1101 1
+-1011-01 1
+-0--0111 1
+-1010-11 1
+--0-1101 1
+--0-0111 1
+11-1-1-- 1
+1--1-1-1 1
+11-1---1 1
+-11-1000 0
+-11-0010 0
+-1101-0- 0
+-1100-1- 0
+011-1-0- 0
+011-0-1- 0
+--0-0000 0
+--0-1010 0
+--000-0- 0
+--001-1- 0
+0-0-0-0- 0
+0-0-1-1- 0
+-0-00-0- 0
+-0-01-1- 0
+-0--000- 0
+-0--101- 0
+00--0-0- 0
+00--1-1- 0
+-0--0-00 0
+-0--1-10 0
+00---0-- 0
+---0-0-- 0
+0----0-0 0
+00-----0 0
+---0---0 0
+.names I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/n49_adj_150
+1000 1
+0100 1
+0010 1
+0001 1
+0000 0
+-11- 0
+1-1- 0
+11-- 0
+--11 0
+-1-1 0
+1--1 0
+.names I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/n97_adj_28.BLIF \
+key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n64
+----01--- 1
+-0------1 1
+-000-0--- 1
+-11--0--- 1
+-1-1-0--- 1
+--11-0--- 1
+1----0--- 1
+-----0000 1
+-----1-1- 1
+-----11-- 1
+------11- 1
+-----1--1 1
+-------11 1
+------1-1 1
+0100-0001 0
+0010-0100 0
+0001-0100 0
+0010-0010 0
+0001-0010 0
+0100-0100 0
+0100-0010 0
+----11000 0
+.names I3/n14_adj_107.BLIF I3/n14_adj_114.BLIF I3/n11_adj_115.BLIF I3/n14.BLIF \
+I3/n11_adj_7.BLIF I3/n5916.BLIF I3/n11_adj_46.BLIF I3/n9180
+11-1-1- 1
+1--1111 1
+-11--1- 1
+--1-111 1
+-0--0-- 0
+--00--- 0
+0-0---- 0
+-----0- 0
+-0----0 0
+.names I3/int_Data0_i0_i3.BLIF I3/int_Data1_i0_i0.BLIF I3/i2_adj_191.BLIF \
+I3/n4_adj_76.BLIF I3/n6_adj_67
+111- 1
+11-1 1
+--11 1
+-00- 0
+0-0- 0
+-0-0 0
+0--0 0
+--00 0
+.names I3/flag_Cal_i0_i1.BLIF I3/flag_Cal_i0_i0.BLIF I3/key_out_i0_i4reg.BLIF \
+I3/key_out_i0_i3reg.BLIF I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF \
+key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n8354
+--------1- 1
+-------1-- 1
+------1--- 1
+-----1---- 1
+----1----- 1
+---1------ 1
+--0------- 1
+-0-------- 1
+1--------- 1
+---------0 1
+0110000001 0
+.names I3/flag_Data_i0.BLIF I3/n9068.BLIF I3/key_out_i0_i4reg.BLIF \
+I3/key_out_i0_i3reg.BLIF I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF \
+I3/n11_adj_115.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF \
+I3/n9211
+-10-------0 1
+-1----1---1 1
+-1-1------0 1
+-1-----0--0 1
+-1-------1- 1
+-1------1-- 1
+-----1-1--- 1
+----1--1--- 1
+1------1--- 1
+-----11---- 1
+----1-1---- 1
+1-----1---- 1
+-----1---1- 1
+----1----1- 1
+1--------1- 1
+-----1--1-- 1
+----1---1-- 1
+1-------1-- 1
+-1-----1--1 1
+-----1----0 1
+----1-----0 1
+1---------0 1
+0-1000-1000 0
+------00001 0
+00--00----- 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/key_out_i0_i4reg.BLIF \
+I3/key_out_i0_i3reg.BLIF I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF \
+key_in0.BLIF key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/n8305
+0100010001 1
+0110000100 1
+0110000010 1
+0110000001 1
+--0------0 0
+-------000 0
+--0--0---- 0
+--1--1---- 0
+-------11- 0
+------1--- 0
+----1----- 0
+---1------ 0
+-0-------- 0
+1--------- 0
+--------11 0
+-------1-1 0
+.names I3/int_Data__i8.BLIF I3/int_Data__i7.BLIF I3/int_Data__i6.BLIF \
+I3/int_Data__i5.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/led_int_Data1_3__N_385
+000011- 1
+000100- 1
+00001-1 1
+----100 0
+----01- 0
+---00-- 0
+---11-- 0
+--1---- 0
+-1----- 0
+1------ 0
+.names I3/int_Data__i8.BLIF I3/int_Data__i7.BLIF I3/int_Data__i6.BLIF \
+I3/int_Data__i5.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/n731
+00011-0 1
+000101- 1
+000110- 1
+----111 0
+----00- 0
+---0--- 0
+--1---- 0
+-1----- 0
+1------ 0
+.names I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF \
+I3/int_Data1_i0_i2.BLIF I3/int_Data1_i0_i1.BLIF I3/int_Data1_i0_i0.BLIF \
+I3/n4_adj_76
+-11011 1
+1-11-1 1
+11--11 1
+0--1-- 0
+---00- 0
+-0-0-- 0
+--0-0- 0
+-00--- 0
+0-0--- 0
+-----0 0
+.names I3/int_Data__i8.BLIF I3/int_Data__i7.BLIF I3/int_Data__i6.BLIF \
+I3/int_Data__i5.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/n757
+0011000 1
+00101-- 1
+----01- 0
+----0-1 0
+---00-- 0
+---11-- 0
+--0---- 0
+-1----- 0
+1------ 0
+.names I3/int_Data__i8.BLIF I3/int_Data__i7.BLIF I3/int_Data__i6.BLIF \
+I3/int_Data__i5.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/n770
+00110-1 1
+001101- 1
+001110- 1
+----000 0
+----11- 0
+---0--- 0
+--0---- 0
+-1----- 0
+1------ 0
+.names I3/int_Data__i8.BLIF I3/int_Data__i7.BLIF I3/int_Data__i6.BLIF \
+I3/int_Data__i5.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/n783
+010000- 1
+001111- 1
+01000-0 1
+----011 0
+-0---0- 0
+--1-0-- 0
+---01-- 0
+-1-1--- 0
+-00---- 0
+1------ 0
+.names I3/int_Data__i8.BLIF I3/int_Data__i7.BLIF I3/int_Data__i6.BLIF \
+I3/int_Data__i5.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/n796
+01001-- 1
+0100-11 1
+----00- 0
+----0-0 0
+---1--- 0
+--1---- 0
+-0----- 0
+1------ 0
+.names I3/led_int_Data0_i4reg.BLIF I3/led_int_Data0_i3reg.BLIF \
+I3/led_int_Data0_i2reg.BLIF I3/led_int_Data0_i1reg.BLIF \
+I3/led_int_Data1_i4reg.BLIF I3/led_int_Data1_i3reg.BLIF \
+I3/led_int_Data1_i2reg.BLIF I3/led_int_Data1_i1reg.BLIF \
+I3/led_int_Data2_i4reg.BLIF I3/led_int_Data2_i1reg.BLIF I59/scancnt__i1.BLIF \
+I59/scancnt__i0.BLIF I59/LED_A_108reg.D
+----1010--01 1
+1010------00 1
+----0100--01 1
+----0001--01 1
+0100------00 1
+0001------00 1
+--------011- 1
+--------1-10 1
+-11-------00 0
+00-0------00 0
+--11------00 0
+-----000--01 0
+----11----01 0
+----1--1--01 0
+1-0-------00 0
+----0-1---01 0
+--------001- 0
+-1-1------00 0
+-----1-1--01 0
+--------1-11 0
+.names reset.BLIF I59/LED_A_108reg.AP
+0 1
+1 0
+.names I3/led_int_Data0_i4reg.BLIF I3/led_int_Data0_i3reg.BLIF \
+I3/led_int_Data0_i2reg.BLIF I3/led_int_Data0_i1reg.BLIF \
+I3/led_int_Data1_i4reg.BLIF I3/led_int_Data1_i3reg.BLIF \
+I3/led_int_Data1_i2reg.BLIF I3/led_int_Data1_i1reg.BLIF \
+I3/led_int_Data2_i4reg.BLIF I59/scancnt__i1.BLIF I59/scancnt__i0.BLIF \
+I59/LED_B_109reg.D
+----1010-01 1
+----0101-01 1
+1010-----00 1
+0101-----00 1
+----0110-01 1
+0110-----00 1
+--------110 1
+-0-1-----00 0
+----1--1--1 0
+00-------00 0
+--00-----00 0
+--11-----00 0
+11-------00 0
+----00----1 0
+--------01- 0
+------00--1 0
+------11--1 0
+----11----1 0
+---------11 0
+.names reset.BLIF I59/LED_B_109reg.AP
+0 1
+1 0
+.names I3/led_int_Data0_i3reg.BLIF I3/led_int_Data0_i2reg.BLIF \
+I3/led_int_Data0_i1reg.BLIF I3/led_int_Data1_i3reg.BLIF \
+I3/led_int_Data1_i2reg.BLIF I3/led_int_Data1_i1reg.BLIF \
+I3/led_int_Data2_i4reg.BLIF I59/scancnt__i1.BLIF I59/scancnt__i0.BLIF \
+I59/LED_C_110reg.D
+---010-01 1
+010----00 1
+------110 1
+------01- 0
+--1----00 0
+-0-----00 0
+1------00 0
+-----1--1 0
+----0---1 0
+---1----1 0
+-------11 0
+.names reset.BLIF I59/LED_C_110reg.AP
+0 1
+1 0
+.names I3/led_int_Data0_i4reg.BLIF I3/led_int_Data0_i3reg.BLIF \
+I3/led_int_Data0_i2reg.BLIF I3/led_int_Data0_i1reg.BLIF \
+I3/led_int_Data1_i4reg.BLIF I3/led_int_Data1_i3reg.BLIF \
+I3/led_int_Data1_i2reg.BLIF I3/led_int_Data1_i1reg.BLIF \
+I3/led_int_Data2_i4reg.BLIF I3/led_int_Data2_i1reg.BLIF I59/scancnt__i1.BLIF \
+I59/scancnt__i0.BLIF I59/LED_D_111reg.D
+----1010--01 1
+1010------00 1
+----0100--01 1
+----0001--01 1
+----0111--01 1
+0100------00 1
+0001------00 1
+0111------00 1
+--------011- 1
+--------1-10 1
+001-------00 0
+-----011--01 0
+1-0-------00 0
+-110------00 0
+----1-0---01 0
+-----110--01 0
+00-0------00 0
+----00-0--01 0
+1--1------00 0
+----1--1--01 0
+-101------00 0
+-----101--01 0
+--------001- 0
+--------1-11 0
+.names reset.BLIF I59/LED_D_111reg.AP
+0 1
+1 0
+.names I3/led_int_Data0_i4reg.BLIF I3/led_int_Data0_i3reg.BLIF \
+I3/led_int_Data0_i2reg.BLIF I3/led_int_Data0_i1reg.BLIF \
+I3/led_int_Data1_i4reg.BLIF I3/led_int_Data1_i3reg.BLIF \
+I3/led_int_Data1_i2reg.BLIF I3/led_int_Data1_i1reg.BLIF \
+I3/led_int_Data2_i4reg.BLIF I3/led_int_Data2_i1reg.BLIF I59/scancnt__i1.BLIF \
+I59/scancnt__i0.BLIF I59/LED_E_112reg.D
+----1010--01 1
+1010------00 1
+-----001--01 1
+-001------00 1
+----010---01 1
+010-------00 1
+--------011- 1
+----0--1--01 1
+0--1------00 1
+--------1-10 1
+-000------00 0
+0-10------00 0
+-----000--01 0
+----0-10--01 0
+1-11------00 0
+----1-11--01 0
+--------001- 0
+11--------00 0
+----11----01 0
+--------1-11 0
+.names reset.BLIF I59/LED_E_112reg.AP
+0 1
+1 0
+.names I3/led_int_Data0_i4reg.BLIF I3/led_int_Data0_i3reg.BLIF \
+I3/led_int_Data0_i2reg.BLIF I3/led_int_Data0_i1reg.BLIF \
+I3/led_int_Data1_i4reg.BLIF I3/led_int_Data1_i3reg.BLIF \
+I3/led_int_Data1_i2reg.BLIF I3/led_int_Data1_i1reg.BLIF \
+I3/led_int_Data2_i4reg.BLIF I3/led_int_Data2_i1reg.BLIF I59/scancnt__i1.BLIF \
+I59/scancnt__i0.BLIF I59/LED_F_113reg.D
+-----010--01 1
+-010------00 1
+----0-11--01 1
+----00-1--01 1
+0-11------00 1
+00-1------00 1
+--------011- 1
+--------1-10 1
+--------001- 0
+1--1------00 0
+----1--1--01 0
+--00------00 0
+-1-0------00 0
+-10-------00 0
+------00--01 0
+-----1-0--01 0
+-----10---01 0
+--------1-11 0
+.names reset.BLIF I59/LED_F_113reg.AP
+0 1
+1 0
+.names I3/led_int_Data0_i4reg.BLIF I3/led_int_Data0_i3reg.BLIF \
+I3/led_int_Data0_i2reg.BLIF I3/led_int_Data0_i1reg.BLIF \
+I3/led_int_Data1_i4reg.BLIF I3/led_int_Data1_i3reg.BLIF \
+I3/led_int_Data1_i2reg.BLIF I3/led_int_Data1_i1reg.BLIF \
+I3/led_int_Data2_i4reg.BLIF I3/led_int_Data2_i1reg.BLIF I59/scancnt__i1.BLIF \
+I59/scancnt__i0.BLIF I59/LED_G_114reg.D
+-111------00 1
+----000----1 1
+000-------00 1
+-----111---1 1
+---------01- 1
+----1-1----1 1
+----11-----1 1
+1-1-------00 1
+11--------00 1
+--------0-1- 1
+----------11 1
+0-10------00 0
+----01-0--01 0
+--------1110 0
+----100---01 0
+100-------00 0
+----001---01 0
+001-------00 0
+----010---01 0
+010-------00 0
+.names reset.BLIF I59/LED_G_114reg.AP
+0 1
+1 0
+.names reset.BLIF I59/LED_VCC2_116reg.AR
+0 1
+1 0
+.names reset.BLIF I59/LED_VCC3_117reg.AR
+0 1
+1 0
+.names reset.BLIF I59/LED_VCC4_118reg.AR
+0 1
+1 0
+.names I59/count_186__i7.BLIF I59/count_186__i6.BLIF I59/count_186__i5.BLIF \
+I59/count_186__i4.BLIF I59/count_186__i3.BLIF I59/n818.BLIF I59/n853
+111111 1
+----0- 0
+---0-- 0
+--0--- 0
+-0---- 0
+0----- 0
+-----0 0
+.names reset.BLIF I59/count_186__i12.AR
+0 1
+1 0
+.names reset.BLIF I59/count_186__i11.AR
+0 1
+1 0
+.names reset.BLIF I59/count_186__i10.AR
+0 1
+1 0
+.names I59/n853.BLIF I59/count_186__i10.BLIF I59/count_186__i9.BLIF \
+I59/count_186__i8.BLIF I59/n51.BLIF I59/count_186__i10.D
+10110 1
+-1-00 1
+-10-0 1
+01--0 1
+1111- 0
+-0-0- 0
+-00-- 0
+00--- 0
+----1 0
+.names reset.BLIF I59/count_186__i9.AR
+0 1
+1 0
+.names I59/n853.BLIF I59/count_186__i9.BLIF I59/count_186__i8.BLIF \
+I59/n51.BLIF I59/count_186__i9.D
+1010 1
+-100 1
+01-0 1
+111- 0
+-00- 0
+00-- 0
+---1 0
+.names reset.BLIF I59/count_186__i8.AR
+0 1
+1 0
+.names I59/n853.BLIF I59/count_186__i8.BLIF I59/n51.BLIF I59/count_186__i8.D
+100 1
+010 1
+00- 0
+11- 0
+--1 0
+.names reset.BLIF I59/count_186__i7.AR
+0 1
+1 0
+.names reset.BLIF I59/count_186__i6.AR
+0 1
+1 0
+.names reset.BLIF I59/count_186__i5.AR
+0 1
+1 0
+.names I59/count_186__i5.BLIF I59/count_186__i4.BLIF I59/count_186__i3.BLIF \
+I59/n818.BLIF I59/n51.BLIF I59/count_186__i5.D
+01110 1
+1--00 1
+1-0-0 1
+10--0 1
+1111- 0
+0--0- 0
+0-0-- 0
+00--- 0
+----1 0
+.names reset.BLIF I59/count_186__i4.AR
+0 1
+1 0
+.names I59/count_186__i4.BLIF I59/count_186__i3.BLIF I59/n818.BLIF \
+I59/n51.BLIF I59/count_186__i4.D
+0110 1
+1-00 1
+10-0 1
+111- 0
+0-0- 0
+00-- 0
+---1 0
+.names reset.BLIF I59/count_186__i3.AR
+0 1
+1 0
+.names I59/count_186__i3.BLIF I59/n818.BLIF I59/n51.BLIF I59/count_186__i3.D
+100 1
+010 1
+00- 0
+11- 0
+--1 0
+.names I59/count_186__i2.BLIF I59/count_186__i1.BLIF I59/count_186__i0.BLIF \
+I59/n818
+111 1
+-0- 0
+0-- 0
+--0 0
+.names reset.BLIF I59/count_186__i2.AR
+0 1
+1 0
+.names I59/count_186__i2.BLIF I59/count_186__i1.BLIF I59/count_186__i0.BLIF \
+I59/count_186__i2.D
+011 1
+10- 1
+1-0 1
+111 0
+00- 0
+0-0 0
+.names reset.BLIF I59/count_186__i1.AR
+0 1
+1 0
+.names reset.BLIF I59/count_186__i0.AR
+0 1
+1 0
+.names I59/count_186__i0.BLIF I59/count_186__i0.D
+0 1
+1 0
+.names I59/count_186__i12.BLIF I59/count_186__i11.BLIF I59/count_186__i10.BLIF \
+I59/count_186__i9.BLIF I59/count_186__i8.BLIF I59/count_186__i7.BLIF \
+I59/count_186__i6.BLIF I59/count_186__i5.BLIF I59/count_186__i4.BLIF \
+I59/count_186__i3.BLIF I59/count_186__i2.BLIF I59/count_186__i1.BLIF \
+I59/count_186__i0.BLIF I59/n51
+1011101101111 1
+-----------0- 0
+----------0-- 0
+---------0--- 0
+--------1---- 0
+-------0----- 0
+------0------ 0
+-----1------- 0
+----0-------- 0
+---0--------- 0
+--0---------- 0
+-1----------- 0
+0------------ 0
+------------0 0
+.names I3/PointTime_223reg.BLIF PointTime
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i15.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i14.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i13.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i12.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i11.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i10.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i9.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i8.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i7.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i6.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i5.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i4.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i3.C
+1 1
+0 0
+.names clk.BLIF I3/timecnt_941_942__i2.C
+1 1
+0 0
+.names I3/n85.BLIF I3/n8948.BLIF I3/int_Data__i1.CE
+10 1
+0- 0
+-1 0
+.names I3/time10ms_215.BLIF I3/int_Data__i1.C
+1 1
+0 0
+.names I3/timecnt_941_942__i1.BLIF I3/timecnt_941_942__i1.D
+0 1
+1 0
+.names clk.BLIF I3/timecnt_941_942__i1.C
+1 1
+0 0
+.names reset.BLIF I3/time10ms_215.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/n29.BLIF I3/time10ms_215.D
+00 1
+11 1
+10 0
+01 0
+.names clk.BLIF I3/time10ms_215.C
+1 1
+0 0
+.names I3/scanvalue_FSM_i1.BLIF I3/scanvalue_FSM_i0.D
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/scanvalue_FSM_i0.C
+1 1
+0 0
+.names I3/scanvalue_FSM_i2.BLIF I3/scanvalue_FSM_i1.D
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/scanvalue_FSM_i1.C
+1 1
+0 0
+.names I3/scanvalue_FSM_i3.BLIF I3/scanvalue_FSM_i2.D
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/scanvalue_FSM_i2.C
+1 1
+0 0
+.names I3/scanvalue_FSM_i0.BLIF I3/scanvalue_FSM_i3.D
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/scanvalue_FSM_i3.C
+1 1
+0 0
+.names I3/n5795.BLIF I3/flag_Data_i1.D
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/flag_Data_i1.C
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/flag_Data_i0.C
+1 1
+0 0
+.names I3/n11_adj_46.BLIF I3/n8305.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF \
+key_in3.BLIF I3/flag_Cal_i0_i1.CE
+0-0001 1
+-1---- 1
+-0--1- 0
+-0-1-- 0
+-01--- 0
+10---- 0
+-0---0 0
+.names I3/n14.BLIF I3/n11_adj_7.BLIF I3/n11_adj_46.BLIF key_in0.BLIF \
+key_in1.BLIF key_in2.BLIF key_in3.BLIF I3/flag_Cal_i0_i1.D
+-0-0001 1
+0-0---- 1
+--1--1- 0
+1----1- 0
+--1-1-- 0
+1---1-- 0
+--11--- 0
+1--1--- 0
+-11---- 0
+11----- 0
+--1---0 0
+1-----0 0
+.names I3/time10ms_215.BLIF I3/flag_Cal_i0_i1.C
+1 1
+0 0
+.names I3/n11_adj_46.BLIF I3/n8305.BLIF key_in0.BLIF key_in1.BLIF key_in2.BLIF \
+key_in3.BLIF I3/flag_Cal_i0_i0.CE
+0-0001 1
+-1---- 1
+-0--1- 0
+-0-1-- 0
+-01--- 0
+10---- 0
+-0---0 0
+.names I3/time10ms_215.BLIF I3/flag_Cal_i0_i0.C
+1 1
+0 0
+.names I3/n4679.BLIF I3/int_Data0_i0_i7.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/int_Data0_i0_i7.C
+1 1
+0 0
+.names I3/n4679.BLIF I3/int_Data0_i0_i6.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/int_Data0_i0_i6.C
+1 1
+0 0
+.names I3/n4679.BLIF I3/int_Data0_i0_i5.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/int_Data0_i0_i5.C
+1 1
+0 0
+.names I3/n4679.BLIF I3/int_Data0_i0_i4.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/int_Data0_i0_i4.C
+1 1
+0 0
+.names I3/n4679.BLIF I3/int_Data0_i0_i3.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/int_Data0_i0_i3.C
+1 1
+0 0
+.names I3/n4679.BLIF I3/int_Data0_i0_i2.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/int_Data0_i0_i2.C
+1 1
+0 0
+.names I3/n4679.BLIF I3/int_Data0_i0_i1.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/int_Data0_i0_i1.C
+1 1
+0 0
+.names I3/n4679.BLIF I3/int_Data0_i0_i0.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/int_Data0_i0_i0.C
+1 1
+0 0
+.names I3/n4679.BLIF I3/int_Data1_i0_i3.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/int_Data1_i0_i3.C
+1 1
+0 0
+.names I3/n4679.BLIF I3/int_Data1_i0_i2.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/int_Data1_i0_i2.C
+1 1
+0 0
+.names I3/n4679.BLIF I3/int_Data1_i0_i1.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/int_Data1_i0_i1.C
+1 1
+0 0
+.names I3/n4679.BLIF I3/int_Data1_i0_i0.CE
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/int_Data1_i0_i0.C
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/PointTime_223reg.C
+1 1
+0 0
+.names I3/n85.BLIF I3/n8948.BLIF I3/int_Data__i8.CE
+10 1
+0- 0
+-1 0
+.names I3/time10ms_215.BLIF I3/int_Data__i8.C
+1 1
+0 0
+.names I3/n85.BLIF I3/n8948.BLIF I3/int_Data__i7.CE
+10 1
+0- 0
+-1 0
+.names I3/time10ms_215.BLIF I3/int_Data__i7.C
+1 1
+0 0
+.names I3/n85.BLIF I3/n8948.BLIF I3/int_Data__i6.CE
+10 1
+0- 0
+-1 0
+.names I3/time10ms_215.BLIF I3/int_Data__i6.C
+1 1
+0 0
+.names I3/n85.BLIF I3/n8948.BLIF I3/int_Data__i5.CE
+10 1
+0- 0
+-1 0
+.names I3/time10ms_215.BLIF I3/int_Data__i5.C
+1 1
+0 0
+.names I3/n85.BLIF I3/n8948.BLIF I3/int_Data__i4.CE
+10 1
+0- 0
+-1 0
+.names I3/time10ms_215.BLIF I3/int_Data__i4.C
+1 1
+0 0
+.names I3/n85.BLIF I3/n8948.BLIF I3/int_Data__i3.CE
+10 1
+0- 0
+-1 0
+.names I3/time10ms_215.BLIF I3/int_Data__i3.C
+1 1
+0 0
+.names I3/n85.BLIF I3/n8948.BLIF I3/int_Data__i2.CE
+10 1
+0- 0
+-1 0
+.names I3/time10ms_215.BLIF I3/int_Data__i2.C
+1 1
+0 0
+.names reset.BLIF I3/key_out_i0_i4reg.CE
+1 1
+0 0
+.names I3/scanvalue_FSM_i0.BLIF I3/key_out_i0_i4reg.D
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/key_out_i0_i4reg.C
+1 1
+0 0
+.names reset.BLIF I3/key_out_i0_i3reg.CE
+1 1
+0 0
+.names I3/scanvalue_FSM_i1.BLIF I3/key_out_i0_i3reg.D
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/key_out_i0_i3reg.C
+1 1
+0 0
+.names reset.BLIF I3/key_out_i0_i2reg.CE
+1 1
+0 0
+.names I3/scanvalue_FSM_i2.BLIF I3/key_out_i0_i2reg.D
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/key_out_i0_i2reg.C
+1 1
+0 0
+.names reset.BLIF I3/key_out_i0_i1reg.CE
+1 1
+0 0
+.names I3/scanvalue_FSM_i3.BLIF I3/key_out_i0_i1reg.D
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/key_out_i0_i1reg.C
+1 1
+0 0
+.names clk.BLIF I3/led_int_Data0_i4reg.C
+1 1
+0 0
+.names clk.BLIF I3/led_int_Data0_i3reg.C
+1 1
+0 0
+.names clk.BLIF I3/led_int_Data0_i2reg.C
+1 1
+0 0
+.names I3/int_Data__i1.BLIF I3/led_int_Data0_i1reg.D
+1 1
+0 0
+.names clk.BLIF I3/led_int_Data0_i1reg.C
+1 1
+0 0
+.names clk.BLIF I3/led_int_Data1_i4reg.C
+1 1
+0 0
+.names clk.BLIF I3/led_int_Data1_i3reg.C
+1 1
+0 0
+.names clk.BLIF I3/led_int_Data1_i2reg.C
+1 1
+0 0
+.names clk.BLIF I3/led_int_Data1_i1reg.C
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/led_int_Data2_i4reg.C
+1 1
+0 0
+.names I3/time10ms_215.BLIF I3/led_int_Data2_i1reg.C
+1 1
+0 0
+.names I3/key_out_i0_i1reg.BLIF key_out1
+1 1
+0 0
+.names I3/key_out_i0_i2reg.BLIF key_out2
+1 1
+0 0
+.names I3/key_out_i0_i3reg.BLIF key_out3
+1 1
+0 0
+.names I3/key_out_i0_i4reg.BLIF key_out4
+1 1
+0 0
+.names I59/LED_A_108reg.BLIF a
+1 1
+0 0
+.names I59/LED_B_109reg.BLIF b
+1 1
+0 0
+.names I59/LED_C_110reg.BLIF c
+1 1
+0 0
+.names I59/LED_D_111reg.BLIF d
+1 1
+0 0
+.names I59/LED_E_112reg.BLIF e
+1 1
+0 0
+.names I59/LED_F_113reg.BLIF f
+1 1
+0 0
+.names I59/LED_G_114reg.BLIF g
+1 1
+0 0
+.names LEDVCC1
+ 0
+.names I59/LED_VCC2_116reg.BLIF LEDVCC2
+1 1
+0 0
+.names I59/LED_VCC3_117reg.BLIF LEDVCC3
+1 1
+0 0
+.names I59/LED_VCC4_118reg.BLIF LEDVCC4
+1 1
+0 0
+.names I59/LED_A_108reg.CE
+ 1
+.names clk.BLIF I59/LED_A_108reg.C
+1 1
+0 0
+.names I59/LED_B_109reg.CE
+ 1
+.names clk.BLIF I59/LED_B_109reg.C
+1 1
+0 0
+.names I59/LED_C_110reg.CE
+ 1
+.names clk.BLIF I59/LED_C_110reg.C
+1 1
+0 0
+.names I59/LED_D_111reg.CE
+ 1
+.names clk.BLIF I59/LED_D_111reg.C
+1 1
+0 0
+.names I59/LED_E_112reg.CE
+ 1
+.names clk.BLIF I59/LED_E_112reg.C
+1 1
+0 0
+.names I59/LED_F_113reg.CE
+ 1
+.names clk.BLIF I59/LED_F_113reg.C
+1 1
+0 0
+.names I59/LED_G_114reg.CE
+ 1
+.names clk.BLIF I59/LED_G_114reg.C
+1 1
+0 0
+.names I59/LED_VCC2_116reg.CE
+ 1
+.names I59/scancnt__i1.BLIF I59/scancnt__i0.BLIF I59/LED_VCC2_116reg.D
+10 1
+0- 0
+-1 0
+.names clk.BLIF I59/LED_VCC2_116reg.C
+1 1
+0 0
+.names I59/LED_VCC3_117reg.CE
+ 1
+.names I59/scancnt__i1.BLIF I59/scancnt__i0.BLIF I59/LED_VCC3_117reg.D
+01 1
+1- 0
+-0 0
+.names clk.BLIF I59/LED_VCC3_117reg.C
+1 1
+0 0
+.names I59/LED_VCC4_118reg.CE
+ 1
+.names I59/scancnt__i1.BLIF I59/scancnt__i0.BLIF I59/LED_VCC4_118reg.D
+00 1
+1- 0
+-1 0
+.names clk.BLIF I59/LED_VCC4_118reg.C
+1 1
+0 0
+.names reset.BLIF I59/count_186__i12.BLIF I59/count_186__i11.BLIF \
+I59/count_186__i10.BLIF I59/count_186__i9.BLIF I59/count_186__i8.BLIF \
+I59/count_186__i7.BLIF I59/count_186__i6.BLIF I59/count_186__i5.BLIF \
+I59/count_186__i4.BLIF I59/count_186__i3.BLIF I59/count_186__i2.BLIF \
+I59/count_186__i1.BLIF I59/count_186__i0.BLIF I59/scancnt__i1.CE
+11011101101111 1
+------------0- 0
+-----------0-- 0
+----------0--- 0
+---------1---- 0
+--------0----- 0
+-------0------ 0
+------1------- 0
+-----0-------- 0
+----0--------- 0
+---0---------- 0
+--1----------- 0
+-0------------ 0
+0------------- 0
+-------------0 0
+.names I59/scancnt__i1.BLIF I59/scancnt__i0.BLIF I59/scancnt__i1.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I59/scancnt__i1.C
+1 1
+0 0
+.names clk.BLIF I59/scancnt__i0.C
+1 1
+0 0
+.names clk.BLIF I59/count_186__i12.C
+1 1
+0 0
+.names clk.BLIF I59/count_186__i11.C
+1 1
+0 0
+.names clk.BLIF I59/count_186__i10.C
+1 1
+0 0
+.names clk.BLIF I59/count_186__i9.C
+1 1
+0 0
+.names clk.BLIF I59/count_186__i8.C
+1 1
+0 0
+.names clk.BLIF I59/count_186__i7.C
+1 1
+0 0
+.names clk.BLIF I59/count_186__i6.C
+1 1
+0 0
+.names clk.BLIF I59/count_186__i5.C
+1 1
+0 0
+.names clk.BLIF I59/count_186__i4.C
+1 1
+0 0
+.names clk.BLIF I59/count_186__i3.C
+1 1
+0 0
+.names clk.BLIF I59/count_186__i2.C
+1 1
+0 0
+.names I59/count_186__i1.BLIF I59/count_186__i0.BLIF I59/count_186__i1.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I59/count_186__i1.C
+1 1
+0 0
+.names clk.BLIF I59/count_186__i0.C
+1 1
+0 0
+.names I3/i2_adj_253.BLIF I3/i2_adj_193.X1
+0 1
+1 0
+.names I3/int_Data0_i0_i3.BLIF I3/int_Data1_i0_i1.BLIF I3/i2_adj_253.BLIF \
+I3/n4_adj_183.BLIF I3/i2_adj_193.X2
+0--0 1
+-0-0 1
+11-1 1
+0--1 0
+-0-1 0
+11-0 0
+.names I3/timecnt_941_942__i15.BLIF I3/timecnt_941_942__i15.D.X1
+1 1
+0 0
+.names I3/timecnt_941_942__i15.BLIF I3/timecnt_941_942__i14.BLIF \
+I3/timecnt_941_942__i13.BLIF I3/timecnt_941_942__i12.BLIF \
+I3/timecnt_941_942__i11.BLIF I3/n8106.BLIF I3/n29.BLIF \
+I3/timecnt_941_942__i15.D.X2
+-111111 1
+1-----0 1
+111111- 1
+-0----1 0
+--0---1 0
+---0--1 0
+----0-1 0
+-----01 0
+0-----0 0
+.names I3/timecnt_941_942__i14.BLIF I3/timecnt_941_942__i14.D.X1
+1 1
+0 0
+.names I3/timecnt_941_942__i14.BLIF I3/timecnt_941_942__i13.BLIF \
+I3/timecnt_941_942__i12.BLIF I3/timecnt_941_942__i11.BLIF I3/n8106.BLIF \
+I3/n29.BLIF I3/timecnt_941_942__i14.D.X2
+-11111 1
+1----0 1
+11111- 1
+-0---1 0
+--0--1 0
+---0-1 0
+----01 0
+0----0 0
+.names I3/timecnt_941_942__i10.BLIF I3/timecnt_941_942__i10.D.X1
+1 1
+0 0
+.names I3/timecnt_941_942__i10.BLIF I3/timecnt_941_942__i9.BLIF \
+I3/timecnt_941_942__i8.BLIF I3/timecnt_941_942__i7.BLIF \
+I3/timecnt_941_942__i6.BLIF I3/n8071.BLIF I3/n29.BLIF \
+I3/timecnt_941_942__i10.D.X2
+-111111 1
+1-----0 1
+111111- 1
+-0----1 0
+--0---1 0
+---0--1 0
+----0-1 0
+-----01 0
+0-----0 0
+.names I3/timecnt_941_942__i9.BLIF I3/timecnt_941_942__i9.D.X1
+1 1
+0 0
+.names I3/timecnt_941_942__i9.BLIF I3/timecnt_941_942__i8.BLIF \
+I3/timecnt_941_942__i7.BLIF I3/timecnt_941_942__i6.BLIF I3/n8071.BLIF \
+I3/n29.BLIF I3/timecnt_941_942__i9.D.X2
+-11111 1
+1----0 1
+11111- 1
+-0---1 0
+--0--1 0
+---0-1 0
+----01 0
+0----0 0
+.names I3/timecnt_941_942__i5.BLIF I3/timecnt_941_942__i5.D.X1
+1 1
+0 0
+.names I3/timecnt_941_942__i5.BLIF I3/timecnt_941_942__i4.BLIF \
+I3/timecnt_941_942__i3.BLIF I3/timecnt_941_942__i2.BLIF \
+I3/timecnt_941_942__i1.BLIF I3/n29.BLIF I3/timecnt_941_942__i5.D.X2
+-11111 1
+1----0 1
+11111- 1
+-0---1 0
+--0--1 0
+---0-1 0
+----01 0
+0----0 0
+.names I3/int_Data__i4.BLIF I3/i2_adj_48.X1
+1 1
+0 0
+.names I3/n3205.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/led_int_Data1_3__N_385.BLIF I3/n731.BLIF \
+I3/i2_adj_48.X2
+0---01 1
+0-11-- 1
+1-01-- 1
+--0-01 1
+1-1-1- 1
+1-1--0 1
+0-0-1- 0
+0--01- 0
+--001- 0
+0-0--0 0
+0--0-0 0
+--00-0 0
+1-1-01 0
+.names I3/flag_Data_i1.BLIF I3/int_Data0_i0_i7.BLIF I3/int_Data0_i0_i7.D.X1
+11 1
+0- 0
+-0 0
+.names I3/flag_Data_i1.BLIF I3/int_Data0_i0_i7.BLIF I3/n14_adj_107.BLIF \
+I3/n14_adj_114.BLIF I3/n11_adj_115.BLIF I3/n14.BLIF I3/n11_adj_7.BLIF \
+I3/n11_adj_46.BLIF I3/n11_adj_10.BLIF I3/int_Data0_i0_i7.D.X2
+1111-1--- 1
+11-11-1-1 1
+11--1-111 1
+0-------- 0
+-0------- 0
+--0-0---- 0
+---00---- 0
+----00--- 0
+--0---0-- 0
+---0--0-- 0
+-----00-- 0
+---0---0- 0
+--0-----0 0
+---0----0 0
+-----0--0 0
+.names I3/flag_Data_i1.BLIF I3/int_Data0_i0_i6.BLIF I3/int_Data0_i0_i6.D.X1
+11 1
+0- 0
+-0 0
+.names I3/flag_Data_i1.BLIF I3/int_Data0_i0_i6.BLIF I3/n14_adj_107.BLIF \
+I3/n14_adj_114.BLIF I3/n11_adj_115.BLIF I3/n14.BLIF I3/n11_adj_7.BLIF \
+I3/n11_adj_46.BLIF I3/n11_adj_10.BLIF I3/int_Data0_i0_i6.D.X2
+1111-1--- 1
+11-11-1-1 1
+11--1-111 1
+0-------- 0
+-0------- 0
+--0-0---- 0
+---00---- 0
+----00--- 0
+--0---0-- 0
+---0--0-- 0
+-----00-- 0
+---0---0- 0
+--0-----0 0
+---0----0 0
+-----0--0 0
+.names I3/flag_Data_i1.BLIF I3/int_Data0_i0_i5.BLIF I3/int_Data0_i0_i5.D.X1
+11 1
+0- 0
+-0 0
+.names I3/flag_Data_i1.BLIF I3/int_Data0_i0_i5.BLIF I3/n14_adj_107.BLIF \
+I3/n14_adj_114.BLIF I3/n11_adj_115.BLIF I3/n14.BLIF I3/n11_adj_7.BLIF \
+I3/n11_adj_46.BLIF I3/n11_adj_10.BLIF I3/int_Data0_i0_i5.D.X2
+1111-1--- 1
+11-11-1-1 1
+11--1-111 1
+0-------- 0
+-0------- 0
+--0-0---- 0
+---00---- 0
+----00--- 0
+--0---0-- 0
+---0--0-- 0
+-----00-- 0
+---0---0- 0
+--0-----0 0
+---0----0 0
+-----0--0 0
+.names I3/flag_Data_i1.BLIF I3/int_Data0_i0_i4.BLIF I3/int_Data0_i0_i4.D.X1
+11 1
+0- 0
+-0 0
+.names I3/flag_Data_i1.BLIF I3/int_Data0_i0_i4.BLIF I3/n14_adj_107.BLIF \
+I3/n14_adj_114.BLIF I3/n11_adj_115.BLIF I3/n14.BLIF I3/n11_adj_7.BLIF \
+I3/n11_adj_46.BLIF I3/n11_adj_10.BLIF I3/int_Data0_i0_i4.D.X2
+1111-1--- 1
+11-11-1-1 1
+11--1-111 1
+0-------- 0
+-0------- 0
+--0-0---- 0
+---00---- 0
+----00--- 0
+--0---0-- 0
+---0--0-- 0
+-----00-- 0
+---0---0- 0
+--0-----0 0
+---0----0 0
+-----0--0 0
+.names I3/flag_Data_i1.BLIF I3/int_Data0_i0_i3.BLIF I3/int_Data0_i0_i3.D.X1
+11 1
+0- 0
+-0 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/int_Data0_i0_i3.BLIF \
+I3/n14_adj_107.BLIF I3/n14_adj_114.BLIF I3/n11_adj_115.BLIF I3/n14.BLIF \
+I3/n11_adj_7.BLIF I3/n5916.BLIF I3/n11_adj_46.BLIF I3/n11_adj_10.BLIF \
+I3/int_Data0_i0_i3.D.X2
+00-0-0----- 1
+00---00---- 1
+1-111-1-1-- 1
+1-1-11111-- 1
+1-1--11111- 1
+1-1-11-11-1 1
+1-1--1-1111 1
+01--------- 0
+1-0-------- 0
+0----1----- 0
+1-------0-- 0
+1--0-0----- 0
+1---00----- 0
+0--1--1---- 0
+1----00---- 0
+1--0---0--- 0
+1---0--0--- 0
+1-----00--- 0
+1---0----0- 0
+1-----0---0 0
+.names I3/int_Data0_i0_i7.BLIF I3/i1_adj_220.X1
+0 1
+1 0
+.names I3/int_Data0_i0_i7.BLIF I3/i1_adj_31.BLIF I3/i1_adj_214.BLIF \
+I3/n14_adj_169.BLIF I3/n6171.BLIF I3/i1_adj_220.X2
+-1100 1
+-0-1- 1
+--01- 1
+---11 1
+-0-0- 0
+--00- 0
+---01 0
+-1110 0
+.names I3/flag_Data_i0.BLIF I3/int_Data1_i0_i1.BLIF I3/int_Data1_i0_i1.D.X1
+10 1
+0- 0
+-1 0
+.names I3/flag_Data_i1.BLIF I3/flag_Data_i0.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/n14_adj_107.BLIF I3/key_out_i0_i4reg.BLIF I3/key_out_i0_i3reg.BLIF \
+I3/key_out_i0_i2reg.BLIF I3/key_out_i0_i1reg.BLIF I3/n14_adj_114.BLIF \
+I3/n11_adj_115.BLIF I3/n14.BLIF I3/n11_adj_7.BLIF I3/n9180.BLIF \
+I3/int_Data1_i0_i1.D.X2
+001---------0 1
+-01-----00--- 1
+-010-------0- 1
+-01-0001--0-- 1
+-01-0010--0-- 1
+1-------00--- 1
+1--0-------0- 1
+1---0001--0-- 1
+1---0010--0-- 1
+-10---------- 1
+11----------0 1
+011---------- 0
+000---------- 0
+10-11---1---- 0
+10-1-1--1---- 0
+10-11----1--- 0
+10-1-1---1--- 0
+10-1----1-1-- 0
+10-1-----11-- 0
+10--1---1--1- 0
+10---1--1--1- 0
+10--1----1-1- 0
+10---1---1-1- 0
+10------1-11- 0
+10-------111- 0
+-0-11---1---1 0
+--111---1---1 0
+-0-1-1--1---1 0
+--11-1--1---1 0
+-0-11----1--1 0
+--111----1--1 0
+-0-1-1---1--1 0
+--11-1---1--1 0
+-0-1----1-1-1 0
+--11----1-1-1 0
+-0-1-----11-1 0
+--11-----11-1 0
+-0--1---1--11 0
+--1-1---1--11 0
+-0---1--1--11 0
+--1--1--1--11 0
+-0--1----1-11 0
+--1-1----1-11 0
+-0---1---1-11 0
+--1--1---1-11 0
+-0------1-111 0
+--1-----1-111 0
+-0-------1111 0
+--1------1111 0
+10-1--111---- 0
+10-1--001---- 0
+10-1--11-1--- 0
+10-1--00-1--- 0
+10----111--1- 0
+10----001--1- 0
+10----11-1-1- 0
+10----00-1-1- 0
+-0-1--111---1 0
+--11--111---1 0
+-0-1--001---1 0
+--11--001---1 0
+-0-1--11-1--1 0
+--11--11-1--1 0
+-0-1--00-1--1 0
+--11--00-1--1 0
+-0----111--11 0
+--1---111--11 0
+-0----001--11 0
+--1---001--11 0
+-0----11-1-11 0
+--1---11-1-11 0
+-0----00-1-11 0
+--1---00-1-11 0
+.names I3/n5869.BLIF I3/int_Data0_i0_i7.BLIF I3/int_Data__i8.D.X1
+11 1
+0- 0
+-0 0
+.names I3/n5869.BLIF I3/int_Data0_i0_i7.BLIF I3/int_Data0_i0_i6.BLIF \
+I3/int_Data0_i0_i5.BLIF I3/int_Data0_i0_i4.BLIF I3/n14_adj_169.BLIF \
+I3/n4491.BLIF I3/n8_adj_173.BLIF I3/n9346.BLIF I3/n8354.BLIF \
+I3/int_Data__i8.D.X2
+1-111--1-0 1
+1----00--1 1
+10----1-11 1
+11----1-01 1
+0--------- 0
+--0------0 0
+---0-----0 0
+----0----0 0
+-------0-0 0
+-----10--1 0
+-1----1-11 0
+-0----1-01 0
+.names I3/n5869.BLIF I3/int_Data0_i0_i4.BLIF I3/int_Data__i5.D.X1
+10 1
+0- 0
+-1 0
+.names I3/n6099.BLIF I3/i2_adj_193.BLIF I3/n5869.BLIF I3/int_Data0_i0_i4.BLIF \
+I3/int_Data1_i0_i0.BLIF I3/n4491.BLIF I3/n8_adj_172.BLIF I3/n8_adj_173.BLIF \
+I3/n4490.BLIF I3/n6_adj_67.BLIF I3/n8354.BLIF I3/int_Data__i5.D.X2
+--1----0--0 1
+1-1--10-0-1 1
+0-1---1-0-1 1
+--1--01---1 1
+-010-1--101 1
+-110-1--111 1
+-01101--111 1
+-01-11--101 1
+-11101--101 1
+-11-11--111 1
+--0-------- 0
+-------1--0 0
+-----00---1 0
+0-----0-0-1 0
+1----11-0-1 0
+-0-0-1--111 0
+-0--11--111 0
+-1-0-1--101 0
+-1--11--101 0
+-1-101--111 0
+-0-101--101 0
+.names I3/n5869.BLIF I3/int_Data1_i0_i3.BLIF I3/int_Data__i4.D.X1
+10 1
+0- 0
+-1 0
+.names I3/n5869.BLIF I3/flag_Data_i0.BLIF I3/int_Data0_i0_i3.BLIF \
+I3/int_Data1_i0_i3.BLIF I3/n9068.BLIF I3/key_out_i0_i2reg.BLIF \
+I3/key_out_i0_i1reg.BLIF I3/n6181.BLIF I3/n6_adj_164.BLIF I3/n6_adj_171.BLIF \
+I3/n4491.BLIF I3/n9358.BLIF I3/n8354.BLIF I3/int_Data__i4.D.X2
+00--0001----- 1
+1-0-----0---0 1
+1-1-----1---0 1
+1-0------10-1 1
+1-1------00-1 1
+1--0------101 1
+1--1------111 1
+01----------- 0
+0---1-------- 0
+0----1------- 0
+0-----1------ 0
+0------0----- 0
+1-0-----1---0 0
+1-1-----0---0 0
+1-1------10-1 0
+1-0------00-1 0
+1--0------111 0
+1--1------101 0
+.names I3/n5869.BLIF I3/i1_adj_67.BLIF I3/n8354.BLIF I3/int_Data__i3.D.X1
+101 1
+0-- 0
+-1- 0
+--0 0
+.names I3/n9_adj_22.BLIF I3/n5869.BLIF I3/int_Data0_i0_i2.BLIF \
+I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF I3/int_Data1_i0_i2.BLIF \
+I3/int_Data1_i0_i1.BLIF I3/int_Data1_i0_i0.BLIF I3/n4_adj_168.BLIF \
+I3/i1_adj_67.BLIF I3/n4491.BLIF I3/n4490.BLIF I3/i2_adj_197.BLIF I3/n8354.BLIF \
+I3/n9211.BLIF I3/int_Data__i3.D.X2
+00------------1 1
+-10--0--1----0- 1
+-10--1--0----0- 1
+-11--0--0----0- 1
+-11--1--1----0- 1
+-1-0--1---10-1- 1
+-1--0--1--10-1- 1
+-1--1--0--10-1- 1
+-1-1--0---10-1- 1
+-1-------01101- 1
+-1-------11111- 1
+10------------- 0
+-0------------0 0
+-1--------0--1- 0
+-1-------0-111- 0
+-1-------1-101- 0
+-10--1--1----0- 0
+-11--0--1----0- 0
+-11--1--0----0- 0
+-10--0--0----0- 0
+-1-11-11---0-1- 0
+-1-01-01---0-1- 0
+-1-10-10---0-1- 0
+-1-00-00---0-1- 0
+.names I3/n8386.BLIF I3/int_Data__i4.BLIF I3/led_int_Data0_i4reg.D.X1
+00 1
+1- 0
+-1 0
+.names I3/n8386.BLIF I3/i2_adj_48.BLIF I3/int_Data__i4.BLIF \
+I3/int_Data__i3.BLIF I3/int_Data__i2.BLIF I3/n757.BLIF I3/n770.BLIF \
+I3/n783.BLIF I3/n796.BLIF I3/led_int_Data0_i4reg.D.X2
+0----0000 1
+0--110-0- 1
+0--0-001- 1
+0--1-01-- 1
+0---101-- 1
+11------- 1
+10------- 0
+0----1--- 0
+0--00-1-- 0
+0--1--01- 0
+0--0--001 0
+0---0-001 0
+.names I3/int_Data0_i0_i5.BLIF I3/i1_adj_31.X1
+0 1
+1 0
+.names I3/int_Data0_i0_i5.BLIF I3/int_Data0_i0_i4.BLIF I3/int_Data0_i0_i3.BLIF \
+I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF \
+I3/int_Data1_i0_i3.BLIF I3/int_Data1_i0_i2.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/int_Data1_i0_i0.BLIF I3/i1_adj_31.X2
+-00---1--- 1
+-000---1-- 1
+-0-0--11-- 1
+-0000---1- 1
+-0-00-1-1- 1
+-00-0--11- 1
+-0--0-111- 1
+-00000---1 1
+-0-0001--1 1
+-00-00-1-1 1
+-0--0011-1 1
+-000-0--11 1
+-0-0-01-11 1
+-00--0-111 1
+-0---01111 1
+-1-------- 0
+--1---0--- 0
+--11---0-- 0
+---1--00-- 0
+--1111---- 0
+---1110--- 0
+--1-11-0-- 0
+----1100-- 0
+--111---0- 0
+--11-1--0- 0
+---11-0-0- 0
+---1-10-0- 0
+--1-1--00- 0
+--1--1-00- 0
+----1-000- 0
+-----1000- 0
+--111----0 0
+---11-0--0 0
+--1-1--0-0 0
+----1-00-0 0
+--11----00 0
+---1--0-00 0
+--1----000 0
+------0000 0
+.names I3/int_Data__i3.BLIF I3/led_int_Data0_i3reg.D.X1
+1 1
+0 0
+.names I3/n8386.BLIF I3/n3205.BLIF I3/int_Data__i3.BLIF I3/int_Data__i2.BLIF \
+I3/led_int_Data1_3__N_385.BLIF I3/n731.BLIF I3/n757.BLIF I3/n770.BLIF \
+I3/n783.BLIF I3/n796.BLIF I3/led_int_Data0_i3reg.D.X2
+0-----001- 1
+0--1--00-1 1
+0--0--01-- 1
+10-11----- 1
+10-1-0---- 1
+11-0------ 1
+11--01---- 1
+0-----1--- 0
+10-0------ 0
+0--1---1-- 0
+11-11----- 0
+10--01---- 0
+11-1-0---- 0
+0--0---00- 0
+0------000 0
+.names I3/int_Data__i2.BLIF I3/led_int_Data0_i2reg.D.X1
+0 1
+1 0
+.names I3/n8386.BLIF I3/int_Data__i2.BLIF I3/led_int_Data1_3__N_385.BLIF \
+I3/n731.BLIF I3/n757.BLIF I3/n770.BLIF I3/n783.BLIF I3/n796.BLIF \
+I3/led_int_Data0_i2reg.D.X2
+0---1--- 1
+0----01- 1
+0----0-0 1
+1-01---- 1
+1-1----- 0
+1--0---- 0
+0---01-- 0
+0---0-01 0
+.names I3/led_int_Data1_3__N_385.BLIF I3/n731.BLIF I3/n783.BLIF I3/n796.BLIF \
+I3/led_int_Data1_i4reg.D.X1
+0000 1
+1--- 0
+-1-- 0
+--1- 0
+---1 0
+.names I3/int_Data__i8.BLIF I3/int_Data__i7.BLIF I3/int_Data__i6.BLIF \
+I3/int_Data__i5.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/led_int_Data1_3__N_385.BLIF I3/n731.BLIF I3/n783.BLIF \
+I3/n796.BLIF I3/led_int_Data1_i4reg.D.X2
+00011110000 1
+0010---0000 1
+001-0--0000 1
+001--0-0000 1
+1---------- 0
+-1--------- 0
+-------1--- 0
+--------1-- 0
+---------1- 0
+----------1 0
+--00------- 0
+--0-0------ 0
+--0--0----- 0
+--0---0---- 0
+--1111----- 0
+.names I3/led_int_Data1_3__N_385.BLIF I3/n731.BLIF I3/led_int_Data1_i3reg.D.X1
+00 1
+1- 0
+-1 0
+.names I3/int_Data__i8.BLIF I3/int_Data__i7.BLIF I3/int_Data__i6.BLIF \
+I3/int_Data__i5.BLIF I3/int_Data__i4.BLIF I3/int_Data__i3.BLIF \
+I3/int_Data__i2.BLIF I3/led_int_Data1_3__N_385.BLIF I3/n731.BLIF I3/n783.BLIF \
+I3/n796.BLIF I3/led_int_Data1_i3reg.D.X2
+--0----0000 1
+000111100-- 1
+00100--00-- 1
+---111-0000 1
+-1-----0000 1
+1------0000 1
+-------1--- 0
+--------1-- 0
+1--------1- 0
+-1-------1- 0
+1---------1 0
+-1--------1 0
+--11-----1- 0
+--00-----1- 0
+--0-0----1- 0
+--0--0---1- 0
+--0---0--1- 0
+--11------1 0
+--00------1 0
+--0-0-----1 0
+--0--0----1 0
+--0---0---1 0
+00101------ 0
+00110------ 0
+0011-0----- 0
+.names I3/int_Data0_i0_i6.BLIF I3/i1_adj_214.X1
+0 1
+1 0
+.names I3/int_Data0_i0_i6.BLIF I3/int_Data0_i0_i5.BLIF I3/int_Data0_i0_i4.BLIF \
+I3/int_Data0_i0_i3.BLIF I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF \
+I3/int_Data0_i0_i0.BLIF I3/int_Data1_i0_i3.BLIF I3/int_Data1_i0_i2.BLIF \
+I3/int_Data1_i0_i1.BLIF I3/int_Data1_i0_i0.BLIF I3/i1_adj_214.X2
+-000---1--- 1
+-0000---1-- 1
+-00-0--11-- 1
+-00000---1- 1
+-00-00-1-1- 1
+-000-0--11- 1
+-00--0-111- 1
+-000000---1 1
+-00-0001--1 1
+-000-00-1-1 1
+-00--0011-1 1
+-0000-0--11 1
+-00-0-01-11 1
+-000--0-111 1
+-00---01111 1
+-1--------- 0
+--1-------- 0
+---1---0--- 0
+---11---0-- 0
+----1--00-- 0
+---1111---- 0
+----1110--- 0
+---1-11-0-- 0
+-----1100-- 0
+---111---0- 0
+---11-1--0- 0
+----11-0-0- 0
+----1-10-0- 0
+---1-1--00- 0
+---1--1-00- 0
+-----1-000- 0
+------1000- 0
+---111----0 0
+----11-0--0 0
+---1-1--0-0 0
+-----1-00-0 0
+---11----00 0
+----1--0-00 0
+---1----000 0
+-------0000 0
+.names I3/int_Data0_i0_i0.BLIF I3/int_Data1_i0_i1.BLIF I3/n9364.X1
+11 1
+0- 0
+-0 0
+.names I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/int_Data1_i0_i0.BLIF I3/n4490.BLIF I3/n9364.X2
+001-0 1
+01-00 1
+100-0 1
+1--11 1
+11-1- 1
+0---1 0
+---01 0
+000-- 0
+01-1- 0
+11-0- 0
+101-0 0
+.names I3/int_Data0_i0_i4.BLIF I3/int_Data1_i0_i3.BLIF I3/i4_adj_227.X1
+11 1
+0- 0
+-0 0
+.names I3/int_Data0_i0_i6.BLIF I3/int_Data0_i0_i5.BLIF I3/int_Data0_i0_i4.BLIF \
+I3/int_Data1_i0_i3.BLIF I3/int_Data1_i0_i2.BLIF I3/int_Data1_i0_i0.BLIF \
+I3/i2_adj_192.BLIF I3/n8_adj_62.BLIF I3/i2_adj_198.BLIF I3/i4_adj_227.X2
+10---1--1 1
+-0----111 1
+10---111- 1
+11--011-- 1
+11--01-1- 1
+1---01--1 1
+-1--011-1 1
+-1--01-11 1
+----0-111 1
+-1--100-- 1
+-1--10-0- 1
+01--1---0 1
+-1--10--0 1
+01--1-00- 1
+-1--1-000 1
+00----0-- 0
+-0---00-- 0
+----000-- 0
+00-----0- 0
+-0---0-0- 0
+----00-0- 0
+00------0 0
+0---0---0 0
+-0---0--0 0
+----00--0 0
+-0----0-0 0
+-0-----00 0
+0---0-00- 0
+----0-000 0
+11--111-- 0
+11--11-1- 0
+11--11--1 0
+-1--111-1 0
+-1--11-11 0
+-1--1-111 0
+.names I3/int_Data0_i0_i2.BLIF I3/i1_adj_67.X1
+0 1
+1 0
+.names I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF \
+I3/int_Data1_i0_i2.BLIF I3/int_Data1_i0_i1.BLIF I3/int_Data1_i0_i0.BLIF \
+I3/i1_adj_67.X2
+-0-01- 1
+-000-1 1
+--0011 1
+-111-- 1
+-1-10- 1
+--110- 1
+-1-1-0 1
+---100 1
+-110-- 0
+-0-11- 0
+-1-00- 0
+--100- 0
+-1-0-0 0
+---000 0
+-001-1 0
+--0111 0
+.names I3/int_Data0_i0_i6.BLIF I3/int_Data1_i0_i1.BLIF I3/i3_adj_226.X1
+11 1
+0- 0
+-0 0
+.names I3/int_Data0_i0_i6.BLIF I3/int_Data0_i0_i4.BLIF I3/int_Data0_i0_i3.BLIF \
+I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF \
+I3/int_Data1_i0_i3.BLIF I3/int_Data1_i0_i2.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/i3_adj_226.X2
+-11---11- 1
+--11--11- 1
+-1-11-11- 1
+--1-1111- 1
+------0-- 0
+-------0- 0
+-00------ 0
+--00----- 0
+--0-0---- 0
+-0-00---- 0
+-0-0-0--- 0
+.names I3/int_Data0_i0_i3.BLIF I3/int_Data1_i0_i3.BLIF I3/n8_adj_172.X1
+01 1
+1- 0
+-0 0
+.names I3/int_Data0_i0_i3.BLIF I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF \
+I3/int_Data0_i0_i0.BLIF I3/int_Data1_i0_i3.BLIF I3/int_Data1_i0_i2.BLIF \
+I3/int_Data1_i0_i1.BLIF I3/int_Data1_i0_i0.BLIF I3/n8_adj_172.X2
+-1---0-- 1
+-111---- 1
+--11-0-- 1
+-11---0- 1
+-1-1--0- 1
+--1--00- 1
+---1-00- 1
+-11----0 1
+--1--0-0 1
+-1----00 1
+-----000 1
+0---1--- 1
+1---0--- 1
+10--11-- 0
+00--01-- 0
+100-1-1- 0
+000-0-1- 0
+1-0-111- 0
+0-0-011- 0
+10001--1 0
+00000--1 0
+1-0011-1 0
+0-0001-1 0
+10-01-11 0
+00-00-11 0
+1--01111 0
+0--00111 0
+.names I3/int_Data0_i0_i2.BLIF I3/int_Data1_i0_i2.BLIF I3/i2_adj_253.X1
+11 1
+0- 0
+-0 0
+.names I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF \
+I3/int_Data1_i0_i3.BLIF I3/int_Data1_i0_i2.BLIF I3/i2_adj_253.X2
+-101- 1
+-1-10 1
+-0--- 0
+---0- 0
+--1-1 0
+.names I3/i2_adj_194.BLIF I3/i2_adj_192.X1
+1 1
+0 0
+.names I3/int_Data0_i0_i4.BLIF I3/int_Data0_i0_i3.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/i2_adj_253.BLIF I3/i2_adj_194.BLIF I3/n4_adj_183.BLIF I3/i2_adj_192.X2
+0--1-1 1
+0111-- 1
+011--1 1
+--01-1 1
+1010-- 1
+101--0 1
+1-10-0 1
+--00-- 0
+--0--0 0
+00-0-- 0
+00---0 0
+0--0-0 0
+1111-- 0
+111--1 0
+1-11-1 0
+.names I3/int_Data0_i0_i3.BLIF I3/int_Data1_i0_i2.BLIF I3/i2_adj_194.X1
+11 1
+0- 0
+-0 0
+.names I3/int_Data0_i0_i3.BLIF I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF \
+I3/int_Data0_i0_i0.BLIF I3/int_Data1_i0_i3.BLIF I3/int_Data1_i0_i2.BLIF \
+I3/i2_adj_194.X2
+-01111 1
+-10-1- 1
+-1--10 1
+----0- 0
+-00--- 0
+-0-0-- 0
+-0---0 0
+-11--1 0
+.names I3/n5869.BLIF I3/int_Data0_i0_i1.BLIF I3/n9302.X1
+10 1
+0- 0
+-1 0
+.names I3/n5869.BLIF I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF \
+I3/int_Data1_i0_i1.BLIF I3/int_Data1_i0_i0.BLIF I3/n9364.BLIF I3/n4491.BLIF \
+I3/n8354.BLIF I3/n9302.X2
+1-00---0 1
+1--00--0 1
+1-111--0 1
+1-10--01 1
+1--00-0- 1
+1-011-01 1
+10---011 1
+11---111 1
+0------- 0
+---10-0- 0
+--01---0 0
+---10--0 0
+-0---111 0
+-1---011 0
+--11--01 0
+--101--0 0
+--001-01 0
+.names I3/int_Data0_i0_i0.BLIF I3/int_Data1_i0_i3.BLIF I3/i2_adj_191.X1
+11 1
+0- 0
+-0 0
+.names I3/int_Data0_i0_i2.BLIF I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF \
+I3/int_Data1_i0_i3.BLIF I3/int_Data1_i0_i2.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/i2_adj_191.X2
+-1--10 1
+010-1- 1
+10---1 1
+1---01 1
+1-1--1 1
+00---- 0
+0---0- 0
+-0---0 0
+----00 0
+0-1--1 0
+110-11 0
+.names I3/int_Data0_i0_i3.BLIF I3/n4490.BLIF I3/n9358.X1
+00 1
+1- 0
+-1 0
+.names I3/int_Data0_i0_i3.BLIF I3/int_Data1_i0_i3.BLIF I3/int_Data1_i0_i0.BLIF \
+I3/n6_adj_171.BLIF I3/n5955.BLIF I3/i2_adj_191.BLIF I3/n4490.BLIF \
+I3/n4_adj_76.BLIF I3/n9358.X2
+-0-01-0- 1
+-0-10-0- 1
+-1-00-0- 1
+-1-11-0- 1
+1-1--010 1
+0----011 1
+--0--011 1
+0----110 1
+--0--110 1
+1-1--111 1
+-0-11-0- 0
+-1-01-0- 0
+-1-10-0- 0
+-0-00-0- 0
+0----111 0
+--0--111 0
+0----010 0
+--0--010 0
+1-1--011 0
+1-1--110 0
+.names I3/int_Data0_i0_i2.BLIF I3/int_Data1_i0_i0.BLIF I3/i2_adj_197.X1
+11 1
+0- 0
+-0 0
+.names I3/int_Data0_i0_i2.BLIF I3/int_Data1_i0_i0.BLIF I3/n28_adj_5.BLIF \
+I3/n8241.BLIF I3/n8_adj_38.BLIF I3/i2_adj_197.X2
+--001 1
+--010 1
+--100 1
+--111 1
+--011 0
+--101 0
+--110 0
+--000 0
+.names I3/i4_adj_227.BLIF I3/n4490.BLIF I3/n9346.X1
+01 1
+1- 0
+-0 0
+.names I3/int_Data0_i0_i7.BLIF I3/i1_adj_220.BLIF I3/int_Data1_i0_i0.BLIF \
+I3/i4_adj_227.BLIF I3/i3_adj_226.BLIF I3/n10_adj_174.BLIF I3/n4490.BLIF \
+I3/n9346.X2
+-0----0 1
+0---001 1
+--0-001 1
+1-1-011 1
+1-1-101 1
+0---111 1
+--0-111 1
+-1----0 0
+0---011 0
+--0-011 0
+0---101 0
+--0-101 0
+1-1-111 0
+1-1-001 0
+.names I3/int_Data0_i0_i4.BLIF I3/int_Data1_i0_i2.BLIF I3/i2_adj_183.X1
+11 1
+0- 0
+-0 0
+.names I3/int_Data0_i0_i4.BLIF I3/int_Data0_i0_i3.BLIF I3/int_Data0_i0_i2.BLIF \
+I3/int_Data0_i0_i1.BLIF I3/int_Data0_i0_i0.BLIF I3/int_Data1_i0_i3.BLIF \
+I3/int_Data1_i0_i2.BLIF I3/i2_adj_183.X2
+-011-11 1
+-1---10 1
+-100-1- 1
+-10-01- 1
+-----0- 0
+-00---- 0
+-0-0--- 0
+-0----0 0
+-11---1 0
+-1-11-1 0
+.names I3/i2_adj_183.BLIF I3/i2_adj_198.X1
+1 1
+0 0
+.names I3/int_Data0_i0_i5.BLIF I3/int_Data0_i0_i4.BLIF I3/int_Data1_i0_i1.BLIF \
+I3/i2_adj_194.BLIF I3/n6_adj_182.BLIF I3/i2_adj_183.BLIF I3/i2_adj_198.X2
+0--11- 1
+0111-- 1
+011-1- 1
+--011- 1
+1010-- 1
+101-0- 1
+1-100- 1
+--00-- 0
+--0-0- 0
+00-0-- 0
+00--0- 0
+0--00- 0
+1111-- 0
+111-1- 0
+1-111- 0
+.names I59/scancnt__i0.BLIF I59/scancnt__i0.D.X1
+1 1
+0 0
+.names reset.BLIF I59/scancnt__i0.BLIF I59/count_186__i12.BLIF \
+I59/count_186__i11.BLIF I59/count_186__i10.BLIF I59/count_186__i9.BLIF \
+I59/count_186__i8.BLIF I59/count_186__i7.BLIF I59/count_186__i6.BLIF \
+I59/count_186__i5.BLIF I59/count_186__i4.BLIF I59/count_186__i3.BLIF \
+I59/count_186__i2.BLIF I59/count_186__i1.BLIF I59/count_186__i0.BLIF \
+I59/scancnt__i0.D.X2
+1-1011101101111 1
+0-------------- 0
+--0------------ 0
+---1----------- 0
+----0---------- 0
+-----0--------- 0
+------0-------- 0
+-------1------- 0
+--------0------ 0
+---------0----- 0
+----------1---- 0
+-----------0--- 0
+------------0-- 0
+-------------0- 0
+--------------0 0
+.names I59/count_186__i12.BLIF I59/count_186__i12.D.X1
+1 1
+0 0
+.names I59/n853.BLIF I59/count_186__i12.BLIF I59/count_186__i11.BLIF \
+I59/count_186__i10.BLIF I59/count_186__i9.BLIF I59/count_186__i8.BLIF \
+I59/n51.BLIF I59/count_186__i12.D.X2
+1-11110 1
+-1----1 1
+111111- 1
+-0----1 0
+0-----0 0
+--0---0 0
+---0--0 0
+----0-0 0
+-----00 0
+.names I59/count_186__i11.BLIF I59/count_186__i11.D.X1
+1 1
+0 0
+.names I59/n853.BLIF I59/count_186__i11.BLIF I59/count_186__i10.BLIF \
+I59/count_186__i9.BLIF I59/count_186__i8.BLIF I59/n51.BLIF \
+I59/count_186__i11.D.X2
+1-1110 1
+-1---1 1
+11111- 1
+-0---1 0
+0----0 0
+--0--0 0
+---0-0 0
+----00 0
+.names I59/count_186__i7.BLIF I59/count_186__i7.D.X1
+1 1
+0 0
+.names I59/count_186__i7.BLIF I59/count_186__i6.BLIF I59/count_186__i5.BLIF \
+I59/count_186__i4.BLIF I59/count_186__i3.BLIF I59/n818.BLIF \
+I59/count_186__i7.D.X2
+-11111 1
+-0---- 0
+--0--- 0
+---0-- 0
+----0- 0
+-----0 0
+.names I59/count_186__i6.BLIF I59/count_186__i6.D.X1
+1 1
+0 0
+.names I59/count_186__i6.BLIF I59/count_186__i5.BLIF I59/count_186__i4.BLIF \
+I59/count_186__i3.BLIF I59/n818.BLIF I59/n51.BLIF I59/count_186__i6.D.X2
+-11110 1
+1----1 1
+11111- 1
+0----1 0
+-0---0 0
+--0--0 0
+---0-0 0
+----00 0
+.end

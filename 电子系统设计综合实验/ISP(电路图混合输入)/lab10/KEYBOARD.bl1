@@ -1,0 +1,917 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Fri May 26 12:02:53 2023
+#$ MODULE keyboard
+#$ PINS 12 PS_Data_3_ save_3_ clk reset KeyClock KeyData PS_Data_2_ PS_Data_1_ \
+#  PS_Data_0_ save_2_ save_1_ save_0_
+#$ NODES 210 inst_KeyClock_r1 inst_RxEn LastRxData_0_ LastRxData_1_ LastRxData_2_ \
+#  LastRxData_3_ LastRxData_4_ LastRxData_5_ LastRxData_6_ LastRxData_7_ inst_LedEn \
+#  inst_KeyClock_r0 neg_KeyClock inst_KeyClock_r2 PS_Data38 counter_0_ counter_1_ \
+#  counter_2_ counter_3_ RxData_0_sqmuxa RxData_1_ RxData_2_ RxData_3_ RxData_4_ \
+#  RxData_5_ RxData_6_ RxData_7_ RxData_8_ ps_data_3_0__n ps_data_3_1__n ps_data_3_2__n \
+#  ps_data_3_3__n PS_Data_cnst_3_0__m8 PS_Data_cnst_3_0__m6 PS_Data29 PS_Data30_4 \
+#  PS_Data32_1 PS_Data28 PS_Data30_1 PS_Data32_2 PS_Data26 PS_Data27_3 PS_Data25 \
+#  PS_Data34_3 PS_Data34_2 PS_Data34 PS_Data33 PS_Data32 PS_Data31 LedEn8_1 PS_Data30_5 \
+#  un1_PS_Data34_1 ps_data_cnst_3_0__i4_mux_n ps_data_cnst_2__n ps_data_cnst_1__n \
+#  PS_Data_cnst_3_0__m5 ps_data_cnst_3_0__n_3_n counter_n2 counter_n3 counter_n0 \
+#  counter_n1 RxEn_2 un1_rxdata_2_8__n un1_rxdata_7__n N_24 un1_rxdata_2_7__n N_21 N_18 \
+#  N_20 un1_rxdata_8__n counter_c1 un1_rxdata_6__n un1_rxdata_5__n un1_rxdata_2_5__n \
+#  un1_rxdata_4__n un1_rxdata_3__n un1_rxdata_2_3__n un1_rxdata_2__n un1_rxdata_1__n \
+#  counter_i_3__n counter_i_1__n counter_i_2__n counter_i_0__n LedEn_i KeyClock_r1_i \
+#  lastrxdata_i_0__n lastrxdata_i_1__n lastrxdata_i_3__n lastrxdata_i_2__n \
+#  lastrxdata_i_4__n ps_data_cnst_3_0__n_3_i_n ps_data_cnst_3_0__n_9_i_n \
+#  PS_Data27_3_i PS_Data30_5_i ps_data_cnst_3_0__n_6_i_n \
+#  ps_data_cnst_3_0__i4_mux_i_n PS_Data25_i PS_Data26_i PS_Data31_i PS_Data32_i \
+#  PS_Data33_i PS_Data34_i PS_Data28_i PS_Data29_i lastrxdata_i_7__n lastrxdata_i_5__n \
+#  lastrxdata_i_6__n reset_i RxEn_i clk_c reset_c KeyData_c PS_Datalatr_0_reg \
+#  PS_Datalatr_1_reg PS_Datalatr_2_reg PS_Datalatr_3_reg savelat_0_reg savelat_1_reg \
+#  savelat_2_reg savelat_3_reg un1_rxdata_2_i_8__n RxEn_2_i PS_Data29_1 PS_Data29_2 \
+#  PS_Data29_3 PS_Data29_4 PS_Data28_1 PS_Data28_2 PS_Data28_3 PS_Data26_1 PS_Data26_2 \
+#  PS_Data25_1 PS_Data25_2 PS_Data25_3 PS_Data34_1 PS_Data34_2_0 PS_Data34_3_0 \
+#  PS_Data33_1 PS_Data33_2 PS_Data32_1_0 PS_Data32_2_0 PS_Data32_3 PS_Data31_1 \
+#  PS_Data31_2 PS_Data31_3 PS_Data30_5_1 un1_PS_Data34_1_1 un1_PS_Data34_1_2 \
+#  un1_PS_Data34_1_3 un1_PS_Data34_1_4 un1_PS_Data34_1_5 un1_PS_Data34_1_6 LedEn8_1_0 \
+#  LedEn8_2 LedEn8_3 LedEn8_4 LedEn8_5 un1_rxdata_1_8__n un1_rxdata_1_6__n \
+#  un1_rxdata_2_6__n un1_rxdata_1_5__n un1_rxdata_1_4__n un1_rxdata_1_2__n \
+#  un1_rxdata_1_1__n PS_Data_cnst_3_0__m8_1 rxdata_2_4__un3_n rxdata_2_4__un1_n \
+#  rxdata_2_4__un0_n rxdata_2_3__un3_n rxdata_2_3__un1_n rxdata_2_3__un0_n \
+#  rxdata_2_2__un3_n rxdata_2_2__un1_n rxdata_2_2__un0_n rxdata_2_1__un3_n \
+#  rxdata_2_1__un1_n rxdata_2_1__un0_n rxdata_2_8__un3_n rxdata_2_8__un1_n \
+#  rxdata_2_8__un0_n rxdata_2_7__un3_n rxdata_2_7__un1_n rxdata_2_7__un0_n \
+#  rxdata_2_6__un3_n rxdata_2_6__un1_n rxdata_2_6__un0_n rxdata_2_5__un3_n \
+#  rxdata_2_5__un1_n rxdata_2_5__un0_n ps_data_cnst_3_0__ps_data_3_0__un3_n \
+#  ps_data_cnst_3_0__ps_data_3_0__un1_n ps_data_cnst_3_0__ps_data_3_0__un0_n \
+#  ps_data_cnst_3_0__m14_un3_n ps_data_cnst_3_0__m14_un1_n \
+#  ps_data_cnst_3_0__m14_un0_n ps_data_cnst_3_0__m7_un3_n \
+#  ps_data_cnst_3_0__m7_un1_n ps_data_cnst_3_0__m7_un0_n ps_data_cnst_3_0__m2_un3_n \
+#  ps_data_cnst_3_0__m2_un1_n ps_data_cnst_3_0__m2_un0_n \
+#  ps_data_cnst_3_0__ps_data_3_3__un3_n ps_data_cnst_3_0__ps_data_3_3__un1_n \
+#  ps_data_cnst_3_0__ps_data_3_3__un0_n ps_data_cnst_3_0__ps_data_3_2__un3_n \
+#  ps_data_cnst_3_0__ps_data_3_2__un1_n ps_data_cnst_3_0__ps_data_3_2__un0_n \
+#  ps_data_cnst_3_0__ps_data_3_1__un3_n ps_data_cnst_3_0__ps_data_3_1__un1_n \
+#  ps_data_cnst_3_0__ps_data_3_1__un0_n
+.model keyboard
+.inputs clk.BLIF reset.BLIF KeyClock.BLIF KeyData.BLIF inst_KeyClock_r1.BLIF \
+inst_RxEn.BLIF LastRxData_0_.BLIF LastRxData_1_.BLIF LastRxData_2_.BLIF \
+LastRxData_3_.BLIF LastRxData_4_.BLIF LastRxData_5_.BLIF LastRxData_6_.BLIF \
+LastRxData_7_.BLIF inst_LedEn.BLIF inst_KeyClock_r0.BLIF neg_KeyClock.BLIF \
+inst_KeyClock_r2.BLIF PS_Data38.BLIF counter_0_.BLIF counter_1_.BLIF \
+counter_2_.BLIF counter_3_.BLIF RxData_0_sqmuxa.BLIF RxData_1_.BLIF \
+RxData_2_.BLIF RxData_3_.BLIF RxData_4_.BLIF RxData_5_.BLIF RxData_6_.BLIF \
+RxData_7_.BLIF RxData_8_.BLIF ps_data_3_0__n.BLIF ps_data_3_1__n.BLIF \
+ps_data_3_2__n.BLIF ps_data_3_3__n.BLIF PS_Data_cnst_3_0__m8.BLIF \
+PS_Data_cnst_3_0__m6.BLIF PS_Data29.BLIF PS_Data30_4.BLIF PS_Data32_1.BLIF \
+PS_Data28.BLIF PS_Data30_1.BLIF PS_Data32_2.BLIF PS_Data26.BLIF \
+PS_Data27_3.BLIF PS_Data25.BLIF PS_Data34_3.BLIF PS_Data34_2.BLIF \
+PS_Data34.BLIF PS_Data33.BLIF PS_Data32.BLIF PS_Data31.BLIF LedEn8_1.BLIF \
+PS_Data30_5.BLIF un1_PS_Data34_1.BLIF ps_data_cnst_3_0__i4_mux_n.BLIF \
+ps_data_cnst_2__n.BLIF ps_data_cnst_1__n.BLIF PS_Data_cnst_3_0__m5.BLIF \
+ps_data_cnst_3_0__n_3_n.BLIF counter_n2.BLIF counter_n3.BLIF counter_n0.BLIF \
+counter_n1.BLIF RxEn_2.BLIF un1_rxdata_2_8__n.BLIF un1_rxdata_7__n.BLIF \
+N_24.BLIF un1_rxdata_2_7__n.BLIF N_21.BLIF N_18.BLIF N_20.BLIF \
+un1_rxdata_8__n.BLIF counter_c1.BLIF un1_rxdata_6__n.BLIF un1_rxdata_5__n.BLIF \
+un1_rxdata_2_5__n.BLIF un1_rxdata_4__n.BLIF un1_rxdata_3__n.BLIF \
+un1_rxdata_2_3__n.BLIF un1_rxdata_2__n.BLIF un1_rxdata_1__n.BLIF \
+counter_i_3__n.BLIF counter_i_1__n.BLIF counter_i_2__n.BLIF \
+counter_i_0__n.BLIF LedEn_i.BLIF KeyClock_r1_i.BLIF lastrxdata_i_0__n.BLIF \
+lastrxdata_i_1__n.BLIF lastrxdata_i_3__n.BLIF lastrxdata_i_2__n.BLIF \
+lastrxdata_i_4__n.BLIF ps_data_cnst_3_0__n_3_i_n.BLIF \
+ps_data_cnst_3_0__n_9_i_n.BLIF PS_Data27_3_i.BLIF PS_Data30_5_i.BLIF \
+ps_data_cnst_3_0__n_6_i_n.BLIF ps_data_cnst_3_0__i4_mux_i_n.BLIF \
+PS_Data25_i.BLIF PS_Data26_i.BLIF PS_Data31_i.BLIF PS_Data32_i.BLIF \
+PS_Data33_i.BLIF PS_Data34_i.BLIF PS_Data28_i.BLIF PS_Data29_i.BLIF \
+lastrxdata_i_7__n.BLIF lastrxdata_i_5__n.BLIF lastrxdata_i_6__n.BLIF \
+reset_i.BLIF RxEn_i.BLIF clk_c.BLIF reset_c.BLIF KeyData_c.BLIF \
+PS_Datalatr_0_reg.BLIF PS_Datalatr_1_reg.BLIF PS_Datalatr_2_reg.BLIF \
+PS_Datalatr_3_reg.BLIF savelat_0_reg.BLIF savelat_1_reg.BLIF \
+savelat_2_reg.BLIF savelat_3_reg.BLIF un1_rxdata_2_i_8__n.BLIF RxEn_2_i.BLIF \
+PS_Data29_1.BLIF PS_Data29_2.BLIF PS_Data29_3.BLIF PS_Data29_4.BLIF \
+PS_Data28_1.BLIF PS_Data28_2.BLIF PS_Data28_3.BLIF PS_Data26_1.BLIF \
+PS_Data26_2.BLIF PS_Data25_1.BLIF PS_Data25_2.BLIF PS_Data25_3.BLIF \
+PS_Data34_1.BLIF PS_Data34_2_0.BLIF PS_Data34_3_0.BLIF PS_Data33_1.BLIF \
+PS_Data33_2.BLIF PS_Data32_1_0.BLIF PS_Data32_2_0.BLIF PS_Data32_3.BLIF \
+PS_Data31_1.BLIF PS_Data31_2.BLIF PS_Data31_3.BLIF PS_Data30_5_1.BLIF \
+un1_PS_Data34_1_1.BLIF un1_PS_Data34_1_2.BLIF un1_PS_Data34_1_3.BLIF \
+un1_PS_Data34_1_4.BLIF un1_PS_Data34_1_5.BLIF un1_PS_Data34_1_6.BLIF \
+LedEn8_1_0.BLIF LedEn8_2.BLIF LedEn8_3.BLIF LedEn8_4.BLIF LedEn8_5.BLIF \
+un1_rxdata_1_8__n.BLIF un1_rxdata_1_6__n.BLIF un1_rxdata_2_6__n.BLIF \
+un1_rxdata_1_5__n.BLIF un1_rxdata_1_4__n.BLIF un1_rxdata_1_2__n.BLIF \
+un1_rxdata_1_1__n.BLIF PS_Data_cnst_3_0__m8_1.BLIF rxdata_2_4__un3_n.BLIF \
+rxdata_2_4__un1_n.BLIF rxdata_2_4__un0_n.BLIF rxdata_2_3__un3_n.BLIF \
+rxdata_2_3__un1_n.BLIF rxdata_2_3__un0_n.BLIF rxdata_2_2__un3_n.BLIF \
+rxdata_2_2__un1_n.BLIF rxdata_2_2__un0_n.BLIF rxdata_2_1__un3_n.BLIF \
+rxdata_2_1__un1_n.BLIF rxdata_2_1__un0_n.BLIF rxdata_2_8__un3_n.BLIF \
+rxdata_2_8__un1_n.BLIF rxdata_2_8__un0_n.BLIF rxdata_2_7__un3_n.BLIF \
+rxdata_2_7__un1_n.BLIF rxdata_2_7__un0_n.BLIF rxdata_2_6__un3_n.BLIF \
+rxdata_2_6__un1_n.BLIF rxdata_2_6__un0_n.BLIF rxdata_2_5__un3_n.BLIF \
+rxdata_2_5__un1_n.BLIF rxdata_2_5__un0_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_0__un3_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_0__un1_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_0__un0_n.BLIF ps_data_cnst_3_0__m14_un3_n.BLIF \
+ps_data_cnst_3_0__m14_un1_n.BLIF ps_data_cnst_3_0__m14_un0_n.BLIF \
+ps_data_cnst_3_0__m7_un3_n.BLIF ps_data_cnst_3_0__m7_un1_n.BLIF \
+ps_data_cnst_3_0__m7_un0_n.BLIF ps_data_cnst_3_0__m2_un3_n.BLIF \
+ps_data_cnst_3_0__m2_un1_n.BLIF ps_data_cnst_3_0__m2_un0_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_3__un3_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_3__un1_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_3__un0_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_2__un3_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_2__un1_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_2__un0_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_1__un3_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_1__un1_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_1__un0_n.BLIF
+.outputs PS_Data_3_ save_3_ PS_Data_2_ PS_Data_1_ PS_Data_0_ save_2_ save_1_ \
+save_0_ RxData_5_.D RxData_5_.CE RxData_5_.C RxData_6_.D RxData_6_.CE \
+RxData_6_.C RxData_7_.D RxData_7_.CE RxData_7_.C RxData_8_.D RxData_8_.CE \
+RxData_8_.C LastRxData_5_.D LastRxData_5_.C LastRxData_5_.AR LastRxData_6_.D \
+LastRxData_6_.C LastRxData_6_.AP LastRxData_7_.D LastRxData_7_.C \
+LastRxData_7_.AR RxData_1_.D RxData_1_.CE RxData_1_.C RxData_2_.D RxData_2_.CE \
+RxData_2_.C RxData_3_.D RxData_3_.CE RxData_3_.C RxData_4_.D RxData_4_.CE \
+RxData_4_.C counter_2_.D counter_2_.CE counter_2_.C counter_2_.AR counter_3_.D \
+counter_3_.CE counter_3_.C counter_3_.AR LastRxData_0_.D LastRxData_0_.C \
+LastRxData_0_.AP LastRxData_1_.D LastRxData_1_.C LastRxData_1_.AR \
+LastRxData_2_.D LastRxData_2_.C LastRxData_2_.AP LastRxData_3_.D \
+LastRxData_3_.C LastRxData_3_.AR LastRxData_4_.D LastRxData_4_.C \
+LastRxData_4_.AR counter_0_.D counter_0_.CE counter_0_.C counter_0_.AR \
+counter_1_.D counter_1_.CE counter_1_.C counter_1_.AR inst_LedEn.D \
+inst_LedEn.C inst_LedEn.AR inst_RxEn.D inst_RxEn.CE inst_RxEn.C inst_RxEn.AP \
+inst_KeyClock_r0.D inst_KeyClock_r0.C inst_KeyClock_r0.AR inst_KeyClock_r1.D \
+inst_KeyClock_r1.C inst_KeyClock_r1.AR inst_KeyClock_r2.D inst_KeyClock_r2.C \
+inst_KeyClock_r2.AR savelat_0_reg.D savelat_0_reg.LH savelat_1_reg.D \
+savelat_1_reg.LH savelat_2_reg.D savelat_2_reg.LH savelat_3_reg.D \
+savelat_3_reg.LH PS_Datalatr_0_reg.D PS_Datalatr_0_reg.LH PS_Datalatr_0_reg.AR \
+PS_Datalatr_1_reg.D PS_Datalatr_1_reg.LH PS_Datalatr_1_reg.AR \
+PS_Datalatr_2_reg.D PS_Datalatr_2_reg.LH PS_Datalatr_2_reg.AR \
+PS_Datalatr_3_reg.D PS_Datalatr_3_reg.LH PS_Datalatr_3_reg.AR neg_KeyClock \
+PS_Data38 RxData_0_sqmuxa ps_data_3_0__n ps_data_3_1__n ps_data_3_2__n \
+ps_data_3_3__n PS_Data29 PS_Data30_4 PS_Data32_1 PS_Data28 PS_Data30_1 \
+PS_Data32_2 PS_Data26 PS_Data27_3 PS_Data25 PS_Data34_3 PS_Data34_2 PS_Data34 \
+PS_Data33 PS_Data32 PS_Data31 LedEn8_1 PS_Data30_5 un1_PS_Data34_1 \
+ps_data_cnst_3_0__i4_mux_n ps_data_cnst_2__n ps_data_cnst_1__n \
+ps_data_cnst_3_0__n_3_n RxEn_2 un1_rxdata_2_8__n un1_rxdata_7__n N_24 \
+un1_rxdata_2_7__n N_21 N_18 N_20 un1_rxdata_8__n counter_c1 un1_rxdata_6__n \
+un1_rxdata_5__n un1_rxdata_2_5__n un1_rxdata_4__n un1_rxdata_3__n \
+un1_rxdata_2_3__n un1_rxdata_2__n un1_rxdata_1__n counter_i_3__n \
+counter_i_1__n counter_i_2__n counter_i_0__n LedEn_i KeyClock_r1_i \
+lastrxdata_i_0__n lastrxdata_i_1__n lastrxdata_i_3__n lastrxdata_i_2__n \
+lastrxdata_i_4__n ps_data_cnst_3_0__n_3_i_n ps_data_cnst_3_0__n_9_i_n \
+PS_Data27_3_i PS_Data30_5_i ps_data_cnst_3_0__n_6_i_n \
+ps_data_cnst_3_0__i4_mux_i_n PS_Data25_i PS_Data26_i PS_Data31_i PS_Data32_i \
+PS_Data33_i PS_Data34_i PS_Data28_i PS_Data29_i lastrxdata_i_7__n \
+lastrxdata_i_5__n lastrxdata_i_6__n reset_i RxEn_i clk_c reset_c KeyData_c \
+un1_rxdata_2_i_8__n RxEn_2_i PS_Data29_1 PS_Data29_2 PS_Data29_3 PS_Data29_4 \
+PS_Data28_1 PS_Data28_2 PS_Data28_3 PS_Data26_1 PS_Data26_2 PS_Data25_1 \
+PS_Data25_2 PS_Data25_3 PS_Data34_1 PS_Data34_2_0 PS_Data34_3_0 PS_Data33_1 \
+PS_Data33_2 PS_Data32_1_0 PS_Data32_2_0 PS_Data32_3 PS_Data31_1 PS_Data31_2 \
+PS_Data31_3 PS_Data30_5_1 un1_PS_Data34_1_1 un1_PS_Data34_1_2 \
+un1_PS_Data34_1_3 un1_PS_Data34_1_4 un1_PS_Data34_1_5 un1_PS_Data34_1_6 \
+LedEn8_1_0 LedEn8_2 LedEn8_3 LedEn8_4 LedEn8_5 un1_rxdata_1_8__n \
+un1_rxdata_1_6__n un1_rxdata_2_6__n un1_rxdata_1_5__n un1_rxdata_1_4__n \
+un1_rxdata_1_2__n un1_rxdata_1_1__n rxdata_2_4__un3_n rxdata_2_4__un1_n \
+rxdata_2_4__un0_n rxdata_2_3__un3_n rxdata_2_3__un1_n rxdata_2_3__un0_n \
+rxdata_2_2__un3_n rxdata_2_2__un1_n rxdata_2_2__un0_n rxdata_2_1__un3_n \
+rxdata_2_1__un1_n rxdata_2_1__un0_n rxdata_2_8__un3_n rxdata_2_8__un1_n \
+rxdata_2_8__un0_n rxdata_2_7__un3_n rxdata_2_7__un1_n rxdata_2_7__un0_n \
+rxdata_2_6__un3_n rxdata_2_6__un1_n rxdata_2_6__un0_n rxdata_2_5__un3_n \
+rxdata_2_5__un1_n rxdata_2_5__un0_n ps_data_cnst_3_0__ps_data_3_0__un3_n \
+ps_data_cnst_3_0__ps_data_3_0__un1_n ps_data_cnst_3_0__ps_data_3_0__un0_n \
+ps_data_cnst_3_0__m14_un3_n ps_data_cnst_3_0__m14_un1_n \
+ps_data_cnst_3_0__m14_un0_n ps_data_cnst_3_0__m7_un3_n \
+ps_data_cnst_3_0__m7_un1_n ps_data_cnst_3_0__m7_un0_n \
+ps_data_cnst_3_0__m2_un3_n ps_data_cnst_3_0__m2_un1_n \
+ps_data_cnst_3_0__m2_un0_n ps_data_cnst_3_0__ps_data_3_3__un3_n \
+ps_data_cnst_3_0__ps_data_3_3__un1_n ps_data_cnst_3_0__ps_data_3_3__un0_n \
+ps_data_cnst_3_0__ps_data_3_2__un3_n ps_data_cnst_3_0__ps_data_3_2__un1_n \
+ps_data_cnst_3_0__ps_data_3_2__un0_n ps_data_cnst_3_0__ps_data_3_1__un3_n \
+ps_data_cnst_3_0__ps_data_3_1__un1_n ps_data_cnst_3_0__ps_data_3_1__un0_n \
+PS_Data_cnst_3_0__m8 PS_Data_cnst_3_0__m6 PS_Data_cnst_3_0__m5 counter_n2 \
+counter_n3 counter_n0 counter_n1 PS_Data_cnst_3_0__m8_1
+.names rxdata_2_5__un1_n.BLIF rxdata_2_5__un0_n.BLIF RxData_5_.D
+1- 1
+-1 1
+.names rxdata_2_6__un1_n.BLIF rxdata_2_6__un0_n.BLIF RxData_6_.D
+1- 1
+-1 1
+.names rxdata_2_7__un1_n.BLIF rxdata_2_7__un0_n.BLIF RxData_7_.D
+1- 1
+-1 1
+.names rxdata_2_8__un1_n.BLIF rxdata_2_8__un0_n.BLIF RxData_8_.D
+1- 1
+-1 1
+.names rxdata_2_1__un1_n.BLIF rxdata_2_1__un0_n.BLIF RxData_1_.D
+1- 1
+-1 1
+.names rxdata_2_2__un1_n.BLIF rxdata_2_2__un0_n.BLIF RxData_2_.D
+1- 1
+-1 1
+.names rxdata_2_3__un1_n.BLIF rxdata_2_3__un0_n.BLIF RxData_3_.D
+1- 1
+-1 1
+.names rxdata_2_4__un1_n.BLIF rxdata_2_4__un0_n.BLIF RxData_4_.D
+1- 1
+-1 1
+.names counter_n0.BLIF counter_0_.D
+0 1
+.names LedEn8_4.BLIF LedEn8_5.BLIF inst_LedEn.D
+11 1
+.names KeyClock_r1_i.BLIF inst_KeyClock_r2.BLIF neg_KeyClock
+11 1
+.names LedEn_i.BLIF reset_c.BLIF PS_Data38
+11 1
+.names neg_KeyClock.BLIF reset_c.BLIF RxData_0_sqmuxa
+11 1
+.names ps_data_cnst_3_0__ps_data_3_0__un1_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_0__un0_n.BLIF ps_data_3_0__n
+1- 1
+-1 1
+.names ps_data_cnst_3_0__ps_data_3_1__un1_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_1__un0_n.BLIF ps_data_3_1__n
+1- 1
+-1 1
+.names ps_data_cnst_3_0__ps_data_3_2__un1_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_2__un0_n.BLIF ps_data_3_2__n
+1- 1
+-1 1
+.names ps_data_cnst_3_0__ps_data_3_3__un1_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_3__un0_n.BLIF ps_data_3_3__n
+1- 1
+-1 1
+.names PS_Data29_4.BLIF PS_Data29_3.BLIF PS_Data29
+11 1
+.names lastrxdata_i_6__n.BLIF lastrxdata_i_7__n.BLIF PS_Data30_4
+11 1
+.names LastRxData_0_.BLIF LastRxData_2_.BLIF PS_Data32_1
+11 1
+.names PS_Data28_3.BLIF PS_Data30_4.BLIF PS_Data28
+11 1
+.names LastRxData_1_.BLIF LastRxData_2_.BLIF PS_Data30_1
+11 1
+.names LastRxData_3_.BLIF LastRxData_4_.BLIF PS_Data32_2
+11 1
+.names PS_Data26_1.BLIF PS_Data26_2.BLIF PS_Data26
+11 1
+.names lastrxdata_i_0__n.BLIF lastrxdata_i_5__n.BLIF PS_Data27_3
+11 1
+.names PS_Data25_3.BLIF PS_Data34_3.BLIF PS_Data25
+11 1
+.names lastrxdata_i_4__n.BLIF lastrxdata_i_5__n.BLIF PS_Data34_3
+11 1
+.names LastRxData_6_.BLIF lastrxdata_i_3__n.BLIF PS_Data34_2
+11 1
+.names PS_Data34_3_0.BLIF PS_Data34_2.BLIF PS_Data34
+11 1
+.names PS_Data33_1.BLIF PS_Data33_2.BLIF PS_Data33
+11 1
+.names PS_Data32_3.BLIF PS_Data32_1.BLIF PS_Data32
+11 1
+.names PS_Data31_3.BLIF PS_Data30_1.BLIF PS_Data31
+11 1
+.names LastRxData_4_.BLIF LastRxData_5_.BLIF LedEn8_1
+11 1
+.names PS_Data30_5_1.BLIF LastRxData_5_.BLIF PS_Data30_5
+11 1
+.names un1_PS_Data34_1_5.BLIF un1_PS_Data34_1_6.BLIF un1_PS_Data34_1
+11 1
+.names ps_data_cnst_3_0__m14_un1_n.BLIF ps_data_cnst_3_0__m14_un0_n.BLIF \
+ps_data_cnst_3_0__i4_mux_n
+1- 1
+-1 1
+.names LastRxData_5_.BLIF ps_data_cnst_3_0__n_9_i_n.BLIF ps_data_cnst_2__n
+11 1
+.names ps_data_cnst_3_0__m7_un1_n.BLIF ps_data_cnst_3_0__m7_un0_n.BLIF \
+ps_data_cnst_1__n
+1- 1
+-1 1
+.names ps_data_cnst_3_0__m2_un1_n.BLIF ps_data_cnst_3_0__m2_un0_n.BLIF \
+ps_data_cnst_3_0__n_3_n
+1- 1
+-1 1
+.names RxEn_2_i.BLIF RxEn_2
+0 1
+.names counter_i_1__n.BLIF counter_i_2__n.BLIF un1_rxdata_2_8__n
+11 1
+.names counter_c1.BLIF un1_rxdata_2_7__n.BLIF un1_rxdata_7__n
+11 1
+.names counter_3_.BLIF un1_rxdata_2_8__n.BLIF N_24
+11 1
+.names counter_2_.BLIF counter_i_3__n.BLIF un1_rxdata_2_7__n
+11 1
+.names RxEn_2.BLIF counter_c1.BLIF N_21
+11 1
+.names RxEn_2.BLIF counter_0_.BLIF N_18
+11 1
+.names counter_1_.BLIF counter_i_3__n.BLIF N_20
+11 1
+.names un1_rxdata_1_8__n.BLIF un1_rxdata_2_8__n.BLIF un1_rxdata_8__n
+11 1
+.names counter_0_.BLIF counter_1_.BLIF counter_c1
+11 1
+.names un1_rxdata_1_6__n.BLIF un1_rxdata_2_6__n.BLIF un1_rxdata_6__n
+11 1
+.names un1_rxdata_1_5__n.BLIF un1_rxdata_2_5__n.BLIF un1_rxdata_5__n
+11 1
+.names counter_i_1__n.BLIF counter_i_3__n.BLIF un1_rxdata_2_5__n
+11 1
+.names un1_rxdata_1_4__n.BLIF un1_rxdata_2_5__n.BLIF un1_rxdata_4__n
+11 1
+.names counter_c1.BLIF un1_rxdata_2_3__n.BLIF un1_rxdata_3__n
+11 1
+.names counter_i_2__n.BLIF counter_i_3__n.BLIF un1_rxdata_2_3__n
+11 1
+.names un1_rxdata_1_2__n.BLIF un1_rxdata_2_3__n.BLIF un1_rxdata_2__n
+11 1
+.names un1_rxdata_1_1__n.BLIF un1_rxdata_2_3__n.BLIF un1_rxdata_1__n
+11 1
+.names counter_3_.BLIF counter_i_3__n
+0 1
+.names counter_1_.BLIF counter_i_1__n
+0 1
+.names counter_2_.BLIF counter_i_2__n
+0 1
+.names counter_0_.BLIF counter_i_0__n
+0 1
+.names inst_LedEn.BLIF LedEn_i
+0 1
+.names inst_KeyClock_r1.BLIF KeyClock_r1_i
+0 1
+.names LastRxData_0_.BLIF lastrxdata_i_0__n
+0 1
+.names LastRxData_1_.BLIF lastrxdata_i_1__n
+0 1
+.names LastRxData_3_.BLIF lastrxdata_i_3__n
+0 1
+.names LastRxData_2_.BLIF lastrxdata_i_2__n
+0 1
+.names LastRxData_4_.BLIF lastrxdata_i_4__n
+0 1
+.names ps_data_cnst_3_0__n_3_n.BLIF ps_data_cnst_3_0__n_3_i_n
+0 1
+.names PS_Data_cnst_3_0__m8.BLIF ps_data_cnst_3_0__n_9_i_n
+0 1
+.names PS_Data27_3.BLIF PS_Data27_3_i
+0 1
+.names PS_Data30_5.BLIF PS_Data30_5_i
+0 1
+.names PS_Data_cnst_3_0__m5.BLIF ps_data_cnst_3_0__n_6_i_n
+0 1
+.names ps_data_cnst_3_0__i4_mux_n.BLIF ps_data_cnst_3_0__i4_mux_i_n
+0 1
+.names PS_Data25.BLIF PS_Data25_i
+0 1
+.names PS_Data26.BLIF PS_Data26_i
+0 1
+.names PS_Data31.BLIF PS_Data31_i
+0 1
+.names PS_Data32.BLIF PS_Data32_i
+0 1
+.names PS_Data33.BLIF PS_Data33_i
+0 1
+.names PS_Data34.BLIF PS_Data34_i
+0 1
+.names PS_Data28.BLIF PS_Data28_i
+0 1
+.names PS_Data29.BLIF PS_Data29_i
+0 1
+.names LastRxData_7_.BLIF lastrxdata_i_7__n
+0 1
+.names LastRxData_5_.BLIF lastrxdata_i_5__n
+0 1
+.names LastRxData_6_.BLIF lastrxdata_i_6__n
+0 1
+.names reset_c.BLIF reset_i
+0 1
+.names inst_RxEn.BLIF RxEn_i
+0 1
+.names un1_rxdata_2_8__n.BLIF un1_rxdata_2_i_8__n
+0 1
+.names counter_3_.BLIF un1_rxdata_2_i_8__n.BLIF RxEn_2_i
+11 1
+.names PS_Data30_4.BLIF PS_Data32_1.BLIF PS_Data29_1
+11 1
+.names LastRxData_5_.BLIF lastrxdata_i_1__n.BLIF PS_Data29_2
+11 1
+.names lastrxdata_i_3__n.BLIF lastrxdata_i_4__n.BLIF PS_Data29_3
+11 1
+.names PS_Data29_1.BLIF PS_Data29_2.BLIF PS_Data29_4
+11 1
+.names LastRxData_5_.BLIF lastrxdata_i_0__n.BLIF PS_Data28_1
+11 1
+.names lastrxdata_i_4__n.BLIF PS_Data30_1.BLIF PS_Data28_2
+11 1
+.names PS_Data28_1.BLIF PS_Data28_2.BLIF PS_Data28_3
+11 1
+.names LastRxData_4_.BLIF PS_Data27_3.BLIF PS_Data26_1
+11 1
+.names PS_Data30_1.BLIF PS_Data30_4.BLIF PS_Data26_2
+11 1
+.names lastrxdata_i_1__n.BLIF lastrxdata_i_7__n.BLIF PS_Data25_1
+11 1
+.names PS_Data32_1.BLIF PS_Data34_2.BLIF PS_Data25_2
+11 1
+.names PS_Data25_1.BLIF PS_Data25_2.BLIF PS_Data25_3
+11 1
+.names PS_Data34_3.BLIF lastrxdata_i_0__n.BLIF PS_Data34_1
+11 1
+.names lastrxdata_i_7__n.BLIF PS_Data30_1.BLIF PS_Data34_2_0
+11 1
+.names PS_Data34_1.BLIF PS_Data34_2_0.BLIF PS_Data34_3_0
+11 1
+.names lastrxdata_i_0__n.BLIF PS_Data30_1.BLIF PS_Data33_1
+11 1
+.names PS_Data30_4.BLIF PS_Data32_2.BLIF PS_Data33_2
+11 1
+.names PS_Data32_2.BLIF LastRxData_5_.BLIF PS_Data32_1_0
+11 1
+.names lastrxdata_i_1__n.BLIF PS_Data30_4.BLIF PS_Data32_2_0
+11 1
+.names PS_Data32_1_0.BLIF PS_Data32_2_0.BLIF PS_Data32_3
+11 1
+.names PS_Data30_4.BLIF lastrxdata_i_0__n.BLIF PS_Data31_1
+11 1
+.names lastrxdata_i_3__n.BLIF LedEn8_1.BLIF PS_Data31_2
+11 1
+.names PS_Data31_1.BLIF PS_Data31_2.BLIF PS_Data31_3
+11 1
+.names PS_Data30_1.BLIF LastRxData_3_.BLIF PS_Data30_5_1
+11 1
+.names PS_Data25_i.BLIF PS_Data26_i.BLIF un1_PS_Data34_1_1
+11 1
+.names PS_Data28_i.BLIF PS_Data29_i.BLIF un1_PS_Data34_1_2
+11 1
+.names PS_Data31_i.BLIF PS_Data32_i.BLIF un1_PS_Data34_1_3
+11 1
+.names PS_Data33_i.BLIF PS_Data34_i.BLIF un1_PS_Data34_1_4
+11 1
+.names un1_PS_Data34_1_1.BLIF un1_PS_Data34_1_2.BLIF un1_PS_Data34_1_5
+11 1
+.names un1_PS_Data34_1_3.BLIF un1_PS_Data34_1_4.BLIF un1_PS_Data34_1_6
+11 1
+.names LastRxData_6_.BLIF LastRxData_7_.BLIF LedEn8_1_0
+11 1
+.names lastrxdata_i_0__n.BLIF lastrxdata_i_1__n.BLIF LedEn8_2
+11 1
+.names LedEn8_1.BLIF lastrxdata_i_2__n.BLIF LedEn8_3
+11 1
+.names LedEn8_1_0.BLIF LedEn8_2.BLIF LedEn8_4
+11 1
+.names LedEn8_3.BLIF lastrxdata_i_3__n.BLIF LedEn8_5
+11 1
+.names counter_3_.BLIF counter_i_0__n.BLIF un1_rxdata_1_8__n
+11 1
+.names counter_1_.BLIF counter_2_.BLIF un1_rxdata_1_6__n
+11 1
+.names counter_i_0__n.BLIF counter_i_3__n.BLIF un1_rxdata_2_6__n
+11 1
+.names counter_0_.BLIF counter_2_.BLIF un1_rxdata_1_5__n
+11 1
+.names counter_2_.BLIF counter_i_0__n.BLIF un1_rxdata_1_4__n
+11 1
+.names counter_1_.BLIF counter_i_0__n.BLIF un1_rxdata_1_2__n
+11 1
+.names counter_0_.BLIF counter_i_1__n.BLIF un1_rxdata_1_1__n
+11 1
+.names un1_rxdata_4__n.BLIF rxdata_2_4__un3_n
+0 1
+.names KeyData_c.BLIF un1_rxdata_4__n.BLIF rxdata_2_4__un1_n
+11 1
+.names RxData_4_.BLIF rxdata_2_4__un3_n.BLIF rxdata_2_4__un0_n
+11 1
+.names un1_rxdata_3__n.BLIF rxdata_2_3__un3_n
+0 1
+.names KeyData_c.BLIF un1_rxdata_3__n.BLIF rxdata_2_3__un1_n
+11 1
+.names RxData_3_.BLIF rxdata_2_3__un3_n.BLIF rxdata_2_3__un0_n
+11 1
+.names un1_rxdata_2__n.BLIF rxdata_2_2__un3_n
+0 1
+.names KeyData_c.BLIF un1_rxdata_2__n.BLIF rxdata_2_2__un1_n
+11 1
+.names RxData_2_.BLIF rxdata_2_2__un3_n.BLIF rxdata_2_2__un0_n
+11 1
+.names un1_rxdata_1__n.BLIF rxdata_2_1__un3_n
+0 1
+.names KeyData_c.BLIF un1_rxdata_1__n.BLIF rxdata_2_1__un1_n
+11 1
+.names RxData_1_.BLIF rxdata_2_1__un3_n.BLIF rxdata_2_1__un0_n
+11 1
+.names un1_rxdata_8__n.BLIF rxdata_2_8__un3_n
+0 1
+.names KeyData_c.BLIF un1_rxdata_8__n.BLIF rxdata_2_8__un1_n
+11 1
+.names RxData_8_.BLIF rxdata_2_8__un3_n.BLIF rxdata_2_8__un0_n
+11 1
+.names un1_rxdata_7__n.BLIF rxdata_2_7__un3_n
+0 1
+.names KeyData_c.BLIF un1_rxdata_7__n.BLIF rxdata_2_7__un1_n
+11 1
+.names RxData_7_.BLIF rxdata_2_7__un3_n.BLIF rxdata_2_7__un0_n
+11 1
+.names un1_rxdata_6__n.BLIF rxdata_2_6__un3_n
+0 1
+.names KeyData_c.BLIF un1_rxdata_6__n.BLIF rxdata_2_6__un1_n
+11 1
+.names RxData_6_.BLIF rxdata_2_6__un3_n.BLIF rxdata_2_6__un0_n
+11 1
+.names un1_rxdata_5__n.BLIF rxdata_2_5__un3_n
+0 1
+.names KeyData_c.BLIF un1_rxdata_5__n.BLIF rxdata_2_5__un1_n
+11 1
+.names RxData_5_.BLIF rxdata_2_5__un3_n.BLIF rxdata_2_5__un0_n
+11 1
+.names un1_PS_Data34_1.BLIF ps_data_cnst_3_0__ps_data_3_0__un3_n
+0 1
+.names savelat_0_reg.BLIF un1_PS_Data34_1.BLIF \
+ps_data_cnst_3_0__ps_data_3_0__un1_n
+11 1
+.names ps_data_cnst_3_0__n_6_i_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_0__un3_n.BLIF ps_data_cnst_3_0__ps_data_3_0__un0_n
+11 1
+.names LastRxData_4_.BLIF ps_data_cnst_3_0__m14_un3_n
+0 1
+.names PS_Data30_5_i.BLIF LastRxData_4_.BLIF ps_data_cnst_3_0__m14_un1_n
+11 1
+.names PS_Data27_3_i.BLIF ps_data_cnst_3_0__m14_un3_n.BLIF \
+ps_data_cnst_3_0__m14_un0_n
+11 1
+.names LastRxData_5_.BLIF ps_data_cnst_3_0__m7_un3_n
+0 1
+.names PS_Data_cnst_3_0__m6.BLIF LastRxData_5_.BLIF ps_data_cnst_3_0__m7_un1_n
+11 1
+.names LastRxData_3_.BLIF ps_data_cnst_3_0__m7_un3_n.BLIF \
+ps_data_cnst_3_0__m7_un0_n
+11 1
+.names LastRxData_5_.BLIF ps_data_cnst_3_0__m2_un3_n
+0 1
+.names lastrxdata_i_4__n.BLIF LastRxData_5_.BLIF ps_data_cnst_3_0__m2_un1_n
+11 1
+.names lastrxdata_i_3__n.BLIF ps_data_cnst_3_0__m2_un3_n.BLIF \
+ps_data_cnst_3_0__m2_un0_n
+11 1
+.names un1_PS_Data34_1.BLIF ps_data_cnst_3_0__ps_data_3_3__un3_n
+0 1
+.names savelat_3_reg.BLIF un1_PS_Data34_1.BLIF \
+ps_data_cnst_3_0__ps_data_3_3__un1_n
+11 1
+.names ps_data_cnst_3_0__i4_mux_i_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_3__un3_n.BLIF ps_data_cnst_3_0__ps_data_3_3__un0_n
+11 1
+.names un1_PS_Data34_1.BLIF ps_data_cnst_3_0__ps_data_3_2__un3_n
+0 1
+.names savelat_2_reg.BLIF un1_PS_Data34_1.BLIF \
+ps_data_cnst_3_0__ps_data_3_2__un1_n
+11 1
+.names ps_data_cnst_2__n.BLIF ps_data_cnst_3_0__ps_data_3_2__un3_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_2__un0_n
+11 1
+.names un1_PS_Data34_1.BLIF ps_data_cnst_3_0__ps_data_3_1__un3_n
+0 1
+.names savelat_1_reg.BLIF un1_PS_Data34_1.BLIF \
+ps_data_cnst_3_0__ps_data_3_1__un1_n
+11 1
+.names ps_data_cnst_1__n.BLIF ps_data_cnst_3_0__ps_data_3_1__un3_n.BLIF \
+ps_data_cnst_3_0__ps_data_3_1__un0_n
+11 1
+.names PS_Datalatr_3_reg.BLIF PS_Data_3_
+1 1
+0 0
+.names savelat_3_reg.BLIF save_3_
+1 1
+0 0
+.names PS_Datalatr_2_reg.BLIF PS_Data_2_
+1 1
+0 0
+.names PS_Datalatr_1_reg.BLIF PS_Data_1_
+1 1
+0 0
+.names PS_Datalatr_0_reg.BLIF PS_Data_0_
+1 1
+0 0
+.names savelat_2_reg.BLIF save_2_
+1 1
+0 0
+.names savelat_1_reg.BLIF save_1_
+1 1
+0 0
+.names savelat_0_reg.BLIF save_0_
+1 1
+0 0
+.names RxData_0_sqmuxa.BLIF RxData_5_.CE
+1 1
+0 0
+.names clk_c.BLIF RxData_5_.C
+1 1
+0 0
+.names RxData_0_sqmuxa.BLIF RxData_6_.CE
+1 1
+0 0
+.names clk_c.BLIF RxData_6_.C
+1 1
+0 0
+.names RxData_0_sqmuxa.BLIF RxData_7_.CE
+1 1
+0 0
+.names clk_c.BLIF RxData_7_.C
+1 1
+0 0
+.names RxData_0_sqmuxa.BLIF RxData_8_.CE
+1 1
+0 0
+.names clk_c.BLIF RxData_8_.C
+1 1
+0 0
+.names RxData_6_.BLIF LastRxData_5_.D
+1 1
+0 0
+.names RxEn_i.BLIF LastRxData_5_.C
+1 1
+0 0
+.names reset_i.BLIF LastRxData_5_.AR
+1 1
+0 0
+.names RxData_7_.BLIF LastRxData_6_.D
+1 1
+0 0
+.names RxEn_i.BLIF LastRxData_6_.C
+1 1
+0 0
+.names reset_i.BLIF LastRxData_6_.AP
+1 1
+0 0
+.names RxData_8_.BLIF LastRxData_7_.D
+1 1
+0 0
+.names RxEn_i.BLIF LastRxData_7_.C
+1 1
+0 0
+.names reset_i.BLIF LastRxData_7_.AR
+1 1
+0 0
+.names RxData_0_sqmuxa.BLIF RxData_1_.CE
+1 1
+0 0
+.names clk_c.BLIF RxData_1_.C
+1 1
+0 0
+.names RxData_0_sqmuxa.BLIF RxData_2_.CE
+1 1
+0 0
+.names clk_c.BLIF RxData_2_.C
+1 1
+0 0
+.names RxData_0_sqmuxa.BLIF RxData_3_.CE
+1 1
+0 0
+.names clk_c.BLIF RxData_3_.C
+1 1
+0 0
+.names RxData_0_sqmuxa.BLIF RxData_4_.CE
+1 1
+0 0
+.names clk_c.BLIF RxData_4_.C
+1 1
+0 0
+.names counter_n2.BLIF counter_2_.D
+1 1
+0 0
+.names neg_KeyClock.BLIF counter_2_.CE
+1 1
+0 0
+.names clk_c.BLIF counter_2_.C
+1 1
+0 0
+.names reset_i.BLIF counter_2_.AR
+1 1
+0 0
+.names counter_n3.BLIF counter_3_.D
+1 1
+0 0
+.names neg_KeyClock.BLIF counter_3_.CE
+1 1
+0 0
+.names clk_c.BLIF counter_3_.C
+1 1
+0 0
+.names reset_i.BLIF counter_3_.AR
+1 1
+0 0
+.names RxData_1_.BLIF LastRxData_0_.D
+1 1
+0 0
+.names RxEn_i.BLIF LastRxData_0_.C
+1 1
+0 0
+.names reset_i.BLIF LastRxData_0_.AP
+1 1
+0 0
+.names RxData_2_.BLIF LastRxData_1_.D
+1 1
+0 0
+.names RxEn_i.BLIF LastRxData_1_.C
+1 1
+0 0
+.names reset_i.BLIF LastRxData_1_.AR
+1 1
+0 0
+.names RxData_3_.BLIF LastRxData_2_.D
+1 1
+0 0
+.names RxEn_i.BLIF LastRxData_2_.C
+1 1
+0 0
+.names reset_i.BLIF LastRxData_2_.AP
+1 1
+0 0
+.names RxData_4_.BLIF LastRxData_3_.D
+1 1
+0 0
+.names RxEn_i.BLIF LastRxData_3_.C
+1 1
+0 0
+.names reset_i.BLIF LastRxData_3_.AR
+1 1
+0 0
+.names RxData_5_.BLIF LastRxData_4_.D
+1 1
+0 0
+.names RxEn_i.BLIF LastRxData_4_.C
+1 1
+0 0
+.names reset_i.BLIF LastRxData_4_.AR
+1 1
+0 0
+.names neg_KeyClock.BLIF counter_0_.CE
+1 1
+0 0
+.names clk_c.BLIF counter_0_.C
+1 1
+0 0
+.names reset_i.BLIF counter_0_.AR
+1 1
+0 0
+.names counter_n1.BLIF counter_1_.D
+1 1
+0 0
+.names neg_KeyClock.BLIF counter_1_.CE
+1 1
+0 0
+.names clk_c.BLIF counter_1_.C
+1 1
+0 0
+.names reset_i.BLIF counter_1_.AR
+1 1
+0 0
+.names RxEn_i.BLIF inst_LedEn.C
+1 1
+0 0
+.names reset_i.BLIF inst_LedEn.AR
+1 1
+0 0
+.names RxEn_2.BLIF inst_RxEn.D
+1 1
+0 0
+.names neg_KeyClock.BLIF inst_RxEn.CE
+1 1
+0 0
+.names clk_c.BLIF inst_RxEn.C
+1 1
+0 0
+.names reset_i.BLIF inst_RxEn.AP
+1 1
+0 0
+.names KeyClock.BLIF inst_KeyClock_r0.D
+1 1
+0 0
+.names clk_c.BLIF inst_KeyClock_r0.C
+1 1
+0 0
+.names reset_i.BLIF inst_KeyClock_r0.AR
+1 1
+0 0
+.names inst_KeyClock_r0.BLIF inst_KeyClock_r1.D
+1 1
+0 0
+.names clk_c.BLIF inst_KeyClock_r1.C
+1 1
+0 0
+.names reset_i.BLIF inst_KeyClock_r1.AR
+1 1
+0 0
+.names inst_KeyClock_r1.BLIF inst_KeyClock_r2.D
+1 1
+0 0
+.names clk_c.BLIF inst_KeyClock_r2.C
+1 1
+0 0
+.names reset_i.BLIF inst_KeyClock_r2.AR
+1 1
+0 0
+.names ps_data_3_0__n.BLIF savelat_0_reg.D
+1 1
+0 0
+.names PS_Data38.BLIF savelat_0_reg.LH
+1 1
+0 0
+.names ps_data_3_1__n.BLIF savelat_1_reg.D
+1 1
+0 0
+.names PS_Data38.BLIF savelat_1_reg.LH
+1 1
+0 0
+.names ps_data_3_2__n.BLIF savelat_2_reg.D
+1 1
+0 0
+.names PS_Data38.BLIF savelat_2_reg.LH
+1 1
+0 0
+.names ps_data_3_3__n.BLIF savelat_3_reg.D
+1 1
+0 0
+.names PS_Data38.BLIF savelat_3_reg.LH
+1 1
+0 0
+.names ps_data_3_0__n.BLIF PS_Datalatr_0_reg.D
+1 1
+0 0
+.names LedEn_i.BLIF PS_Datalatr_0_reg.LH
+1 1
+0 0
+.names reset_i.BLIF PS_Datalatr_0_reg.AR
+1 1
+0 0
+.names ps_data_3_1__n.BLIF PS_Datalatr_1_reg.D
+1 1
+0 0
+.names LedEn_i.BLIF PS_Datalatr_1_reg.LH
+1 1
+0 0
+.names reset_i.BLIF PS_Datalatr_1_reg.AR
+1 1
+0 0
+.names ps_data_3_2__n.BLIF PS_Datalatr_2_reg.D
+1 1
+0 0
+.names LedEn_i.BLIF PS_Datalatr_2_reg.LH
+1 1
+0 0
+.names reset_i.BLIF PS_Datalatr_2_reg.AR
+1 1
+0 0
+.names ps_data_3_3__n.BLIF PS_Datalatr_3_reg.D
+1 1
+0 0
+.names LedEn_i.BLIF PS_Datalatr_3_reg.LH
+1 1
+0 0
+.names reset_i.BLIF PS_Datalatr_3_reg.AR
+1 1
+0 0
+.names clk.BLIF clk_c
+1 1
+0 0
+.names reset.BLIF reset_c
+1 1
+0 0
+.names KeyData.BLIF KeyData_c
+1 1
+0 0
+.names LastRxData_3_.BLIF PS_Data_cnst_3_0__m8_1.BLIF PS_Data_cnst_3_0__m8
+01 1
+10 1
+11 0
+00 0
+.names LastRxData_1_.BLIF LastRxData_3_.BLIF PS_Data_cnst_3_0__m6
+01 1
+10 1
+11 0
+00 0
+.names LastRxData_0_.BLIF ps_data_cnst_3_0__n_3_i_n.BLIF PS_Data_cnst_3_0__m5
+01 1
+10 1
+11 0
+00 0
+.names un1_rxdata_2_7__n.BLIF N_21.BLIF counter_n2
+01 1
+10 1
+11 0
+00 0
+.names un1_rxdata_7__n.BLIF N_24.BLIF counter_n3
+01 1
+10 1
+11 0
+00 0
+.names N_18.BLIF RxEn_2_i.BLIF counter_n0
+01 1
+10 1
+11 0
+00 0
+.names N_18.BLIF N_20.BLIF counter_n1
+01 1
+10 1
+11 0
+00 0
+.names LastRxData_1_.BLIF LastRxData_4_.BLIF PS_Data_cnst_3_0__m8_1
+01 1
+10 1
+11 0
+00 0
+.end

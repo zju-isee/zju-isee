@@ -1,0 +1,116 @@
+#$ TOOL SCH2BLF 2.1.00.02 
+#$ TITLE test.bls 
+#$ MODULE test 
+#$ PINS 23  clk1 key_out4 key_out3 key_out2 key_out1 reset a b \
+#   PointTime c clk d e f g LEDVCC1 LEDVCC2 LEDVCC3 LEDVCC4 key_in0 \
+#   key_in1 key_in2 key_in3
+#$ NODES 33 N_22 N_14'ke' N_15'ke' N_16'ke' N_17'ke' N_18'ke'  \
+#  N_19'ke' N_20'ke' N_21'ke' key_out_0_ key_out_1_ key_out_2_  \
+#  key_out_3_ key_in_0_ key_in_1_ key_in_2_ key_in_3_ N_12'ke'  \
+#  N_13'ke' led_int_Data0_0_ led_int_Data0_1_ led_int_Data0_2_  \
+#  led_int_Data0_3_ led_int_Data1_0_ led_int_Data1_1_  \
+#  led_int_Data1_2_ led_int_Data1_3_ led_int_Data2_0_  \
+#  led_int_Data2_1_ led_int_Data2_2_ led_int_Data2_3_ N_2'ke'  \
+#  N_4'ke' 
+#$ NODES 16 I79>ZN0 I79>A0 I78>ZN0 I78>A0 I77>ZN0 I77>A0 I76>ZN0 \
+#   I76>A0 I75>ZN0 I75>A0 I74>ZN0 I74>A0 I73>ZN0 I73>A0 I72>ZN0 \
+#   I72>A0
+#$ INTERFACE calculate 23 clk'i' key_in_0_'i' key_in_1_'i' \
+#   key_in_2_'i' key_in_3_'i' reset'i' PointTime'o' key_out_0_'o' \
+#   key_out_1_'o' key_out_2_'o' key_out_3_'o' led_int_Data0_0_'o' \
+#   led_int_Data0_1_'o' led_int_Data0_2_'o' led_int_Data0_3_'o' \
+#   led_int_Data1_0_'o' led_int_Data1_1_'o' led_int_Data1_2_'o' \
+#   led_int_Data1_3_'o' led_int_Data2_0_'o' led_int_Data2_1_'o' \
+#   led_int_Data2_2_'o' led_int_Data2_3_'o'
+#$ INTERFACE decoder_4 8 in_0_'i' in_1_'i' in_2_'i' in_3_'i' Q0'o' \
+#   Q1'o' Q2'o' Q3'o'
+#$ INTERFACE deshake 4 RESET'i' din'i' keyclk'i' dout'o'
+#$ INTERFACE display 29 clk'i' num1_0_'i' num1_1_'i' num1_2_'i' \
+#   num1_3_'i' num2_0_'i' num2_1_'i' num2_2_'i' num2_3_'i' \
+#   num3_0_'i' num3_1_'i' num3_2_'i' num3_3_'i' num4_0_'i' \
+#   num4_1_'i' num4_2_'i' num4_3_'i' reset'i' LED_A'o' LED_B'o' \
+#   LED_C'o' LED_D'o' LED_E'o' LED_F'o' LED_G'o' LED_VCC1'o' \
+#   LED_VCC2'o' LED_VCC3'o' LED_VCC4'o'
+#$ INTERFACE divider_8 3 clk'i' reset'i' time10ms'o'
+#$ INTERFACE encoder 8 D0'i' D1'i' D2'i' D3'i' key_in_0_'o' \
+#   key_in_1_'o' key_in_2_'o' key_in_3_'o'
+#$ EXTERNAL inv 2 A0'i' ZN0'o'
+#$ INSTANCE I3 calculate 23 clk key_in_0_ key_in_1_ key_in_2_ \
+#   key_in_3_ reset PointTime key_out_0_ key_out_1_ key_out_2_ \
+#   key_out_3_ led_int_Data0_0_ led_int_Data0_1_ led_int_Data0_2_ \
+#   led_int_Data0_3_ led_int_Data1_0_ led_int_Data1_1_ \
+#   led_int_Data1_2_ led_int_Data1_3_ led_int_Data2_0_ \
+#   led_int_Data2_1_ led_int_Data2_2_ led_int_Data2_3_
+#$ INSTANCE I71 decoder_4 8 key_out_0_ key_out_1_ key_out_2_ \
+#   key_out_3_ key_out1 key_out2 key_out3 key_out4
+#$ INSTANCE I67 deshake 4 reset N_18 N_22 N_14
+#$ INSTANCE I68 deshake 4 reset N_19 N_22 N_15
+#$ INSTANCE I69 deshake 4 reset N_20 N_22 N_16
+#$ INSTANCE I70 deshake 4 reset N_21 N_22 N_17
+#$ INSTANCE I59 display 29 clk led_int_Data0_0_ led_int_Data0_1_ \
+#   led_int_Data0_2_ led_int_Data0_3_ led_int_Data1_0_ \
+#   led_int_Data1_1_ led_int_Data1_2_ led_int_Data1_3_ \
+#   led_int_Data2_0_ led_int_Data2_1_ led_int_Data2_2_ \
+#   led_int_Data2_3_ led_int_Data2_0_ led_int_Data2_1_ \
+#   led_int_Data2_2_ led_int_Data2_3_ reset a b c d e f g LEDVCC1 \
+#   LEDVCC2 LEDVCC3 LEDVCC4
+#$ INSTANCE I80 divider_8 3 clk1 reset N_22
+#$ INSTANCE I2 encoder 8 N_13 N_2 N_12 N_4 key_in_0_ key_in_1_ \
+#   key_in_2_ key_in_3_
+#$ INSTANCE I72 inv 2 I72>A0 I72>ZN0
+#$ INSTANCE I73 inv 2 I73>A0 I73>ZN0
+#$ INSTANCE I74 inv 2 I74>A0 I74>ZN0
+#$ INSTANCE I75 inv 2 I75>A0 I75>ZN0
+#$ INSTANCE I76 inv 2 I76>A0 I76>ZN0
+#$ INSTANCE I77 inv 2 I77>A0 I77>ZN0
+#$ INSTANCE I78 inv 2 I78>A0 I78>ZN0
+#$ INSTANCE I79 inv 2 I79>A0 I79>ZN0
+.model test
+
+.inputs  I79>ZN0.BLIF key_in0.BLIF I78>ZN0.BLIF key_in1.BLIF \
+   I77>ZN0.BLIF key_in2.BLIF I76>ZN0.BLIF key_in3.BLIF I75>ZN0.BLIF \
+   N_17.BLIF I74>ZN0.BLIF N_16.BLIF I73>ZN0.BLIF N_15.BLIF \
+   I72>ZN0.BLIF N_14.BLIF
+.outputs  N_21 I79>A0 N_20 I78>A0 N_19 I77>A0 N_18 I76>A0 N_13 I75>A0 \
+   N_2 I74>A0 N_12 I73>A0 N_4 I72>A0
+.names I79>ZN0.BLIF N_21
+1 1
+
+.names key_in0.BLIF I79>A0
+1 1
+.names I78>ZN0.BLIF N_20
+1 1
+
+.names key_in1.BLIF I78>A0
+1 1
+.names I77>ZN0.BLIF N_19
+1 1
+
+.names key_in2.BLIF I77>A0
+1 1
+.names I76>ZN0.BLIF N_18
+1 1
+
+.names key_in3.BLIF I76>A0
+1 1
+.names I75>ZN0.BLIF N_13
+1 1
+
+.names N_17.BLIF I75>A0
+1 1
+.names I74>ZN0.BLIF N_2
+1 1
+
+.names N_16.BLIF I74>A0
+1 1
+.names I73>ZN0.BLIF N_12
+1 1
+
+.names N_15.BLIF I73>A0
+1 1
+.names I72>ZN0.BLIF N_4
+1 1
+
+.names N_14.BLIF I72>A0
+1 1
+.end

@@ -1,0 +1,50 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Fri May 26 10:48:16 2023
+#$ TITLE BCD counter_2
+#$ MODULE counter_2
+#$ JEDECFILE counter_2
+#$ PINS 6 q3 q2 q1 q0 clk cd
+.model counter_2
+.inputs clk.BLIF cd.BLIF q3.BLIF q2.BLIF q1.BLIF q0.BLIF
+.outputs q3.C q2.C q1.C q0.C q3.AR q2.AR q1.AR q0.AR q3.REG q2.REG q1.REG \
+q0.REG
+.names q3.BLIF q2.BLIF q1.BLIF q0.BLIF q3.REG
+1--0 1
+101- 1
+110- 1
+0111 1
+.names q2.BLIF q1.BLIF q0.BLIF q2.REG
+10- 1
+1-0 1
+011 1
+.names q3.BLIF q2.BLIF q1.BLIF q0.BLIF q1.REG
+--10 1
+0-01 1
+-101 1
+.names q0.BLIF q0.REG
+0 1
+.names clk.BLIF q3.C
+1 1
+0 0
+.names clk.BLIF q2.C
+1 1
+0 0
+.names clk.BLIF q1.C
+1 1
+0 0
+.names clk.BLIF q0.C
+1 1
+0 0
+.names cd.BLIF q3.AR
+1 1
+0 0
+.names cd.BLIF q2.AR
+1 1
+0 0
+.names cd.BLIF q1.AR
+1 1
+0 0
+.names cd.BLIF q0.AR
+1 1
+0 0
+.end

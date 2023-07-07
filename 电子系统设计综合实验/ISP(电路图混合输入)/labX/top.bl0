@@ -1,0 +1,77 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Fri Jun 09 10:40:28 2023
+#$ TITLE top.bls 
+#$ MODULE top
+#$ PINS 46 din result_0_ result_1_ result_2_ result_3_ result_4_ result_5_ result_6_ \
+#  result_7_ key_in_0_ key_in_1_ key_in_2_ key_in_3_ led_row_0_ led_row_1_ led_row_2_ \
+#  led_row_3_ led_row_4_ led_row_5_ led_row_6_ led_row_7_ led_col_0_ led_col_1_ \
+#  led_col_2_ led_col_3_ led_col_4_ led_col_5_ led_col_6_ led_col_7_ key_out_0_ \
+#  key_out_1_ key_out_2_ key_out_3_ LED_VCC1 LED_VCC2 LED_VCC3 LED_VCC4 g f e d c b a reset clk
+#$ NODES 34 N_6 int_Data_0_ int_Data_1_ int_Data_2_ int_Data_3_ int_Data_4_ \
+#  int_Data_5_ int_Data_6_ int_Data_7_ N_5 N_1 N_2 N_3 N_4 num3_0_ num3_1_ num3_2_ num3_3_ \
+#  num2_0_ num2_1_ num2_2_ num2_3_ num1_0_ num1_1_ num1_2_ num1_3_ I6>ZN0 I6>A0 I5>ZN0 I5>A0 \
+#  I4>ZN0 I4>A0 I3>ZN0 I3>A0
+#$ INTERFACE calculate  31 clk'i'  key_in_0_'i'  key_in_1_'i'  key_in_2_'i'  key_in_3_'i'  reset'i'  flag_Over'o'  \
+#  int_Data_0_'o'  int_Data_1_'o'  int_Data_2_'o'  int_Data_3_'o'  int_Data_4_'o'  int_Data_5_'o'  int_Data_6_'o'  \
+#  int_Data_7_'o'  key_out_0_'o'  key_out_1_'o'  key_out_2_'o'  key_out_3_'o'  led_int_Data0_0_'o'  \
+#  led_int_Data0_1_'o'  led_int_Data0_2_'o'  led_int_Data0_3_'o'  led_int_Data1_0_'o'  \
+#  led_int_Data1_1_'o'  led_int_Data1_2_'o'  led_int_Data1_3_'o'  led_int_Data2_0_'o'  \
+#  led_int_Data2_1_'o'  led_int_Data2_2_'o'  led_int_Data2_3_'o' 
+#$ INTERFACE compare  20 clk'i'  flag_Over'i'  int_Data_0_'i'  int_Data_1_'i'  int_Data_2_'i'  \
+#  int_Data_3_'i'  int_Data_4_'i'  int_Data_5_'i'  int_Data_6_'i'  int_Data_7_'i'  reset'i'  switch'i'  result_0_'o'  \
+#  result_1_'o'  result_2_'o'  result_3_'o'  result_4_'o'  result_5_'o'  result_6_'o'  result_7_'o' 
+#$ INTERFACE deshake  4 RESET'i'  clk'i'  din'i'  dout'o' 
+#$ INTERFACE display  29 clk'i'  num1_0_'i'  num1_1_'i'  num1_2_'i'  num1_3_'i'  num2_0_'i'  num2_1_'i'  num2_2_'i'  \
+#  num2_3_'i'  num3_0_'i'  num3_1_'i'  num3_2_'i'  num3_3_'i'  num4_0_'i'  num4_1_'i'  num4_2_'i'  num4_3_'i'  reset'i'  LED_A'o'  LED_B'o'  \
+#  LED_C'o'  LED_D'o'  LED_E'o'  LED_F'o'  LED_G'o'  LED_VCC1'o'  LED_VCC2'o'  LED_VCC3'o'  LED_VCC4'o' 
+#$ INTERFACE l_inv  2 A0'i'  ZN0'o' 
+#$ INTERFACE led  19 clk_50m'i'  reset_n'i'  switch'i'  led_col_0_'o'  led_col_1_'o'  led_col_2_'o'  \
+#  led_col_3_'o'  led_col_4_'o'  led_col_5_'o'  led_col_6_'o'  led_col_7_'o'  led_row_0_'o'  led_row_1_'o'  \
+#  led_row_2_'o'  led_row_3_'o'  led_row_4_'o'  led_row_5_'o'  led_row_6_'o'  led_row_7_'o' 
+#$ INSTANCE I1 calculate 31 clk key_in_0_ key_in_1_ key_in_2_ key_in_3_ reset N_5 \
+#  int_Data_0_ int_Data_1_ int_Data_2_ int_Data_3_ int_Data_4_ int_Data_5_ int_Data_6_ \
+#  int_Data_7_ key_out_0_ key_out_1_ key_out_2_ key_out_3_ num1_0_ num1_1_ num1_2_ \
+#  num1_3_ num2_0_ num2_1_ num2_2_ num2_3_ num3_0_ num3_1_ num3_2_ num3_3_
+#$ INSTANCE I8 compare 20 clk N_5 int_Data_0_ int_Data_1_ int_Data_2_ int_Data_3_ \
+#  int_Data_4_ int_Data_5_ int_Data_6_ int_Data_7_ reset N_6 result_0_ result_1_ \
+#  result_2_ result_3_ result_4_ result_5_ result_6_ result_7_
+#$ INSTANCE I9 deshake 4 reset clk din N_6
+#$ INSTANCE I2 display 29 clk num1_0_ num1_1_ num1_2_ num1_3_ num2_0_ num2_1_ num2_2_ \
+#  num2_3_ num3_0_ num3_1_ num3_2_ num3_3_ num3_0_ num3_1_ num3_2_ num3_3_ reset a b c d e f g N_4 \
+#  N_3 N_2 N_1
+#$ INSTANCE I3 l_inv 2 I3>A0 I3>ZN0
+#$ INSTANCE I4 l_inv 2 I4>A0 I4>ZN0
+#$ INSTANCE I5 l_inv 2 I5>A0 I5>ZN0
+#$ INSTANCE I6 l_inv 2 I6>A0 I6>ZN0
+#$ INSTANCE I7 led 19 clk reset N_6 led_col_0_ led_col_1_ led_col_2_ led_col_3_ \
+#  led_col_4_ led_col_5_ led_col_6_ led_col_7_ led_row_0_ led_row_1_ led_row_2_ \
+#  led_row_3_ led_row_4_ led_row_5_ led_row_6_ led_row_7_
+.model top
+.inputs I6>ZN0.BLIF N_4.BLIF I5>ZN0.BLIF N_3.BLIF I4>ZN0.BLIF N_2.BLIF \
+I3>ZN0.BLIF N_1.BLIF
+.outputs LED_VCC1 I6>A0 LED_VCC2 I5>A0 LED_VCC3 I4>A0 LED_VCC4 I3>A0
+.names I6>ZN0.BLIF LED_VCC1
+1 1
+0 0
+.names N_4.BLIF I6>A0
+1 1
+0 0
+.names I5>ZN0.BLIF LED_VCC2
+1 1
+0 0
+.names N_3.BLIF I5>A0
+1 1
+0 0
+.names I4>ZN0.BLIF LED_VCC3
+1 1
+0 0
+.names N_2.BLIF I4>A0
+1 1
+0 0
+.names I3>ZN0.BLIF LED_VCC4
+1 1
+0 0
+.names N_1.BLIF I3>A0
+1 1
+0 0
+.end

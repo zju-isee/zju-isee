@@ -1,0 +1,636 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Mon May 29 00:14:42 2023
+#$ MODULE calculate
+#$ PINS 14 key_in_3_ Data_Out_3_ key_out_3_ clk reset key_in_2_ key_in_1_ key_in_0_ \
+#  Data_Out_2_ Data_Out_1_ Data_Out_0_ key_out_2_ key_out_1_ key_out_0_
+#$ NODES 141 G_52 G_54 G_56 G_62 G_64 G_68 G_72 G_80 G_82 timecnt_6_ timecnt_15_ \
+#  timecnt_4_ timecnt_11_ timecnt_16_ timecnt_9_ timecnt_7_ inst_time10ms timecnt_0_ \
+#  timecnt_1_ timecnt_2_ timecnt_3_ timecnt_5_ timecnt_8_ timecnt_10_ timecnt_12_ \
+#  timecnt_13_ timecnt_14_ time10ms_0 scanvalue_0_ scanvalue_1_ scanvalue_23_d \
+#  scanvalue_d_2__n N_10 N_11 N_12 N_13 N_14 N_15 N_16 N_17 N_153 N_154 N_155 time10ms3 G_70 \
+#  G_66 G_74 G_76 G_78 G_58 G_60 time10ms3_9 time10ms3_1 N_86 N_92 N_96 N_100 N_102 N_104 N_108 \
+#  N_106 N_98 N_94 N_90 N_88 N_82 time10ms_0_sqmuxa timecnt_i_6__n timecnt_i_15__n \
+#  timecnt_i_9__n timecnt_i_16__n timecnt_i_7__n timecnt_i_11__n timecnt_i_4__n \
+#  time10ms3_i key_in_i_0__n key_out_i_0__n key_out_i_1__n key_out_i_2__n \
+#  key_in_i_1__n key_in_i_2__n scanvalue_i_1__n scanvalue_i_0__n reset_i clk_c reset_c \
+#  key_in_c_0__n key_in_c_1__n key_in_c_2__n key_in_c_3__n Data_OutDFFC_0_reg \
+#  Data_OutDFFC_1_reg Data_OutDFFC_2_reg Data_OutDFFC_3_reg key_outDFFC_0_reg \
+#  key_outDFFC_1_reg key_outDFFC_2_reg key_outDFFC_3_reg N_10_i N_11_i key_in_c_i_3__n \
+#  N_153_i N_154_i N_155_i N_17_i N_121_0 N_15_i N_16_i N_12_i N_13_i N_14_i \
+#  scanvalue_23_d_i scanvalue_d_i_2__n N_145_0 key_out_c_i_3__n un1_scanvalue17_i \
+#  un1_scanvalue17_i_1 un1_scanvalue17_i_2 un1_scanvalue17_i_3 un1_scanvalue17_i_4 \
+#  un1_scanvalue17_i_5 N_53_i_1 N_11_1 N_11_2 time10ms3_9_1 time10ms3_1_0 time10ms3_2 \
+#  time10ms3_3 time10ms3_4 time10ms3_5 time10ms3_6 time10ms3_7 time10ms3_8 \
+#  time10ms3_9_0 time10ms3_10 time10ms3_11 time10ms3_12 N_140_i_1 N_14_1 N_13_1 N_10_1
+.model calculate
+.inputs key_in_3_.BLIF clk.BLIF reset.BLIF key_in_2_.BLIF key_in_1_.BLIF \
+key_in_0_.BLIF G_52.BLIF G_54.BLIF G_56.BLIF G_62.BLIF G_64.BLIF G_68.BLIF \
+G_72.BLIF G_80.BLIF G_82.BLIF timecnt_6_.BLIF timecnt_15_.BLIF timecnt_4_.BLIF \
+timecnt_11_.BLIF timecnt_16_.BLIF timecnt_9_.BLIF timecnt_7_.BLIF \
+inst_time10ms.BLIF timecnt_0_.BLIF timecnt_1_.BLIF timecnt_2_.BLIF \
+timecnt_3_.BLIF timecnt_5_.BLIF timecnt_8_.BLIF timecnt_10_.BLIF \
+timecnt_12_.BLIF timecnt_13_.BLIF timecnt_14_.BLIF time10ms_0.BLIF \
+scanvalue_0_.BLIF scanvalue_1_.BLIF scanvalue_23_d.BLIF scanvalue_d_2__n.BLIF \
+N_10.BLIF N_11.BLIF N_12.BLIF N_13.BLIF N_14.BLIF N_15.BLIF N_16.BLIF \
+N_17.BLIF N_153.BLIF N_154.BLIF N_155.BLIF time10ms3.BLIF G_70.BLIF G_66.BLIF \
+G_74.BLIF G_76.BLIF G_78.BLIF G_58.BLIF G_60.BLIF time10ms3_9.BLIF \
+time10ms3_1.BLIF N_86.BLIF N_92.BLIF N_96.BLIF N_100.BLIF N_102.BLIF \
+N_104.BLIF N_108.BLIF N_106.BLIF N_98.BLIF N_94.BLIF N_90.BLIF N_88.BLIF \
+N_82.BLIF time10ms_0_sqmuxa.BLIF timecnt_i_6__n.BLIF timecnt_i_15__n.BLIF \
+timecnt_i_9__n.BLIF timecnt_i_16__n.BLIF timecnt_i_7__n.BLIF \
+timecnt_i_11__n.BLIF timecnt_i_4__n.BLIF time10ms3_i.BLIF key_in_i_0__n.BLIF \
+key_out_i_0__n.BLIF key_out_i_1__n.BLIF key_out_i_2__n.BLIF key_in_i_1__n.BLIF \
+key_in_i_2__n.BLIF scanvalue_i_1__n.BLIF scanvalue_i_0__n.BLIF reset_i.BLIF \
+clk_c.BLIF reset_c.BLIF key_in_c_0__n.BLIF key_in_c_1__n.BLIF \
+key_in_c_2__n.BLIF key_in_c_3__n.BLIF Data_OutDFFC_0_reg.BLIF \
+Data_OutDFFC_1_reg.BLIF Data_OutDFFC_2_reg.BLIF Data_OutDFFC_3_reg.BLIF \
+key_outDFFC_0_reg.BLIF key_outDFFC_1_reg.BLIF key_outDFFC_2_reg.BLIF \
+key_outDFFC_3_reg.BLIF N_10_i.BLIF N_11_i.BLIF key_in_c_i_3__n.BLIF \
+N_153_i.BLIF N_154_i.BLIF N_155_i.BLIF N_17_i.BLIF N_121_0.BLIF N_15_i.BLIF \
+N_16_i.BLIF N_12_i.BLIF N_13_i.BLIF N_14_i.BLIF scanvalue_23_d_i.BLIF \
+scanvalue_d_i_2__n.BLIF N_145_0.BLIF key_out_c_i_3__n.BLIF \
+un1_scanvalue17_i.BLIF un1_scanvalue17_i_1.BLIF un1_scanvalue17_i_2.BLIF \
+un1_scanvalue17_i_3.BLIF un1_scanvalue17_i_4.BLIF un1_scanvalue17_i_5.BLIF \
+N_53_i_1.BLIF N_11_1.BLIF N_11_2.BLIF time10ms3_9_1.BLIF time10ms3_1_0.BLIF \
+time10ms3_2.BLIF time10ms3_3.BLIF time10ms3_4.BLIF time10ms3_5.BLIF \
+time10ms3_6.BLIF time10ms3_7.BLIF time10ms3_8.BLIF time10ms3_9_0.BLIF \
+time10ms3_10.BLIF time10ms3_11.BLIF time10ms3_12.BLIF N_140_i_1.BLIF \
+N_14_1.BLIF N_13_1.BLIF N_10_1.BLIF
+.outputs Data_Out_3_ key_out_3_ Data_Out_2_ Data_Out_1_ Data_Out_0_ key_out_2_ \
+key_out_1_ key_out_0_ scanvalue_0_.D scanvalue_0_.C scanvalue_0_.AR \
+scanvalue_1_.D scanvalue_1_.C scanvalue_1_.AR timecnt_14_.D timecnt_14_.C \
+timecnt_14_.AR timecnt_15_.D timecnt_15_.C timecnt_15_.AR timecnt_16_.D \
+timecnt_16_.C timecnt_16_.AR Data_OutDFFC_0_reg.D Data_OutDFFC_0_reg.CE \
+Data_OutDFFC_0_reg.C Data_OutDFFC_1_reg.D Data_OutDFFC_1_reg.CE \
+Data_OutDFFC_1_reg.C Data_OutDFFC_2_reg.D Data_OutDFFC_2_reg.CE \
+Data_OutDFFC_2_reg.C Data_OutDFFC_3_reg.D Data_OutDFFC_3_reg.CE \
+Data_OutDFFC_3_reg.C key_outDFFC_0_reg.D key_outDFFC_0_reg.CE \
+key_outDFFC_0_reg.C key_outDFFC_1_reg.D key_outDFFC_1_reg.CE \
+key_outDFFC_1_reg.C key_outDFFC_2_reg.D key_outDFFC_2_reg.CE \
+key_outDFFC_2_reg.C key_outDFFC_3_reg.D key_outDFFC_3_reg.CE \
+key_outDFFC_3_reg.C timecnt_0_.D timecnt_0_.C timecnt_0_.AR timecnt_1_.D \
+timecnt_1_.C timecnt_1_.AR timecnt_2_.D timecnt_2_.C timecnt_2_.AR \
+timecnt_3_.D timecnt_3_.C timecnt_3_.AR timecnt_4_.D timecnt_4_.C \
+timecnt_4_.AR timecnt_5_.D timecnt_5_.C timecnt_5_.AR timecnt_6_.D \
+timecnt_6_.C timecnt_6_.AR timecnt_7_.D timecnt_7_.C timecnt_7_.AR \
+timecnt_8_.D timecnt_8_.C timecnt_8_.AR timecnt_9_.D timecnt_9_.C \
+timecnt_9_.AR timecnt_10_.D timecnt_10_.C timecnt_10_.AR timecnt_11_.D \
+timecnt_11_.C timecnt_11_.AR timecnt_12_.D timecnt_12_.C timecnt_12_.AR \
+timecnt_13_.D timecnt_13_.C timecnt_13_.AR inst_time10ms.D inst_time10ms.C \
+scanvalue_23_d scanvalue_d_2__n N_10 N_11 N_12 N_13 N_14 N_15 N_16 N_17 N_153 \
+N_154 N_155 time10ms3 time10ms3_9 time10ms3_1 N_86 N_92 N_96 N_100 N_102 N_104 \
+N_108 N_106 N_98 N_94 N_90 N_88 N_82 time10ms_0_sqmuxa timecnt_i_6__n \
+timecnt_i_15__n timecnt_i_9__n timecnt_i_16__n timecnt_i_7__n timecnt_i_11__n \
+timecnt_i_4__n time10ms3_i key_in_i_0__n key_out_i_0__n key_out_i_1__n \
+key_out_i_2__n key_in_i_1__n key_in_i_2__n scanvalue_i_1__n scanvalue_i_0__n \
+reset_i clk_c reset_c key_in_c_0__n key_in_c_1__n key_in_c_2__n key_in_c_3__n \
+N_10_i N_11_i key_in_c_i_3__n N_153_i N_154_i N_155_i N_17_i N_121_0 N_15_i \
+N_16_i N_12_i N_13_i N_14_i scanvalue_23_d_i scanvalue_d_i_2__n N_145_0 \
+key_out_c_i_3__n un1_scanvalue17_i un1_scanvalue17_i_1 un1_scanvalue17_i_2 \
+un1_scanvalue17_i_3 un1_scanvalue17_i_4 un1_scanvalue17_i_5 N_53_i_1 N_11_1 \
+N_11_2 time10ms3_9_1 time10ms3_1_0 time10ms3_2 time10ms3_3 time10ms3_4 \
+time10ms3_5 time10ms3_6 time10ms3_7 time10ms3_8 time10ms3_9_0 time10ms3_10 \
+time10ms3_11 time10ms3_12 N_140_i_1 N_14_1 N_13_1 N_10_1 G_52 G_54 G_56 G_62 \
+G_64 G_68 G_72 G_80 G_82 time10ms_0 G_70 G_66 G_74 G_76 G_78 G_58 G_60
+.names N_145_0.BLIF scanvalue_1_.D
+0 1
+.names time10ms3_i.BLIF G_78.BLIF timecnt_14_.D
+11 1
+.names N_53_i_1.BLIF key_out_c_i_3__n.BLIF Data_OutDFFC_0_reg.D
+11 1
+.names N_140_i_1.BLIF N_13_i.BLIF Data_OutDFFC_1_reg.D
+11 1
+.names N_121_0.BLIF Data_OutDFFC_2_reg.D
+0 1
+.names key_in_i_0__n.BLIF key_outDFFC_2_reg.BLIF Data_OutDFFC_3_reg.D
+11 1
+.names scanvalue_i_0__n.BLIF scanvalue_i_1__n.BLIF key_outDFFC_0_reg.D
+11 1
+.names scanvalue_0_.BLIF scanvalue_1_.BLIF key_outDFFC_3_reg.D
+11 1
+.names timecnt_0_.BLIF timecnt_0_.D
+0 1
+.names time10ms3_i.BLIF G_58.BLIF timecnt_4_.D
+11 1
+.names time10ms3_i.BLIF G_60.BLIF timecnt_5_.D
+11 1
+.names time10ms3_i.BLIF G_66.BLIF timecnt_8_.D
+11 1
+.names time10ms3_i.BLIF G_70.BLIF timecnt_10_.D
+11 1
+.names time10ms3_i.BLIF G_74.BLIF timecnt_12_.D
+11 1
+.names time10ms3_i.BLIF G_76.BLIF timecnt_13_.D
+11 1
+.names scanvalue_0_.BLIF scanvalue_i_1__n.BLIF scanvalue_23_d
+11 1
+.names scanvalue_1_.BLIF scanvalue_i_0__n.BLIF scanvalue_d_2__n
+11 1
+.names N_10_1.BLIF key_in_i_2__n.BLIF N_10
+11 1
+.names N_11_1.BLIF N_11_2.BLIF N_11
+11 1
+.names key_in_c_1__n.BLIF key_out_i_0__n.BLIF N_12
+11 1
+.names N_13_1.BLIF key_out_i_2__n.BLIF N_13
+11 1
+.names N_14_1.BLIF key_out_i_1__n.BLIF N_14
+11 1
+.names key_in_i_1__n.BLIF key_outDFFC_1_reg.BLIF N_15
+11 1
+.names key_in_c_1__n.BLIF key_out_i_1__n.BLIF N_16
+11 1
+.names key_in_c_0__n.BLIF key_outDFFC_2_reg.BLIF N_17
+11 1
+.names key_in_c_0__n.BLIF key_in_c_2__n.BLIF N_153
+11 1
+.names key_in_c_0__n.BLIF key_in_c_1__n.BLIF N_154
+11 1
+.names key_in_c_1__n.BLIF key_in_c_2__n.BLIF N_155
+11 1
+.names time10ms3_11.BLIF time10ms3_12.BLIF time10ms3
+11 1
+.names time10ms3_9_1.BLIF timecnt_3_.BLIF time10ms3_9
+11 1
+.names timecnt_0_.BLIF timecnt_1_.BLIF time10ms3_1
+11 1
+.names time10ms3_9.BLIF timecnt_4_.BLIF N_86
+11 1
+.names N_90.BLIF timecnt_7_.BLIF N_92
+11 1
+.names N_94.BLIF timecnt_9_.BLIF N_96
+11 1
+.names N_98.BLIF timecnt_11_.BLIF N_100
+11 1
+.names N_100.BLIF timecnt_12_.BLIF N_102
+11 1
+.names N_102.BLIF timecnt_13_.BLIF N_104
+11 1
+.names N_106.BLIF timecnt_15_.BLIF N_108
+11 1
+.names N_104.BLIF timecnt_14_.BLIF N_106
+11 1
+.names N_96.BLIF timecnt_10_.BLIF N_98
+11 1
+.names N_92.BLIF timecnt_8_.BLIF N_94
+11 1
+.names N_88.BLIF timecnt_6_.BLIF N_90
+11 1
+.names N_86.BLIF timecnt_5_.BLIF N_88
+11 1
+.names time10ms3_1.BLIF timecnt_2_.BLIF N_82
+11 1
+.names reset_c.BLIF time10ms3.BLIF time10ms_0_sqmuxa
+11 1
+.names timecnt_6_.BLIF timecnt_i_6__n
+0 1
+.names timecnt_15_.BLIF timecnt_i_15__n
+0 1
+.names timecnt_9_.BLIF timecnt_i_9__n
+0 1
+.names timecnt_16_.BLIF timecnt_i_16__n
+0 1
+.names timecnt_7_.BLIF timecnt_i_7__n
+0 1
+.names timecnt_11_.BLIF timecnt_i_11__n
+0 1
+.names timecnt_4_.BLIF timecnt_i_4__n
+0 1
+.names time10ms3.BLIF time10ms3_i
+0 1
+.names key_in_c_0__n.BLIF key_in_i_0__n
+0 1
+.names key_outDFFC_0_reg.BLIF key_out_i_0__n
+0 1
+.names key_outDFFC_1_reg.BLIF key_out_i_1__n
+0 1
+.names key_outDFFC_2_reg.BLIF key_out_i_2__n
+0 1
+.names key_in_c_1__n.BLIF key_in_i_1__n
+0 1
+.names key_in_c_2__n.BLIF key_in_i_2__n
+0 1
+.names scanvalue_1_.BLIF scanvalue_i_1__n
+0 1
+.names scanvalue_0_.BLIF scanvalue_i_0__n
+0 1
+.names reset_c.BLIF reset_i
+0 1
+.names N_10.BLIF N_10_i
+0 1
+.names N_11.BLIF N_11_i
+0 1
+.names key_in_c_3__n.BLIF key_in_c_i_3__n
+0 1
+.names N_153.BLIF N_153_i
+0 1
+.names N_154.BLIF N_154_i
+0 1
+.names N_155.BLIF N_155_i
+0 1
+.names N_17.BLIF N_17_i
+0 1
+.names N_17_i.BLIF key_out_i_1__n.BLIF N_121_0
+11 1
+.names N_15.BLIF N_15_i
+0 1
+.names N_16.BLIF N_16_i
+0 1
+.names N_12.BLIF N_12_i
+0 1
+.names N_13.BLIF N_13_i
+0 1
+.names N_14.BLIF N_14_i
+0 1
+.names scanvalue_23_d.BLIF scanvalue_23_d_i
+0 1
+.names scanvalue_d_2__n.BLIF scanvalue_d_i_2__n
+0 1
+.names scanvalue_23_d_i.BLIF scanvalue_d_i_2__n.BLIF N_145_0
+11 1
+.names key_outDFFC_3_reg.BLIF key_out_c_i_3__n
+0 1
+.names un1_scanvalue17_i_4.BLIF un1_scanvalue17_i_5.BLIF un1_scanvalue17_i
+11 1
+.names N_155_i.BLIF key_in_c_i_3__n.BLIF un1_scanvalue17_i_1
+11 1
+.names N_10_i.BLIF N_11_i.BLIF un1_scanvalue17_i_2
+11 1
+.names N_153_i.BLIF N_154_i.BLIF un1_scanvalue17_i_3
+11 1
+.names un1_scanvalue17_i_1.BLIF un1_scanvalue17_i_2.BLIF un1_scanvalue17_i_4
+11 1
+.names un1_scanvalue17_i_3.BLIF reset_c.BLIF un1_scanvalue17_i_5
+11 1
+.names N_15_i.BLIF N_16_i.BLIF N_53_i_1
+11 1
+.names key_in_i_0__n.BLIF key_out_i_0__n.BLIF N_11_1
+11 1
+.names key_out_i_1__n.BLIF key_out_i_2__n.BLIF N_11_2
+11 1
+.names time10ms3_1.BLIF timecnt_2_.BLIF time10ms3_9_1
+11 1
+.names time10ms3_9.BLIF timecnt_5_.BLIF time10ms3_1_0
+11 1
+.names timecnt_8_.BLIF timecnt_10_.BLIF time10ms3_2
+11 1
+.names timecnt_12_.BLIF timecnt_13_.BLIF time10ms3_3
+11 1
+.names timecnt_14_.BLIF timecnt_i_4__n.BLIF time10ms3_4
+11 1
+.names timecnt_i_15__n.BLIF timecnt_i_16__n.BLIF time10ms3_5
+11 1
+.names timecnt_i_6__n.BLIF timecnt_i_7__n.BLIF time10ms3_6
+11 1
+.names timecnt_i_9__n.BLIF timecnt_i_11__n.BLIF time10ms3_7
+11 1
+.names time10ms3_1_0.BLIF time10ms3_2.BLIF time10ms3_8
+11 1
+.names time10ms3_3.BLIF time10ms3_4.BLIF time10ms3_9_0
+11 1
+.names time10ms3_5.BLIF time10ms3_6.BLIF time10ms3_10
+11 1
+.names time10ms3_8.BLIF time10ms3_9_0.BLIF time10ms3_11
+11 1
+.names time10ms3_10.BLIF time10ms3_7.BLIF time10ms3_12
+11 1
+.names N_14_i.BLIF N_12_i.BLIF N_140_i_1
+11 1
+.names key_in_c_2__n.BLIF key_out_i_0__n.BLIF N_14_1
+11 1
+.names key_in_i_1__n.BLIF key_in_i_2__n.BLIF N_13_1
+11 1
+.names key_in_i_0__n.BLIF key_in_i_1__n.BLIF N_10_1
+11 1
+.names Data_OutDFFC_3_reg.BLIF Data_Out_3_
+1 1
+0 0
+.names key_outDFFC_3_reg.BLIF key_out_3_
+1 1
+0 0
+.names Data_OutDFFC_2_reg.BLIF Data_Out_2_
+1 1
+0 0
+.names Data_OutDFFC_1_reg.BLIF Data_Out_1_
+1 1
+0 0
+.names Data_OutDFFC_0_reg.BLIF Data_Out_0_
+1 1
+0 0
+.names key_outDFFC_2_reg.BLIF key_out_2_
+1 1
+0 0
+.names key_outDFFC_1_reg.BLIF key_out_1_
+1 1
+0 0
+.names key_outDFFC_0_reg.BLIF key_out_0_
+1 1
+0 0
+.names scanvalue_i_0__n.BLIF scanvalue_0_.D
+1 1
+0 0
+.names inst_time10ms.BLIF scanvalue_0_.C
+1 1
+0 0
+.names reset_i.BLIF scanvalue_0_.AR
+1 1
+0 0
+.names inst_time10ms.BLIF scanvalue_1_.C
+1 1
+0 0
+.names reset_i.BLIF scanvalue_1_.AR
+1 1
+0 0
+.names clk_c.BLIF timecnt_14_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_14_.AR
+1 1
+0 0
+.names G_80.BLIF timecnt_15_.D
+1 1
+0 0
+.names clk_c.BLIF timecnt_15_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_15_.AR
+1 1
+0 0
+.names G_82.BLIF timecnt_16_.D
+1 1
+0 0
+.names clk_c.BLIF timecnt_16_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_16_.AR
+1 1
+0 0
+.names un1_scanvalue17_i.BLIF Data_OutDFFC_0_reg.CE
+1 1
+0 0
+.names inst_time10ms.BLIF Data_OutDFFC_0_reg.C
+1 1
+0 0
+.names un1_scanvalue17_i.BLIF Data_OutDFFC_1_reg.CE
+1 1
+0 0
+.names inst_time10ms.BLIF Data_OutDFFC_1_reg.C
+1 1
+0 0
+.names un1_scanvalue17_i.BLIF Data_OutDFFC_2_reg.CE
+1 1
+0 0
+.names inst_time10ms.BLIF Data_OutDFFC_2_reg.C
+1 1
+0 0
+.names un1_scanvalue17_i.BLIF Data_OutDFFC_3_reg.CE
+1 1
+0 0
+.names inst_time10ms.BLIF Data_OutDFFC_3_reg.C
+1 1
+0 0
+.names reset_c.BLIF key_outDFFC_0_reg.CE
+1 1
+0 0
+.names inst_time10ms.BLIF key_outDFFC_0_reg.C
+1 1
+0 0
+.names scanvalue_23_d.BLIF key_outDFFC_1_reg.D
+1 1
+0 0
+.names reset_c.BLIF key_outDFFC_1_reg.CE
+1 1
+0 0
+.names inst_time10ms.BLIF key_outDFFC_1_reg.C
+1 1
+0 0
+.names scanvalue_d_2__n.BLIF key_outDFFC_2_reg.D
+1 1
+0 0
+.names reset_c.BLIF key_outDFFC_2_reg.CE
+1 1
+0 0
+.names inst_time10ms.BLIF key_outDFFC_2_reg.C
+1 1
+0 0
+.names reset_c.BLIF key_outDFFC_3_reg.CE
+1 1
+0 0
+.names inst_time10ms.BLIF key_outDFFC_3_reg.C
+1 1
+0 0
+.names clk_c.BLIF timecnt_0_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_0_.AR
+1 1
+0 0
+.names G_52.BLIF timecnt_1_.D
+1 1
+0 0
+.names clk_c.BLIF timecnt_1_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_1_.AR
+1 1
+0 0
+.names G_54.BLIF timecnt_2_.D
+1 1
+0 0
+.names clk_c.BLIF timecnt_2_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_2_.AR
+1 1
+0 0
+.names G_56.BLIF timecnt_3_.D
+1 1
+0 0
+.names clk_c.BLIF timecnt_3_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_3_.AR
+1 1
+0 0
+.names clk_c.BLIF timecnt_4_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_4_.AR
+1 1
+0 0
+.names clk_c.BLIF timecnt_5_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_5_.AR
+1 1
+0 0
+.names G_62.BLIF timecnt_6_.D
+1 1
+0 0
+.names clk_c.BLIF timecnt_6_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_6_.AR
+1 1
+0 0
+.names G_64.BLIF timecnt_7_.D
+1 1
+0 0
+.names clk_c.BLIF timecnt_7_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_7_.AR
+1 1
+0 0
+.names clk_c.BLIF timecnt_8_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_8_.AR
+1 1
+0 0
+.names G_68.BLIF timecnt_9_.D
+1 1
+0 0
+.names clk_c.BLIF timecnt_9_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_9_.AR
+1 1
+0 0
+.names clk_c.BLIF timecnt_10_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_10_.AR
+1 1
+0 0
+.names G_72.BLIF timecnt_11_.D
+1 1
+0 0
+.names clk_c.BLIF timecnt_11_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_11_.AR
+1 1
+0 0
+.names clk_c.BLIF timecnt_12_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_12_.AR
+1 1
+0 0
+.names clk_c.BLIF timecnt_13_.C
+1 1
+0 0
+.names reset_i.BLIF timecnt_13_.AR
+1 1
+0 0
+.names time10ms_0.BLIF inst_time10ms.D
+1 1
+0 0
+.names clk_c.BLIF inst_time10ms.C
+1 1
+0 0
+.names clk.BLIF clk_c
+1 1
+0 0
+.names reset.BLIF reset_c
+1 1
+0 0
+.names key_in_0_.BLIF key_in_c_0__n
+1 1
+0 0
+.names key_in_1_.BLIF key_in_c_1__n
+1 1
+0 0
+.names key_in_2_.BLIF key_in_c_2__n
+1 1
+0 0
+.names key_in_3_.BLIF key_in_c_3__n
+1 1
+0 0
+.names timecnt_0_.BLIF timecnt_1_.BLIF G_52
+01 1
+10 1
+11 0
+00 0
+.names timecnt_2_.BLIF time10ms3_1.BLIF G_54
+01 1
+10 1
+11 0
+00 0
+.names timecnt_3_.BLIF N_82.BLIF G_56
+01 1
+10 1
+11 0
+00 0
+.names timecnt_6_.BLIF N_88.BLIF G_62
+01 1
+10 1
+11 0
+00 0
+.names timecnt_7_.BLIF N_90.BLIF G_64
+01 1
+10 1
+11 0
+00 0
+.names timecnt_9_.BLIF N_94.BLIF G_68
+01 1
+10 1
+11 0
+00 0
+.names timecnt_11_.BLIF N_98.BLIF G_72
+01 1
+10 1
+11 0
+00 0
+.names timecnt_15_.BLIF N_106.BLIF G_80
+01 1
+10 1
+11 0
+00 0
+.names timecnt_16_.BLIF N_108.BLIF G_82
+01 1
+10 1
+11 0
+00 0
+.names inst_time10ms.BLIF time10ms_0_sqmuxa.BLIF time10ms_0
+01 1
+10 1
+11 0
+00 0
+.names timecnt_10_.BLIF N_96.BLIF G_70
+01 1
+10 1
+11 0
+00 0
+.names timecnt_8_.BLIF N_92.BLIF G_66
+01 1
+10 1
+11 0
+00 0
+.names timecnt_12_.BLIF N_100.BLIF G_74
+01 1
+10 1
+11 0
+00 0
+.names timecnt_13_.BLIF N_102.BLIF G_76
+01 1
+10 1
+11 0
+00 0
+.names timecnt_14_.BLIF N_104.BLIF G_78
+01 1
+10 1
+11 0
+00 0
+.names timecnt_4_.BLIF time10ms3_9.BLIF G_58
+01 1
+10 1
+11 0
+00 0
+.names timecnt_5_.BLIF N_86.BLIF G_60
+01 1
+10 1
+11 0
+00 0
+.end

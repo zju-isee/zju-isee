@@ -1,0 +1,1291 @@
+<HTML>
+<HEAD><TITLE>HTML_REPORT_FILE</TITLE>
+<STYLE TYPE="text/css">
+<!--
+.blink {text-decoration:blink}
+.ms  {font-size: 10pt; font-family: monospace; font-weight: normal}
+.msb {font-size: 10pt; font-family: monospace; font-weight: bold  }
+-->
+</STYLE>
+</HEAD>
+<PRE>
+<A name="Top"></A><H2 align=center> ispLEVER Classic 2.1.00.02.49.20 Fitter Report File </H2>
+<H2 align=center>Copyright(C), 1992-2012, Lattice Semiconductor Corporation</H2>
+<H2 align=center>All Rights Reserved</H2>
+
+
+The Basic/Detailed Report Format can be selected in the dialog box
+Tools->Fitter Report File Format...
+
+<A name="Project_Summary"></A><FONT COLOR=maroon><U><B><big>Project_Summary</big></B></U></FONT>
+<BR>
+Project Name         :  untitled
+Project Path         :  D:\isp\lab12
+Project Fitted on    :  Wed Jun 07 22:25:35 2023
+
+Device               :  M4256_96
+Package              :  144
+GLB Input Mux Size   :  33
+Available Blocks     :  16
+Speed                :  -7.5
+Part Number          :  LC4256V-75T144I
+Source Format        :  Schematic_Verilog_HDL
+
+
+<font color=green size=4><span class=blink><strong><B>Project 'untitled' Fit Successfully!</B></strong></span></font>
+
+
+<A name="Compilation_Times"></A><FONT COLOR=maroon><U><B><big>Compilation_Times</big></B></U></FONT>
+<BR>
+Prefit Time                     0 secs
+Load Design Time                0.05 secs
+Partition Time                  0.08 secs
+Place Time                      0.00 secs
+Route Time                      0.00 secs
+Total Fit Time                  00:00:01
+
+
+<A name="Design_Summary"></A><FONT COLOR=maroon><U><B><big>Design_Summary</big></B></U></FONT>
+<BR>
+Total Input Pins                2
+Total Logic Functions           86
+  Total Output Pins             16
+  Total Bidir I/O Pins          0
+  Total Buried Nodes            70
+Total Flip-Flops                57
+  Total D Flip-Flops            52
+  Total T Flip-Flops            5
+  Total Latches                 0
+Total Product Terms             360
+
+Total Reserved Pins             0
+Total Locked Pins               18
+Total Locked Nodes              0
+
+Total Unique Output Enables     0
+Total Unique Clocks             1
+Total Unique Clock Enables      1
+Total Unique Resets             1
+Total Unique Presets            1
+
+Fmax Logic Levels               3
+
+
+<A name="Device_Resource_Summary"></A><FONT COLOR=maroon><U><B><big>Device_Resource_Summary</big></B></U></FONT>
+<BR>
+<B>                                 Device
+                                 Total    Used   Not Used   Utilization
+-----------------------------------------------------------------------
+</B>Dedicated Pins
+  Clock/Input Pins                  4        1      3    -->    25
+  Input-Only Pins                  10        0     10    -->     0
+  I/O / Enable Pins                 2        0      2    -->     0
+I/O Pins                           94       17     77    -->    18
+Logic Functions                   256       86    170    -->    33
+  Input Registers                  96        0     96    -->     0
+
+GLB Inputs                        576      229    347    -->    39
+Logical Product Terms            1280      238   1042    -->    18
+Occupied GLBs                      16       16      0    -->   100
+Macrocells                        256       86    170    -->    33
+
+Control Product Terms:
+  GLB Clock/Clock Enables          16        2     14    -->    12
+  GLB Reset/Presets                16        0     16    -->     0
+  Macrocell Clocks                256        0    256    -->     0
+  Macrocell Clock Enables         256        0    256    -->     0
+  Macrocell Enables               256        0    256    -->     0
+  Macrocell Resets                256        0    256    -->     0
+  Macrocell Presets               256        0    256    -->     0
+
+Global Routing Pool               356       79    277    -->    22
+  GRP from IFB                     ..        1     ..    -->    ..
+    (from input signals)           ..        1     ..    -->    ..
+    (from output signals)          ..        0     ..    -->    ..
+    (from bidir signals)           ..        0     ..    -->    ..
+  GRP from MFB                     ..       78     ..    -->    ..
+----------------------------------------------------------------------
+
+&lt;Note&gt; 1 : The available PT is the product term that has not been used.
+&lt;Note&gt; 2 : IFB is I/O feedback.
+&lt;Note&gt; 3 : MFB is macrocell feedback.
+
+
+<A name="GLB_Resource_Summary"></A><FONT COLOR=maroon><U><B><big>GLB_Resource_Summary</big></B></U></FONT>
+<BR>
+<B>                                                                                     # of PT
+               ---  Fanin  ---    I/O    Input  Macrocells       Macrocells   Logic  clusters
+             Unique Shared Total  Pins    Regs Used Inaccessible  available    PTs   used
+-------------------------------------------------------------------------------------------
+Maximum
+  GLB                      36      *(1)     8   --     --             16       80       16
+</B>-------------------------------------------------------------------------------------------
+  GLB    A      0    32    32      0/6      0   14      0              2       22       14
+  GLB    B      2     5     7      0/6      0    3      0             13        9        3
+  GLB    C      3    28    31      0/6      0    5      0             11       12        5
+  GLB    D      4     3     7      0/6      0    3      0             13        8        3
+-------------------------------------------------------------------------------------------
+  GLB    E      0     6     6      0/6      0    4      0             12        8        4
+  GLB    F      4     3     7      0/6      0    3      0             13        7        3
+  GLB    G      7     9    16      2/6      0    2      0             14       25        5
+  GLB    H      5    20    25      6/6      0    9      0              7       49       12
+-------------------------------------------------------------------------------------------
+  GLB    I      6    19    25      6/6      0   14      0              2       23       14
+  GLB    J      0    31    31      3/6      0    8      0              8       18        8
+  GLB    K      3     5     8      0/6      0    3      0             13       11        3
+  GLB    L      5     2     7      0/6      0    3      0             13        6        3
+-------------------------------------------------------------------------------------------
+  GLB    M      3     4     7      0/6      0    3      0             13        9        3
+  GLB    N      0     7     7      0/6      0    5      0             11       12        5
+  GLB    O      1     5     6      0/6      0    3      0             13        9        3
+  GLB    P      1     6     7      0/6      0    4      0             12       10        4
+-------------------------------------------------------------------------------------------
+TOTALS:        44   185   229     17/96     0   86      0            170      238       92
+
+&lt;Note&gt; 1 : For ispMACH 4000 devices, the number of IOs depends on the GLB.
+&lt;Note&gt; 2 : Four rightmost columns above reflect last status of the placement process.
+
+
+<A name="GLB_Control_Summary"></A><FONT COLOR=maroon><U><B><big>GLB_Control_Summary</big></B></U></FONT>
+<BR>
+<B>           Shared Shared | Mcell  Mcell  Mcell  Mcell  Mcell 
+           Clk/CE Rst/Pr | Clock  CE     Enable Reset  Preset
+------------------------------------------------------------------------------
+Maximum
+  GLB        1      1        16     16     16     16     16  
+==============================================================================
+</B>  GLB    A   0      0         0      0      0      0      0
+  GLB    B   0      0         0      0      0      0      0
+  GLB    C   0      0         0      0      0      0      0
+  GLB    D   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    E   0      0         0      0      0      0      0
+  GLB    F   0      0         0      0      0      0      0
+  GLB    G   0      0         0      0      0      0      0
+  GLB    H   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    I   1      0         0      0      0      0      0
+  GLB    J   1      0         0      0      0      0      0
+  GLB    K   0      0         0      0      0      0      0
+  GLB    L   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    M   0      0         0      0      0      0      0
+  GLB    N   0      0         0      0      0      0      0
+  GLB    O   0      0         0      0      0      0      0
+  GLB    P   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+
+&lt;Note&gt; 1 : For ispMACH 4000 devices, the number of output enables depends on the GLB.
+
+
+<A name="Optimizer_and_Fitter_Options"></A><FONT COLOR=maroon><U><B><big>Optimizer_and_Fitter_Options</big></B></U></FONT>
+<BR>
+Pin Assignment :                       Yes
+Group Assignment :                     No
+Pin Reservation :                      No
+
+@Ignore_Project_Constraints :
+  Pin Assignments :                    No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+  Group Assignments :                  No
+  Macrocell Assignment :               No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+
+@Backannotate_Project_Constraints
+  Pin Assignments :                    No
+  Pin And Block Assignments :          No
+  Pin, Macrocell and Block :           No
+
+@Timing_Constraints :                  No
+
+@Global_Project_Optimization :
+  Balanced Partitioning :              Yes
+  Spread Placement :                   Yes
+
+  Note :
+    Pack Design :
+       Balanced Partitioning = No
+       Spread Placement      = No
+    Spread Design :
+       Balanced Partitioning = Yes
+       Spread Placement      = Yes
+
+
+@Logic_Synthesis :
+  Logic Reduction :                    Yes
+  Node Collapsing :                    FMAX
+  Fmax_Logic_Level :                   1
+  D/T Synthesis :                      Yes
+  XOR Synthesis :                      Yes
+  Max. P-Term for Collapsing :         16
+  Max. P-Term for Splitting :          80
+  Max Symbols :                        24
+
+@Utilization_options
+  Max. % of Macrocells used :          100
+@Usercode                              7F0D (HEX)
+@IO_Types                              Default = LVCMOS18 (2)
+@Output_Slew_Rate                      Default = FAST (2)
+@Power                                 Default = HIGH (2)
+@Pull                                  Default = PULLUP_UP (2)
+@Fast_Bypass                           Default = None (2)
+@ORP_Bypass                            Default = None
+@Input_Registers                       Default = None (2)
+@Register_Powerup                      Default = None
+
+Device Options:
+&lt;Note&gt; 1 : Reserved unused I/Os can be independently driven to Low or High, and does not
+           follow the drive level set for the Global Configure Unused I/O Option.
+&lt;Note&gt; 2 : For user-specified constraints on individual signals, refer to the Output,
+           Bidir and Buried Signal Lists.
+
+
+<A name="Pinout_Listing"></A><FONT COLOR=maroon><U><B><big>Pinout_Listing</big></B></U></FONT>
+<BR>
+<B>      | Pin   | Bank |GLB |Assigned|                 | Signal|
+Pin No| Type  |Number|Pad |Pin     |     I/O Type    | Type  | Signal name
+</B>--------------------------------------------------------------------------------------
+1     | GND   |   -  |    |        |                 |       |
+2     | TDI   |   -  |    |        |                 |       |
+3     |VCCIO0 |   -  |    |        |                 |       |
+4     |  I_O  |   0  |C12 |        |                 |       |
+5     |  I_O  |   0  |C10 |        |                 |       |
+6     |  I_O  |   0  |C8  |        |                 |       |
+7     |  I_O  |   0  |C6  |        |                 |       |
+8     |  I_O  |   0  |C4  |        |                 |       |
+9     |  I_O  |   0  |C2  |        |                 |       |
+10    |GNDIO0 |   -  |    |        |                 |       |
+11    |  I_O  |   0  |D14 |        |                 |       |
+12    |  I_O  |   0  |D12 |        |                 |       |
+13    |  I_O  |   0  |D10 |        |                 |       |
+14    |  I_O  |   0  |D8  |        |                 |       |
+15    |  I_O  |   0  |D6  |        |                 |       |
+16    |  I_O  |   0  |D4  |        |                 |       |
+17    | IN0   |   0  |    |        |                 |       |
+18    | NC    |   -  |    |        |                 |       |
+19    |VCCIO0 |   -  |    |        |                 |       |
+20    | IN1   |   0  |    |        |                 |       |
+21    |  I_O  |   0  |E2  |        |                 |       |
+22    |  I_O  |   0  |E4  |        |                 |       |
+23    |  I_O  |   0  |E6  |        |                 |       |
+24    |  I_O  |   0  |E8  |        |                 |       |
+25    |  I_O  |   0  |E10 |        |                 |       |
+26    |  I_O  |   0  |E12 |        |                 |       |
+27    |GNDIO0 |   -  |    |        |                 |       |
+28    |  I_O  |   0  |F2  |        |                 |       |
+29    |  I_O  |   0  |F4  |        |                 |       |
+30    |  I_O  |   0  |F6  |        |                 |       |
+31    |  I_O  |   0  |F8  |        |                 |       |
+32    |  I_O  |   0  |F10 |        |                 |       |
+33    |  I_O  |   0  |F12 |        |                 |       |
+34    |VCCIO0 |   -  |    |        |                 |       |
+35    | TCK   |   -  |    |        |                 |       |
+36    | VCC   |   -  |    |        |                 |       |
+37    | GND   |   -  |    |        |                 |       |
+38    | IN2   |   0  |    |        |                 |       |
+39    |  I_O  |   0  |G12 |        |                 |       |
+40    |  I_O  |   0  |G10 |        |                 |       |
+41    |  I_O  |   0  |G8  |        |                 |       |
+42    |  I_O  |   0  |G6  |        |                 |       |
+43    |  I_O  |   0  |G4  |    *   |LVCMOS18         | Output|<A href=#6>led_col_0_</A>
+44    |  I_O  |   0  |G2  |    *   |LVCMOS18         | Output|<A href=#7>led_col_1_</A>
+45    | IN3   |   0  |    |        |                 |       |
+46    |GNDIO0 |   -  |    |        |                 |       |
+47    |VCCIO0 |   -  |    |        |                 |       |
+48    |  I_O  |   0  |H12 |    *   |LVCMOS18         | Output|<A href=#8>led_col_2_</A>
+49    |  I_O  |   0  |H10 |    *   |LVCMOS18         | Output|<A href=#9>led_col_3_</A>
+50    |  I_O  |   0  |H8  |    *   |LVCMOS18         | Output|<A href=#10>led_col_4_</A>
+51    |  I_O  |   0  |H6  |    *   |LVCMOS18         | Output|<A href=#11>led_col_5_</A>
+52    |  I_O  |   0  |H4  |    *   |LVCMOS18         | Output|<A href=#12>led_col_6_</A>
+53    |  I_O  |   0  |H2  |    *   |LVCMOS18         | Output|<A href=#13>led_col_7_</A>
+54    |INCLK1 |   0  |    |        |                 |       |
+55    |GNDIO1 |   -  |    |        |                 |       |
+56    |INCLK2 |   1  |    |        |                 |       |
+57    | VCC   |   -  |    |        |                 |       |
+58    |  I_O  |   1  |I2  |    *   |LVCMOS18         | Output|<A href=#23>led_row_7_</A>
+59    |  I_O  |   1  |I4  |    *   |LVCMOS18         | Output|<A href=#22>led_row_6_</A>
+60    |  I_O  |   1  |I6  |    *   |LVCMOS18         | Output|<A href=#21>led_row_5_</A>
+61    |  I_O  |   1  |I8  |    *   |LVCMOS18         | Output|<A href=#20>led_row_4_</A>
+62    |  I_O  |   1  |I10 |    *   |LVCMOS18         | Output|<A href=#19>led_row_3_</A>
+63    |  I_O  |   1  |I12 |    *   |LVCMOS18         | Output|<A href=#18>led_row_2_</A>
+64    |VCCIO1 |   -  |    |        |                 |       |
+65    |GNDIO1 |   -  |    |        |                 |       |
+66    |  I_O  |   1  |J2  |    *   |LVCMOS18         | Output|<A href=#17>led_row_1_</A>
+67    |  I_O  |   1  |J4  |    *   |LVCMOS18         | Output|<A href=#16>led_row_0_</A>
+68    |  I_O  |   1  |J6  |    *   |LVCMOS18         | Input |<A href=#14>reset</A>
+69    |  I_O  |   1  |J8  |        |                 |       |
+70    |  I_O  |   1  |J10 |        |                 |       |
+71    |  I_O  |   1  |J12 |        |                 |       |
+72    | IN4   |   0  |    |        |                 |       |
+73    | GND   |   -  |    |        |                 |       |
+74    | TMS   |   -  |    |        |                 |       |
+75    |VCCIO1 |   -  |    |        |                 |       |
+76    |  I_O  |   1  |K12 |        |                 |       |
+77    |  I_O  |   1  |K10 |        |                 |       |
+78    |  I_O  |   1  |K8  |        |                 |       |
+79    |  I_O  |   1  |K6  |        |                 |       |
+80    |  I_O  |   1  |K4  |        |                 |       |
+81    |  I_O  |   1  |K2  |        |                 |       |
+82    |GNDIO1 |   -  |    |        |                 |       |
+83    |  I_O  |   1  |L14 |        |                 |       |
+84    |  I_O  |   1  |L12 |        |                 |       |
+85    |  I_O  |   1  |L10 |        |                 |       |
+86    |  I_O  |   1  |L8  |        |                 |       |
+87    |  I_O  |   1  |L6  |        |                 |       |
+88    |  I_O  |   1  |L4  |        |                 |       |
+89    | IN5   |   1  |    |        |                 |       |
+90    | NC    |   -  |    |        |                 |       |
+91    |VCCIO1 |   -  |    |        |                 |       |
+92    | IN6   |   1  |    |        |                 |       |
+93    |  I_O  |   1  |M2  |        |                 |       |
+94    |  I_O  |   1  |M4  |        |                 |       |
+95    |  I_O  |   1  |M6  |        |                 |       |
+96    |  I_O  |   1  |M8  |        |                 |       |
+97    |  I_O  |   1  |M10 |        |                 |       |
+98    |  I_O  |   1  |M12 |        |                 |       |
+99    |GNDIO1 |   -  |    |        |                 |       |
+100   |  I_O  |   1  |N2  |        |                 |       |
+101   |  I_O  |   1  |N4  |        |                 |       |
+102   |  I_O  |   1  |N6  |        |                 |       |
+103   |  I_O  |   1  |N8  |        |                 |       |
+104   |  I_O  |   1  |N10 |        |                 |       |
+105   |  I_O  |   1  |N12 |        |                 |       |
+106   |VCCIO1 |   -  |    |        |                 |       |
+107   | TDO   |   -  |    |        |                 |       |
+108   | VCC   |   -  |    |        |                 |       |
+109   | GND   |   -  |    |        |                 |       |
+110   | IN7   |   1  |    |        |                 |       |
+111   |  I_O  |   1  |O12 |        |                 |       |
+112   |  I_O  |   1  |O10 |        |                 |       |
+113   |  I_O  |   1  |O8  |        |                 |       |
+114   |  I_O  |   1  |O6  |        |                 |       |
+115   |  I_O  |   1  |O4  |        |                 |       |
+116   |  I_O  |   1  |O2  |        |                 |       |
+117   | IN8   |   1  |    |        |                 |       |
+118   |GNDIO1 |   -  |    |        |                 |       |
+119   |VCCIO1 |   -  |    |        |                 |       |
+120   |  I_O  |   1  |P12 |        |                 |       |
+121   |  I_O  |   1  |P10 |        |                 |       |
+122   |  I_O  |   1  |P8  |        |                 |       |
+123   |  I_O  |   1  |P6  |        |                 |       |
+124   |  I_O  |   1  |P4  |        |                 |       |
+125   | I_O/OE|   1  |P2  |        |                 |       |
+126   |INCLK3 |   1  |    |        |                 |       |
+127   |GNDIO0 |   -  |    |        |                 |       |
+128   |INCLK0 |   0  |    |    *   |LVCMOS18         | Input |<A href=#15>clk</A>
+129   | VCC   |   -  |    |        |                 |       |
+130   | I_O/OE|   0  |A2  |        |                 |       |
+131   |  I_O  |   0  |A4  |        |                 |       |
+132   |  I_O  |   0  |A6  |        |                 |       |
+133   |  I_O  |   0  |A8  |        |                 |       |
+134   |  I_O  |   0  |A10 |        |                 |       |
+135   |  I_O  |   0  |A12 |        |                 |       |
+136   |VCCIO0 |   -  |    |        |                 |       |
+137   |GNDIO0 |   -  |    |        |                 |       |
+138   |  I_O  |   0  |B2  |        |                 |       |
+139   |  I_O  |   0  |B4  |        |                 |       |
+140   |  I_O  |   0  |B6  |        |                 |       |
+141   |  I_O  |   0  |B8  |        |                 |       |
+142   |  I_O  |   0  |B10 |        |                 |       |
+143   |  I_O  |   0  |B12 |        |                 |       |
+144   | IN9   |   0  |    |        |                 |       |
+--------------------------------------------------------------------------------------
+
+&lt;Note&gt; GLB Pad : This notation refers to the GLB I/O pad number in the device.
+&lt;Note&gt; Assigned Pin : user or dedicated input assignment (E.g. Clock pins).
+&lt;Note&gt; Pin Type : 
+          ClkIn : Dedicated input or clock pin 
+           CLK  : Dedicated clock pin
+           I_O  : Input/Output pin
+           INP  : Dedicated input pin
+           JTAG : JTAG Control and test pin
+           NC   : No connected
+
+
+<A name="Input_Signal_List"></A><FONT COLOR=maroon><U><B><big>Input_Signal_List</big></B></U></FONT>
+<BR>
+<B>                Input
+         Pin    Fanout
+ Pin GLB Type                       Pullup Signal
+</B>-------------------------------------------------
+ 128  -- INCLK     ----------------      Up <A name=15>clk</A>
+  68   J  I/O   14 ABCDEF--IJKLMNOP      Up <A name=14>reset</A>
+-------------------------------------------------
+
+
+<A name="Output_Signal_List"></A><FONT COLOR=maroon><U><B><big>Output_Signal_List</big></B></U></FONT>
+<BR>
+<B>          I         C      P R P       O Output
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+</B>-----------------------------------------------------------------------------------
+  43   G 11  -  10  2 COM                   ----------------  Fast     Up <A href=#6>led_col_0_</A>
+  44   G 14  -  15  3 COM                   ----------------  Fast     Up <A href=#7>led_col_1_</A>
+  48   H 21  -  16  4 COM                   ----------------  Fast     Up <A href=#8>led_col_2_</A>
+  49   H 10  -  15  3 COM                   ----------------  Fast     Up <A href=#9>led_col_3_</A>
+  50   H 20  -  12  3 COM                   ----------------  Fast     Up <A href=#10>led_col_4_</A>
+  51   H  0  -   1  1 COM                   ----------------  Fast     Up <A href=#11>led_col_5_</A>
+  52   H  0  -   1  1 COM                   ----------------  Fast     Up <A href=#12>led_col_6_</A>
+  53   H  0  -   1  1 COM                   ----------------  Fast     Up <A href=#13>led_col_7_</A>
+  67   J 15  1   1  1 DFF    * R *       2  -------H-J------  Fast     Up <A href=#16>led_row_0_</A>
+  66   J 15  1   1  1 DFF    * R *       3  -------HIJ------  Fast     Up <A href=#17>led_row_1_</A>
+  63   I 15  1   1  1 DFF    * R *       4  ------GHIJ------  Fast     Up <A href=#18>led_row_2_</A>
+  62   I 15  1   1  1 DFF    * R *       4  ------GHIJ------  Fast     Up <A href=#19>led_row_3_</A>
+  61   I 15  1   1  1 DFF    * R *       3  -------HIJ------  Fast     Up <A href=#20>led_row_4_</A>
+  60   I 15  1   1  1 DFF    * R *       4  ------GHIJ------  Fast     Up <A href=#21>led_row_5_</A>
+  59   I 15  1   1  1 DFF    * R *       3  -------HIJ------  Fast     Up <A href=#22>led_row_6_</A>
+  58   I 15  1   1  1 DFF  *   S *       2  -------H-J------  Fast     Up <A href=#23>led_row_7_</A>
+-----------------------------------------------------------------------------------
+
+&lt;Note&gt; CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+<A name="Bidir_Signal_List"></A><FONT COLOR=maroon><U><B><big>Bidir_Signal_List</big></B></U></FONT>
+<BR>
+<B>          I         C      P R P       O Bidir
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+</B>-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+&lt;Note&gt; CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+<A name="Buried_Signal_List"></A><FONT COLOR=maroon><U><B><big>Buried_Signal_List</big></B></U></FONT>
+<BR>
+<B>        I         C      P R P       Node
+        N         L Mc   R E U C I F Fanout
+Mc GLB  P LL PTs  S Type E S P E R P                     Signal
+</B>--------------------------------------------------------------------------------
+ 0   H 11  -   1  1 COM              3  ------GH-J------  <A href=#79>A0_N_132</A>
+ 9   J 11  -   1  1 COM              4  ------GH-JK-----  <A href=#80>A0_N_150</A>
+ 3   H 11  -   1  1 COM              2  ------GH--------  <A href=#81>A0_N_152</A>
+ 5   H 11  -   1  1 COM              2  ------GH--------  <A href=#82>A0_N_154</A>
+12   J 11  -   1  1 COM              3  ------GH--K-----  <A href=#83>A0_N_155</A>
+13   I  9  -   1  1 COM              2  ------------M-O-  <A href=#86>A0_N_263</A>
+12   I 13  -   1  1 COM              1  --------I-------  <A href=#85>A0_N_271</A>
+10   A 11  -   1  1 COM              2  --C--------L----  <A href=#90>A0_N_301</A>
+11   A 14  -   1  1 COM              2  -----------L---P  <A href=#91>A0_N_307</A>
+ 7   J 12  -   3  1 COM              2  ------GH--------  <A href=#77>A0_N_30_0</A>
+13   A 19  -   1  1 COM              1  -------------N--  <A href=#93>A0_N_317</A>
+12   A 24  -   1  1 COM              1  -----F----------  <A href=#92>A0_N_327</A>
+ 1   J 16  -   4  1 COM              2  ------GH--------  <A href=#76>A0_N_32_i</A>
+ 6   A 23  -   1  1 COM              1  --C-------------  <A href=#73>A0_N_339</A>
+ 3   J  6  -   3  1 COM              2  ------GH--------  <A href=#75>A0_N_37_i</A>
+ 0   J 16  -   4  1 COM              2  ------GH--------  <A href=#74>A0_N_46_i</A>
+ 5   A  2  1   1  1 DFF    * R       2  A--D------------  <A href=#57>A0_cnt_next_0_</A>
+10   B  6  2   2  1 DFF    * R       3  ABC-------------  <A href=#33>A0_cnt_next_10_</A>
+ 5   L  4  2   2  1 DFF    * R       3  A-C--------L----  <A href=#66>A0_cnt_next_11_</A>
+ 3   C  5  2   3  1 DFF    * R       2  A-C-------------  <A href=#67>A0_cnt_next_12_</A>
+ 1   C  5  2   4  1 DFF    * R       2  A-C-------------  <A href=#27>A0_cnt_next_13_</A>
+10   L  4  2   2  1 DFF    * R       4  A-C--------L---P  <A href=#68>A0_cnt_next_14_</A>
+ 3   P  4  2   3  1 DFF    * R       3  A-C------------P  <A href=#31>A0_cnt_next_15_</A>
+ 1   P  5  2   4  1 DFF    * R       3  A-C------------P  <A href=#28>A0_cnt_next_16_</A>
+ 6   P  7  2   2  1 DFF    * R       3  A-C------------P  <A href=#69>A0_cnt_next_17_</A>
+10   P  6  2   1  1 TFF    * R       2  A-C-------------  <A href=#30>A0_cnt_next_18_</A>
+ 7   N  3  2   2  1 DFF    * R       3  A-C----------N--  <A href=#32>A0_cnt_next_19_</A>
+ 5   D  3  1   2  1 DFF    * R       2  A--D------------  <A href=#58>A0_cnt_next_1_</A>
+ 3   N  4  2   3  1 DFF    * R       3  A-C----------N--  <A href=#26>A0_cnt_next_20_</A>
+ 1   N  6  2   4  1 DFF    * R       3  A-C----------N--  <A href=#70>A0_cnt_next_21_</A>
+ 5   N  7  2   2  1 DFF    * R       3  A-C----------N--  <A href=#71>A0_cnt_next_22_</A>
+11   N  6  2   1  1 TFF    * R       2  A-C-------------  <A href=#29>A0_cnt_next_23_</A>
+ 5   F  3  2   2  1 DFF    * R       3  A-C--F----------  <A href=#24>A0_cnt_next_24_</A>
+ 2   F  5  2   3  1 DFF    * R       3  A-C--F----------  <A href=#72>A0_cnt_next_25_</A>
+ 1   A  4  1   3  1 DFF    * R       1  A---------------  <A href=#59>A0_cnt_next_2_</A>
+ 0   A  5  1   4  1 DFF    * R       1  A---------------  <A href=#60>A0_cnt_next_3_</A>
+10   D  3  2   2  1 DFF    * R       2  A--D------------  <A href=#61>A0_cnt_next_4_</A>
+ 2   A  4  2   3  1 DFF    * R       2  A--D------------  <A href=#62>A0_cnt_next_5_</A>
+ 2   D  5  2   4  1 DFF    * R       2  A--D------------  <A href=#63>A0_cnt_next_6_</A>
+ 3   A  6  2   2  1 DFF    * R       3  ABC-------------  <A href=#64>A0_cnt_next_7_</A>
+ 5   B  4  2   3  1 DFF    * R       3  ABC-------------  <A href=#65>A0_cnt_next_8_</A>
+ 2   B  6  2   4  1 DFF    * R       3  ABC-------------  <A href=#25>A0_cnt_next_9_</A>
+10   I  2  1   1  1 DFF    * R       3  -----F--I---M---  <A href=#41>A0_cnt_scan_0_</A>
+ 5   O  4  2   3  1 DFF    * R       3  --------IJ----O-  <A href=#51>A0_cnt_scan_10_</A>
+ 2   O  5  2   4  1 DFF    * R       3  --------IJ----O-  <A href=#52>A0_cnt_scan_11_</A>
+10   O  6  2   2  1 DFF    * R       3  --------IJ----O-  <A href=#53>A0_cnt_scan_12_</A>
+ 9   I  3  2   2  1 DFF    * R       2  --------IJ------  <A href=#54>A0_cnt_scan_13_</A>
+ 7   I  4  2   3  1 DFF    * R       2  --------IJ------  <A href=#55>A0_cnt_scan_14_</A>
+ 5   I  5  2   4  1 DFF    * R       2  --------IJ------  <A href=#56>A0_cnt_scan_15_</A>
+10   F  3  1   2  1 DFF    * R       3  -----F--I---M---  <A href=#42>A0_cnt_scan_1_</A>
+ 5   M  4  1   3  1 DFF    * R       2  --------I---M---  <A href=#43>A0_cnt_scan_2_</A>
+ 2   M  5  1   4  1 DFF    * R       2  --------I---M---  <A href=#44>A0_cnt_scan_3_</A>
+ 6   E  3  2   2  1 DFF    * R       3  ----E---IJ------  <A href=#45>A0_cnt_scan_4_</A>
+ 1   E  4  2   3  1 DFF    * R       3  ----E---IJ------  <A href=#46>A0_cnt_scan_5_</A>
+ 3   I  5  2   4  1 DFF    * R       3  ----E---IJ------  <A href=#47>A0_cnt_scan_6_</A>
+ 3   E  6  2   2  1 DFF    * R       3  ----E---IJ------  <A href=#48>A0_cnt_scan_7_</A>
+10   E  6  2   1  1 TFF    * R       2  --------IJ------  <A href=#49>A0_cnt_scan_8_</A>
+10   M  3  2   2  1 DFF    * R       4  --------IJ--M-O-  <A href=#50>A0_cnt_scan_9_</A>
+ 5   K  6  -   4  1 COM              1  -------H--------  <A href=#78>A0_col_buf_i_3_4__n</A>
+ 2   L  3  2   2  1 DFF    * R       7  A-C---GH-JKL----  <A href=#39>A0_scan_data_0_</A>
+10   K  4  2   3  1 DFF    * R       6  A-C---GH-JK-----  <A href=#34>A0_scan_data_1_</A>
+ 2   K  5  2   4  1 DFF    * R       6  A-C---GH-JK-----  <A href=#40>A0_scan_data_2_</A>
+ 4   A 24  2   1  1 TFF    * R       5  --C---GH-JK-----  <A href=#35>A0_scan_data_3_</A>
+11   C 25  2   1  1 TFF    * R       3  --C----H-J------  <A href=#36>A0_scan_data_4_</A>
+ 5   C 27  2   2  1 DFF    * R       3  --C----H-J------  <A href=#37>A0_scan_data_5_</A>
+ 7   C  6  3   2  1 DFF    * R       3  --C----H-J------  <A href=#38>A0_scan_data_6_</A>
+ 8   A 26  -   1  1 COM              7  -BC--F----KL-N-P  <A href=#88>A0_un1_cnt_next_10</A>
+ 9   A  4  -   1  1 COM              2  A--D------------  <A href=#89>A0_un1_cnt_next_10_14</A>
+ 7   A  7  -   1  1 COM              3  ABC-------------  <A href=#87>A0_un1_cnt_next_10_20_3</A>
+11   I  4  -   1  1 COM              3  ----E---IJ------  <A href=#84>A0_un1_cnt_scan_9</A>
+--------------------------------------------------------------------------------
+
+&lt;Note&gt; CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        IR = Input register
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+<A name="PostFit_Equations"></A><FONT COLOR=maroon><U><B><big>PostFit_Equations</big></B></U></FONT>
+<BR>
+<A name=79>A0_N_132</A> = !<A href=#16>led_row_0_.Q</A> & !<A href=#17>led_row_1_.Q</A> & !<A href=#18>led_row_2_.Q</A> & !<A href=#19>led_row_3_.Q</A>
+       & !<A href=#20>led_row_4_.Q</A> & <A href=#21>led_row_5_.Q</A> & !<A href=#22>led_row_6_.Q</A> & !<A href=#23>led_row_7_.Q</A>
+       & !<A href=#36>A0_scan_data_4_.Q</A> & !<A href=#37>A0_scan_data_5_.Q</A> & !<A href=#38>A0_scan_data_6_.Q</A> ; (1 pterm, 11 signals)
+
+<A name=80>A0_N_150</A> = !<A href=#16>led_row_0_.Q</A> & <A href=#17>led_row_1_.Q</A> & !<A href=#18>led_row_2_.Q</A> & !<A href=#19>led_row_3_.Q</A>
+       & !<A href=#20>led_row_4_.Q</A> & !<A href=#21>led_row_5_.Q</A> & !<A href=#22>led_row_6_.Q</A> & !<A href=#23>led_row_7_.Q</A>
+       & !<A href=#36>A0_scan_data_4_.Q</A> & !<A href=#37>A0_scan_data_5_.Q</A> & !<A href=#38>A0_scan_data_6_.Q</A> ; (1 pterm, 11 signals)
+
+<A name=81>A0_N_152</A> = !<A href=#16>led_row_0_.Q</A> & !<A href=#17>led_row_1_.Q</A> & !<A href=#18>led_row_2_.Q</A> & <A href=#19>led_row_3_.Q</A>
+       & !<A href=#20>led_row_4_.Q</A> & !<A href=#21>led_row_5_.Q</A> & !<A href=#22>led_row_6_.Q</A> & !<A href=#23>led_row_7_.Q</A>
+       & !<A href=#36>A0_scan_data_4_.Q</A> & !<A href=#37>A0_scan_data_5_.Q</A> & !<A href=#38>A0_scan_data_6_.Q</A> ; (1 pterm, 11 signals)
+
+<A name=82>A0_N_154</A> = !<A href=#16>led_row_0_.Q</A> & !<A href=#17>led_row_1_.Q</A> & <A href=#18>led_row_2_.Q</A> & !<A href=#19>led_row_3_.Q</A>
+       & !<A href=#20>led_row_4_.Q</A> & !<A href=#21>led_row_5_.Q</A> & !<A href=#22>led_row_6_.Q</A> & !<A href=#23>led_row_7_.Q</A>
+       & !<A href=#36>A0_scan_data_4_.Q</A> & !<A href=#37>A0_scan_data_5_.Q</A> & !<A href=#38>A0_scan_data_6_.Q</A> ; (1 pterm, 11 signals)
+
+<A name=83>A0_N_155</A> = !<A href=#16>led_row_0_.Q</A> & !<A href=#17>led_row_1_.Q</A> & !<A href=#18>led_row_2_.Q</A> & !<A href=#19>led_row_3_.Q</A>
+       & <A href=#20>led_row_4_.Q</A> & !<A href=#21>led_row_5_.Q</A> & !<A href=#22>led_row_6_.Q</A> & !<A href=#23>led_row_7_.Q</A>
+       & !<A href=#36>A0_scan_data_4_.Q</A> & !<A href=#37>A0_scan_data_5_.Q</A> & !<A href=#38>A0_scan_data_6_.Q</A> ; (1 pterm, 11 signals)
+
+<A name=86>A0_N_263</A> = <A href=#41>A0_cnt_scan_0_.Q</A> & <A href=#42>A0_cnt_scan_1_.Q</A> & <A href=#43>A0_cnt_scan_2_.Q</A>
+       & <A href=#44>A0_cnt_scan_3_.Q</A> & <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A>
+       & <A href=#47>A0_cnt_scan_6_.Q</A> & <A href=#48>A0_cnt_scan_7_.Q</A> & <A href=#49>A0_cnt_scan_8_.Q</A> ; (1 pterm, 9 signals)
+
+<A name=85>A0_N_271</A> = <A href=#41>A0_cnt_scan_0_.Q</A> & <A href=#42>A0_cnt_scan_1_.Q</A> & <A href=#43>A0_cnt_scan_2_.Q</A>
+       & <A href=#44>A0_cnt_scan_3_.Q</A> & <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A>
+       & <A href=#47>A0_cnt_scan_6_.Q</A> & <A href=#48>A0_cnt_scan_7_.Q</A> & <A href=#49>A0_cnt_scan_8_.Q</A>
+       & <A href=#50>A0_cnt_scan_9_.Q</A> & <A href=#51>A0_cnt_scan_10_.Q</A> & <A href=#52>A0_cnt_scan_11_.Q</A>
+       & <A href=#53>A0_cnt_scan_12_.Q</A> ; (1 pterm, 13 signals)
+
+<A name=90>A0_N_301</A> = <A href=#25>A0_cnt_next_9_.Q</A> & <A href=#33>A0_cnt_next_10_.Q</A> & <A href=#57>A0_cnt_next_0_.Q</A>
+       & <A href=#58>A0_cnt_next_1_.Q</A> & <A href=#59>A0_cnt_next_2_.Q</A> & <A href=#60>A0_cnt_next_3_.Q</A>
+       & <A href=#61>A0_cnt_next_4_.Q</A> & <A href=#62>A0_cnt_next_5_.Q</A> & <A href=#63>A0_cnt_next_6_.Q</A>
+       & <A href=#64>A0_cnt_next_7_.Q</A> & <A href=#65>A0_cnt_next_8_.Q</A> ; (1 pterm, 11 signals)
+
+<A name=91>A0_N_307</A> = <A href=#25>A0_cnt_next_9_.Q</A> & <A href=#27>A0_cnt_next_13_.Q</A> & <A href=#33>A0_cnt_next_10_.Q</A>
+       & <A href=#57>A0_cnt_next_0_.Q</A> & <A href=#58>A0_cnt_next_1_.Q</A> & <A href=#59>A0_cnt_next_2_.Q</A>
+       & <A href=#60>A0_cnt_next_3_.Q</A> & <A href=#61>A0_cnt_next_4_.Q</A> & <A href=#62>A0_cnt_next_5_.Q</A>
+       & <A href=#63>A0_cnt_next_6_.Q</A> & <A href=#64>A0_cnt_next_7_.Q</A> & <A href=#65>A0_cnt_next_8_.Q</A>
+       & <A href=#66>A0_cnt_next_11_.Q</A> & <A href=#67>A0_cnt_next_12_.Q</A> ; (1 pterm, 14 signals)
+
+<A name=77>A0_N_30_0</A> = !( !<A href=#16>led_row_0_.Q</A> & !<A href=#17>led_row_1_.Q</A> & !<A href=#20>led_row_4_.Q</A> & <A href=#22>led_row_6_.Q</A>
+       & !<A href=#23>led_row_7_.Q</A> & !<A href=#34>A0_scan_data_1_.Q</A> & <A href=#35>A0_scan_data_3_.Q</A>
+       & !<A href=#36>A0_scan_data_4_.Q</A> & !<A href=#37>A0_scan_data_5_.Q</A> & !<A href=#38>A0_scan_data_6_.Q</A>
+       & <A href=#39>A0_scan_data_0_.Q</A> & <A href=#40>A0_scan_data_2_.Q</A>
+    # !led_row_0_.Q & led_row_1_.Q & !led_row_4_.Q & !led_row_6_.Q
+       & !led_row_7_.Q & !A0_scan_data_1_.Q & !A0_scan_data_3_.Q
+       & !A0_scan_data_4_.Q & !A0_scan_data_5_.Q & !A0_scan_data_6_.Q
+       & !A0_scan_data_0_.Q
+    # !led_row_0_.Q & led_row_1_.Q & !led_row_4_.Q & !led_row_6_.Q
+       & !led_row_7_.Q & A0_scan_data_1_.Q & !A0_scan_data_4_.Q
+       & !A0_scan_data_5_.Q & !A0_scan_data_6_.Q & A0_scan_data_0_.Q ) ; (3 pterms, 12 signals)
+
+<A name=93>A0_N_317</A> = <A href=#25>A0_cnt_next_9_.Q</A> & <A href=#27>A0_cnt_next_13_.Q</A> & <A href=#28>A0_cnt_next_16_.Q</A>
+       & <A href=#30>A0_cnt_next_18_.Q</A> & <A href=#31>A0_cnt_next_15_.Q</A> & <A href=#33>A0_cnt_next_10_.Q</A>
+       & <A href=#57>A0_cnt_next_0_.Q</A> & <A href=#58>A0_cnt_next_1_.Q</A> & <A href=#59>A0_cnt_next_2_.Q</A>
+       & <A href=#60>A0_cnt_next_3_.Q</A> & <A href=#61>A0_cnt_next_4_.Q</A> & <A href=#62>A0_cnt_next_5_.Q</A>
+       & <A href=#63>A0_cnt_next_6_.Q</A> & <A href=#64>A0_cnt_next_7_.Q</A> & <A href=#65>A0_cnt_next_8_.Q</A>
+       & <A href=#66>A0_cnt_next_11_.Q</A> & <A href=#67>A0_cnt_next_12_.Q</A> & <A href=#68>A0_cnt_next_14_.Q</A>
+       & <A href=#69>A0_cnt_next_17_.Q</A> ; (1 pterm, 19 signals)
+
+<A name=92>A0_N_327</A> = <A href=#25>A0_cnt_next_9_.Q</A> & <A href=#26>A0_cnt_next_20_.Q</A> & <A href=#27>A0_cnt_next_13_.Q</A>
+       & <A href=#28>A0_cnt_next_16_.Q</A> & <A href=#29>A0_cnt_next_23_.Q</A> & <A href=#30>A0_cnt_next_18_.Q</A>
+       & <A href=#31>A0_cnt_next_15_.Q</A> & <A href=#32>A0_cnt_next_19_.Q</A> & <A href=#33>A0_cnt_next_10_.Q</A>
+       & <A href=#57>A0_cnt_next_0_.Q</A> & <A href=#58>A0_cnt_next_1_.Q</A> & <A href=#59>A0_cnt_next_2_.Q</A>
+       & <A href=#60>A0_cnt_next_3_.Q</A> & <A href=#61>A0_cnt_next_4_.Q</A> & <A href=#62>A0_cnt_next_5_.Q</A>
+       & <A href=#63>A0_cnt_next_6_.Q</A> & <A href=#64>A0_cnt_next_7_.Q</A> & <A href=#65>A0_cnt_next_8_.Q</A>
+       & <A href=#66>A0_cnt_next_11_.Q</A> & <A href=#67>A0_cnt_next_12_.Q</A> & <A href=#68>A0_cnt_next_14_.Q</A>
+       & <A href=#69>A0_cnt_next_17_.Q</A> & <A href=#70>A0_cnt_next_21_.Q</A> & <A href=#71>A0_cnt_next_22_.Q</A> ; (1 pterm, 24 signals)
+
+<A name=76>A0_N_32_i</A> = !( !<A href=#16>led_row_0_.Q</A> & !<A href=#17>led_row_1_.Q</A> & <A href=#18>led_row_2_.Q</A> & !<A href=#19>led_row_3_.Q</A>
+       & !<A href=#20>led_row_4_.Q</A> & !<A href=#21>led_row_5_.Q</A> & !<A href=#22>led_row_6_.Q</A> & !<A href=#23>led_row_7_.Q</A>
+       & !<A href=#34>A0_scan_data_1_.Q</A> & <A href=#35>A0_scan_data_3_.Q</A> & !<A href=#36>A0_scan_data_4_.Q</A>
+       & !<A href=#37>A0_scan_data_5_.Q</A> & !<A href=#38>A0_scan_data_6_.Q</A> & !<A href=#40>A0_scan_data_2_.Q</A>
+    # !led_row_0_.Q & !led_row_1_.Q & !led_row_2_.Q & led_row_3_.Q
+       & !led_row_4_.Q & !led_row_5_.Q & !led_row_6_.Q & !led_row_7_.Q
+       & !A0_scan_data_1_.Q & A0_scan_data_3_.Q & !A0_scan_data_4_.Q
+       & !A0_scan_data_5_.Q & !A0_scan_data_6_.Q & !A0_scan_data_2_.Q
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !<A href=#39>A0_scan_data_0_.Q</A> & <A href=#80>A0_N_150</A>
+    # A0_scan_data_1_.Q & A0_scan_data_3_.Q & A0_scan_data_0_.Q & A0_N_150 ) ; (4 pterms, 16 signals)
+
+<A name=73>A0_N_339</A> = !<A href=#24>A0_cnt_next_24_.Q</A> & !<A href=#25>A0_cnt_next_9_.Q</A> & !<A href=#26>A0_cnt_next_20_.Q</A>
+       & !<A href=#27>A0_cnt_next_13_.Q</A> & !<A href=#28>A0_cnt_next_16_.Q</A> & !<A href=#29>A0_cnt_next_23_.Q</A>
+       & !<A href=#30>A0_cnt_next_18_.Q</A> & !<A href=#31>A0_cnt_next_15_.Q</A> & !<A href=#32>A0_cnt_next_19_.Q</A>
+       & !<A href=#33>A0_cnt_next_10_.Q</A> & <A href=#34>A0_scan_data_1_.Q</A> & <A href=#39>A0_scan_data_0_.Q</A>
+       & <A href=#40>A0_scan_data_2_.Q</A> & <A href=#64>A0_cnt_next_7_.Q</A> & <A href=#65>A0_cnt_next_8_.Q</A>
+       & <A href=#66>A0_cnt_next_11_.Q</A> & <A href=#67>A0_cnt_next_12_.Q</A> & <A href=#68>A0_cnt_next_14_.Q</A>
+       & <A href=#69>A0_cnt_next_17_.Q</A> & <A href=#70>A0_cnt_next_21_.Q</A> & <A href=#71>A0_cnt_next_22_.Q</A>
+       & <A href=#72>A0_cnt_next_25_.Q</A> & <A href=#87>A0_un1_cnt_next_10_20_3</A> ; (1 pterm, 23 signals)
+
+<A name=75>A0_N_37_i</A> = !( !<A href=#34>A0_scan_data_1_.Q</A> & !<A href=#39>A0_scan_data_0_.Q</A> & <A href=#79>A0_N_132</A>
+    # A0_scan_data_1_.Q & !<A href=#35>A0_scan_data_3_.Q</A> & !<A href=#40>A0_scan_data_2_.Q</A> & <A href=#80>A0_N_150</A>
+    # A0_scan_data_1_.Q & A0_scan_data_3_.Q & A0_scan_data_2_.Q & A0_N_150 ) ; (3 pterms, 6 signals)
+
+<A name=74>A0_N_46_i</A> = !( !<A href=#16>led_row_0_.Q</A> & !<A href=#17>led_row_1_.Q</A> & !<A href=#18>led_row_2_.Q</A> & !<A href=#19>led_row_3_.Q</A>
+       & !<A href=#20>led_row_4_.Q</A> & !<A href=#21>led_row_5_.Q</A> & <A href=#22>led_row_6_.Q</A> & !<A href=#23>led_row_7_.Q</A>
+       & !<A href=#34>A0_scan_data_1_.Q</A> & !<A href=#35>A0_scan_data_3_.Q</A> & !<A href=#36>A0_scan_data_4_.Q</A>
+       & !<A href=#37>A0_scan_data_5_.Q</A> & !<A href=#38>A0_scan_data_6_.Q</A> & <A href=#39>A0_scan_data_0_.Q</A>
+       & <A href=#40>A0_scan_data_2_.Q</A>
+    # !led_row_0_.Q & !led_row_1_.Q & !led_row_2_.Q & !led_row_3_.Q
+       & led_row_4_.Q & !led_row_5_.Q & !led_row_6_.Q & !led_row_7_.Q
+       & !A0_scan_data_1_.Q & A0_scan_data_3_.Q & !A0_scan_data_4_.Q
+       & !A0_scan_data_5_.Q & !A0_scan_data_6_.Q & !A0_scan_data_2_.Q
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_0_.Q & <A href=#79>A0_N_132</A>
+    # A0_scan_data_3_.Q & A0_scan_data_0_.Q & !A0_scan_data_2_.Q & A0_N_132 ) ; (4 pterms, 16 signals)
+
+<A name=57>A0_cnt_next_0_.D</A> = !<A href=#57>A0_cnt_next_0_.Q</A> ; (1 pterm, 1 signal)
+A0_cnt_next_0_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_0_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=33>A0_cnt_next_10_.D.X1</A> = <A href=#33>A0_cnt_next_10_.Q</A> ; (1 pterm, 1 signal)
+A0_cnt_next_10_.D.X2 = <A href=#25>A0_cnt_next_9_.Q</A> & <A href=#64>A0_cnt_next_7_.Q</A> & <A href=#65>A0_cnt_next_8_.Q</A>
+       & <A href=#87>A0_un1_cnt_next_10_20_3</A> ; (1 pterm, 4 signals)
+A0_cnt_next_10_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_10_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=66>A0_cnt_next_11_.D</A> = <A href=#66>A0_cnt_next_11_.Q</A> & !<A href=#88>A0_un1_cnt_next_10</A> & !<A href=#90>A0_N_301</A>
+    # !A0_cnt_next_11_.Q & !A0_un1_cnt_next_10 & A0_N_301 ; (2 pterms, 3 signals)
+A0_cnt_next_11_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_11_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=67>A0_cnt_next_12_.D</A> = <A href=#66>A0_cnt_next_11_.Q</A> & !<A href=#67>A0_cnt_next_12_.Q</A>
+       & !<A href=#88>A0_un1_cnt_next_10</A> & <A href=#90>A0_N_301</A>
+    # !A0_cnt_next_11_.Q & A0_cnt_next_12_.Q & !A0_un1_cnt_next_10
+    # A0_cnt_next_12_.Q & !A0_un1_cnt_next_10 & !A0_N_301 ; (3 pterms, 4 signals)
+A0_cnt_next_12_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_12_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=27>A0_cnt_next_13_.D</A> = !<A href=#27>A0_cnt_next_13_.Q</A> & <A href=#66>A0_cnt_next_11_.Q</A> & <A href=#67>A0_cnt_next_12_.Q</A>
+       & <A href=#90>A0_N_301</A>
+    # A0_cnt_next_13_.Q & !A0_cnt_next_12_.Q
+    # A0_cnt_next_13_.Q & !A0_cnt_next_11_.Q
+    # A0_cnt_next_13_.Q & !A0_N_301 ; (4 pterms, 4 signals)
+A0_cnt_next_13_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_13_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=68>A0_cnt_next_14_.D</A> = <A href=#68>A0_cnt_next_14_.Q</A> & !<A href=#88>A0_un1_cnt_next_10</A> & !<A href=#91>A0_N_307</A>
+    # !A0_cnt_next_14_.Q & !A0_un1_cnt_next_10 & A0_N_307 ; (2 pterms, 3 signals)
+A0_cnt_next_14_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_14_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=31>A0_cnt_next_15_.D</A> = !<A href=#31>A0_cnt_next_15_.Q</A> & <A href=#68>A0_cnt_next_14_.Q</A> & <A href=#91>A0_N_307</A>
+    # A0_cnt_next_15_.Q & !A0_cnt_next_14_.Q
+    # A0_cnt_next_15_.Q & !A0_N_307 ; (3 pterms, 3 signals)
+A0_cnt_next_15_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_15_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=28>A0_cnt_next_16_.D</A> = !<A href=#28>A0_cnt_next_16_.Q</A> & <A href=#31>A0_cnt_next_15_.Q</A> & <A href=#68>A0_cnt_next_14_.Q</A>
+       & <A href=#91>A0_N_307</A>
+    # A0_cnt_next_16_.Q & !A0_cnt_next_14_.Q
+    # A0_cnt_next_16_.Q & !A0_cnt_next_15_.Q
+    # A0_cnt_next_16_.Q & !A0_N_307 ; (4 pterms, 4 signals)
+A0_cnt_next_16_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_16_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=69>A0_cnt_next_17_.D.X1</A> = <A href=#28>A0_cnt_next_16_.Q</A> & <A href=#31>A0_cnt_next_15_.Q</A>
+       & <A href=#68>A0_cnt_next_14_.Q</A> & !<A href=#88>A0_un1_cnt_next_10</A> & <A href=#91>A0_N_307</A> ; (1 pterm, 5 signals)
+A0_cnt_next_17_.D.X2 = <A href=#69>A0_cnt_next_17_.Q</A> & !<A href=#88>A0_un1_cnt_next_10</A> ; (1 pterm, 2 signals)
+A0_cnt_next_17_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_17_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=30>A0_cnt_next_18_.T</A> = <A href=#28>A0_cnt_next_16_.Q</A> & <A href=#31>A0_cnt_next_15_.Q</A> & <A href=#68>A0_cnt_next_14_.Q</A>
+       & <A href=#69>A0_cnt_next_17_.Q</A> & <A href=#91>A0_N_307</A> ; (1 pterm, 5 signals)
+A0_cnt_next_18_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_18_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=32>A0_cnt_next_19_.D</A> = <A href=#32>A0_cnt_next_19_.Q</A> & !<A href=#93>A0_N_317</A>
+    # !A0_cnt_next_19_.Q & A0_N_317 ; (2 pterms, 2 signals)
+A0_cnt_next_19_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_19_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=58>A0_cnt_next_1_.D</A> = <A href=#57>A0_cnt_next_0_.Q</A> & !<A href=#58>A0_cnt_next_1_.Q</A>
+    # !A0_cnt_next_0_.Q & A0_cnt_next_1_.Q ; (2 pterms, 2 signals)
+A0_cnt_next_1_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_1_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=26>A0_cnt_next_20_.D</A> = !<A href=#26>A0_cnt_next_20_.Q</A> & <A href=#32>A0_cnt_next_19_.Q</A> & <A href=#93>A0_N_317</A>
+    # A0_cnt_next_20_.Q & !A0_cnt_next_19_.Q
+    # A0_cnt_next_20_.Q & !A0_N_317 ; (3 pterms, 3 signals)
+A0_cnt_next_20_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_20_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=70>A0_cnt_next_21_.D</A> = <A href=#26>A0_cnt_next_20_.Q</A> & <A href=#32>A0_cnt_next_19_.Q</A> & !<A href=#70>A0_cnt_next_21_.Q</A>
+       & !<A href=#88>A0_un1_cnt_next_10</A> & <A href=#93>A0_N_317</A>
+    # !A0_cnt_next_19_.Q & A0_cnt_next_21_.Q & !A0_un1_cnt_next_10
+    # !A0_cnt_next_20_.Q & A0_cnt_next_21_.Q & !A0_un1_cnt_next_10
+    # A0_cnt_next_21_.Q & !A0_un1_cnt_next_10 & !A0_N_317 ; (4 pterms, 5 signals)
+A0_cnt_next_21_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_21_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=71>A0_cnt_next_22_.D.X1</A> = <A href=#26>A0_cnt_next_20_.Q</A> & <A href=#32>A0_cnt_next_19_.Q</A>
+       & <A href=#70>A0_cnt_next_21_.Q</A> & !<A href=#88>A0_un1_cnt_next_10</A> & <A href=#93>A0_N_317</A> ; (1 pterm, 5 signals)
+A0_cnt_next_22_.D.X2 = <A href=#71>A0_cnt_next_22_.Q</A> & !<A href=#88>A0_un1_cnt_next_10</A> ; (1 pterm, 2 signals)
+A0_cnt_next_22_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_22_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=29>A0_cnt_next_23_.T</A> = <A href=#26>A0_cnt_next_20_.Q</A> & <A href=#32>A0_cnt_next_19_.Q</A> & <A href=#70>A0_cnt_next_21_.Q</A>
+       & <A href=#71>A0_cnt_next_22_.Q</A> & <A href=#93>A0_N_317</A> ; (1 pterm, 5 signals)
+A0_cnt_next_23_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_23_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=24>A0_cnt_next_24_.D</A> = <A href=#24>A0_cnt_next_24_.Q</A> & !<A href=#92>A0_N_327</A>
+    # !A0_cnt_next_24_.Q & A0_N_327 ; (2 pterms, 2 signals)
+A0_cnt_next_24_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_24_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=72>A0_cnt_next_25_.D</A> = <A href=#24>A0_cnt_next_24_.Q</A> & !<A href=#72>A0_cnt_next_25_.Q</A>
+       & !<A href=#88>A0_un1_cnt_next_10</A> & <A href=#92>A0_N_327</A>
+    # !A0_cnt_next_24_.Q & A0_cnt_next_25_.Q & !A0_un1_cnt_next_10
+    # A0_cnt_next_25_.Q & !A0_un1_cnt_next_10 & !A0_N_327 ; (3 pterms, 4 signals)
+A0_cnt_next_25_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_25_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=59>A0_cnt_next_2_.D</A> = <A href=#57>A0_cnt_next_0_.Q</A> & <A href=#58>A0_cnt_next_1_.Q</A> & !<A href=#59>A0_cnt_next_2_.Q</A>
+    # !A0_cnt_next_1_.Q & A0_cnt_next_2_.Q
+    # !A0_cnt_next_0_.Q & A0_cnt_next_2_.Q ; (3 pterms, 3 signals)
+A0_cnt_next_2_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_2_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=60>A0_cnt_next_3_.D</A> = <A href=#57>A0_cnt_next_0_.Q</A> & <A href=#58>A0_cnt_next_1_.Q</A> & <A href=#59>A0_cnt_next_2_.Q</A>
+       & !<A href=#60>A0_cnt_next_3_.Q</A>
+    # !A0_cnt_next_2_.Q & A0_cnt_next_3_.Q
+    # !A0_cnt_next_1_.Q & A0_cnt_next_3_.Q
+    # !A0_cnt_next_0_.Q & A0_cnt_next_3_.Q ; (4 pterms, 4 signals)
+A0_cnt_next_3_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_3_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=61>A0_cnt_next_4_.D</A> = <A href=#61>A0_cnt_next_4_.Q</A> & !<A href=#89>A0_un1_cnt_next_10_14</A>
+    # !A0_cnt_next_4_.Q & A0_un1_cnt_next_10_14 ; (2 pterms, 2 signals)
+A0_cnt_next_4_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_4_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=62>A0_cnt_next_5_.D</A> = <A href=#61>A0_cnt_next_4_.Q</A> & !<A href=#62>A0_cnt_next_5_.Q</A>
+       & <A href=#89>A0_un1_cnt_next_10_14</A>
+    # !A0_cnt_next_4_.Q & A0_cnt_next_5_.Q
+    # A0_cnt_next_5_.Q & !A0_un1_cnt_next_10_14 ; (3 pterms, 3 signals)
+A0_cnt_next_5_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_5_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=63>A0_cnt_next_6_.D</A> = <A href=#61>A0_cnt_next_4_.Q</A> & <A href=#62>A0_cnt_next_5_.Q</A> & !<A href=#63>A0_cnt_next_6_.Q</A>
+       & <A href=#89>A0_un1_cnt_next_10_14</A>
+    # !A0_cnt_next_5_.Q & A0_cnt_next_6_.Q
+    # !A0_cnt_next_4_.Q & A0_cnt_next_6_.Q
+    # A0_cnt_next_6_.Q & !A0_un1_cnt_next_10_14 ; (4 pterms, 4 signals)
+A0_cnt_next_6_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_6_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=64>A0_cnt_next_7_.D.X1</A> = <A href=#61>A0_cnt_next_4_.Q</A> & <A href=#62>A0_cnt_next_5_.Q</A> & <A href=#63>A0_cnt_next_6_.Q</A>
+       & <A href=#89>A0_un1_cnt_next_10_14</A> ; (1 pterm, 4 signals)
+A0_cnt_next_7_.D.X2 = <A href=#64>A0_cnt_next_7_.Q</A> ; (1 pterm, 1 signal)
+A0_cnt_next_7_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_7_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=65>A0_cnt_next_8_.D</A> = <A href=#64>A0_cnt_next_7_.Q</A> & !<A href=#65>A0_cnt_next_8_.Q</A>
+       & <A href=#87>A0_un1_cnt_next_10_20_3</A>
+    # !A0_cnt_next_7_.Q & A0_cnt_next_8_.Q
+    # A0_cnt_next_8_.Q & !A0_un1_cnt_next_10_20_3 ; (3 pterms, 3 signals)
+A0_cnt_next_8_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_8_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=25>A0_cnt_next_9_.D</A> = !<A href=#25>A0_cnt_next_9_.Q</A> & <A href=#64>A0_cnt_next_7_.Q</A> & <A href=#65>A0_cnt_next_8_.Q</A>
+       & <A href=#87>A0_un1_cnt_next_10_20_3</A> & !<A href=#88>A0_un1_cnt_next_10</A>
+    # A0_cnt_next_9_.Q & !A0_un1_cnt_next_10_20_3 & !A0_un1_cnt_next_10
+    # A0_cnt_next_9_.Q & !A0_cnt_next_8_.Q & !A0_un1_cnt_next_10
+    # A0_cnt_next_9_.Q & !A0_cnt_next_7_.Q & !A0_un1_cnt_next_10 ; (4 pterms, 5 signals)
+A0_cnt_next_9_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_next_9_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=41>A0_cnt_scan_0_.D</A> = !<A href=#41>A0_cnt_scan_0_.Q</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_0_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_0_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=51>A0_cnt_scan_10_.D</A> = <A href=#50>A0_cnt_scan_9_.Q</A> & !<A href=#51>A0_cnt_scan_10_.Q</A> & <A href=#86>A0_N_263</A>
+    # !A0_cnt_scan_9_.Q & A0_cnt_scan_10_.Q
+    # A0_cnt_scan_10_.Q & !A0_N_263 ; (3 pterms, 3 signals)
+A0_cnt_scan_10_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_10_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=52>A0_cnt_scan_11_.D</A> = <A href=#50>A0_cnt_scan_9_.Q</A> & <A href=#51>A0_cnt_scan_10_.Q</A> & !<A href=#52>A0_cnt_scan_11_.Q</A>
+       & <A href=#86>A0_N_263</A>
+    # !A0_cnt_scan_10_.Q & A0_cnt_scan_11_.Q
+    # !A0_cnt_scan_9_.Q & A0_cnt_scan_11_.Q
+    # A0_cnt_scan_11_.Q & !A0_N_263 ; (4 pterms, 4 signals)
+A0_cnt_scan_11_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_11_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=53>A0_cnt_scan_12_.D.X1</A> = <A href=#50>A0_cnt_scan_9_.Q</A> & <A href=#51>A0_cnt_scan_10_.Q</A>
+       & <A href=#52>A0_cnt_scan_11_.Q</A> & <A href=#86>A0_N_263</A> ; (1 pterm, 4 signals)
+A0_cnt_scan_12_.D.X2 = <A href=#53>A0_cnt_scan_12_.Q</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_12_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_12_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=54>A0_cnt_scan_13_.D</A> = <A href=#54>A0_cnt_scan_13_.Q</A> & !<A href=#85>A0_N_271</A>
+    # !A0_cnt_scan_13_.Q & A0_N_271 ; (2 pterms, 2 signals)
+A0_cnt_scan_13_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_13_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=55>A0_cnt_scan_14_.D</A> = <A href=#54>A0_cnt_scan_13_.Q</A> & !<A href=#55>A0_cnt_scan_14_.Q</A> & <A href=#85>A0_N_271</A>
+    # !A0_cnt_scan_13_.Q & A0_cnt_scan_14_.Q
+    # A0_cnt_scan_14_.Q & !A0_N_271 ; (3 pterms, 3 signals)
+A0_cnt_scan_14_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_14_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=56>A0_cnt_scan_15_.D</A> = <A href=#54>A0_cnt_scan_13_.Q</A> & <A href=#55>A0_cnt_scan_14_.Q</A> & !<A href=#56>A0_cnt_scan_15_.Q</A>
+       & <A href=#85>A0_N_271</A>
+    # !A0_cnt_scan_14_.Q & A0_cnt_scan_15_.Q
+    # !A0_cnt_scan_13_.Q & A0_cnt_scan_15_.Q
+    # A0_cnt_scan_15_.Q & !A0_N_271 ; (4 pterms, 4 signals)
+A0_cnt_scan_15_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_15_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=42>A0_cnt_scan_1_.D</A> = <A href=#41>A0_cnt_scan_0_.Q</A> & !<A href=#42>A0_cnt_scan_1_.Q</A>
+    # !A0_cnt_scan_0_.Q & A0_cnt_scan_1_.Q ; (2 pterms, 2 signals)
+A0_cnt_scan_1_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_1_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=43>A0_cnt_scan_2_.D</A> = <A href=#41>A0_cnt_scan_0_.Q</A> & <A href=#42>A0_cnt_scan_1_.Q</A> & !<A href=#43>A0_cnt_scan_2_.Q</A>
+    # !A0_cnt_scan_1_.Q & A0_cnt_scan_2_.Q
+    # !A0_cnt_scan_0_.Q & A0_cnt_scan_2_.Q ; (3 pterms, 3 signals)
+A0_cnt_scan_2_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_2_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=44>A0_cnt_scan_3_.D</A> = <A href=#41>A0_cnt_scan_0_.Q</A> & <A href=#42>A0_cnt_scan_1_.Q</A> & <A href=#43>A0_cnt_scan_2_.Q</A>
+       & !<A href=#44>A0_cnt_scan_3_.Q</A>
+    # !A0_cnt_scan_2_.Q & A0_cnt_scan_3_.Q
+    # !A0_cnt_scan_1_.Q & A0_cnt_scan_3_.Q
+    # !A0_cnt_scan_0_.Q & A0_cnt_scan_3_.Q ; (4 pterms, 4 signals)
+A0_cnt_scan_3_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_3_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=45>A0_cnt_scan_4_.D</A> = <A href=#45>A0_cnt_scan_4_.Q</A> & !<A href=#84>A0_un1_cnt_scan_9</A>
+    # !A0_cnt_scan_4_.Q & A0_un1_cnt_scan_9 ; (2 pterms, 2 signals)
+A0_cnt_scan_4_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_4_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=46>A0_cnt_scan_5_.D</A> = <A href=#45>A0_cnt_scan_4_.Q</A> & !<A href=#46>A0_cnt_scan_5_.Q</A> & <A href=#84>A0_un1_cnt_scan_9</A>
+    # !A0_cnt_scan_4_.Q & A0_cnt_scan_5_.Q
+    # A0_cnt_scan_5_.Q & !A0_un1_cnt_scan_9 ; (3 pterms, 3 signals)
+A0_cnt_scan_5_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_5_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=47>A0_cnt_scan_6_.D</A> = <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A> & !<A href=#47>A0_cnt_scan_6_.Q</A>
+       & <A href=#84>A0_un1_cnt_scan_9</A>
+    # !A0_cnt_scan_5_.Q & A0_cnt_scan_6_.Q
+    # !A0_cnt_scan_4_.Q & A0_cnt_scan_6_.Q
+    # A0_cnt_scan_6_.Q & !A0_un1_cnt_scan_9 ; (4 pterms, 4 signals)
+A0_cnt_scan_6_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_6_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=48>A0_cnt_scan_7_.D.X1</A> = <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A> & <A href=#47>A0_cnt_scan_6_.Q</A>
+       & <A href=#84>A0_un1_cnt_scan_9</A> ; (1 pterm, 4 signals)
+A0_cnt_scan_7_.D.X2 = <A href=#48>A0_cnt_scan_7_.Q</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_7_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_7_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=49>A0_cnt_scan_8_.T</A> = <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A> & <A href=#47>A0_cnt_scan_6_.Q</A>
+       & <A href=#48>A0_cnt_scan_7_.Q</A> & <A href=#84>A0_un1_cnt_scan_9</A> ; (1 pterm, 5 signals)
+A0_cnt_scan_8_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_8_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=50>A0_cnt_scan_9_.D</A> = <A href=#50>A0_cnt_scan_9_.Q</A> & !<A href=#86>A0_N_263</A>
+    # !A0_cnt_scan_9_.Q & A0_N_263 ; (2 pterms, 2 signals)
+A0_cnt_scan_9_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_cnt_scan_9_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=78>A0_col_buf_i_3_4__n</A> = !( <A href=#35>A0_scan_data_3_.Q</A> & !<A href=#40>A0_scan_data_2_.Q</A> & <A href=#80>A0_N_150</A>
+    # !<A href=#34>A0_scan_data_1_.Q</A> & !A0_scan_data_2_.Q & A0_N_150
+    # !A0_scan_data_3_.Q & <A href=#39>A0_scan_data_0_.Q</A> & <A href=#83>A0_N_155</A>
+    # A0_scan_data_0_.Q & !A0_scan_data_2_.Q & A0_N_155 ) ; (4 pterms, 6 signals)
+
+<A name=39>A0_scan_data_0_.D</A> = <A href=#39>A0_scan_data_0_.Q</A> & !<A href=#88>A0_un1_cnt_next_10</A>
+    # !A0_scan_data_0_.Q & A0_un1_cnt_next_10 ; (2 pterms, 2 signals)
+A0_scan_data_0_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_scan_data_0_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=34>A0_scan_data_1_.D</A> = !<A href=#34>A0_scan_data_1_.Q</A> & <A href=#39>A0_scan_data_0_.Q</A>
+       & <A href=#88>A0_un1_cnt_next_10</A>
+    # A0_scan_data_1_.Q & !A0_scan_data_0_.Q
+    # A0_scan_data_1_.Q & !A0_un1_cnt_next_10 ; (3 pterms, 3 signals)
+A0_scan_data_1_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_scan_data_1_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=40>A0_scan_data_2_.D</A> = <A href=#34>A0_scan_data_1_.Q</A> & <A href=#39>A0_scan_data_0_.Q</A> & !<A href=#40>A0_scan_data_2_.Q</A>
+       & <A href=#88>A0_un1_cnt_next_10</A>
+    # !A0_scan_data_0_.Q & A0_scan_data_2_.Q
+    # !A0_scan_data_1_.Q & A0_scan_data_2_.Q
+    # A0_scan_data_2_.Q & !A0_un1_cnt_next_10 ; (4 pterms, 4 signals)
+A0_scan_data_2_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_scan_data_2_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=35>A0_scan_data_3_.T</A> = !<A href=#24>A0_cnt_next_24_.Q</A> & !<A href=#25>A0_cnt_next_9_.Q</A>
+       & !<A href=#26>A0_cnt_next_20_.Q</A> & !<A href=#27>A0_cnt_next_13_.Q</A> & !<A href=#28>A0_cnt_next_16_.Q</A>
+       & !<A href=#29>A0_cnt_next_23_.Q</A> & !<A href=#30>A0_cnt_next_18_.Q</A> & !<A href=#31>A0_cnt_next_15_.Q</A>
+       & !<A href=#32>A0_cnt_next_19_.Q</A> & !<A href=#33>A0_cnt_next_10_.Q</A> & <A href=#34>A0_scan_data_1_.Q</A>
+       & <A href=#39>A0_scan_data_0_.Q</A> & <A href=#40>A0_scan_data_2_.Q</A> & <A href=#64>A0_cnt_next_7_.Q</A>
+       & <A href=#65>A0_cnt_next_8_.Q</A> & <A href=#66>A0_cnt_next_11_.Q</A> & <A href=#67>A0_cnt_next_12_.Q</A>
+       & <A href=#68>A0_cnt_next_14_.Q</A> & <A href=#69>A0_cnt_next_17_.Q</A> & <A href=#70>A0_cnt_next_21_.Q</A>
+       & <A href=#71>A0_cnt_next_22_.Q</A> & <A href=#72>A0_cnt_next_25_.Q</A> & <A href=#87>A0_un1_cnt_next_10_20_3</A> ; (1 pterm, 23 signals)
+A0_scan_data_3_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_scan_data_3_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=36>A0_scan_data_4_.T</A> = !<A href=#24>A0_cnt_next_24_.Q</A> & !<A href=#25>A0_cnt_next_9_.Q</A>
+       & !<A href=#26>A0_cnt_next_20_.Q</A> & !<A href=#27>A0_cnt_next_13_.Q</A> & !<A href=#28>A0_cnt_next_16_.Q</A>
+       & !<A href=#29>A0_cnt_next_23_.Q</A> & !<A href=#30>A0_cnt_next_18_.Q</A> & !<A href=#31>A0_cnt_next_15_.Q</A>
+       & !<A href=#32>A0_cnt_next_19_.Q</A> & !<A href=#33>A0_cnt_next_10_.Q</A> & <A href=#34>A0_scan_data_1_.Q</A>
+       & <A href=#35>A0_scan_data_3_.Q</A> & <A href=#39>A0_scan_data_0_.Q</A> & <A href=#40>A0_scan_data_2_.Q</A>
+       & <A href=#64>A0_cnt_next_7_.Q</A> & <A href=#65>A0_cnt_next_8_.Q</A> & <A href=#66>A0_cnt_next_11_.Q</A>
+       & <A href=#67>A0_cnt_next_12_.Q</A> & <A href=#68>A0_cnt_next_14_.Q</A> & <A href=#69>A0_cnt_next_17_.Q</A>
+       & <A href=#70>A0_cnt_next_21_.Q</A> & <A href=#71>A0_cnt_next_22_.Q</A> & <A href=#72>A0_cnt_next_25_.Q</A>
+       & <A href=#87>A0_un1_cnt_next_10_20_3</A> ; (1 pterm, 24 signals)
+A0_scan_data_4_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_scan_data_4_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=37>A0_scan_data_5_.D.X1</A> = !<A href=#24>A0_cnt_next_24_.Q</A> & !<A href=#25>A0_cnt_next_9_.Q</A>
+       & !<A href=#26>A0_cnt_next_20_.Q</A> & !<A href=#27>A0_cnt_next_13_.Q</A> & !<A href=#28>A0_cnt_next_16_.Q</A>
+       & !<A href=#29>A0_cnt_next_23_.Q</A> & !<A href=#30>A0_cnt_next_18_.Q</A> & !<A href=#31>A0_cnt_next_15_.Q</A>
+       & !<A href=#32>A0_cnt_next_19_.Q</A> & !<A href=#33>A0_cnt_next_10_.Q</A> & <A href=#34>A0_scan_data_1_.Q</A>
+       & <A href=#35>A0_scan_data_3_.Q</A> & <A href=#36>A0_scan_data_4_.Q</A> & <A href=#39>A0_scan_data_0_.Q</A>
+       & <A href=#40>A0_scan_data_2_.Q</A> & <A href=#64>A0_cnt_next_7_.Q</A> & <A href=#65>A0_cnt_next_8_.Q</A>
+       & <A href=#66>A0_cnt_next_11_.Q</A> & <A href=#67>A0_cnt_next_12_.Q</A> & <A href=#68>A0_cnt_next_14_.Q</A>
+       & <A href=#69>A0_cnt_next_17_.Q</A> & <A href=#70>A0_cnt_next_21_.Q</A> & <A href=#71>A0_cnt_next_22_.Q</A>
+       & <A href=#72>A0_cnt_next_25_.Q</A> & <A href=#87>A0_un1_cnt_next_10_20_3</A> ; (1 pterm, 25 signals)
+A0_scan_data_5_.D.X2 = <A href=#37>A0_scan_data_5_.Q</A> ; (1 pterm, 1 signal)
+A0_scan_data_5_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_scan_data_5_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=38>A0_scan_data_6_.D.X1</A> = <A href=#35>A0_scan_data_3_.Q</A> & <A href=#36>A0_scan_data_4_.Q</A>
+       & <A href=#37>A0_scan_data_5_.Q</A> & <A href=#73>A0_N_339</A> ; (1 pterm, 4 signals)
+A0_scan_data_6_.D.X2 = <A href=#38>A0_scan_data_6_.Q</A> ; (1 pterm, 1 signal)
+A0_scan_data_6_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+A0_scan_data_6_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=88>A0_un1_cnt_next_10</A> = !<A href=#24>A0_cnt_next_24_.Q</A> & !<A href=#25>A0_cnt_next_9_.Q</A>
+       & !<A href=#26>A0_cnt_next_20_.Q</A> & !<A href=#27>A0_cnt_next_13_.Q</A> & !<A href=#28>A0_cnt_next_16_.Q</A>
+       & !<A href=#29>A0_cnt_next_23_.Q</A> & !<A href=#30>A0_cnt_next_18_.Q</A> & !<A href=#31>A0_cnt_next_15_.Q</A>
+       & !<A href=#32>A0_cnt_next_19_.Q</A> & !<A href=#33>A0_cnt_next_10_.Q</A> & <A href=#57>A0_cnt_next_0_.Q</A>
+       & <A href=#58>A0_cnt_next_1_.Q</A> & <A href=#59>A0_cnt_next_2_.Q</A> & <A href=#60>A0_cnt_next_3_.Q</A>
+       & <A href=#61>A0_cnt_next_4_.Q</A> & <A href=#62>A0_cnt_next_5_.Q</A> & <A href=#63>A0_cnt_next_6_.Q</A>
+       & <A href=#64>A0_cnt_next_7_.Q</A> & <A href=#65>A0_cnt_next_8_.Q</A> & <A href=#66>A0_cnt_next_11_.Q</A>
+       & <A href=#67>A0_cnt_next_12_.Q</A> & <A href=#68>A0_cnt_next_14_.Q</A> & <A href=#69>A0_cnt_next_17_.Q</A>
+       & <A href=#70>A0_cnt_next_21_.Q</A> & <A href=#71>A0_cnt_next_22_.Q</A> & <A href=#72>A0_cnt_next_25_.Q</A> ; (1 pterm, 26 signals)
+
+<A name=89>A0_un1_cnt_next_10_14</A> = <A href=#57>A0_cnt_next_0_.Q</A> & <A href=#58>A0_cnt_next_1_.Q</A> & <A href=#59>A0_cnt_next_2_.Q</A>
+       & <A href=#60>A0_cnt_next_3_.Q</A> ; (1 pterm, 4 signals)
+
+<A name=87>A0_un1_cnt_next_10_20_3</A> = <A href=#57>A0_cnt_next_0_.Q</A> & <A href=#58>A0_cnt_next_1_.Q</A>
+       & <A href=#59>A0_cnt_next_2_.Q</A> & <A href=#60>A0_cnt_next_3_.Q</A> & <A href=#61>A0_cnt_next_4_.Q</A>
+       & <A href=#62>A0_cnt_next_5_.Q</A> & <A href=#63>A0_cnt_next_6_.Q</A> ; (1 pterm, 7 signals)
+
+<A name=84>A0_un1_cnt_scan_9</A> = <A href=#41>A0_cnt_scan_0_.Q</A> & <A href=#42>A0_cnt_scan_1_.Q</A> & <A href=#43>A0_cnt_scan_2_.Q</A>
+       & <A href=#44>A0_cnt_scan_3_.Q</A> ; (1 pterm, 4 signals)
+
+<A name=6>led_col_0_.X1</A> = !<A href=#34>A0_scan_data_1_.Q</A> & <A href=#39>A0_scan_data_0_.Q</A> & <A href=#74>A0_N_46_i</A> & <A href=#76>A0_N_32_i</A>
+       & <A href=#79>A0_N_132</A>
+    # !<A href=#40>A0_scan_data_2_.Q</A> & A0_N_46_i & A0_N_32_i & <A href=#80>A0_N_150</A>
+    # !A0_scan_data_1_.Q & A0_scan_data_0_.Q & A0_N_46_i & A0_N_32_i
+       & <A href=#82>A0_N_154</A>
+    # !A0_scan_data_1_.Q & !<A href=#35>A0_scan_data_3_.Q</A> & !A0_scan_data_2_.Q & A0_N_46_i
+       & A0_N_32_i & A0_N_132
+    # !A0_scan_data_1_.Q & !A0_scan_data_3_.Q & A0_scan_data_0_.Q & A0_N_46_i
+       & A0_N_32_i & <A href=#81>A0_N_152</A>
+    # !A0_scan_data_1_.Q & !A0_scan_data_3_.Q & A0_scan_data_0_.Q & A0_N_46_i
+       & A0_N_32_i & <A href=#83>A0_N_155</A>
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & A0_scan_data_2_.Q & A0_N_46_i
+       & A0_N_32_i & A0_N_154
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_0_.Q
+       & A0_scan_data_2_.Q & A0_N_46_i & A0_N_32_i & A0_N_152
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_0_.Q
+       & A0_scan_data_2_.Q & A0_N_46_i & A0_N_32_i & A0_N_155 ; (9 pterms, 11 signals)
+led_col_0_.X2 = <A href=#74>A0_N_46_i</A> & <A href=#76>A0_N_32_i</A> ; (1 pterm, 2 signals)
+
+<A name=7>led_col_1_</A> = !( !<A href=#34>A0_scan_data_1_.Q</A> & <A href=#35>A0_scan_data_3_.Q</A> & !<A href=#39>A0_scan_data_0_.Q</A>
+       & <A href=#40>A0_scan_data_2_.Q</A> & <A href=#82>A0_N_154</A>
+    # !<A href=#18>led_row_2_.Q</A> & !<A href=#19>led_row_3_.Q</A> & !<A href=#21>led_row_5_.Q</A> & !<A href=#77>A0_N_30_0</A>
+    # !A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_0_.Q
+       & !A0_scan_data_2_.Q & A0_N_154
+    # A0_scan_data_1_.Q & A0_scan_data_3_.Q & A0_scan_data_0_.Q
+       & !A0_scan_data_2_.Q & <A href=#79>A0_N_132</A>
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & A0_scan_data_0_.Q
+       & !A0_scan_data_2_.Q & A0_N_154
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & A0_scan_data_0_.Q
+       & A0_scan_data_2_.Q & A0_N_132
+    # A0_scan_data_3_.Q & !A0_scan_data_0_.Q & A0_scan_data_2_.Q & A0_N_132
+    # !A0_scan_data_3_.Q & !A0_scan_data_0_.Q & !A0_scan_data_2_.Q & A0_N_132
+    # A0_scan_data_0_.Q & A0_scan_data_2_.Q & <A href=#80>A0_N_150</A>
+    # A0_scan_data_1_.Q & !A0_scan_data_2_.Q & <A href=#81>A0_N_152</A>
+    # !A0_scan_data_1_.Q & A0_scan_data_3_.Q & A0_scan_data_0_.Q & <A href=#83>A0_N_155</A>
+    # !A0_scan_data_3_.Q & A0_scan_data_0_.Q & A0_N_152
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & A0_scan_data_2_.Q & A0_N_155
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & A0_scan_data_0_.Q & A0_N_155
+    # !<A href=#75>A0_N_37_i</A> ) ; (15 pterms, 14 signals)
+
+<A name=8>led_col_2_</A> = !( !<A href=#34>A0_scan_data_1_.Q</A> & <A href=#39>A0_scan_data_0_.Q</A> & <A href=#81>A0_N_152</A>
+    # <A href=#16>led_row_0_.Q</A> & !<A href=#17>led_row_1_.Q</A> & !<A href=#18>led_row_2_.Q</A> & !<A href=#19>led_row_3_.Q</A>
+       & !<A href=#20>led_row_4_.Q</A> & !<A href=#21>led_row_5_.Q</A> & !<A href=#22>led_row_6_.Q</A> & !<A href=#23>led_row_7_.Q</A>
+       & !A0_scan_data_1_.Q & !<A href=#35>A0_scan_data_3_.Q</A> & !<A href=#36>A0_scan_data_4_.Q</A>
+       & !<A href=#37>A0_scan_data_5_.Q</A> & !<A href=#38>A0_scan_data_6_.Q</A> & A0_scan_data_0_.Q
+       & <A href=#40>A0_scan_data_2_.Q</A>
+    # !A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_0_.Q
+       & A0_scan_data_2_.Q & <A href=#82>A0_N_154</A>
+    # !led_row_2_.Q & !led_row_3_.Q & !led_row_5_.Q & !<A href=#77>A0_N_30_0</A>
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_2_.Q & <A href=#80>A0_N_150</A>
+    # A0_scan_data_1_.Q & A0_scan_data_3_.Q & A0_scan_data_2_.Q & A0_N_154
+    # !A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_0_.Q & <A href=#79>A0_N_132</A>
+    # !A0_scan_data_0_.Q & !A0_scan_data_2_.Q & A0_N_132
+    # A0_scan_data_3_.Q & A0_scan_data_2_.Q & A0_N_150
+    # A0_scan_data_3_.Q & A0_scan_data_0_.Q & A0_N_152
+    # A0_scan_data_1_.Q & A0_scan_data_0_.Q & A0_N_132
+    # A0_scan_data_1_.Q & A0_scan_data_3_.Q & A0_N_132
+    # !A0_scan_data_3_.Q & !A0_scan_data_0_.Q & A0_N_152
+    # !A0_scan_data_1_.Q & !A0_scan_data_0_.Q & A0_scan_data_2_.Q & <A href=#83>A0_N_155</A>
+    # A0_scan_data_1_.Q & A0_scan_data_3_.Q & A0_scan_data_2_.Q & A0_N_155
+    # A0_scan_data_2_.Q & A0_N_152 ) ; (16 pterms, 21 signals)
+
+<A name=9>led_col_3_</A> = <A href=#34>A0_scan_data_1_.Q</A> & <A href=#39>A0_scan_data_0_.Q</A> & <A href=#75>A0_N_37_i</A> & !<A href=#79>A0_N_132</A>
+       & !<A href=#80>A0_N_150</A> & !<A href=#81>A0_N_152</A>
+    # !A0_scan_data_1_.Q & !A0_scan_data_0_.Q & !<A href=#40>A0_scan_data_2_.Q</A> & A0_N_37_i
+       & !A0_N_150 & !<A href=#83>A0_N_155</A>
+    # !A0_scan_data_1_.Q & !<A href=#35>A0_scan_data_3_.Q</A> & A0_scan_data_2_.Q & A0_N_37_i
+       & !A0_N_150 & !A0_N_152
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_0_.Q
+       & A0_scan_data_2_.Q & A0_N_37_i & !<A href=#82>A0_N_154</A>
+    # !A0_scan_data_1_.Q & A0_scan_data_3_.Q & A0_scan_data_0_.Q & A0_N_37_i
+       & !A0_N_132 & !A0_N_154
+    # !A0_scan_data_1_.Q & !A0_scan_data_3_.Q & A0_scan_data_0_.Q
+       & !A0_scan_data_2_.Q & A0_N_37_i & !A0_N_152
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & A0_scan_data_0_.Q & A0_N_37_i
+       & !A0_N_132 & !A0_N_150
+    # A0_scan_data_1_.Q & A0_scan_data_3_.Q & A0_scan_data_0_.Q
+       & A0_scan_data_2_.Q & A0_N_37_i & !A0_N_150
+    # A0_scan_data_1_.Q & !A0_scan_data_0_.Q & !A0_scan_data_2_.Q & A0_N_37_i
+       & !A0_N_132 & !A0_N_152
+    # !A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_0_.Q
+       & A0_scan_data_2_.Q & A0_N_37_i & !A0_N_150
+    # A0_scan_data_1_.Q & A0_scan_data_3_.Q & !A0_scan_data_0_.Q
+       & A0_scan_data_2_.Q & A0_N_37_i & !A0_N_132
+    # A0_N_37_i & !A0_N_132 & !A0_N_150 & !A0_N_152 & !A0_N_154 & !A0_N_155
+    # !A0_scan_data_1_.Q & A0_scan_data_3_.Q & !A0_scan_data_2_.Q & A0_N_37_i
+       & !A0_N_154
+    # A0_scan_data_3_.Q & !A0_scan_data_0_.Q & !A0_scan_data_2_.Q & A0_N_37_i
+       & !A0_N_152
+    # !A0_scan_data_1_.Q & A0_scan_data_3_.Q & !A0_scan_data_0_.Q
+       & !A0_scan_data_2_.Q & A0_N_37_i ; (15 pterms, 10 signals)
+
+<A name=10>led_col_4_.X1</A> = !<A href=#34>A0_scan_data_1_.Q</A> & !<A href=#35>A0_scan_data_3_.Q</A> & !<A href=#40>A0_scan_data_2_.Q</A>
+       & <A href=#74>A0_N_46_i</A> & <A href=#76>A0_N_32_i</A> & <A href=#78>A0_col_buf_i_3_4__n</A> & <A href=#79>A0_N_132</A>
+    # !<A href=#16>led_row_0_.Q</A> & !<A href=#17>led_row_1_.Q</A> & !<A href=#18>led_row_2_.Q</A> & <A href=#19>led_row_3_.Q</A>
+       & !<A href=#20>led_row_4_.Q</A> & !<A href=#21>led_row_5_.Q</A> & !<A href=#22>led_row_6_.Q</A> & !<A href=#23>led_row_7_.Q</A>
+       & !A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !<A href=#36>A0_scan_data_4_.Q</A>
+       & !<A href=#37>A0_scan_data_5_.Q</A> & !<A href=#38>A0_scan_data_6_.Q</A> & <A href=#39>A0_scan_data_0_.Q</A>
+       & A0_N_46_i & A0_N_32_i & A0_col_buf_i_3_4__n
+    # !led_row_0_.Q & !led_row_1_.Q & led_row_2_.Q & !led_row_3_.Q
+       & !led_row_4_.Q & !led_row_5_.Q & !led_row_6_.Q & !led_row_7_.Q
+       & !A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_4_.Q
+       & !A0_scan_data_5_.Q & !A0_scan_data_6_.Q & A0_scan_data_0_.Q
+       & A0_N_46_i & A0_N_32_i & A0_col_buf_i_3_4__n
+    # !A0_scan_data_1_.Q & !A0_scan_data_3_.Q & A0_scan_data_0_.Q & A0_N_46_i
+       & A0_N_32_i & A0_col_buf_i_3_4__n & A0_N_132
+    # A0_scan_data_1_.Q & !A0_scan_data_3_.Q & A0_N_46_i & A0_N_32_i
+       & A0_col_buf_i_3_4__n & <A href=#83>A0_N_155</A>
+    # !led_row_0_.Q & !led_row_1_.Q & !led_row_2_.Q & led_row_3_.Q
+       & !led_row_4_.Q & !led_row_5_.Q & !led_row_6_.Q & !led_row_7_.Q
+       & A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_4_.Q
+       & !A0_scan_data_5_.Q & !A0_scan_data_6_.Q & !A0_scan_data_0_.Q
+       & A0_N_46_i & A0_N_32_i & A0_col_buf_i_3_4__n
+    # !led_row_0_.Q & !led_row_1_.Q & !led_row_2_.Q & led_row_3_.Q
+       & !led_row_4_.Q & !led_row_5_.Q & !led_row_6_.Q & !led_row_7_.Q
+       & A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_4_.Q
+       & !A0_scan_data_5_.Q & !A0_scan_data_6_.Q & A0_scan_data_2_.Q
+       & A0_N_46_i & A0_N_32_i & A0_col_buf_i_3_4__n
+    # !led_row_0_.Q & !led_row_1_.Q & led_row_2_.Q & !led_row_3_.Q
+       & !led_row_4_.Q & !led_row_5_.Q & !led_row_6_.Q & !led_row_7_.Q
+       & A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_4_.Q
+       & !A0_scan_data_5_.Q & !A0_scan_data_6_.Q & !A0_scan_data_0_.Q
+       & A0_N_46_i & A0_N_32_i & A0_col_buf_i_3_4__n
+    # !led_row_0_.Q & !led_row_1_.Q & led_row_2_.Q & !led_row_3_.Q
+       & !led_row_4_.Q & !led_row_5_.Q & !led_row_6_.Q & !led_row_7_.Q
+       & A0_scan_data_1_.Q & !A0_scan_data_3_.Q & !A0_scan_data_4_.Q
+       & !A0_scan_data_5_.Q & !A0_scan_data_6_.Q & A0_scan_data_2_.Q
+       & A0_N_46_i & A0_N_32_i & A0_col_buf_i_3_4__n
+    # !led_row_0_.Q & !led_row_1_.Q & !led_row_2_.Q & led_row_3_.Q
+       & !led_row_4_.Q & !led_row_5_.Q & !led_row_6_.Q & !led_row_7_.Q
+       & A0_scan_data_3_.Q & !A0_scan_data_4_.Q & !A0_scan_data_5_.Q
+       & !A0_scan_data_6_.Q & A0_scan_data_0_.Q & !A0_scan_data_2_.Q
+       & A0_N_46_i & A0_N_32_i & A0_col_buf_i_3_4__n
+    # !led_row_0_.Q & !led_row_1_.Q & led_row_2_.Q & !led_row_3_.Q
+       & !led_row_4_.Q & !led_row_5_.Q & !led_row_6_.Q & !led_row_7_.Q
+       & A0_scan_data_3_.Q & !A0_scan_data_4_.Q & !A0_scan_data_5_.Q
+       & !A0_scan_data_6_.Q & A0_scan_data_0_.Q & !A0_scan_data_2_.Q
+       & A0_N_46_i & A0_N_32_i & A0_col_buf_i_3_4__n ; (11 pterms, 20 signals)
+led_col_4_.X2 = <A href=#74>A0_N_46_i</A> & <A href=#76>A0_N_32_i</A> & <A href=#78>A0_col_buf_i_3_4__n</A> ; (1 pterm, 3 signals)
+
+<A name=11>led_col_5_</A> = 1 ; (1 pterm, 0 signal)
+
+<A name=12>led_col_6_</A> = 1 ; (1 pterm, 0 signal)
+
+<A name=13>led_col_7_</A> = 1 ; (1 pterm, 0 signal)
+
+<A name=16>led_row_0_.D</A> = <A href=#23>led_row_7_.Q</A> ; (1 pterm, 1 signal)
+led_row_0_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+led_row_0_.CE = <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A> & <A href=#47>A0_cnt_scan_6_.Q</A>
+       & <A href=#48>A0_cnt_scan_7_.Q</A> & <A href=#49>A0_cnt_scan_8_.Q</A> & <A href=#50>A0_cnt_scan_9_.Q</A>
+       & <A href=#51>A0_cnt_scan_10_.Q</A> & <A href=#52>A0_cnt_scan_11_.Q</A> & <A href=#53>A0_cnt_scan_12_.Q</A>
+       & <A href=#54>A0_cnt_scan_13_.Q</A> & <A href=#55>A0_cnt_scan_14_.Q</A> & <A href=#56>A0_cnt_scan_15_.Q</A>
+       & <A href=#84>A0_un1_cnt_scan_9</A> ; (1 pterm, 13 signals)
+led_row_0_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=17>led_row_1_.D</A> = <A href=#16>led_row_0_.Q</A> ; (1 pterm, 1 signal)
+led_row_1_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+led_row_1_.CE = <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A> & <A href=#47>A0_cnt_scan_6_.Q</A>
+       & <A href=#48>A0_cnt_scan_7_.Q</A> & <A href=#49>A0_cnt_scan_8_.Q</A> & <A href=#50>A0_cnt_scan_9_.Q</A>
+       & <A href=#51>A0_cnt_scan_10_.Q</A> & <A href=#52>A0_cnt_scan_11_.Q</A> & <A href=#53>A0_cnt_scan_12_.Q</A>
+       & <A href=#54>A0_cnt_scan_13_.Q</A> & <A href=#55>A0_cnt_scan_14_.Q</A> & <A href=#56>A0_cnt_scan_15_.Q</A>
+       & <A href=#84>A0_un1_cnt_scan_9</A> ; (1 pterm, 13 signals)
+led_row_1_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=18>led_row_2_.D</A> = <A href=#17>led_row_1_.Q</A> ; (1 pterm, 1 signal)
+led_row_2_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+led_row_2_.CE = <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A> & <A href=#47>A0_cnt_scan_6_.Q</A>
+       & <A href=#48>A0_cnt_scan_7_.Q</A> & <A href=#49>A0_cnt_scan_8_.Q</A> & <A href=#50>A0_cnt_scan_9_.Q</A>
+       & <A href=#51>A0_cnt_scan_10_.Q</A> & <A href=#52>A0_cnt_scan_11_.Q</A> & <A href=#53>A0_cnt_scan_12_.Q</A>
+       & <A href=#54>A0_cnt_scan_13_.Q</A> & <A href=#55>A0_cnt_scan_14_.Q</A> & <A href=#56>A0_cnt_scan_15_.Q</A>
+       & <A href=#84>A0_un1_cnt_scan_9</A> ; (1 pterm, 13 signals)
+led_row_2_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=19>led_row_3_.D</A> = <A href=#18>led_row_2_.Q</A> ; (1 pterm, 1 signal)
+led_row_3_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+led_row_3_.CE = <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A> & <A href=#47>A0_cnt_scan_6_.Q</A>
+       & <A href=#48>A0_cnt_scan_7_.Q</A> & <A href=#49>A0_cnt_scan_8_.Q</A> & <A href=#50>A0_cnt_scan_9_.Q</A>
+       & <A href=#51>A0_cnt_scan_10_.Q</A> & <A href=#52>A0_cnt_scan_11_.Q</A> & <A href=#53>A0_cnt_scan_12_.Q</A>
+       & <A href=#54>A0_cnt_scan_13_.Q</A> & <A href=#55>A0_cnt_scan_14_.Q</A> & <A href=#56>A0_cnt_scan_15_.Q</A>
+       & <A href=#84>A0_un1_cnt_scan_9</A> ; (1 pterm, 13 signals)
+led_row_3_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=20>led_row_4_.D</A> = <A href=#19>led_row_3_.Q</A> ; (1 pterm, 1 signal)
+led_row_4_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+led_row_4_.CE = <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A> & <A href=#47>A0_cnt_scan_6_.Q</A>
+       & <A href=#48>A0_cnt_scan_7_.Q</A> & <A href=#49>A0_cnt_scan_8_.Q</A> & <A href=#50>A0_cnt_scan_9_.Q</A>
+       & <A href=#51>A0_cnt_scan_10_.Q</A> & <A href=#52>A0_cnt_scan_11_.Q</A> & <A href=#53>A0_cnt_scan_12_.Q</A>
+       & <A href=#54>A0_cnt_scan_13_.Q</A> & <A href=#55>A0_cnt_scan_14_.Q</A> & <A href=#56>A0_cnt_scan_15_.Q</A>
+       & <A href=#84>A0_un1_cnt_scan_9</A> ; (1 pterm, 13 signals)
+led_row_4_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=21>led_row_5_.D</A> = <A href=#20>led_row_4_.Q</A> ; (1 pterm, 1 signal)
+led_row_5_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+led_row_5_.CE = <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A> & <A href=#47>A0_cnt_scan_6_.Q</A>
+       & <A href=#48>A0_cnt_scan_7_.Q</A> & <A href=#49>A0_cnt_scan_8_.Q</A> & <A href=#50>A0_cnt_scan_9_.Q</A>
+       & <A href=#51>A0_cnt_scan_10_.Q</A> & <A href=#52>A0_cnt_scan_11_.Q</A> & <A href=#53>A0_cnt_scan_12_.Q</A>
+       & <A href=#54>A0_cnt_scan_13_.Q</A> & <A href=#55>A0_cnt_scan_14_.Q</A> & <A href=#56>A0_cnt_scan_15_.Q</A>
+       & <A href=#84>A0_un1_cnt_scan_9</A> ; (1 pterm, 13 signals)
+led_row_5_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=22>led_row_6_.D</A> = <A href=#21>led_row_5_.Q</A> ; (1 pterm, 1 signal)
+led_row_6_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+led_row_6_.CE = <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A> & <A href=#47>A0_cnt_scan_6_.Q</A>
+       & <A href=#48>A0_cnt_scan_7_.Q</A> & <A href=#49>A0_cnt_scan_8_.Q</A> & <A href=#50>A0_cnt_scan_9_.Q</A>
+       & <A href=#51>A0_cnt_scan_10_.Q</A> & <A href=#52>A0_cnt_scan_11_.Q</A> & <A href=#53>A0_cnt_scan_12_.Q</A>
+       & <A href=#54>A0_cnt_scan_13_.Q</A> & <A href=#55>A0_cnt_scan_14_.Q</A> & <A href=#56>A0_cnt_scan_15_.Q</A>
+       & <A href=#84>A0_un1_cnt_scan_9</A> ; (1 pterm, 13 signals)
+led_row_6_.AR = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<A name=23>led_row_7_.D</A> = <A href=#22>led_row_6_.Q</A> ; (1 pterm, 1 signal)
+led_row_7_.C = <A href=#15>clk</A> ; (1 pterm, 1 signal)
+led_row_7_.CE = <A href=#45>A0_cnt_scan_4_.Q</A> & <A href=#46>A0_cnt_scan_5_.Q</A> & <A href=#47>A0_cnt_scan_6_.Q</A>
+       & <A href=#48>A0_cnt_scan_7_.Q</A> & <A href=#49>A0_cnt_scan_8_.Q</A> & <A href=#50>A0_cnt_scan_9_.Q</A>
+       & <A href=#51>A0_cnt_scan_10_.Q</A> & <A href=#52>A0_cnt_scan_11_.Q</A> & <A href=#53>A0_cnt_scan_12_.Q</A>
+       & <A href=#54>A0_cnt_scan_13_.Q</A> & <A href=#55>A0_cnt_scan_14_.Q</A> & <A href=#56>A0_cnt_scan_15_.Q</A>
+       & <A href=#84>A0_un1_cnt_scan_9</A> ; (1 pterm, 13 signals)
+led_row_7_.AP = !<A href=#14>reset</A> ; (1 pterm, 1 signal)
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+
+

@@ -1,0 +1,17 @@
+MODULE DIVIDER_5
+
+
+"Inputs
+clk pin;
+"Outputs
+clk_5 pin istype 'reg';
+q3..q0 NODE istype 'reg';
+count=[q3..q0];
+equations
+count.clk=clk;
+clk_5.clk=clk;
+when (count==2) then {count:=0;clk_5:= 1;}
+else {count:=count+1;clk_5:=0;} 
+
+END 
+

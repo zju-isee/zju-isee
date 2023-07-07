@@ -1,0 +1,978 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Thu May 25 00:20:12 2023
+#$ MODULE serial
+#$ PINS 13 Data1_2_ clk Data1_1_ reset Data1_0_ dout Data2_2_ Rx Data2_1_ Tx Data2_0_ \
+#  Data1_3_ Data2_3_
+#$ NODES 200 n699 clk_c reset_c Rx_c dout_c Tx_98reg Data1_i4reg Data1_i3reg \
+#  Data1_i2reg Data1_i1reg Data2_i4reg Data2_i3reg Data2_i2reg Data2_i1reg \
+#  ClockCount_281__i9 ClockCount_281__i8 ClockCount_281__i7 ClockCount_281__i6 \
+#  ClockCount_281__i5 ClockCount_281__i4 ClockCount_281__i3 ClockCount_281__i2 \
+#  ClockCount_281__i1 ClockCount_281__i0 ClockCount_Rx_280__i5 ClockCount_Rx_280__i4 \
+#  ClockCount_Rx_280__i3 ClockCount_Rx_280__i2 ClockCount_Rx_280__i1 \
+#  ClockCount_Rx_280__i0 Clock9600_92 Clock16_94 Send_en_100 Send_over_99 Rx_Valid_102 \
+#  Send_count_i0_i3 Send_count_i0_i2 Send_count_i0_i1 Send_count_i0_i0 Send_data_i1 \
+#  n2046 m_i7 m_i6 m_i5 m_i4 m_i3 m_i2 m_i1 m_i0 Rx_Data_i0_i7 Rx_Data_i0_i6 Rx_Data_i0_i5 \
+#  Rx_Data_i0_i4 Rx_Data_i0_i3 Rx_Data_i0_i2 Rx_Data_i0_i1 Rx_Data_i0_i0 \
+#  Clock9600_N_108 n2014 n866 n4 n2044 n2023 n2043 Clock16_N_110 n1950 n1968 n55 n1810 n2039 \
+#  n2020 i397 n1423 n2019 n1963 n5 n1960 i668 i563 i383 n1976 n1614 Send_data_9__N_42 i340 i333 \
+#  i326 i319 i312 i305 i298 n2018 i976 i983 n7 n2017 Rx_Valid_N_3 n1153 n1881 n2016 i990 n1789 \
+#  i997 n1971 n1958 n1860 n1160 n2015 n6 n11 n2052 n2042 n2051 n2049 n1146 n2002 n1952 n16 n1953 \
+#  n1448 n12 n2033 n2012 n2048 i1004 i1011 n2022 i1018 i1025 n2040 i1032 n2034 n2030 n2038 i15 \
+#  n2031 n2011 n1466 n2037 n2010 n1463 n1106 n1125 n2027 n1460 n1139 n1964 n1132 n35 i1047 i1054 \
+#  i1061 i1068 i1075 n2028 n1997 n1993 n1999 n2050 n2009 n2008 n5_adj_1 n1221 n2000 n2036 n1967 \
+#  n1867 n1984 n1948 n1982 n1970 n6_adj_2 n1979 n2025 n2007 n4_adj_3 n1978 n1893 n1917 n1916 \
+#  n2047 n52_adj_4 n1796 n1956 n2006 n2005 n4_adj_5 n4_adj_6 n1469 n4_adj_7 n1874 n1824 n1838 \
+#  n1817 n1831 n1803 n4_adj_8 n1452 n1367 n2004 n2003
+.model serial
+.inputs clk.BLIF reset.BLIF dout.BLIF Rx.BLIF n699.BLIF clk_c.BLIF \
+reset_c.BLIF Rx_c.BLIF dout_c.BLIF Tx_98reg.BLIF Data1_i4reg.BLIF \
+Data1_i3reg.BLIF Data1_i2reg.BLIF Data1_i1reg.BLIF Data2_i4reg.BLIF \
+Data2_i3reg.BLIF Data2_i2reg.BLIF Data2_i1reg.BLIF ClockCount_281__i9.BLIF \
+ClockCount_281__i8.BLIF ClockCount_281__i7.BLIF ClockCount_281__i6.BLIF \
+ClockCount_281__i5.BLIF ClockCount_281__i4.BLIF ClockCount_281__i3.BLIF \
+ClockCount_281__i2.BLIF ClockCount_281__i1.BLIF ClockCount_281__i0.BLIF \
+ClockCount_Rx_280__i5.BLIF ClockCount_Rx_280__i4.BLIF \
+ClockCount_Rx_280__i3.BLIF ClockCount_Rx_280__i2.BLIF \
+ClockCount_Rx_280__i1.BLIF ClockCount_Rx_280__i0.BLIF Clock9600_92.BLIF \
+Clock16_94.BLIF Send_en_100.BLIF Send_over_99.BLIF Rx_Valid_102.BLIF \
+Send_count_i0_i3.BLIF Send_count_i0_i2.BLIF Send_count_i0_i1.BLIF \
+Send_count_i0_i0.BLIF Send_data_i1.BLIF n2046.BLIF m_i7.BLIF m_i6.BLIF \
+m_i5.BLIF m_i4.BLIF m_i3.BLIF m_i2.BLIF m_i1.BLIF m_i0.BLIF Rx_Data_i0_i7.BLIF \
+Rx_Data_i0_i6.BLIF Rx_Data_i0_i5.BLIF Rx_Data_i0_i4.BLIF Rx_Data_i0_i3.BLIF \
+Rx_Data_i0_i2.BLIF Rx_Data_i0_i1.BLIF Rx_Data_i0_i0.BLIF Clock9600_N_108.BLIF \
+n2014.BLIF n866.BLIF n4.BLIF n2044.BLIF n2023.BLIF n2043.BLIF \
+Clock16_N_110.BLIF n1950.BLIF n1968.BLIF n55.BLIF n1810.BLIF n2039.BLIF \
+n2020.BLIF i397.BLIF n1423.BLIF n2019.BLIF n1963.BLIF n5.BLIF n1960.BLIF \
+i668.BLIF i563.BLIF i383.BLIF n1976.BLIF n1614.BLIF Send_data_9__N_42.BLIF \
+i340.BLIF i333.BLIF i326.BLIF i319.BLIF i312.BLIF i305.BLIF i298.BLIF \
+n2018.BLIF i976.BLIF i983.BLIF n7.BLIF n2017.BLIF Rx_Valid_N_3.BLIF n1153.BLIF \
+n1881.BLIF n2016.BLIF i990.BLIF n1789.BLIF i997.BLIF n1971.BLIF n1958.BLIF \
+n1860.BLIF n1160.BLIF n2015.BLIF n6.BLIF n11.BLIF n2052.BLIF n2042.BLIF \
+n2051.BLIF n2049.BLIF n1146.BLIF n2002.BLIF n1952.BLIF n16.BLIF n1953.BLIF \
+n1448.BLIF n12.BLIF n2033.BLIF n2012.BLIF n2048.BLIF i1004.BLIF i1011.BLIF \
+n2022.BLIF i1018.BLIF i1025.BLIF n2040.BLIF i1032.BLIF n2034.BLIF n2030.BLIF \
+n2038.BLIF i15.BLIF n2031.BLIF n2011.BLIF n1466.BLIF n2037.BLIF n2010.BLIF \
+n1463.BLIF n1106.BLIF n1125.BLIF n2027.BLIF n1460.BLIF n1139.BLIF n1964.BLIF \
+n1132.BLIF n35.BLIF i1047.BLIF i1054.BLIF i1061.BLIF i1068.BLIF i1075.BLIF \
+n2028.BLIF n1997.BLIF n1993.BLIF n1999.BLIF n2050.BLIF n2009.BLIF n2008.BLIF \
+n5_adj_1.BLIF n1221.BLIF n2000.BLIF n2036.BLIF n1967.BLIF n1867.BLIF \
+n1984.BLIF n1948.BLIF n1982.BLIF n1970.BLIF n6_adj_2.BLIF n1979.BLIF \
+n2025.BLIF n2007.BLIF n4_adj_3.BLIF n1978.BLIF n1893.BLIF n1917.BLIF \
+n1916.BLIF n2047.BLIF n52_adj_4.BLIF n1796.BLIF n1956.BLIF n2006.BLIF \
+n2005.BLIF n4_adj_5.BLIF n4_adj_6.BLIF n1469.BLIF n4_adj_7.BLIF n1874.BLIF \
+n1824.BLIF n1838.BLIF n1817.BLIF n1831.BLIF n1803.BLIF n4_adj_8.BLIF \
+n1452.BLIF n1367.BLIF n2004.BLIF n2003.BLIF
+.outputs Tx Data1_3_ Data2_3_ Data1_2_ Data1_1_ Data1_0_ Data2_2_ Data2_1_ \
+Data2_0_ Rx_Valid_102.D Rx_Valid_102.C Rx_Valid_102.CE Rx_Valid_102.AR m_i0.D \
+m_i0.C m_i0.AR Data1_i1reg.D Data1_i1reg.C Data1_i1reg.AR Data2_i1reg.D \
+Data2_i1reg.C Data2_i1reg.AR Send_data_i1.D Send_data_i1.C Send_data_i1.AR \
+Tx_98reg.D Tx_98reg.C Tx_98reg.AP Send_count_i0_i3.D Send_count_i0_i3.C \
+Send_count_i0_i3.CE Send_count_i0_i3.AR Send_count_i0_i2.D Send_count_i0_i2.C \
+Send_count_i0_i2.CE Send_count_i0_i2.AR Clock16_94.D Clock16_94.C \
+Clock16_94.CE Send_count_i0_i1.D Send_count_i0_i1.C Send_count_i0_i1.CE \
+Send_count_i0_i1.AR Clock9600_92.D Clock9600_92.C Clock9600_92.CE \
+Send_over_99.D Send_over_99.C Send_over_99.CE Send_over_99.AP \
+Send_count_i0_i0.D Send_count_i0_i0.C Send_count_i0_i0.AR ClockCount_281__i0.D \
+ClockCount_281__i0.C ClockCount_281__i0.CE ClockCount_Rx_280__i0.D \
+ClockCount_Rx_280__i0.C ClockCount_Rx_280__i0.CE Rx_Data_i0_i0.D \
+Rx_Data_i0_i0.C Rx_Data_i0_i0.CE Data2_i4reg.D Data2_i4reg.C Data2_i4reg.AR \
+Data2_i3reg.D Data2_i3reg.C Data2_i3reg.AR Data2_i2reg.D Data2_i2reg.C \
+Data2_i2reg.AR Data1_i4reg.D Data1_i4reg.C Data1_i4reg.AR Data1_i3reg.D \
+Data1_i3reg.C Data1_i3reg.AR Data1_i2reg.D Data1_i2reg.C Data1_i2reg.AR m_i7.D \
+m_i7.C m_i7.AR m_i6.D m_i6.C m_i6.AR m_i5.D m_i5.C m_i5.AR m_i4.D m_i4.C \
+m_i4.AR m_i3.D m_i3.C m_i3.AR m_i2.D m_i2.C m_i2.AR m_i1.D m_i1.C m_i1.AR \
+Rx_Data_i0_i6.D Rx_Data_i0_i6.C Rx_Data_i0_i6.CE Rx_Data_i0_i4.D \
+Rx_Data_i0_i4.C Rx_Data_i0_i4.CE Rx_Data_i0_i2.D Rx_Data_i0_i2.C \
+Rx_Data_i0_i2.CE ClockCount_281__i1.D ClockCount_281__i1.C \
+ClockCount_281__i1.CE ClockCount_281__i2.D ClockCount_281__i2.C \
+ClockCount_281__i2.CE ClockCount_281__i3.D ClockCount_281__i3.C \
+ClockCount_281__i3.CE ClockCount_281__i4.D ClockCount_281__i4.C \
+ClockCount_281__i4.CE ClockCount_281__i5.D ClockCount_281__i5.C \
+ClockCount_281__i5.CE ClockCount_281__i6.D ClockCount_281__i6.C \
+ClockCount_281__i6.CE ClockCount_281__i7.D ClockCount_281__i7.C \
+ClockCount_281__i7.CE ClockCount_281__i8.D ClockCount_281__i8.C \
+ClockCount_281__i8.CE ClockCount_281__i9.D ClockCount_281__i9.C \
+ClockCount_281__i9.CE ClockCount_Rx_280__i1.D ClockCount_Rx_280__i1.C \
+ClockCount_Rx_280__i1.CE ClockCount_Rx_280__i2.D ClockCount_Rx_280__i2.C \
+ClockCount_Rx_280__i2.CE ClockCount_Rx_280__i3.D ClockCount_Rx_280__i3.C \
+ClockCount_Rx_280__i3.CE ClockCount_Rx_280__i4.D ClockCount_Rx_280__i4.C \
+ClockCount_Rx_280__i4.CE ClockCount_Rx_280__i5.D ClockCount_Rx_280__i5.C \
+ClockCount_Rx_280__i5.CE Rx_Data_i0_i1.D Rx_Data_i0_i1.C Rx_Data_i0_i1.CE \
+Rx_Data_i0_i3.D Rx_Data_i0_i3.C Rx_Data_i0_i3.CE Rx_Data_i0_i5.D \
+Rx_Data_i0_i5.C Rx_Data_i0_i5.CE Rx_Data_i0_i7.D Rx_Data_i0_i7.C \
+Rx_Data_i0_i7.CE Send_en_100.D Send_en_100.C Send_en_100.AP n699 clk_c reset_c \
+Rx_c dout_c n2046 Clock9600_N_108 n2014 n866 n4 n2044 n2023 n2043 \
+Clock16_N_110 n1950 n1968 n55 n1810 n2039 n2020 n1423 n2019 n1963 n5 n1960 \
+n1976 n1614 Send_data_9__N_42 n2018 n7 n2017 Rx_Valid_N_3 n1153 n1881 n2016 \
+n1789 n1971 n1958 n1860 n1160 n2015 n6 n11 n2052 n2042 n2051 n2049 n1146 n2002 \
+n1952 n16 n1953 n1448 n12 n2033 n2012 n2048 n2022 n2040 n2034 n2030 n2038 \
+n2031 n2011 n1466 n2037 n2010 n1463 n1106 n1125 n2027 n1460 n1139 n1964 n1132 \
+n35 n2028 n1997 n1993 n1999 n2050 n2009 n2008 n5_adj_1 n1221 n2000 n2036 n1967 \
+n1867 n1984 n1948 n1982 n1970 n6_adj_2 n1979 n2025 n2007 n4_adj_3 n1978 n1893 \
+n1917 n1916 n2047 n52_adj_4 n1796 n1956 n2006 n2005 n4_adj_5 n4_adj_6 n1469 \
+n4_adj_7 n1874 n1824 n1838 n1817 n1831 n1803 n4_adj_8 n1452 n1367 n2004 n2003 \
+i397 i668 i563 i383 i340 i333 i326 i319 i312 i305 i298 i976 i983 i990 i997 \
+i1004 i1011 i1018 i1025 i1032 i15 i1047 i1054 i1061 i1068 i1075
+.names n1469.BLIF m_i3.BLIF Rx_Valid_102.D
+1- 1
+-1 1
+.names n1968.BLIF n52_adj_4.BLIF Rx_Valid_102.CE
+11 1
+.names reset_c.BLIF Rx_Valid_102.AR
+0 1
+.names n2034.BLIF n2033.BLIF m_i0.D
+11 1
+.names reset_c.BLIF m_i0.AR
+0 1
+.names reset_c.BLIF Data1_i1reg.AR
+0 1
+.names reset_c.BLIF Data2_i1reg.AR
+0 1
+.names Send_data_i1.D
+ 1
+.names n2044.BLIF n2043.BLIF Tx_98reg.D
+1- 1
+-1 1
+.names n7.BLIF Send_over_99.CE
+0 1
+.names n55.BLIF n1950.BLIF ClockCount_281__i0.D
+11 1
+.names n35.BLIF n1948.BLIF ClockCount_Rx_280__i0.D
+11 1
+.names n866.BLIF n1423.BLIF Rx_Data_i0_i0.CE
+11 1
+.names reset_c.BLIF Data2_i4reg.AR
+0 1
+.names reset_c.BLIF Data2_i3reg.AR
+0 1
+.names reset_c.BLIF Data2_i2reg.AR
+0 1
+.names reset_c.BLIF Data1_i4reg.AR
+0 1
+.names reset_c.BLIF Data1_i3reg.AR
+0 1
+.names reset_c.BLIF Data1_i2reg.AR
+0 1
+.names n1367.BLIF i340.BLIF m_i7.D
+11 1
+.names reset_c.BLIF m_i7.AR
+0 1
+.names n1367.BLIF i333.BLIF m_i6.D
+11 1
+.names reset_c.BLIF m_i6.AR
+0 1
+.names n1367.BLIF i326.BLIF m_i5.D
+11 1
+.names reset_c.BLIF m_i5.AR
+0 1
+.names n1367.BLIF i319.BLIF m_i4.D
+11 1
+.names reset_c.BLIF m_i4.AR
+0 1
+.names n1367.BLIF i312.BLIF m_i3.D
+11 1
+.names reset_c.BLIF m_i3.AR
+0 1
+.names n1367.BLIF i305.BLIF m_i2.D
+11 1
+.names reset_c.BLIF m_i2.AR
+0 1
+.names n1367.BLIF i298.BLIF m_i1.D
+11 1
+.names reset_c.BLIF m_i1.AR
+0 1
+.names n1971.BLIF m_i5.BLIF Rx_Data_i0_i6.CE
+11 1
+.names n1971.BLIF n866.BLIF Rx_Data_i0_i4.CE
+11 1
+.names m_i5.BLIF n1423.BLIF Rx_Data_i0_i2.CE
+11 1
+.names i976.BLIF n2005.BLIF ClockCount_281__i1.D
+11 1
+.names i983.BLIF n2003.BLIF ClockCount_281__i2.D
+11 1
+.names i990.BLIF n2002.BLIF ClockCount_281__i3.D
+11 1
+.names i997.BLIF n2008.BLIF ClockCount_281__i4.D
+11 1
+.names i1004.BLIF n2006.BLIF ClockCount_281__i5.D
+11 1
+.names i1011.BLIF n2007.BLIF ClockCount_281__i6.D
+11 1
+.names i1018.BLIF n2010.BLIF ClockCount_281__i7.D
+11 1
+.names i1025.BLIF n2004.BLIF ClockCount_281__i8.D
+11 1
+.names i1032.BLIF n2009.BLIF ClockCount_281__i9.D
+11 1
+.names i1047.BLIF n2016.BLIF ClockCount_Rx_280__i1.D
+11 1
+.names i1054.BLIF n2015.BLIF ClockCount_Rx_280__i2.D
+11 1
+.names i1061.BLIF n2014.BLIF ClockCount_Rx_280__i3.D
+11 1
+.names i1068.BLIF n2018.BLIF ClockCount_Rx_280__i4.D
+11 1
+.names i1075.BLIF n2017.BLIF ClockCount_Rx_280__i5.D
+11 1
+.names n2031.BLIF n2030.BLIF Rx_Data_i0_i1.CE
+11 1
+.names n2028.BLIF n2027.BLIF Rx_Data_i0_i3.CE
+11 1
+.names n2025.BLIF m_i5.BLIF Rx_Data_i0_i5.CE
+11 1
+.names n2023.BLIF n2022.BLIF Rx_Data_i0_i7.CE
+11 1
+.names n699
+.names Send_count_i0_i2.BLIF n2046
+0 1
+.names n2012.BLIF n2011.BLIF Clock9600_N_108
+11 1
+.names Clock16_N_110.BLIF n2014
+0 1
+.names m_i5.BLIF n866
+0 1
+.names m_i3.BLIF n4
+0 1
+.names n1964.BLIF Send_count_i0_i3.BLIF Send_count_i0_i0.BLIF n2044
+111 1
+.names n1463.BLIF n2023
+0 1
+.names n2049.BLIF n2042.BLIF Send_data_i1.BLIF n2043
+111 1
+.names n2020.BLIF n2019.BLIF Clock16_N_110
+11 1
+.names ClockCount_281__i1.BLIF ClockCount_281__i3.BLIF ClockCount_281__i8.BLIF \
+n1956.BLIF ClockCount_281__i2.BLIF ClockCount_281__i7.BLIF n1950
+1----- 1
+-1---- 1
+--1--- 1
+---1-- 1
+----1- 1
+-----1 1
+.names n1984.BLIF n1968
+0 1
+.names ClockCount_281__i0.BLIF n55
+0 1
+.names n1803.BLIF ClockCount_281__i4.BLIF n1810
+11 1
+.names n5.BLIF n6.BLIF n2039
+11 1
+.names n1948.BLIF n2020
+0 1
+.names n1448.BLIF n16.BLIF n1423
+11 1
+.names ClockCount_Rx_280__i0.BLIF n2019
+0 1
+.names n1979.BLIF n6_adj_2.BLIF n16.BLIF m_i3.BLIF m_i7.BLIF n1963
+11111 1
+.names m_i7.BLIF n5
+0 1
+.names n1982.BLIF n1960
+0 1
+.names Send_count_i0_i3.BLIF Send_count_i0_i0.BLIF n1976
+11 1
+.names m_i3.BLIF m_i4.BLIF n1614
+1- 1
+-1 1
+.names n2000.BLIF n1999.BLIF Send_data_9__N_42
+1- 1
+-1 1
+.names Clock16_N_110.BLIF n2018
+0 1
+.names n4_adj_7.BLIF n1958.BLIF n7
+1- 1
+-1 1
+.names Clock16_N_110.BLIF n2017
+0 1
+.names Rx_Valid_102.BLIF Rx_Valid_N_3
+0 1
+.names n1146.BLIF m_i5.BLIF n1153
+11 1
+.names n1874.BLIF ClockCount_Rx_280__i4.BLIF n1881
+11 1
+.names Clock16_N_110.BLIF n2016
+0 1
+.names ClockCount_281__i0.BLIF ClockCount_281__i1.BLIF n1789
+11 1
+.names n1448.BLIF m_i6.BLIF n1971
+11 1
+.names n1976.BLIF n1958
+0 1
+.names ClockCount_Rx_280__i0.BLIF ClockCount_Rx_280__i1.BLIF n1860
+11 1
+.names n1153.BLIF m_i6.BLIF n1160
+11 1
+.names Clock16_N_110.BLIF n2015
+0 1
+.names n1614.BLIF n6
+0 1
+.names n2040.BLIF n2039.BLIF n11
+1- 1
+-1 1
+.names n2051.BLIF n2050.BLIF n2052
+1- 1
+-1 1
+.names Send_count_i0_i3.BLIF n2042
+0 1
+.names m_i5.BLIF m_i3.BLIF m_i7.BLIF n2051
+111 1
+.names n2048.BLIF n2047.BLIF n2049
+1- 1
+-1 1
+.names n1139.BLIF m_i4.BLIF n1146
+11 1
+.names Clock9600_N_108.BLIF n2002
+0 1
+.names n11.BLIF n16.BLIF n866.BLIF n1952
+111 1
+.names m_i6.BLIF n16
+0 1
+.names n2038.BLIF n1952.BLIF n1953
+11 1
+.names n1221.BLIF m_i4.BLIF n1448
+11 1
+.names n11.BLIF n12
+0 1
+.names m_i0.BLIF n2033
+0 1
+.names n1950.BLIF n2012
+0 1
+.names Send_count_i0_i2.BLIF Send_count_i0_i0.BLIF n2048
+11 1
+.names n1106.BLIF n2022
+0 1
+.names m_i7.BLIF m_i3.BLIF n2040
+11 1
+.names n1967.BLIF n2034
+0 1
+.names n1106.BLIF n2030
+0 1
+.names n2037.BLIF n2036.BLIF n2038
+1- 1
+-1 1
+.names n1466.BLIF n2031
+0 1
+.names ClockCount_281__i0.BLIF n2011
+0 1
+.names n1452.BLIF n866.BLIF n1466
+1- 1
+-1 1
+.names m_i3.BLIF m_i4.BLIF n2037
+11 1
+.names Clock9600_N_108.BLIF n2010
+0 1
+.names n1452.BLIF m_i5.BLIF n1463
+1- 1
+-1 1
+.names n4.BLIF m_i2.BLIF n1916.BLIF n5_adj_1.BLIF n1917.BLIF n1106
+1---- 1
+-1--- 1
+--1-- 1
+---1- 1
+----1 1
+.names m_i0.BLIF m_i1.BLIF n1125
+11 1
+.names m_i5.BLIF n2027
+0 1
+.names m_i4.BLIF n1106.BLIF n16.BLIF n1460
+1-- 1
+-1- 1
+--1 1
+.names n1132.BLIF m_i3.BLIF n1139
+11 1
+.names n4_adj_7.BLIF n1964
+0 1
+.names n1125.BLIF m_i2.BLIF n1132
+11 1
+.names ClockCount_Rx_280__i0.BLIF n35
+0 1
+.names n1460.BLIF n2028
+0 1
+.names ClockCount_281__i9.BLIF ClockCount_281__i6.BLIF ClockCount_281__i5.BLIF \
+ClockCount_281__i4.BLIF n1997
+1111 1
+.names n1452.BLIF m_i2.BLIF n1993
+1- 1
+-1 1
+.names Send_over_99.BLIF n1999
+0 1
+.names n5.BLIF Rx_c.BLIF n4.BLIF n866.BLIF n2050
+1111 1
+.names Clock9600_N_108.BLIF n2009
+0 1
+.names Clock9600_N_108.BLIF n2008
+0 1
+.names m_i1.BLIF m_i0.BLIF n5_adj_1
+1- 1
+-1 1
+.names n1106.BLIF n1221
+0 1
+.names reset_c.BLIF n2000
+0 1
+.names n4.BLIF Rx_c.BLIF n2036
+11 1
+.names n4_adj_5.BLIF n4_adj_6.BLIF n2052.BLIF n1967
+111 1
+.names n1860.BLIF ClockCount_Rx_280__i2.BLIF n1867
+11 1
+.names m_i2.BLIF m_i0.BLIF m_i1.BLIF n1984
+1-- 1
+-1- 1
+--1 1
+.names ClockCount_Rx_280__i4.BLIF ClockCount_Rx_280__i3.BLIF n1960.BLIF n1948
+1-- 1
+-1- 1
+--1 1
+.names ClockCount_Rx_280__i2.BLIF ClockCount_Rx_280__i5.BLIF \
+ClockCount_Rx_280__i1.BLIF n1982
+111 1
+.names n1968.BLIF n1952.BLIF n1970
+11 1
+.names m_i4.BLIF n6_adj_2
+0 1
+.names n1978.BLIF m_i5.BLIF n1979
+1- 1
+-1 1
+.names n1460.BLIF n2025
+0 1
+.names Clock9600_N_108.BLIF n2007
+0 1
+.names n12.BLIF m_i6.BLIF n4_adj_3
+1- 1
+-1 1
+.names n1463.BLIF n4_adj_3.BLIF n5.BLIF n1978
+111 1
+.names n4_adj_8.BLIF Send_count_i0_i2.BLIF n1893
+11 1
+.names i15.BLIF n1917
+0 1
+.names reset_c.BLIF n1916
+0 1
+.names n2046.BLIF Send_count_i0_i1.BLIF n2047
+11 1
+.names n1963.BLIF n1953.BLIF n52_adj_4
+1- 1
+-1 1
+.names n1789.BLIF ClockCount_281__i2.BLIF n1796
+11 1
+.names n1997.BLIF n1956
+0 1
+.names Clock9600_N_108.BLIF n2006
+0 1
+.names Clock9600_N_108.BLIF n2005
+0 1
+.names n1993.BLIF n4_adj_5
+0 1
+.names n5_adj_1.BLIF n4_adj_6
+0 1
+.names n1970.BLIF n1469
+0 1
+.names Send_count_i0_i2.BLIF Send_count_i0_i1.BLIF n4_adj_7
+1- 1
+-1 1
+.names n1867.BLIF ClockCount_Rx_280__i3.BLIF n1874
+11 1
+.names n1817.BLIF ClockCount_281__i6.BLIF n1824
+11 1
+.names n1831.BLIF ClockCount_281__i8.BLIF n1838
+11 1
+.names n1810.BLIF ClockCount_281__i5.BLIF n1817
+11 1
+.names n1824.BLIF ClockCount_281__i7.BLIF n1831
+11 1
+.names n1796.BLIF ClockCount_281__i3.BLIF n1803
+11 1
+.names Send_count_i0_i1.BLIF Send_count_i0_i0.BLIF n4_adj_8
+11 1
+.names m_i6.BLIF m_i4.BLIF n1452
+1- 1
+-1 1
+.names n1967.BLIF n1367
+0 1
+.names Clock9600_N_108.BLIF n2004
+0 1
+.names Clock9600_N_108.BLIF n2003
+0 1
+.names Tx_98reg.BLIF Tx
+1 1
+0 0
+.names Data1_i4reg.BLIF Data1_3_
+1 1
+0 0
+.names Data2_i4reg.BLIF Data2_3_
+1 1
+0 0
+.names Data1_i3reg.BLIF Data1_2_
+1 1
+0 0
+.names Data1_i2reg.BLIF Data1_1_
+1 1
+0 0
+.names Data1_i1reg.BLIF Data1_0_
+1 1
+0 0
+.names Data2_i3reg.BLIF Data2_2_
+1 1
+0 0
+.names Data2_i2reg.BLIF Data2_1_
+1 1
+0 0
+.names Data2_i1reg.BLIF Data2_0_
+1 1
+0 0
+.names Clock16_94.BLIF Rx_Valid_102.C
+1 1
+0 0
+.names Clock16_94.BLIF m_i0.C
+1 1
+0 0
+.names Rx_Data_i0_i0.BLIF Data1_i1reg.D
+1 1
+0 0
+.names Rx_Valid_N_3.BLIF Data1_i1reg.C
+1 1
+0 0
+.names Rx_Data_i0_i4.BLIF Data2_i1reg.D
+1 1
+0 0
+.names Rx_Valid_N_3.BLIF Data2_i1reg.C
+1 1
+0 0
+.names dout_c.BLIF Send_data_i1.C
+1 1
+0 0
+.names Send_data_9__N_42.BLIF Send_data_i1.AR
+1 1
+0 0
+.names Clock9600_92.BLIF Tx_98reg.C
+1 1
+0 0
+.names Send_en_100.BLIF Tx_98reg.AP
+1 1
+0 0
+.names i668.BLIF Send_count_i0_i3.D
+1 1
+0 0
+.names Clock9600_92.BLIF Send_count_i0_i3.C
+1 1
+0 0
+.names n7.BLIF Send_count_i0_i3.CE
+1 1
+0 0
+.names Send_en_100.BLIF Send_count_i0_i3.AR
+1 1
+0 0
+.names i563.BLIF Send_count_i0_i2.D
+1 1
+0 0
+.names Clock9600_92.BLIF Send_count_i0_i2.C
+1 1
+0 0
+.names n7.BLIF Send_count_i0_i2.CE
+1 1
+0 0
+.names Send_en_100.BLIF Send_count_i0_i2.AR
+1 1
+0 0
+.names Clock16_N_110.BLIF Clock16_94.D
+1 1
+0 0
+.names clk_c.BLIF Clock16_94.C
+1 1
+0 0
+.names reset_c.BLIF Clock16_94.CE
+1 1
+0 0
+.names i383.BLIF Send_count_i0_i1.D
+1 1
+0 0
+.names Clock9600_92.BLIF Send_count_i0_i1.C
+1 1
+0 0
+.names n7.BLIF Send_count_i0_i1.CE
+1 1
+0 0
+.names Send_en_100.BLIF Send_count_i0_i1.AR
+1 1
+0 0
+.names Clock9600_N_108.BLIF Clock9600_92.D
+1 1
+0 0
+.names clk_c.BLIF Clock9600_92.C
+1 1
+0 0
+.names reset_c.BLIF Clock9600_92.CE
+1 1
+0 0
+.names n699.BLIF Send_over_99.D
+1 1
+0 0
+.names Clock9600_92.BLIF Send_over_99.C
+1 1
+0 0
+.names Send_en_100.BLIF Send_over_99.AP
+1 1
+0 0
+.names i397.BLIF Send_count_i0_i0.D
+1 1
+0 0
+.names Clock9600_92.BLIF Send_count_i0_i0.C
+1 1
+0 0
+.names Send_en_100.BLIF Send_count_i0_i0.AR
+1 1
+0 0
+.names clk_c.BLIF ClockCount_281__i0.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_281__i0.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_Rx_280__i0.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_Rx_280__i0.CE
+1 1
+0 0
+.names Rx_c.BLIF Rx_Data_i0_i0.D
+1 1
+0 0
+.names Clock16_94.BLIF Rx_Data_i0_i0.C
+1 1
+0 0
+.names Rx_Data_i0_i7.BLIF Data2_i4reg.D
+1 1
+0 0
+.names Rx_Valid_N_3.BLIF Data2_i4reg.C
+1 1
+0 0
+.names Rx_Data_i0_i6.BLIF Data2_i3reg.D
+1 1
+0 0
+.names Rx_Valid_N_3.BLIF Data2_i3reg.C
+1 1
+0 0
+.names Rx_Data_i0_i5.BLIF Data2_i2reg.D
+1 1
+0 0
+.names Rx_Valid_N_3.BLIF Data2_i2reg.C
+1 1
+0 0
+.names Rx_Data_i0_i3.BLIF Data1_i4reg.D
+1 1
+0 0
+.names Rx_Valid_N_3.BLIF Data1_i4reg.C
+1 1
+0 0
+.names Rx_Data_i0_i2.BLIF Data1_i3reg.D
+1 1
+0 0
+.names Rx_Valid_N_3.BLIF Data1_i3reg.C
+1 1
+0 0
+.names Rx_Data_i0_i1.BLIF Data1_i2reg.D
+1 1
+0 0
+.names Rx_Valid_N_3.BLIF Data1_i2reg.C
+1 1
+0 0
+.names Clock16_94.BLIF m_i7.C
+1 1
+0 0
+.names Clock16_94.BLIF m_i6.C
+1 1
+0 0
+.names Clock16_94.BLIF m_i5.C
+1 1
+0 0
+.names Clock16_94.BLIF m_i4.C
+1 1
+0 0
+.names Clock16_94.BLIF m_i3.C
+1 1
+0 0
+.names Clock16_94.BLIF m_i2.C
+1 1
+0 0
+.names Clock16_94.BLIF m_i1.C
+1 1
+0 0
+.names Rx_c.BLIF Rx_Data_i0_i6.D
+1 1
+0 0
+.names Clock16_94.BLIF Rx_Data_i0_i6.C
+1 1
+0 0
+.names Rx_c.BLIF Rx_Data_i0_i4.D
+1 1
+0 0
+.names Clock16_94.BLIF Rx_Data_i0_i4.C
+1 1
+0 0
+.names Rx_c.BLIF Rx_Data_i0_i2.D
+1 1
+0 0
+.names Clock16_94.BLIF Rx_Data_i0_i2.C
+1 1
+0 0
+.names clk_c.BLIF ClockCount_281__i1.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_281__i1.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_281__i2.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_281__i2.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_281__i3.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_281__i3.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_281__i4.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_281__i4.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_281__i5.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_281__i5.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_281__i6.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_281__i6.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_281__i7.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_281__i7.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_281__i8.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_281__i8.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_281__i9.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_281__i9.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_Rx_280__i1.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_Rx_280__i1.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_Rx_280__i2.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_Rx_280__i2.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_Rx_280__i3.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_Rx_280__i3.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_Rx_280__i4.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_Rx_280__i4.CE
+1 1
+0 0
+.names clk_c.BLIF ClockCount_Rx_280__i5.C
+1 1
+0 0
+.names reset_c.BLIF ClockCount_Rx_280__i5.CE
+1 1
+0 0
+.names Rx_c.BLIF Rx_Data_i0_i1.D
+1 1
+0 0
+.names Clock16_94.BLIF Rx_Data_i0_i1.C
+1 1
+0 0
+.names Rx_c.BLIF Rx_Data_i0_i3.D
+1 1
+0 0
+.names Clock16_94.BLIF Rx_Data_i0_i3.C
+1 1
+0 0
+.names Rx_c.BLIF Rx_Data_i0_i5.D
+1 1
+0 0
+.names Clock16_94.BLIF Rx_Data_i0_i5.C
+1 1
+0 0
+.names Rx_c.BLIF Rx_Data_i0_i7.D
+1 1
+0 0
+.names Clock16_94.BLIF Rx_Data_i0_i7.C
+1 1
+0 0
+.names n699.BLIF Send_en_100.D
+1 1
+0 0
+.names dout_c.BLIF Send_en_100.C
+1 1
+0 0
+.names Send_data_9__N_42.BLIF Send_en_100.AP
+1 1
+0 0
+.names clk.BLIF clk_c
+1 1
+0 0
+.names reset.BLIF reset_c
+1 1
+0 0
+.names Rx.BLIF Rx_c
+1 1
+0 0
+.names dout.BLIF dout_c
+1 1
+0 0
+.names Send_count_i0_i0.BLIF n7.BLIF i397
+01 1
+10 1
+11 0
+00 0
+.names Send_count_i0_i3.BLIF n1893.BLIF i668
+01 1
+10 1
+11 0
+00 0
+.names Send_count_i0_i2.BLIF n4_adj_8.BLIF i563
+01 1
+10 1
+11 0
+00 0
+.names Send_count_i0_i1.BLIF Send_count_i0_i0.BLIF i383
+01 1
+10 1
+11 0
+00 0
+.names m_i7.BLIF n1160.BLIF i340
+01 1
+10 1
+11 0
+00 0
+.names m_i6.BLIF n1153.BLIF i333
+01 1
+10 1
+11 0
+00 0
+.names m_i5.BLIF n1146.BLIF i326
+01 1
+10 1
+11 0
+00 0
+.names m_i4.BLIF n1139.BLIF i319
+01 1
+10 1
+11 0
+00 0
+.names m_i3.BLIF n1132.BLIF i312
+01 1
+10 1
+11 0
+00 0
+.names m_i2.BLIF n1125.BLIF i305
+01 1
+10 1
+11 0
+00 0
+.names m_i1.BLIF m_i0.BLIF i298
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_281__i1.BLIF ClockCount_281__i0.BLIF i976
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_281__i2.BLIF n1789.BLIF i983
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_281__i3.BLIF n1796.BLIF i990
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_281__i4.BLIF n1803.BLIF i997
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_281__i5.BLIF n1810.BLIF i1004
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_281__i6.BLIF n1817.BLIF i1011
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_281__i7.BLIF n1824.BLIF i1018
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_281__i8.BLIF n1831.BLIF i1025
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_281__i9.BLIF n1838.BLIF i1032
+01 1
+10 1
+11 0
+00 0
+.names m_i7.BLIF n1463.BLIF i15
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_Rx_280__i1.BLIF ClockCount_Rx_280__i0.BLIF i1047
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_Rx_280__i2.BLIF n1860.BLIF i1054
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_Rx_280__i3.BLIF n1867.BLIF i1061
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_Rx_280__i4.BLIF n1874.BLIF i1068
+01 1
+10 1
+11 0
+00 0
+.names ClockCount_Rx_280__i5.BLIF n1881.BLIF i1075
+01 1
+10 1
+11 0
+00 0
+.end
