@@ -1,0 +1,5850 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Mon May 29 17:08:58 2023
+#$ TITLE top.bls 
+#$ MODULE lab13
+#$ PINS 13 lcd_d_0_'o'  lcd_d_1_'o'  lcd_d_2_'o'  lcd_d_3_'o'  lcd_d_4_'o'  lcd_d_5_'o'  lcd_d_6_'o'  \
+#  lcd_d_7_'o'  lcd_en'o'  lcd_rw'o'  lcd_rs'o'  reset clk
+#$ NODES 241 I1/data_in_buf_48_ I1/data_in_buf_49_ I1/data_in_buf_51_ \
+#  I1/inst_clkhzreg I1/data_in_buf_53_ I1/data_in_buf_56_ I1/data_in_buf_57_ \
+#  I1/data_in_buf_58_ I1/data_in_buf_59_ I1/data_in_buf_61_ I1/data_in_buf_64_ \
+#  I1/data_in_buf_65_ I1/data_in_buf_66_ I1/data_in_buf_67_ I1/data_in_buf_69_ \
+#  I1/data_in_buf_70_ I1/data_in_buf_72_ I1/data_in_buf_73_ I1/data_in_buf_74_ \
+#  I1/data_in_buf_75_ I1/data_in_buf_77_ I1/lcd_rsDFFRHreg I1/data_in_buf_78_ \
+#  I1/data_in_buf_80_ I1/data_in_buf_81_ I1/data_in_buf_82_ I1/lcd_dDFFCSH_0_reg \
+#  I1/data_in_buf_83_ I1/data_in_buf_85_ I1/lcd_dDFFCRH_1_reg I1/data_in_buf_86_ \
+#  I1/disp_count_4_ I1/data_in_buf_87_ I1/lcd_dDFFCRH_2_reg I1/disp_count_1_ \
+#  I1/data_in_buf_88_ I1/disp_count_0_ I1/data_in_buf_89_ I1/lcd_dDFFCRH_3_reg \
+#  I1/disp_count_3_ I1/data_in_buf_90_ I1/disp_count_2_ I1/data_in_buf_91_ \
+#  I1/lcd_dDFFCRH_4_reg I1/disp_count_5_ I1/data_in_buf_93_ I1/state_0_ \
+#  I1/data_in_buf_94_ I1/lcd_dDFFCRH_5_reg I1/state_5_ I1/data_in_buf_95_ \
+#  I1/data_in_buf_96_ I1/lcd_dDFFCRH_6_reg I1/data_in_buf_5_ I1/data_in_buf_97_ \
+#  I1/data_in_buf_98_ I1/lcd_dDFFCRH_7_reg I1/data_in_buf_13_ I1/data_in_buf_100_ \
+#  I1/data_in_buf_101_ I1/data_in_buf_21_ I1/data_in_buf_102_ I1/data_in_buf_103_ \
+#  I1/data_in_buf_29_ I1/data_in_buf_104_ I1/cnt_0_ I1/data_in_buf_105_ I1/cnt_1_ \
+#  I1/data_in_buf_106_ I1/cnt_2_ I1/data_in_buf_107_ I1/cnt_3_ I1/data_in_buf_109_ \
+#  I1/cnt_4_ I1/data_in_buf_110_ I1/cnt_5_ I1/data_in_buf_111_ I1/cnt_6_ \
+#  I1/data_in_buf_112_ I1/cnt_7_ I1/data_in_buf_113_ I1/cnt_8_ I1/data_in_buf_114_ \
+#  I1/cnt_9_ I1/data_in_buf_115_ I1/cnt_10_ I1/data_in_buf_117_ I1/cnt_11_ \
+#  I1/data_in_buf_118_ I1/cnt_12_ I1/data_in_buf_119_ I1/cnt_13_ I1/data_in_buf_120_ \
+#  I1/cnt_14_ I1/data_in_buf_121_ I1/cnt_15_ I1/data_in_buf_122_ I1/cnt_16_ \
+#  I1/data_in_buf_123_ I1/cnt_17_ I1/data_in_buf_125_ I1/cnt_18_ I1/data_in_buf_126_ \
+#  I1/cnt_19_ I1/data_in_buf_127_ I1/data_in_buf_128_ I1/data_in_buf_129_ \
+#  I1/data_in_buf_130_ I1/data_in_buf_131_ I1/data_in_buf_133_ I1/data_in_buf_134_ \
+#  I1/data_in_buf_135_ I1/data_in_buf_136_ I1/data_in_buf_137_ I1/data_in_buf_138_ \
+#  I1/data_in_buf_139_ I1/data_in_buf_141_ I1/data_in_buf_142_ I1/data_in_buf_143_ \
+#  I1/data_in_buf_144_ I1/data_in_buf_145_ I1/data_in_buf_146_ I1/data_in_buf_147_ \
+#  I1/data_in_buf_149_ I1/data_in_buf_150_ I1/data_in_buf_151_ I1/data_in_buf_152_ \
+#  I1/data_in_buf_153_ I1/data_in_buf_154_ I1/data_in_buf_155_ I1/data_in_buf_157_ \
+#  I1/data_in_buf_158_ I1/data_in_buf_159_ I1/data_in_buf_160_ I1/data_in_buf_161_ \
+#  I1/data_in_buf_162_ I1/data_in_buf_163_ I1/data_in_buf_164_ I1/data_in_buf_165_ \
+#  I1/data_in_buf_166_ I1/data_in_buf_167_ I1/data_in_buf_168_ I1/data_in_buf_169_ \
+#  I1/data_in_buf_170_ I1/data_in_buf_171_ I1/data_in_buf_172_ I1/data_in_buf_173_ \
+#  I1/data_in_buf_174_ I1/data_in_buf_175_ I1/data_in_buf_176_ I1/data_in_buf_177_ \
+#  I1/data_in_buf_178_ I1/data_in_buf_179_ I1/data_in_buf_180_ I1/data_in_buf_181_ \
+#  I1/data_in_buf_182_ I1/data_in_buf_183_ I1/data_in_buf_184_ I1/data_in_buf_185_ \
+#  I1/data_in_buf_186_ I1/data_in_buf_187_ I1/data_in_buf_188_ I1/data_in_buf_189_ \
+#  I1/data_in_buf_190_ I1/data_in_buf_191_ I1/data_in_buf_192_ I1/data_in_buf_193_ \
+#  I1/data_in_buf_194_ I1/data_in_buf_195_ I1/data_in_buf_196_ I1/data_in_buf_197_ \
+#  I1/data_in_buf_198_ I1/data_in_buf_199_ I1/data_in_buf_200_ I1/data_in_buf_201_ \
+#  I1/data_in_buf_202_ I1/data_in_buf_203_ I1/data_in_buf_204_ I1/data_in_buf_205_ \
+#  I1/data_in_buf_206_ I1/data_in_buf_207_ I1/data_in_buf_208_ I1/data_in_buf_209_ \
+#  I1/data_in_buf_210_ I1/data_in_buf_211_ I1/data_in_buf_212_ I1/data_in_buf_213_ \
+#  I1/data_in_buf_214_ I1/data_in_buf_215_ I1/data_in_buf_216_ I1/data_in_buf_217_ \
+#  I1/data_in_buf_218_ I1/data_in_buf_219_ I1/data_in_buf_220_ I1/data_in_buf_221_ \
+#  I1/data_in_buf_222_ I1/data_in_buf_223_ I1/data_in_buf_224_ I1/data_in_buf_225_ \
+#  I1/data_in_buf_226_ I1/data_in_buf_227_ I1/data_in_buf_228_ I1/data_in_buf_229_ \
+#  I1/data_in_buf_230_ I1/data_in_buf_231_ I1/data_in_buf_232_ I1/data_in_buf_233_ \
+#  I1/data_in_buf_234_ I1/data_in_buf_235_ I1/data_in_buf_236_ I1/data_in_buf_237_ \
+#  I1/data_in_buf_238_ I1/data_in_buf_239_ I1/data_in_buf_240_ I1/data_in_buf_241_ \
+#  I1/data_in_buf_242_ I1/data_in_buf_243_ I1/data_in_buf_244_ I1/data_in_buf_245_ \
+#  I1/cnt12_18_7 I1/data_in_buf_246_ I1/data_in_buf_247_ I1/state_6_ I1/state_1_ \
+#  I1/state_2_ I1/state_3_ I1/state_4_ I1/data_in_buf_248_ I1/data_in_buf_249_ \
+#  I1/data_in_buf_250_ I1/data_in_buf_251_ I1/data_in_buf_252_ I1/data_in_buf_253_ \
+#  I1/data_in_buf_254_ I1/data_in_buf_255_ I1/N_575 I1/N_567 I1/data_in_buf_37_ \
+#  I1/data_in_buf_40_ I1/data_in_buf_41_ I1/data_in_buf_45_
+.model top
+.inputs clk.BLIF reset.BLIF I1/data_in_buf_48_.BLIF I1/data_in_buf_49_.BLIF \
+I1/data_in_buf_51_.BLIF I1/inst_clkhzreg.BLIF I1/data_in_buf_53_.BLIF \
+I1/data_in_buf_56_.BLIF I1/data_in_buf_57_.BLIF I1/data_in_buf_58_.BLIF \
+I1/data_in_buf_59_.BLIF I1/data_in_buf_61_.BLIF I1/data_in_buf_64_.BLIF \
+I1/data_in_buf_65_.BLIF I1/data_in_buf_66_.BLIF I1/data_in_buf_67_.BLIF \
+I1/data_in_buf_69_.BLIF I1/data_in_buf_70_.BLIF I1/data_in_buf_72_.BLIF \
+I1/data_in_buf_73_.BLIF I1/data_in_buf_74_.BLIF I1/data_in_buf_75_.BLIF \
+I1/data_in_buf_77_.BLIF I1/lcd_rsDFFRHreg.BLIF I1/data_in_buf_78_.BLIF \
+I1/data_in_buf_80_.BLIF I1/data_in_buf_81_.BLIF I1/data_in_buf_82_.BLIF \
+I1/lcd_dDFFCSH_0_reg.BLIF I1/data_in_buf_83_.BLIF I1/data_in_buf_85_.BLIF \
+I1/lcd_dDFFCRH_1_reg.BLIF I1/data_in_buf_86_.BLIF I1/disp_count_4_.BLIF \
+I1/data_in_buf_87_.BLIF I1/lcd_dDFFCRH_2_reg.BLIF I1/disp_count_1_.BLIF \
+I1/data_in_buf_88_.BLIF I1/disp_count_0_.BLIF I1/data_in_buf_89_.BLIF \
+I1/lcd_dDFFCRH_3_reg.BLIF I1/disp_count_3_.BLIF I1/data_in_buf_90_.BLIF \
+I1/disp_count_2_.BLIF I1/data_in_buf_91_.BLIF I1/lcd_dDFFCRH_4_reg.BLIF \
+I1/disp_count_5_.BLIF I1/data_in_buf_93_.BLIF I1/state_0_.BLIF \
+I1/data_in_buf_94_.BLIF I1/lcd_dDFFCRH_5_reg.BLIF I1/state_5_.BLIF \
+I1/data_in_buf_95_.BLIF I1/data_in_buf_96_.BLIF I1/lcd_dDFFCRH_6_reg.BLIF \
+I1/data_in_buf_5_.BLIF I1/data_in_buf_97_.BLIF I1/data_in_buf_98_.BLIF \
+I1/lcd_dDFFCRH_7_reg.BLIF I1/data_in_buf_13_.BLIF I1/data_in_buf_100_.BLIF \
+I1/data_in_buf_101_.BLIF I1/data_in_buf_21_.BLIF I1/data_in_buf_102_.BLIF \
+I1/data_in_buf_103_.BLIF I1/data_in_buf_29_.BLIF I1/data_in_buf_104_.BLIF \
+I1/cnt_0_.BLIF I1/data_in_buf_105_.BLIF I1/cnt_1_.BLIF \
+I1/data_in_buf_106_.BLIF I1/cnt_2_.BLIF I1/data_in_buf_107_.BLIF \
+I1/cnt_3_.BLIF I1/data_in_buf_109_.BLIF I1/cnt_4_.BLIF \
+I1/data_in_buf_110_.BLIF I1/cnt_5_.BLIF I1/data_in_buf_111_.BLIF \
+I1/cnt_6_.BLIF I1/data_in_buf_112_.BLIF I1/cnt_7_.BLIF \
+I1/data_in_buf_113_.BLIF I1/cnt_8_.BLIF I1/data_in_buf_114_.BLIF \
+I1/cnt_9_.BLIF I1/data_in_buf_115_.BLIF I1/cnt_10_.BLIF \
+I1/data_in_buf_117_.BLIF I1/cnt_11_.BLIF I1/data_in_buf_118_.BLIF \
+I1/cnt_12_.BLIF I1/data_in_buf_119_.BLIF I1/cnt_13_.BLIF \
+I1/data_in_buf_120_.BLIF I1/cnt_14_.BLIF I1/data_in_buf_121_.BLIF \
+I1/cnt_15_.BLIF I1/data_in_buf_122_.BLIF I1/cnt_16_.BLIF \
+I1/data_in_buf_123_.BLIF I1/cnt_17_.BLIF I1/data_in_buf_125_.BLIF \
+I1/cnt_18_.BLIF I1/data_in_buf_126_.BLIF I1/cnt_19_.BLIF \
+I1/data_in_buf_127_.BLIF I1/data_in_buf_128_.BLIF I1/data_in_buf_129_.BLIF \
+I1/data_in_buf_130_.BLIF I1/data_in_buf_131_.BLIF I1/data_in_buf_133_.BLIF \
+I1/data_in_buf_134_.BLIF I1/data_in_buf_135_.BLIF I1/data_in_buf_136_.BLIF \
+I1/data_in_buf_137_.BLIF I1/data_in_buf_138_.BLIF I1/data_in_buf_139_.BLIF \
+I1/data_in_buf_141_.BLIF I1/data_in_buf_142_.BLIF I1/data_in_buf_143_.BLIF \
+I1/data_in_buf_144_.BLIF I1/data_in_buf_145_.BLIF I1/data_in_buf_146_.BLIF \
+I1/data_in_buf_147_.BLIF I1/data_in_buf_149_.BLIF I1/data_in_buf_150_.BLIF \
+I1/data_in_buf_151_.BLIF I1/data_in_buf_152_.BLIF I1/data_in_buf_153_.BLIF \
+I1/data_in_buf_154_.BLIF I1/data_in_buf_155_.BLIF I1/data_in_buf_157_.BLIF \
+I1/data_in_buf_158_.BLIF I1/data_in_buf_159_.BLIF I1/data_in_buf_160_.BLIF \
+I1/data_in_buf_161_.BLIF I1/data_in_buf_162_.BLIF I1/data_in_buf_163_.BLIF \
+I1/data_in_buf_164_.BLIF I1/data_in_buf_165_.BLIF I1/data_in_buf_166_.BLIF \
+I1/data_in_buf_167_.BLIF I1/data_in_buf_168_.BLIF I1/data_in_buf_169_.BLIF \
+I1/data_in_buf_170_.BLIF I1/data_in_buf_171_.BLIF I1/data_in_buf_172_.BLIF \
+I1/data_in_buf_173_.BLIF I1/data_in_buf_174_.BLIF I1/data_in_buf_175_.BLIF \
+I1/data_in_buf_176_.BLIF I1/data_in_buf_177_.BLIF I1/data_in_buf_178_.BLIF \
+I1/data_in_buf_179_.BLIF I1/data_in_buf_180_.BLIF I1/data_in_buf_181_.BLIF \
+I1/data_in_buf_182_.BLIF I1/data_in_buf_183_.BLIF I1/data_in_buf_184_.BLIF \
+I1/data_in_buf_185_.BLIF I1/data_in_buf_186_.BLIF I1/data_in_buf_187_.BLIF \
+I1/data_in_buf_188_.BLIF I1/data_in_buf_189_.BLIF I1/data_in_buf_190_.BLIF \
+I1/data_in_buf_191_.BLIF I1/data_in_buf_192_.BLIF I1/data_in_buf_193_.BLIF \
+I1/data_in_buf_194_.BLIF I1/data_in_buf_195_.BLIF I1/data_in_buf_196_.BLIF \
+I1/data_in_buf_197_.BLIF I1/data_in_buf_198_.BLIF I1/data_in_buf_199_.BLIF \
+I1/data_in_buf_200_.BLIF I1/data_in_buf_201_.BLIF I1/data_in_buf_202_.BLIF \
+I1/data_in_buf_203_.BLIF I1/data_in_buf_204_.BLIF I1/data_in_buf_205_.BLIF \
+I1/data_in_buf_206_.BLIF I1/data_in_buf_207_.BLIF I1/data_in_buf_208_.BLIF \
+I1/data_in_buf_209_.BLIF I1/data_in_buf_210_.BLIF I1/data_in_buf_211_.BLIF \
+I1/data_in_buf_212_.BLIF I1/data_in_buf_213_.BLIF I1/data_in_buf_214_.BLIF \
+I1/data_in_buf_215_.BLIF I1/data_in_buf_216_.BLIF I1/data_in_buf_217_.BLIF \
+I1/data_in_buf_218_.BLIF I1/data_in_buf_219_.BLIF I1/data_in_buf_220_.BLIF \
+I1/data_in_buf_221_.BLIF I1/data_in_buf_222_.BLIF I1/data_in_buf_223_.BLIF \
+I1/data_in_buf_224_.BLIF I1/data_in_buf_225_.BLIF I1/data_in_buf_226_.BLIF \
+I1/data_in_buf_227_.BLIF I1/data_in_buf_228_.BLIF I1/data_in_buf_229_.BLIF \
+I1/data_in_buf_230_.BLIF I1/data_in_buf_231_.BLIF I1/data_in_buf_232_.BLIF \
+I1/data_in_buf_233_.BLIF I1/data_in_buf_234_.BLIF I1/data_in_buf_235_.BLIF \
+I1/data_in_buf_236_.BLIF I1/data_in_buf_237_.BLIF I1/data_in_buf_238_.BLIF \
+I1/data_in_buf_239_.BLIF I1/data_in_buf_240_.BLIF I1/data_in_buf_241_.BLIF \
+I1/data_in_buf_242_.BLIF I1/data_in_buf_243_.BLIF I1/data_in_buf_244_.BLIF \
+I1/data_in_buf_245_.BLIF I1/cnt12_18_7.BLIF I1/data_in_buf_246_.BLIF \
+I1/data_in_buf_247_.BLIF I1/state_6_.BLIF I1/state_1_.BLIF I1/state_2_.BLIF \
+I1/state_3_.BLIF I1/state_4_.BLIF I1/data_in_buf_248_.BLIF \
+I1/data_in_buf_249_.BLIF I1/data_in_buf_250_.BLIF I1/data_in_buf_251_.BLIF \
+I1/data_in_buf_252_.BLIF I1/data_in_buf_253_.BLIF I1/data_in_buf_254_.BLIF \
+I1/data_in_buf_255_.BLIF I1/N_575.BLIF I1/N_567.BLIF I1/data_in_buf_37_.BLIF \
+I1/data_in_buf_40_.BLIF I1/data_in_buf_41_.BLIF I1/data_in_buf_45_.BLIF
+.outputs lcd_d_0_ lcd_d_1_ lcd_d_2_ lcd_d_3_ lcd_d_4_ lcd_d_5_ lcd_d_6_ \
+lcd_d_7_ lcd_en lcd_rs lcd_rw I1/data_in_buf_48_.CE I1/data_in_buf_48_.D \
+I1/data_in_buf_48_.C I1/data_in_buf_49_.CE I1/data_in_buf_49_.D \
+I1/data_in_buf_49_.C I1/data_in_buf_51_.CE I1/data_in_buf_51_.D \
+I1/data_in_buf_51_.C I1/inst_clkhzreg.C I1/data_in_buf_53_.CE \
+I1/data_in_buf_53_.D I1/data_in_buf_53_.C I1/data_in_buf_56_.CE \
+I1/data_in_buf_56_.D I1/data_in_buf_56_.C I1/data_in_buf_57_.CE \
+I1/data_in_buf_57_.D I1/data_in_buf_57_.C I1/data_in_buf_58_.CE \
+I1/data_in_buf_58_.D I1/data_in_buf_58_.C I1/data_in_buf_59_.CE \
+I1/data_in_buf_59_.D I1/data_in_buf_59_.C I1/data_in_buf_61_.CE \
+I1/data_in_buf_61_.D I1/data_in_buf_61_.C I1/data_in_buf_64_.CE \
+I1/data_in_buf_64_.D I1/data_in_buf_64_.C I1/data_in_buf_65_.CE \
+I1/data_in_buf_65_.D I1/data_in_buf_65_.C I1/data_in_buf_66_.CE \
+I1/data_in_buf_66_.D I1/data_in_buf_66_.C I1/data_in_buf_67_.CE \
+I1/data_in_buf_67_.D I1/data_in_buf_67_.C I1/data_in_buf_69_.CE \
+I1/data_in_buf_69_.D I1/data_in_buf_69_.C I1/data_in_buf_70_.CE \
+I1/data_in_buf_70_.D I1/data_in_buf_70_.C I1/data_in_buf_72_.CE \
+I1/data_in_buf_72_.D I1/data_in_buf_72_.C I1/data_in_buf_73_.CE \
+I1/data_in_buf_73_.D I1/data_in_buf_73_.C I1/data_in_buf_74_.CE \
+I1/data_in_buf_74_.D I1/data_in_buf_74_.C I1/data_in_buf_75_.CE \
+I1/data_in_buf_75_.D I1/data_in_buf_75_.C I1/data_in_buf_77_.CE \
+I1/data_in_buf_77_.D I1/data_in_buf_77_.C I1/lcd_rsDFFRHreg.AR \
+I1/lcd_rsDFFRHreg.D I1/lcd_rsDFFRHreg.C I1/data_in_buf_78_.CE \
+I1/data_in_buf_78_.D I1/data_in_buf_78_.C I1/data_in_buf_80_.CE \
+I1/data_in_buf_80_.D I1/data_in_buf_80_.C I1/data_in_buf_81_.CE \
+I1/data_in_buf_81_.D I1/data_in_buf_81_.C I1/data_in_buf_82_.CE \
+I1/data_in_buf_82_.D I1/data_in_buf_82_.C I1/lcd_dDFFCSH_0_reg.CE \
+I1/lcd_dDFFCSH_0_reg.AP I1/lcd_dDFFCSH_0_reg.C I1/data_in_buf_83_.CE \
+I1/data_in_buf_83_.D I1/data_in_buf_83_.C I1/data_in_buf_85_.CE \
+I1/data_in_buf_85_.D I1/data_in_buf_85_.C I1/lcd_dDFFCRH_1_reg.CE \
+I1/lcd_dDFFCRH_1_reg.AR I1/lcd_dDFFCRH_1_reg.C I1/data_in_buf_86_.CE \
+I1/data_in_buf_86_.D I1/data_in_buf_86_.C I1/disp_count_4_.AR \
+I1/disp_count_4_.C I1/data_in_buf_87_.CE I1/data_in_buf_87_.D \
+I1/data_in_buf_87_.C I1/lcd_dDFFCRH_2_reg.CE I1/lcd_dDFFCRH_2_reg.AR \
+I1/lcd_dDFFCRH_2_reg.C I1/disp_count_1_.AR I1/disp_count_1_.D \
+I1/disp_count_1_.C I1/data_in_buf_88_.CE I1/data_in_buf_88_.D \
+I1/data_in_buf_88_.C I1/disp_count_0_.AR I1/disp_count_0_.C \
+I1/data_in_buf_89_.CE I1/data_in_buf_89_.D I1/data_in_buf_89_.C \
+I1/lcd_dDFFCRH_3_reg.CE I1/lcd_dDFFCRH_3_reg.AR I1/lcd_dDFFCRH_3_reg.C \
+I1/disp_count_3_.AR I1/disp_count_3_.C I1/data_in_buf_90_.CE \
+I1/data_in_buf_90_.D I1/data_in_buf_90_.C I1/disp_count_2_.AR \
+I1/disp_count_2_.C I1/data_in_buf_91_.CE I1/data_in_buf_91_.D \
+I1/data_in_buf_91_.C I1/lcd_dDFFCRH_4_reg.CE I1/lcd_dDFFCRH_4_reg.AR \
+I1/lcd_dDFFCRH_4_reg.C I1/disp_count_5_.AR I1/disp_count_5_.C \
+I1/data_in_buf_93_.CE I1/data_in_buf_93_.D I1/data_in_buf_93_.C I1/state_0_.D \
+I1/state_0_.AP I1/state_0_.C I1/data_in_buf_94_.CE I1/data_in_buf_94_.D \
+I1/data_in_buf_94_.C I1/lcd_dDFFCRH_5_reg.CE I1/lcd_dDFFCRH_5_reg.AR \
+I1/lcd_dDFFCRH_5_reg.C I1/state_5_.AR I1/state_5_.D I1/state_5_.C \
+I1/data_in_buf_95_.CE I1/data_in_buf_95_.D I1/data_in_buf_95_.C \
+I1/data_in_buf_96_.CE I1/data_in_buf_96_.D I1/data_in_buf_96_.C \
+I1/lcd_dDFFCRH_6_reg.CE I1/lcd_dDFFCRH_6_reg.AR I1/lcd_dDFFCRH_6_reg.D \
+I1/lcd_dDFFCRH_6_reg.C I1/data_in_buf_5_.CE I1/data_in_buf_5_.D \
+I1/data_in_buf_5_.C I1/data_in_buf_97_.CE I1/data_in_buf_97_.D \
+I1/data_in_buf_97_.C I1/data_in_buf_98_.CE I1/data_in_buf_98_.D \
+I1/data_in_buf_98_.C I1/lcd_dDFFCRH_7_reg.CE I1/lcd_dDFFCRH_7_reg.AR \
+I1/lcd_dDFFCRH_7_reg.D I1/lcd_dDFFCRH_7_reg.C I1/data_in_buf_13_.CE \
+I1/data_in_buf_13_.D I1/data_in_buf_13_.C I1/data_in_buf_100_.CE \
+I1/data_in_buf_100_.D I1/data_in_buf_100_.C I1/data_in_buf_101_.CE \
+I1/data_in_buf_101_.D I1/data_in_buf_101_.C I1/data_in_buf_21_.CE \
+I1/data_in_buf_21_.D I1/data_in_buf_21_.C I1/data_in_buf_102_.CE \
+I1/data_in_buf_102_.D I1/data_in_buf_102_.C I1/data_in_buf_103_.CE \
+I1/data_in_buf_103_.D I1/data_in_buf_103_.C I1/data_in_buf_29_.CE \
+I1/data_in_buf_29_.D I1/data_in_buf_29_.C I1/data_in_buf_104_.CE \
+I1/data_in_buf_104_.D I1/data_in_buf_104_.C I1/cnt_0_.D I1/cnt_0_.C \
+I1/data_in_buf_105_.CE I1/data_in_buf_105_.D I1/data_in_buf_105_.C I1/cnt_1_.D \
+I1/cnt_1_.C I1/data_in_buf_106_.CE I1/data_in_buf_106_.D I1/data_in_buf_106_.C \
+I1/cnt_2_.D I1/cnt_2_.C I1/data_in_buf_107_.CE I1/data_in_buf_107_.D \
+I1/data_in_buf_107_.C I1/cnt_3_.D I1/cnt_3_.C I1/data_in_buf_109_.CE \
+I1/data_in_buf_109_.D I1/data_in_buf_109_.C I1/cnt_4_.C I1/data_in_buf_110_.CE \
+I1/data_in_buf_110_.D I1/data_in_buf_110_.C I1/cnt_5_.C I1/data_in_buf_111_.CE \
+I1/data_in_buf_111_.D I1/data_in_buf_111_.C I1/cnt_6_.C I1/data_in_buf_112_.CE \
+I1/data_in_buf_112_.D I1/data_in_buf_112_.C I1/cnt_7_.C I1/data_in_buf_113_.CE \
+I1/data_in_buf_113_.D I1/data_in_buf_113_.C I1/cnt_8_.C I1/data_in_buf_114_.CE \
+I1/data_in_buf_114_.D I1/data_in_buf_114_.C I1/cnt_9_.C I1/data_in_buf_115_.CE \
+I1/data_in_buf_115_.D I1/data_in_buf_115_.C I1/cnt_10_.D I1/cnt_10_.C \
+I1/data_in_buf_117_.CE I1/data_in_buf_117_.D I1/data_in_buf_117_.C \
+I1/cnt_11_.D I1/cnt_11_.C I1/data_in_buf_118_.CE I1/data_in_buf_118_.D \
+I1/data_in_buf_118_.C I1/cnt_12_.C I1/data_in_buf_119_.CE \
+I1/data_in_buf_119_.D I1/data_in_buf_119_.C I1/cnt_13_.D I1/cnt_13_.C \
+I1/data_in_buf_120_.CE I1/data_in_buf_120_.D I1/data_in_buf_120_.C \
+I1/cnt_14_.C I1/data_in_buf_121_.CE I1/data_in_buf_121_.D \
+I1/data_in_buf_121_.C I1/cnt_15_.C I1/data_in_buf_122_.CE \
+I1/data_in_buf_122_.D I1/data_in_buf_122_.C I1/cnt_16_.D I1/cnt_16_.C \
+I1/data_in_buf_123_.CE I1/data_in_buf_123_.D I1/data_in_buf_123_.C \
+I1/cnt_17_.D I1/cnt_17_.C I1/data_in_buf_125_.CE I1/data_in_buf_125_.D \
+I1/data_in_buf_125_.C I1/cnt_18_.C I1/data_in_buf_126_.CE \
+I1/data_in_buf_126_.D I1/data_in_buf_126_.C I1/cnt_19_.C \
+I1/data_in_buf_127_.CE I1/data_in_buf_127_.D I1/data_in_buf_127_.C \
+I1/data_in_buf_128_.CE I1/data_in_buf_128_.D I1/data_in_buf_128_.C \
+I1/data_in_buf_129_.CE I1/data_in_buf_129_.D I1/data_in_buf_129_.C \
+I1/data_in_buf_130_.CE I1/data_in_buf_130_.D I1/data_in_buf_130_.C \
+I1/data_in_buf_131_.CE I1/data_in_buf_131_.D I1/data_in_buf_131_.C \
+I1/data_in_buf_133_.CE I1/data_in_buf_133_.D I1/data_in_buf_133_.C \
+I1/data_in_buf_134_.CE I1/data_in_buf_134_.D I1/data_in_buf_134_.C \
+I1/data_in_buf_135_.CE I1/data_in_buf_135_.D I1/data_in_buf_135_.C \
+I1/data_in_buf_136_.CE I1/data_in_buf_136_.D I1/data_in_buf_136_.C \
+I1/data_in_buf_137_.CE I1/data_in_buf_137_.D I1/data_in_buf_137_.C \
+I1/data_in_buf_138_.CE I1/data_in_buf_138_.D I1/data_in_buf_138_.C \
+I1/data_in_buf_139_.CE I1/data_in_buf_139_.D I1/data_in_buf_139_.C \
+I1/data_in_buf_141_.CE I1/data_in_buf_141_.D I1/data_in_buf_141_.C \
+I1/data_in_buf_142_.CE I1/data_in_buf_142_.D I1/data_in_buf_142_.C \
+I1/data_in_buf_143_.CE I1/data_in_buf_143_.D I1/data_in_buf_143_.C \
+I1/data_in_buf_144_.CE I1/data_in_buf_144_.D I1/data_in_buf_144_.C \
+I1/data_in_buf_145_.CE I1/data_in_buf_145_.D I1/data_in_buf_145_.C \
+I1/data_in_buf_146_.CE I1/data_in_buf_146_.D I1/data_in_buf_146_.C \
+I1/data_in_buf_147_.CE I1/data_in_buf_147_.D I1/data_in_buf_147_.C \
+I1/data_in_buf_149_.CE I1/data_in_buf_149_.D I1/data_in_buf_149_.C \
+I1/data_in_buf_150_.CE I1/data_in_buf_150_.D I1/data_in_buf_150_.C \
+I1/data_in_buf_151_.CE I1/data_in_buf_151_.D I1/data_in_buf_151_.C \
+I1/data_in_buf_152_.CE I1/data_in_buf_152_.D I1/data_in_buf_152_.C \
+I1/data_in_buf_153_.CE I1/data_in_buf_153_.D I1/data_in_buf_153_.C \
+I1/data_in_buf_154_.CE I1/data_in_buf_154_.D I1/data_in_buf_154_.C \
+I1/data_in_buf_155_.CE I1/data_in_buf_155_.D I1/data_in_buf_155_.C \
+I1/data_in_buf_157_.CE I1/data_in_buf_157_.D I1/data_in_buf_157_.C \
+I1/data_in_buf_158_.CE I1/data_in_buf_158_.D I1/data_in_buf_158_.C \
+I1/data_in_buf_159_.CE I1/data_in_buf_159_.D I1/data_in_buf_159_.C \
+I1/data_in_buf_160_.CE I1/data_in_buf_160_.D I1/data_in_buf_160_.C \
+I1/data_in_buf_161_.CE I1/data_in_buf_161_.D I1/data_in_buf_161_.C \
+I1/data_in_buf_162_.CE I1/data_in_buf_162_.D I1/data_in_buf_162_.C \
+I1/data_in_buf_163_.CE I1/data_in_buf_163_.D I1/data_in_buf_163_.C \
+I1/data_in_buf_164_.CE I1/data_in_buf_164_.D I1/data_in_buf_164_.C \
+I1/data_in_buf_165_.CE I1/data_in_buf_165_.D I1/data_in_buf_165_.C \
+I1/data_in_buf_166_.CE I1/data_in_buf_166_.D I1/data_in_buf_166_.C \
+I1/data_in_buf_167_.CE I1/data_in_buf_167_.D I1/data_in_buf_167_.C \
+I1/data_in_buf_168_.CE I1/data_in_buf_168_.D I1/data_in_buf_168_.C \
+I1/data_in_buf_169_.CE I1/data_in_buf_169_.D I1/data_in_buf_169_.C \
+I1/data_in_buf_170_.CE I1/data_in_buf_170_.D I1/data_in_buf_170_.C \
+I1/data_in_buf_171_.CE I1/data_in_buf_171_.D I1/data_in_buf_171_.C \
+I1/data_in_buf_172_.CE I1/data_in_buf_172_.D I1/data_in_buf_172_.C \
+I1/data_in_buf_173_.CE I1/data_in_buf_173_.D I1/data_in_buf_173_.C \
+I1/data_in_buf_174_.CE I1/data_in_buf_174_.D I1/data_in_buf_174_.C \
+I1/data_in_buf_175_.CE I1/data_in_buf_175_.D I1/data_in_buf_175_.C \
+I1/data_in_buf_176_.CE I1/data_in_buf_176_.D I1/data_in_buf_176_.C \
+I1/data_in_buf_177_.CE I1/data_in_buf_177_.D I1/data_in_buf_177_.C \
+I1/data_in_buf_178_.CE I1/data_in_buf_178_.D I1/data_in_buf_178_.C \
+I1/data_in_buf_179_.CE I1/data_in_buf_179_.D I1/data_in_buf_179_.C \
+I1/data_in_buf_180_.CE I1/data_in_buf_180_.D I1/data_in_buf_180_.C \
+I1/data_in_buf_181_.CE I1/data_in_buf_181_.D I1/data_in_buf_181_.C \
+I1/data_in_buf_182_.CE I1/data_in_buf_182_.D I1/data_in_buf_182_.C \
+I1/data_in_buf_183_.CE I1/data_in_buf_183_.D I1/data_in_buf_183_.C \
+I1/data_in_buf_184_.CE I1/data_in_buf_184_.D I1/data_in_buf_184_.C \
+I1/data_in_buf_185_.CE I1/data_in_buf_185_.D I1/data_in_buf_185_.C \
+I1/data_in_buf_186_.CE I1/data_in_buf_186_.D I1/data_in_buf_186_.C \
+I1/data_in_buf_187_.CE I1/data_in_buf_187_.D I1/data_in_buf_187_.C \
+I1/data_in_buf_188_.CE I1/data_in_buf_188_.D I1/data_in_buf_188_.C \
+I1/data_in_buf_189_.CE I1/data_in_buf_189_.D I1/data_in_buf_189_.C \
+I1/data_in_buf_190_.CE I1/data_in_buf_190_.D I1/data_in_buf_190_.C \
+I1/data_in_buf_191_.CE I1/data_in_buf_191_.D I1/data_in_buf_191_.C \
+I1/data_in_buf_192_.CE I1/data_in_buf_192_.D I1/data_in_buf_192_.C \
+I1/data_in_buf_193_.CE I1/data_in_buf_193_.D I1/data_in_buf_193_.C \
+I1/data_in_buf_194_.CE I1/data_in_buf_194_.D I1/data_in_buf_194_.C \
+I1/data_in_buf_195_.CE I1/data_in_buf_195_.D I1/data_in_buf_195_.C \
+I1/data_in_buf_196_.CE I1/data_in_buf_196_.D I1/data_in_buf_196_.C \
+I1/data_in_buf_197_.CE I1/data_in_buf_197_.D I1/data_in_buf_197_.C \
+I1/data_in_buf_198_.CE I1/data_in_buf_198_.D I1/data_in_buf_198_.C \
+I1/data_in_buf_199_.CE I1/data_in_buf_199_.D I1/data_in_buf_199_.C \
+I1/data_in_buf_200_.CE I1/data_in_buf_200_.D I1/data_in_buf_200_.C \
+I1/data_in_buf_201_.CE I1/data_in_buf_201_.D I1/data_in_buf_201_.C \
+I1/data_in_buf_202_.CE I1/data_in_buf_202_.D I1/data_in_buf_202_.C \
+I1/data_in_buf_203_.CE I1/data_in_buf_203_.D I1/data_in_buf_203_.C \
+I1/data_in_buf_204_.CE I1/data_in_buf_204_.D I1/data_in_buf_204_.C \
+I1/data_in_buf_205_.CE I1/data_in_buf_205_.D I1/data_in_buf_205_.C \
+I1/data_in_buf_206_.CE I1/data_in_buf_206_.D I1/data_in_buf_206_.C \
+I1/data_in_buf_207_.CE I1/data_in_buf_207_.D I1/data_in_buf_207_.C \
+I1/data_in_buf_208_.CE I1/data_in_buf_208_.D I1/data_in_buf_208_.C \
+I1/data_in_buf_209_.CE I1/data_in_buf_209_.D I1/data_in_buf_209_.C \
+I1/data_in_buf_210_.CE I1/data_in_buf_210_.D I1/data_in_buf_210_.C \
+I1/data_in_buf_211_.CE I1/data_in_buf_211_.D I1/data_in_buf_211_.C \
+I1/data_in_buf_212_.CE I1/data_in_buf_212_.D I1/data_in_buf_212_.C \
+I1/data_in_buf_213_.CE I1/data_in_buf_213_.D I1/data_in_buf_213_.C \
+I1/data_in_buf_214_.CE I1/data_in_buf_214_.D I1/data_in_buf_214_.C \
+I1/data_in_buf_215_.CE I1/data_in_buf_215_.D I1/data_in_buf_215_.C \
+I1/data_in_buf_216_.CE I1/data_in_buf_216_.D I1/data_in_buf_216_.C \
+I1/data_in_buf_217_.CE I1/data_in_buf_217_.D I1/data_in_buf_217_.C \
+I1/data_in_buf_218_.CE I1/data_in_buf_218_.D I1/data_in_buf_218_.C \
+I1/data_in_buf_219_.CE I1/data_in_buf_219_.D I1/data_in_buf_219_.C \
+I1/data_in_buf_220_.CE I1/data_in_buf_220_.D I1/data_in_buf_220_.C \
+I1/data_in_buf_221_.CE I1/data_in_buf_221_.D I1/data_in_buf_221_.C \
+I1/data_in_buf_222_.CE I1/data_in_buf_222_.D I1/data_in_buf_222_.C \
+I1/data_in_buf_223_.CE I1/data_in_buf_223_.D I1/data_in_buf_223_.C \
+I1/data_in_buf_224_.CE I1/data_in_buf_224_.D I1/data_in_buf_224_.C \
+I1/data_in_buf_225_.CE I1/data_in_buf_225_.D I1/data_in_buf_225_.C \
+I1/data_in_buf_226_.CE I1/data_in_buf_226_.D I1/data_in_buf_226_.C \
+I1/data_in_buf_227_.CE I1/data_in_buf_227_.D I1/data_in_buf_227_.C \
+I1/data_in_buf_228_.CE I1/data_in_buf_228_.D I1/data_in_buf_228_.C \
+I1/data_in_buf_229_.CE I1/data_in_buf_229_.D I1/data_in_buf_229_.C \
+I1/data_in_buf_230_.CE I1/data_in_buf_230_.D I1/data_in_buf_230_.C \
+I1/data_in_buf_231_.CE I1/data_in_buf_231_.D I1/data_in_buf_231_.C \
+I1/data_in_buf_232_.CE I1/data_in_buf_232_.D I1/data_in_buf_232_.C \
+I1/data_in_buf_233_.CE I1/data_in_buf_233_.D I1/data_in_buf_233_.C \
+I1/data_in_buf_234_.CE I1/data_in_buf_234_.D I1/data_in_buf_234_.C \
+I1/data_in_buf_235_.CE I1/data_in_buf_235_.D I1/data_in_buf_235_.C \
+I1/data_in_buf_236_.CE I1/data_in_buf_236_.D I1/data_in_buf_236_.C \
+I1/data_in_buf_237_.CE I1/data_in_buf_237_.D I1/data_in_buf_237_.C \
+I1/data_in_buf_238_.CE I1/data_in_buf_238_.D I1/data_in_buf_238_.C \
+I1/data_in_buf_239_.CE I1/data_in_buf_239_.D I1/data_in_buf_239_.C \
+I1/data_in_buf_240_.CE I1/data_in_buf_240_.D I1/data_in_buf_240_.C \
+I1/data_in_buf_241_.CE I1/data_in_buf_241_.D I1/data_in_buf_241_.C \
+I1/data_in_buf_242_.CE I1/data_in_buf_242_.D I1/data_in_buf_242_.C \
+I1/data_in_buf_243_.CE I1/data_in_buf_243_.D I1/data_in_buf_243_.C \
+I1/data_in_buf_244_.CE I1/data_in_buf_244_.D I1/data_in_buf_244_.C \
+I1/data_in_buf_245_.CE I1/data_in_buf_245_.D I1/data_in_buf_245_.C \
+I1/cnt12_18_7 I1/data_in_buf_246_.CE I1/data_in_buf_246_.D \
+I1/data_in_buf_246_.C I1/data_in_buf_247_.CE I1/data_in_buf_247_.D \
+I1/data_in_buf_247_.C I1/state_6_.AR I1/state_6_.D I1/state_6_.C \
+I1/state_1_.AR I1/state_1_.D I1/state_1_.C I1/state_2_.AR I1/state_2_.D \
+I1/state_2_.C I1/state_3_.AR I1/state_3_.D I1/state_3_.C I1/state_4_.AR \
+I1/state_4_.D I1/state_4_.C I1/data_in_buf_248_.CE I1/data_in_buf_248_.D \
+I1/data_in_buf_248_.C I1/data_in_buf_249_.CE I1/data_in_buf_249_.D \
+I1/data_in_buf_249_.C I1/data_in_buf_250_.CE I1/data_in_buf_250_.D \
+I1/data_in_buf_250_.C I1/data_in_buf_251_.CE I1/data_in_buf_251_.D \
+I1/data_in_buf_251_.C I1/data_in_buf_252_.CE I1/data_in_buf_252_.D \
+I1/data_in_buf_252_.C I1/data_in_buf_253_.CE I1/data_in_buf_253_.D \
+I1/data_in_buf_253_.C I1/data_in_buf_254_.CE I1/data_in_buf_254_.D \
+I1/data_in_buf_254_.C I1/data_in_buf_255_.CE I1/data_in_buf_255_.D \
+I1/data_in_buf_255_.C I1/N_575 I1/N_567 I1/data_in_buf_37_.CE \
+I1/data_in_buf_37_.D I1/data_in_buf_37_.C I1/data_in_buf_40_.CE \
+I1/data_in_buf_40_.D I1/data_in_buf_40_.C I1/data_in_buf_41_.CE \
+I1/data_in_buf_41_.D I1/data_in_buf_41_.C I1/data_in_buf_45_.CE \
+I1/data_in_buf_45_.D I1/data_in_buf_45_.C I1/inst_clkhzreg.D.X1 \
+I1/inst_clkhzreg.D.X2 I1/lcd_dDFFCSH_0_reg.D.X1 I1/lcd_dDFFCSH_0_reg.D.X2 \
+I1/lcd_dDFFCRH_1_reg.D.X1 I1/lcd_dDFFCRH_1_reg.D.X2 I1/disp_count_4_.D.X1 \
+I1/disp_count_4_.D.X2 I1/lcd_dDFFCRH_2_reg.D.X1 I1/lcd_dDFFCRH_2_reg.D.X2 \
+I1/disp_count_0_.D.X1 I1/disp_count_0_.D.X2 I1/lcd_dDFFCRH_3_reg.D.X1 \
+I1/lcd_dDFFCRH_3_reg.D.X2 I1/disp_count_3_.D.X1 I1/disp_count_3_.D.X2 \
+I1/disp_count_2_.D.X1 I1/disp_count_2_.D.X2 I1/lcd_dDFFCRH_4_reg.D.X1 \
+I1/lcd_dDFFCRH_4_reg.D.X2 I1/disp_count_5_.D.X1 I1/disp_count_5_.D.X2 \
+I1/lcd_dDFFCRH_5_reg.D.X1 I1/lcd_dDFFCRH_5_reg.D.X2 I1/cnt_4_.D.X1 \
+I1/cnt_4_.D.X2 I1/cnt_5_.D.X1 I1/cnt_5_.D.X2 I1/cnt_6_.D.X1 I1/cnt_6_.D.X2 \
+I1/cnt_7_.D.X1 I1/cnt_7_.D.X2 I1/cnt_8_.D.X1 I1/cnt_8_.D.X2 I1/cnt_9_.D.X1 \
+I1/cnt_9_.D.X2 I1/cnt_12_.D.X1 I1/cnt_12_.D.X2 I1/cnt_14_.D.X1 I1/cnt_14_.D.X2 \
+I1/cnt_15_.D.X1 I1/cnt_15_.D.X2 I1/cnt_18_.D.X1 I1/cnt_18_.D.X2 \
+I1/cnt_19_.D.X1 I1/cnt_19_.D.X2
+.names I1/state_0_.BLIF I1/data_in_buf_40_.BLIF I1/data_in_buf_48_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_41_.BLIF I1/data_in_buf_49_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_40_.BLIF I1/data_in_buf_51_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_45_.BLIF I1/data_in_buf_53_.D
+01 1
+1- 0
+-0 0
+.names I1/data_in_buf_48_.BLIF I1/state_0_.BLIF I1/data_in_buf_56_.D
+1- 1
+-1 1
+00 0
+.names I1/data_in_buf_49_.BLIF I1/state_0_.BLIF I1/data_in_buf_57_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_21_.BLIF I1/data_in_buf_58_.D
+01 1
+1- 0
+-0 0
+.names I1/data_in_buf_51_.BLIF I1/state_0_.BLIF I1/data_in_buf_59_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_53_.BLIF I1/state_0_.BLIF I1/data_in_buf_61_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_56_.BLIF I1/state_0_.BLIF I1/data_in_buf_64_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_57_.BLIF I1/state_0_.BLIF I1/data_in_buf_65_.D
+1- 1
+-1 1
+00 0
+.names I1/data_in_buf_58_.BLIF I1/state_0_.BLIF I1/data_in_buf_66_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_59_.BLIF I1/state_0_.BLIF I1/data_in_buf_67_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_61_.BLIF I1/state_0_.BLIF I1/data_in_buf_69_.D
+10 1
+0- 0
+-1 0
+.names I1/state_0_.BLIF I1/data_in_buf_29_.BLIF I1/data_in_buf_70_.D
+1- 1
+-1 1
+00 0
+.names I1/data_in_buf_64_.BLIF I1/state_0_.BLIF I1/data_in_buf_72_.D
+1- 1
+-1 1
+00 0
+.names I1/data_in_buf_65_.BLIF I1/state_0_.BLIF I1/data_in_buf_73_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_66_.BLIF I1/state_0_.BLIF I1/data_in_buf_74_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_67_.BLIF I1/state_0_.BLIF I1/data_in_buf_75_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_69_.BLIF I1/state_0_.BLIF I1/data_in_buf_77_.D
+10 1
+0- 0
+-1 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_5_.BLIF I1/state_6_.BLIF I1/lcd_rsDFFRHreg.D
+------1- 1
+-----1-1 1
+----1--1 1
+---1---1 1
+--1----1 1
+-1-----1 1
+0------1 1
+1000000- 0
+------00 0
+.names I1/data_in_buf_70_.BLIF I1/state_0_.BLIF I1/data_in_buf_78_.D
+1- 1
+-1 1
+00 0
+.names I1/data_in_buf_72_.BLIF I1/state_0_.BLIF I1/data_in_buf_80_.D
+1- 1
+-1 1
+00 0
+.names I1/data_in_buf_73_.BLIF I1/state_0_.BLIF I1/data_in_buf_81_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_74_.BLIF I1/state_0_.BLIF I1/data_in_buf_82_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_75_.BLIF I1/state_0_.BLIF I1/data_in_buf_83_.D
+1- 1
+-1 1
+00 0
+.names I1/data_in_buf_77_.BLIF I1/state_0_.BLIF I1/data_in_buf_85_.D
+1- 1
+-1 1
+00 0
+.names I1/data_in_buf_78_.BLIF I1/state_0_.BLIF I1/data_in_buf_86_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_75_.BLIF I1/state_0_.BLIF I1/data_in_buf_87_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_80_.BLIF I1/state_0_.BLIF I1/data_in_buf_88_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_81_.BLIF I1/state_0_.BLIF I1/data_in_buf_89_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_82_.BLIF I1/state_0_.BLIF I1/data_in_buf_90_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_83_.BLIF I1/state_0_.BLIF I1/data_in_buf_91_.D
+1- 1
+-1 1
+00 0
+.names I1/data_in_buf_85_.BLIF I1/state_0_.BLIF I1/data_in_buf_93_.D
+1- 1
+-1 1
+00 0
+.names I1/data_in_buf_86_.BLIF I1/state_0_.BLIF I1/data_in_buf_94_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_87_.BLIF I1/state_0_.BLIF I1/data_in_buf_95_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_88_.BLIF I1/state_0_.BLIF I1/data_in_buf_96_.D
+10 1
+0- 0
+-1 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_5_.BLIF I1/state_6_.BLIF I1/data_in_buf_254_.BLIF \
+I1/lcd_dDFFCRH_6_reg.D
+10000001- 1
+------1-1 1
+-------11 1
+------00- 0
+------1-0 0
+-----1--0 0
+----1---0 0
+---1----0 0
+--1-----0 0
+-1------0 0
+0-------0 0
+.names I1/data_in_buf_89_.BLIF I1/state_0_.BLIF I1/data_in_buf_97_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_90_.BLIF I1/state_0_.BLIF I1/data_in_buf_98_.D
+10 1
+0- 0
+-1 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_5_.BLIF I1/state_6_.BLIF I1/data_in_buf_255_.BLIF \
+I1/lcd_dDFFCRH_7_reg.D
+10000001- 1
+------1-1 1
+-------11 1
+------00- 0
+------1-0 0
+-----1--0 0
+----1---0 0
+---1----0 0
+--1-----0 0
+-1------0 0
+0-------0 0
+.names I1/state_0_.BLIF I1/data_in_buf_5_.BLIF I1/data_in_buf_13_.D
+1- 1
+-1 1
+00 0
+.names I1/data_in_buf_91_.BLIF I1/state_0_.BLIF I1/data_in_buf_100_.D
+10 1
+0- 0
+-1 0
+.names I1/data_in_buf_93_.BLIF I1/state_0_.BLIF I1/data_in_buf_101_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_13_.BLIF I1/data_in_buf_21_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_94_.BLIF I1/data_in_buf_102_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_95_.BLIF I1/data_in_buf_103_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_21_.BLIF I1/data_in_buf_29_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_96_.BLIF I1/data_in_buf_104_.D
+01 1
+1- 0
+-0 0
+.names I1/cnt_0_.BLIF I1/cnt_0_.D
+0 1
+1 0
+.names I1/state_0_.BLIF I1/data_in_buf_97_.BLIF I1/data_in_buf_105_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_98_.BLIF I1/data_in_buf_106_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_100_.BLIF I1/data_in_buf_107_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_101_.BLIF I1/data_in_buf_109_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_102_.BLIF I1/data_in_buf_110_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_103_.BLIF I1/data_in_buf_111_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_104_.BLIF I1/data_in_buf_112_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_105_.BLIF I1/data_in_buf_113_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_106_.BLIF I1/data_in_buf_114_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_107_.BLIF I1/data_in_buf_115_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_109_.BLIF I1/data_in_buf_117_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_110_.BLIF I1/data_in_buf_118_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_111_.BLIF I1/data_in_buf_119_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_112_.BLIF I1/data_in_buf_120_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_113_.BLIF I1/data_in_buf_121_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_114_.BLIF I1/data_in_buf_122_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_115_.BLIF I1/data_in_buf_123_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_117_.BLIF I1/data_in_buf_125_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_118_.BLIF I1/data_in_buf_126_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_119_.BLIF I1/data_in_buf_127_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_120_.BLIF I1/data_in_buf_128_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_121_.BLIF I1/data_in_buf_129_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_122_.BLIF I1/data_in_buf_130_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_123_.BLIF I1/data_in_buf_131_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_125_.BLIF I1/data_in_buf_133_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_126_.BLIF I1/data_in_buf_134_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_127_.BLIF I1/data_in_buf_135_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_128_.BLIF I1/data_in_buf_136_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_129_.BLIF I1/data_in_buf_137_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_130_.BLIF I1/data_in_buf_138_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_131_.BLIF I1/data_in_buf_139_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_133_.BLIF I1/data_in_buf_141_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_134_.BLIF I1/data_in_buf_142_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_135_.BLIF I1/data_in_buf_143_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_136_.BLIF I1/data_in_buf_144_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_137_.BLIF I1/data_in_buf_145_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_138_.BLIF I1/data_in_buf_146_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_139_.BLIF I1/data_in_buf_147_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_141_.BLIF I1/data_in_buf_149_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_142_.BLIF I1/data_in_buf_150_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_143_.BLIF I1/data_in_buf_151_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_144_.BLIF I1/data_in_buf_152_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_145_.BLIF I1/data_in_buf_153_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_146_.BLIF I1/data_in_buf_154_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_147_.BLIF I1/data_in_buf_155_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_149_.BLIF I1/data_in_buf_157_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_150_.BLIF I1/data_in_buf_158_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_151_.BLIF I1/data_in_buf_159_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_152_.BLIF I1/data_in_buf_160_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_153_.BLIF I1/data_in_buf_161_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_154_.BLIF I1/data_in_buf_162_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_155_.BLIF I1/data_in_buf_163_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_155_.BLIF I1/data_in_buf_164_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_157_.BLIF I1/data_in_buf_165_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_158_.BLIF I1/data_in_buf_166_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_159_.BLIF I1/data_in_buf_167_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_160_.BLIF I1/data_in_buf_168_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_161_.BLIF I1/data_in_buf_169_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_162_.BLIF I1/data_in_buf_170_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_163_.BLIF I1/data_in_buf_171_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_164_.BLIF I1/data_in_buf_172_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_165_.BLIF I1/data_in_buf_173_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_166_.BLIF I1/data_in_buf_174_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_167_.BLIF I1/data_in_buf_175_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_168_.BLIF I1/data_in_buf_176_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_169_.BLIF I1/data_in_buf_177_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_170_.BLIF I1/data_in_buf_178_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_171_.BLIF I1/data_in_buf_179_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_172_.BLIF I1/data_in_buf_180_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_173_.BLIF I1/data_in_buf_181_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_174_.BLIF I1/data_in_buf_182_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_175_.BLIF I1/data_in_buf_183_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_176_.BLIF I1/data_in_buf_184_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_177_.BLIF I1/data_in_buf_185_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_178_.BLIF I1/data_in_buf_186_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_179_.BLIF I1/data_in_buf_187_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_180_.BLIF I1/data_in_buf_188_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_181_.BLIF I1/data_in_buf_189_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_182_.BLIF I1/data_in_buf_190_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_183_.BLIF I1/data_in_buf_191_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_184_.BLIF I1/data_in_buf_192_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_185_.BLIF I1/data_in_buf_193_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_186_.BLIF I1/data_in_buf_194_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_187_.BLIF I1/data_in_buf_195_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_188_.BLIF I1/data_in_buf_196_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_189_.BLIF I1/data_in_buf_197_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_190_.BLIF I1/data_in_buf_198_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_191_.BLIF I1/data_in_buf_199_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_192_.BLIF I1/data_in_buf_200_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_193_.BLIF I1/data_in_buf_201_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_194_.BLIF I1/data_in_buf_202_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_195_.BLIF I1/data_in_buf_203_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_196_.BLIF I1/data_in_buf_204_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_197_.BLIF I1/data_in_buf_205_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_198_.BLIF I1/data_in_buf_206_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_199_.BLIF I1/data_in_buf_207_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_200_.BLIF I1/data_in_buf_208_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_201_.BLIF I1/data_in_buf_209_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_202_.BLIF I1/data_in_buf_210_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_203_.BLIF I1/data_in_buf_211_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_204_.BLIF I1/data_in_buf_212_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_205_.BLIF I1/data_in_buf_213_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_206_.BLIF I1/data_in_buf_214_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_207_.BLIF I1/data_in_buf_215_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_208_.BLIF I1/data_in_buf_216_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_209_.BLIF I1/data_in_buf_217_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_210_.BLIF I1/data_in_buf_218_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_211_.BLIF I1/data_in_buf_219_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_212_.BLIF I1/data_in_buf_220_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_213_.BLIF I1/data_in_buf_221_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_214_.BLIF I1/data_in_buf_222_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_215_.BLIF I1/data_in_buf_223_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_216_.BLIF I1/data_in_buf_224_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_217_.BLIF I1/data_in_buf_225_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_218_.BLIF I1/data_in_buf_226_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_219_.BLIF I1/data_in_buf_227_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_220_.BLIF I1/data_in_buf_228_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_221_.BLIF I1/data_in_buf_229_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_222_.BLIF I1/data_in_buf_230_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_223_.BLIF I1/data_in_buf_231_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_224_.BLIF I1/data_in_buf_232_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_225_.BLIF I1/data_in_buf_233_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_226_.BLIF I1/data_in_buf_234_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_227_.BLIF I1/data_in_buf_235_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_228_.BLIF I1/data_in_buf_236_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_229_.BLIF I1/data_in_buf_237_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_230_.BLIF I1/data_in_buf_238_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_231_.BLIF I1/data_in_buf_239_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_232_.BLIF I1/data_in_buf_240_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_233_.BLIF I1/data_in_buf_241_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_234_.BLIF I1/data_in_buf_242_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_235_.BLIF I1/data_in_buf_243_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_236_.BLIF I1/data_in_buf_244_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_237_.BLIF I1/data_in_buf_245_.D
+1- 1
+-1 1
+00 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_6_.BLIF I1/cnt_7_.BLIF I1/cnt_8_.BLIF \
+I1/cnt_9_.BLIF I1/cnt_10_.BLIF I1/cnt_11_.BLIF I1/cnt_12_.BLIF I1/cnt_13_.BLIF \
+I1/cnt_14_.BLIF I1/cnt12_18_7
+111111111111111 1
+-------------0- 0
+------------0-- 0
+-----------0--- 0
+----------0---- 0
+---------0----- 0
+--------0------ 0
+-------0------- 0
+------0-------- 0
+-----0--------- 0
+----0---------- 0
+---0----------- 0
+--0------------ 0
+-0------------- 0
+0-------------- 0
+--------------0 0
+.names I1/state_0_.BLIF I1/data_in_buf_238_.BLIF I1/data_in_buf_246_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_239_.BLIF I1/data_in_buf_247_.D
+01 1
+1- 0
+-0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_5_.BLIF I1/state_6_.BLIF I1/state_4_.BLIF I1/state_6_.D
+0----0-1- 1
+1----1-1- 1
+----1--1- 1
+---1---1- 1
+--1----1- 1
+-1-----1- 1
+------1-- 1
+--------1 1
+1000000-0 0
+0000010-0 0
+------000 0
+.names I1/state_0_.BLIF I1/data_in_buf_240_.BLIF I1/data_in_buf_248_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_241_.BLIF I1/data_in_buf_249_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_242_.BLIF I1/data_in_buf_250_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_243_.BLIF I1/data_in_buf_251_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_244_.BLIF I1/data_in_buf_252_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_245_.BLIF I1/data_in_buf_253_.D
+1- 1
+-1 1
+00 0
+.names I1/state_0_.BLIF I1/data_in_buf_246_.BLIF I1/data_in_buf_254_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_247_.BLIF I1/data_in_buf_255_.D
+01 1
+1- 0
+-0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_6_.BLIF I1/cnt_7_.BLIF I1/cnt_8_.BLIF \
+I1/cnt_9_.BLIF I1/cnt_10_.BLIF I1/cnt_11_.BLIF I1/cnt_12_.BLIF I1/N_575
+1111111111111 1
+-----------0- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------0----- 0
+------0------ 0
+-----0------- 0
+----0-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_6_.BLIF I1/cnt_7_.BLIF I1/cnt_8_.BLIF \
+I1/N_567
+111111111 1
+-------0- 0
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+--------0 0
+.names I1/state_0_.BLIF I1/data_in_buf_29_.BLIF I1/data_in_buf_37_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_5_.BLIF I1/data_in_buf_41_.D
+01 1
+1- 0
+-0 0
+.names I1/state_0_.BLIF I1/data_in_buf_37_.BLIF I1/data_in_buf_45_.D
+01 1
+1- 0
+-0 0
+.names I1/lcd_dDFFCSH_0_reg.BLIF lcd_d_0_
+1 1
+0 0
+.names I1/lcd_dDFFCRH_1_reg.BLIF lcd_d_1_
+1 1
+0 0
+.names I1/lcd_dDFFCRH_2_reg.BLIF lcd_d_2_
+1 1
+0 0
+.names I1/lcd_dDFFCRH_3_reg.BLIF lcd_d_3_
+1 1
+0 0
+.names I1/lcd_dDFFCRH_4_reg.BLIF lcd_d_4_
+1 1
+0 0
+.names I1/lcd_dDFFCRH_5_reg.BLIF lcd_d_5_
+1 1
+0 0
+.names I1/lcd_dDFFCRH_6_reg.BLIF lcd_d_6_
+1 1
+0 0
+.names I1/lcd_dDFFCRH_7_reg.BLIF lcd_d_7_
+1 1
+0 0
+.names I1/inst_clkhzreg.BLIF lcd_en
+1 1
+0 0
+.names I1/lcd_rsDFFRHreg.BLIF lcd_rs
+1 1
+0 0
+.names lcd_rw
+ 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_48_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_48_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_49_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_49_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_51_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_51_.C
+1 1
+0 0
+.names clk.BLIF I1/inst_clkhzreg.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_53_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_53_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_56_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_56_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_57_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_57_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_58_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_58_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_59_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_59_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_61_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_61_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_64_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_64_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_65_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_65_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_66_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_66_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_67_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_67_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_69_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_69_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_70_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_70_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_72_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_72_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_73_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_73_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_74_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_74_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_75_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_75_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_77_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_77_.C
+1 1
+0 0
+.names reset.BLIF I1/lcd_rsDFFRHreg.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/lcd_rsDFFRHreg.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_78_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_78_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_80_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_80_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_81_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_81_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_82_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_82_.C
+1 1
+0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_6_.BLIF I1/lcd_dDFFCSH_0_reg.CE
+-----0- 1
+----1-- 1
+---1--- 1
+--1---- 1
+-1----- 1
+1------ 1
+------0 1
+0000011 0
+.names reset.BLIF I1/lcd_dDFFCSH_0_reg.AP
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/lcd_dDFFCSH_0_reg.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_83_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_83_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_85_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_85_.C
+1 1
+0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_6_.BLIF I1/lcd_dDFFCRH_1_reg.CE
+-----0- 1
+----1-- 1
+---1--- 1
+--1---- 1
+-1----- 1
+1------ 1
+------0 1
+0000011 0
+.names reset.BLIF I1/lcd_dDFFCRH_1_reg.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/lcd_dDFFCRH_1_reg.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_86_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_86_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/disp_count_4_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_87_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_87_.C
+1 1
+0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_6_.BLIF I1/lcd_dDFFCRH_2_reg.CE
+-----0- 1
+----1-- 1
+---1--- 1
+--1---- 1
+-1----- 1
+1------ 1
+------0 1
+0000011 0
+.names reset.BLIF I1/lcd_dDFFCRH_2_reg.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/lcd_dDFFCRH_2_reg.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_1_.AR
+0 1
+1 0
+.names I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF I1/state_5_.BLIF \
+I1/state_6_.BLIF I1/disp_count_1_.D
+011- 1
+01-1 1
+1-00 1
+10-- 1
+111- 0
+11-1 0
+0-00 0
+00-- 0
+.names I1/inst_clkhzreg.BLIF I1/disp_count_1_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_88_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_88_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_0_.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/disp_count_0_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_89_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_89_.C
+1 1
+0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_6_.BLIF I1/lcd_dDFFCRH_3_reg.CE
+-----0- 1
+----1-- 1
+---1--- 1
+--1---- 1
+-1----- 1
+1------ 1
+------0 1
+0000011 0
+.names reset.BLIF I1/lcd_dDFFCRH_3_reg.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/lcd_dDFFCRH_3_reg.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_3_.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/disp_count_3_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_90_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_90_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_2_.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/disp_count_2_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_91_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_91_.C
+1 1
+0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_6_.BLIF I1/lcd_dDFFCRH_4_reg.CE
+-----0- 1
+----1-- 1
+---1--- 1
+--1---- 1
+-1----- 1
+1------ 1
+------0 1
+0000011 0
+.names reset.BLIF I1/lcd_dDFFCRH_4_reg.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/lcd_dDFFCRH_4_reg.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_5_.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/disp_count_5_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_93_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_93_.C
+1 1
+0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_6_.BLIF I1/state_0_.D
+0000011 1
+-----0- 0
+----1-- 0
+---1--- 0
+--1---- 0
+-1----- 0
+1------ 0
+------0 0
+.names reset.BLIF I1/state_0_.AP
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/state_0_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_94_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_94_.C
+1 1
+0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_6_.BLIF I1/lcd_dDFFCRH_5_reg.CE
+-----0- 1
+----1-- 1
+---1--- 1
+--1---- 1
+-1----- 1
+1------ 1
+------0 1
+0000011 0
+.names reset.BLIF I1/lcd_dDFFCRH_5_reg.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/lcd_dDFFCRH_5_reg.C
+1 1
+0 0
+.names reset.BLIF I1/state_5_.AR
+0 1
+1 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_6_.BLIF I1/state_5_.D
+1000001 1
+-----1- 0
+----1-- 0
+---1--- 0
+--1---- 0
+-1----- 0
+0------ 0
+------0 0
+.names I1/inst_clkhzreg.BLIF I1/state_5_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_95_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_95_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_96_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_96_.C
+1 1
+0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_6_.BLIF I1/lcd_dDFFCRH_6_reg.CE
+-----0- 1
+----1-- 1
+---1--- 1
+--1---- 1
+-1----- 1
+1------ 1
+------0 1
+0000011 0
+.names reset.BLIF I1/lcd_dDFFCRH_6_reg.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/lcd_dDFFCRH_6_reg.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_5_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/state_0_.BLIF I1/data_in_buf_5_.D
+1 1
+0 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_5_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_97_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_97_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_98_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_98_.C
+1 1
+0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_6_.BLIF I1/lcd_dDFFCRH_7_reg.CE
+-----0- 1
+----1-- 1
+---1--- 1
+--1---- 1
+-1----- 1
+1------ 1
+------0 1
+0000011 0
+.names reset.BLIF I1/lcd_dDFFCRH_7_reg.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/lcd_dDFFCRH_7_reg.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_13_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_13_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_100_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_100_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_101_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_101_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_21_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_21_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_102_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_102_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_103_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_103_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_29_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_29_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_104_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_104_.C
+1 1
+0 0
+.names clk.BLIF I1/cnt_0_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_105_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_105_.C
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_1_.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I1/cnt_1_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_106_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_106_.C
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_2_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names clk.BLIF I1/cnt_2_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_107_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_107_.C
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF I1/cnt_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+1111 0
+--00 0
+-0-0 0
+0--0 0
+.names clk.BLIF I1/cnt_3_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_109_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_109_.C
+1 1
+0 0
+.names clk.BLIF I1/cnt_4_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_110_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_110_.C
+1 1
+0 0
+.names clk.BLIF I1/cnt_5_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_111_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_111_.C
+1 1
+0 0
+.names clk.BLIF I1/cnt_6_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_112_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_112_.C
+1 1
+0 0
+.names clk.BLIF I1/cnt_7_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_113_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_113_.C
+1 1
+0 0
+.names clk.BLIF I1/cnt_8_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_114_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_114_.C
+1 1
+0 0
+.names clk.BLIF I1/cnt_9_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_115_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_115_.C
+1 1
+0 0
+.names I1/cnt_9_.BLIF I1/cnt_10_.BLIF I1/N_567.BLIF I1/cnt_10_.D
+101 1
+01- 1
+-10 1
+111 0
+00- 0
+-00 0
+.names clk.BLIF I1/cnt_10_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_117_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_117_.C
+1 1
+0 0
+.names I1/cnt_9_.BLIF I1/cnt_10_.BLIF I1/cnt_11_.BLIF I1/N_567.BLIF \
+I1/cnt_11_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+1111 0
+-00- 0
+0-0- 0
+--00 0
+.names clk.BLIF I1/cnt_11_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_118_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_118_.C
+1 1
+0 0
+.names clk.BLIF I1/cnt_12_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_119_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_119_.C
+1 1
+0 0
+.names I1/cnt_13_.BLIF I1/N_575.BLIF I1/cnt_13_.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I1/cnt_13_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_120_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_120_.C
+1 1
+0 0
+.names clk.BLIF I1/cnt_14_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_121_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_121_.C
+1 1
+0 0
+.names clk.BLIF I1/cnt_15_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_122_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_122_.C
+1 1
+0 0
+.names I1/cnt_15_.BLIF I1/cnt_16_.BLIF I1/cnt12_18_7.BLIF I1/cnt_16_.D
+101 1
+01- 1
+-10 1
+111 0
+00- 0
+-00 0
+.names clk.BLIF I1/cnt_16_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_123_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_123_.C
+1 1
+0 0
+.names I1/cnt_15_.BLIF I1/cnt_16_.BLIF I1/cnt_17_.BLIF I1/cnt12_18_7.BLIF \
+I1/cnt_17_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+1111 0
+-00- 0
+0-0- 0
+--00 0
+.names clk.BLIF I1/cnt_17_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_125_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_125_.C
+1 1
+0 0
+.names clk.BLIF I1/cnt_18_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_126_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_126_.C
+1 1
+0 0
+.names clk.BLIF I1/cnt_19_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_127_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_127_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_128_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_128_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_129_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_129_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_130_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_130_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_131_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_131_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_133_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_133_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_134_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_134_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_135_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_135_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_136_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_136_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_137_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_137_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_138_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_138_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_139_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_139_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_141_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_141_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_142_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_142_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_143_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_143_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_144_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_144_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_145_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_145_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_146_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_146_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_147_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_147_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_149_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_149_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_150_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_150_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_151_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_151_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_152_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_152_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_153_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_153_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_154_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_154_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_155_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_155_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_157_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_157_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_158_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_158_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_159_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_159_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_160_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_160_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_161_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_161_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_162_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_162_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_163_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_163_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_164_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_164_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_165_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_165_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_166_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_166_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_167_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_167_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_168_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_168_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_169_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_169_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_170_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_170_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_171_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_171_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_172_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_172_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_173_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_173_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_174_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_174_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_175_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_175_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_176_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_176_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_177_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_177_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_178_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_178_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_179_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_179_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_180_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_180_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_181_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_181_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_182_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_182_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_183_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_183_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_184_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_184_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_185_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_185_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_186_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_186_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_187_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_187_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_188_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_188_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_189_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_189_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_190_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_190_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_191_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_191_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_192_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_192_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_193_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_193_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_194_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_194_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_195_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_195_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_196_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_196_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_197_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_197_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_198_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_198_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_199_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_199_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_200_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_200_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_201_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_201_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_202_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_202_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_203_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_203_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_204_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_204_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_205_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_205_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_206_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_206_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_207_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_207_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_208_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_208_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_209_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_209_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_210_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_210_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_211_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_211_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_212_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_212_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_213_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_213_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_214_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_214_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_215_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_215_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_216_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_216_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_217_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_217_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_218_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_218_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_219_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_219_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_220_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_220_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_221_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_221_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_222_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_222_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_223_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_223_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_224_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_224_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_225_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_225_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_226_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_226_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_227_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_227_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_228_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_228_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_229_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_229_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_230_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_230_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_231_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_231_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_232_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_232_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_233_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_233_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_234_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_234_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_235_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_235_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_236_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_236_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_237_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_237_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_238_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_238_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_239_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_239_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_240_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_240_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_241_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_241_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_242_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_242_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_243_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_243_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_244_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_244_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_245_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_245_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_246_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_246_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_247_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_247_.C
+1 1
+0 0
+.names reset.BLIF I1/state_6_.AR
+0 1
+1 0
+.names I1/inst_clkhzreg.BLIF I1/state_6_.C
+1 1
+0 0
+.names reset.BLIF I1/state_1_.AR
+0 1
+1 0
+.names I1/state_0_.BLIF I1/state_1_.D
+1 1
+0 0
+.names I1/inst_clkhzreg.BLIF I1/state_1_.C
+1 1
+0 0
+.names reset.BLIF I1/state_2_.AR
+0 1
+1 0
+.names I1/state_1_.BLIF I1/state_2_.D
+1 1
+0 0
+.names I1/inst_clkhzreg.BLIF I1/state_2_.C
+1 1
+0 0
+.names reset.BLIF I1/state_3_.AR
+0 1
+1 0
+.names I1/state_2_.BLIF I1/state_3_.D
+1 1
+0 0
+.names I1/inst_clkhzreg.BLIF I1/state_3_.C
+1 1
+0 0
+.names reset.BLIF I1/state_4_.AR
+0 1
+1 0
+.names I1/state_3_.BLIF I1/state_4_.D
+1 1
+0 0
+.names I1/inst_clkhzreg.BLIF I1/state_4_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_248_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_248_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_249_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_249_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_250_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_250_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_251_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_251_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_252_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_252_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_253_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_253_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_254_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_254_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_255_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_255_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_37_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_37_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_40_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/data_in_buf_40_.D
+ 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_40_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_41_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_41_.C
+1 1
+0 0
+.names reset.BLIF I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF \
+I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF \
+I1/disp_count_5_.BLIF I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/data_in_buf_45_.CE
+10----0--1 1
+11----1--1 1
+1-------1- 1
+1------1-- 1
+1----1---1 1
+1---1----1 1
+1--1-----1 1
+1-1------1 1
+-10000000- 0
+-00000100- 0
+-------000 0
+0--------- 0
+.names I1/inst_clkhzreg.BLIF I1/data_in_buf_45_.C
+1 1
+0 0
+.names I1/inst_clkhzreg.BLIF I1/inst_clkhzreg.D.X1
+1 1
+0 0
+.names I1/inst_clkhzreg.BLIF I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF \
+I1/cnt_3_.BLIF I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_6_.BLIF I1/cnt_7_.BLIF \
+I1/cnt_8_.BLIF I1/cnt_9_.BLIF I1/cnt_10_.BLIF I1/cnt_11_.BLIF I1/cnt_12_.BLIF \
+I1/cnt_13_.BLIF I1/cnt_14_.BLIF I1/cnt_15_.BLIF I1/cnt_16_.BLIF \
+I1/cnt_17_.BLIF I1/cnt_18_.BLIF I1/cnt_19_.BLIF I1/inst_clkhzreg.D.X2
+-11111111111111111111 1
+-0------------------- 0
+--0------------------ 0
+---0----------------- 0
+----0---------------- 0
+-----0--------------- 0
+------0-------------- 0
+-------0------------- 0
+--------0------------ 0
+---------0----------- 0
+----------0---------- 0
+-----------0--------- 0
+------------0-------- 0
+-------------0------- 0
+--------------0------ 0
+---------------0----- 0
+----------------0---- 0
+-----------------0--- 0
+------------------0-- 0
+-------------------0- 0
+--------------------0 0
+.names I1/state_5_.BLIF I1/state_6_.BLIF I1/data_in_buf_248_.BLIF \
+I1/lcd_dDFFCSH_0_reg.D.X1
+011 1
+1-- 0
+-0- 0
+--0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_0_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF I1/data_in_buf_248_.BLIF \
+I1/lcd_dDFFCSH_0_reg.D.X2
+1000000-11 1
+------100- 1
+10000010-0 1
+-------1-1 1
+------0--0 0
+-------1-0 0
+0-----00-- 0
+-1----00-- 0
+--1---00-- 0
+---1--00-- 0
+----1-00-- 0
+-----100-- 0
+0------01- 0
+-1-----01- 0
+--1----01- 0
+---1---01- 0
+----1--01- 0
+-----1-01- 0
+------000- 0
+------1011 0
+.names I1/state_5_.BLIF I1/state_6_.BLIF I1/data_in_buf_249_.BLIF \
+I1/lcd_dDFFCRH_1_reg.D.X1
+011 1
+1-- 0
+-0- 0
+--0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_5_.BLIF I1/state_6_.BLIF I1/state_4_.BLIF I1/data_in_buf_249_.BLIF \
+I1/lcd_dDFFCRH_1_reg.D.X2
+100000-101 1
+------001- 1
+1000000-10 1
+------1--1 1
+------1--0 0
+--------00 0
+0-----01-- 0
+-1----01-- 0
+--1---01-- 0
+---1--01-- 0
+----1-01-- 0
+-----101-- 0
+0-----0-0- 0
+-1----0-0- 0
+--1---0-0- 0
+---1--0-0- 0
+----1-0-0- 0
+-----10-0- 0
+------000- 0
+------0111 0
+.names I1/disp_count_4_.BLIF I1/disp_count_4_.D.X1
+1 1
+0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF \
+I1/disp_count_4_.D.X2
+-11111- 1
+-1111-1 1
+-0----- 0
+--0---- 0
+---0--- 0
+----0-- 0
+-----00 0
+.names I1/state_5_.BLIF I1/state_6_.BLIF I1/data_in_buf_250_.BLIF \
+I1/lcd_dDFFCRH_2_reg.D.X1
+011 1
+1-- 0
+-0- 0
+--0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_5_.BLIF I1/state_6_.BLIF I1/state_3_.BLIF I1/state_4_.BLIF \
+I1/data_in_buf_250_.BLIF I1/lcd_dDFFCRH_2_reg.D.X2
+------001-- 1
+------00-1- 1
+1000000-1-0 1
+1000000--10 1
+100000-1001 1
+------1---1 1
+------1---0 0
+0-----01--- 0
+-1----01--- 0
+--1---01--- 0
+---1--01--- 0
+----1-01--- 0
+-----101--- 0
+--------000 0
+------0000- 0
+------011-1 0
+------01-11 0
+.names I1/disp_count_0_.BLIF I1/disp_count_0_.D.X1
+0 1
+1 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_5_.BLIF I1/state_6_.BLIF I1/disp_count_0_.D.X2
+------00 1
+000001-1 1
+1000000- 1
+1-----1- 0
+-1-----1 0
+--1----1 0
+---1---1 0
+----1--1 0
+------10 0
+1----1-1 0
+0----0-1 0
+.names I1/state_5_.BLIF I1/state_6_.BLIF I1/data_in_buf_251_.BLIF \
+I1/lcd_dDFFCRH_3_reg.D.X1
+011 1
+1-- 0
+-0- 0
+--0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_5_.BLIF I1/state_6_.BLIF I1/state_2_.BLIF I1/state_3_.BLIF \
+I1/data_in_buf_251_.BLIF I1/lcd_dDFFCRH_3_reg.D.X2
+------001-- 1
+------00-1- 1
+1000000-1-0 1
+1000000--10 1
+100000-1001 1
+------1---1 1
+------1---0 0
+0-----01--- 0
+-1----01--- 0
+--1---01--- 0
+---1--01--- 0
+----1-01--- 0
+-----101--- 0
+--------000 0
+------0000- 0
+------011-1 0
+------01-11 0
+.names I1/disp_count_3_.BLIF I1/disp_count_3_.D.X1
+1 1
+0 0
+.names I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF I1/disp_count_3_.BLIF \
+I1/disp_count_2_.BLIF I1/state_5_.BLIF I1/state_6_.BLIF I1/disp_count_3_.D.X2
+11-11- 1
+11-1-1 1
+0----- 0
+-0---- 0
+---0-- 0
+----00 0
+.names I1/disp_count_2_.BLIF I1/disp_count_2_.D.X1
+1 1
+0 0
+.names I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF I1/disp_count_2_.BLIF \
+I1/state_5_.BLIF I1/state_6_.BLIF I1/disp_count_2_.D.X2
+11-1- 1
+11--1 1
+0---- 0
+-0--- 0
+---00 0
+.names I1/state_5_.BLIF I1/state_6_.BLIF I1/data_in_buf_252_.BLIF \
+I1/lcd_dDFFCRH_4_reg.D.X1
+011 1
+1-- 0
+-0- 0
+--0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_5_.BLIF I1/state_6_.BLIF I1/state_2_.BLIF I1/data_in_buf_252_.BLIF \
+I1/lcd_dDFFCRH_4_reg.D.X2
+100000-101 1
+------001- 1
+1000000-10 1
+------1--1 1
+------1--0 0
+--------00 0
+0-----01-- 0
+-1----01-- 0
+--1---01-- 0
+---1--01-- 0
+----1-01-- 0
+-----101-- 0
+0-----0-0- 0
+-1----0-0- 0
+--1---0-0- 0
+---1--0-0- 0
+----1-0-0- 0
+-----10-0- 0
+------000- 0
+------0111 0
+.names I1/disp_count_5_.BLIF I1/disp_count_5_.D.X1
+1 1
+0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_5_.BLIF I1/state_6_.BLIF I1/disp_count_5_.D.X2
+11111-1- 1
+11111--1 1
+000001-1 1
+01------ 0
+10------ 0
+0-1----- 0
+1-0----- 0
+0--1---- 0
+1--0---- 0
+0---1--- 0
+1---0--- 0
+0----0-- 0
+0------0 0
+------00 0
+.names I1/state_5_.BLIF I1/state_6_.BLIF I1/data_in_buf_253_.BLIF \
+I1/lcd_dDFFCRH_5_reg.D.X1
+011 1
+1-- 0
+-0- 0
+--0 0
+.names I1/disp_count_4_.BLIF I1/disp_count_1_.BLIF I1/disp_count_0_.BLIF \
+I1/disp_count_3_.BLIF I1/disp_count_2_.BLIF I1/disp_count_5_.BLIF \
+I1/state_5_.BLIF I1/state_6_.BLIF I1/state_2_.BLIF I1/data_in_buf_253_.BLIF \
+I1/lcd_dDFFCRH_5_reg.D.X2
+100000-101 1
+------001- 1
+1000000-10 1
+------1--1 1
+------1--0 0
+--------00 0
+0-----01-- 0
+-1----01-- 0
+--1---01-- 0
+---1--01-- 0
+----1-01-- 0
+-----101-- 0
+0-----0-0- 0
+-1----0-0- 0
+--1---0-0- 0
+---1--0-0- 0
+----1-0-0- 0
+-----10-0- 0
+------000- 0
+------0111 0
+.names I1/cnt_4_.BLIF I1/cnt_4_.D.X1
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_4_.D.X2
+1111- 1
+0---- 0
+-0--- 0
+--0-- 0
+---0- 0
+.names I1/cnt_5_.BLIF I1/cnt_5_.D.X1
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_5_.D.X2
+11111- 1
+0----- 0
+-0---- 0
+--0--- 0
+---0-- 0
+----0- 0
+.names I1/cnt_6_.BLIF I1/cnt_6_.D.X1
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_6_.BLIF I1/cnt_6_.D.X2
+111111- 1
+0------ 0
+-0----- 0
+--0---- 0
+---0--- 0
+----0-- 0
+-----0- 0
+.names I1/cnt_7_.BLIF I1/cnt_7_.D.X1
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_6_.BLIF I1/cnt_7_.BLIF I1/cnt_7_.D.X2
+1111111- 1
+0------- 0
+-0------ 0
+--0----- 0
+---0---- 0
+----0--- 0
+-----0-- 0
+------0- 0
+.names I1/cnt_8_.BLIF I1/cnt_8_.D.X1
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_6_.BLIF I1/cnt_7_.BLIF I1/cnt_8_.BLIF \
+I1/cnt_8_.D.X2
+11111111- 1
+0-------- 0
+-0------- 0
+--0------ 0
+---0----- 0
+----0---- 0
+-----0--- 0
+------0-- 0
+-------0- 0
+.names I1/cnt_9_.BLIF I1/cnt_9_.D.X1
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_6_.BLIF I1/cnt_7_.BLIF I1/cnt_8_.BLIF \
+I1/cnt_9_.BLIF I1/cnt_9_.D.X2
+111111111- 1
+0--------- 0
+-0-------- 0
+--0------- 0
+---0------ 0
+----0----- 0
+-----0---- 0
+------0--- 0
+-------0-- 0
+--------0- 0
+.names I1/cnt_12_.BLIF I1/cnt_12_.D.X1
+1 1
+0 0
+.names I1/cnt_9_.BLIF I1/cnt_10_.BLIF I1/cnt_11_.BLIF I1/cnt_12_.BLIF \
+I1/N_567.BLIF I1/cnt_12_.D.X2
+111-1 1
+0---- 0
+-0--- 0
+--0-- 0
+----0 0
+.names I1/cnt_14_.BLIF I1/cnt_14_.D.X1
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_6_.BLIF I1/cnt_7_.BLIF I1/cnt_8_.BLIF \
+I1/cnt_9_.BLIF I1/cnt_10_.BLIF I1/cnt_11_.BLIF I1/cnt_12_.BLIF I1/cnt_13_.BLIF \
+I1/cnt_14_.BLIF I1/cnt_14_.D.X2
+11111111111111- 1
+0-------------- 0
+-0------------- 0
+--0------------ 0
+---0----------- 0
+----0---------- 0
+-----0--------- 0
+------0-------- 0
+-------0------- 0
+--------0------ 0
+---------0----- 0
+----------0---- 0
+-----------0--- 0
+------------0-- 0
+-------------0- 0
+.names I1/cnt_15_.BLIF I1/cnt_15_.D.X1
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_6_.BLIF I1/cnt_7_.BLIF I1/cnt_8_.BLIF \
+I1/cnt_9_.BLIF I1/cnt_10_.BLIF I1/cnt_11_.BLIF I1/cnt_12_.BLIF I1/cnt_13_.BLIF \
+I1/cnt_14_.BLIF I1/cnt_15_.BLIF I1/cnt_15_.D.X2
+111111111111111- 1
+0--------------- 0
+-0-------------- 0
+--0------------- 0
+---0------------ 0
+----0----------- 0
+-----0---------- 0
+------0--------- 0
+-------0-------- 0
+--------0------- 0
+---------0------ 0
+----------0----- 0
+-----------0---- 0
+------------0--- 0
+-------------0-- 0
+--------------0- 0
+.names I1/cnt_18_.BLIF I1/cnt_18_.D.X1
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_6_.BLIF I1/cnt_7_.BLIF I1/cnt_8_.BLIF \
+I1/cnt_9_.BLIF I1/cnt_10_.BLIF I1/cnt_11_.BLIF I1/cnt_12_.BLIF I1/cnt_13_.BLIF \
+I1/cnt_14_.BLIF I1/cnt_15_.BLIF I1/cnt_16_.BLIF I1/cnt_17_.BLIF \
+I1/cnt_18_.BLIF I1/cnt_18_.D.X2
+111111111111111111- 1
+0------------------ 0
+-0----------------- 0
+--0---------------- 0
+---0--------------- 0
+----0-------------- 0
+-----0------------- 0
+------0------------ 0
+-------0----------- 0
+--------0---------- 0
+---------0--------- 0
+----------0-------- 0
+-----------0------- 0
+------------0------ 0
+-------------0----- 0
+--------------0---- 0
+---------------0--- 0
+----------------0-- 0
+-----------------0- 0
+.names I1/cnt_19_.BLIF I1/cnt_19_.D.X1
+1 1
+0 0
+.names I1/cnt_0_.BLIF I1/cnt_1_.BLIF I1/cnt_2_.BLIF I1/cnt_3_.BLIF \
+I1/cnt_4_.BLIF I1/cnt_5_.BLIF I1/cnt_6_.BLIF I1/cnt_7_.BLIF I1/cnt_8_.BLIF \
+I1/cnt_9_.BLIF I1/cnt_10_.BLIF I1/cnt_11_.BLIF I1/cnt_12_.BLIF I1/cnt_13_.BLIF \
+I1/cnt_14_.BLIF I1/cnt_15_.BLIF I1/cnt_16_.BLIF I1/cnt_17_.BLIF \
+I1/cnt_18_.BLIF I1/cnt_19_.BLIF I1/cnt_19_.D.X2
+1111111111111111111- 1
+0------------------- 0
+-0------------------ 0
+--0----------------- 0
+---0---------------- 0
+----0--------------- 0
+-----0-------------- 0
+------0------------- 0
+-------0------------ 0
+--------0----------- 0
+---------0---------- 0
+----------0--------- 0
+-----------0-------- 0
+------------0------- 0
+-------------0------ 0
+--------------0----- 0
+---------------0---- 0
+----------------0--- 0
+-----------------0-- 0
+------------------0- 0
+.end

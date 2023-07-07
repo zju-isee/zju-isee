@@ -1,0 +1,20 @@
+MODULE DIVIDER1
+
+    TITLE 'Clock Divider'
+
+"Inputs
+clk pin;
+"Outputs
+divided_clk pin istype 'reg';
+"divided_clk = 0;
+count NODE istype 'reg';
+"count:= 0;
+equations
+count.clk=clk;
+divided_clk.clk=clk;
+when (count==10) then {count:=0;divided_clk:= 1;}
+else {count:=count+1;divided_clk:=0;} 
+
+
+END
+

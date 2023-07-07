@@ -1,0 +1,43 @@
+Section Type   Array Num   Name                     Real Name          Base     Number     Increment
+// ------------------------------------------------------------------------------------------
+      Port          1      Data1[3:0]                    Data1                  3          4            -1
+      Port          2      Data2[3:0]                    Data2                  3          4            -1
+End
+Section Member   Rename                   Array-Notation          Array Number     Index
+// -------------------------------------------------------------------------------------
+        Port      Data1_3_                    Data1[3]                       1            0            
+        Port      Data1_2_                    Data1[2]                       1            1            
+        Port      Data1_1_                    Data1[1]                       1            2            
+        Port      Data1_0_                    Data1[0]                       1            3            
+        Port      Data2_3_                    Data2[3]                       2            0            
+        Port      Data2_2_                    Data2[2]                       2            1            
+        Port      Data2_1_                    Data2[1]                       2            2            
+        Port      Data2_0_                    Data2[0]                       2            3            
+End
+Section Cross Reference File
+Design 'SERIAL' created Thu May 25 00:20:12 2023
+   Type              New Name                               Original Name
+// ----------------------------------------------------------------------
+   Net              data2_0__n                                  Data2[0]
+   Net              data2_1__n                                  Data2[1]
+   Net              data2_2__n                                  Data2[2]
+   Net              data1_0__n                                  Data1[0]
+   Net              data1_1__n                                  Data1[1]
+   Net              data1_2__n                                  Data1[2]
+End
+Section Type      Name
+// ----------------------------------------------------------------------
+        Input     clk
+        Input     reset
+        Input     dout
+        Input     Rx
+        Output     Tx
+        Output     Data1_3_
+        Output     Data2_3_
+        Output     Data1_2_
+        Output     Data1_1_
+        Output     Data1_0_
+        Output     Data2_2_
+        Output     Data2_1_
+        Output     Data2_0_
+End

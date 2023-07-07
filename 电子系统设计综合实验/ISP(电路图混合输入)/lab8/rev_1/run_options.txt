@@ -1,0 +1,58 @@
+#--  Synopsys, Inc.
+#--  Version I-2014.03LC 
+#--  Project file D:\isp\new_lab8\rev_1\run_options.txt
+
+#project files
+add_file -verilog "../new_lab11/i2c.v"
+add_file -verilog "../labX/musicpalyer.v"
+
+
+
+#implementation: "rev_1"
+impl -add rev_1 -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std sysv
+set_option -project_relative_includes 1
+
+#device options
+set_option -technology ispMACH4000V
+set_option -part LC4064V
+set_option -package T100C
+set_option -speed_grade -2.5
+set_option -part_companion ""
+
+#compilation/mapping options
+
+# mapper_options
+set_option -frequency 0
+set_option -write_verilog 0
+set_option -write_vhdl 0
+set_option -srs_instrumentation 1
+
+# Lattice ispMACH4000
+set_option -maxfanin 20
+set_option -RWCheckOnRam 1
+set_option -maxterms 16
+set_option -areadelay 0
+set_option -disable_io_insertion 0
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 1
+set_option -multi_file_compilation_unit 1
+
+# Compiler Options
+set_option -auto_infer_blackbox 0
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "./rev_1/calculator.edf"
+impl -active "rev_1"

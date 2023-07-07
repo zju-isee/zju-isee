@@ -1,0 +1,39 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Mon May 29 00:01:23 2023
+#$ TITLE test_lab11.bls 
+#$ MODULE test_lab11
+#$ PINS 22 key_in0 key_in1 key_in2 key_in3 key_out4 key_out3 key_out2 key_out1 reset a b \
+#  PointTime c clk d e f g LEDVCC1 LEDVCC2 LEDVCC3 LEDVCC4
+#$ NODES 20 key_out_0_ key_out_1_ key_out_2_ key_out_3_ key_in_0_ key_in_1_ \
+#  key_in_2_ key_in_3_ led_int_Data0_0_ led_int_Data0_1_ led_int_Data0_2_ \
+#  led_int_Data0_3_ led_int_Data1_0_ led_int_Data1_1_ led_int_Data1_2_ \
+#  led_int_Data1_3_ led_int_Data2_0_ led_int_Data2_1_ led_int_Data2_2_ \
+#  led_int_Data2_3_
+#$ INTERFACE calculate  23 clk'i'  key_in_0_'i'  key_in_1_'i'  key_in_2_'i'  key_in_3_'i'  reset'i'  PointTime'o'  \
+#  key_out_0_'o'  key_out_1_'o'  key_out_2_'o'  key_out_3_'o'  led_int_Data0_0_'o'  led_int_Data0_1_'o'  \
+#  led_int_Data0_2_'o'  led_int_Data0_3_'o'  led_int_Data1_0_'o'  led_int_Data1_1_'o'  \
+#  led_int_Data1_2_'o'  led_int_Data1_3_'o'  led_int_Data2_0_'o'  led_int_Data2_1_'o'  \
+#  led_int_Data2_2_'o'  led_int_Data2_3_'o' 
+#$ INTERFACE decoder_4  8 in_0_'i'  in_1_'i'  in_2_'i'  in_3_'i'  Q0'o'  Q1'o'  Q2'o'  Q3'o' 
+#$ INTERFACE display  29 clk'i'  num1_0_'i'  num1_1_'i'  num1_2_'i'  num1_3_'i'  num2_0_'i'  num2_1_'i'  num2_2_'i'  \
+#  num2_3_'i'  num3_0_'i'  num3_1_'i'  num3_2_'i'  num3_3_'i'  num4_0_'i'  num4_1_'i'  num4_2_'i'  num4_3_'i'  reset'i'  LED_A'o'  LED_B'o'  \
+#  LED_C'o'  LED_D'o'  LED_E'o'  LED_F'o'  LED_G'o'  LED_VCC1'o'  LED_VCC2'o'  LED_VCC3'o'  LED_VCC4'o' 
+#$ INTERFACE encoder  8 D0'i'  D1'i'  D2'i'  D3'i'  key_in_0_'o'  key_in_1_'o'  key_in_2_'o'  key_in_3_'o' 
+#$ INSTANCE I3 calculate 23 clk key_in_0_ key_in_1_ key_in_2_ key_in_3_ reset PointTime \
+#  key_out_0_ key_out_1_ key_out_2_ key_out_3_ led_int_Data0_0_ led_int_Data0_1_ \
+#  led_int_Data0_2_ led_int_Data0_3_ led_int_Data1_0_ led_int_Data1_1_ \
+#  led_int_Data1_2_ led_int_Data1_3_ led_int_Data2_0_ led_int_Data2_1_ \
+#  led_int_Data2_2_ led_int_Data2_3_
+#$ INSTANCE I71 decoder_4 8 key_out_0_ key_out_1_ key_out_2_ key_out_3_ key_out1 \
+#  key_out2 key_out3 key_out4
+#$ INSTANCE I59 display 29 clk led_int_Data0_0_ led_int_Data0_1_ led_int_Data0_2_ \
+#  led_int_Data0_3_ led_int_Data1_0_ led_int_Data1_1_ led_int_Data1_2_ \
+#  led_int_Data1_3_ led_int_Data2_0_ led_int_Data2_1_ led_int_Data2_2_ \
+#  led_int_Data2_3_ led_int_Data2_0_ led_int_Data2_1_ led_int_Data2_2_ \
+#  led_int_Data2_3_ reset a b c d e f g LEDVCC1 LEDVCC2 LEDVCC3 LEDVCC4
+#$ INSTANCE I2 encoder 8 key_in0 key_in1 key_in2 key_in3 key_in_0_ key_in_1_ key_in_2_ \
+#  key_in_3_
+.model test_lab11
+.inputs
+.outputs
+.end

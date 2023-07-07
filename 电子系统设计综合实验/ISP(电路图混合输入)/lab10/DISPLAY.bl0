@@ -1,0 +1,958 @@
+#$ DATE Fri May 26 12:02:23 2023
+#$ TOOL EDIF2BLIF version IspLever 1.0 
+#$ MODULE display
+#$ PINS 29 num1_3_ num2_3_ num3_3_ num4_3_ clk reset LED_A LED_B LED_C LED_D LED_E LED_F LED_G LED_VCC1 LED_VCC2 LED_VCC3 LED_VCC4 num1_2_ num1_1_ num1_0_ num2_2_ num2_1_ num2_0_ num3_2_ num3_1_ num3_0_ num4_2_ num4_1_ num4_0_
+#$ NODES 354 N_18_0 N_189_i N_188_i N_190_i N_191_i gnd_n_n N_325_i G_267 N_181_i G_271 \
+#  N_326_i G_279 LED_F_6_0 G_287 N_186_i G_306 N_185_i count_4_ N_187_i count_7_ \
+#  LED_D_6_0 count_11_ N_182_i scancnt_1_ N_184_i scancnt_0_ N_183_i count_0_ LED_C_6_0 count_1_ \
+#  N_172_i count_2_ N_298_i count_3_ N_173_i count_5_ N_328_i count_6_ N_175_i count_8_ \
+#  N_177_i count_9_ N_176_i count_10_ N_179_i count_12_ N_178_i LED_G_6_0 N_296_i N_166_i \
+#  N_168_i N_170_i N_171_i LED_B_6_0 N_248_i N_249_i N_90 N_158_i N_92 N_156_i \
+#  N_93 N_257_i N_162 N_294_i N_164 N_327_i N_166 N_160_i N_168 N_164_i \
+#  N_170 N_162_i N_173 N_221_0 N_298 N_211_i N_175 N_51_i N_178 N_202_i \
+#  N_182 N_183 count_i_7__n N_184 count_i_11__n N_185 N_64_i N_187 count_i_4__n N_290_i \
+#  N_208 N_198_i N_209 N_212 N_199_i N_213 N_214 N_200_i N_216 N_246 \
+#  N_247 N_203_i N_248 N_251 N_204_i N_253 N_254 N_207_i N_269 N_206_i \
+#  N_279 LED_D_6_0_0_0_x2 N_291_i LED_D_6_0_0_x2_0 N_292_i G_269_0_x2 N_293_i N_198 N_89_i count_3_i_x2_10_ \
+#  N_91_i N_199 N_106_i N_200_2 N_247_i N_161 N_279_i N_200 N_90_0 N_204 \
+#  N_106_i_1 N_203 N_64_i_1 N_204_2 N_64_i_2 count_3_i_x2_6_ N_221_0_1 N_157 N_221_0_2 count_3_i_x2_5_ \
+#  N_221_0_3 N_155 N_221_0_4 N_165 N_221_0_5 count_3_i_x2_9_ N_221_0_6 N_163 N_221_0_7 count_3_i_x2_8_ \
+#  N_221_0_8 count_3_i_x2_12_ N_221_0_9 N_169 N_221_0_10 N_106 LED_B_6_0_1 N_207 LED_B_6_0_2 N_206 \
+#  LED_B_6_0_3 N_167 LED_B_6_0_4 N_159 LED_B_6_0_5 N_202 LED_G_6_0_1 count12_1 LED_G_6_0_2 count_3_i_x2_4_ \
+#  LED_G_6_0_3 N_153 LED_G_6_0_4 N_151 LED_G_6_0_5 N_211 LED_G_6_0_6 N_181 LED_G_6_0_7 N_210_1 \
+#  LED_G_6_0_8 N_210 LED_C_6_0_1 N_160 LED_C_6_0_2 N_327 LED_C_6_0_3 N_257 LED_C_6_0_4 N_294 \
+#  LED_D_6_0_1 N_156 LED_D_6_0_2 N_158 LED_D_6_0_3 N_249 LED_D_6_0_4 N_171 LED_D_6_0_5 N_296 \
+#  LED_F_6_0_1 N_179 LED_F_6_0_2 N_176 LED_F_6_0_3 N_177 LED_F_6_0_4 N_328 LED_F_6_0_5 N_172 \
+#  LED_F_6_0_6 N_180 LED_F_6_0_7 N_186 N_18_0_1 N_326 N_18_0_2 N_325 N_18_0_3 N_192 \
+#  N_18_0_4 N_190 N_18_0_5 N_191 N_178_1 N_188 N_178_2 N_189 N_198_1 N_195 \
+#  N_199_1 N_193 N_202_1 N_194 N_181_1 N_141 N_210_1_0 N_117 N_210_2 N_250 \
+#  N_90_0_1 N_103 N_251_1 N_95 N_209_1 N_84 N_208_1 N_270 N_187_1 N_220 \
+#  N_185_1 N_227 N_184_1 N_218 N_183_1 N_219 N_182_1 N_47 N_175_1 N_272 \
+#  N_298_1 N_275 N_173_1 N_266 N_170_1 N_262 N_168_1 N_215 N_166_1 N_260 \
+#  N_164_1 num4_i_1__n N_162_1 scancnt_i_0__n led_g_6_0_0_0_m2_un3_n num2_i_0__n led_g_6_0_0_0_m2_un1_n scancnt_i_1__n led_g_6_0_0_0_m2_un0_n num4_i_3__n \
+#  num1_i_1__n num3_i_1__n num2_i_3__n num4_i_2__n num4_i_0__n num1_i_2__n num1_i_3__n num3_i_2__n num3_i_3__n num2_i_2__n \
+#  reset_i N_161_i N_61_i_i N_85_i_i num1_i_0__n num3_i_0__n clk_c reset_c num1_c_0__n num1_c_1__n \
+#  num1_c_2__n num1_c_3__n num2_c_0__n num2_c_1__n num2_c_2__n num2_c_3__n num3_c_0__n num3_c_1__n num3_c_2__n num3_c_3__n \
+#  num4_c_0__n num4_c_1__n num4_c_2__n num4_c_3__n LED_ADFFreg LED_BDFFreg LED_CDFFreg LED_DDFFreg LED_EDFFreg LED_FDFFreg \
+#  LED_GDFFreg LED_VCC2DFFreg LED_VCC3DFFreg LED_VCC4DFFreg N_209_i N_208_i N_47_0 N_180_i N_210_i N_49_0 \
+#  N_192_i N_57_0 N_219_i N_218_i N_63_0 N_227_i N_220_i N_69_0 N_270_i N_269_i \
+#  N_84_i N_92_i num2_c_i_1__n N_93_i N_95_i N_103_i N_250_i N_107_0 N_251_i N_108_0 \
+#  N_117_i N_194_i N_193_i N_195_i 
+.model display
+.inputs num1_3_.BLIF num2_3_.BLIF num3_3_.BLIF num4_3_.BLIF clk.BLIF reset.BLIF num1_2_.BLIF num1_1_.BLIF num1_0_.BLIF \
+  num2_2_.BLIF num2_1_.BLIF num2_0_.BLIF num3_2_.BLIF num3_1_.BLIF num3_0_.BLIF num4_2_.BLIF num4_1_.BLIF num4_0_.BLIF \
+  N_18_0.BLIF N_189_i.BLIF N_188_i.BLIF N_190_i.BLIF N_191_i.BLIF gnd_n_n.BLIF N_325_i.BLIF G_267.BLIF N_181_i.BLIF \
+  G_271.BLIF N_326_i.BLIF G_279.BLIF LED_F_6_0.BLIF G_287.BLIF N_186_i.BLIF G_306.BLIF N_185_i.BLIF count_4_.BLIF \
+  N_187_i.BLIF count_7_.BLIF LED_D_6_0.BLIF count_11_.BLIF N_182_i.BLIF scancnt_1_.BLIF N_184_i.BLIF scancnt_0_.BLIF N_183_i.BLIF \
+  count_0_.BLIF LED_C_6_0.BLIF count_1_.BLIF N_172_i.BLIF count_2_.BLIF N_298_i.BLIF count_3_.BLIF N_173_i.BLIF count_5_.BLIF \
+  N_328_i.BLIF count_6_.BLIF N_175_i.BLIF count_8_.BLIF N_177_i.BLIF count_9_.BLIF N_176_i.BLIF count_10_.BLIF N_179_i.BLIF \
+  count_12_.BLIF N_178_i.BLIF LED_G_6_0.BLIF N_296_i.BLIF N_166_i.BLIF N_168_i.BLIF N_170_i.BLIF N_171_i.BLIF LED_B_6_0.BLIF \
+  N_248_i.BLIF N_249_i.BLIF N_90.BLIF N_158_i.BLIF N_92.BLIF N_156_i.BLIF N_93.BLIF N_257_i.BLIF N_162.BLIF \
+  N_294_i.BLIF N_164.BLIF N_327_i.BLIF N_166.BLIF N_160_i.BLIF N_168.BLIF N_164_i.BLIF N_170.BLIF N_162_i.BLIF \
+  N_173.BLIF N_221_0.BLIF N_298.BLIF N_211_i.BLIF N_175.BLIF N_51_i.BLIF N_178.BLIF N_202_i.BLIF N_182.BLIF \
+  N_183.BLIF count_i_7__n.BLIF N_184.BLIF count_i_11__n.BLIF N_185.BLIF N_64_i.BLIF N_187.BLIF count_i_4__n.BLIF N_290_i.BLIF \
+  N_208.BLIF N_198_i.BLIF N_209.BLIF N_212.BLIF N_199_i.BLIF N_213.BLIF N_214.BLIF N_200_i.BLIF N_216.BLIF \
+  N_246.BLIF N_247.BLIF N_203_i.BLIF N_248.BLIF N_251.BLIF N_204_i.BLIF N_253.BLIF N_254.BLIF N_207_i.BLIF \
+  N_269.BLIF N_206_i.BLIF N_279.BLIF LED_D_6_0_0_0_x2.BLIF N_291_i.BLIF LED_D_6_0_0_x2_0.BLIF N_292_i.BLIF G_269_0_x2.BLIF N_293_i.BLIF \
+  N_198.BLIF N_89_i.BLIF count_3_i_x2_10_.BLIF N_91_i.BLIF N_199.BLIF N_106_i.BLIF N_200_2.BLIF N_247_i.BLIF N_161.BLIF \
+  N_279_i.BLIF N_200.BLIF N_90_0.BLIF N_204.BLIF N_106_i_1.BLIF N_203.BLIF N_64_i_1.BLIF N_204_2.BLIF N_64_i_2.BLIF \
+  count_3_i_x2_6_.BLIF N_221_0_1.BLIF N_157.BLIF N_221_0_2.BLIF count_3_i_x2_5_.BLIF N_221_0_3.BLIF N_155.BLIF N_221_0_4.BLIF N_165.BLIF \
+  N_221_0_5.BLIF count_3_i_x2_9_.BLIF N_221_0_6.BLIF N_163.BLIF N_221_0_7.BLIF count_3_i_x2_8_.BLIF N_221_0_8.BLIF count_3_i_x2_12_.BLIF N_221_0_9.BLIF \
+  N_169.BLIF N_221_0_10.BLIF N_106.BLIF LED_B_6_0_1.BLIF N_207.BLIF LED_B_6_0_2.BLIF N_206.BLIF LED_B_6_0_3.BLIF N_167.BLIF \
+  LED_B_6_0_4.BLIF N_159.BLIF LED_B_6_0_5.BLIF N_202.BLIF LED_G_6_0_1.BLIF count12_1.BLIF LED_G_6_0_2.BLIF count_3_i_x2_4_.BLIF LED_G_6_0_3.BLIF \
+  N_153.BLIF LED_G_6_0_4.BLIF N_151.BLIF LED_G_6_0_5.BLIF N_211.BLIF LED_G_6_0_6.BLIF N_181.BLIF LED_G_6_0_7.BLIF N_210_1.BLIF \
+  LED_G_6_0_8.BLIF N_210.BLIF LED_C_6_0_1.BLIF N_160.BLIF LED_C_6_0_2.BLIF N_327.BLIF LED_C_6_0_3.BLIF N_257.BLIF LED_C_6_0_4.BLIF \
+  N_294.BLIF LED_D_6_0_1.BLIF N_156.BLIF LED_D_6_0_2.BLIF N_158.BLIF LED_D_6_0_3.BLIF N_249.BLIF LED_D_6_0_4.BLIF N_171.BLIF \
+  LED_D_6_0_5.BLIF N_296.BLIF LED_F_6_0_1.BLIF N_179.BLIF LED_F_6_0_2.BLIF N_176.BLIF LED_F_6_0_3.BLIF N_177.BLIF LED_F_6_0_4.BLIF \
+  N_328.BLIF LED_F_6_0_5.BLIF N_172.BLIF LED_F_6_0_6.BLIF N_180.BLIF LED_F_6_0_7.BLIF N_186.BLIF N_18_0_1.BLIF N_326.BLIF \
+  N_18_0_2.BLIF N_325.BLIF N_18_0_3.BLIF N_192.BLIF N_18_0_4.BLIF N_190.BLIF N_18_0_5.BLIF N_191.BLIF N_178_1.BLIF \
+  N_188.BLIF N_178_2.BLIF N_189.BLIF N_198_1.BLIF N_195.BLIF N_199_1.BLIF N_193.BLIF N_202_1.BLIF N_194.BLIF \
+  N_181_1.BLIF N_141.BLIF N_210_1_0.BLIF N_117.BLIF N_210_2.BLIF N_250.BLIF N_90_0_1.BLIF N_103.BLIF N_251_1.BLIF \
+  N_95.BLIF N_209_1.BLIF N_84.BLIF N_208_1.BLIF N_270.BLIF N_187_1.BLIF N_220.BLIF N_185_1.BLIF N_227.BLIF \
+  N_184_1.BLIF N_218.BLIF N_183_1.BLIF N_219.BLIF N_182_1.BLIF N_47.BLIF N_175_1.BLIF N_272.BLIF N_298_1.BLIF \
+  N_275.BLIF N_173_1.BLIF N_266.BLIF N_170_1.BLIF N_262.BLIF N_168_1.BLIF N_215.BLIF N_166_1.BLIF N_260.BLIF \
+  N_164_1.BLIF num4_i_1__n.BLIF N_162_1.BLIF scancnt_i_0__n.BLIF led_g_6_0_0_0_m2_un3_n.BLIF num2_i_0__n.BLIF led_g_6_0_0_0_m2_un1_n.BLIF scancnt_i_1__n.BLIF led_g_6_0_0_0_m2_un0_n.BLIF \
+  num4_i_3__n.BLIF num1_i_1__n.BLIF num3_i_1__n.BLIF num2_i_3__n.BLIF num4_i_2__n.BLIF num4_i_0__n.BLIF num1_i_2__n.BLIF num1_i_3__n.BLIF num3_i_2__n.BLIF \
+  num3_i_3__n.BLIF num2_i_2__n.BLIF reset_i.BLIF N_161_i.BLIF N_61_i_i.BLIF N_85_i_i.BLIF num1_i_0__n.BLIF num3_i_0__n.BLIF clk_c.BLIF \
+  reset_c.BLIF num1_c_0__n.BLIF num1_c_1__n.BLIF num1_c_2__n.BLIF num1_c_3__n.BLIF num2_c_0__n.BLIF num2_c_1__n.BLIF num2_c_2__n.BLIF num2_c_3__n.BLIF \
+  num3_c_0__n.BLIF num3_c_1__n.BLIF num3_c_2__n.BLIF num3_c_3__n.BLIF num4_c_0__n.BLIF num4_c_1__n.BLIF num4_c_2__n.BLIF num4_c_3__n.BLIF LED_ADFFreg.BLIF \
+  LED_BDFFreg.BLIF LED_CDFFreg.BLIF LED_DDFFreg.BLIF LED_EDFFreg.BLIF LED_FDFFreg.BLIF LED_GDFFreg.BLIF LED_VCC2DFFreg.BLIF LED_VCC3DFFreg.BLIF LED_VCC4DFFreg.BLIF \
+  N_209_i.BLIF N_208_i.BLIF N_47_0.BLIF N_180_i.BLIF N_210_i.BLIF N_49_0.BLIF N_192_i.BLIF N_57_0.BLIF N_219_i.BLIF \
+  N_218_i.BLIF N_63_0.BLIF N_227_i.BLIF N_220_i.BLIF N_69_0.BLIF N_270_i.BLIF N_269_i.BLIF N_84_i.BLIF N_92_i.BLIF \
+  num2_c_i_1__n.BLIF N_93_i.BLIF N_95_i.BLIF N_103_i.BLIF N_250_i.BLIF N_107_0.BLIF N_251_i.BLIF N_108_0.BLIF N_117_i.BLIF \
+  N_194_i.BLIF N_193_i.BLIF N_195_i.BLIF  
+.outputs LED_A LED_B LED_C LED_D LED_E LED_F LED_G LED_VCC1 LED_VCC2 LED_VCC3 LED_VCC4 \
+  count_1_.D count_1_.C count_1_.AR count_2_.D count_2_.C count_2_.AR count_3_.D count_3_.C count_3_.AR count_4_.D count_4_.C \
+  count_4_.AR count_5_.D count_5_.C count_5_.AR count_6_.D count_6_.C count_6_.AR count_7_.D count_7_.C count_7_.AR count_8_.D \
+  count_8_.C count_8_.AR count_9_.D count_9_.C count_9_.AR count_10_.D count_10_.C count_10_.AR count_11_.D count_11_.C count_11_.AR \
+  count_12_.D count_12_.C count_12_.AR LED_DDFFreg.D LED_DDFFreg.C LED_EDFFreg.D LED_EDFFreg.C LED_FDFFreg.D LED_FDFFreg.C LED_GDFFreg.D LED_GDFFreg.C \
+  scancnt_0_.D scancnt_0_.C scancnt_1_.D scancnt_1_.C count_0_.D count_0_.C count_0_.AR LED_ADFFreg.D LED_ADFFreg.C LED_BDFFreg.D LED_BDFFreg.C \
+  LED_CDFFreg.D LED_CDFFreg.C LED_VCC2DFFreg.D LED_VCC2DFFreg.C LED_VCC3DFFreg.D LED_VCC3DFFreg.C LED_VCC4DFFreg.D LED_VCC4DFFreg.C LED_D_6_0_0_x2_0.X1 LED_D_6_0_0_x2_0.X2 LED_D_6_0_0_0_x2.X1 \
+  LED_D_6_0_0_0_x2.X2 G_269_0_x2.X1 G_269_0_x2.X2 count_3_i_x2_4_.X1 count_3_i_x2_4_.X2 G_271.X1 G_271.X2 G_267.X1 G_267.X2 G_306.X1 G_306.X2 \
+  G_287.X1 G_287.X2 G_279.X1 G_279.X2 count_3_i_x2_6_.X1 count_3_i_x2_6_.X2 count_3_i_x2_5_.X1 count_3_i_x2_5_.X2 count_3_i_x2_10_.X1 count_3_i_x2_10_.X2 count_3_i_x2_9_.X1 \
+  count_3_i_x2_9_.X2 count_3_i_x2_8_.X1 count_3_i_x2_8_.X2 count_3_i_x2_12_.X1 count_3_i_x2_12_.X2 N_18_0 N_189_i N_188_i N_190_i N_191_i gnd_n_n \
+  N_325_i N_181_i N_326_i LED_F_6_0 N_186_i N_185_i N_187_i LED_D_6_0 N_182_i N_184_i N_183_i \
+  LED_C_6_0 N_172_i N_298_i N_173_i N_328_i N_175_i N_177_i N_176_i N_179_i N_178_i LED_G_6_0 \
+  N_296_i N_166_i N_168_i N_170_i N_171_i LED_B_6_0 N_248_i N_249_i N_90 N_158_i N_92 \
+  N_156_i N_93 N_257_i N_162 N_294_i N_164 N_327_i N_166 N_160_i N_168 N_164_i \
+  N_170 N_162_i N_173 N_221_0 N_298 N_211_i N_175 N_51_i N_178 N_202_i N_182 \
+  N_183 count_i_7__n N_184 count_i_11__n N_185 N_64_i N_187 count_i_4__n N_290_i N_208 N_198_i \
+  N_209 N_212 N_199_i N_213 N_214 N_200_i N_216 N_246 N_247 N_203_i N_248 \
+  N_251 N_204_i N_253 N_254 N_207_i N_269 N_206_i N_279 N_291_i N_292_i N_293_i \
+  N_198 N_89_i N_91_i N_199 N_106_i N_200_2 N_247_i N_161 N_279_i N_200 N_90_0 \
+  N_204 N_106_i_1 N_203 N_64_i_1 N_204_2 N_64_i_2 N_221_0_1 N_157 N_221_0_2 N_221_0_3 N_155 \
+  N_221_0_4 N_165 N_221_0_5 N_221_0_6 N_163 N_221_0_7 N_221_0_8 N_221_0_9 N_169 N_221_0_10 N_106 \
+  LED_B_6_0_1 N_207 LED_B_6_0_2 N_206 LED_B_6_0_3 N_167 LED_B_6_0_4 N_159 LED_B_6_0_5 N_202 LED_G_6_0_1 \
+  count12_1 LED_G_6_0_2 LED_G_6_0_3 N_153 LED_G_6_0_4 N_151 LED_G_6_0_5 N_211 LED_G_6_0_6 N_181 LED_G_6_0_7 \
+  N_210_1 LED_G_6_0_8 N_210 LED_C_6_0_1 N_160 LED_C_6_0_2 N_327 LED_C_6_0_3 N_257 LED_C_6_0_4 N_294 \
+  LED_D_6_0_1 N_156 LED_D_6_0_2 N_158 LED_D_6_0_3 N_249 LED_D_6_0_4 N_171 LED_D_6_0_5 N_296 LED_F_6_0_1 \
+  N_179 LED_F_6_0_2 N_176 LED_F_6_0_3 N_177 LED_F_6_0_4 N_328 LED_F_6_0_5 N_172 LED_F_6_0_6 N_180 \
+  LED_F_6_0_7 N_186 N_18_0_1 N_326 N_18_0_2 N_325 N_18_0_3 N_192 N_18_0_4 N_190 N_18_0_5 \
+  N_191 N_178_1 N_188 N_178_2 N_189 N_198_1 N_195 N_199_1 N_193 N_202_1 N_194 \
+  N_181_1 N_141 N_210_1_0 N_117 N_210_2 N_250 N_90_0_1 N_103 N_251_1 N_95 N_209_1 \
+  N_84 N_208_1 N_270 N_187_1 N_220 N_185_1 N_227 N_184_1 N_218 N_183_1 N_219 \
+  N_182_1 N_47 N_175_1 N_272 N_298_1 N_275 N_173_1 N_266 N_170_1 N_262 N_168_1 \
+  N_215 N_166_1 N_260 N_164_1 num4_i_1__n N_162_1 scancnt_i_0__n led_g_6_0_0_0_m2_un3_n num2_i_0__n led_g_6_0_0_0_m2_un1_n scancnt_i_1__n \
+  led_g_6_0_0_0_m2_un0_n num4_i_3__n num1_i_1__n num3_i_1__n num2_i_3__n num4_i_2__n num4_i_0__n num1_i_2__n num1_i_3__n num3_i_2__n num3_i_3__n \
+  num2_i_2__n reset_i N_161_i N_61_i_i N_85_i_i num1_i_0__n num3_i_0__n clk_c reset_c num1_c_0__n num1_c_1__n \
+  num1_c_2__n num1_c_3__n num2_c_0__n num2_c_1__n num2_c_2__n num2_c_3__n num3_c_0__n num3_c_1__n num3_c_2__n num3_c_3__n num4_c_0__n \
+  num4_c_1__n num4_c_2__n num4_c_3__n N_209_i N_208_i N_47_0 N_180_i N_210_i N_49_0 N_192_i N_57_0 \
+  N_219_i N_218_i N_63_0 N_227_i N_220_i N_69_0 N_270_i N_269_i N_84_i N_92_i num2_c_i_1__n \
+  N_93_i N_95_i N_103_i N_250_i N_107_0 N_251_i N_108_0 N_117_i N_194_i N_193_i N_195_i
+.names  N_269.BLIF N_269_i
+0 1
+.names  N_84_i.BLIF N_84
+0 1
+.names  N_92_i.BLIF N_92
+0 1
+.names  num2_c_1__n.BLIF num2_c_i_1__n
+0 1
+.names  clk_c.BLIF count_0_.C
+1 1
+.names  N_93_i.BLIF N_93
+0 1
+.names  N_95_i.BLIF N_95
+0 1
+.names  reset_i.BLIF count_0_.AR
+1 1
+.names  N_209.BLIF N_209_i
+0 1
+.names  N_208.BLIF N_208_i
+0 1
+.names  N_117.BLIF N_253.BLIF N_188
+11 1
+.names  N_84.BLIF N_260.BLIF N_186
+11 1
+.names  clk_c.BLIF LED_ADFFreg.C
+1 1
+.names  N_253.BLIF num3_c_3__n.BLIF N_180
+11 1
+.names  N_262.BLIF N_272.BLIF N_179
+11 1
+.names  N_93_i.BLIF N_246.BLIF N_177
+11 1
+.names  N_266.BLIF N_275.BLIF N_176
+11 1
+.names  clk_c.BLIF LED_BDFFreg.C
+1 1
+.names  N_141.BLIF N_253.BLIF N_172
+11 1
+.names  N_103_i.BLIF N_254.BLIF N_171
+11 1
+.names  N_84_i.BLIF N_260.BLIF N_296
+11 1
+.names  num4_c_1__n.BLIF num4_i_1__n
+0 1
+.names  clk_c.BLIF LED_CDFFreg.C
+1 1
+.names  N_260.BLIF num4_i_1__n.BLIF N_160
+11 1
+.names  N_262.BLIF num1_c_2__n.BLIF N_294
+11 1
+.names  N_266.BLIF num3_c_2__n.BLIF N_158
+11 1
+.names  N_216.BLIF num4_c_0__n.BLIF N_156
+11 1
+.names  clk_c.BLIF LED_VCC2DFFreg.C
+1 1
+.names  scancnt_1_.BLIF scancnt_i_0__n.BLIF N_214
+11 1
+.names  scancnt_1_.BLIF scancnt_i_1__n
+0 1
+.names  scancnt_0_.BLIF scancnt_i_1__n.BLIF N_212
+11 1
+.names  N_214.BLIF reset_c.BLIF LED_VCC2DFFreg.D
+11 1
+.names  clk_c.BLIF LED_VCC3DFFreg.C
+1 1
+.names  N_212.BLIF reset_c.BLIF LED_VCC3DFFreg.D
+11 1
+.names  N_215.BLIF reset_c.BLIF LED_VCC4DFFreg.D
+11 1
+.names  num2_c_0__n.BLIF num2_i_0__n
+0 1
+.names  N_327.BLIF num2_i_0__n.BLIF N_195
+11 1
+.names  clk_c.BLIF LED_VCC4DFFreg.C
+1 1
+.names  N_260.BLIF N_270.BLIF N_194
+11 1
+.names  N_117_i.BLIF N_266.BLIF N_193
+11 1
+.names  scancnt_0_.BLIF scancnt_i_0__n
+0 1
+.names  num3_c_0__n.BLIF LED_D_6_0_0_x2_0.X1
+1 1
+.names  N_47.BLIF scancnt_i_0__n.BLIF N_192
+11 1
+.names  N_90.BLIF N_216.BLIF N_191
+11 1
+.names  num3_c_1__n.BLIF LED_D_6_0_0_x2_0.X2
+1 1
+.names  N_95.BLIF N_257.BLIF N_190
+11 1
+.names  N_103.BLIF N_254.BLIF N_189
+11 1
+.names  N_214.BLIF num3_c_0__n.BLIF N_249
+11 1
+.names  num2_c_0__n.BLIF LED_D_6_0_0_0_x2.X1
+1 1
+.names  N_215.BLIF num1_c_0__n.BLIF N_248
+11 1
+.names  num4_c_2__n.BLIF num4_i_2__n
+0 1
+.names  num2_c_1__n.BLIF LED_D_6_0_0_0_x2.X2
+1 1
+.names  num4_c_0__n.BLIF num4_i_2__n.BLIF N_247
+11 1
+.names  num2_c_3__n.BLIF num2_i_3__n
+0 1
+.names  N_212.BLIF num2_i_3__n.BLIF N_246
+11 1
+.names  count12_1.BLIF G_269_0_x2.X1
+1 1
+.names  N_93_i.BLIF N_257.BLIF N_227
+11 1
+.names  N_103_i.BLIF N_262.BLIF N_220
+11 1
+.names  count_2_.BLIF G_269_0_x2.X2
+1 1
+.names  num3_c_1__n.BLIF num3_i_1__n
+0 1
+.names  N_325.BLIF num3_i_1__n.BLIF N_219
+11 1
+.names  clk.BLIF clk_c
+1 1
+.names  num1_c_1__n.BLIF num1_i_1__n
+0 1
+.names  N_153.BLIF count_3_i_x2_4_.X1
+1 1
+.names  reset.BLIF reset_c
+1 1
+.names  N_326.BLIF num1_i_1__n.BLIF N_218
+11 1
+.names  num1_0_.BLIF num1_c_0__n
+1 1
+.names  num4_c_3__n.BLIF num4_i_3__n
+0 1
+.names  count_4_.BLIF count_3_i_x2_4_.X2
+1 1
+.names  num1_1_.BLIF num1_c_1__n
+1 1
+.names  N_213.BLIF num4_i_3__n.BLIF N_216
+11 1
+.names  num1_2_.BLIF num1_c_2__n
+1 1
+.names  scancnt_i_0__n.BLIF scancnt_i_1__n.BLIF N_215
+11 1
+.names  num1_3_.BLIF num1_c_3__n
+1 1
+.names  num3_c_3__n.BLIF num3_i_3__n
+0 1
+.names  N_151.BLIF G_271.X1
+1 1
+.names  num2_0_.BLIF num2_c_0__n
+1 1
+.names  num3_i_2__n.BLIF num3_i_3__n.BLIF N_275
+11 1
+.names  num2_1_.BLIF num2_c_1__n
+1 1
+.names  num1_c_2__n.BLIF num1_i_2__n
+0 1
+.names  count_3_.BLIF G_271.X2
+1 1
+.names  num2_2_.BLIF num2_c_2__n
+1 1
+.names  num1_c_3__n.BLIF num1_i_3__n
+0 1
+.names  num2_3_.BLIF num2_c_3__n
+1 1
+.names  num1_i_2__n.BLIF num1_i_3__n.BLIF N_272
+11 1
+.names  num3_0_.BLIF num3_c_0__n
+1 1
+.names  num4_c_0__n.BLIF num4_i_0__n
+0 1
+.names  count_0_.BLIF G_267.X1
+1 1
+.names  num3_1_.BLIF num3_c_1__n
+1 1
+.names  num4_i_0__n.BLIF num4_i_1__n.BLIF N_270
+11 1
+.names  num3_2_.BLIF num3_c_2__n
+1 1
+.names  num4_c_0__n.BLIF num4_c_1__n.BLIF N_269
+11 1
+.names  count_1_.BLIF G_267.X2
+1 1
+.names  num3_3_.BLIF num3_c_3__n
+1 1
+.names  N_214.BLIF num3_i_1__n.BLIF N_266
+11 1
+.names  num4_0_.BLIF num4_c_0__n
+1 1
+.names  N_215.BLIF num1_i_1__n.BLIF N_262
+11 1
+.names  num4_1_.BLIF num4_c_1__n
+1 1
+.names  N_216.BLIF num4_c_2__n.BLIF N_260
+11 1
+.names  N_207.BLIF G_306.X1
+1 1
+.names  num4_2_.BLIF num4_c_2__n
+1 1
+.names  N_246.BLIF num2_c_0__n.BLIF N_257
+11 1
+.names  num4_3_.BLIF num4_c_3__n
+1 1
+.names  N_215.BLIF num1_c_1__n.BLIF N_254
+11 1
+.names  scancnt_1_.BLIF G_306.X2
+1 1
+.names  LED_ADFFreg.BLIF LED_A
+1 1
+.names  N_214.BLIF num3_c_1__n.BLIF N_253
+11 1
+.names  LED_BDFFreg.BLIF LED_B
+1 1
+.names  N_328.BLIF num4_c_0__n.BLIF N_250
+11 1
+.names  LED_CDFFreg.BLIF LED_C
+1 1
+.names  num4_i_1__n.BLIF num4_i_2__n.BLIF N_92_i
+11 1
+.names  N_167.BLIF G_287.X1
+1 1
+.names  LED_DDFFreg.BLIF LED_D
+1 1
+.names  LED_EDFFreg.BLIF LED_E
+1 1
+.names  N_269_i.BLIF N_270_i.BLIF N_84_i
+11 1
+.names  count_11_.BLIF G_287.X2
+1 1
+.names  LED_FDFFreg.BLIF LED_F
+1 1
+.names  N_220_i.BLIF N_227_i.BLIF N_69_0
+11 1
+.names  LED_GDFFreg.BLIF LED_G
+1 1
+.names  N_218_i.BLIF N_219_i.BLIF N_63_0
+11 1
+.names  gnd_n_n.BLIF LED_VCC1
+1 1
+.names  N_159.BLIF G_279.X1
+1 1
+.names  LED_VCC2DFFreg.BLIF LED_VCC2
+1 1
+.names  N_51_i.BLIF N_192_i.BLIF N_57_0
+11 1
+.names  LED_VCC3DFFreg.BLIF LED_VCC3
+1 1
+.names  N_180_i.BLIF N_210_i.BLIF N_49_0
+11 1
+.names  count_7_.BLIF G_279.X2
+1 1
+.names  LED_VCC4DFFreg.BLIF LED_VCC4
+1 1
+.names  N_208_i.BLIF N_209_i.BLIF N_47_0
+11 1
+.names  LED_D_6_0_0_x2_0.BLIF N_214.BLIF N_166_1
+11 1
+.names  N_92_i.BLIF N_216.BLIF N_328
+11 1
+.names  N_166_1.BLIF num3_c_2__n.BLIF N_166
+11 1
+.names  N_95_i.BLIF N_246.BLIF N_327
+11 1
+.names  N_157.BLIF count_3_i_x2_6_.X1
+1 1
+.names  N_93_i.BLIF N_212.BLIF N_164_1
+11 1
+.names  N_248.BLIF N_272.BLIF N_326
+11 1
+.names  N_164_1.BLIF num2_c_0__n.BLIF N_164
+11 1
+.names  N_249.BLIF N_275.BLIF N_325
+11 1
+.names  count_6_.BLIF count_3_i_x2_6_.X2
+1 1
+.names  N_92_i.BLIF N_213.BLIF N_162_1
+11 1
+.names  num4_c_1__n.BLIF num4_i_2__n.BLIF N_279
+11 1
+.names  N_162_1.BLIF num4_c_0__n.BLIF N_162
+11 1
+.names  num3_c_2__n.BLIF num3_i_2__n
+0 1
+.names  N_184_1.BLIF num4_i_0__n.BLIF N_184
+11 1
+.names  count12_1.BLIF count_2_.BLIF N_151
+11 1
+.names  N_155.BLIF count_3_i_x2_5_.X1
+1 1
+.names  N_254.BLIF num1_i_0__n.BLIF N_183_1
+11 1
+.names  count_0_.BLIF count_1_.BLIF count12_1
+11 1
+.names  N_183_1.BLIF num1_i_2__n.BLIF N_183
+11 1
+.names  N_254.BLIF num1_c_3__n.BLIF N_211
+11 1
+.names  count_5_.BLIF count_3_i_x2_5_.X2
+1 1
+.names  N_253.BLIF num3_i_0__n.BLIF N_182_1
+11 1
+.names  scancnt_0_.BLIF scancnt_1_.BLIF N_213
+11 1
+.names  N_182_1.BLIF num3_i_2__n.BLIF N_182
+11 1
+.names  N_211_i.BLIF reset_c.BLIF N_51_i
+11 1
+.names  N_213.BLIF N_269.BLIF N_175_1
+11 1
+.names  num2_c_1__n.BLIF num2_i_2__n.BLIF N_210_1
+11 1
+.names  N_165.BLIF count_3_i_x2_10_.X1
+1 1
+.names  N_175_1.BLIF num4_c_2__n.BLIF N_175
+11 1
+.names  reset_c.BLIF reset_i
+0 1
+.names  N_92.BLIF N_213.BLIF N_298_1
+11 1
+.names  num3_c_0__n.BLIF led_g_6_0_0_0_m2_un3_n
+0 1
+.names  count_10_.BLIF count_3_i_x2_10_.X2
+1 1
+.names  N_298_1.BLIF num4_c_3__n.BLIF N_298
+11 1
+.names  num3_c_2__n.BLIF num3_c_0__n.BLIF led_g_6_0_0_0_m2_un1_n
+11 1
+.names  N_93.BLIF N_212.BLIF N_173_1
+11 1
+.names  num3_c_3__n.BLIF led_g_6_0_0_0_m2_un3_n.BLIF led_g_6_0_0_0_m2_un0_n
+11 1
+.names  N_173_1.BLIF num2_c_3__n.BLIF N_173
+11 1
+.names  led_g_6_0_0_0_m2_un1_n.BLIF led_g_6_0_0_0_m2_un0_n.BLIF N_141
+1- 1
+-1 1
+.names  N_163.BLIF count_3_i_x2_9_.X1
+1 1
+.names  N_248.BLIF num1_c_2__n.BLIF N_170_1
+11 1
+.names  num3_c_2__n.BLIF num3_i_0__n.BLIF N_117_i
+11 1
+.names  N_170_1.BLIF num1_i_1__n.BLIF N_170
+11 1
+.names  N_57_0.BLIF N_251_i.BLIF N_108_0
+11 1
+.names  count_9_.BLIF count_3_i_x2_9_.X2
+1 1
+.names  LED_D_6_0_0_0_x2.BLIF N_246.BLIF N_168_1
+11 1
+.names  N_49_0.BLIF N_250_i.BLIF N_107_0
+11 1
+.names  N_168_1.BLIF num2_c_2__n.BLIF N_168
+11 1
+.names  num1_c_2__n.BLIF num1_i_0__n.BLIF N_103_i
+11 1
+.names  num2_c_3__n.BLIF num2_i_0__n.BLIF N_210_2
+11 1
+.names  num2_c_2__n.BLIF num2_i_2__n
+0 1
+.names  N_161.BLIF count_3_i_x2_8_.X1
+1 1
+.names  N_210_1_0.BLIF N_210_2.BLIF N_210
+11 1
+.names  num2_c_2__n.BLIF num2_c_i_1__n.BLIF N_95_i
+11 1
+.names  N_247_i.BLIF N_269_i.BLIF N_90_0_1
+11 1
+.names  num2_c_i_1__n.BLIF num2_i_2__n.BLIF N_93_i
+11 1
+.names  count_8_.BLIF count_3_i_x2_8_.X2
+1 1
+.names  N_90_0_1.BLIF N_279_i.BLIF N_90_0
+11 1
+.names  N_167.BLIF count_11_.BLIF N_169
+11 1
+.names  N_248.BLIF num1_c_1__n.BLIF N_251_1
+11 1
+.names  N_165.BLIF count_10_.BLIF N_167
+11 1
+.names  N_251_1.BLIF num1_c_2__n.BLIF N_251
+11 1
+.names  N_163.BLIF count_9_.BLIF N_165
+11 1
+.names  N_169.BLIF count_3_i_x2_12_.X1
+1 1
+.names  num3_c_2__n.BLIF num3_c_3__n.BLIF N_209_1
+11 1
+.names  N_161.BLIF count_8_.BLIF N_163
+11 1
+.names  N_209_1.BLIF scancnt_1_.BLIF N_209
+11 1
+.names  N_159.BLIF count_7_.BLIF N_161
+11 1
+.names  count_12_.BLIF count_3_i_x2_12_.X2
+1 1
+.names  num1_c_2__n.BLIF num1_c_3__n.BLIF N_208_1
+11 1
+.names  N_157.BLIF count_6_.BLIF N_159
+11 1
+.names  N_208_1.BLIF scancnt_i_1__n.BLIF N_208
+11 1
+.names  N_155.BLIF count_5_.BLIF N_157
+11 1
+.names  N_61_i_i.BLIF N_246.BLIF N_187_1
+11 1
+.names  G_267.BLIF count_1_.D
+1 1
+.names  N_187_1.BLIF num2_c_2__n.BLIF N_187
+11 1
+.names  G_269_0_x2.BLIF count_2_.D
+1 1
+.names  N_85_i_i.BLIF N_214.BLIF N_185_1
+11 1
+.names  N_64_i.BLIF count_i_4__n.BLIF N_290_i
+11 1
+.names  G_271.BLIF count_3_.D
+1 1
+.names  N_185_1.BLIF num3_c_2__n.BLIF N_185
+11 1
+.names  count_3_i_x2_4_.BLIF N_202_i.BLIF count_4_.D
+11 1
+.names  G_279.BLIF count_7_.D
+1 1
+.names  N_216.BLIF N_279.BLIF N_184_1
+11 1
+.names  G_287.BLIF count_11_.D
+1 1
+.names  N_18_0_1.BLIF N_18_0_2.BLIF N_18_0_4
+11 1
+.names  G_306.BLIF scancnt_1_.D
+1 1
+.names  N_18_0_3.BLIF N_195_i.BLIF N_18_0_5
+11 1
+.names  N_153.BLIF count_4_.BLIF N_155
+11 1
+.names  N_18_0_4.BLIF N_18_0_5.BLIF N_18_0
+11 1
+.names  N_151.BLIF count_3_.BLIF N_153
+11 1
+.names  N_212.BLIF num2_c_0__n.BLIF N_178_1
+11 1
+.names  count_5_.BLIF count_6_.BLIF N_293_i
+11 1
+.names  num2_c_1__n.BLIF num2_c_2__n.BLIF N_178_2
+11 1
+.names  count_8_.BLIF count_9_.BLIF N_292_i
+11 1
+.names  N_178_1.BLIF N_178_2.BLIF N_178
+11 1
+.names  count_10_.BLIF count_12_.BLIF N_291_i
+11 1
+.names  N_89_i.BLIF count_3_i_x2_10_.BLIF N_198_1
+11 1
+.names  N_206_i.BLIF N_207_i.BLIF scancnt_0_.D
+11 1
+.names  N_198_1.BLIF N_292_i.BLIF N_198
+11 1
+.names  count_3_i_x2_6_.BLIF N_204_i.BLIF count_6_.D
+11 1
+.names  N_161_i.BLIF N_200_2.BLIF N_199_1
+11 1
+.names  count_3_i_x2_5_.BLIF N_203_i.BLIF count_5_.D
+11 1
+.names  N_199_1.BLIF count_9_.BLIF N_199
+11 1
+.names  count_3_i_x2_10_.BLIF N_200_i.BLIF count_10_.D
+11 1
+.names  N_64_i.BLIF N_91_i.BLIF N_202_1
+11 1
+.names  count_3_i_x2_9_.BLIF N_200_i.BLIF count_9_.D
+11 1
+.names  N_202_1.BLIF N_293_i.BLIF N_202
+11 1
+.names  count_3_i_x2_8_.BLIF N_199_i.BLIF count_8_.D
+11 1
+.names  N_210_1.BLIF N_212.BLIF N_181_1
+11 1
+.names  count_3_i_x2_12_.BLIF N_198_i.BLIF count_12_.D
+11 1
+.names  N_181_1.BLIF num2_i_0__n.BLIF N_181
+11 1
+.names  N_106.BLIF scancnt_i_0__n.BLIF N_206
+11 1
+.names  N_210_1.BLIF N_212.BLIF N_210_1_0
+11 1
+.names  N_63_0.BLIF N_69_0.BLIF LED_D_6_0_3
+11 1
+.names  LED_D_6_0_1.BLIF LED_D_6_0_2.BLIF LED_D_6_0_4
+11 1
+.names  LED_D_6_0_3.BLIF N_187_i.BLIF LED_D_6_0_5
+11 1
+.names  N_106_i.BLIF scancnt_0_.BLIF N_207
+11 1
+.names  LED_D_6_0_4.BLIF LED_D_6_0_5.BLIF LED_D_6_0
+11 1
+.names  LED_D_6_0_0_0_x2.BLIF N_61_i_i
+0 1
+.names  N_188_i.BLIF N_189_i.BLIF LED_F_6_0_1
+11 1
+.names  N_89_i.BLIF N_291_i.BLIF N_200_2
+11 1
+.names  N_190_i.BLIF N_191_i.BLIF LED_F_6_0_2
+11 1
+.names  N_161.BLIF N_161_i
+0 1
+.names  N_192_i.BLIF reset_c.BLIF LED_F_6_0_3
+11 1
+.names  N_200_2.BLIF N_204.BLIF N_200
+11 1
+.names  N_181_i.BLIF N_325_i.BLIF LED_F_6_0_4
+11 1
+.names  N_204_2.BLIF count_6_.BLIF N_203
+11 1
+.names  LED_F_6_0_1.BLIF LED_F_6_0_2.BLIF LED_F_6_0_5
+11 1
+.names  N_91_i.BLIF N_290_i.BLIF N_204_2
+11 1
+.names  LED_F_6_0_3.BLIF LED_F_6_0_4.BLIF LED_F_6_0_6
+11 1
+.names  N_204_2.BLIF count_5_.BLIF N_204
+11 1
+.names  LED_F_6_0_5.BLIF LED_F_6_0_6.BLIF LED_F_6_0_7
+11 1
+.names  LED_F_6_0_7.BLIF N_326_i.BLIF LED_F_6_0
+11 1
+.names  N_69_0.BLIF N_107_0.BLIF N_18_0_1
+11 1
+.names  N_57_0.BLIF N_63_0.BLIF N_18_0_2
+11 1
+.names  N_193_i.BLIF N_194_i.BLIF N_18_0_3
+11 1
+.names  N_108_0.BLIF N_172_i.BLIF LED_G_6_0_2
+11 1
+.names  N_173_i.BLIF N_298_i.BLIF LED_G_6_0_3
+11 1
+.names  N_291_i.BLIF N_292_i.BLIF N_91_i
+11 1
+.names  N_175_i.BLIF N_328_i.BLIF LED_G_6_0_4
+11 1
+.names  N_290_i.BLIF N_293_i.BLIF N_89_i
+11 1
+.names  N_176_i.BLIF N_177_i.BLIF LED_G_6_0_5
+11 1
+.names  count_0_.BLIF count_0_.D
+0 1
+.names  LED_G_6_0_1.BLIF LED_G_6_0_2.BLIF LED_G_6_0_6
+11 1
+.names  num3_c_0__n.BLIF num3_i_0__n
+0 1
+.names  LED_G_6_0_3.BLIF LED_G_6_0_4.BLIF LED_G_6_0_7
+11 1
+.names  num1_c_0__n.BLIF num1_i_0__n
+0 1
+.names  LED_G_6_0_6.BLIF LED_G_6_0_7.BLIF LED_G_6_0_8
+11 1
+.names  LED_D_6_0_0_x2_0.BLIF N_85_i_i
+0 1
+.names  LED_G_6_0_8.BLIF LED_G_6_0_5.BLIF LED_G_6_0
+11 1
+.names  gnd_n_n
+.names  N_183_i.BLIF N_184_i.BLIF LED_C_6_0_1
+11 1
+.names  N_57_0.BLIF N_180_i.BLIF LED_C_6_0_2
+11 1
+.names  N_181_i.BLIF N_182_i.BLIF LED_C_6_0_3
+11 1
+.names  LED_C_6_0_1.BLIF LED_C_6_0_2.BLIF LED_C_6_0_4
+11 1
+.names  LED_C_6_0_4.BLIF LED_C_6_0_3.BLIF LED_C_6_0
+11 1
+.names  N_107_0.BLIF N_108_0.BLIF LED_D_6_0_1
+11 1
+.names  N_185_i.BLIF N_186_i.BLIF LED_D_6_0_2
+11 1
+.names  N_248_i.BLIF N_249_i.BLIF N_221_0_4
+11 1
+.names  N_156_i.BLIF N_158_i.BLIF N_221_0_5
+11 1
+.names  N_257_i.BLIF N_294_i.BLIF N_221_0_6
+11 1
+.names  N_221_0_1.BLIF N_221_0_2.BLIF N_221_0_7
+11 1
+.names  N_221_0_3.BLIF N_221_0_4.BLIF N_221_0_8
+11 1
+.names  N_221_0_5.BLIF N_221_0_6.BLIF N_221_0_9
+11 1
+.names  N_221_0_7.BLIF N_221_0_8.BLIF N_221_0_10
+11 1
+.names  clk_c.BLIF count_1_.C
+1 1
+.names  N_221_0_10.BLIF N_221_0_9.BLIF N_221_0
+11 1
+.names  N_166_i.BLIF N_296_i.BLIF LED_B_6_0_1
+11 1
+.names  reset_i.BLIF count_1_.AR
+1 1
+.names  N_57_0.BLIF N_168_i.BLIF LED_B_6_0_2
+11 1
+.names  N_49_0.BLIF N_170_i.BLIF LED_B_6_0_3
+11 1
+.names  LED_B_6_0_1.BLIF LED_B_6_0_2.BLIF LED_B_6_0_4
+11 1
+.names  LED_B_6_0_3.BLIF N_171_i.BLIF LED_B_6_0_5
+11 1
+.names  clk_c.BLIF count_2_.C
+1 1
+.names  LED_B_6_0_4.BLIF LED_B_6_0_5.BLIF LED_B_6_0
+11 1
+.names  N_178_i.BLIF N_179_i.BLIF LED_G_6_0_1
+11 1
+.names  reset_i.BLIF count_2_.AR
+1 1
+.names  N_204.BLIF N_204_i
+0 1
+.names  N_207.BLIF N_207_i
+0 1
+.names  N_206.BLIF N_206_i
+0 1
+.names  N_106_i.BLIF N_106
+0 1
+.names  clk_c.BLIF count_3_.C
+1 1
+.names  N_247.BLIF N_247_i
+0 1
+.names  N_279.BLIF N_279_i
+0 1
+.names  reset_i.BLIF count_3_.AR
+1 1
+.names  N_90_0.BLIF N_90
+0 1
+.names  N_89_i.BLIF N_91_i.BLIF N_106_i_1
+11 1
+.names  N_106_i_1.BLIF reset_c.BLIF N_106_i
+11 1
+.names  count_i_7__n.BLIF count_i_11__n.BLIF N_64_i_1
+11 1
+.names  clk_c.BLIF count_4_.C
+1 1
+.names  N_151.BLIF count_3_.BLIF N_64_i_2
+11 1
+.names  N_64_i_1.BLIF N_64_i_2.BLIF N_64_i
+11 1
+.names  reset_i.BLIF count_4_.AR
+1 1
+.names  N_160_i.BLIF N_327_i.BLIF N_221_0_1
+11 1
+.names  N_162_i.BLIF N_164_i.BLIF N_221_0_2
+11 1
+.names  N_49_0.BLIF N_51_i.BLIF N_221_0_3
+11 1
+.names  N_294.BLIF N_294_i
+0 1
+.names  clk_c.BLIF count_5_.C
+1 1
+.names  N_327.BLIF N_327_i
+0 1
+.names  N_160.BLIF N_160_i
+0 1
+.names  reset_i.BLIF count_5_.AR
+1 1
+.names  N_164.BLIF N_164_i
+0 1
+.names  N_162.BLIF N_162_i
+0 1
+.names  N_221_0.BLIF LED_EDFFreg.D
+0 1
+.names  N_211.BLIF N_211_i
+0 1
+.names  clk_c.BLIF count_6_.C
+1 1
+.names  N_202.BLIF N_202_i
+0 1
+.names  count_7_.BLIF count_i_7__n
+0 1
+.names  reset_i.BLIF count_6_.AR
+1 1
+.names  count_11_.BLIF count_i_11__n
+0 1
+.names  count_4_.BLIF count_i_4__n
+0 1
+.names  N_198.BLIF N_198_i
+0 1
+.names  N_199.BLIF N_199_i
+0 1
+.names  clk_c.BLIF count_7_.C
+1 1
+.names  N_200.BLIF N_200_i
+0 1
+.names  N_203.BLIF N_203_i
+0 1
+.names  reset_i.BLIF count_7_.AR
+1 1
+.names  N_176.BLIF N_176_i
+0 1
+.names  N_179.BLIF N_179_i
+0 1
+.names  N_178.BLIF N_178_i
+0 1
+.names  LED_G_6_0.BLIF LED_GDFFreg.D
+0 1
+.names  clk_c.BLIF count_8_.C
+1 1
+.names  N_296.BLIF N_296_i
+0 1
+.names  N_166.BLIF N_166_i
+0 1
+.names  reset_i.BLIF count_8_.AR
+1 1
+.names  N_168.BLIF N_168_i
+0 1
+.names  N_170.BLIF N_170_i
+0 1
+.names  N_171.BLIF N_171_i
+0 1
+.names  LED_B_6_0.BLIF LED_BDFFreg.D
+0 1
+.names  clk_c.BLIF count_9_.C
+1 1
+.names  N_248.BLIF N_248_i
+0 1
+.names  N_249.BLIF N_249_i
+0 1
+.names  reset_i.BLIF count_9_.AR
+1 1
+.names  N_158.BLIF N_158_i
+0 1
+.names  N_156.BLIF N_156_i
+0 1
+.names  N_257.BLIF N_257_i
+0 1
+.names  LED_F_6_0.BLIF LED_FDFFreg.D
+0 1
+.names  clk_c.BLIF count_10_.C
+1 1
+.names  N_186.BLIF N_186_i
+0 1
+.names  N_185.BLIF N_185_i
+0 1
+.names  reset_i.BLIF count_10_.AR
+1 1
+.names  N_187.BLIF N_187_i
+0 1
+.names  LED_D_6_0.BLIF LED_DDFFreg.D
+0 1
+.names  N_182.BLIF N_182_i
+0 1
+.names  N_184.BLIF N_184_i
+0 1
+.names  clk_c.BLIF count_11_.C
+1 1
+.names  N_183.BLIF N_183_i
+0 1
+.names  LED_C_6_0.BLIF LED_CDFFreg.D
+0 1
+.names  reset_i.BLIF count_11_.AR
+1 1
+.names  N_172.BLIF N_172_i
+0 1
+.names  N_298.BLIF N_298_i
+0 1
+.names  N_173.BLIF N_173_i
+0 1
+.names  N_328.BLIF N_328_i
+0 1
+.names  clk_c.BLIF count_12_.C
+1 1
+.names  N_175.BLIF N_175_i
+0 1
+.names  N_177.BLIF N_177_i
+0 1
+.names  reset_i.BLIF count_12_.AR
+1 1
+.names  N_103_i.BLIF N_103
+0 1
+.names  N_250.BLIF N_250_i
+0 1
+.names  N_251.BLIF N_251_i
+0 1
+.names  N_117_i.BLIF N_117
+0 1
+.names  clk_c.BLIF LED_DDFFreg.C
+1 1
+.names  N_194.BLIF N_194_i
+0 1
+.names  N_193.BLIF N_193_i
+0 1
+.names  N_195.BLIF N_195_i
+0 1
+.names  N_18_0.BLIF LED_ADFFreg.D
+0 1
+.names  clk_c.BLIF LED_EDFFreg.C
+1 1
+.names  N_189.BLIF N_189_i
+0 1
+.names  N_188.BLIF N_188_i
+0 1
+.names  N_190.BLIF N_190_i
+0 1
+.names  N_191.BLIF N_191_i
+0 1
+.names  clk_c.BLIF LED_FDFFreg.C
+1 1
+.names  N_325.BLIF N_325_i
+0 1
+.names  N_181.BLIF N_181_i
+0 1
+.names  N_326.BLIF N_326_i
+0 1
+.names  N_47_0.BLIF N_47
+0 1
+.names  clk_c.BLIF LED_GDFFreg.C
+1 1
+.names  N_180.BLIF N_180_i
+0 1
+.names  N_210.BLIF N_210_i
+0 1
+.names  N_192.BLIF N_192_i
+0 1
+.names  N_219.BLIF N_219_i
+0 1
+.names  clk_c.BLIF scancnt_0_.C
+1 1
+.names  N_218.BLIF N_218_i
+0 1
+.names  N_227.BLIF N_227_i
+0 1
+.names  N_220.BLIF N_220_i
+0 1
+.names  N_270.BLIF N_270_i
+0 1
+.names  clk_c.BLIF scancnt_1_.C
+1 1
+.end

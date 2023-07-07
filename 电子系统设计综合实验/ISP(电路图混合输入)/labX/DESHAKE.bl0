@@ -1,0 +1,372 @@
+#$ DATE Fri Jun 09 10:30:43 2023
+#$ TOOL EDIF2BLIF version IspLever 1.0 
+#$ MODULE deshake
+#$ PINS 4 clk RESET din dout
+#$ NODES 100 G_4 G_6 G_8 G_10 G_14 G_16 G_20 G_22 G_24 G_26 \
+#  G_30 counter_9_ counter_5_ counter_12_ counter_11_ counter_7_ counter_6_ counter_14_ counter_10_ inst_keyclk \
+#  pre_s_0_ next_s_0_ next_s_1_ counter_0_ counter_1_ counter_2_ counter_3_ counter_4_ counter_8_ counter_13_ \
+#  counter_15_ counter_16_ counter_17_ counter_18_ keyclk_0 dout_0_sqmuxa N_1 N_2 keyclk_0_sqmuxa keyclk3 \
+#  G_28 G_18 G_12 G_32 G_34 G_36 G_38 keyclk3_10 keyclk3_1 N_23 \
+#  N_29 N_39 N_43 N_45 N_47 N_49 N_41 N_37 N_35 N_33 \
+#  N_31 N_27 N_25 N_19 counter_i_7__n counter_i_11__n counter_i_6__n counter_i_14__n counter_i_10__n counter_i_12__n \
+#  counter_i_5__n counter_i_9__n keyclk3_i din_i dout_0_sqmuxa_i RESET_i clk_c RESET_c din_c doutDFFCreg \
+#  next_s_i_0__n N_7_0 N_2_i N_6_0 N_1_0 keyclk3_10_1 keyclk3_1_0 keyclk3_2 keyclk3_3 keyclk3_4 \
+#  keyclk3_5 keyclk3_6 keyclk3_7 keyclk3_8 keyclk3_9 keyclk3_10_0 keyclk3_11 keyclk3_12 keyclk3_13 keyclk3_14 \
+#  
+.model deshake
+.inputs clk.BLIF RESET.BLIF din.BLIF G_4.BLIF G_6.BLIF G_8.BLIF G_10.BLIF G_14.BLIF G_16.BLIF \
+  G_20.BLIF G_22.BLIF G_24.BLIF G_26.BLIF G_30.BLIF counter_9_.BLIF counter_5_.BLIF counter_12_.BLIF counter_11_.BLIF \
+  counter_7_.BLIF counter_6_.BLIF counter_14_.BLIF counter_10_.BLIF inst_keyclk.BLIF pre_s_0_.BLIF next_s_0_.BLIF next_s_1_.BLIF counter_0_.BLIF \
+  counter_1_.BLIF counter_2_.BLIF counter_3_.BLIF counter_4_.BLIF counter_8_.BLIF counter_13_.BLIF counter_15_.BLIF counter_16_.BLIF counter_17_.BLIF \
+  counter_18_.BLIF keyclk_0.BLIF dout_0_sqmuxa.BLIF N_1.BLIF N_2.BLIF keyclk_0_sqmuxa.BLIF keyclk3.BLIF G_28.BLIF G_18.BLIF \
+  G_12.BLIF G_32.BLIF G_34.BLIF G_36.BLIF G_38.BLIF keyclk3_10.BLIF keyclk3_1.BLIF N_23.BLIF N_29.BLIF \
+  N_39.BLIF N_43.BLIF N_45.BLIF N_47.BLIF N_49.BLIF N_41.BLIF N_37.BLIF N_35.BLIF N_33.BLIF \
+  N_31.BLIF N_27.BLIF N_25.BLIF N_19.BLIF counter_i_7__n.BLIF counter_i_11__n.BLIF counter_i_6__n.BLIF counter_i_14__n.BLIF counter_i_10__n.BLIF \
+  counter_i_12__n.BLIF counter_i_5__n.BLIF counter_i_9__n.BLIF keyclk3_i.BLIF din_i.BLIF dout_0_sqmuxa_i.BLIF RESET_i.BLIF clk_c.BLIF RESET_c.BLIF \
+  din_c.BLIF doutDFFCreg.BLIF next_s_i_0__n.BLIF N_7_0.BLIF N_2_i.BLIF N_6_0.BLIF N_1_0.BLIF keyclk3_10_1.BLIF keyclk3_1_0.BLIF \
+  keyclk3_2.BLIF keyclk3_3.BLIF keyclk3_4.BLIF keyclk3_5.BLIF keyclk3_6.BLIF keyclk3_7.BLIF keyclk3_8.BLIF keyclk3_9.BLIF keyclk3_10_0.BLIF \
+  keyclk3_11.BLIF keyclk3_12.BLIF keyclk3_13.BLIF keyclk3_14.BLIF  
+.outputs dout counter_11_.D counter_11_.C counter_11_.AR counter_12_.D counter_12_.C counter_12_.AR counter_13_.D counter_13_.C counter_13_.AR counter_14_.D \
+  counter_14_.C counter_14_.AR counter_15_.D counter_15_.C counter_15_.AR counter_16_.D counter_16_.C counter_16_.AR counter_17_.D counter_17_.C counter_17_.AR \
+  counter_18_.D counter_18_.C counter_18_.AR next_s_0_.D next_s_0_.C next_s_1_.D next_s_1_.C pre_s_0_.D pre_s_0_.C counter_0_.D counter_0_.C \
+  counter_0_.AR counter_1_.D counter_1_.C counter_1_.AR counter_2_.D counter_2_.C counter_2_.AR counter_3_.D counter_3_.C counter_3_.AR counter_4_.D \
+  counter_4_.C counter_4_.AR counter_5_.D counter_5_.C counter_5_.AR counter_6_.D counter_6_.C counter_6_.AR counter_7_.D counter_7_.C counter_7_.AR \
+  counter_8_.D counter_8_.C counter_8_.AR counter_9_.D counter_9_.C counter_9_.AR counter_10_.D counter_10_.C counter_10_.AR doutDFFCreg.D doutDFFCreg.CE \
+  doutDFFCreg.C inst_keyclk.D inst_keyclk.C G_16.X1 G_16.X2 G_14.X1 G_14.X2 G_10.X1 G_10.X2 G_8.X1 G_8.X2 \
+  G_4.X1 G_4.X2 keyclk_0.X1 keyclk_0.X2 G_6.X1 G_6.X2 G_12.X1 G_12.X2 G_18.X1 G_18.X2 G_28.X1 \
+  G_28.X2 G_32.X1 G_32.X2 G_34.X1 G_34.X2 G_36.X1 G_36.X2 G_38.X1 G_38.X2 G_30.X1 G_30.X2 \
+  G_26.X1 G_26.X2 G_24.X1 G_24.X2 G_22.X1 G_22.X2 G_20.X1 G_20.X2 dout_0_sqmuxa N_1 N_2 \
+  keyclk_0_sqmuxa keyclk3 keyclk3_10 keyclk3_1 N_23 N_29 N_39 N_43 N_45 N_47 N_49 \
+  N_41 N_37 N_35 N_33 N_31 N_27 N_25 N_19 counter_i_7__n counter_i_11__n counter_i_6__n \
+  counter_i_14__n counter_i_10__n counter_i_12__n counter_i_5__n counter_i_9__n keyclk3_i din_i dout_0_sqmuxa_i RESET_i clk_c RESET_c \
+  din_c next_s_i_0__n N_7_0 N_2_i N_6_0 N_1_0 keyclk3_10_1 keyclk3_1_0 keyclk3_2 keyclk3_3 keyclk3_4 \
+  keyclk3_5 keyclk3_6 keyclk3_7 keyclk3_8 keyclk3_9 keyclk3_10_0 keyclk3_11 keyclk3_12 keyclk3_13 keyclk3_14
+.names  counter_7_.BLIF G_16.X2
+1 1
+.names  N_25.BLIF G_14.X1
+1 1
+.names  counter_6_.BLIF G_14.X2
+1 1
+.names  counter_4_.BLIF G_10.X1
+1 1
+.names  keyclk3_10.BLIF G_10.X2
+1 1
+.names  N_19.BLIF G_8.X1
+1 1
+.names  counter_3_.BLIF G_8.X2
+1 1
+.names  counter_0_.BLIF G_4.X1
+1 1
+.names  counter_1_.BLIF G_4.X2
+1 1
+.names  inst_keyclk.BLIF keyclk_0.X1
+1 1
+.names  keyclk_0_sqmuxa.BLIF keyclk_0.X2
+1 1
+.names  counter_2_.BLIF G_6.X1
+1 1
+.names  clk.BLIF clk_c
+1 1
+.names  RESET.BLIF RESET_c
+1 1
+.names  keyclk3_1.BLIF G_6.X2
+1 1
+.names  din.BLIF din_c
+1 1
+.names  doutDFFCreg.BLIF dout
+1 1
+.names  counter_i_14__n.BLIF keyclk3_10.BLIF keyclk3_8
+11 1
+.names  N_23.BLIF G_12.X1
+1 1
+.names  keyclk3_1_0.BLIF keyclk3_2.BLIF keyclk3_9
+11 1
+.names  keyclk3_3.BLIF keyclk3_4.BLIF keyclk3_10_0
+11 1
+.names  counter_5_.BLIF G_12.X2
+1 1
+.names  keyclk3_5.BLIF keyclk3_6.BLIF keyclk3_11
+11 1
+.names  keyclk3_7.BLIF keyclk3_8.BLIF keyclk3_12
+11 1
+.names  keyclk3_9.BLIF keyclk3_10_0.BLIF keyclk3_13
+11 1
+.names  N_29.BLIF G_18.X1
+1 1
+.names  keyclk3_11.BLIF keyclk3_12.BLIF keyclk3_14
+11 1
+.names  keyclk3_13.BLIF keyclk3_14.BLIF keyclk3
+11 1
+.names  counter_8_.BLIF G_18.X2
+1 1
+.names  next_s_0_.BLIF next_s_i_0__n
+0 1
+.names  N_7_0.BLIF pre_s_0_.D
+0 1
+.names  N_2.BLIF N_2_i
+0 1
+.names  N_39.BLIF G_28.X1
+1 1
+.names  N_6_0.BLIF next_s_1_.D
+0 1
+.names  N_1_0.BLIF N_1
+0 1
+.names  counter_13_.BLIF G_28.X2
+1 1
+.names  keyclk3_1.BLIF counter_2_.BLIF keyclk3_10_1
+11 1
+.names  keyclk3_10_1.BLIF counter_3_.BLIF keyclk3_10
+11 1
+.names  counter_4_.BLIF counter_8_.BLIF keyclk3_1_0
+11 1
+.names  N_43.BLIF G_32.X1
+1 1
+.names  counter_13_.BLIF counter_15_.BLIF keyclk3_2
+11 1
+.names  counter_16_.BLIF counter_17_.BLIF keyclk3_3
+11 1
+.names  counter_15_.BLIF G_32.X2
+1 1
+.names  counter_18_.BLIF counter_i_5__n.BLIF keyclk3_4
+11 1
+.names  counter_i_6__n.BLIF counter_i_7__n.BLIF keyclk3_5
+11 1
+.names  counter_i_9__n.BLIF counter_i_10__n.BLIF keyclk3_6
+11 1
+.names  N_45.BLIF G_34.X1
+1 1
+.names  counter_i_11__n.BLIF counter_i_12__n.BLIF keyclk3_7
+11 1
+.names  N_39.BLIF counter_13_.BLIF N_41
+11 1
+.names  counter_16_.BLIF G_34.X2
+1 1
+.names  N_37.BLIF counter_12_.BLIF N_39
+11 1
+.names  N_35.BLIF counter_11_.BLIF N_37
+11 1
+.names  N_33.BLIF counter_10_.BLIF N_35
+11 1
+.names  N_47.BLIF G_36.X1
+1 1
+.names  N_31.BLIF counter_9_.BLIF N_33
+11 1
+.names  N_29.BLIF counter_8_.BLIF N_31
+11 1
+.names  counter_17_.BLIF G_36.X2
+1 1
+.names  N_27.BLIF counter_7_.BLIF N_29
+11 1
+.names  N_25.BLIF counter_6_.BLIF N_27
+11 1
+.names  N_23.BLIF counter_5_.BLIF N_25
+11 1
+.names  N_49.BLIF G_38.X1
+1 1
+.names  counter_4_.BLIF keyclk3_10.BLIF N_23
+11 1
+.names  counter_2_.BLIF keyclk3_1.BLIF N_19
+11 1
+.names  counter_18_.BLIF G_38.X2
+1 1
+.names  counter_0_.BLIF counter_1_.BLIF keyclk3_1
+11 1
+.names  N_41.BLIF G_30.X1
+1 1
+.names  counter_14_.BLIF G_30.X2
+1 1
+.names  counter_10_.BLIF counter_i_10__n
+0 1
+.names  N_37.BLIF G_26.X1
+1 1
+.names  counter_6_.BLIF counter_i_6__n
+0 1
+.names  counter_14_.BLIF counter_i_14__n
+0 1
+.names  counter_12_.BLIF G_26.X2
+1 1
+.names  counter_7_.BLIF counter_i_7__n
+0 1
+.names  counter_11_.BLIF counter_i_11__n
+0 1
+.names  N_47.BLIF counter_17_.BLIF N_49
+11 1
+.names  N_35.BLIF G_24.X1
+1 1
+.names  N_45.BLIF counter_16_.BLIF N_47
+11 1
+.names  N_43.BLIF counter_15_.BLIF N_45
+11 1
+.names  counter_11_.BLIF G_24.X2
+1 1
+.names  N_41.BLIF counter_14_.BLIF N_43
+11 1
+.names  counter_12_.BLIF counter_i_12__n
+0 1
+.names  counter_5_.BLIF counter_i_5__n
+0 1
+.names  N_33.BLIF G_22.X1
+1 1
+.names  counter_10_.BLIF G_22.X2
+1 1
+.names  N_31.BLIF G_20.X1
+1 1
+.names  counter_9_.BLIF G_20.X2
+1 1
+.names  G_24.BLIF counter_11_.D
+1 1
+.names  G_26.BLIF counter_12_.D
+1 1
+.names  G_30.BLIF counter_14_.D
+1 1
+.names  G_4.BLIF counter_1_.D
+1 1
+.names  din_i.BLIF next_s_1_.BLIF N_2
+11 1
+.names  G_6.BLIF counter_2_.D
+1 1
+.names  dout_0_sqmuxa.BLIF dout_0_sqmuxa_i
+0 1
+.names  G_8.BLIF counter_3_.D
+1 1
+.names  N_1.BLIF dout_0_sqmuxa_i.BLIF next_s_0_.D
+11 1
+.names  G_10.BLIF counter_4_.D
+1 1
+.names  din_c.BLIF din_i
+0 1
+.names  G_14.BLIF counter_6_.D
+1 1
+.names  din_i.BLIF pre_s_0_.BLIF dout_0_sqmuxa
+11 1
+.names  G_16.BLIF counter_7_.D
+1 1
+.names  RESET_c.BLIF keyclk3.BLIF keyclk_0_sqmuxa
+11 1
+.names  G_20.BLIF counter_9_.D
+1 1
+.names  keyclk3_i.BLIF G_28.BLIF counter_13_.D
+11 1
+.names  G_22.BLIF counter_10_.D
+1 1
+.names  keyclk3_i.BLIF G_18.BLIF counter_8_.D
+11 1
+.names  keyclk_0.BLIF inst_keyclk.D
+1 1
+.names  keyclk3_i.BLIF G_12.BLIF counter_5_.D
+11 1
+.names  keyclk3_i.BLIF G_32.BLIF counter_15_.D
+11 1
+.names  keyclk3_i.BLIF G_34.BLIF counter_16_.D
+11 1
+.names  keyclk3_i.BLIF G_36.BLIF counter_17_.D
+11 1
+.names  keyclk3.BLIF keyclk3_i
+0 1
+.names  keyclk3_i.BLIF G_38.BLIF counter_18_.D
+11 1
+.names  counter_9_.BLIF counter_i_9__n
+0 1
+.names  din_i.BLIF next_s_i_0__n.BLIF N_1_0
+11 1
+.names  N_2_i.BLIF dout_0_sqmuxa_i.BLIF N_6_0
+11 1
+.names  RESET_c.BLIF RESET_i
+0 1
+.names  RESET_c.BLIF next_s_i_0__n.BLIF N_7_0
+11 1
+.names  counter_0_.BLIF counter_0_.D
+0 1
+.names  clk_c.BLIF counter_11_.C
+1 1
+.names  RESET_i.BLIF counter_11_.AR
+1 1
+.names  clk_c.BLIF counter_12_.C
+1 1
+.names  RESET_i.BLIF counter_12_.AR
+1 1
+.names  clk_c.BLIF counter_13_.C
+1 1
+.names  RESET_i.BLIF counter_13_.AR
+1 1
+.names  clk_c.BLIF counter_14_.C
+1 1
+.names  RESET_i.BLIF counter_14_.AR
+1 1
+.names  clk_c.BLIF counter_15_.C
+1 1
+.names  RESET_i.BLIF counter_15_.AR
+1 1
+.names  clk_c.BLIF counter_16_.C
+1 1
+.names  RESET_i.BLIF counter_16_.AR
+1 1
+.names  clk_c.BLIF counter_17_.C
+1 1
+.names  RESET_i.BLIF counter_17_.AR
+1 1
+.names  clk_c.BLIF counter_18_.C
+1 1
+.names  RESET_i.BLIF counter_18_.AR
+1 1
+.names  inst_keyclk.BLIF next_s_0_.C
+1 1
+.names  inst_keyclk.BLIF next_s_1_.C
+1 1
+.names  inst_keyclk.BLIF pre_s_0_.C
+1 1
+.names  clk_c.BLIF counter_0_.C
+1 1
+.names  RESET_i.BLIF counter_0_.AR
+1 1
+.names  clk_c.BLIF counter_1_.C
+1 1
+.names  RESET_i.BLIF counter_1_.AR
+1 1
+.names  clk_c.BLIF counter_2_.C
+1 1
+.names  RESET_i.BLIF counter_2_.AR
+1 1
+.names  clk_c.BLIF counter_3_.C
+1 1
+.names  RESET_i.BLIF counter_3_.AR
+1 1
+.names  clk_c.BLIF counter_4_.C
+1 1
+.names  RESET_i.BLIF counter_4_.AR
+1 1
+.names  clk_c.BLIF counter_5_.C
+1 1
+.names  RESET_i.BLIF counter_5_.AR
+1 1
+.names  clk_c.BLIF counter_6_.C
+1 1
+.names  RESET_i.BLIF counter_6_.AR
+1 1
+.names  clk_c.BLIF counter_7_.C
+1 1
+.names  RESET_i.BLIF counter_7_.AR
+1 1
+.names  clk_c.BLIF counter_8_.C
+1 1
+.names  RESET_i.BLIF counter_8_.AR
+1 1
+.names  clk_c.BLIF counter_9_.C
+1 1
+.names  RESET_i.BLIF counter_9_.AR
+1 1
+.names  clk_c.BLIF counter_10_.C
+1 1
+.names  RESET_i.BLIF counter_10_.AR
+1 1
+.names  din_c.BLIF doutDFFCreg.D
+1 1
+.names  dout_0_sqmuxa_i.BLIF doutDFFCreg.CE
+1 1
+.names  inst_keyclk.BLIF doutDFFCreg.C
+1 1
+.names  clk_c.BLIF inst_keyclk.C
+1 1
+.names  N_27.BLIF G_16.X1
+1 1
+.end

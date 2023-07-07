@@ -1,0 +1,25 @@
+#$ DATE Mon May 29 00:01:33 2023
+#$ TOOL EDIF2BLIF version IspLever 1.0 
+#$ MODULE encoder
+#$ PINS 8 D0 D1 D2 D3 key_in_3_ key_in_2_ key_in_1_ key_in_0_
+#$ NODES 4 n4_c n3_c n2_c key_in_c_c 
+.model encoder
+.inputs D0.BLIF D1.BLIF D2.BLIF D3.BLIF n4_c.BLIF n3_c.BLIF n2_c.BLIF key_in_c_c.BLIF  
+.outputs key_in_3_ key_in_2_ key_in_1_ key_in_0_ n4_c n3_c n2_c key_in_c_c
+.names  key_in_c_c.BLIF key_in_3_
+1 1
+.names  n3_c.BLIF key_in_1_
+1 1
+.names  n4_c.BLIF key_in_0_
+1 1
+.names  D0.BLIF n4_c
+1 1
+.names  D1.BLIF n3_c
+1 1
+.names  D2.BLIF n2_c
+1 1
+.names  D3.BLIF key_in_c_c
+1 1
+.names  n2_c.BLIF key_in_2_
+1 1
+.end

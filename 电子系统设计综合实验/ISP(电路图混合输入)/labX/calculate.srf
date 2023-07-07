@@ -1,0 +1,117 @@
+#Build: Synplify Pro I-2014.03LC , Build 063R, May 27 2014
+#install: E:\Bin\synpbase
+#OS: Windows 7 6.2
+#Hostname: LAPTOP-BV60RUMV
+
+#Implementation: labx
+
+$ Start of Compile
+#Wed Jun 14 14:50:44 2023
+
+Synopsys Verilog Compiler, version comp201403rcp1, Build 060R, built May 27 2014
+@N|Running in 64-bit mode
+Copyright (C) 1994-2014 Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+
+@I::"E:\Bin\synpbase\lib\vlog\umr_capim.v"
+@I::"E:\Bin\synpbase\lib\vlog\scemi_objects.v"
+@I::"E:\Bin\synpbase\lib\vlog\scemi_pipes.svh"
+@I::"E:\Bin\synpbase\lib\vlog\hypermods.v"
+@I::"E:\Bin\ispcpld\..\cae_library\synthesis\verilog\mach.v"
+@I::"D:\isp\labx\labx.h"
+@I::"D:\isp\labx\calculate.v"
+Verilog syntax check successful!
+File D:\isp\labx\calculate.v changed - recompiling
+Selecting top level module CALCULATE
+@N: CG364 :"D:\isp\labx\calculate.v":1:7:1:15|Synthesizing module CALCULATE
+
+@W: CL169 :"D:\isp\labx\calculate.v":43:4:43:9|Pruning register flag_Cal[1:0] 
+
+@W: CL169 :"D:\isp\labx\calculate.v":43:4:43:9|Pruning register int_Data1[7:0] 
+
+@A: CL282 :"D:\isp\labx\calculate.v":43:4:43:9|Feedback mux created for signal key_out[3:0] -- possible set/reset assignment for signal missing. Specifying a reset value will improve timing and area.
+@A: CL282 :"D:\isp\labx\calculate.v":32:4:32:9|Feedback mux created for signal time10ms -- possible set/reset assignment for signal missing. Specifying a reset value will improve timing and area.
+@W: CL190 :"D:\isp\labx\calculate.v":43:4:43:9|Optimizing register bit int_Data0[4] to a constant 0
+@W: CL190 :"D:\isp\labx\calculate.v":43:4:43:9|Optimizing register bit int_Data0[5] to a constant 0
+@W: CL190 :"D:\isp\labx\calculate.v":43:4:43:9|Optimizing register bit int_Data0[6] to a constant 0
+@W: CL279 :"D:\isp\labx\calculate.v":43:4:43:9|Pruning register bits 6 to 4 of int_Data0[6:0] 
+
+@N: CL201 :"D:\isp\labx\calculate.v":43:4:43:9|Trying to extract state machine for register scanvalue
+Extracted state machine for register scanvalue
+State machine has 5 reachable states with original encodings of:
+   0001
+   0111
+   1011
+   1101
+   1110
+@N: CL201 :"D:\isp\labx\calculate.v":43:4:43:9|Trying to extract state machine for register flag_Data
+Extracted state machine for register flag_Data
+State machine has 4 reachable states with original encodings of:
+   0000
+   0001
+   0010
+   0011
+@END
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 70MB peak: 74MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Wed Jun 14 14:50:44 2023
+
+###########################################################]
+Synopsys Netlist Linker, version comp201403rcp1, Build 060R, built May 27 2014
+@N|Running in 64-bit mode
+File D:\isp\labx\synwork\CALCULATE_comp.srs changed - recompiling
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Wed Jun 14 14:50:45 2023
+
+###########################################################]
+Map & Optimize Report
+
+Synopsys CPLD Technology Mapper, Version maplat, Build 923R, Built May  6 2014
+Copyright (C) 1994-2013, Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use or distribution of the software is strictly prohibited.
+Product Version I-2014.03LC 
+@N: MF248 |Running in 64-bit mode.
+Encoding state machine flag_Data[3:0] (view:work.CALCULATE(verilog))
+original code -> new code
+   0000 -> 00
+   0001 -> 01
+   0010 -> 10
+   0011 -> 11
+@N: MO225 :"d:\isp\labx\calculate.v":43:4:43:9|No possible illegal states for state machine flag_Data[3:0],safe FSM implementation is disabled
+Encoding state machine scanvalue[4:0] (view:work.CALCULATE(verilog))
+original code -> new code
+   0001 -> 00000
+   0111 -> 00011
+   1011 -> 00101
+   1101 -> 01001
+   1110 -> 10001
+---------------------------------------
+Resource Usage Report
+
+Simple gate primitives:
+DFFSH           2 uses
+DFFRH           33 uses
+DFFCRH          14 uses
+DFFC            4 uses
+DFF             1 use
+IBUF            6 uses
+OBUF            25 uses
+AND2            332 uses
+XOR2            30 uses
+INV             191 uses
+OR2             6 uses
+
+
+@N: FC100 |Timing Report not generated for this device, please use place and route tools for timing analysis.
+I-2014.03LC 
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 39MB peak: 109MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Wed Jun 14 14:50:46 2023
+
+###########################################################]

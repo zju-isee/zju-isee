@@ -1,0 +1,107 @@
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
+Mon May 29 00:01:32 2023
+
+
+Command Line:  E:\Bin\lse/bin/nt/synthesis -f ENCODER.synproj 
+
+Synthesis options:
+The -a option is ispMACH400ZE.
+The -t option is not used.
+The -d option is LC4256V.
+Using default performance grade 6.
+                                                          
+
+##########################################################
+
+### Lattice Family : ispMACH400ZE
+
+### Device  : LC4256V
+
+### Package : 
+
+##########################################################
+
+                                                          
+
+Optimization goal = Area
+Top-level module name = ENCODER.
+WARNING - synthesis: Ignoring Frequency option in Area Mode. Setting to default frequency of 1.0 MHz.
+WARNING - synthesis: Ignoring SDC constraints in Area Mode!
+Target frequency = 1.000000 MHz.
+Timing path count = 3
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+Use IO Insertion = TRUE
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+Output EDIF file name = ENCODER.edi.
+WARNING - synthesis: Option -force_gsr will be set to false when option -output_edif/-ngo are set
+The -comp option is FALSE.
+The -syn option is FALSE.
+Verilog design file = new_lab8.h
+Verilog design file = encoder.v
+-sdc option: SDC file input not used.
+-lpf option: Output file option is not used.
+Hardtimer checking is enabled (default). The -dt option is not used.
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Technology check ok...
+
+Analyzing Verilog file E:/Bin/lse/userware/NT/SYNTHESIS_HEADERS/mach.v. VERI-1482
+Compile design.
+Compile Design Begin
+Analyzing Verilog file new_lab8.h. VERI-1482
+Analyzing Verilog file encoder.v. VERI-1482
+Analyzing Verilog file E:/Bin/lse/userware/NT/SYNTHESIS_HEADERS/mach.v. VERI-1482
+Top module name (Verilog): ENCODER
+INFO - synthesis: encoder.v(1): compiling module ENCODER. VERI-1018
+Loading NGL library 'E:/Bin/lse/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'E:/Bin/lse/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'xo2c640.nph' in environment: E:/Bin/lse.
+Package Status:                     Final          Version 1.36.
+Top-level module name = ENCODER.
+
+
+
+Applying 1.000000 MHz constraint to all clocks
+
+WARNING - synthesis: No .lpf file will be written because the -lpf option is not used or is set to zero.
+Results of NGD DRC are available in ENCODER_drc.log.
+
+################### Begin Area Report (ENCODER)######################
+Number of register bits => 0 of 880 (0 % )
+GND => 1
+IBUF => 4
+OBUF => 4
+VCC => 1
+################### End Area Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 0
+Clock Enable Nets
+Number of Clock Enables: 0
+Top 0 highest fanout Clock Enables:
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : n4_c, loads : 1
+  Net : n3_c, loads : 1
+  Net : n2_c, loads : 1
+  Net : key_in_c_c, loads : 1
+  Net : key_in[2], loads : 0
+  Net : key_in[3], loads : 0
+  Net : key_in[1], loads : 0
+  Net : key_in[0], loads : 0
+  Net : pwr, loads : 0
+  Net : gnd, loads : 0
+################### End Clock Report ##################
+
+Peak Memory Usage: 31.281  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 0.281  secs
+--------------------------------------------------------------

@@ -1,0 +1,1900 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Wed Jun 07 22:24:56 2023
+#$ TITLE top.bls 
+#$ MODULE untitled
+#$ PINS 18 led_row_0_'o'  led_row_1_'o'  led_row_2_'o'  led_row_3_'o'  led_row_4_'o'  led_row_5_'o'  \
+#  led_row_6_'o'  led_row_7_'o'  led_col_0_'o'  led_col_1_'o'  led_col_2_'o'  led_col_3_'o'  led_col_4_'o'  \
+#  led_col_5_'o'  led_col_6_'o'  led_col_7_'o'  reset clk
+#$ NODES 78 I1/row_buf_0_reg I1/row_buf_1_reg I1/row_buf_2_reg I1/row_buf_3_reg \
+#  I1/row_buf_4_reg I1/row_buf_5_reg I1/row_buf_6_reg I1/row_buf_7_reg \
+#  I1/cnt_next_24_ I1/cnt_next_9_ I1/cnt_next_20_ I1/cnt_next_13_ I1/cnt_next_16_ \
+#  I1/cnt_next_23_ I1/cnt_next_18_ I1/cnt_next_15_ I1/cnt_next_19_ I1/cnt_next_10_ \
+#  I1/scan_data_1_ I1/scan_data_3_ I1/scan_data_4_ I1/scan_data_5_ I1/scan_data_6_ \
+#  I1/scan_data_0_ I1/scan_data_2_ I1/cnt_scan_0_ I1/cnt_scan_1_ I1/cnt_scan_2_ \
+#  I1/cnt_scan_3_ I1/cnt_scan_4_ I1/cnt_scan_5_ I1/cnt_scan_6_ I1/cnt_scan_7_ \
+#  I1/cnt_scan_8_ I1/cnt_scan_9_ I1/cnt_scan_10_ I1/cnt_scan_11_ I1/cnt_scan_12_ \
+#  I1/cnt_scan_13_ I1/cnt_scan_14_ I1/cnt_scan_15_ I1/cnt_next_0_ I1/cnt_next_1_ \
+#  I1/cnt_next_2_ I1/cnt_next_3_ I1/cnt_next_4_ I1/cnt_next_5_ I1/cnt_next_6_ \
+#  I1/cnt_next_7_ I1/cnt_next_8_ I1/cnt_next_11_ I1/cnt_next_12_ I1/cnt_next_14_ \
+#  I1/cnt_next_17_ I1/cnt_next_21_ I1/cnt_next_22_ I1/cnt_next_25_ I1/N_339 I1/N_46_i \
+#  I1/N_37_i I1/N_32_i I1/N_30_0 I1/col_buf_i_3_4__n I1/N_132 I1/N_150 I1/N_152 I1/N_154 \
+#  I1/N_155 I1/un1_cnt_scan_9 I1/N_271 I1/N_263 I1/un1_cnt_next_10_20_3 \
+#  I1/un1_cnt_next_10 I1/un1_cnt_next_10_14 I1/N_301 I1/N_307 I1/N_327 I1/N_317
+.model top
+.inputs clk.BLIF reset.BLIF I1/row_buf_0_reg.BLIF I1/row_buf_1_reg.BLIF \
+I1/row_buf_2_reg.BLIF I1/row_buf_3_reg.BLIF I1/row_buf_4_reg.BLIF \
+I1/row_buf_5_reg.BLIF I1/row_buf_6_reg.BLIF I1/row_buf_7_reg.BLIF \
+I1/cnt_next_24_.BLIF I1/cnt_next_9_.BLIF I1/cnt_next_20_.BLIF \
+I1/cnt_next_13_.BLIF I1/cnt_next_16_.BLIF I1/cnt_next_23_.BLIF \
+I1/cnt_next_18_.BLIF I1/cnt_next_15_.BLIF I1/cnt_next_19_.BLIF \
+I1/cnt_next_10_.BLIF I1/scan_data_1_.BLIF I1/scan_data_3_.BLIF \
+I1/scan_data_4_.BLIF I1/scan_data_5_.BLIF I1/scan_data_6_.BLIF \
+I1/scan_data_0_.BLIF I1/scan_data_2_.BLIF I1/cnt_scan_0_.BLIF \
+I1/cnt_scan_1_.BLIF I1/cnt_scan_2_.BLIF I1/cnt_scan_3_.BLIF \
+I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/cnt_scan_6_.BLIF \
+I1/cnt_scan_7_.BLIF I1/cnt_scan_8_.BLIF I1/cnt_scan_9_.BLIF \
+I1/cnt_scan_10_.BLIF I1/cnt_scan_11_.BLIF I1/cnt_scan_12_.BLIF \
+I1/cnt_scan_13_.BLIF I1/cnt_scan_14_.BLIF I1/cnt_scan_15_.BLIF \
+I1/cnt_next_0_.BLIF I1/cnt_next_1_.BLIF I1/cnt_next_2_.BLIF \
+I1/cnt_next_3_.BLIF I1/cnt_next_4_.BLIF I1/cnt_next_5_.BLIF \
+I1/cnt_next_6_.BLIF I1/cnt_next_7_.BLIF I1/cnt_next_8_.BLIF \
+I1/cnt_next_11_.BLIF I1/cnt_next_12_.BLIF I1/cnt_next_14_.BLIF \
+I1/cnt_next_17_.BLIF I1/cnt_next_21_.BLIF I1/cnt_next_22_.BLIF \
+I1/cnt_next_25_.BLIF I1/N_339.BLIF I1/N_46_i.BLIF I1/N_37_i.BLIF \
+I1/N_32_i.BLIF I1/N_30_0.BLIF I1/col_buf_i_3_4__n.BLIF I1/N_132.BLIF \
+I1/N_150.BLIF I1/N_152.BLIF I1/N_154.BLIF I1/N_155.BLIF I1/un1_cnt_scan_9.BLIF \
+I1/N_271.BLIF I1/N_263.BLIF I1/un1_cnt_next_10_20_3.BLIF \
+I1/un1_cnt_next_10.BLIF I1/un1_cnt_next_10_14.BLIF I1/N_301.BLIF I1/N_307.BLIF \
+I1/N_327.BLIF I1/N_317.BLIF
+.outputs led_col_1_ led_col_2_ led_col_3_ led_col_5_ led_col_6_ led_col_7_ \
+led_row_0_ led_row_1_ led_row_2_ led_row_3_ led_row_4_ led_row_5_ led_row_6_ \
+led_row_7_ I1/row_buf_0_reg.CE I1/row_buf_0_reg.AR I1/row_buf_0_reg.D \
+I1/row_buf_0_reg.C I1/row_buf_1_reg.CE I1/row_buf_1_reg.AR I1/row_buf_1_reg.D \
+I1/row_buf_1_reg.C I1/row_buf_2_reg.CE I1/row_buf_2_reg.AR I1/row_buf_2_reg.D \
+I1/row_buf_2_reg.C I1/row_buf_3_reg.CE I1/row_buf_3_reg.AR I1/row_buf_3_reg.D \
+I1/row_buf_3_reg.C I1/row_buf_4_reg.CE I1/row_buf_4_reg.AR I1/row_buf_4_reg.D \
+I1/row_buf_4_reg.C I1/row_buf_5_reg.CE I1/row_buf_5_reg.AR I1/row_buf_5_reg.D \
+I1/row_buf_5_reg.C I1/row_buf_6_reg.CE I1/row_buf_6_reg.AR I1/row_buf_6_reg.D \
+I1/row_buf_6_reg.C I1/row_buf_7_reg.CE I1/row_buf_7_reg.D I1/row_buf_7_reg.AP \
+I1/row_buf_7_reg.C I1/cnt_next_24_.AR I1/cnt_next_24_.D I1/cnt_next_24_.C \
+I1/cnt_next_9_.AR I1/cnt_next_9_.D I1/cnt_next_9_.C I1/cnt_next_20_.AR \
+I1/cnt_next_20_.D I1/cnt_next_20_.C I1/cnt_next_13_.AR I1/cnt_next_13_.D \
+I1/cnt_next_13_.C I1/cnt_next_16_.AR I1/cnt_next_16_.D I1/cnt_next_16_.C \
+I1/cnt_next_23_.AR I1/cnt_next_23_.C I1/cnt_next_18_.AR I1/cnt_next_18_.C \
+I1/cnt_next_15_.AR I1/cnt_next_15_.D I1/cnt_next_15_.C I1/cnt_next_19_.AR \
+I1/cnt_next_19_.D I1/cnt_next_19_.C I1/cnt_next_10_.AR I1/cnt_next_10_.C \
+I1/scan_data_1_.AR I1/scan_data_1_.D I1/scan_data_1_.C I1/scan_data_3_.AR \
+I1/scan_data_3_.D I1/scan_data_3_.C I1/scan_data_4_.AR I1/scan_data_4_.D \
+I1/scan_data_4_.C I1/scan_data_5_.AR I1/scan_data_5_.D I1/scan_data_5_.C \
+I1/scan_data_6_.AR I1/scan_data_6_.C I1/scan_data_0_.AR I1/scan_data_0_.D \
+I1/scan_data_0_.C I1/scan_data_2_.AR I1/scan_data_2_.D I1/scan_data_2_.C \
+I1/cnt_scan_0_.AR I1/cnt_scan_0_.D I1/cnt_scan_0_.C I1/cnt_scan_1_.AR \
+I1/cnt_scan_1_.D I1/cnt_scan_1_.C I1/cnt_scan_2_.AR I1/cnt_scan_2_.D \
+I1/cnt_scan_2_.C I1/cnt_scan_3_.AR I1/cnt_scan_3_.D I1/cnt_scan_3_.C \
+I1/cnt_scan_4_.AR I1/cnt_scan_4_.D I1/cnt_scan_4_.C I1/cnt_scan_5_.AR \
+I1/cnt_scan_5_.D I1/cnt_scan_5_.C I1/cnt_scan_6_.AR I1/cnt_scan_6_.D \
+I1/cnt_scan_6_.C I1/cnt_scan_7_.AR I1/cnt_scan_7_.C I1/cnt_scan_8_.AR \
+I1/cnt_scan_8_.C I1/cnt_scan_9_.AR I1/cnt_scan_9_.D I1/cnt_scan_9_.C \
+I1/cnt_scan_10_.AR I1/cnt_scan_10_.D I1/cnt_scan_10_.C I1/cnt_scan_11_.AR \
+I1/cnt_scan_11_.D I1/cnt_scan_11_.C I1/cnt_scan_12_.AR I1/cnt_scan_12_.C \
+I1/cnt_scan_13_.AR I1/cnt_scan_13_.D I1/cnt_scan_13_.C I1/cnt_scan_14_.AR \
+I1/cnt_scan_14_.D I1/cnt_scan_14_.C I1/cnt_scan_15_.AR I1/cnt_scan_15_.D \
+I1/cnt_scan_15_.C I1/cnt_next_0_.AR I1/cnt_next_0_.D I1/cnt_next_0_.C \
+I1/cnt_next_1_.AR I1/cnt_next_1_.D I1/cnt_next_1_.C I1/cnt_next_2_.AR \
+I1/cnt_next_2_.D I1/cnt_next_2_.C I1/cnt_next_3_.AR I1/cnt_next_3_.D \
+I1/cnt_next_3_.C I1/cnt_next_4_.AR I1/cnt_next_4_.D I1/cnt_next_4_.C \
+I1/cnt_next_5_.AR I1/cnt_next_5_.D I1/cnt_next_5_.C I1/cnt_next_6_.AR \
+I1/cnt_next_6_.D I1/cnt_next_6_.C I1/cnt_next_7_.AR I1/cnt_next_7_.C \
+I1/cnt_next_8_.AR I1/cnt_next_8_.D I1/cnt_next_8_.C I1/cnt_next_11_.AR \
+I1/cnt_next_11_.D I1/cnt_next_11_.C I1/cnt_next_12_.AR I1/cnt_next_12_.D \
+I1/cnt_next_12_.C I1/cnt_next_14_.AR I1/cnt_next_14_.D I1/cnt_next_14_.C \
+I1/cnt_next_17_.AR I1/cnt_next_17_.C I1/cnt_next_21_.AR I1/cnt_next_21_.D \
+I1/cnt_next_21_.C I1/cnt_next_22_.AR I1/cnt_next_22_.C I1/cnt_next_25_.AR \
+I1/cnt_next_25_.D I1/cnt_next_25_.C I1/N_339 I1/N_46_i I1/N_37_i I1/N_32_i \
+I1/N_30_0 I1/col_buf_i_3_4__n I1/N_132 I1/N_150 I1/N_152 I1/N_154 I1/N_155 \
+I1/un1_cnt_scan_9 I1/N_271 I1/N_263 I1/un1_cnt_next_10_20_3 I1/un1_cnt_next_10 \
+I1/un1_cnt_next_10_14 I1/N_301 I1/N_307 I1/N_327 I1/N_317 led_col_0_.X1 \
+led_col_0_.X2 led_col_4_.X1 led_col_4_.X2 I1/cnt_next_23_.D.X1 \
+I1/cnt_next_23_.D.X2 I1/cnt_next_18_.D.X1 I1/cnt_next_18_.D.X2 \
+I1/cnt_next_10_.D.X1 I1/cnt_next_10_.D.X2 I1/scan_data_6_.D.X1 \
+I1/scan_data_6_.D.X2 I1/cnt_scan_7_.D.X1 I1/cnt_scan_7_.D.X2 \
+I1/cnt_scan_8_.D.X1 I1/cnt_scan_8_.D.X2 I1/cnt_scan_12_.D.X1 \
+I1/cnt_scan_12_.D.X2 I1/cnt_next_7_.D.X1 I1/cnt_next_7_.D.X2 \
+I1/cnt_next_17_.D.X1 I1/cnt_next_17_.D.X2 I1/cnt_next_22_.D.X1 \
+I1/cnt_next_22_.D.X2
+.names I1/cnt_next_9_.BLIF I1/cnt_next_7_.BLIF I1/cnt_next_8_.BLIF \
+I1/un1_cnt_next_10_20_3.BLIF I1/un1_cnt_next_10.BLIF I1/cnt_next_9_.D
+01110 1
+1--00 1
+1-0-0 1
+10--0 1
+1111- 0
+0--0- 0
+0-0-- 0
+00--- 0
+----1 0
+.names I1/cnt_scan_0_.BLIF I1/cnt_scan_0_.D
+0 1
+1 0
+.names I1/cnt_next_0_.BLIF I1/cnt_next_0_.D
+0 1
+1 0
+.names I1/cnt_next_11_.BLIF I1/un1_cnt_next_10.BLIF I1/N_301.BLIF \
+I1/cnt_next_11_.D
+100 1
+001 1
+0-0 0
+1-1 0
+-1- 0
+.names I1/cnt_next_11_.BLIF I1/cnt_next_12_.BLIF I1/un1_cnt_next_10.BLIF \
+I1/N_301.BLIF I1/cnt_next_12_.D
+1001 1
+010- 1
+-100 1
+11-1 0
+00-- 0
+--1- 0
+-0-0 0
+.names I1/cnt_next_14_.BLIF I1/un1_cnt_next_10.BLIF I1/N_307.BLIF \
+I1/cnt_next_14_.D
+100 1
+001 1
+0-0 0
+1-1 0
+-1- 0
+.names I1/cnt_next_20_.BLIF I1/cnt_next_19_.BLIF I1/cnt_next_21_.BLIF \
+I1/un1_cnt_next_10.BLIF I1/N_317.BLIF I1/cnt_next_21_.D
+11001 1
+-010- 1
+0-10- 1
+--100 1
+111-1 0
+-00-- 0
+0-0-- 0
+---1- 0
+--0-0 0
+.names I1/cnt_next_24_.BLIF I1/cnt_next_25_.BLIF I1/un1_cnt_next_10.BLIF \
+I1/N_327.BLIF I1/cnt_next_25_.D
+1001 1
+010- 1
+-100 1
+11-1 0
+00-- 0
+--1- 0
+-0-0 0
+.names I1/cnt_next_24_.BLIF I1/cnt_next_9_.BLIF I1/cnt_next_20_.BLIF \
+I1/cnt_next_13_.BLIF I1/cnt_next_16_.BLIF I1/cnt_next_23_.BLIF \
+I1/cnt_next_18_.BLIF I1/cnt_next_15_.BLIF I1/cnt_next_19_.BLIF \
+I1/cnt_next_10_.BLIF I1/scan_data_1_.BLIF I1/scan_data_0_.BLIF \
+I1/scan_data_2_.BLIF I1/cnt_next_7_.BLIF I1/cnt_next_8_.BLIF \
+I1/cnt_next_11_.BLIF I1/cnt_next_12_.BLIF I1/cnt_next_14_.BLIF \
+I1/cnt_next_17_.BLIF I1/cnt_next_21_.BLIF I1/cnt_next_22_.BLIF \
+I1/cnt_next_25_.BLIF I1/un1_cnt_next_10_20_3.BLIF I1/N_339
+00000000001111111111111 1
+---------------------0- 0
+--------------------0-- 0
+-------------------0--- 0
+------------------0---- 0
+-----------------0----- 0
+----------------0------ 0
+---------------0------- 0
+--------------0-------- 0
+-------------0--------- 0
+------------0---------- 0
+-----------0----------- 0
+----------0------------ 0
+---------1------------- 0
+--------1-------------- 0
+-------1--------------- 0
+------1---------------- 0
+-----1----------------- 0
+----1------------------ 0
+---1------------------- 0
+--1-------------------- 0
+-1--------------------- 0
+1---------------------- 0
+----------------------0 0
+.names I1/row_buf_0_reg.BLIF I1/row_buf_1_reg.BLIF I1/row_buf_2_reg.BLIF \
+I1/row_buf_3_reg.BLIF I1/row_buf_4_reg.BLIF I1/row_buf_5_reg.BLIF \
+I1/row_buf_6_reg.BLIF I1/row_buf_7_reg.BLIF I1/scan_data_1_.BLIF \
+I1/scan_data_3_.BLIF I1/scan_data_4_.BLIF I1/scan_data_5_.BLIF \
+I1/scan_data_6_.BLIF I1/scan_data_0_.BLIF I1/scan_data_2_.BLIF I1/N_132.BLIF \
+I1/N_46_i
+------1--1-----0 1
+1-------0----0-- 1
+1-------00------ 1
+---1----0----0-- 1
+--------0-1---1- 1
+----0---------00 1
+-1------0-----1- 1
+----0---0----0-- 1
+--1-----0-----1- 1
+-1------0----0-- 1
+--1-----0----0-- 1
+-----1--0-----1- 1
+-----1--0----0-- 1
+-------10-----1- 1
+-------10----0-- 1
+---1----0-----1- 1
+--------0-1--0-- 1
+--------0--1-0-- 1
+--------0---10-- 1
+--------10---1-- 1
+----1---0-----1- 1
+------1-0----0-- 1
+---------0-1-1-- 1
+--------0---1-1- 1
+------0-0-----1- 1
+--------00----0- 1
+--------11---0-- 1
+---------1----1- 1
+--------1------0 1
+------------1--0 1
+-----------1---0 1
+----------1----0 1
+-------1-------0 1
+-----1---------0 1
+---1-----------0 1
+--1------------0 1
+-1-------------0 1
+1--------------0 1
+000000100000011- 0
+0000100001000-0- 0
+--------10---0-1 0
+---------1---101 0
+.names I1/scan_data_1_.BLIF I1/scan_data_3_.BLIF I1/scan_data_0_.BLIF \
+I1/scan_data_2_.BLIF I1/N_132.BLIF I1/N_150.BLIF I1/N_37_i
+11-0-- 1
+10-1-- 1
+0---0- 1
+0-1--- 1
+1----0 1
+0-0-1- 0
+10-0-1 0
+11-1-1 0
+.names I1/row_buf_0_reg.BLIF I1/row_buf_1_reg.BLIF I1/row_buf_2_reg.BLIF \
+I1/row_buf_3_reg.BLIF I1/row_buf_4_reg.BLIF I1/row_buf_5_reg.BLIF \
+I1/row_buf_6_reg.BLIF I1/row_buf_7_reg.BLIF I1/scan_data_1_.BLIF \
+I1/scan_data_3_.BLIF I1/scan_data_4_.BLIF I1/scan_data_5_.BLIF \
+I1/scan_data_6_.BLIF I1/scan_data_0_.BLIF I1/scan_data_2_.BLIF I1/N_150.BLIF \
+I1/N_32_i
+--00----0------- 1
+--11----0------- 1
+--------11---0-- 1
+---------0---1-- 1
+--------0-----1- 1
+--------0---1--- 1
+--------0--1---- 1
+--------0-1----- 1
+--------00------ 1
+-------10------- 1
+------1-0------- 1
+-----1--0------- 1
+----1---0------- 1
+-1------0------- 1
+1-------0------- 1
+--------1------0 1
+0010000001000-0- 0
+0001000001000-0- 0
+--------10---0-1 0
+--------11---1-1 0
+.names I1/row_buf_0_reg.BLIF I1/row_buf_1_reg.BLIF I1/row_buf_4_reg.BLIF \
+I1/row_buf_6_reg.BLIF I1/row_buf_7_reg.BLIF I1/scan_data_1_.BLIF \
+I1/scan_data_3_.BLIF I1/scan_data_4_.BLIF I1/scan_data_5_.BLIF \
+I1/scan_data_6_.BLIF I1/scan_data_0_.BLIF I1/scan_data_2_.BLIF I1/N_30_0
+-0-0-------- 1
+---1-1------ 1
+-1---01----- 1
+---1------0- 1
+-----00---1- 1
+-0---------0 1
+-----1----0- 1
+---------1-- 1
+--------1--- 1
+-------1---- 1
+----1------- 1
+--1--------- 1
+1----------- 1
+000100100011 0
+01000000000- 0
+010001-0001- 0
+.names I1/scan_data_1_.BLIF I1/scan_data_3_.BLIF I1/scan_data_0_.BLIF \
+I1/scan_data_2_.BLIF I1/N_150.BLIF I1/N_155.BLIF I1/col_buf_i_3_4__n
+100--- 1
+10---0 1
+-1-1-- 1
+--0-0- 1
+--01-- 1
+----00 1
+---1-0 1
+-1-01- 0
+0--01- 0
+-01--1 0
+--10-1 0
+.names I1/row_buf_0_reg.BLIF I1/row_buf_1_reg.BLIF I1/row_buf_2_reg.BLIF \
+I1/row_buf_3_reg.BLIF I1/row_buf_4_reg.BLIF I1/row_buf_5_reg.BLIF \
+I1/row_buf_6_reg.BLIF I1/row_buf_7_reg.BLIF I1/scan_data_4_.BLIF \
+I1/scan_data_5_.BLIF I1/scan_data_6_.BLIF I1/N_132
+00000100000 1
+---------1- 0
+--------1-- 0
+-------1--- 0
+------1---- 0
+-----0----- 0
+----1------ 0
+---1------- 0
+--1-------- 0
+-1--------- 0
+1---------- 0
+----------1 0
+.names I1/row_buf_0_reg.BLIF I1/row_buf_1_reg.BLIF I1/row_buf_2_reg.BLIF \
+I1/row_buf_3_reg.BLIF I1/row_buf_4_reg.BLIF I1/row_buf_5_reg.BLIF \
+I1/row_buf_6_reg.BLIF I1/row_buf_7_reg.BLIF I1/scan_data_4_.BLIF \
+I1/scan_data_5_.BLIF I1/scan_data_6_.BLIF I1/N_150
+01000000000 1
+---------1- 0
+--------1-- 0
+-------1--- 0
+------1---- 0
+-----1----- 0
+----1------ 0
+---1------- 0
+--1-------- 0
+-0--------- 0
+1---------- 0
+----------1 0
+.names I1/row_buf_0_reg.BLIF I1/row_buf_1_reg.BLIF I1/row_buf_2_reg.BLIF \
+I1/row_buf_3_reg.BLIF I1/row_buf_4_reg.BLIF I1/row_buf_5_reg.BLIF \
+I1/row_buf_6_reg.BLIF I1/row_buf_7_reg.BLIF I1/scan_data_4_.BLIF \
+I1/scan_data_5_.BLIF I1/scan_data_6_.BLIF I1/N_152
+00010000000 1
+---------1- 0
+--------1-- 0
+-------1--- 0
+------1---- 0
+-----1----- 0
+----1------ 0
+---0------- 0
+--1-------- 0
+-1--------- 0
+1---------- 0
+----------1 0
+.names I1/row_buf_0_reg.BLIF I1/row_buf_1_reg.BLIF I1/row_buf_2_reg.BLIF \
+I1/row_buf_3_reg.BLIF I1/row_buf_4_reg.BLIF I1/row_buf_5_reg.BLIF \
+I1/row_buf_6_reg.BLIF I1/row_buf_7_reg.BLIF I1/scan_data_4_.BLIF \
+I1/scan_data_5_.BLIF I1/scan_data_6_.BLIF I1/N_154
+00100000000 1
+---------1- 0
+--------1-- 0
+-------1--- 0
+------1---- 0
+-----1----- 0
+----1------ 0
+---1------- 0
+--0-------- 0
+-1--------- 0
+1---------- 0
+----------1 0
+.names I1/row_buf_0_reg.BLIF I1/row_buf_1_reg.BLIF I1/row_buf_2_reg.BLIF \
+I1/row_buf_3_reg.BLIF I1/row_buf_4_reg.BLIF I1/row_buf_5_reg.BLIF \
+I1/row_buf_6_reg.BLIF I1/row_buf_7_reg.BLIF I1/scan_data_4_.BLIF \
+I1/scan_data_5_.BLIF I1/scan_data_6_.BLIF I1/N_155
+00001000000 1
+---------1- 0
+--------1-- 0
+-------1--- 0
+------1---- 0
+-----1----- 0
+----0------ 0
+---1------- 0
+--1-------- 0
+-1--------- 0
+1---------- 0
+----------1 0
+.names I1/cnt_scan_0_.BLIF I1/cnt_scan_1_.BLIF I1/cnt_scan_2_.BLIF \
+I1/cnt_scan_3_.BLIF I1/un1_cnt_scan_9
+1111 1
+--0- 0
+-0-- 0
+0--- 0
+---0 0
+.names I1/cnt_scan_0_.BLIF I1/cnt_scan_1_.BLIF I1/cnt_scan_2_.BLIF \
+I1/cnt_scan_3_.BLIF I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF \
+I1/cnt_scan_6_.BLIF I1/cnt_scan_7_.BLIF I1/cnt_scan_8_.BLIF \
+I1/cnt_scan_9_.BLIF I1/cnt_scan_10_.BLIF I1/cnt_scan_11_.BLIF \
+I1/cnt_scan_12_.BLIF I1/N_271
+1111111111111 1
+-----------0- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------0----- 0
+------0------ 0
+-----0------- 0
+----0-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names I1/cnt_scan_0_.BLIF I1/cnt_scan_1_.BLIF I1/cnt_scan_2_.BLIF \
+I1/cnt_scan_3_.BLIF I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF \
+I1/cnt_scan_6_.BLIF I1/cnt_scan_7_.BLIF I1/cnt_scan_8_.BLIF I1/N_263
+111111111 1
+-------0- 0
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+--------0 0
+.names I1/cnt_next_0_.BLIF I1/cnt_next_1_.BLIF I1/cnt_next_2_.BLIF \
+I1/cnt_next_3_.BLIF I1/cnt_next_4_.BLIF I1/cnt_next_5_.BLIF \
+I1/cnt_next_6_.BLIF I1/un1_cnt_next_10_20_3
+1111111 1
+-----0- 0
+----0-- 0
+---0--- 0
+--0---- 0
+-0----- 0
+0------ 0
+------0 0
+.names I1/cnt_next_24_.BLIF I1/cnt_next_9_.BLIF I1/cnt_next_20_.BLIF \
+I1/cnt_next_13_.BLIF I1/cnt_next_16_.BLIF I1/cnt_next_23_.BLIF \
+I1/cnt_next_18_.BLIF I1/cnt_next_15_.BLIF I1/cnt_next_19_.BLIF \
+I1/cnt_next_10_.BLIF I1/cnt_next_0_.BLIF I1/cnt_next_1_.BLIF \
+I1/cnt_next_2_.BLIF I1/cnt_next_3_.BLIF I1/cnt_next_4_.BLIF \
+I1/cnt_next_5_.BLIF I1/cnt_next_6_.BLIF I1/cnt_next_7_.BLIF \
+I1/cnt_next_8_.BLIF I1/cnt_next_11_.BLIF I1/cnt_next_12_.BLIF \
+I1/cnt_next_14_.BLIF I1/cnt_next_17_.BLIF I1/cnt_next_21_.BLIF \
+I1/cnt_next_22_.BLIF I1/cnt_next_25_.BLIF I1/un1_cnt_next_10
+00000000001111111111111111 1
+------------------------0- 0
+-----------------------0-- 0
+----------------------0--- 0
+---------------------0---- 0
+--------------------0----- 0
+-------------------0------ 0
+------------------0------- 0
+-----------------0-------- 0
+----------------0--------- 0
+---------------0---------- 0
+--------------0----------- 0
+-------------0------------ 0
+------------0------------- 0
+-----------0-------------- 0
+----------0--------------- 0
+---------1---------------- 0
+--------1----------------- 0
+-------1------------------ 0
+------1------------------- 0
+-----1-------------------- 0
+----1--------------------- 0
+---1---------------------- 0
+--1----------------------- 0
+-1------------------------ 0
+1------------------------- 0
+-------------------------0 0
+.names I1/cnt_next_0_.BLIF I1/cnt_next_1_.BLIF I1/cnt_next_2_.BLIF \
+I1/cnt_next_3_.BLIF I1/un1_cnt_next_10_14
+1111 1
+--0- 0
+-0-- 0
+0--- 0
+---0 0
+.names I1/cnt_next_9_.BLIF I1/cnt_next_10_.BLIF I1/cnt_next_0_.BLIF \
+I1/cnt_next_1_.BLIF I1/cnt_next_2_.BLIF I1/cnt_next_3_.BLIF \
+I1/cnt_next_4_.BLIF I1/cnt_next_5_.BLIF I1/cnt_next_6_.BLIF \
+I1/cnt_next_7_.BLIF I1/cnt_next_8_.BLIF I1/N_301
+11111111111 1
+---------0- 0
+--------0-- 0
+-------0--- 0
+------0---- 0
+-----0----- 0
+----0------ 0
+---0------- 0
+--0-------- 0
+-0--------- 0
+0---------- 0
+----------0 0
+.names I1/cnt_next_9_.BLIF I1/cnt_next_13_.BLIF I1/cnt_next_10_.BLIF \
+I1/cnt_next_0_.BLIF I1/cnt_next_1_.BLIF I1/cnt_next_2_.BLIF \
+I1/cnt_next_3_.BLIF I1/cnt_next_4_.BLIF I1/cnt_next_5_.BLIF \
+I1/cnt_next_6_.BLIF I1/cnt_next_7_.BLIF I1/cnt_next_8_.BLIF \
+I1/cnt_next_11_.BLIF I1/cnt_next_12_.BLIF I1/N_307
+11111111111111 1
+------------0- 0
+-----------0-- 0
+----------0--- 0
+---------0---- 0
+--------0----- 0
+-------0------ 0
+------0------- 0
+-----0-------- 0
+----0--------- 0
+---0---------- 0
+--0----------- 0
+-0------------ 0
+0------------- 0
+-------------0 0
+.names I1/cnt_next_9_.BLIF I1/cnt_next_20_.BLIF I1/cnt_next_13_.BLIF \
+I1/cnt_next_16_.BLIF I1/cnt_next_23_.BLIF I1/cnt_next_18_.BLIF \
+I1/cnt_next_15_.BLIF I1/cnt_next_19_.BLIF I1/cnt_next_10_.BLIF \
+I1/cnt_next_0_.BLIF I1/cnt_next_1_.BLIF I1/cnt_next_2_.BLIF \
+I1/cnt_next_3_.BLIF I1/cnt_next_4_.BLIF I1/cnt_next_5_.BLIF \
+I1/cnt_next_6_.BLIF I1/cnt_next_7_.BLIF I1/cnt_next_8_.BLIF \
+I1/cnt_next_11_.BLIF I1/cnt_next_12_.BLIF I1/cnt_next_14_.BLIF \
+I1/cnt_next_17_.BLIF I1/cnt_next_21_.BLIF I1/cnt_next_22_.BLIF I1/N_327
+111111111111111111111111 1
+----------------------0- 0
+---------------------0-- 0
+--------------------0--- 0
+-------------------0---- 0
+------------------0----- 0
+-----------------0------ 0
+----------------0------- 0
+---------------0-------- 0
+--------------0--------- 0
+-------------0---------- 0
+------------0----------- 0
+-----------0------------ 0
+----------0------------- 0
+---------0-------------- 0
+--------0--------------- 0
+-------0---------------- 0
+------0----------------- 0
+-----0------------------ 0
+----0------------------- 0
+---0-------------------- 0
+--0--------------------- 0
+-0---------------------- 0
+0----------------------- 0
+-----------------------0 0
+.names I1/cnt_next_9_.BLIF I1/cnt_next_13_.BLIF I1/cnt_next_16_.BLIF \
+I1/cnt_next_18_.BLIF I1/cnt_next_15_.BLIF I1/cnt_next_10_.BLIF \
+I1/cnt_next_0_.BLIF I1/cnt_next_1_.BLIF I1/cnt_next_2_.BLIF \
+I1/cnt_next_3_.BLIF I1/cnt_next_4_.BLIF I1/cnt_next_5_.BLIF \
+I1/cnt_next_6_.BLIF I1/cnt_next_7_.BLIF I1/cnt_next_8_.BLIF \
+I1/cnt_next_11_.BLIF I1/cnt_next_12_.BLIF I1/cnt_next_14_.BLIF \
+I1/cnt_next_17_.BLIF I1/N_317
+1111111111111111111 1
+-----------------0- 0
+----------------0-- 0
+---------------0--- 0
+--------------0---- 0
+-------------0----- 0
+------------0------ 0
+-----------0------- 0
+----------0-------- 0
+---------0--------- 0
+--------0---------- 0
+-------0----------- 0
+------0------------ 0
+-----0------------- 0
+----0-------------- 0
+---0--------------- 0
+--0---------------- 0
+-0----------------- 0
+0------------------ 0
+------------------0 0
+.names I1/row_buf_2_reg.BLIF I1/row_buf_3_reg.BLIF I1/row_buf_5_reg.BLIF \
+I1/scan_data_1_.BLIF I1/scan_data_3_.BLIF I1/scan_data_0_.BLIF \
+I1/scan_data_2_.BLIF I1/N_37_i.BLIF I1/N_30_0.BLIF I1/N_132.BLIF I1/N_150.BLIF \
+I1/N_152.BLIF I1/N_154.BLIF I1/N_155.BLIF led_col_1_
+1----111-000-0 1
+-1---111-000-0 1
+-1--1111--0--0 1
+1--00-11--00-- 1
+--1--111-000-0 1
+--1-1111--0--0 1
+-----1111000-0 1
+--100-11--00-- 1
+1---1111--0--0 1
+----11111-0--0 1
+-1-00-11--00-- 1
+---00-111-00-- 1
+---001011--0-- 1
+--100101---0-- 1
+-1-00101---0-- 1
+1--00101---0-- 1
+---111111-0--- 1
+--111111--0--- 1
+-1-11111--0--- 1
+1--11111--0--- 1
+----01011--000 1
+--1-0101---000 1
+-1--0101---000 1
+1---0101---000 1
+---1101110---- 1
+--111011-0---- 1
+-1-11011-0---- 1
+1--11011-0---- 1
+---1-00110-0-- 1
+--11-001-0-0-- 1
+-1-1-001-0-0-- 1
+1--1-001-0-0-- 1
+---11-0110-0-- 1
+--111-01-0-0-- 1
+-1-11-01-0-0-- 1
+1--11-01-0-0-- 1
+---000111----- 1
+--100011------ 1
+-1-00011------ 1
+1--00011------ 1
+---010011----- 1
+--101001------ 1
+-1-01001------ 1
+1--01001------ 1
+---0-0-110--0- 1
+--10-0-1-0--0- 1
+-1-0-0-1-0--0- 1
+1--0-0-1-0--0- 1
+----10011--0-- 1
+--1-1001---0-- 1
+-1--1001---0-- 1
+1---1001---0-- 1
+----00111----0 1
+--1-0011-----0 1
+-1--0011-----0 1
+1---0011-----0 1
+---01-011----0 1
+--101-01-----0 1
+-1-01-01-----0 1
+1--01-01-----0 1
+---0101-----1- 0
+000-----0----- 0
+---0000-----1- 0
+---1110--1---- 0
+---1010-----1- 0
+---1011--1---- 0
+----101--1---- 0
+----000--1---- 0
+-----11---1--- 0
+---1--0----1-- 0
+---011-------1 0
+----01-----1-- 0
+---10-1------1 0
+---101-------1 0
+-------0------ 0
+.names I1/row_buf_0_reg.BLIF I1/row_buf_1_reg.BLIF I1/row_buf_2_reg.BLIF \
+I1/row_buf_3_reg.BLIF I1/row_buf_4_reg.BLIF I1/row_buf_5_reg.BLIF \
+I1/row_buf_6_reg.BLIF I1/row_buf_7_reg.BLIF I1/scan_data_1_.BLIF \
+I1/scan_data_3_.BLIF I1/scan_data_4_.BLIF I1/scan_data_5_.BLIF \
+I1/scan_data_6_.BLIF I1/scan_data_0_.BLIF I1/scan_data_2_.BLIF I1/N_30_0.BLIF \
+I1/N_132.BLIF I1/N_150.BLIF I1/N_152.BLIF I1/N_154.BLIF I1/N_155.BLIF \
+led_col_2_
+--------1------100000 1
+--1------0----1-0-000 1
+---1-----0----1-0-000 1
+-----1---0----1-0-000 1
+--1-----------0-000-- 1
+--1------0---11-0-0-- 1
+---1----------0-000-- 1
+---------0---0110-000 1
+-----1--------0-000-- 1
+---1-----0---11-0-0-- 1
+--------------01000-- 1
+-----1---0---11-0-0-- 1
+-----1--10---10-00--- 1
+---1----10---10-00--- 1
+--1-----10---10-00--- 1
+--------10---10100--- 1
+-----1--10---01---0-- 1
+---1----10---01---0-- 1
+--1-----10---01---0-- 1
+--------10---011--0-- 1
+-----1--01----1--00-0 1
+---1----01----1--00-0 1
+--1-----01----1--00-0 1
+--------01----11-00-0 1
+-----1---1---00-0---- 1
+---1-----1---00-0---- 1
+--1------1---00-0---- 1
+--------10----110-0-- 1
+--------00--11-1--0-- 1
+--------00-1-1-1--0-- 1
+--------001--1-1--0-- 1
+-------100---1-1--0-- 1
+------1-00---1-1--0-- 1
+----1---00---1-1--0-- 1
+-1------00---1-1--0-- 1
+0-------00---1-1--0-- 1
+--------01---1-1-00-- 1
+---------1---0010---- 1
+-----1----------00000 1
+---1------------00000 1
+--1-------------00000 1
+-----1---1----0-0-0-- 1
+---1-----1----0-0-0-- 1
+--1------1----0-0-0-- 1
+-----1--0----1---00-- 1
+---1----0----1---00-- 1
+--1-----0----1---00-- 1
+---------1----010-0-- 1
+-----1--0----10---0-- 1
+---1----0----10---0-- 1
+--1-----0----10---0-- 1
+-----1--00---1----0-- 1
+---1----00---1----0-- 1
+--1-----00---1----0-- 1
+-----1--0-----0-0-0-- 1
+---1----0-----0-0-0-- 1
+--1-----0-----0-0-0-- 1
+--------0----101--0-- 1
+--------0-----010-0-- 1
+--------0----1----1-- 0
+100000000000011------ 0
+--------00---01----1- 0
+--00-0---------0----- 0
+--------10----0--1--- 0
+--------11----1----1- 0
+--------00---0--1---- 0
+-------------00-1---- 0
+---------1----1--1--- 0
+---------1---1----1-- 0
+--------1----1--1---- 0
+--------11------1---- 0
+---------0---0----1-- 0
+--------0----01-----1 0
+--------11----1-----1 0
+--------------1---1-- 0
+.names I1/scan_data_1_.BLIF I1/scan_data_3_.BLIF I1/scan_data_0_.BLIF \
+I1/scan_data_2_.BLIF I1/N_37_i.BLIF I1/N_132.BLIF I1/N_150.BLIF I1/N_152.BLIF \
+I1/N_154.BLIF I1/N_155.BLIF led_col_3_
+1-1-1000-- 1
+0-001-0--0 1
+00-11-00-- 1
+10011---0- 1
+011-10--0- 1
+00101--0-- 1
+101-100--- 1
+11111-0--- 1
+1-0010-0-- 1
+00011-0--- 1
+110110---- 1
+----100000 1
+01-01---0- 1
+-1001--0-- 1
+01001----- 1
+00-1--1--- 0
+1001----1- 0
+0101---1-- 0
+11-0---1-- 0
+1-00---1-- 0
+1-10-1---- 0
+011-----1- 0
+10-0-1---- 0
+001----1-- 0
+101--1---- 0
+01-1----1- 0
+-101-1---- 0
+000---1--- 0
+0-01--1--- 0
+01-1-1---- 0
+0000-----1 0
+0101-----1 0
+1-1---1--- 0
+----0----- 0
+.names led_col_5_
+ 1
+.names led_col_6_
+ 1
+.names led_col_7_
+ 1
+.names I1/row_buf_0_reg.BLIF led_row_0_
+1 1
+0 0
+.names I1/row_buf_1_reg.BLIF led_row_1_
+1 1
+0 0
+.names I1/row_buf_2_reg.BLIF led_row_2_
+1 1
+0 0
+.names I1/row_buf_3_reg.BLIF led_row_3_
+1 1
+0 0
+.names I1/row_buf_4_reg.BLIF led_row_4_
+1 1
+0 0
+.names I1/row_buf_5_reg.BLIF led_row_5_
+1 1
+0 0
+.names I1/row_buf_6_reg.BLIF led_row_6_
+1 1
+0 0
+.names I1/row_buf_7_reg.BLIF led_row_7_
+1 1
+0 0
+.names I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/cnt_scan_6_.BLIF \
+I1/cnt_scan_7_.BLIF I1/cnt_scan_8_.BLIF I1/cnt_scan_9_.BLIF \
+I1/cnt_scan_10_.BLIF I1/cnt_scan_11_.BLIF I1/cnt_scan_12_.BLIF \
+I1/cnt_scan_13_.BLIF I1/cnt_scan_14_.BLIF I1/cnt_scan_15_.BLIF \
+I1/un1_cnt_scan_9.BLIF I1/row_buf_0_reg.CE
+1111111111111 1
+-----------0- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------0----- 0
+------0------ 0
+-----0------- 0
+----0-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names reset.BLIF I1/row_buf_0_reg.AR
+0 1
+1 0
+.names I1/row_buf_7_reg.BLIF I1/row_buf_0_reg.D
+1 1
+0 0
+.names clk.BLIF I1/row_buf_0_reg.C
+1 1
+0 0
+.names I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/cnt_scan_6_.BLIF \
+I1/cnt_scan_7_.BLIF I1/cnt_scan_8_.BLIF I1/cnt_scan_9_.BLIF \
+I1/cnt_scan_10_.BLIF I1/cnt_scan_11_.BLIF I1/cnt_scan_12_.BLIF \
+I1/cnt_scan_13_.BLIF I1/cnt_scan_14_.BLIF I1/cnt_scan_15_.BLIF \
+I1/un1_cnt_scan_9.BLIF I1/row_buf_1_reg.CE
+1111111111111 1
+-----------0- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------0----- 0
+------0------ 0
+-----0------- 0
+----0-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names reset.BLIF I1/row_buf_1_reg.AR
+0 1
+1 0
+.names I1/row_buf_0_reg.BLIF I1/row_buf_1_reg.D
+1 1
+0 0
+.names clk.BLIF I1/row_buf_1_reg.C
+1 1
+0 0
+.names I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/cnt_scan_6_.BLIF \
+I1/cnt_scan_7_.BLIF I1/cnt_scan_8_.BLIF I1/cnt_scan_9_.BLIF \
+I1/cnt_scan_10_.BLIF I1/cnt_scan_11_.BLIF I1/cnt_scan_12_.BLIF \
+I1/cnt_scan_13_.BLIF I1/cnt_scan_14_.BLIF I1/cnt_scan_15_.BLIF \
+I1/un1_cnt_scan_9.BLIF I1/row_buf_2_reg.CE
+1111111111111 1
+-----------0- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------0----- 0
+------0------ 0
+-----0------- 0
+----0-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names reset.BLIF I1/row_buf_2_reg.AR
+0 1
+1 0
+.names I1/row_buf_1_reg.BLIF I1/row_buf_2_reg.D
+1 1
+0 0
+.names clk.BLIF I1/row_buf_2_reg.C
+1 1
+0 0
+.names I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/cnt_scan_6_.BLIF \
+I1/cnt_scan_7_.BLIF I1/cnt_scan_8_.BLIF I1/cnt_scan_9_.BLIF \
+I1/cnt_scan_10_.BLIF I1/cnt_scan_11_.BLIF I1/cnt_scan_12_.BLIF \
+I1/cnt_scan_13_.BLIF I1/cnt_scan_14_.BLIF I1/cnt_scan_15_.BLIF \
+I1/un1_cnt_scan_9.BLIF I1/row_buf_3_reg.CE
+1111111111111 1
+-----------0- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------0----- 0
+------0------ 0
+-----0------- 0
+----0-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names reset.BLIF I1/row_buf_3_reg.AR
+0 1
+1 0
+.names I1/row_buf_2_reg.BLIF I1/row_buf_3_reg.D
+1 1
+0 0
+.names clk.BLIF I1/row_buf_3_reg.C
+1 1
+0 0
+.names I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/cnt_scan_6_.BLIF \
+I1/cnt_scan_7_.BLIF I1/cnt_scan_8_.BLIF I1/cnt_scan_9_.BLIF \
+I1/cnt_scan_10_.BLIF I1/cnt_scan_11_.BLIF I1/cnt_scan_12_.BLIF \
+I1/cnt_scan_13_.BLIF I1/cnt_scan_14_.BLIF I1/cnt_scan_15_.BLIF \
+I1/un1_cnt_scan_9.BLIF I1/row_buf_4_reg.CE
+1111111111111 1
+-----------0- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------0----- 0
+------0------ 0
+-----0------- 0
+----0-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names reset.BLIF I1/row_buf_4_reg.AR
+0 1
+1 0
+.names I1/row_buf_3_reg.BLIF I1/row_buf_4_reg.D
+1 1
+0 0
+.names clk.BLIF I1/row_buf_4_reg.C
+1 1
+0 0
+.names I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/cnt_scan_6_.BLIF \
+I1/cnt_scan_7_.BLIF I1/cnt_scan_8_.BLIF I1/cnt_scan_9_.BLIF \
+I1/cnt_scan_10_.BLIF I1/cnt_scan_11_.BLIF I1/cnt_scan_12_.BLIF \
+I1/cnt_scan_13_.BLIF I1/cnt_scan_14_.BLIF I1/cnt_scan_15_.BLIF \
+I1/un1_cnt_scan_9.BLIF I1/row_buf_5_reg.CE
+1111111111111 1
+-----------0- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------0----- 0
+------0------ 0
+-----0------- 0
+----0-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names reset.BLIF I1/row_buf_5_reg.AR
+0 1
+1 0
+.names I1/row_buf_4_reg.BLIF I1/row_buf_5_reg.D
+1 1
+0 0
+.names clk.BLIF I1/row_buf_5_reg.C
+1 1
+0 0
+.names I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/cnt_scan_6_.BLIF \
+I1/cnt_scan_7_.BLIF I1/cnt_scan_8_.BLIF I1/cnt_scan_9_.BLIF \
+I1/cnt_scan_10_.BLIF I1/cnt_scan_11_.BLIF I1/cnt_scan_12_.BLIF \
+I1/cnt_scan_13_.BLIF I1/cnt_scan_14_.BLIF I1/cnt_scan_15_.BLIF \
+I1/un1_cnt_scan_9.BLIF I1/row_buf_6_reg.CE
+1111111111111 1
+-----------0- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------0----- 0
+------0------ 0
+-----0------- 0
+----0-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names reset.BLIF I1/row_buf_6_reg.AR
+0 1
+1 0
+.names I1/row_buf_5_reg.BLIF I1/row_buf_6_reg.D
+1 1
+0 0
+.names clk.BLIF I1/row_buf_6_reg.C
+1 1
+0 0
+.names I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/cnt_scan_6_.BLIF \
+I1/cnt_scan_7_.BLIF I1/cnt_scan_8_.BLIF I1/cnt_scan_9_.BLIF \
+I1/cnt_scan_10_.BLIF I1/cnt_scan_11_.BLIF I1/cnt_scan_12_.BLIF \
+I1/cnt_scan_13_.BLIF I1/cnt_scan_14_.BLIF I1/cnt_scan_15_.BLIF \
+I1/un1_cnt_scan_9.BLIF I1/row_buf_7_reg.CE
+1111111111111 1
+-----------0- 0
+----------0-- 0
+---------0--- 0
+--------0---- 0
+-------0----- 0
+------0------ 0
+-----0------- 0
+----0-------- 0
+---0--------- 0
+--0---------- 0
+-0----------- 0
+0------------ 0
+------------0 0
+.names I1/row_buf_6_reg.BLIF I1/row_buf_7_reg.D
+1 1
+0 0
+.names reset.BLIF I1/row_buf_7_reg.AP
+0 1
+1 0
+.names clk.BLIF I1/row_buf_7_reg.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_24_.AR
+0 1
+1 0
+.names I1/cnt_next_24_.BLIF I1/N_327.BLIF I1/cnt_next_24_.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I1/cnt_next_24_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_9_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_9_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_20_.AR
+0 1
+1 0
+.names I1/cnt_next_20_.BLIF I1/cnt_next_19_.BLIF I1/N_317.BLIF \
+I1/cnt_next_20_.D
+011 1
+10- 1
+1-0 1
+111 0
+00- 0
+0-0 0
+.names clk.BLIF I1/cnt_next_20_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_13_.AR
+0 1
+1 0
+.names I1/cnt_next_13_.BLIF I1/cnt_next_11_.BLIF I1/cnt_next_12_.BLIF \
+I1/N_301.BLIF I1/cnt_next_13_.D
+0111 1
+1-0- 1
+10-- 1
+1--0 1
+1111 0
+0-0- 0
+00-- 0
+0--0 0
+.names clk.BLIF I1/cnt_next_13_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_16_.AR
+0 1
+1 0
+.names I1/cnt_next_16_.BLIF I1/cnt_next_15_.BLIF I1/cnt_next_14_.BLIF \
+I1/N_307.BLIF I1/cnt_next_16_.D
+0111 1
+1-0- 1
+10-- 1
+1--0 1
+1111 0
+0-0- 0
+00-- 0
+0--0 0
+.names clk.BLIF I1/cnt_next_16_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_23_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_23_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_18_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_18_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_15_.AR
+0 1
+1 0
+.names I1/cnt_next_15_.BLIF I1/cnt_next_14_.BLIF I1/N_307.BLIF \
+I1/cnt_next_15_.D
+011 1
+10- 1
+1-0 1
+111 0
+00- 0
+0-0 0
+.names clk.BLIF I1/cnt_next_15_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_19_.AR
+0 1
+1 0
+.names I1/cnt_next_19_.BLIF I1/N_317.BLIF I1/cnt_next_19_.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I1/cnt_next_19_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_10_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_10_.C
+1 1
+0 0
+.names reset.BLIF I1/scan_data_1_.AR
+0 1
+1 0
+.names I1/scan_data_1_.BLIF I1/scan_data_0_.BLIF I1/un1_cnt_next_10.BLIF \
+I1/scan_data_1_.D
+011 1
+10- 1
+1-0 1
+111 0
+00- 0
+0-0 0
+.names clk.BLIF I1/scan_data_1_.C
+1 1
+0 0
+.names reset.BLIF I1/scan_data_3_.AR
+0 1
+1 0
+.names I1/cnt_next_24_.BLIF I1/cnt_next_9_.BLIF I1/cnt_next_20_.BLIF \
+I1/cnt_next_13_.BLIF I1/cnt_next_16_.BLIF I1/cnt_next_23_.BLIF \
+I1/cnt_next_18_.BLIF I1/cnt_next_15_.BLIF I1/cnt_next_19_.BLIF \
+I1/cnt_next_10_.BLIF I1/scan_data_1_.BLIF I1/scan_data_3_.BLIF \
+I1/scan_data_0_.BLIF I1/scan_data_2_.BLIF I1/cnt_next_7_.BLIF \
+I1/cnt_next_8_.BLIF I1/cnt_next_11_.BLIF I1/cnt_next_12_.BLIF \
+I1/cnt_next_14_.BLIF I1/cnt_next_17_.BLIF I1/cnt_next_21_.BLIF \
+I1/cnt_next_22_.BLIF I1/cnt_next_25_.BLIF I1/un1_cnt_next_10_20_3.BLIF \
+I1/scan_data_3_.D
+000000000010111111111111 1
+-----------1----------0- 1
+-----------1---------0-- 1
+-----------1--------0--- 1
+-----------1-------0---- 1
+-----------1------0----- 1
+-----------1-----0------ 1
+-----------1----0------- 1
+-----------1---0-------- 1
+-----------1--0--------- 1
+-----------1-0---------- 1
+-----------10----------- 1
+----------01------------ 1
+---------1-1------------ 1
+--------1--1------------ 1
+-------1---1------------ 1
+------1----1------------ 1
+-----1-----1------------ 1
+----1------1------------ 1
+---1-------1------------ 1
+--1--------1------------ 1
+-1---------1------------ 1
+1----------1------------ 1
+-----------1-----------0 1
+000000000011111111111111 0
+-----------0----------0- 0
+-----------0---------0-- 0
+-----------0--------0--- 0
+-----------0-------0---- 0
+-----------0------0----- 0
+-----------0-----0------ 0
+-----------0----0------- 0
+-----------0---0-------- 0
+-----------0--0--------- 0
+-----------0-0---------- 0
+-----------00----------- 0
+----------00------------ 0
+---------1-0------------ 0
+--------1--0------------ 0
+-------1---0------------ 0
+------1----0------------ 0
+-----1-----0------------ 0
+----1------0------------ 0
+---1-------0------------ 0
+--1--------0------------ 0
+-1---------0------------ 0
+1----------0------------ 0
+-----------0-----------0 0
+.names clk.BLIF I1/scan_data_3_.C
+1 1
+0 0
+.names reset.BLIF I1/scan_data_4_.AR
+0 1
+1 0
+.names I1/cnt_next_24_.BLIF I1/cnt_next_9_.BLIF I1/cnt_next_20_.BLIF \
+I1/cnt_next_13_.BLIF I1/cnt_next_16_.BLIF I1/cnt_next_23_.BLIF \
+I1/cnt_next_18_.BLIF I1/cnt_next_15_.BLIF I1/cnt_next_19_.BLIF \
+I1/cnt_next_10_.BLIF I1/scan_data_1_.BLIF I1/scan_data_3_.BLIF \
+I1/scan_data_4_.BLIF I1/scan_data_0_.BLIF I1/scan_data_2_.BLIF \
+I1/cnt_next_7_.BLIF I1/cnt_next_8_.BLIF I1/cnt_next_11_.BLIF \
+I1/cnt_next_12_.BLIF I1/cnt_next_14_.BLIF I1/cnt_next_17_.BLIF \
+I1/cnt_next_21_.BLIF I1/cnt_next_22_.BLIF I1/cnt_next_25_.BLIF \
+I1/un1_cnt_next_10_20_3.BLIF I1/scan_data_4_.D
+1-----------1------------ 1
+-1----------1------------ 1
+--1---------1------------ 1
+---1--------1------------ 1
+----1-------1------------ 1
+-----1------1------------ 1
+------1-----1------------ 1
+-------1----1------------ 1
+--------1---1------------ 1
+---------1--1------------ 1
+----------0-1------------ 1
+-----------01------------ 1
+------------10----------- 1
+------------1-0---------- 1
+------------1--0--------- 1
+------------1---0-------- 1
+------------1----0------- 1
+------------1-----0------ 1
+------------1------0----- 1
+------------1-------0---- 1
+------------1--------0--- 1
+------------1---------0-- 1
+------------1----------0- 1
+------------1-----------0 1
+0000000000110111111111111 1
+1-----------0------------ 0
+-1----------0------------ 0
+--1---------0------------ 0
+---1--------0------------ 0
+----1-------0------------ 0
+-----1------0------------ 0
+------1-----0------------ 0
+-------1----0------------ 0
+--------1---0------------ 0
+---------1--0------------ 0
+----------0-0------------ 0
+-----------00------------ 0
+------------00----------- 0
+------------0-0---------- 0
+------------0--0--------- 0
+------------0---0-------- 0
+------------0----0------- 0
+------------0-----0------ 0
+------------0------0----- 0
+------------0-------0---- 0
+------------0--------0--- 0
+------------0---------0-- 0
+------------0----------0- 0
+------------0-----------0 0
+0000000000111111111111111 0
+.names clk.BLIF I1/scan_data_4_.C
+1 1
+0 0
+.names reset.BLIF I1/scan_data_5_.AR
+0 1
+1 0
+.names I1/cnt_next_24_.BLIF I1/cnt_next_9_.BLIF I1/cnt_next_20_.BLIF \
+I1/cnt_next_13_.BLIF I1/cnt_next_16_.BLIF I1/cnt_next_23_.BLIF \
+I1/cnt_next_18_.BLIF I1/cnt_next_15_.BLIF I1/cnt_next_19_.BLIF \
+I1/cnt_next_10_.BLIF I1/scan_data_1_.BLIF I1/scan_data_3_.BLIF \
+I1/scan_data_4_.BLIF I1/scan_data_5_.BLIF I1/scan_data_0_.BLIF \
+I1/scan_data_2_.BLIF I1/cnt_next_7_.BLIF I1/cnt_next_8_.BLIF \
+I1/cnt_next_11_.BLIF I1/cnt_next_12_.BLIF I1/cnt_next_14_.BLIF \
+I1/cnt_next_17_.BLIF I1/cnt_next_21_.BLIF I1/cnt_next_22_.BLIF \
+I1/cnt_next_25_.BLIF I1/un1_cnt_next_10_20_3.BLIF I1/scan_data_5_.D
+1------------1------------ 1
+-1-----------1------------ 1
+--1----------1------------ 1
+---1---------1------------ 1
+----1--------1------------ 1
+-----1-------1------------ 1
+------1------1------------ 1
+-------1-----1------------ 1
+--------1----1------------ 1
+---------1---1------------ 1
+----------0--1------------ 1
+-----------0-1------------ 1
+------------01------------ 1
+-------------10----------- 1
+-------------1-0---------- 1
+-------------1--0--------- 1
+-------------1---0-------- 1
+-------------1----0------- 1
+-------------1-----0------ 1
+-------------1------0----- 1
+-------------1-------0---- 1
+-------------1--------0--- 1
+-------------1---------0-- 1
+-------------1----------0- 1
+-------------1-----------0 1
+00000000001110111111111111 1
+.names clk.BLIF I1/scan_data_5_.C
+1 1
+0 0
+.names reset.BLIF I1/scan_data_6_.AR
+0 1
+1 0
+.names clk.BLIF I1/scan_data_6_.C
+1 1
+0 0
+.names reset.BLIF I1/scan_data_0_.AR
+0 1
+1 0
+.names I1/scan_data_0_.BLIF I1/un1_cnt_next_10.BLIF I1/scan_data_0_.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I1/scan_data_0_.C
+1 1
+0 0
+.names reset.BLIF I1/scan_data_2_.AR
+0 1
+1 0
+.names I1/scan_data_1_.BLIF I1/scan_data_0_.BLIF I1/scan_data_2_.BLIF \
+I1/un1_cnt_next_10.BLIF I1/scan_data_2_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+1111 0
+-00- 0
+0-0- 0
+--00 0
+.names clk.BLIF I1/scan_data_2_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_0_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_scan_0_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_1_.AR
+0 1
+1 0
+.names I1/cnt_scan_0_.BLIF I1/cnt_scan_1_.BLIF I1/cnt_scan_1_.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I1/cnt_scan_1_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_2_.AR
+0 1
+1 0
+.names I1/cnt_scan_0_.BLIF I1/cnt_scan_1_.BLIF I1/cnt_scan_2_.BLIF \
+I1/cnt_scan_2_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names clk.BLIF I1/cnt_scan_2_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_3_.AR
+0 1
+1 0
+.names I1/cnt_scan_0_.BLIF I1/cnt_scan_1_.BLIF I1/cnt_scan_2_.BLIF \
+I1/cnt_scan_3_.BLIF I1/cnt_scan_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+1111 0
+--00 0
+-0-0 0
+0--0 0
+.names clk.BLIF I1/cnt_scan_3_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_4_.AR
+0 1
+1 0
+.names I1/cnt_scan_4_.BLIF I1/un1_cnt_scan_9.BLIF I1/cnt_scan_4_.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I1/cnt_scan_4_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_5_.AR
+0 1
+1 0
+.names I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/un1_cnt_scan_9.BLIF \
+I1/cnt_scan_5_.D
+101 1
+01- 1
+-10 1
+111 0
+00- 0
+-00 0
+.names clk.BLIF I1/cnt_scan_5_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_6_.AR
+0 1
+1 0
+.names I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/cnt_scan_6_.BLIF \
+I1/un1_cnt_scan_9.BLIF I1/cnt_scan_6_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+1111 0
+-00- 0
+0-0- 0
+--00 0
+.names clk.BLIF I1/cnt_scan_6_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_7_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_scan_7_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_8_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_scan_8_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_9_.AR
+0 1
+1 0
+.names I1/cnt_scan_9_.BLIF I1/N_263.BLIF I1/cnt_scan_9_.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I1/cnt_scan_9_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_10_.AR
+0 1
+1 0
+.names I1/cnt_scan_9_.BLIF I1/cnt_scan_10_.BLIF I1/N_263.BLIF \
+I1/cnt_scan_10_.D
+101 1
+01- 1
+-10 1
+111 0
+00- 0
+-00 0
+.names clk.BLIF I1/cnt_scan_10_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_11_.AR
+0 1
+1 0
+.names I1/cnt_scan_9_.BLIF I1/cnt_scan_10_.BLIF I1/cnt_scan_11_.BLIF \
+I1/N_263.BLIF I1/cnt_scan_11_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+1111 0
+-00- 0
+0-0- 0
+--00 0
+.names clk.BLIF I1/cnt_scan_11_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_12_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_scan_12_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_13_.AR
+0 1
+1 0
+.names I1/cnt_scan_13_.BLIF I1/N_271.BLIF I1/cnt_scan_13_.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I1/cnt_scan_13_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_14_.AR
+0 1
+1 0
+.names I1/cnt_scan_13_.BLIF I1/cnt_scan_14_.BLIF I1/N_271.BLIF \
+I1/cnt_scan_14_.D
+101 1
+01- 1
+-10 1
+111 0
+00- 0
+-00 0
+.names clk.BLIF I1/cnt_scan_14_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_scan_15_.AR
+0 1
+1 0
+.names I1/cnt_scan_13_.BLIF I1/cnt_scan_14_.BLIF I1/cnt_scan_15_.BLIF \
+I1/N_271.BLIF I1/cnt_scan_15_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+1111 0
+-00- 0
+0-0- 0
+--00 0
+.names clk.BLIF I1/cnt_scan_15_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_0_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_0_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_1_.AR
+0 1
+1 0
+.names I1/cnt_next_0_.BLIF I1/cnt_next_1_.BLIF I1/cnt_next_1_.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I1/cnt_next_1_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_2_.AR
+0 1
+1 0
+.names I1/cnt_next_0_.BLIF I1/cnt_next_1_.BLIF I1/cnt_next_2_.BLIF \
+I1/cnt_next_2_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names clk.BLIF I1/cnt_next_2_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_3_.AR
+0 1
+1 0
+.names I1/cnt_next_0_.BLIF I1/cnt_next_1_.BLIF I1/cnt_next_2_.BLIF \
+I1/cnt_next_3_.BLIF I1/cnt_next_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+1111 0
+--00 0
+-0-0 0
+0--0 0
+.names clk.BLIF I1/cnt_next_3_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_4_.AR
+0 1
+1 0
+.names I1/cnt_next_4_.BLIF I1/un1_cnt_next_10_14.BLIF I1/cnt_next_4_.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I1/cnt_next_4_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_5_.AR
+0 1
+1 0
+.names I1/cnt_next_4_.BLIF I1/cnt_next_5_.BLIF I1/un1_cnt_next_10_14.BLIF \
+I1/cnt_next_5_.D
+101 1
+01- 1
+-10 1
+111 0
+00- 0
+-00 0
+.names clk.BLIF I1/cnt_next_5_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_6_.AR
+0 1
+1 0
+.names I1/cnt_next_4_.BLIF I1/cnt_next_5_.BLIF I1/cnt_next_6_.BLIF \
+I1/un1_cnt_next_10_14.BLIF I1/cnt_next_6_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+1111 0
+-00- 0
+0-0- 0
+--00 0
+.names clk.BLIF I1/cnt_next_6_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_7_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_7_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_8_.AR
+0 1
+1 0
+.names I1/cnt_next_7_.BLIF I1/cnt_next_8_.BLIF I1/un1_cnt_next_10_20_3.BLIF \
+I1/cnt_next_8_.D
+101 1
+01- 1
+-10 1
+111 0
+00- 0
+-00 0
+.names clk.BLIF I1/cnt_next_8_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_11_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_11_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_12_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_12_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_14_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_14_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_17_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_17_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_21_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_21_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_22_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_22_.C
+1 1
+0 0
+.names reset.BLIF I1/cnt_next_25_.AR
+0 1
+1 0
+.names clk.BLIF I1/cnt_next_25_.C
+1 1
+0 0
+.names I1/N_46_i.BLIF I1/N_32_i.BLIF led_col_0_.X1
+11 1
+0- 0
+-0 0
+.names I1/scan_data_1_.BLIF I1/scan_data_3_.BLIF I1/scan_data_0_.BLIF \
+I1/scan_data_2_.BLIF I1/N_46_i.BLIF I1/N_32_i.BLIF I1/N_132.BLIF I1/N_150.BLIF \
+I1/N_152.BLIF I1/N_154.BLIF I1/N_155.BLIF led_col_0_.X2
+0-1-111---- 1
+---011-1--- 1
+0-1-11---1- 1
+00-0111---- 1
+001-11--1-- 1
+001-11----1 1
+10-111---1- 1
+100111--1-- 1
+100111----1 1
+----0------ 0
+-----0----- 0
+11-1------- 0
+0-01------- 0
+1--0---0--- 0
+010----0--- 0
+0-0---00--- 0
+1-11-----0- 0
+-1-1--0--0- 0
+01----00-0- 0
+1--1----000 0
+---1--0-000 0
+0-----00000 0
+.names I1/N_46_i.BLIF I1/N_32_i.BLIF I1/col_buf_i_3_4__n.BLIF led_col_4_.X1
+111 1
+0-- 0
+-0- 0
+--0 0
+.names I1/row_buf_0_reg.BLIF I1/row_buf_1_reg.BLIF I1/row_buf_2_reg.BLIF \
+I1/row_buf_3_reg.BLIF I1/row_buf_4_reg.BLIF I1/row_buf_5_reg.BLIF \
+I1/row_buf_6_reg.BLIF I1/row_buf_7_reg.BLIF I1/scan_data_1_.BLIF \
+I1/scan_data_3_.BLIF I1/scan_data_4_.BLIF I1/scan_data_5_.BLIF \
+I1/scan_data_6_.BLIF I1/scan_data_0_.BLIF I1/scan_data_2_.BLIF I1/N_46_i.BLIF \
+I1/N_32_i.BLIF I1/col_buf_i_3_4__n.BLIF I1/N_132.BLIF I1/N_155.BLIF \
+led_col_4_.X2
+--------00----01111- 1
+00010000000001-111-- 1
+00100000000001-111-- 1
+--------00---1-1111- 1
+--------10-----111-1 1
+00010000100000-111-- 1
+0001000010000-1111-- 1
+00100000100000-111-- 1
+0010000010000-1111-- 1
+00010000-100010111-- 1
+00100000-100010111-- 1
+---------------0---- 0
+----------------0--- 0
+-----------------0-- 0
+1--------1---------- 0
+-1-------1---------- 0
+----1----1---------- 0
+-----1---1---------- 0
+------1--1---------- 0
+-------1-1---------- 0
+---------11--------- 0
+---------1-1-------- 0
+---------1--1------- 0
+---------1---0------ 0
+---------1----1----- 0
+--11-----1---------- 0
+--00-----1---------- 0
+--------0----01----- 0
+1-------0---------0- 0
+-1------0---------0- 0
+----1---0---------0- 0
+-----1--0---------0- 0
+------1-0---------0- 0
+-------10---------0- 0
+--------0-1-------0- 0
+--------0--1------0- 0
+--------0---1-----0- 0
+--------0----0----0- 0
+1-------1----------0 0
+-1------1----------0 0
+----1---1----------0 0
+-----1--1----------0 0
+------1-1----------0 0
+-------11----------0 0
+--------1-1--------0 0
+--------1--1-------0 0
+--------1---1------0 0
+--11----0---------0- 0
+--00----0---------0- 0
+--11----1----------0 0
+--00----1----------0 0
+--------10---10----0 0
+.names I1/cnt_next_23_.BLIF I1/cnt_next_23_.D.X1
+1 1
+0 0
+.names I1/cnt_next_20_.BLIF I1/cnt_next_23_.BLIF I1/cnt_next_19_.BLIF \
+I1/cnt_next_21_.BLIF I1/cnt_next_22_.BLIF I1/N_317.BLIF I1/cnt_next_23_.D.X2
+1-1111 1
+0----- 0
+--0--- 0
+---0-- 0
+----0- 0
+-----0 0
+.names I1/cnt_next_18_.BLIF I1/cnt_next_18_.D.X1
+1 1
+0 0
+.names I1/cnt_next_16_.BLIF I1/cnt_next_18_.BLIF I1/cnt_next_15_.BLIF \
+I1/cnt_next_14_.BLIF I1/cnt_next_17_.BLIF I1/N_307.BLIF I1/cnt_next_18_.D.X2
+1-1111 1
+0----- 0
+--0--- 0
+---0-- 0
+----0- 0
+-----0 0
+.names I1/cnt_next_10_.BLIF I1/cnt_next_10_.D.X1
+1 1
+0 0
+.names I1/cnt_next_9_.BLIF I1/cnt_next_10_.BLIF I1/cnt_next_7_.BLIF \
+I1/cnt_next_8_.BLIF I1/un1_cnt_next_10_20_3.BLIF I1/cnt_next_10_.D.X2
+1-111 1
+0---- 0
+--0-- 0
+---0- 0
+----0 0
+.names I1/scan_data_6_.BLIF I1/scan_data_6_.D.X1
+1 1
+0 0
+.names I1/scan_data_3_.BLIF I1/scan_data_4_.BLIF I1/scan_data_5_.BLIF \
+I1/scan_data_6_.BLIF I1/N_339.BLIF I1/scan_data_6_.D.X2
+111-1 1
+0---- 0
+-0--- 0
+--0-- 0
+----0 0
+.names I1/cnt_scan_7_.BLIF I1/cnt_scan_7_.D.X1
+1 1
+0 0
+.names I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/cnt_scan_6_.BLIF \
+I1/cnt_scan_7_.BLIF I1/un1_cnt_scan_9.BLIF I1/cnt_scan_7_.D.X2
+111-1 1
+0---- 0
+-0--- 0
+--0-- 0
+----0 0
+.names I1/cnt_scan_8_.BLIF I1/cnt_scan_8_.D.X1
+1 1
+0 0
+.names I1/cnt_scan_4_.BLIF I1/cnt_scan_5_.BLIF I1/cnt_scan_6_.BLIF \
+I1/cnt_scan_7_.BLIF I1/cnt_scan_8_.BLIF I1/un1_cnt_scan_9.BLIF \
+I1/cnt_scan_8_.D.X2
+1111-1 1
+0----- 0
+-0---- 0
+--0--- 0
+---0-- 0
+-----0 0
+.names I1/cnt_scan_12_.BLIF I1/cnt_scan_12_.D.X1
+1 1
+0 0
+.names I1/cnt_scan_9_.BLIF I1/cnt_scan_10_.BLIF I1/cnt_scan_11_.BLIF \
+I1/cnt_scan_12_.BLIF I1/N_263.BLIF I1/cnt_scan_12_.D.X2
+111-1 1
+0---- 0
+-0--- 0
+--0-- 0
+----0 0
+.names I1/cnt_next_7_.BLIF I1/cnt_next_7_.D.X1
+1 1
+0 0
+.names I1/cnt_next_4_.BLIF I1/cnt_next_5_.BLIF I1/cnt_next_6_.BLIF \
+I1/cnt_next_7_.BLIF I1/un1_cnt_next_10_14.BLIF I1/cnt_next_7_.D.X2
+111-1 1
+0---- 0
+-0--- 0
+--0-- 0
+----0 0
+.names I1/cnt_next_17_.BLIF I1/cnt_next_17_.D.X1
+1 1
+0 0
+.names I1/cnt_next_16_.BLIF I1/cnt_next_15_.BLIF I1/cnt_next_14_.BLIF \
+I1/cnt_next_17_.BLIF I1/un1_cnt_next_10.BLIF I1/N_307.BLIF \
+I1/cnt_next_17_.D.X2
+111-01 1
+---11- 1
+1111-1 1
+---01- 0
+0---0- 0
+-0--0- 0
+--0-0- 0
+----00 0
+.names I1/cnt_next_22_.BLIF I1/cnt_next_22_.D.X1
+1 1
+0 0
+.names I1/cnt_next_20_.BLIF I1/cnt_next_19_.BLIF I1/cnt_next_21_.BLIF \
+I1/cnt_next_22_.BLIF I1/un1_cnt_next_10.BLIF I1/N_317.BLIF \
+I1/cnt_next_22_.D.X2
+111-01 1
+---11- 1
+1111-1 1
+---01- 0
+0---0- 0
+-0--0- 0
+--0-0- 0
+----00 0
+.end

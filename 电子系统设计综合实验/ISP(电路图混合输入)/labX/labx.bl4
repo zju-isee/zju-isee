@@ -1,0 +1,4002 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Fri Jun 09 10:40:28 2023
+#$ TITLE top.bls 
+#$ MODULE labx
+#$ PINS 46 din result_0_'o'  result_1_'o'  result_2_'o'  result_4_'o'  result_5_'o'  result_6_'o'  \
+#  key_in_0_ key_in_1_ key_in_2_ key_in_3_ led_col_0_'o'  led_col_1_'o'  led_col_2_'o'  \
+#  led_col_3_'o'  led_col_4_'o'  led_col_5_'o'  led_col_6_'o'  led_col_7_'o'  LED_VCC1 LED_VCC2 \
+#  LED_VCC3 LED_VCC4 reset clk result_3_'o'  result_7_'o'  led_row_0_'o'  led_row_1_'o'  led_row_2_'o'  \
+#  led_row_3_'o'  led_row_4_'o'  led_row_5_'o'  led_row_6_'o'  led_row_7_'o'  key_out_0_'o'  key_out_1_'o'  \
+#  key_out_2_'o'  key_out_3_'o'  g'o'  f'o'  e'o'  d'o'  c'o'  b'o'  a'o' 
+#$ NODES 173 A0_int_Data0_0_ A0_int_Data0_1_ A0_un1_led_int_data138_3_2__n \
+#  A0_N_976_0_5 A0_timecnt_12_ A0_timecnt_14_ A0_timecnt_5_ A0_timecnt_7_ \
+#  A0_timecnt_9_ A0_timecnt_6_ A0_timecnt_10_ A0_timecnt_11_ A0_inst_time10ms \
+#  A0_scanvalue_4_ A0_timecnt_0_ A0_timecnt_1_ A0_timecnt_2_ A0_timecnt_3_ \
+#  A0_timecnt_4_ A0_timecnt_8_ A0_timecnt_13_ A0_timecnt_15_ A0_timecnt_16_ \
+#  A0_timecnt_17_ A0_timecnt_18_ A0_scanvalue_0_ A0_scanvalue_1_ A0_scanvalue_2_ \
+#  A0_scanvalue_3_ A0_int_Data0_2_ A0_int_Data0_3_ A0_led_int_Data2_0_sqmuxa \
+#  A0_flag_Data_0_ A0_flag_Data_1_ A0_led_int_Data0DFFRH_0_reg \
+#  A0_led_int_Data0DFFRH_1_reg A0_led_int_Data0DFFRH_2_reg \
+#  A0_led_int_Data0DFFRH_3_reg A0_led_int_Data1DFFRH_0_reg \
+#  A0_led_int_Data1DFFRH_1_reg A0_N_128 A0_led_int_Data1DFFRH_2_reg \
+#  A0_led_int_Data1DFFRH_3_reg A0_led_int_Data2DFFSH_3_reg \
+#  A0_led_int_Data2DFFRH_0_reg A0_int_DataDFFCRH_0_reg A0_int_DataDFFCRH_1_reg \
+#  A0_int_DataDFFCRH_2_reg A0_int_DataDFFCRH_3_reg A0_int_DataDFFCRH_4_reg \
+#  A0_int_DataDFFCRH_5_reg A0_int_DataDFFCRH_6_reg A0_int_DataDFFCRH_7_reg \
+#  A0_flag_OverDFFRHreg A0_N_355_0 A0_un1_led_int_Data138_1_i A0_N_1459 A0_time10ms3 \
+#  A0_N_392 A0_N_378 A0_led_int_Data138 A0_led_int_Data137 \
+#  A0_un1_led_int_data138_3_1__n A0_led_int_Data133 A0_led_int_Data132 \
+#  A0_led_int_Data135 A0_N_32_i A0_led_int_Data130 A0_led_int_Data131_3 \
+#  H0_inst_question_num I0_counter_9_ I0_counter_5_ I0_counter_12_ I0_counter_11_ \
+#  I0_counter_7_ I0_counter_6_ I0_counter_14_ I0_counter_10_ I0_inst_keyclk \
+#  I0_pre_s_0_ I0_next_s_0_ I0_counter_0_ I0_counter_1_ I0_counter_2_ I0_counter_3_ \
+#  I0_counter_4_ I0_counter_8_ I0_counter_13_ I0_counter_15_ I0_counter_16_ \
+#  I0_counter_17_ I0_counter_18_ I0_keyclk3 I0_N_33 I0_doutDFFCreg B0_count_4_ \
+#  B0_count_10_ B0_count_11_ B0_count_5_ B0_count_7_ B0_count_12_ B0_count_13_ \
+#  B0_scancnt_1_ B0_scancnt_0_ B0_count_0_ B0_count_1_ B0_count_2_ B0_count_3_ \
+#  B0_count_6_ B0_count_8_ B0_count_9_ B0_count_14_ B0_count_15_ B0_count12 B0_N_131 \
+#  B0_LED_VCC3DFFRHreg B0_LED_VCC4DFFRHreg G0_inst_question_num G0_cnt_next_17_ \
+#  G0_cnt_next_25_ G0_cnt_next_11_ G0_cnt_next_18_ G0_cnt_next_12_ G0_cnt_next_10_ \
+#  G0_cnt_next_21_ G0_cnt_next_7_ G0_cnt_next_13_ G0_cnt_next_20_ G0_scan_data_5_ \
+#  G0_scan_data_3_ G0_scan_data_4_ G0_scan_data_6_ G0_scan_data_0_ G0_scan_data_1_ \
+#  G0_scan_data_2_ G0_cnt_scan_0_ G0_cnt_scan_1_ G0_cnt_scan_2_ G0_cnt_scan_3_ \
+#  G0_cnt_scan_4_ G0_cnt_scan_5_ G0_cnt_scan_6_ G0_cnt_scan_7_ G0_cnt_scan_8_ \
+#  G0_cnt_scan_9_ G0_cnt_scan_10_ G0_cnt_scan_11_ G0_cnt_scan_12_ G0_cnt_scan_13_ \
+#  G0_cnt_scan_14_ G0_cnt_scan_15_ G0_cnt_next_0_ G0_cnt_next_1_ G0_cnt_next_2_ \
+#  G0_cnt_next_3_ G0_cnt_next_4_ G0_cnt_next_5_ G0_cnt_next_6_ G0_cnt_next_8_ \
+#  G0_cnt_next_9_ G0_cnt_next_14_ G0_cnt_next_15_ G0_cnt_next_16_ G0_cnt_next_19_ \
+#  G0_cnt_next_22_ G0_cnt_next_23_ G0_cnt_next_24_ G0_un1_cnt_next_10_23 \
+#  G0_un1_cnt_next_10_24 G0_N_108 G0_N_122 G0_un1_cnt_next12 G0_un1_cnt_scan_13
+.model top
+.inputs clk.BLIF key_in_0_.BLIF key_in_1_.BLIF key_in_2_.BLIF key_in_3_.BLIF \
+reset.BLIF A0_int_Data0_0_.Q A0_int_Data0_1_.Q \
+A0_un1_led_int_data138_3_2__n.BLIF A0_N_976_0_5.BLIF A0_timecnt_12_.Q \
+A0_timecnt_14_.Q A0_timecnt_5_.Q A0_timecnt_7_.Q A0_timecnt_9_.Q \
+A0_timecnt_6_.Q A0_timecnt_10_.Q A0_timecnt_11_.Q A0_inst_time10ms.Q \
+A0_scanvalue_4_.Q A0_timecnt_0_.Q A0_timecnt_1_.Q A0_timecnt_2_.Q \
+A0_timecnt_3_.Q A0_timecnt_4_.Q A0_timecnt_8_.Q A0_timecnt_13_.Q \
+A0_timecnt_15_.Q A0_timecnt_16_.Q A0_timecnt_17_.Q A0_timecnt_18_.Q \
+A0_scanvalue_0_.Q A0_scanvalue_1_.Q A0_scanvalue_2_.Q A0_scanvalue_3_.Q \
+A0_int_Data0_2_.Q A0_int_Data0_3_.Q A0_led_int_Data2_0_sqmuxa.BLIF \
+A0_flag_Data_0_.Q A0_flag_Data_1_.Q A0_led_int_Data0DFFRH_0_reg.Q \
+A0_led_int_Data0DFFRH_1_reg.Q A0_led_int_Data0DFFRH_2_reg.Q \
+A0_led_int_Data0DFFRH_3_reg.Q A0_led_int_Data1DFFRH_0_reg.Q \
+A0_led_int_Data1DFFRH_1_reg.Q A0_N_128.BLIF A0_led_int_Data1DFFRH_2_reg.Q \
+A0_led_int_Data1DFFRH_3_reg.Q A0_led_int_Data2DFFSH_3_reg.Q \
+A0_led_int_Data2DFFRH_0_reg.Q key_out_0_.Q key_out_1_.Q key_out_2_.Q \
+key_out_3_.Q A0_int_DataDFFCRH_0_reg.Q A0_int_DataDFFCRH_1_reg.Q \
+A0_int_DataDFFCRH_2_reg.Q A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q \
+A0_int_DataDFFCRH_5_reg.Q A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+A0_flag_OverDFFRHreg.Q A0_N_355_0.BLIF A0_un1_led_int_Data138_1_i.BLIF \
+A0_N_1459.BLIF A0_time10ms3.BLIF A0_N_392.BLIF A0_N_378.BLIF \
+A0_led_int_Data138.BLIF A0_led_int_Data137.BLIF \
+A0_un1_led_int_data138_3_1__n.BLIF A0_led_int_Data133.BLIF \
+A0_led_int_Data132.BLIF A0_led_int_Data135.BLIF A0_N_32_i.BLIF \
+A0_led_int_Data130.BLIF A0_led_int_Data131_3.BLIF H0_inst_question_num.Q \
+din.BLIF I0_counter_9_.Q I0_counter_5_.Q I0_counter_12_.Q I0_counter_11_.Q \
+I0_counter_7_.Q I0_counter_6_.Q I0_counter_14_.Q I0_counter_10_.Q \
+I0_inst_keyclk.Q I0_pre_s_0_.Q I0_next_s_0_.Q I0_counter_0_.Q I0_counter_1_.Q \
+I0_counter_2_.Q I0_counter_3_.Q I0_counter_4_.Q I0_counter_8_.Q \
+I0_counter_13_.Q I0_counter_15_.Q I0_counter_16_.Q I0_counter_17_.Q \
+I0_counter_18_.Q I0_keyclk3.BLIF I0_N_33.BLIF I0_doutDFFCreg.Q B0_count_4_.Q \
+B0_count_10_.Q B0_count_11_.Q B0_count_5_.Q B0_count_7_.Q B0_count_12_.Q \
+B0_count_13_.Q B0_scancnt_1_.Q B0_scancnt_0_.Q B0_count_0_.Q B0_count_1_.Q \
+B0_count_2_.Q B0_count_3_.Q B0_count_6_.Q B0_count_8_.Q B0_count_9_.Q \
+B0_count_14_.Q B0_count_15_.Q B0_count12.BLIF B0_N_131.BLIF \
+B0_LED_VCC3DFFRHreg.Q B0_LED_VCC4DFFRHreg.Q led_row_0_.Q led_row_1_.Q \
+led_row_2_.Q led_row_3_.Q led_row_4_.Q led_row_5_.Q led_row_6_.Q led_row_7_.Q \
+G0_inst_question_num.Q G0_cnt_next_17_.Q G0_cnt_next_25_.Q G0_cnt_next_11_.Q \
+G0_cnt_next_18_.Q G0_cnt_next_12_.Q G0_cnt_next_10_.Q G0_cnt_next_21_.Q \
+G0_cnt_next_7_.Q G0_cnt_next_13_.Q G0_cnt_next_20_.Q G0_scan_data_5_.Q \
+G0_scan_data_3_.Q G0_scan_data_4_.Q G0_scan_data_6_.Q G0_scan_data_0_.Q \
+G0_scan_data_1_.Q G0_scan_data_2_.Q G0_cnt_scan_0_.Q G0_cnt_scan_1_.Q \
+G0_cnt_scan_2_.Q G0_cnt_scan_3_.Q G0_cnt_scan_4_.Q G0_cnt_scan_5_.Q \
+G0_cnt_scan_6_.Q G0_cnt_scan_7_.Q G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q \
+G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q G0_cnt_scan_12_.Q G0_cnt_scan_13_.Q \
+G0_cnt_scan_14_.Q G0_cnt_scan_15_.Q G0_cnt_next_0_.Q G0_cnt_next_1_.Q \
+G0_cnt_next_2_.Q G0_cnt_next_3_.Q G0_cnt_next_4_.Q G0_cnt_next_5_.Q \
+G0_cnt_next_6_.Q G0_cnt_next_8_.Q G0_cnt_next_9_.Q G0_cnt_next_14_.Q \
+G0_cnt_next_15_.Q G0_cnt_next_16_.Q G0_cnt_next_19_.Q G0_cnt_next_22_.Q \
+G0_cnt_next_23_.Q G0_cnt_next_24_.Q G0_un1_cnt_next_10_23.BLIF \
+G0_un1_cnt_next_10_24.BLIF G0_N_108.BLIF G0_N_122.BLIF G0_un1_cnt_next12.BLIF \
+G0_un1_cnt_scan_13.BLIF
+.outputs LED_VCC1 LED_VCC2 LED_VCC3 LED_VCC4 A0_int_Data0_0_.CE \
+A0_int_Data0_0_.AR A0_int_Data0_0_.C A0_int_Data0_1_.CE A0_int_Data0_1_.AR \
+A0_int_Data0_1_.C A0_N_976_0_5 A0_timecnt_12_.AR A0_timecnt_12_.C \
+A0_timecnt_14_.AR A0_timecnt_14_.C A0_timecnt_5_.AR A0_timecnt_5_.C \
+A0_timecnt_7_.AR A0_timecnt_7_.C A0_timecnt_9_.AR A0_timecnt_9_.C \
+A0_timecnt_6_.AR A0_timecnt_6_.C A0_timecnt_10_.AR A0_timecnt_10_.C \
+A0_timecnt_11_.AR A0_timecnt_11_.C A0_inst_time10ms.C A0_scanvalue_4_.AR \
+A0_scanvalue_4_.C A0_timecnt_0_.AR A0_timecnt_0_.C A0_timecnt_1_.AR \
+A0_timecnt_1_.C A0_timecnt_2_.AR A0_timecnt_2_.C A0_timecnt_3_.AR \
+A0_timecnt_3_.C A0_timecnt_4_.AR A0_timecnt_4_.C A0_timecnt_8_.AR \
+A0_timecnt_8_.C A0_timecnt_13_.AR A0_timecnt_13_.C A0_timecnt_15_.AR \
+A0_timecnt_15_.C A0_timecnt_16_.AR A0_timecnt_16_.C A0_timecnt_17_.AR \
+A0_timecnt_17_.C A0_timecnt_18_.AR A0_timecnt_18_.C A0_scanvalue_0_.AP \
+A0_scanvalue_0_.C A0_scanvalue_1_.AR A0_scanvalue_1_.C A0_scanvalue_2_.AR \
+A0_scanvalue_2_.C A0_scanvalue_3_.AR A0_scanvalue_3_.C A0_int_Data0_2_.CE \
+A0_int_Data0_2_.AR A0_int_Data0_2_.C A0_int_Data0_3_.CE A0_int_Data0_3_.AR \
+A0_int_Data0_3_.C A0_led_int_Data2_0_sqmuxa A0_flag_Data_0_.CE \
+A0_flag_Data_0_.AR A0_flag_Data_0_.C A0_flag_Data_1_.CE A0_flag_Data_1_.AR \
+A0_flag_Data_1_.C A0_led_int_Data0DFFRH_0_reg.AR A0_led_int_Data0DFFRH_0_reg.C \
+A0_led_int_Data0DFFRH_1_reg.AR A0_led_int_Data0DFFRH_1_reg.C \
+A0_led_int_Data0DFFRH_2_reg.AR A0_led_int_Data0DFFRH_2_reg.C \
+A0_led_int_Data0DFFRH_3_reg.AR A0_led_int_Data0DFFRH_3_reg.C \
+A0_led_int_Data1DFFRH_0_reg.AR A0_led_int_Data1DFFRH_0_reg.C \
+A0_led_int_Data1DFFRH_1_reg.AR A0_led_int_Data1DFFRH_1_reg.C A0_N_128 \
+A0_led_int_Data1DFFRH_2_reg.AR A0_led_int_Data1DFFRH_2_reg.C \
+A0_led_int_Data1DFFRH_3_reg.AR A0_led_int_Data1DFFRH_3_reg.C \
+A0_led_int_Data2DFFSH_3_reg.AP A0_led_int_Data2DFFSH_3_reg.C \
+A0_led_int_Data2DFFRH_0_reg.AR A0_led_int_Data2DFFRH_0_reg.C key_out_0_.CE \
+key_out_0_.C key_out_1_.CE key_out_1_.C key_out_2_.CE key_out_2_.C \
+key_out_3_.CE key_out_3_.C A0_int_DataDFFCRH_0_reg.CE \
+A0_int_DataDFFCRH_0_reg.AR A0_int_DataDFFCRH_0_reg.C \
+A0_int_DataDFFCRH_1_reg.CE A0_int_DataDFFCRH_1_reg.AR \
+A0_int_DataDFFCRH_1_reg.C A0_int_DataDFFCRH_2_reg.CE \
+A0_int_DataDFFCRH_2_reg.AR A0_int_DataDFFCRH_2_reg.C \
+A0_int_DataDFFCRH_3_reg.CE A0_int_DataDFFCRH_3_reg.AR \
+A0_int_DataDFFCRH_3_reg.C A0_int_DataDFFCRH_4_reg.CE \
+A0_int_DataDFFCRH_4_reg.AR A0_int_DataDFFCRH_4_reg.C \
+A0_int_DataDFFCRH_5_reg.CE A0_int_DataDFFCRH_5_reg.AR \
+A0_int_DataDFFCRH_5_reg.C A0_int_DataDFFCRH_6_reg.CE \
+A0_int_DataDFFCRH_6_reg.AR A0_int_DataDFFCRH_6_reg.C \
+A0_int_DataDFFCRH_7_reg.CE A0_int_DataDFFCRH_7_reg.AR \
+A0_int_DataDFFCRH_7_reg.C A0_flag_OverDFFRHreg.AR A0_flag_OverDFFRHreg.C \
+A0_N_355_0 A0_un1_led_int_Data138_1_i A0_N_1459 A0_time10ms3 A0_N_392 A0_N_378 \
+A0_led_int_Data138 A0_led_int_Data137 A0_led_int_Data133 A0_led_int_Data132 \
+A0_led_int_Data135 A0_N_32_i A0_led_int_Data130 A0_led_int_Data131_3 \
+result_3_.CE result_3_.AP result_3_.C result_7_.CE result_7_.AP result_7_.C \
+H0_inst_question_num.AR H0_inst_question_num.C I0_counter_9_.AR \
+I0_counter_9_.C I0_counter_5_.AR I0_counter_5_.C I0_counter_12_.AR \
+I0_counter_12_.C I0_counter_11_.AR I0_counter_11_.C I0_counter_7_.AR \
+I0_counter_7_.C I0_counter_6_.AR I0_counter_6_.C I0_counter_14_.AR \
+I0_counter_14_.C I0_counter_10_.AR I0_counter_10_.C I0_inst_keyclk.C \
+I0_pre_s_0_.C I0_next_s_0_.C I0_counter_0_.AR I0_counter_0_.C I0_counter_1_.AR \
+I0_counter_1_.C I0_counter_2_.AR I0_counter_2_.C I0_counter_3_.AR \
+I0_counter_3_.C I0_counter_4_.AR I0_counter_4_.C I0_counter_8_.AR \
+I0_counter_8_.C I0_counter_13_.AR I0_counter_13_.C I0_counter_15_.AR \
+I0_counter_15_.C I0_counter_16_.AR I0_counter_16_.C I0_counter_17_.AR \
+I0_counter_17_.C I0_counter_18_.AR I0_counter_18_.C I0_keyclk3 I0_N_33 \
+I0_doutDFFCreg.CE I0_doutDFFCreg.C B0_count_4_.AR B0_count_4_.C \
+B0_count_10_.AR B0_count_10_.C B0_count_11_.AR B0_count_11_.C B0_count_5_.AR \
+B0_count_5_.C B0_count_7_.AR B0_count_7_.C B0_count_12_.AR B0_count_12_.C \
+B0_count_13_.AR B0_count_13_.C B0_scancnt_1_.C B0_scancnt_0_.C B0_count_0_.AR \
+B0_count_0_.C B0_count_1_.AR B0_count_1_.C B0_count_2_.AR B0_count_2_.C \
+B0_count_3_.AR B0_count_3_.C B0_count_6_.AR B0_count_6_.C B0_count_8_.AR \
+B0_count_8_.C B0_count_9_.AR B0_count_9_.C B0_count_14_.AR B0_count_14_.C \
+B0_count_15_.AR B0_count_15_.C B0_count12 B0_N_131 a.AP a.C b.AP b.C c.AP c.C \
+d.AP d.C e.AP e.C f.AP f.C g.AP g.C B0_LED_VCC3DFFRHreg.AR \
+B0_LED_VCC3DFFRHreg.C B0_LED_VCC4DFFRHreg.AR B0_LED_VCC4DFFRHreg.C led_col_0_ \
+led_col_1_ led_col_2_ led_col_3_ led_col_4_ led_col_5_ led_col_6_ led_col_7_ \
+led_row_0_.CE led_row_0_.AR led_row_0_.C led_row_1_.CE led_row_1_.AR \
+led_row_1_.C led_row_2_.CE led_row_2_.AR led_row_2_.C led_row_3_.CE \
+led_row_3_.AR led_row_3_.C led_row_4_.CE led_row_4_.AR led_row_4_.C \
+led_row_5_.CE led_row_5_.AR led_row_5_.C led_row_6_.CE led_row_6_.AR \
+led_row_6_.C led_row_7_.CE led_row_7_.AP led_row_7_.C G0_inst_question_num.AR \
+G0_inst_question_num.C G0_cnt_next_17_.AR G0_cnt_next_17_.C G0_cnt_next_25_.AR \
+G0_cnt_next_25_.C G0_cnt_next_11_.AR G0_cnt_next_11_.C G0_cnt_next_18_.AR \
+G0_cnt_next_18_.C G0_cnt_next_12_.AR G0_cnt_next_12_.C G0_cnt_next_10_.AR \
+G0_cnt_next_10_.C G0_cnt_next_21_.AR G0_cnt_next_21_.C G0_cnt_next_7_.AR \
+G0_cnt_next_7_.C G0_cnt_next_13_.AR G0_cnt_next_13_.C G0_cnt_next_20_.AR \
+G0_cnt_next_20_.C G0_scan_data_5_.AR G0_scan_data_5_.C G0_scan_data_3_.AR \
+G0_scan_data_3_.C G0_scan_data_4_.AR G0_scan_data_4_.C G0_scan_data_6_.AR \
+G0_scan_data_6_.C G0_scan_data_0_.AR G0_scan_data_0_.C G0_scan_data_1_.AR \
+G0_scan_data_1_.C G0_scan_data_2_.AR G0_scan_data_2_.C G0_cnt_scan_0_.AR \
+G0_cnt_scan_0_.C G0_cnt_scan_1_.AR G0_cnt_scan_1_.C G0_cnt_scan_2_.AR \
+G0_cnt_scan_2_.C G0_cnt_scan_3_.AR G0_cnt_scan_3_.C G0_cnt_scan_4_.AR \
+G0_cnt_scan_4_.C G0_cnt_scan_5_.AR G0_cnt_scan_5_.C G0_cnt_scan_6_.AR \
+G0_cnt_scan_6_.C G0_cnt_scan_7_.AR G0_cnt_scan_7_.C G0_cnt_scan_8_.AR \
+G0_cnt_scan_8_.C G0_cnt_scan_9_.AR G0_cnt_scan_9_.C G0_cnt_scan_10_.AR \
+G0_cnt_scan_10_.C G0_cnt_scan_11_.AR G0_cnt_scan_11_.C G0_cnt_scan_12_.AR \
+G0_cnt_scan_12_.C G0_cnt_scan_13_.AR G0_cnt_scan_13_.C G0_cnt_scan_14_.AR \
+G0_cnt_scan_14_.C G0_cnt_scan_15_.AR G0_cnt_scan_15_.C G0_cnt_next_0_.AR \
+G0_cnt_next_0_.C G0_cnt_next_1_.AR G0_cnt_next_1_.C G0_cnt_next_2_.AR \
+G0_cnt_next_2_.C G0_cnt_next_3_.AR G0_cnt_next_3_.C G0_cnt_next_4_.AR \
+G0_cnt_next_4_.C G0_cnt_next_5_.AR G0_cnt_next_5_.C G0_cnt_next_6_.AR \
+G0_cnt_next_6_.C G0_cnt_next_8_.AR G0_cnt_next_8_.C G0_cnt_next_9_.AR \
+G0_cnt_next_9_.C G0_cnt_next_14_.AR G0_cnt_next_14_.C G0_cnt_next_15_.AR \
+G0_cnt_next_15_.C G0_cnt_next_16_.AR G0_cnt_next_16_.C G0_cnt_next_19_.AR \
+G0_cnt_next_19_.C G0_cnt_next_22_.AR G0_cnt_next_22_.C G0_cnt_next_23_.AR \
+G0_cnt_next_23_.C G0_cnt_next_24_.AR G0_cnt_next_24_.C G0_un1_cnt_next_10_23 \
+G0_un1_cnt_next_10_24 G0_N_108 G0_N_122 G0_un1_cnt_next12 G0_un1_cnt_scan_13 \
+A0_un1_led_int_data138_3_2__n.X1 A0_un1_led_int_data138_3_2__n.X2 \
+A0_led_int_Data0DFFRH_1_reg.D.X1 A0_led_int_Data0DFFRH_1_reg.D.X2 \
+A0_led_int_Data0DFFRH_2_reg.D.X1 A0_led_int_Data0DFFRH_2_reg.D.X2 \
+A0_led_int_Data0DFFRH_3_reg.D.X1 A0_led_int_Data0DFFRH_3_reg.D.X2 \
+A0_int_DataDFFCRH_2_reg.D.X1 A0_int_DataDFFCRH_2_reg.D.X2 \
+A0_int_DataDFFCRH_6_reg.D.X1 A0_int_DataDFFCRH_6_reg.D.X2 \
+A0_un1_led_int_data138_3_1__n.X1 A0_un1_led_int_data138_3_1__n.X2 result_0_.CE \
+result_0_.AP result_0_.C result_1_.CE result_1_.AP result_1_.C result_2_.CE \
+result_2_.AP result_2_.C result_4_.CE result_4_.AP result_4_.C result_5_.CE \
+result_5_.AP result_5_.C result_6_.CE result_6_.AP result_6_.C result_0_.D \
+result_1_.D result_2_.D result_4_.D result_5_.D result_6_.D A0_int_Data0_0_.D \
+A0_int_Data0_1_.D A0_timecnt_12_.D A0_timecnt_14_.T A0_timecnt_5_.T \
+A0_timecnt_7_.T A0_timecnt_9_.D A0_timecnt_6_.T A0_timecnt_10_.D \
+A0_timecnt_11_.D A0_inst_time10ms.D A0_scanvalue_4_.D A0_timecnt_0_.D \
+A0_timecnt_1_.D A0_timecnt_2_.D A0_timecnt_3_.D A0_timecnt_4_.D \
+A0_timecnt_8_.T A0_timecnt_13_.T A0_timecnt_15_.T A0_timecnt_16_.D \
+A0_timecnt_17_.D A0_timecnt_18_.D A0_scanvalue_0_.D A0_scanvalue_1_.D \
+A0_scanvalue_2_.D A0_scanvalue_3_.D A0_int_Data0_2_.D A0_int_Data0_3_.D \
+A0_flag_Data_0_.D A0_flag_Data_1_.T A0_led_int_Data0DFFRH_0_reg.D \
+A0_led_int_Data1DFFRH_0_reg.D A0_led_int_Data1DFFRH_1_reg.D \
+A0_led_int_Data1DFFRH_2_reg.D A0_led_int_Data1DFFRH_3_reg.D \
+A0_led_int_Data2DFFSH_3_reg.D A0_led_int_Data2DFFRH_0_reg.D key_out_0_.D \
+key_out_1_.D key_out_2_.D key_out_3_.D A0_int_DataDFFCRH_0_reg.D \
+A0_int_DataDFFCRH_1_reg.D A0_int_DataDFFCRH_3_reg.D A0_int_DataDFFCRH_4_reg.D \
+A0_int_DataDFFCRH_5_reg.D A0_int_DataDFFCRH_7_reg.D A0_flag_OverDFFRHreg.D \
+result_3_.D result_7_.D H0_inst_question_num.D I0_counter_9_.T I0_counter_5_.T \
+I0_counter_12_.D I0_counter_11_.D I0_counter_7_.T I0_counter_6_.T \
+I0_counter_14_.T I0_counter_10_.D I0_inst_keyclk.D I0_pre_s_0_.D \
+I0_next_s_0_.D I0_counter_0_.D I0_counter_1_.D I0_counter_2_.D I0_counter_3_.D \
+I0_counter_4_.D I0_counter_8_.T I0_counter_13_.D I0_counter_15_.T \
+I0_counter_16_.T I0_counter_17_.T I0_counter_18_.T I0_doutDFFCreg.D \
+B0_count_4_.D B0_count_10_.D B0_count_11_.D B0_count_5_.T B0_count_7_.T \
+B0_count_12_.T B0_count_13_.T B0_scancnt_1_.D B0_scancnt_0_.D B0_count_0_.D \
+B0_count_1_.D B0_count_2_.D B0_count_3_.D B0_count_6_.T B0_count_8_.D \
+B0_count_9_.D B0_count_14_.T B0_count_15_.T a.D b.D c.D d.D e.D f.D g.D \
+B0_LED_VCC3DFFRHreg.D B0_LED_VCC4DFFRHreg.D led_row_0_.D led_row_1_.D \
+led_row_2_.D led_row_3_.D led_row_4_.D led_row_5_.D led_row_6_.D led_row_7_.D \
+G0_inst_question_num.D G0_cnt_next_17_.D G0_cnt_next_25_.T G0_cnt_next_11_.T \
+G0_cnt_next_18_.T G0_cnt_next_12_.T G0_cnt_next_10_.D G0_cnt_next_21_.T \
+G0_cnt_next_7_.D G0_cnt_next_13_.T G0_cnt_next_20_.T G0_scan_data_5_.T \
+G0_scan_data_3_.T G0_scan_data_4_.T G0_scan_data_6_.T G0_scan_data_0_.D \
+G0_scan_data_1_.D G0_scan_data_2_.T G0_cnt_scan_0_.D G0_cnt_scan_1_.D \
+G0_cnt_scan_2_.D G0_cnt_scan_3_.D G0_cnt_scan_4_.D G0_cnt_scan_5_.T \
+G0_cnt_scan_6_.T G0_cnt_scan_7_.T G0_cnt_scan_8_.D G0_cnt_scan_9_.D \
+G0_cnt_scan_10_.D G0_cnt_scan_11_.D G0_cnt_scan_12_.T G0_cnt_scan_13_.T \
+G0_cnt_scan_14_.T G0_cnt_scan_15_.T G0_cnt_next_0_.D G0_cnt_next_1_.D \
+G0_cnt_next_2_.D G0_cnt_next_3_.T G0_cnt_next_4_.T G0_cnt_next_5_.T \
+G0_cnt_next_6_.T G0_cnt_next_8_.D G0_cnt_next_9_.D G0_cnt_next_14_.D \
+G0_cnt_next_15_.D G0_cnt_next_16_.D G0_cnt_next_19_.T G0_cnt_next_22_.T \
+G0_cnt_next_23_.T G0_cnt_next_24_.T
+.names LED_VCC1
+ 1
+.names LED_VCC2
+ 1
+.names B0_LED_VCC3DFFRHreg.Q LED_VCC3
+0 1
+1 0
+.names B0_LED_VCC4DFFRHreg.Q LED_VCC4
+0 1
+1 0
+.names reset.BLIF A0_int_Data0_0_.AR
+0 1
+1 0
+.names reset.BLIF A0_int_Data0_1_.AR
+0 1
+1 0
+.names key_in_0_.BLIF key_in_1_.BLIF A0_int_Data0_0_.Q A0_int_Data0_1_.Q \
+A0_int_Data0_2_.Q A0_int_Data0_3_.Q A0_flag_Data_1_.Q key_out_1_.Q \
+key_out_2_.Q A0_N_976_0_5
+1110-1-0- 1
+--1110--- 1
+--10-1-10 1
+1-11-0--- 1
+0--0-0--- 1
+---1-0-0- 1
+1--0-1--0 1
+--1011--- 1
+---000--- 1
+---1-0--0 1
+01-1-1-11 1
+--01-1--- 1
+---0-0--1 1
+------0-- 1
+-0-0011-1 0
+---001111 0
+0--00110- 0
+1--0101-0 0
+0--100111 0
+--01-0111 0
+0-00-11-- 0
+-011-11-- 0
+1-11-11-- 0
+--11-110- 0
+--11-11-0 0
+--00-11-1 0
+.names reset.BLIF A0_timecnt_12_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_14_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_5_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_7_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_9_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_6_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_10_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_11_.AR
+0 1
+1 0
+.names reset.BLIF A0_scanvalue_4_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_0_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_1_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_2_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_3_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_4_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_8_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_13_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_15_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_16_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_17_.AR
+0 1
+1 0
+.names reset.BLIF A0_timecnt_18_.AR
+0 1
+1 0
+.names reset.BLIF A0_scanvalue_0_.AP
+0 1
+1 0
+.names reset.BLIF A0_scanvalue_1_.AR
+0 1
+1 0
+.names reset.BLIF A0_scanvalue_2_.AR
+0 1
+1 0
+.names reset.BLIF A0_scanvalue_3_.AR
+0 1
+1 0
+.names reset.BLIF A0_int_Data0_2_.AR
+0 1
+1 0
+.names reset.BLIF A0_int_Data0_3_.AR
+0 1
+1 0
+.names key_in_0_.BLIF key_in_1_.BLIF key_in_2_.BLIF key_in_3_.BLIF \
+A0_flag_Data_0_.Q A0_flag_Data_1_.Q key_out_0_.Q key_out_1_.Q key_out_2_.Q \
+key_out_3_.Q A0_led_int_Data2_0_sqmuxa
+0111001110 1
+1101001101 1
+1011001101 1
+1101001011 1
+1011001011 1
+1101000111 1
+1011000111 1
+0111001101 1
+0111001011 1
+0111000111 1
+1--------0 0
+------1111 0
+111------- 0
+-------00- 0
+------0-0- 0
+------00-- 0
+00-------- 0
+-00------- 0
+0-0------- 0
+-----1---- 0
+----1----- 0
+---0------ 0
+--------00 0
+-------0-0 0
+------0--0 0
+.names reset.BLIF A0_flag_Data_0_.AR
+0 1
+1 0
+.names reset.BLIF A0_flag_Data_1_.AR
+0 1
+1 0
+.names reset.BLIF A0_led_int_Data0DFFRH_0_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_led_int_Data0DFFRH_1_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_led_int_Data0DFFRH_2_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_led_int_Data0DFFRH_3_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_led_int_Data1DFFRH_0_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_led_int_Data1DFFRH_1_reg.AR
+0 1
+1 0
+.names key_in_0_.BLIF key_in_1_.BLIF key_in_2_.BLIF key_in_3_.BLIF \
+A0_flag_Data_0_.Q key_out_0_.Q key_out_1_.Q key_out_2_.Q key_out_3_.Q A0_N_128
+011101110 1
+110101101 1
+101101101 1
+110101011 1
+101101011 1
+110100111 1
+101100111 1
+011101101 1
+011101011 1
+011100111 1
+1-------0 0
+-----1111 0
+111------ 0
+------00- 0
+-----0-0- 0
+-----00-- 0
+00------- 0
+-00------ 0
+0-0------ 0
+----1---- 0
+---0----- 0
+-------00 0
+------0-0 0
+-----0--0 0
+.names reset.BLIF A0_led_int_Data1DFFRH_2_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_led_int_Data1DFFRH_3_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_led_int_Data2DFFSH_3_reg.AP
+0 1
+1 0
+.names reset.BLIF A0_led_int_Data2DFFRH_0_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_int_DataDFFCRH_0_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_int_DataDFFCRH_1_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_int_DataDFFCRH_2_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_int_DataDFFCRH_3_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_int_DataDFFCRH_4_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_int_DataDFFCRH_5_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_int_DataDFFCRH_6_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_int_DataDFFCRH_7_reg.AR
+0 1
+1 0
+.names reset.BLIF A0_flag_OverDFFRHreg.AR
+0 1
+1 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+A0_un1_led_int_Data138_1_i.BLIF A0_led_int_Data138.BLIF \
+A0_un1_led_int_data138_3_1__n.BLIF A0_led_int_Data133.BLIF \
+A0_led_int_Data131_3.BLIF A0_N_355_0
+1--00101-0-- 1
+0-100101---- 1
+-0100101---- 1
+--00-001-0-0 1
+0-00-001---0 1
+-000-001---0 1
+----0001-0-0 1
+0---0001---0 1
+-0--0001---0 1
+-------000-- 1
+0------00--- 1
+-0-----00--- 1
+-------1-01- 1
+0------1--1- 1
+-0-----1--1- 1
+-0-------0-- 1
+00---------- 1
+010--1-1--0- 0
+1-0--1-1-10- 0
+1-1-1--1-10- 0
+1--1-1-1-10- 0
+1--11--1-10- 0
+1------011-- 0
+-11-1--1--0- 0
+1-----11-10- 0
+1----0-1-101 0
+-1-1-1-1--0- 0
+-1-11--1--0- 0
+-1--11-1--0- 0
+-1-----01--- 0
+-1----11--0- 0
+-1---0-1--01 0
+11-------1-- 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q A0_led_int_Data133.BLIF \
+A0_led_int_Data131_3.BLIF A0_un1_led_int_Data138_1_i
+-1-1-00-- 1
+00--010-- 1
+---1000-- 1
+-10----1- 1
+1-100-0-- 1
+00--0-0-0 1
+-101----1 1
+--01---1- 1
+--1-1--1- 1
+-1100-0-- 1
+--0-010-- 1
+--00-00-0 1
+1--1-00-- 1
+--11-00-- 1
+--111---1 1
+--11--1-1 1
+------11- 1
+-----0-1- 1
+---01--01 0
+-111010-- 0
+1-11010-- 0
+00011--0- 0
+-000110-- 0
+00-0-0-01 0
+-00-11-0- 0
+-00---10- 0
+--00-0-01 0
+--101--0- 0
+---0--10- 0
+----11-00 0
+------100 0
+.names key_in_0_.BLIF key_in_1_.BLIF key_in_2_.BLIF key_out_0_.Q key_out_1_.Q \
+key_out_2_.Q key_out_3_.Q A0_N_1459
+1101011 1
+1011011 1
+0111011 1
+1100111 1
+1010111 1
+0110111 1
+111---- 0
+---00-- 0
+---11-- 0
+-00---- 0
+0-0---- 0
+00----- 0
+-----0- 0
+------0 0
+.names A0_timecnt_12_.Q A0_timecnt_14_.Q A0_timecnt_5_.Q A0_timecnt_7_.Q \
+A0_timecnt_9_.Q A0_timecnt_6_.Q A0_timecnt_10_.Q A0_timecnt_11_.Q \
+A0_timecnt_0_.Q A0_timecnt_1_.Q A0_timecnt_2_.Q A0_timecnt_3_.Q \
+A0_timecnt_4_.Q A0_timecnt_8_.Q A0_timecnt_13_.Q A0_timecnt_15_.Q \
+A0_timecnt_16_.Q A0_timecnt_17_.Q A0_timecnt_18_.Q A0_time10ms3
+0000000011111111111 1
+-----------------0- 0
+----------------0-- 0
+---------------0--- 0
+--------------0---- 0
+-------------0----- 0
+------------0------ 0
+-----------0------- 0
+----------0-------- 0
+---------0--------- 0
+--------0---------- 0
+-------1----------- 0
+------1------------ 0
+-----1------------- 0
+----1-------------- 0
+---1--------------- 0
+--1---------------- 0
+-1----------------- 0
+1------------------ 0
+------------------0 0
+.names A0_timecnt_12_.Q A0_timecnt_14_.Q A0_timecnt_9_.Q A0_timecnt_10_.Q \
+A0_timecnt_11_.Q A0_timecnt_13_.Q A0_timecnt_15_.Q A0_N_378.BLIF A0_N_392
+11111111 1
+------0- 0
+-----0-- 0
+----0--- 0
+---0---- 0
+--0----- 0
+-0------ 0
+0------- 0
+-------0 0
+.names A0_timecnt_5_.Q A0_timecnt_7_.Q A0_timecnt_6_.Q A0_timecnt_0_.Q \
+A0_timecnt_1_.Q A0_timecnt_2_.Q A0_timecnt_3_.Q A0_timecnt_4_.Q \
+A0_timecnt_8_.Q A0_N_378
+111111111 1
+-------0- 0
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+--------0 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q A0_led_int_Data138
+-000110 1
+-111010 1
+1-11010 1
+00-1--- 0
+-10---- 0
+---00-- 0
+--1-1-- 0
+--01--- 0
+-----0- 0
+------1 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q A0_led_int_Data137
+00-1010 1
+--01010 1
+-11---- 0
+1-1---- 0
+-----0- 0
+----1-- 0
+---0--- 0
+------1 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q A0_led_int_Data133
+0001100 1
+--10100 1
+1-0---- 0
+-10---- 0
+--11--- 0
+--00--- 0
+-----1- 0
+----0-- 0
+------1 0
+.names A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q \
+A0_int_DataDFFCRH_5_reg.Q A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+A0_led_int_Data131_3.BLIF A0_led_int_Data132
+00-000 1
+--0000 1
+-11--- 0
+1-1--- 0
+----1- 0
+---1-- 0
+-----1 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q A0_led_int_Data135
+-111100 1
+-000010 1
+0-00010 1
+11---1- 0
+-0--1-- 0
+----00- 0
+--1--1- 0
+---01-- 0
+--01--- 0
+------1 0
+.names key_out_0_.Q key_out_3_.Q A0_N_32_i
+11 1
+0- 0
+-0 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q A0_led_int_Data130
+-001000 1
+-110000 1
+1-10000 1
+001---- 0
+-10---- 0
+--00--- 0
+--11--- 0
+-----1- 0
+----1-- 0
+------1 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q A0_led_int_Data131_3
+---0000 1
+--0-000 1
+-0--000 1
+0---000 1
+1111--- 0
+-----1- 0
+----1-- 0
+------1 0
+.names reset.BLIF result_3_.AP
+0 1
+1 0
+.names reset.BLIF result_7_.AP
+0 1
+1 0
+.names reset.BLIF H0_inst_question_num.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_9_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_5_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_12_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_11_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_7_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_6_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_14_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_10_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_0_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_1_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_2_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_3_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_4_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_8_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_13_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_15_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_16_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_17_.AR
+0 1
+1 0
+.names reset.BLIF I0_counter_18_.AR
+0 1
+1 0
+.names I0_counter_9_.Q I0_counter_5_.Q I0_counter_12_.Q I0_counter_11_.Q \
+I0_counter_7_.Q I0_counter_6_.Q I0_counter_14_.Q I0_counter_10_.Q \
+I0_counter_0_.Q I0_counter_1_.Q I0_counter_2_.Q I0_counter_3_.Q \
+I0_counter_4_.Q I0_counter_8_.Q I0_counter_13_.Q I0_counter_15_.Q \
+I0_counter_16_.Q I0_counter_17_.Q I0_counter_18_.Q I0_keyclk3
+0000000011111111111 1
+-----------------0- 0
+----------------0-- 0
+---------------0--- 0
+--------------0---- 0
+-------------0----- 0
+------------0------ 0
+-----------0------- 0
+----------0-------- 0
+---------0--------- 0
+--------0---------- 0
+-------1----------- 0
+------1------------ 0
+-----1------------- 0
+----1-------------- 0
+---1--------------- 0
+--1---------------- 0
+-1----------------- 0
+1------------------ 0
+------------------0 0
+.names I0_counter_9_.Q I0_counter_5_.Q I0_counter_7_.Q I0_counter_6_.Q \
+I0_counter_0_.Q I0_counter_1_.Q I0_counter_2_.Q I0_counter_3_.Q \
+I0_counter_4_.Q I0_counter_8_.Q I0_N_33
+1111111111 1
+--------0- 0
+-------0-- 0
+------0--- 0
+-----0---- 0
+----0----- 0
+---0------ 0
+--0------- 0
+-0-------- 0
+0--------- 0
+---------0 0
+.names din.BLIF I0_pre_s_0_.Q I0_doutDFFCreg.CE
+1- 1
+-0 1
+01 0
+.names reset.BLIF B0_count_4_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_10_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_11_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_5_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_7_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_12_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_13_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_0_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_1_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_2_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_3_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_6_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_8_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_9_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_14_.AR
+0 1
+1 0
+.names reset.BLIF B0_count_15_.AR
+0 1
+1 0
+.names B0_count_4_.Q B0_count_10_.Q B0_count_11_.Q B0_count_5_.Q B0_count_7_.Q \
+B0_count_12_.Q B0_count_13_.Q B0_count_0_.Q B0_count_1_.Q B0_count_2_.Q \
+B0_count_3_.Q B0_count_6_.Q B0_count_8_.Q B0_count_9_.Q B0_count_14_.Q \
+B0_count_15_.Q B0_count12
+0000000111111111 1
+--------------0- 0
+-------------0-- 0
+------------0--- 0
+-----------0---- 0
+----------0----- 0
+---------0------ 0
+--------0------- 0
+-------0-------- 0
+------1--------- 0
+-----1---------- 0
+----1----------- 0
+---1------------ 0
+--1------------- 0
+-1-------------- 0
+1--------------- 0
+---------------0 0
+.names B0_count_4_.Q B0_count_5_.Q B0_count_7_.Q B0_count_0_.Q B0_count_1_.Q \
+B0_count_2_.Q B0_count_3_.Q B0_count_6_.Q B0_N_131
+11111111 1
+------0- 0
+-----0-- 0
+----0--- 0
+---0---- 0
+--0----- 0
+-0------ 0
+0------- 0
+-------0 0
+.names reset.BLIF a.AP
+0 1
+1 0
+.names reset.BLIF b.AP
+0 1
+1 0
+.names reset.BLIF c.AP
+0 1
+1 0
+.names reset.BLIF d.AP
+0 1
+1 0
+.names reset.BLIF e.AP
+0 1
+1 0
+.names reset.BLIF f.AP
+0 1
+1 0
+.names reset.BLIF g.AP
+0 1
+1 0
+.names reset.BLIF B0_LED_VCC3DFFRHreg.AR
+0 1
+1 0
+.names reset.BLIF B0_LED_VCC4DFFRHreg.AR
+0 1
+1 0
+.names led_col_0_
+ 1
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q \
+led_row_5_.Q led_row_6_.Q led_row_7_.Q G0_scan_data_5_.Q G0_scan_data_3_.Q \
+G0_scan_data_4_.Q G0_scan_data_6_.Q G0_scan_data_0_.Q G0_scan_data_1_.Q \
+G0_scan_data_2_.Q led_col_1_
+-0---0--------- 1
+-1---1--------- 1
+-------------0- 1
+------------1-- 1
+-----------1--- 1
+----------1---- 1
+---------1----- 1
+--------1------ 1
+-------1------- 1
+------1-------- 1
+----1---------- 1
+---1----------- 1
+--1------------ 1
+1-------------- 1
+--------------1 1
+010000000000010 0
+000001000000010 0
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q \
+led_row_5_.Q led_row_6_.Q led_row_7_.Q G0_scan_data_5_.Q G0_scan_data_3_.Q \
+G0_scan_data_4_.Q G0_scan_data_6_.Q G0_scan_data_0_.Q G0_scan_data_1_.Q \
+G0_scan_data_2_.Q led_col_2_
+--0-0-------0-0 1
+-----1------1-1 1
+---1--------0-- 1
+----1---------1 1
+-1------------1 1
+-00000--------- 1
+---1----------0 1
+------------000 1
+--11----------- 1
+-1--1---------- 1
+--1--1--------- 1
+----11--------- 1
+-1---1--------- 1
+--1-1---------- 1
+-11------------ 1
+-------------11 1
+-----------1--- 1
+----------1---- 1
+---------1----- 1
+--------1------ 1
+-------1------- 1
+------1-------- 1
+1-------------- 1
+0010000000001-0 0
+000001000000001 0
+000100000000101 0
+000010000000-10 0
+001000000000-01 0
+0100000000001-0 0
+001000000000-10 0
+0000100000001-0 0
+0000010000001-0 0
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q \
+led_row_5_.Q led_row_6_.Q led_row_7_.Q G0_scan_data_5_.Q G0_scan_data_3_.Q \
+G0_scan_data_4_.Q G0_scan_data_6_.Q G0_scan_data_0_.Q G0_scan_data_1_.Q \
+G0_scan_data_2_.Q led_col_3_
+---1--------00- 1
+00-00000----1-- 1
+1-------------1 1
+------1-------1 1
+---1----------1 1
+-----1--------0 1
+-1------------0 1
+----1---------0 1
+-------1------0 1
+--1-----------0 1
+-11------------ 1
+--1-1---------- 1
+--1----1------- 1
+--00-0------0-- 1
+-------------11 1
+---1--1-------- 1
+1--1----------- 1
+1-----1-------- 1
+-----1-1------- 1
+----11--------- 1
+--1--1--------- 1
+-1---1--------- 1
+----1--1------- 1
+-1-----1------- 1
+-1--1---------- 1
+-----------1--- 1
+----------1---- 1
+---------1----- 1
+--------1------ 1
+001000000000001 0
+000100000000-10 0
+010000000000101 0
+000010000000101 0
+000000010000101 0
+1000000000001-0 0
+0000001000001-0 0
+000001000000-01 0
+0001000000001-0 0
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q \
+led_row_5_.Q led_row_6_.Q led_row_7_.Q G0_scan_data_5_.Q G0_scan_data_3_.Q \
+G0_scan_data_4_.Q G0_scan_data_6_.Q G0_scan_data_0_.Q G0_scan_data_1_.Q \
+G0_scan_data_2_.Q led_col_4_
+1-----------0-- 1
+---1--------0-- 1
+------1-----0-- 1
+-1----------0-- 1
+----1---------1 1
+0000000-------- 1
+-----1--------0 1
+1-------------1 1
+---1----------1 1
+------1-------1 1
+--1---------1-- 1
+----1-------1-- 1
+-----1------1-- 1
+-1------------0 1
+------------000 1
+--1--1--------- 1
+---1--1-------- 1
+1-----1-------- 1
+1--1----------- 1
+--1-1---------- 1
+-------------11 1
+-----------1--- 1
+----------1---- 1
+---------1----- 1
+--------1------ 1
+-------1------- 1
+000001000000001 0
+010000000000101 0
+000010000000010 0
+001000000000001 0
+001000000000010 0
+1000000000001-0 0
+0001000000001-0 0
+0000001000001-0 0
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q \
+led_row_5_.Q led_row_6_.Q led_row_7_.Q G0_inst_question_num.Q \
+G0_scan_data_5_.Q G0_scan_data_3_.Q G0_scan_data_4_.Q G0_scan_data_6_.Q \
+G0_scan_data_0_.Q G0_scan_data_1_.Q G0_scan_data_2_.Q led_col_5_
+-0---0-------01- 1
+-0---0--1------0 1
+--0--0---------1 1
+--0----------1-1 1
+-00-00---------- 1
+--1--1---------- 1
+-------------000 1
+-1---1---------- 1
+----11---------- 1
+-1--1----------- 1
+-11------------- 1
+--1-1----------- 1
+--------------11 1
+------------1--- 1
+-----------1---- 1
+----------1----- 1
+---------1------ 1
+-------1-------- 1
+------1--------- 1
+---1------------ 1
+1--------------- 1
+00000100-0000001 0
+00001000000001-0 0
+00100000000001-0 0
+00100000-0000-01 0
+01000000-0000-10 0
+00000100-0000-10 0
+01000000-00001-0 0
+00000100-00001-0 0
+.names led_col_6_
+ 1
+.names led_col_7_
+ 1
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_cnt_scan_12_.Q G0_cnt_scan_13_.Q G0_cnt_scan_14_.Q G0_cnt_scan_15_.Q \
+G0_un1_cnt_scan_13.BLIF led_row_0_.CE
+111111111 1
+-------0- 0
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+--------0 0
+.names reset.BLIF led_row_0_.AR
+0 1
+1 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_cnt_scan_12_.Q G0_cnt_scan_13_.Q G0_cnt_scan_14_.Q G0_cnt_scan_15_.Q \
+G0_un1_cnt_scan_13.BLIF led_row_1_.CE
+111111111 1
+-------0- 0
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+--------0 0
+.names reset.BLIF led_row_1_.AR
+0 1
+1 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_cnt_scan_12_.Q G0_cnt_scan_13_.Q G0_cnt_scan_14_.Q G0_cnt_scan_15_.Q \
+G0_un1_cnt_scan_13.BLIF led_row_2_.CE
+111111111 1
+-------0- 0
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+--------0 0
+.names reset.BLIF led_row_2_.AR
+0 1
+1 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_cnt_scan_12_.Q G0_cnt_scan_13_.Q G0_cnt_scan_14_.Q G0_cnt_scan_15_.Q \
+G0_un1_cnt_scan_13.BLIF led_row_3_.CE
+111111111 1
+-------0- 0
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+--------0 0
+.names reset.BLIF led_row_3_.AR
+0 1
+1 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_cnt_scan_12_.Q G0_cnt_scan_13_.Q G0_cnt_scan_14_.Q G0_cnt_scan_15_.Q \
+G0_un1_cnt_scan_13.BLIF led_row_4_.CE
+111111111 1
+-------0- 0
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+--------0 0
+.names reset.BLIF led_row_4_.AR
+0 1
+1 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_cnt_scan_12_.Q G0_cnt_scan_13_.Q G0_cnt_scan_14_.Q G0_cnt_scan_15_.Q \
+G0_un1_cnt_scan_13.BLIF led_row_5_.CE
+111111111 1
+-------0- 0
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+--------0 0
+.names reset.BLIF led_row_5_.AR
+0 1
+1 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_cnt_scan_12_.Q G0_cnt_scan_13_.Q G0_cnt_scan_14_.Q G0_cnt_scan_15_.Q \
+G0_un1_cnt_scan_13.BLIF led_row_6_.CE
+111111111 1
+-------0- 0
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+--------0 0
+.names reset.BLIF led_row_6_.AR
+0 1
+1 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_cnt_scan_12_.Q G0_cnt_scan_13_.Q G0_cnt_scan_14_.Q G0_cnt_scan_15_.Q \
+G0_un1_cnt_scan_13.BLIF led_row_7_.CE
+111111111 1
+-------0- 0
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+--------0 0
+.names reset.BLIF led_row_7_.AP
+0 1
+1 0
+.names reset.BLIF G0_inst_question_num.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_17_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_25_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_11_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_18_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_12_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_10_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_21_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_7_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_13_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_20_.AR
+0 1
+1 0
+.names reset.BLIF G0_scan_data_5_.AR
+0 1
+1 0
+.names reset.BLIF G0_scan_data_3_.AR
+0 1
+1 0
+.names reset.BLIF G0_scan_data_4_.AR
+0 1
+1 0
+.names reset.BLIF G0_scan_data_6_.AR
+0 1
+1 0
+.names reset.BLIF G0_scan_data_0_.AR
+0 1
+1 0
+.names reset.BLIF G0_scan_data_1_.AR
+0 1
+1 0
+.names reset.BLIF G0_scan_data_2_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_0_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_1_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_2_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_3_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_4_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_5_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_6_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_7_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_8_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_9_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_10_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_11_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_12_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_13_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_14_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_scan_15_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_0_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_1_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_2_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_3_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_4_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_5_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_6_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_8_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_9_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_14_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_15_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_16_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_19_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_22_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_23_.AR
+0 1
+1 0
+.names reset.BLIF G0_cnt_next_24_.AR
+0 1
+1 0
+.names G0_cnt_next_0_.Q G0_cnt_next_1_.Q G0_cnt_next_2_.Q G0_cnt_next_3_.Q \
+G0_cnt_next_4_.Q G0_cnt_next_5_.Q G0_cnt_next_6_.Q G0_cnt_next_8_.Q \
+G0_cnt_next_9_.Q G0_cnt_next_14_.Q G0_cnt_next_15_.Q G0_cnt_next_16_.Q \
+G0_cnt_next_19_.Q G0_cnt_next_22_.Q G0_cnt_next_23_.Q G0_cnt_next_24_.Q \
+G0_un1_cnt_next_10_23
+1111111111111111 1
+--------------0- 0
+-------------0-- 0
+------------0--- 0
+-----------0---- 0
+----------0----- 0
+---------0------ 0
+--------0------- 0
+-------0-------- 0
+------0--------- 0
+-----0---------- 0
+----0----------- 0
+---0------------ 0
+--0------------- 0
+-0-------------- 0
+0--------------- 0
+---------------0 0
+.names G0_cnt_next_17_.Q G0_cnt_next_25_.Q G0_cnt_next_11_.Q G0_cnt_next_18_.Q \
+G0_cnt_next_12_.Q G0_cnt_next_10_.Q G0_cnt_next_21_.Q G0_cnt_next_7_.Q \
+G0_cnt_next_13_.Q G0_cnt_next_20_.Q G0_un1_cnt_next_10_24
+0000000000 1
+--------1- 0
+-------1-- 0
+------1--- 0
+-----1---- 0
+----1----- 0
+---1------ 0
+--1------- 0
+-1-------- 0
+1--------- 0
+---------1 0
+.names G0_cnt_next_0_.Q G0_cnt_next_1_.Q G0_cnt_next_2_.Q G0_cnt_next_3_.Q \
+G0_cnt_next_4_.Q G0_cnt_next_5_.Q G0_cnt_next_6_.Q G0_un1_cnt_next_10_23.BLIF \
+G0_un1_cnt_next_10_24.BLIF G0_N_108
+11111110- 1
+1111111-0 1
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+-------11 0
+.names G0_cnt_next_11_.Q G0_cnt_next_12_.Q G0_cnt_next_10_.Q G0_cnt_next_7_.Q \
+G0_cnt_next_13_.Q G0_cnt_next_8_.Q G0_cnt_next_9_.Q G0_N_108.BLIF G0_N_122
+11111111 1
+------0- 0
+-----0-- 0
+----0--- 0
+---0---- 0
+--0----- 0
+-0------ 0
+0------- 0
+-------0 0
+.names G0_scan_data_5_.Q G0_scan_data_3_.Q G0_scan_data_4_.Q G0_scan_data_6_.Q \
+G0_scan_data_0_.Q G0_scan_data_1_.Q G0_scan_data_2_.Q \
+G0_un1_cnt_next_10_23.BLIF G0_un1_cnt_next_10_24.BLIF G0_un1_cnt_next12
+0000011-- 1
+-------0- 1
+--------0 1
+------011 0
+-----0-11 0
+----1--11 0
+---1---11 0
+--1----11 0
+-1-----11 0
+1------11 0
+.names G0_cnt_scan_0_.Q G0_cnt_scan_1_.Q G0_cnt_scan_2_.Q G0_cnt_scan_3_.Q \
+G0_cnt_scan_4_.Q G0_cnt_scan_5_.Q G0_cnt_scan_6_.Q G0_cnt_scan_7_.Q \
+G0_un1_cnt_scan_13
+11111111 1
+------0- 0
+-----0-- 0
+----0--- 0
+---0---- 0
+--0----- 0
+-0------ 0
+0------- 0
+-------0 0
+.names A0_un1_led_int_Data138_1_i.BLIF A0_led_int_Data133.BLIF \
+A0_un1_led_int_data138_3_2__n.X1
+10 1
+0- 0
+-1 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+A0_un1_led_int_Data138_1_i.BLIF A0_led_int_Data133.BLIF \
+A0_led_int_Data131_3.BLIF A0_un1_led_int_data138_3_2__n.X2
+-0001100-- 1
+1-110100-- 1
+-1110100-- 1
+----000100 1
+--00-00100 1
+--1001010- 1
+11-001010- 1
+------1--- 0
+--1-1----- 0
+-----0-0-- 0
+-------11- 0
+-----0---1 0
+---11--1-- 0
+---1-1-1-- 0
+----11-1-- 0
+-10----0-- 0
+--01---0-- 0
+--10---0-- 0
+--0-0--0-- 0
+0-0--1-1-- 0
+-00--1-1-- 0
+001----0-- 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_led_int_Data0DFFRH_1_reg.D.X1
+0 1
+1 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+A0_un1_led_int_data138_3_1__n.BLIF A0_led_int_Data0DFFRH_1_reg.D.X2
+-------0 1
+00-1010- 1
+--01010- 1
+---0---1 0
+----1--1 0
+-----0-1 0
+------11 0
+1-1----1 0
+-11----1 0
+.names A0_un1_led_int_data138_3_2__n.BLIF A0_int_DataDFFCRH_1_reg.Q \
+A0_int_DataDFFCRH_2_reg.Q A0_led_int_Data137.BLIF \
+A0_un1_led_int_data138_3_1__n.BLIF A0_led_int_Data0DFFRH_2_reg.D.X2
+01-01 1
+10-0- 1
+1--00 1
+---1- 0
+00--- 0
+0---0 0
+11--1 0
+.names A0_int_DataDFFCRH_3_reg.Q A0_N_355_0.BLIF \
+A0_un1_led_int_Data138_1_i.BLIF A0_led_int_Data137.BLIF \
+A0_led_int_Data132.BLIF A0_led_int_Data135.BLIF A0_led_int_Data130.BLIF \
+A0_led_int_Data0DFFRH_3_reg.D.X2
+-000--- 1
+-0-01-- 1
+-0-0-1- 1
+-0-0--1 1
+-110000 1
+---1--- 0
+-10---- 0
+-1--1-- 0
+-1---1- 0
+-1----1 0
+-01-000 0
+.names A0_int_Data0_1_.Q A0_flag_Data_1_.Q A0_int_DataDFFCRH_2_reg.D.X1
+11 1
+0- 0
+-0 0
+.names key_in_0_.BLIF key_in_2_.BLIF A0_int_Data0_0_.Q A0_int_Data0_1_.Q \
+A0_flag_Data_1_.Q key_out_0_.Q key_out_2_.Q key_out_3_.Q \
+A0_int_DataDFFCRH_2_reg.D.X2
+1-1010-- 1
+1-1-1011 1
+0-0--1-1 1
+0---01-1 1
+-1---111 1
+--0--111 1
+----0111 1
+0--1-111 1
+0----0-- 0
+--0--0-- 0
+----00-- 0
+---1---0 0
+-----1-0 0
+1----10- 0
+---1-00- 0
+--1-110- 0
+101-11-- 0
+-01011-- 0
+.names A0_int_Data0_1_.Q A0_int_Data0_2_.Q A0_int_Data0_3_.Q A0_flag_Data_1_.Q \
+A0_int_DataDFFCRH_6_reg.D.X1
+1101 1
+0--- 0
+-0-- 0
+--1- 0
+---0 0
+.names key_in_0_.BLIF A0_int_Data0_0_.Q A0_int_Data0_1_.Q A0_int_Data0_2_.Q \
+A0_int_Data0_3_.Q A0_flag_Data_1_.Q key_out_1_.Q key_out_2_.Q \
+A0_int_DataDFFCRH_6_reg.D.X2
+-0110111 1
+---011-- 1
+000-11-- 1
+-00-11-1 1
+-----0-- 0
+-1-1---- 0
+-1--0--- 0
+--0-0--- 0
+---00--- 0
+----0-0- 0
+----0--0 0
+--111--- 0
+1--1---0 0
+.names A0_un1_led_int_Data138_1_i.BLIF A0_led_int_Data133.BLIF \
+A0_un1_led_int_data138_3_1__n.X1
+10 1
+0- 0
+-1 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+A0_un1_led_int_Data138_1_i.BLIF A0_led_int_Data133.BLIF \
+A0_led_int_Data131_3.BLIF A0_un1_led_int_data138_3_1__n.X2
+0-0001010- 1
+-00001010- 1
+-0001100-- 1
+1-110100-- 1
+-1110100-- 1
+-1-1---101 1
+--11---101 1
+-11110010- 1
+--10------ 0
+---0-0---- 0
+---0--1--- 0
+-----0-0-- 0
+------10-- 0
+------1--0 0
+-001------ 0
+11-0------ 0
+-1-01----- 0
+---01--1-- 0
+--01---0-- 0
+---11--0-- 0
+---00--0-- 0
+---00---1- 0
+---1---11- 0
+--01-----0 0
+00-1---0-- 0
+-0-1---1-0 0
+---10--1-0 0
+---1-1-1-0 0
+.names A0_led_int_Data2_0_sqmuxa.BLIF A0_int_Data0_0_.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_int_Data0_0_.C
+1 1
+0 0
+.names A0_led_int_Data2_0_sqmuxa.BLIF A0_int_Data0_1_.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_int_Data0_1_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_12_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_14_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_5_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_7_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_9_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_6_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_10_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_11_.C
+1 1
+0 0
+.names clk.BLIF A0_inst_time10ms.C
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_scanvalue_4_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_0_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_1_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_2_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_3_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_4_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_8_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_13_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_15_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_16_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_17_.C
+1 1
+0 0
+.names clk.BLIF A0_timecnt_18_.C
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_scanvalue_0_.C
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_scanvalue_1_.C
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_scanvalue_2_.C
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_scanvalue_3_.C
+1 1
+0 0
+.names A0_led_int_Data2_0_sqmuxa.BLIF A0_int_Data0_2_.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_int_Data0_2_.C
+1 1
+0 0
+.names A0_led_int_Data2_0_sqmuxa.BLIF A0_int_Data0_3_.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_int_Data0_3_.C
+1 1
+0 0
+.names key_in_3_.BLIF A0_flag_Data_0_.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_flag_Data_0_.C
+1 1
+0 0
+.names key_in_3_.BLIF A0_flag_Data_1_.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_flag_Data_1_.C
+1 1
+0 0
+.names clk.BLIF A0_led_int_Data0DFFRH_0_reg.C
+1 1
+0 0
+.names clk.BLIF A0_led_int_Data0DFFRH_1_reg.C
+1 1
+0 0
+.names clk.BLIF A0_led_int_Data0DFFRH_2_reg.C
+1 1
+0 0
+.names clk.BLIF A0_led_int_Data0DFFRH_3_reg.C
+1 1
+0 0
+.names clk.BLIF A0_led_int_Data1DFFRH_0_reg.C
+1 1
+0 0
+.names clk.BLIF A0_led_int_Data1DFFRH_1_reg.C
+1 1
+0 0
+.names clk.BLIF A0_led_int_Data1DFFRH_2_reg.C
+1 1
+0 0
+.names clk.BLIF A0_led_int_Data1DFFRH_3_reg.C
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_led_int_Data2DFFSH_3_reg.C
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_led_int_Data2DFFRH_0_reg.C
+1 1
+0 0
+.names reset.BLIF key_out_0_.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q key_out_0_.C
+1 1
+0 0
+.names reset.BLIF key_out_1_.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q key_out_1_.C
+1 1
+0 0
+.names reset.BLIF key_out_2_.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q key_out_2_.C
+1 1
+0 0
+.names reset.BLIF key_out_3_.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q key_out_3_.C
+1 1
+0 0
+.names A0_N_128.BLIF A0_int_DataDFFCRH_0_reg.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_int_DataDFFCRH_0_reg.C
+1 1
+0 0
+.names A0_N_128.BLIF A0_int_DataDFFCRH_1_reg.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_int_DataDFFCRH_1_reg.C
+1 1
+0 0
+.names A0_N_128.BLIF A0_int_DataDFFCRH_2_reg.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_int_DataDFFCRH_2_reg.C
+1 1
+0 0
+.names A0_N_128.BLIF A0_int_DataDFFCRH_3_reg.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_int_DataDFFCRH_3_reg.C
+1 1
+0 0
+.names A0_N_128.BLIF A0_int_DataDFFCRH_4_reg.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_int_DataDFFCRH_4_reg.C
+1 1
+0 0
+.names A0_N_128.BLIF A0_int_DataDFFCRH_5_reg.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_int_DataDFFCRH_5_reg.C
+1 1
+0 0
+.names A0_N_128.BLIF A0_int_DataDFFCRH_6_reg.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_int_DataDFFCRH_6_reg.C
+1 1
+0 0
+.names A0_N_128.BLIF A0_int_DataDFFCRH_7_reg.CE
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_int_DataDFFCRH_7_reg.C
+1 1
+0 0
+.names A0_inst_time10ms.Q A0_flag_OverDFFRHreg.C
+1 1
+0 0
+.names A0_flag_OverDFFRHreg.Q result_3_.CE
+1 1
+0 0
+.names clk.BLIF result_3_.C
+1 1
+0 0
+.names A0_flag_OverDFFRHreg.Q result_7_.CE
+1 1
+0 0
+.names clk.BLIF result_7_.C
+1 1
+0 0
+.names I0_doutDFFCreg.Q H0_inst_question_num.C
+1 1
+0 0
+.names clk.BLIF I0_counter_9_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_5_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_12_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_11_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_7_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_6_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_14_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_10_.C
+1 1
+0 0
+.names clk.BLIF I0_inst_keyclk.C
+1 1
+0 0
+.names I0_inst_keyclk.Q I0_pre_s_0_.C
+1 1
+0 0
+.names I0_inst_keyclk.Q I0_next_s_0_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_0_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_1_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_2_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_3_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_4_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_8_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_13_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_15_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_16_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_17_.C
+1 1
+0 0
+.names clk.BLIF I0_counter_18_.C
+1 1
+0 0
+.names I0_inst_keyclk.Q I0_doutDFFCreg.C
+1 1
+0 0
+.names clk.BLIF B0_count_4_.C
+1 1
+0 0
+.names clk.BLIF B0_count_10_.C
+1 1
+0 0
+.names clk.BLIF B0_count_11_.C
+1 1
+0 0
+.names clk.BLIF B0_count_5_.C
+1 1
+0 0
+.names clk.BLIF B0_count_7_.C
+1 1
+0 0
+.names clk.BLIF B0_count_12_.C
+1 1
+0 0
+.names clk.BLIF B0_count_13_.C
+1 1
+0 0
+.names clk.BLIF B0_scancnt_1_.C
+1 1
+0 0
+.names clk.BLIF B0_scancnt_0_.C
+1 1
+0 0
+.names clk.BLIF B0_count_0_.C
+1 1
+0 0
+.names clk.BLIF B0_count_1_.C
+1 1
+0 0
+.names clk.BLIF B0_count_2_.C
+1 1
+0 0
+.names clk.BLIF B0_count_3_.C
+1 1
+0 0
+.names clk.BLIF B0_count_6_.C
+1 1
+0 0
+.names clk.BLIF B0_count_8_.C
+1 1
+0 0
+.names clk.BLIF B0_count_9_.C
+1 1
+0 0
+.names clk.BLIF B0_count_14_.C
+1 1
+0 0
+.names clk.BLIF B0_count_15_.C
+1 1
+0 0
+.names clk.BLIF a.C
+1 1
+0 0
+.names clk.BLIF b.C
+1 1
+0 0
+.names clk.BLIF c.C
+1 1
+0 0
+.names clk.BLIF d.C
+1 1
+0 0
+.names clk.BLIF e.C
+1 1
+0 0
+.names clk.BLIF f.C
+1 1
+0 0
+.names clk.BLIF g.C
+1 1
+0 0
+.names clk.BLIF B0_LED_VCC3DFFRHreg.C
+1 1
+0 0
+.names clk.BLIF B0_LED_VCC4DFFRHreg.C
+1 1
+0 0
+.names clk.BLIF led_row_0_.C
+1 1
+0 0
+.names clk.BLIF led_row_1_.C
+1 1
+0 0
+.names clk.BLIF led_row_2_.C
+1 1
+0 0
+.names clk.BLIF led_row_3_.C
+1 1
+0 0
+.names clk.BLIF led_row_4_.C
+1 1
+0 0
+.names clk.BLIF led_row_5_.C
+1 1
+0 0
+.names clk.BLIF led_row_6_.C
+1 1
+0 0
+.names clk.BLIF led_row_7_.C
+1 1
+0 0
+.names I0_doutDFFCreg.Q G0_inst_question_num.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_17_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_25_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_11_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_18_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_12_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_10_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_21_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_7_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_13_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_20_.C
+1 1
+0 0
+.names clk.BLIF G0_scan_data_5_.C
+1 1
+0 0
+.names clk.BLIF G0_scan_data_3_.C
+1 1
+0 0
+.names clk.BLIF G0_scan_data_4_.C
+1 1
+0 0
+.names clk.BLIF G0_scan_data_6_.C
+1 1
+0 0
+.names clk.BLIF G0_scan_data_0_.C
+1 1
+0 0
+.names clk.BLIF G0_scan_data_1_.C
+1 1
+0 0
+.names clk.BLIF G0_scan_data_2_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_0_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_1_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_2_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_3_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_4_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_5_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_6_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_7_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_8_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_9_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_10_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_11_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_12_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_13_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_14_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_scan_15_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_0_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_1_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_2_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_3_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_4_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_5_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_6_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_8_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_9_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_14_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_15_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_16_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_19_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_22_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_23_.C
+1 1
+0 0
+.names clk.BLIF G0_cnt_next_24_.C
+1 1
+0 0
+.names A0_int_DataDFFCRH_2_reg.Q A0_led_int_Data0DFFRH_2_reg.D.X1
+1 1
+0 0
+.names A0_int_DataDFFCRH_3_reg.Q A0_led_int_Data0DFFRH_3_reg.D.X1
+1 1
+0 0
+.names A0_flag_OverDFFRHreg.Q result_0_.CE
+1 1
+0 0
+.names reset.BLIF result_0_.AP
+0 1
+1 0
+.names clk.BLIF result_0_.C
+1 1
+0 0
+.names A0_flag_OverDFFRHreg.Q result_1_.CE
+1 1
+0 0
+.names reset.BLIF result_1_.AP
+0 1
+1 0
+.names clk.BLIF result_1_.C
+1 1
+0 0
+.names A0_flag_OverDFFRHreg.Q result_2_.CE
+1 1
+0 0
+.names reset.BLIF result_2_.AP
+0 1
+1 0
+.names clk.BLIF result_2_.C
+1 1
+0 0
+.names A0_flag_OverDFFRHreg.Q result_4_.CE
+1 1
+0 0
+.names reset.BLIF result_4_.AP
+0 1
+1 0
+.names clk.BLIF result_4_.C
+1 1
+0 0
+.names A0_flag_OverDFFRHreg.Q result_5_.CE
+1 1
+0 0
+.names reset.BLIF result_5_.AP
+0 1
+1 0
+.names clk.BLIF result_5_.C
+1 1
+0 0
+.names A0_flag_OverDFFRHreg.Q result_6_.CE
+1 1
+0 0
+.names reset.BLIF result_6_.AP
+0 1
+1 0
+.names clk.BLIF result_6_.C
+1 1
+0 0
+.names A0_int_DataDFFCRH_0_reg.Q A0_int_DataDFFCRH_1_reg.Q \
+A0_int_DataDFFCRH_2_reg.Q A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q \
+A0_int_DataDFFCRH_5_reg.Q A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+H0_inst_question_num.Q result_0_.D
+-------1- 1
+------1-- 1
+-----1--- 1
+----1---- 1
+---0----- 1
+--1------ 1
+-1------- 1
+0-------- 1
+--------0 1
+100100001 0
+.names A0_int_DataDFFCRH_0_reg.Q A0_int_DataDFFCRH_1_reg.Q \
+A0_int_DataDFFCRH_2_reg.Q A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q \
+A0_int_DataDFFCRH_5_reg.Q A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+H0_inst_question_num.Q result_1_.D
+-------1- 1
+------1-- 1
+-----1--- 1
+----1---- 1
+---0----- 1
+--1------ 1
+-1------- 1
+0-------- 1
+--------0 1
+100100001 0
+.names A0_int_DataDFFCRH_0_reg.Q A0_int_DataDFFCRH_1_reg.Q \
+A0_int_DataDFFCRH_2_reg.Q A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q \
+A0_int_DataDFFCRH_5_reg.Q A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+H0_inst_question_num.Q result_2_.D
+-------1- 1
+------1-- 1
+-----1--- 1
+----1---- 1
+---0----- 1
+--1------ 1
+-1------- 1
+0-------- 1
+--------0 1
+100100001 0
+.names A0_int_DataDFFCRH_0_reg.Q A0_int_DataDFFCRH_1_reg.Q \
+A0_int_DataDFFCRH_2_reg.Q A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q \
+A0_int_DataDFFCRH_5_reg.Q A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+H0_inst_question_num.Q result_4_.D
+-------1- 1
+------0-- 1
+-----1--- 1
+----1---- 1
+---1----- 1
+--1------ 1
+-1------- 1
+1-------- 1
+--------1 1
+000000100 0
+.names A0_int_DataDFFCRH_0_reg.Q A0_int_DataDFFCRH_1_reg.Q \
+A0_int_DataDFFCRH_2_reg.Q A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q \
+A0_int_DataDFFCRH_5_reg.Q A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+H0_inst_question_num.Q result_5_.D
+-------1- 1
+------0-- 1
+-----1--- 1
+----1---- 1
+---1----- 1
+--1------ 1
+-1------- 1
+1-------- 1
+--------1 1
+000000100 0
+.names A0_int_DataDFFCRH_0_reg.Q A0_int_DataDFFCRH_1_reg.Q \
+A0_int_DataDFFCRH_2_reg.Q A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q \
+A0_int_DataDFFCRH_5_reg.Q A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+H0_inst_question_num.Q result_6_.D
+-------1- 1
+------0-- 1
+-----1--- 1
+----1---- 1
+---1----- 1
+--1------ 1
+-1------- 1
+1-------- 1
+--------1 1
+000000100 0
+.names key_in_1_.BLIF key_out_0_.Q key_out_2_.Q A0_int_Data0_0_.D
+011 1
+10- 1
+1-0 1
+111 0
+00- 0
+0-0 0
+.names key_in_0_.BLIF key_in_2_.BLIF key_out_0_.Q key_out_2_.Q \
+A0_int_Data0_1_.D
+0--0 1
+1-01 1
+10-1 1
+-111 0
+1--0 0
+0--1 0
+.names A0_timecnt_12_.Q A0_timecnt_9_.Q A0_timecnt_10_.Q A0_timecnt_11_.Q \
+A0_N_378.BLIF A0_timecnt_12_.D
+01111 1
+1--0- 1
+1-0-- 1
+10--- 1
+1---0 1
+11111 0
+0--0- 0
+0-0-- 0
+00--- 0
+0---0 0
+.names A0_timecnt_12_.Q A0_timecnt_9_.Q A0_timecnt_10_.Q A0_timecnt_11_.Q \
+A0_timecnt_13_.Q A0_N_378.BLIF A0_timecnt_14_.T
+111111 1
+----0- 0
+---0-- 0
+--0--- 0
+-0---- 0
+0----- 0
+-----0 0
+.names A0_timecnt_5_.Q A0_timecnt_0_.Q A0_timecnt_1_.Q A0_timecnt_2_.Q \
+A0_timecnt_3_.Q A0_timecnt_4_.Q A0_time10ms3.BLIF A0_timecnt_5_.T
+-111110 1
+1-----1 1
+0-----1 0
+-----00 0
+----0-0 0
+---0--0 0
+--0---0 0
+-0----0 0
+.names A0_timecnt_5_.Q A0_timecnt_6_.Q A0_timecnt_0_.Q A0_timecnt_1_.Q \
+A0_timecnt_2_.Q A0_timecnt_3_.Q A0_timecnt_4_.Q A0_timecnt_7_.T
+1111111 1
+-----0- 0
+----0-- 0
+---0--- 0
+--0---- 0
+-0----- 0
+0------ 0
+------0 0
+.names A0_timecnt_9_.Q A0_N_378.BLIF A0_timecnt_9_.D
+10 1
+01 1
+00 0
+11 0
+.names A0_timecnt_5_.Q A0_timecnt_0_.Q A0_timecnt_1_.Q A0_timecnt_2_.Q \
+A0_timecnt_3_.Q A0_timecnt_4_.Q A0_timecnt_6_.T
+111111 1
+----0- 0
+---0-- 0
+--0--- 0
+-0---- 0
+0----- 0
+-----0 0
+.names A0_timecnt_9_.Q A0_timecnt_10_.Q A0_N_378.BLIF A0_timecnt_10_.D
+101 1
+01- 1
+-10 1
+111 0
+00- 0
+-00 0
+.names A0_timecnt_9_.Q A0_timecnt_10_.Q A0_timecnt_11_.Q A0_N_378.BLIF \
+A0_timecnt_11_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+1111 0
+-00- 0
+0-0- 0
+--00 0
+.names reset.BLIF A0_inst_time10ms.Q A0_time10ms3.BLIF A0_inst_time10ms.D
+101 1
+01- 1
+-10 1
+111 0
+00- 0
+-00 0
+.names A0_scanvalue_0_.Q A0_scanvalue_1_.Q A0_scanvalue_4_.D
+1- 1
+-1 1
+00 0
+.names A0_timecnt_0_.Q A0_timecnt_0_.D
+0 1
+1 0
+.names A0_timecnt_0_.Q A0_timecnt_1_.Q A0_timecnt_1_.D
+10 1
+01 1
+00 0
+11 0
+.names A0_timecnt_0_.Q A0_timecnt_1_.Q A0_timecnt_2_.Q A0_timecnt_2_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names A0_timecnt_0_.Q A0_timecnt_1_.Q A0_timecnt_2_.Q A0_timecnt_3_.Q \
+A0_timecnt_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+1111 0
+--00 0
+-0-0 0
+0--0 0
+.names A0_timecnt_0_.Q A0_timecnt_1_.Q A0_timecnt_2_.Q A0_timecnt_3_.Q \
+A0_timecnt_4_.Q A0_timecnt_4_.D
+11110 1
+---01 1
+--0-1 1
+-0--1 1
+0---1 1
+11111 0
+---00 0
+--0-0 0
+-0--0 0
+0---0 0
+.names A0_timecnt_5_.Q A0_timecnt_7_.Q A0_timecnt_6_.Q A0_timecnt_0_.Q \
+A0_timecnt_1_.Q A0_timecnt_2_.Q A0_timecnt_3_.Q A0_timecnt_4_.Q \
+A0_timecnt_8_.Q A0_time10ms3.BLIF A0_timecnt_8_.T
+11111111-0 1
+--------11 1
+--------01 0
+-------0-0 0
+------0--0 0
+-----0---0 0
+----0----0 0
+---0-----0 0
+--0------0 0
+-0-------0 0
+0--------0 0
+.names A0_timecnt_12_.Q A0_timecnt_9_.Q A0_timecnt_10_.Q A0_timecnt_11_.Q \
+A0_timecnt_13_.Q A0_time10ms3.BLIF A0_N_378.BLIF A0_timecnt_13_.T
+1111-01 1
+----11- 1
+----01- 0
+---0-0- 0
+--0--0- 0
+-0---0- 0
+0----0- 0
+-----00 0
+.names A0_timecnt_12_.Q A0_timecnt_14_.Q A0_timecnt_9_.Q A0_timecnt_10_.Q \
+A0_timecnt_11_.Q A0_timecnt_13_.Q A0_timecnt_15_.Q A0_time10ms3.BLIF \
+A0_N_378.BLIF A0_timecnt_15_.T
+111111-01 1
+------11- 1
+------01- 0
+-----0-0- 0
+----0--0- 0
+---0---0- 0
+--0----0- 0
+-0-----0- 0
+0------0- 0
+-------00 0
+.names A0_timecnt_16_.Q A0_time10ms3.BLIF A0_N_392.BLIF A0_timecnt_16_.D
+100 1
+001 1
+0-0 0
+1-1 0
+-1- 0
+.names A0_timecnt_16_.Q A0_timecnt_17_.Q A0_time10ms3.BLIF A0_N_392.BLIF \
+A0_timecnt_17_.D
+1001 1
+010- 1
+-100 1
+11-1 0
+00-- 0
+--1- 0
+-0-0 0
+.names A0_timecnt_16_.Q A0_timecnt_17_.Q A0_timecnt_18_.Q A0_time10ms3.BLIF \
+A0_N_392.BLIF A0_timecnt_18_.D
+11001 1
+-010- 1
+0-10- 1
+--100 1
+111-1 0
+-00-- 0
+0-0-- 0
+---1- 0
+--0-0 0
+.names A0_scanvalue_0_.D
+.names A0_scanvalue_2_.Q A0_scanvalue_1_.D
+1 1
+0 0
+.names A0_scanvalue_3_.Q A0_scanvalue_2_.D
+1 1
+0 0
+.names A0_scanvalue_4_.Q A0_scanvalue_3_.D
+1 1
+0 0
+.names key_in_0_.BLIF key_out_0_.Q key_out_2_.Q key_out_3_.Q A0_int_Data0_2_.D
+-111 1
+01-1 1
+1-0- 0
+-0-- 0
+---0 0
+.names key_in_0_.BLIF key_out_2_.Q A0_int_Data0_3_.D
+10 1
+0- 0
+-1 0
+.names key_in_0_.BLIF key_in_1_.BLIF key_in_2_.BLIF A0_flag_Data_0_.Q \
+A0_flag_Data_1_.Q key_out_0_.Q key_out_1_.Q key_out_2_.Q key_out_3_.Q \
+A0_N_1459.BLIF A0_N_32_i.BLIF A0_flag_Data_0_.D
+1--1---1-0- 1
+0110-110--1 1
+0110-111--0 1
+1100--101-1 1
+1010--101-1 1
+0110-101--1 1
+1100--111-0 1
+1010--111-0 1
+0110--101-1 1
+1100--011-1 1
+1010--011-1 1
+0110--111-0 1
+0110--011-1 1
+1111-----0- 1
+---1---000- 1
+-001-----0- 1
+0-01-----0- 1
+00-1-----0- 1
+---1---110- 1
+---1-0---0- 1
+---1--0--0- 1
+---11------ 1
+1--0----0-- 0
+011101110-- 0
+110101101-- 0
+101101101-- 0
+011101101-- 0
+1110------- 0
+---10----1- 0
+---0-0--0-- 0
+---0--00--- 0
+-000------- 0
+---0--11--1 0
+0-00------- 0
+00-0------- 0
+---0--0---0 0
+---0---0--0 0
+.names key_in_0_.BLIF key_in_1_.BLIF key_in_2_.BLIF A0_flag_Data_0_.Q \
+A0_flag_Data_1_.Q key_out_0_.Q key_out_1_.Q key_out_2_.Q key_out_3_.Q \
+A0_flag_Data_1_.T
+011101110 1
+110101101 1
+101101101 1
+110101011 1
+101101011 1
+110100111 1
+101100111 1
+011101101 1
+011101011 1
+011100111 1
+1-------0 0
+-----1111 0
+111------ 0
+------00- 0
+-----0-0- 0
+-----00-- 0
+00------- 0
+-00------ 0
+0-0------ 0
+----1---- 0
+---0----- 0
+-------00 0
+------0-0 0
+-----0--0 0
+.names A0_int_DataDFFCRH_0_reg.Q A0_led_int_Data0DFFRH_0_reg.D
+1 1
+0 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q A0_led_int_Data131_3.BLIF \
+A0_led_int_Data1DFFRH_0_reg.D
+1001-00- 1
+--00-000 1
+----0000 1
+11-0010- 1
+-101100- 1
+-011100- 1
+-000110- 1
+-001000- 1
+-11-010- 1
+1-1-010- 1
+-1100-0- 1
+1-100-0- 1
+--10010- 1
+---111-- 0
+00-0-0-1 0
+010--1-- 0
+-1010--1 0
+--00-0-1 0
+00011--- 0
+--1100-1 0
+00-1-1-- 0
+-00-01-- 0
+--101--- 0
+-11-1--- 0
+-1--11-- 0
+--01-1-- 0
+------1- 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q A0_led_int_Data133.BLIF \
+A0_led_int_Data1DFFRH_1_reg.D
+00-00--0 1
+000-10-0 1
+-10-00-0 1
+-11-1--0 1
+-1-01--0 1
+--10-1-0 1
+--000--0 1
+---010-0 1
+--1100-0 1
+---111-0 1
+------10 1
+1001-00- 0
+-000110- 0
+-110000- 0
+1-10000- 0
+-101100- 0
+-011100- 0
+-0010-0- 0
+---1010- 0
+-------1 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q A0_led_int_Data133.BLIF \
+A0_led_int_Data1DFFRH_2_reg.D
+---0010- 1
+--11100- 1
+-1-1100- 1
+1--1100- 1
+-------1 1
+0001---0 0
+----00-0 0
+---1-1-0 0
+---01--0 0
+------10 0
+.names A0_int_DataDFFCRH_1_reg.Q A0_int_DataDFFCRH_2_reg.Q \
+A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q A0_int_DataDFFCRH_5_reg.Q \
+A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q A0_led_int_Data133.BLIF \
+A0_led_int_Data131_3.BLIF A0_led_int_Data1DFFRH_3_reg.D
+---011-0- 1
+00011--0- 1
+00-0-0-01 1
+-001-1-0- 1
+--101--0- 1
+-00---10- 1
+--00-0-01 1
+---1-1-00 1
+---0--10- 1
+------100 1
+-1-1-00-- 0
+-11-0-0-1 0
+1-1-0-0-1 0
+----000-0 0
+--00-00-0 0
+---0010-- 0
+1--1-00-- 0
+--11-00-- 0
+---1000-- 0
+-1-1----1 0
+--11----1 0
+-------1- 0
+.names A0_led_int_Data2_0_sqmuxa.BLIF A0_led_int_Data2DFFSH_3_reg.Q \
+A0_led_int_Data2DFFSH_3_reg.D
+1- 1
+-1 1
+00 0
+.names A0_led_int_Data2_0_sqmuxa.BLIF A0_led_int_Data2DFFRH_0_reg.Q \
+A0_led_int_Data2DFFRH_0_reg.D
+01 1
+1- 0
+-0 0
+.names A0_scanvalue_4_.Q key_out_0_.D
+0 1
+1 0
+.names A0_scanvalue_0_.Q A0_scanvalue_3_.Q key_out_1_.D
+00 1
+1- 0
+-1 0
+.names A0_scanvalue_0_.Q A0_scanvalue_2_.Q key_out_2_.D
+00 1
+1- 0
+-1 0
+.names A0_scanvalue_0_.Q A0_scanvalue_1_.Q key_out_3_.D
+00 1
+1- 0
+-1 0
+.names key_in_1_.BLIF key_out_1_.Q key_out_3_.Q A0_int_DataDFFCRH_0_reg.D
+001 1
+111 1
+10- 0
+01- 0
+--0 0
+.names key_in_0_.BLIF key_in_1_.BLIF key_in_2_.BLIF A0_int_Data0_0_.Q \
+A0_flag_Data_1_.Q key_out_0_.Q key_out_1_.Q key_out_2_.Q key_out_3_.Q \
+A0_int_DataDFFCRH_1_reg.D
+-1111---0 1
+--1--0-0- 1
+-0-11110- 1
+-101111-- 1
+-11110--- 1
+1-0-0--1- 1
+1-00---1- 1
+--111-0-- 1
+0-1-0--0- 1
+0-10---0- 1
+1---00--- 1
+1--0-0--- 1
+----00-0- 1
+---0-0-0- 1
+--00-1-0- 0
+1-10-1--- 0
+--0-01-0- 0
+1-1-01--- 0
+-111111-1 0
+-0-11-11- 0
+--011-0-- 0
+--0110--- 0
+0---0--1- 0
+0--0---1- 0
+.names key_in_0_.BLIF key_in_2_.BLIF A0_int_Data0_0_.Q A0_int_Data0_1_.Q \
+A0_int_Data0_2_.Q A0_flag_Data_1_.Q key_out_0_.Q key_out_2_.Q key_out_3_.Q \
+A0_int_DataDFFCRH_3_reg.D
+0-0011--- 1
+1--1110-- 1
+101-111-- 1
+--1-11-0- 1
+-11001-1- 1
+--01011-1 1
+--0011-1- 1
+0-1-010-- 1
+1-0-0--0- 1
+--10010-- 1
+--11111-1 1
+1----0-0- 1
+--0-110-- 1
+--1-01--0 1
+--0-11--0 1
+--0-0-01- 0
+0-101--1- 0
+0-000---- 0
+-01-0-111 0
+--110-111 0
+--01111-1 0
+1-0-11101 0
+1-1101--1 0
+-11-1-110 0
+--1-01101 0
+-1101--1- 0
+--101-01- 0
+0-1-1-01- 0
+0-0-0-0-- 0
+0-1-1--10 0
+--000--1- 0
+0-0-0---0 0
+--0-0--10 0
+0----0--- 0
+-----0-1- 0
+.names key_in_0_.BLIF key_in_1_.BLIF A0_int_Data0_0_.Q A0_int_Data0_1_.Q \
+A0_N_976_0_5.BLIF A0_int_Data0_2_.Q A0_int_Data0_3_.Q A0_flag_Data_1_.Q \
+key_out_1_.Q key_out_2_.Q A0_int_DataDFFCRH_4_reg.D
+--0--1110- 1
+1110--010- 1
+--01-001-- 1
+--10-101-- 1
+--11-111-- 1
+--00-011-- 1
+--10--01-0 1
+---1-111-0 1
+----0----- 1
+0-1-10---1 0
+-01-10---1 0
+--0-11--11 0
+---0111-1- 0
+--1-10--11 0
+--1110---- 0
+---1110--- 0
+--001-0--- 0
+---1101--- 0
+--101-1--- 0
+----1--0-- 0
+.names key_in_0_.BLIF key_in_1_.BLIF A0_int_Data0_0_.Q A0_int_Data0_1_.Q \
+A0_int_Data0_2_.Q A0_int_Data0_3_.Q A0_flag_Data_1_.Q key_out_1_.Q \
+key_out_2_.Q A0_int_DataDFFCRH_5_reg.D
+111-0110- 1
+--0-10111 1
+0-001-1-- 1
+--110-10- 1
+1-110-1-- 1
+--1-011-0 1
+---0101-- 1
+---1011-- 1
+--001-1-1 1
+--110-1-0 1
+0--00---1 0
+0---00-11 0
+1---11--0 0
+-0-00---1 0
+---11--0- 0
+---11---0 0
+---00--11 0
+--1-11--- 0
+--0-00--- 0
+--111---- 0
+---111--- 0
+--000---- 0
+---000--- 0
+------0-- 0
+.names key_in_0_.BLIF A0_int_Data0_0_.Q A0_int_Data0_1_.Q A0_int_Data0_2_.Q \
+A0_int_Data0_3_.Q A0_flag_Data_1_.Q key_out_2_.Q A0_int_DataDFFCRH_7_reg.D
+1--1110 1
+--1111- 1
+-1-111- 1
+000---- 0
+-00---1 0
+-----0- 0
+----0-- 0
+---0--- 0
+.names key_in_0_.BLIF key_in_1_.BLIF key_in_2_.BLIF key_in_3_.BLIF \
+key_out_0_.Q key_out_1_.Q key_out_2_.Q key_out_3_.Q A0_flag_OverDFFRHreg.Q \
+A0_flag_OverDFFRHreg.D
+11101110- 1
+--------1 1
+-------10 0
+------0-0 0
+-----0--0 0
+----0---0 0
+---1----0 0
+--0-----0 0
+-0------0 0
+0-------0 0
+.names A0_int_DataDFFCRH_0_reg.Q A0_int_DataDFFCRH_1_reg.Q \
+A0_int_DataDFFCRH_2_reg.Q A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q \
+A0_int_DataDFFCRH_5_reg.Q A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+H0_inst_question_num.Q result_3_.D
+-------1- 1
+------1-- 1
+-----1--- 1
+----1---- 1
+---0----- 1
+--1------ 1
+-1------- 1
+0-------- 1
+--------0 1
+100100001 0
+.names A0_int_DataDFFCRH_0_reg.Q A0_int_DataDFFCRH_1_reg.Q \
+A0_int_DataDFFCRH_2_reg.Q A0_int_DataDFFCRH_3_reg.Q A0_int_DataDFFCRH_4_reg.Q \
+A0_int_DataDFFCRH_5_reg.Q A0_int_DataDFFCRH_6_reg.Q A0_int_DataDFFCRH_7_reg.Q \
+H0_inst_question_num.Q result_7_.D
+-------1- 1
+------0-- 1
+-----1--- 1
+----1---- 1
+---1----- 1
+--1------ 1
+-1------- 1
+1-------- 1
+--------1 1
+000000100 0
+.names H0_inst_question_num.Q H0_inst_question_num.D
+0 1
+1 0
+.names I0_counter_5_.Q I0_counter_7_.Q I0_counter_6_.Q I0_counter_0_.Q \
+I0_counter_1_.Q I0_counter_2_.Q I0_counter_3_.Q I0_counter_4_.Q \
+I0_counter_8_.Q I0_counter_9_.T
+111111111 1
+-------0- 0
+------0-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-0------- 0
+0-------- 0
+--------0 0
+.names I0_counter_5_.Q I0_counter_0_.Q I0_counter_1_.Q I0_counter_2_.Q \
+I0_counter_3_.Q I0_counter_4_.Q I0_keyclk3.BLIF I0_counter_5_.T
+-111110 1
+1-----1 1
+0-----1 0
+-----00 0
+----0-0 0
+---0--0 0
+--0---0 0
+-0----0 0
+.names I0_counter_12_.Q I0_counter_11_.Q I0_counter_10_.Q I0_N_33.BLIF \
+I0_counter_12_.D
+0111 1
+1-0- 1
+10-- 1
+1--0 1
+1111 0
+0-0- 0
+00-- 0
+0--0 0
+.names I0_counter_11_.Q I0_counter_10_.Q I0_N_33.BLIF I0_counter_11_.D
+011 1
+10- 1
+1-0 1
+111 0
+00- 0
+0-0 0
+.names I0_counter_5_.Q I0_counter_6_.Q I0_counter_0_.Q I0_counter_1_.Q \
+I0_counter_2_.Q I0_counter_3_.Q I0_counter_4_.Q I0_counter_7_.T
+1111111 1
+-----0- 0
+----0-- 0
+---0--- 0
+--0---- 0
+-0----- 0
+0------ 0
+------0 0
+.names I0_counter_5_.Q I0_counter_0_.Q I0_counter_1_.Q I0_counter_2_.Q \
+I0_counter_3_.Q I0_counter_4_.Q I0_counter_6_.T
+111111 1
+----0- 0
+---0-- 0
+--0--- 0
+-0---- 0
+0----- 0
+-----0 0
+.names I0_counter_12_.Q I0_counter_11_.Q I0_counter_10_.Q I0_counter_13_.Q \
+I0_N_33.BLIF I0_counter_14_.T
+11111 1
+---0- 0
+--0-- 0
+-0--- 0
+0---- 0
+----0 0
+.names I0_counter_10_.Q I0_N_33.BLIF I0_counter_10_.D
+10 1
+01 1
+00 0
+11 0
+.names reset.BLIF I0_inst_keyclk.Q I0_keyclk3.BLIF I0_inst_keyclk.D
+101 1
+01- 1
+-10 1
+111 0
+00- 0
+-00 0
+.names reset.BLIF I0_next_s_0_.Q I0_pre_s_0_.D
+0- 1
+-1 1
+10 0
+.names din.BLIF I0_pre_s_0_.Q I0_next_s_0_.Q I0_next_s_0_.D
+1-- 1
+-01 1
+01- 0
+0-0 0
+.names I0_counter_0_.Q I0_counter_0_.D
+0 1
+1 0
+.names I0_counter_0_.Q I0_counter_1_.Q I0_counter_1_.D
+10 1
+01 1
+00 0
+11 0
+.names I0_counter_0_.Q I0_counter_1_.Q I0_counter_2_.Q I0_counter_2_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names I0_counter_0_.Q I0_counter_1_.Q I0_counter_2_.Q I0_counter_3_.Q \
+I0_counter_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+1111 0
+--00 0
+-0-0 0
+0--0 0
+.names I0_counter_0_.Q I0_counter_1_.Q I0_counter_2_.Q I0_counter_3_.Q \
+I0_counter_4_.Q I0_counter_4_.D
+11110 1
+---01 1
+--0-1 1
+-0--1 1
+0---1 1
+11111 0
+---00 0
+--0-0 0
+-0--0 0
+0---0 0
+.names I0_counter_5_.Q I0_counter_7_.Q I0_counter_6_.Q I0_counter_0_.Q \
+I0_counter_1_.Q I0_counter_2_.Q I0_counter_3_.Q I0_counter_4_.Q \
+I0_counter_8_.Q I0_keyclk3.BLIF I0_counter_8_.T
+11111111-0 1
+--------11 1
+--------01 0
+-------0-0 0
+------0--0 0
+-----0---0 0
+----0----0 0
+---0-----0 0
+--0------0 0
+-0-------0 0
+0--------0 0
+.names I0_counter_12_.Q I0_counter_11_.Q I0_counter_10_.Q I0_counter_13_.Q \
+I0_keyclk3.BLIF I0_N_33.BLIF I0_counter_13_.D
+111001 1
+--010- 1
+-0-10- 1
+0--10- 1
+---100 1
+1111-1 0
+--00-- 0
+-0-0-- 0
+0--0-- 0
+----1- 0
+---0-0 0
+.names I0_counter_12_.Q I0_counter_11_.Q I0_counter_14_.Q I0_counter_10_.Q \
+I0_counter_13_.Q I0_counter_15_.Q I0_keyclk3.BLIF I0_N_33.BLIF \
+I0_counter_15_.T
+11111-01 1
+-----11- 1
+-----01- 0
+----0-0- 0
+---0--0- 0
+--0---0- 0
+-0----0- 0
+0-----0- 0
+------00 0
+.names I0_counter_12_.Q I0_counter_11_.Q I0_counter_14_.Q I0_counter_10_.Q \
+I0_counter_13_.Q I0_counter_15_.Q I0_counter_16_.Q I0_keyclk3.BLIF \
+I0_N_33.BLIF I0_counter_16_.T
+111111-01 1
+------11- 1
+------01- 0
+-----0-0- 0
+----0--0- 0
+---0---0- 0
+--0----0- 0
+-0-----0- 0
+0------0- 0
+-------00 0
+.names I0_counter_12_.Q I0_counter_11_.Q I0_counter_14_.Q I0_counter_10_.Q \
+I0_counter_13_.Q I0_counter_15_.Q I0_counter_16_.Q I0_counter_17_.Q \
+I0_keyclk3.BLIF I0_N_33.BLIF I0_counter_17_.T
+1111111-01 1
+-------11- 1
+-------01- 0
+------0-0- 0
+-----0--0- 0
+----0---0- 0
+---0----0- 0
+--0-----0- 0
+-0------0- 0
+0-------0- 0
+--------00 0
+.names I0_counter_12_.Q I0_counter_11_.Q I0_counter_14_.Q I0_counter_10_.Q \
+I0_counter_13_.Q I0_counter_15_.Q I0_counter_16_.Q I0_counter_17_.Q \
+I0_counter_18_.Q I0_keyclk3.BLIF I0_N_33.BLIF I0_counter_18_.T
+11111111-01 1
+--------11- 1
+--------01- 0
+-------0-0- 0
+------0--0- 0
+-----0---0- 0
+----0----0- 0
+---0-----0- 0
+--0------0- 0
+-0-------0- 0
+0--------0- 0
+---------00 0
+.names din.BLIF I0_doutDFFCreg.D
+1 1
+0 0
+.names B0_count_4_.Q B0_count_0_.Q B0_count_1_.Q B0_count_2_.Q B0_count_3_.Q \
+B0_count12.BLIF B0_count_4_.D
+011110 1
+1---00 1
+1--0-0 1
+1-0--0 1
+10---0 1
+11111- 0
+0---0- 0
+0--0-- 0
+0-0--- 0
+00---- 0
+-----1 0
+.names B0_count_10_.Q B0_count_8_.Q B0_count_9_.Q B0_N_131.BLIF B0_count_10_.D
+0111 1
+1-0- 1
+10-- 1
+1--0 1
+1111 0
+0-0- 0
+00-- 0
+0--0 0
+.names B0_count_10_.Q B0_count_11_.Q B0_count_8_.Q B0_count_9_.Q B0_N_131.BLIF \
+B0_count_11_.D
+10111 1
+-1-0- 1
+-10-- 1
+01--- 1
+-1--0 1
+11111 0
+-0-0- 0
+-00-- 0
+00--- 0
+-0--0 0
+.names B0_count_4_.Q B0_count_0_.Q B0_count_1_.Q B0_count_2_.Q B0_count_3_.Q \
+B0_count_5_.T
+11111 1
+---0- 0
+--0-- 0
+-0--- 0
+0---- 0
+----0 0
+.names B0_count_4_.Q B0_count_5_.Q B0_count_0_.Q B0_count_1_.Q B0_count_2_.Q \
+B0_count_3_.Q B0_count_6_.Q B0_count_7_.T
+1111111 1
+-----0- 0
+----0-- 0
+---0--- 0
+--0---- 0
+-0----- 0
+0------ 0
+------0 0
+.names B0_count_10_.Q B0_count_11_.Q B0_count_8_.Q B0_count_9_.Q B0_N_131.BLIF \
+B0_count_12_.T
+11111 1
+---0- 0
+--0-- 0
+-0--- 0
+0---- 0
+----0 0
+.names B0_count_10_.Q B0_count_11_.Q B0_count_12_.Q B0_count_8_.Q \
+B0_count_9_.Q B0_N_131.BLIF B0_count_13_.T
+111111 1
+----0- 0
+---0-- 0
+--0--- 0
+-0---- 0
+0----- 0
+-----0 0
+.names reset.BLIF B0_scancnt_1_.Q B0_scancnt_0_.Q B0_count12.BLIF \
+B0_scancnt_1_.D
+1011 1
+-10- 1
+01-- 1
+-1-0 1
+1111 0
+-00- 0
+00-- 0
+-0-0 0
+.names reset.BLIF B0_scancnt_0_.Q B0_count12.BLIF B0_scancnt_0_.D
+101 1
+01- 1
+-10 1
+111 0
+00- 0
+-00 0
+.names B0_count_0_.Q B0_count_0_.D
+0 1
+1 0
+.names B0_count_0_.Q B0_count_1_.Q B0_count_1_.D
+10 1
+01 1
+00 0
+11 0
+.names B0_count_0_.Q B0_count_1_.Q B0_count_2_.Q B0_count_2_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names B0_count_0_.Q B0_count_1_.Q B0_count_2_.Q B0_count_3_.Q B0_count_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+1111 0
+--00 0
+-0-0 0
+0--0 0
+.names B0_count_4_.Q B0_count_5_.Q B0_count_0_.Q B0_count_1_.Q B0_count_2_.Q \
+B0_count_3_.Q B0_count_6_.Q B0_count12.BLIF B0_count_6_.T
+111111-0 1
+------11 1
+------01 0
+-----0-0 0
+----0--0 0
+---0---0 0
+--0----0 0
+-0-----0 0
+0------0 0
+.names B0_count_8_.Q B0_count12.BLIF B0_N_131.BLIF B0_count_8_.D
+100 1
+001 1
+0-0 0
+1-1 0
+-1- 0
+.names B0_count_8_.Q B0_count_9_.Q B0_count12.BLIF B0_N_131.BLIF B0_count_9_.D
+1001 1
+010- 1
+-100 1
+11-1 0
+00-- 0
+--1- 0
+-0-0 0
+.names B0_count_10_.Q B0_count_11_.Q B0_count_12_.Q B0_count_13_.Q \
+B0_count_8_.Q B0_count_9_.Q B0_count_14_.Q B0_count12.BLIF B0_N_131.BLIF \
+B0_count_14_.T
+111111-01 1
+------11- 1
+------01- 0
+-----0-0- 0
+----0--0- 0
+---0---0- 0
+--0----0- 0
+-0-----0- 0
+0------0- 0
+-------00 0
+.names B0_count_10_.Q B0_count_11_.Q B0_count_12_.Q B0_count_13_.Q \
+B0_count_8_.Q B0_count_9_.Q B0_count_14_.Q B0_count_15_.Q B0_count12.BLIF \
+B0_N_131.BLIF B0_count_15_.T
+1111111-01 1
+-------11- 1
+-------01- 0
+------0-0- 0
+-----0--0- 0
+----0---0- 0
+---0----0- 0
+--0-----0- 0
+-0------0- 0
+0-------0- 0
+--------00 0
+.names A0_led_int_Data0DFFRH_0_reg.Q A0_led_int_Data0DFFRH_1_reg.Q \
+A0_led_int_Data0DFFRH_2_reg.Q A0_led_int_Data0DFFRH_3_reg.Q \
+A0_led_int_Data1DFFRH_0_reg.Q A0_led_int_Data1DFFRH_1_reg.Q \
+A0_led_int_Data1DFFRH_2_reg.Q A0_led_int_Data1DFFRH_3_reg.Q \
+A0_led_int_Data2DFFSH_3_reg.Q B0_scancnt_1_.Q B0_scancnt_0_.Q a.D
+----0101-01 1
+0101-----00 1
+----1000-01 1
+----0010-01 1
+1000-----00 1
+0010-----00 1
+--------110 1
+1--1-----00 0
+--11-----00 0
+000------00 0
+----1--1--1 0
+------11--1 0
+----000---1 0
+-1-0-----00 0
+-----1-0--1 0
+1-1------00 0
+--------01- 0
+----1-1---1 0
+---------11 0
+.names A0_led_int_Data0DFFRH_0_reg.Q A0_led_int_Data0DFFRH_1_reg.Q \
+A0_led_int_Data0DFFRH_2_reg.Q A0_led_int_Data0DFFRH_3_reg.Q \
+A0_led_int_Data1DFFRH_0_reg.Q A0_led_int_Data1DFFRH_1_reg.Q \
+A0_led_int_Data1DFFRH_2_reg.Q A0_led_int_Data1DFFRH_3_reg.Q \
+A0_led_int_Data2DFFSH_3_reg.Q A0_led_int_Data2DFFRH_0_reg.Q B0_scancnt_1_.Q \
+B0_scancnt_0_.Q b.D
+----1010--01 1
+----0101--01 1
+1010------00 1
+0101------00 1
+----0110--01 1
+0110------00 1
+--------011- 1
+--------1-10 1
+-00-------00 0
+----1-0---01 0
+--------001- 0
+--11------00 0
+11--------00 0
+--00------00 0
+00--------00 0
+------11--01 0
+----00----01 0
+------00--01 0
+----11----01 0
+--------1-11 0
+.names A0_led_int_Data0DFFRH_0_reg.Q A0_led_int_Data0DFFRH_1_reg.Q \
+A0_led_int_Data0DFFRH_2_reg.Q A0_led_int_Data1DFFRH_0_reg.Q \
+A0_led_int_Data1DFFRH_1_reg.Q A0_led_int_Data1DFFRH_2_reg.Q \
+A0_led_int_Data2DFFSH_3_reg.Q B0_scancnt_1_.Q B0_scancnt_0_.Q c.D
+---010-01 1
+010----00 1
+------110 1
+------01- 0
+--1----00 0
+-0-----00 0
+1------00 0
+-----1--1 0
+----0---1 0
+---1----1 0
+-------11 0
+.names A0_led_int_Data0DFFRH_0_reg.Q A0_led_int_Data0DFFRH_1_reg.Q \
+A0_led_int_Data0DFFRH_2_reg.Q A0_led_int_Data0DFFRH_3_reg.Q \
+A0_led_int_Data1DFFRH_0_reg.Q A0_led_int_Data1DFFRH_1_reg.Q \
+A0_led_int_Data1DFFRH_2_reg.Q A0_led_int_Data1DFFRH_3_reg.Q \
+A0_led_int_Data2DFFSH_3_reg.Q B0_scancnt_1_.Q B0_scancnt_0_.Q d.D
+----0101-01 1
+0101-----00 1
+----1000-01 1
+----0010-01 1
+----1110-01 1
+1000-----00 1
+0010-----00 1
+1110-----00 1
+--------110 1
+01-0-----00 0
+------11--1 0
+----0-00--1 0
+-0-1-----00 0
+110------00 0
+0-00-----00 0
+----110---1 0
+----011---1 0
+-----0-1--1 0
+--11-----00 0
+101------00 0
+----101---1 0
+--------01- 0
+---------11 0
+.names A0_led_int_Data0DFFRH_0_reg.Q A0_led_int_Data0DFFRH_1_reg.Q \
+A0_led_int_Data0DFFRH_2_reg.Q A0_led_int_Data0DFFRH_3_reg.Q \
+A0_led_int_Data1DFFRH_0_reg.Q A0_led_int_Data1DFFRH_1_reg.Q \
+A0_led_int_Data1DFFRH_2_reg.Q A0_led_int_Data1DFFRH_3_reg.Q \
+A0_led_int_Data2DFFSH_3_reg.Q A0_led_int_Data2DFFRH_0_reg.Q B0_scancnt_1_.Q \
+B0_scancnt_0_.Q e.D
+----0101--01 1
+0101------00 1
+-----010--01 1
+-010------00 1
+----100---01 1
+100-------00 1
+--------011- 1
+----1--0--01 1
+1--0------00 1
+--------1-10 1
+01-0------00 0
+000-------00 0
+----01-0--01 0
+----000---01 0
+11-1------00 0
+----11-1--01 0
+--------001- 0
+--11------00 0
+------11--01 0
+--------1-11 0
+.names A0_led_int_Data0DFFRH_0_reg.Q A0_led_int_Data0DFFRH_1_reg.Q \
+A0_led_int_Data0DFFRH_2_reg.Q A0_led_int_Data0DFFRH_3_reg.Q \
+A0_led_int_Data1DFFRH_0_reg.Q A0_led_int_Data1DFFRH_1_reg.Q \
+A0_led_int_Data1DFFRH_2_reg.Q A0_led_int_Data1DFFRH_3_reg.Q \
+A0_led_int_Data2DFFSH_3_reg.Q B0_scancnt_1_.Q B0_scancnt_0_.Q f.D
+----010--01 1
+010------00 1
+----1-00-01 1
+----11-0-01 1
+1-00-----00 1
+11-0-----00 1
+--------110 1
+1--1-----00 0
+-01------00 0
+0-1------00 0
+00-------00 0
+----1--1--1 0
+--------01- 0
+-----01---1 0
+----0-1---1 0
+----00----1 0
+---------11 0
+.names A0_led_int_Data0DFFRH_0_reg.Q A0_led_int_Data0DFFRH_1_reg.Q \
+A0_led_int_Data0DFFRH_2_reg.Q A0_led_int_Data0DFFRH_3_reg.Q \
+A0_led_int_Data1DFFRH_0_reg.Q A0_led_int_Data1DFFRH_1_reg.Q \
+A0_led_int_Data1DFFRH_2_reg.Q A0_led_int_Data1DFFRH_3_reg.Q \
+A0_led_int_Data2DFFSH_3_reg.Q A0_led_int_Data2DFFRH_0_reg.Q B0_scancnt_1_.Q \
+B0_scancnt_0_.Q g.D
+-000------00 1
+-----000--01 1
+111-------00 1
+----111---01 1
+--11------00 1
+-1-1------00 1
+------11--01 1
+-----1-1--01 1
+---------01- 1
+--------1-1- 1
+0-10------00 0
+----01-0--01 0
+-001------00 0
+-----001--01 0
+-100------00 0
+-----010--01 0
+-010------00 0
+-----100--01 0
+--------011- 0
+.names B0_scancnt_1_.Q B0_scancnt_0_.Q B0_LED_VCC3DFFRHreg.D
+01 1
+1- 0
+-0 0
+.names B0_scancnt_1_.Q B0_scancnt_0_.Q B0_LED_VCC4DFFRHreg.D
+00 1
+1- 0
+-1 0
+.names led_row_7_.Q led_row_0_.D
+1 1
+0 0
+.names led_row_0_.Q led_row_1_.D
+1 1
+0 0
+.names led_row_1_.Q led_row_2_.D
+1 1
+0 0
+.names led_row_2_.Q led_row_3_.D
+1 1
+0 0
+.names led_row_3_.Q led_row_4_.D
+1 1
+0 0
+.names led_row_4_.Q led_row_5_.D
+1 1
+0 0
+.names led_row_5_.Q led_row_6_.D
+1 1
+0 0
+.names led_row_6_.Q led_row_7_.D
+1 1
+0 0
+.names G0_inst_question_num.Q G0_inst_question_num.D
+0 1
+1 0
+.names G0_cnt_next_17_.Q G0_cnt_next_14_.Q G0_cnt_next_15_.Q G0_cnt_next_16_.Q \
+G0_N_122.BLIF G0_cnt_next_17_.D
+01111 1
+1--0- 1
+1-0-- 1
+10--- 1
+1---0 1
+11111 0
+0--0- 0
+0-0-- 0
+00--- 0
+0---0 0
+.names G0_cnt_next_17_.Q G0_cnt_next_18_.Q G0_cnt_next_21_.Q G0_cnt_next_20_.Q \
+G0_cnt_next_14_.Q G0_cnt_next_15_.Q G0_cnt_next_16_.Q G0_cnt_next_19_.Q \
+G0_cnt_next_22_.Q G0_cnt_next_23_.Q G0_cnt_next_24_.Q G0_N_122.BLIF \
+G0_cnt_next_25_.T
+111111111111 1
+----------0- 0
+---------0-- 0
+--------0--- 0
+-------0---- 0
+------0----- 0
+-----0------ 0
+----0------- 0
+---0-------- 0
+--0--------- 0
+-0---------- 0
+0----------- 0
+-----------0 0
+.names G0_cnt_next_10_.Q G0_cnt_next_7_.Q G0_cnt_next_8_.Q G0_cnt_next_9_.Q \
+G0_N_108.BLIF G0_cnt_next_11_.T
+11111 1
+---0- 0
+--0-- 0
+-0--- 0
+0---- 0
+----0 0
+.names G0_cnt_next_17_.Q G0_cnt_next_14_.Q G0_cnt_next_15_.Q G0_cnt_next_16_.Q \
+G0_N_122.BLIF G0_cnt_next_18_.T
+11111 1
+---0- 0
+--0-- 0
+-0--- 0
+0---- 0
+----0 0
+.names G0_cnt_next_11_.Q G0_cnt_next_10_.Q G0_cnt_next_7_.Q G0_cnt_next_8_.Q \
+G0_cnt_next_9_.Q G0_N_108.BLIF G0_cnt_next_12_.T
+111111 1
+----0- 0
+---0-- 0
+--0--- 0
+-0---- 0
+0----- 0
+-----0 0
+.names G0_cnt_next_10_.Q G0_cnt_next_7_.Q G0_cnt_next_8_.Q G0_cnt_next_9_.Q \
+G0_N_108.BLIF G0_cnt_next_10_.D
+01111 1
+1--0- 1
+1-0-- 1
+10--- 1
+1---0 1
+11111 0
+0--0- 0
+0-0-- 0
+00--- 0
+0---0 0
+.names G0_cnt_next_17_.Q G0_cnt_next_18_.Q G0_cnt_next_20_.Q G0_cnt_next_14_.Q \
+G0_cnt_next_15_.Q G0_cnt_next_16_.Q G0_cnt_next_19_.Q G0_N_122.BLIF \
+G0_cnt_next_21_.T
+11111111 1
+------0- 0
+-----0-- 0
+----0--- 0
+---0---- 0
+--0----- 0
+-0------ 0
+0------- 0
+-------0 0
+.names G0_cnt_next_7_.Q G0_N_108.BLIF G0_cnt_next_7_.D
+10 1
+01 1
+00 0
+11 0
+.names G0_cnt_next_11_.Q G0_cnt_next_12_.Q G0_cnt_next_10_.Q G0_cnt_next_7_.Q \
+G0_cnt_next_8_.Q G0_cnt_next_9_.Q G0_N_108.BLIF G0_cnt_next_13_.T
+1111111 1
+-----0- 0
+----0-- 0
+---0--- 0
+--0---- 0
+-0----- 0
+0------ 0
+------0 0
+.names G0_cnt_next_17_.Q G0_cnt_next_18_.Q G0_cnt_next_14_.Q G0_cnt_next_15_.Q \
+G0_cnt_next_16_.Q G0_cnt_next_19_.Q G0_N_122.BLIF G0_cnt_next_20_.T
+1111111 1
+-----0- 0
+----0-- 0
+---0--- 0
+--0---- 0
+-0----- 0
+0------ 0
+------0 0
+.names G0_scan_data_3_.Q G0_scan_data_4_.Q G0_scan_data_0_.Q G0_scan_data_1_.Q \
+G0_scan_data_2_.Q G0_un1_cnt_next_10_23.BLIF G0_un1_cnt_next_10_24.BLIF \
+G0_scan_data_5_.T
+1111111 1
+-----0- 0
+----0-- 0
+---0--- 0
+--0---- 0
+-0----- 0
+0------ 0
+------0 0
+.names G0_scan_data_0_.Q G0_scan_data_1_.Q G0_scan_data_2_.Q \
+G0_un1_cnt_next_10_23.BLIF G0_un1_cnt_next_10_24.BLIF G0_scan_data_3_.T
+11111 1
+---0- 0
+--0-- 0
+-0--- 0
+0---- 0
+----0 0
+.names G0_scan_data_3_.Q G0_scan_data_0_.Q G0_scan_data_1_.Q G0_scan_data_2_.Q \
+G0_un1_cnt_next_10_23.BLIF G0_un1_cnt_next_10_24.BLIF G0_scan_data_4_.T
+111111 1
+----0- 0
+---0-- 0
+--0--- 0
+-0---- 0
+0----- 0
+-----0 0
+.names G0_scan_data_5_.Q G0_scan_data_3_.Q G0_scan_data_4_.Q G0_scan_data_0_.Q \
+G0_scan_data_1_.Q G0_scan_data_2_.Q G0_un1_cnt_next_10_23.BLIF \
+G0_un1_cnt_next_10_24.BLIF G0_scan_data_6_.T
+11111111 1
+------0- 0
+-----0-- 0
+----0--- 0
+---0---- 0
+--0----- 0
+-0------ 0
+0------- 0
+-------0 0
+.names G0_scan_data_5_.Q G0_scan_data_3_.Q G0_scan_data_4_.Q G0_scan_data_6_.Q \
+G0_scan_data_0_.Q G0_scan_data_1_.Q G0_scan_data_2_.Q \
+G0_un1_cnt_next_10_23.BLIF G0_un1_cnt_next_10_24.BLIF G0_scan_data_0_.D
+----1--0- 1
+----1---0 1
+----0-011 1
+----00-11 1
+---10--11 1
+--1-0--11 1
+-1--0--11 1
+1---0--11 1
+0000011-- 0
+----1--11 0
+----0--0- 0
+----0---0 0
+.names G0_scan_data_5_.Q G0_scan_data_3_.Q G0_scan_data_4_.Q G0_scan_data_6_.Q \
+G0_scan_data_0_.Q G0_scan_data_1_.Q G0_scan_data_2_.Q \
+G0_un1_cnt_next_10_23.BLIF G0_un1_cnt_next_10_24.BLIF G0_scan_data_1_.D
+----10-11 1
+----010-- 1
+---101--- 1
+--1-01--- 1
+-1--01--- 1
+1---01--- 1
+-----1-0- 1
+-----1--0 1
+0000-1111 0
+----11-11 0
+-----0-0- 0
+----00--- 0
+-----0--0 0
+.names G0_scan_data_5_.Q G0_scan_data_3_.Q G0_scan_data_4_.Q G0_scan_data_6_.Q \
+G0_scan_data_0_.Q G0_scan_data_1_.Q G0_scan_data_2_.Q \
+G0_un1_cnt_next_10_23.BLIF G0_un1_cnt_next_10_24.BLIF G0_scan_data_2_.T
+0000-1111 1
+----11-11 1
+----0-0-- 0
+---10---- 0
+--1-0---- 0
+-1--0---- 0
+1---0---- 0
+-------0- 0
+-----0--- 0
+--------0 0
+.names G0_cnt_scan_0_.Q G0_cnt_scan_0_.D
+0 1
+1 0
+.names G0_cnt_scan_0_.Q G0_cnt_scan_1_.Q G0_cnt_scan_1_.D
+10 1
+01 1
+00 0
+11 0
+.names G0_cnt_scan_0_.Q G0_cnt_scan_1_.Q G0_cnt_scan_2_.Q G0_cnt_scan_2_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names G0_cnt_scan_0_.Q G0_cnt_scan_1_.Q G0_cnt_scan_2_.Q G0_cnt_scan_3_.Q \
+G0_cnt_scan_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+1111 0
+--00 0
+-0-0 0
+0--0 0
+.names G0_cnt_scan_0_.Q G0_cnt_scan_1_.Q G0_cnt_scan_2_.Q G0_cnt_scan_3_.Q \
+G0_cnt_scan_4_.Q G0_cnt_scan_4_.D
+11110 1
+---01 1
+--0-1 1
+-0--1 1
+0---1 1
+11111 0
+---00 0
+--0-0 0
+-0--0 0
+0---0 0
+.names G0_cnt_scan_0_.Q G0_cnt_scan_1_.Q G0_cnt_scan_2_.Q G0_cnt_scan_3_.Q \
+G0_cnt_scan_4_.Q G0_cnt_scan_5_.T
+11111 1
+---0- 0
+--0-- 0
+-0--- 0
+0---- 0
+----0 0
+.names G0_cnt_scan_0_.Q G0_cnt_scan_1_.Q G0_cnt_scan_2_.Q G0_cnt_scan_3_.Q \
+G0_cnt_scan_4_.Q G0_cnt_scan_5_.Q G0_cnt_scan_6_.T
+111111 1
+----0- 0
+---0-- 0
+--0--- 0
+-0---- 0
+0----- 0
+-----0 0
+.names G0_cnt_scan_0_.Q G0_cnt_scan_1_.Q G0_cnt_scan_2_.Q G0_cnt_scan_3_.Q \
+G0_cnt_scan_4_.Q G0_cnt_scan_5_.Q G0_cnt_scan_6_.Q G0_cnt_scan_7_.T
+1111111 1
+-----0- 0
+----0-- 0
+---0--- 0
+--0---- 0
+-0----- 0
+0------ 0
+------0 0
+.names G0_cnt_scan_8_.Q G0_un1_cnt_scan_13.BLIF G0_cnt_scan_8_.D
+10 1
+01 1
+00 0
+11 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_un1_cnt_scan_13.BLIF \
+G0_cnt_scan_9_.D
+101 1
+01- 1
+-10 1
+111 0
+00- 0
+-00 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q \
+G0_un1_cnt_scan_13.BLIF G0_cnt_scan_10_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+1111 0
+-00- 0
+0-0- 0
+--00 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_un1_cnt_scan_13.BLIF G0_cnt_scan_11_.D
+11101 1
+--01- 1
+-0-1- 1
+0--1- 1
+---10 1
+11111 0
+--00- 0
+-0-0- 0
+0--0- 0
+---00 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_un1_cnt_scan_13.BLIF G0_cnt_scan_12_.T
+11111 1
+---0- 0
+--0-- 0
+-0--- 0
+0---- 0
+----0 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_cnt_scan_12_.Q G0_un1_cnt_scan_13.BLIF G0_cnt_scan_13_.T
+111111 1
+----0- 0
+---0-- 0
+--0--- 0
+-0---- 0
+0----- 0
+-----0 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_cnt_scan_12_.Q G0_cnt_scan_13_.Q G0_un1_cnt_scan_13.BLIF G0_cnt_scan_14_.T
+1111111 1
+-----0- 0
+----0-- 0
+---0--- 0
+--0---- 0
+-0----- 0
+0------ 0
+------0 0
+.names G0_cnt_scan_8_.Q G0_cnt_scan_9_.Q G0_cnt_scan_10_.Q G0_cnt_scan_11_.Q \
+G0_cnt_scan_12_.Q G0_cnt_scan_13_.Q G0_cnt_scan_14_.Q G0_un1_cnt_scan_13.BLIF \
+G0_cnt_scan_15_.T
+11111111 1
+------0- 0
+-----0-- 0
+----0--- 0
+---0---- 0
+--0----- 0
+-0------ 0
+0------- 0
+-------0 0
+.names G0_cnt_next_0_.Q G0_un1_cnt_next_10_23.BLIF G0_un1_cnt_next_10_24.BLIF \
+G0_un1_cnt_next12.BLIF G0_cnt_next_0_.D
+-111 1
+0--1 1
+1-0- 0
+10-- 0
+---0 0
+.names G0_cnt_next_0_.Q G0_cnt_next_1_.Q G0_un1_cnt_next_10_23.BLIF \
+G0_un1_cnt_next_10_24.BLIF G0_un1_cnt_next12.BLIF G0_cnt_next_1_.D
+-1111 1
+10-01 1
+100-1 1
+01--1 1
+-011- 0
+11-0- 0
+110-- 0
+00--- 0
+----0 0
+.names G0_cnt_next_0_.Q G0_cnt_next_1_.Q G0_cnt_next_2_.Q \
+G0_un1_cnt_next_10_23.BLIF G0_un1_cnt_next_10_24.BLIF G0_un1_cnt_next12.BLIF \
+G0_cnt_next_2_.D
+110-01 1
+1100-1 1
+--1111 1
+-01--1 1
+0-1--1 1
+111-0- 0
+1110-- 0
+--011- 0
+-00--- 0
+0-0--- 0
+-----0 0
+.names G0_cnt_next_0_.Q G0_cnt_next_1_.Q G0_cnt_next_2_.Q G0_cnt_next_3_.Q \
+G0_un1_cnt_next_10_23.BLIF G0_un1_cnt_next_10_24.BLIF G0_un1_cnt_next12.BLIF \
+G0_cnt_next_3_.T
+111--01 1
+111-0-1 1
+---1--0 1
+----111 0
+---0--0 0
+--0---1 0
+-0----1 0
+0-----1 0
+.names G0_cnt_next_0_.Q G0_cnt_next_1_.Q G0_cnt_next_2_.Q G0_cnt_next_3_.Q \
+G0_cnt_next_4_.Q G0_un1_cnt_next_10_23.BLIF G0_un1_cnt_next_10_24.BLIF \
+G0_un1_cnt_next12.BLIF G0_cnt_next_4_.T
+1111--01 1
+1111-0-1 1
+----1--0 1
+-----111 0
+----0--0 0
+---0---1 0
+--0----1 0
+-0-----1 0
+0------1 0
+.names G0_cnt_next_0_.Q G0_cnt_next_1_.Q G0_cnt_next_2_.Q G0_cnt_next_3_.Q \
+G0_cnt_next_4_.Q G0_cnt_next_5_.Q G0_un1_cnt_next_10_23.BLIF \
+G0_un1_cnt_next_10_24.BLIF G0_un1_cnt_next12.BLIF G0_cnt_next_5_.T
+11111--01 1
+11111-0-1 1
+-----1--0 1
+------111 0
+-----0--0 0
+----0---1 0
+---0----1 0
+--0-----1 0
+-0------1 0
+0-------1 0
+.names G0_cnt_next_0_.Q G0_cnt_next_1_.Q G0_cnt_next_2_.Q G0_cnt_next_3_.Q \
+G0_cnt_next_4_.Q G0_cnt_next_5_.Q G0_cnt_next_6_.Q G0_un1_cnt_next_10_23.BLIF \
+G0_un1_cnt_next_10_24.BLIF G0_un1_cnt_next12.BLIF G0_cnt_next_6_.T
+111111--01 1
+111111-0-1 1
+------1--0 1
+-------111 0
+------0--0 0
+-----0---1 0
+----0----1 0
+---0-----1 0
+--0------1 0
+-0-------1 0
+0--------1 0
+.names G0_cnt_next_7_.Q G0_cnt_next_8_.Q G0_N_108.BLIF G0_un1_cnt_next12.BLIF \
+G0_cnt_next_8_.D
+1011 1
+-101 1
+01-1 1
+111- 0
+-00- 0
+00-- 0
+---0 0
+.names G0_cnt_next_7_.Q G0_cnt_next_8_.Q G0_cnt_next_9_.Q G0_N_108.BLIF \
+G0_un1_cnt_next12.BLIF G0_cnt_next_9_.D
+11011 1
+--101 1
+-01-1 1
+0-1-1 1
+1111- 0
+--00- 0
+-00-- 0
+0-0-- 0
+----0 0
+.names G0_cnt_next_14_.Q G0_N_122.BLIF G0_un1_cnt_next12.BLIF \
+G0_cnt_next_14_.D
+101 1
+011 1
+00- 0
+11- 0
+--0 0
+.names G0_cnt_next_14_.Q G0_cnt_next_15_.Q G0_N_122.BLIF \
+G0_un1_cnt_next12.BLIF G0_cnt_next_15_.D
+1011 1
+-101 1
+01-1 1
+111- 0
+-00- 0
+00-- 0
+---0 0
+.names G0_cnt_next_14_.Q G0_cnt_next_15_.Q G0_cnt_next_16_.Q G0_N_122.BLIF \
+G0_un1_cnt_next12.BLIF G0_cnt_next_16_.D
+11011 1
+--101 1
+-01-1 1
+0-1-1 1
+1111- 0
+--00- 0
+-00-- 0
+0-0-- 0
+----0 0
+.names G0_cnt_next_17_.Q G0_cnt_next_18_.Q G0_cnt_next_14_.Q G0_cnt_next_15_.Q \
+G0_cnt_next_16_.Q G0_cnt_next_19_.Q G0_N_122.BLIF G0_un1_cnt_next12.BLIF \
+G0_cnt_next_19_.T
+11111-11 1
+-----1-0 1
+-----0-0 0
+------01 0
+----0--1 0
+---0---1 0
+--0----1 0
+-0-----1 0
+0------1 0
+.names G0_cnt_next_17_.Q G0_cnt_next_18_.Q G0_cnt_next_21_.Q G0_cnt_next_20_.Q \
+G0_cnt_next_14_.Q G0_cnt_next_15_.Q G0_cnt_next_16_.Q G0_cnt_next_19_.Q \
+G0_cnt_next_22_.Q G0_N_122.BLIF G0_un1_cnt_next12.BLIF G0_cnt_next_22_.T
+11111111-11 1
+--------1-0 1
+--------0-0 0
+---------01 0
+-------0--1 0
+------0---1 0
+-----0----1 0
+----0-----1 0
+---0------1 0
+--0-------1 0
+-0--------1 0
+0---------1 0
+.names G0_cnt_next_17_.Q G0_cnt_next_18_.Q G0_cnt_next_21_.Q G0_cnt_next_20_.Q \
+G0_cnt_next_14_.Q G0_cnt_next_15_.Q G0_cnt_next_16_.Q G0_cnt_next_19_.Q \
+G0_cnt_next_22_.Q G0_cnt_next_23_.Q G0_N_122.BLIF G0_un1_cnt_next12.BLIF \
+G0_cnt_next_23_.T
+111111111-11 1
+---------1-0 1
+---------0-0 0
+----------01 0
+--------0--1 0
+-------0---1 0
+------0----1 0
+-----0-----1 0
+----0------1 0
+---0-------1 0
+--0--------1 0
+-0---------1 0
+0----------1 0
+.names G0_cnt_next_17_.Q G0_cnt_next_18_.Q G0_cnt_next_21_.Q G0_cnt_next_20_.Q \
+G0_cnt_next_14_.Q G0_cnt_next_15_.Q G0_cnt_next_16_.Q G0_cnt_next_19_.Q \
+G0_cnt_next_22_.Q G0_cnt_next_23_.Q G0_cnt_next_24_.Q G0_N_122.BLIF \
+G0_un1_cnt_next12.BLIF G0_cnt_next_24_.T
+1111111111-11 1
+----------1-0 1
+----------0-0 0
+-----------01 0
+---------0--1 0
+--------0---1 0
+-------0----1 0
+------0-----1 0
+-----0------1 0
+----0-------1 0
+---0--------1 0
+--0---------1 0
+-0----------1 0
+0-----------1 0
+.end

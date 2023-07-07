@@ -1,0 +1,29 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Fri Jun 02 08:38:25 2023
+#$ TITLE top.bls 
+#$ MODULE top
+#$ PINS 29 LED_VCC4 LED_VCC3 LED_VCC2 LED_VCC1 g f e d c b a key_in_0_ key_in_1_ key_in_2_ \
+#  key_in_3_ key_out_0_ key_out_1_ key_out_2_ key_out_3_ Data_Out_0_ Data_Out_1_ \
+#  Data_Out_2_ Data_Out_3_ SDA SCL clk reset BUTTON_B BUTTON_A
+#$ NODES 4 DataLED_0_ DataLED_1_ DataLED_2_ DataLED_3_
+#$ INTERFACE calculate  14 clk'i'  key_in_0_'i'  key_in_1_'i'  key_in_2_'i'  key_in_3_'i'  reset'i'  \
+#  Data_Out_0_'o'  Data_Out_1_'o'  Data_Out_2_'o'  Data_Out_3_'o'  key_out_0_'o'  key_out_1_'o'  key_out_2_'o'  \
+#  key_out_3_'o' 
+#$ INTERFACE display  29 clk'i'  num1_0_'i'  num1_1_'i'  num1_2_'i'  num1_3_'i'  num2_0_'i'  num2_1_'i'  num2_2_'i'  \
+#  num2_3_'i'  num3_0_'i'  num3_1_'i'  num3_2_'i'  num3_3_'i'  num4_0_'i'  num4_1_'i'  num4_2_'i'  num4_3_'i'  reset'i'  LED_A'o'  LED_B'o'  \
+#  LED_C'o'  LED_D'o'  LED_E'o'  LED_F'o'  LED_G'o'  LED_VCC1'o'  LED_VCC2'o'  LED_VCC3'o'  LED_VCC4'o' 
+#$ INTERFACE i2c  14 CLK'i'  CMD_RD'i'  CMD_WR'i'  DATA_IN_0_'i'  DATA_IN_1_'i'  DATA_IN_2_'i'  DATA_IN_3_'i'  RST'i'  \
+#  DataLED_0_'o'  DataLED_1_'o'  DataLED_2_'o'  DataLED_3_'o'  SCL'o'  SDA'io' 
+#$ INSTANCE I2 calculate 14 clk key_in_0_ key_in_1_ key_in_2_ key_in_3_ reset \
+#  Data_Out_0_ Data_Out_1_ Data_Out_2_ Data_Out_3_ key_out_0_ key_out_1_ key_out_2_ \
+#  key_out_3_
+#$ INSTANCE I3 display 29 clk DataLED_0_ DataLED_1_ DataLED_2_ DataLED_3_ DataLED_0_ \
+#  DataLED_1_ DataLED_2_ DataLED_3_ Data_Out_0_ Data_Out_1_ Data_Out_2_ Data_Out_3_ \
+#  DataLED_0_ DataLED_1_ DataLED_2_ DataLED_3_ reset a b c d e f g LED_VCC1 LED_VCC2 LED_VCC3 \
+#  LED_VCC4
+#$ INSTANCE I1 i2c 14 clk BUTTON_A BUTTON_B Data_Out_0_ Data_Out_1_ Data_Out_2_ \
+#  Data_Out_3_ reset DataLED_0_ DataLED_1_ DataLED_2_ DataLED_3_ SCL SDA
+.model top
+.inputs
+.outputs
+.end
