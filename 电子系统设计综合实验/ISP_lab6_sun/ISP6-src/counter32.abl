@@ -1,0 +1,13 @@
+MODULE counter32
+TITLE'BCD counter32'
+q4..q0 pin istype 'reg';
+clk pin;
+count=[q4..q0];
+equations
+count.clk=clk;
+when (count==31) then count:=0;
+else count:=count +1;
+
+
+END 
+

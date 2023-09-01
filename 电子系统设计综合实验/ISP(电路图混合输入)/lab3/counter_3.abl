@@ -1,0 +1,14 @@
+MODULE counter_3
+
+TITLE 'BCD counter_3'
+
+q1,q0 pin istype 'reg';
+clk pin;
+count=[q1,q0];
+equations
+count.clk=clk;
+when (count==3) then count:=0;
+else count:=count+1; 
+
+END
+

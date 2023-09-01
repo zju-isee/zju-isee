@@ -1,0 +1,1915 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Fri Jun 02 08:39:24 2023
+#$ MODULE i2c
+#$ PINS 14 DATA_IN_3_ DataLED_3_ CLK RST SDA SCL CMD_RD CMD_WR DATA_IN_2_ DATA_IN_1_ \
+#  DATA_IN_0_ DataLED_2_ DataLED_1_ DataLED_0_
+#$ NODES 617 N_84_i_i N_393_i_2 CMD_WR_i N_393_i_3 clk_div_i_2__n N_393_i_4 \
+#  inst_scl_bufreg clk_div_i_3__n N_393_i_5 G_403 N_395_i_1 G_405 CLK_c N_395_i_2 G_407 \
+#  N_395_i_3 G_409 RST_c N_395_i_4 G_411 N_395_i_5 G_413 SDA_c phase38_1_0 inst_phase1 \
+#  phase28_1 inst_phase3 phase18_1 inst_phase2 CMD_RD_c phase08_1 clk_div_2_ N_159_0_1 \
+#  clk_div_3_ CMD_WR_c N_668_i_1 key_delay_4_ N_668_i_2 key_delay_1_ N_668_i_3 \
+#  key_delay_6_ N_668_i_4 key_delay_0_ N_676_i_1 key_delay_5_ N_672_i_1 key_delay_7_ \
+#  N_672_i_2 key_delay_9_ N_678_i_1 key_delay_2_ N_678_i_2 key_delay_3_ N_670_i_1 \
+#  key_delay_8_ DataLEDDFFCRH_0_reg N_670_i_2 inst_phase0 N_670_i_3 inst_sda_tem \
+#  DataLEDDFFCRH_1_reg N_670_i_4 inst_Flag_RW N_210_1 inst_sda_buf DataLEDDFFCRH_2_reg \
+#  N_210_2 N_210_3 clk_div_0_ DataLEDDFFCRH_3_reg N_213_1 clk_div_1_ N_213_2 WrData_0_ \
+#  un1_eeprom_state_3_0 N_215_1 WrData_1_ sda_buf_1_sqmuxa_5_i N_215_2 WrData_2_ \
+#  N_406_li_i N_217_1 WrData_3_ sda_buf_1_sqmuxa_1_i N_217_2 N_376_i N_218_1 N_374_i \
+#  N_218_2 N_478_i N_219_1 RdData_3_ N_446_i N_219_2 RdData_2_ N_222_1 RdData_1_ N_711_i \
+#  N_222_2 RdData_0_ N_709_i N_515_1 N_187_1 inst_start_delay N_766_i N_187_2 N_765_i \
+#  N_188_1 clk_div_n1 sda_buf_m_i N_188_2 clk_div_n2 sda_buf_61_0 N_189_1 clk_div_n3 \
+#  sda_buf_0_sqmuxa_14_i N_189_2 bit_state_0_ N_384_i N_189_3 bit_state_1_ N_520_i \
+#  N_194_1 bit_state_2_ N_130_i_i N_194_2 bit_state_3_ wrdata_m_i_0__n N_194_3 \
+#  bit_state_4_ wrdata_m_i_3__n N_195_1 bit_state_5_ wrdata_m_i_2__n N_195_2 \
+#  DataLED_1_sqmuxa wrdata_m_i_1__n N_198_1 eeprom_state_0_ N_499_i N_198_2 \
+#  eeprom_state_1_ N_498_i N_236_1 N_406_li N_497_i N_236_2 N_111 N_496_i N_204_1 \
+#  clk_div_c2 N_495_i N_491_1 phase38_1 N_252_i N_492_1 N_532 N_479_i N_384_i_1 N_539_i \
+#  N_384_i_2 N_113 N_480_i N_384_i_3 N_969 N_482_i N_384_i_4 N_86 N_481_i N_384_i_5 N_87 \
+#  N_491_i N_384_i_6 N_90 N_493_i N_493_1 N_122 N_538_i N_493_2 N_123 N_492_i \
+#  sda_buf_1_sqmuxa_5_1 N_125 N_494_i sda_buf_1_sqmuxa_5_2 N_128 N_521_i \
+#  sda_buf_1_sqmuxa_5_3 N_143 N_764_i sda_buf_1_sqmuxa_5_4 N_144 N_441_0 \
+#  sda_buf_1_sqmuxa_5_5 N_155 N_420_i sda_buf_1_sqmuxa_5_6 N_174 N_414_i sda_buf_61_0_1 \
+#  N_177 N_395_i sda_buf_61_0_2 N_178 N_393_i sda_buf_61_0_3 N_186 key_delay_i_5__n \
+#  sda_buf_61_0_4 N_190 key_delay_i_4__n sda_buf_61_0_5 N_191 key_delay_i_7__n \
+#  sda_buf_61_0_6 N_192 key_delay_i_6__n wrdata_m_1_0__n N_193 N_4_i wrdata_m_2_0__n \
+#  N_196 N_171_i wrdata_m_3_0__n N_199 N_251_i wrdata_m_1_1__n N_200 N_410_0 \
+#  wrdata_m_2_1__n N_201 N_476_i_1_0 wrdata_m_3_1__n N_203 N_965_i wrdata_m_1_2__n N_207 \
+#  wrdata_m_2_2__n N_208 N_202_i wrdata_m_3_2__n N_209 N_203_i wrdata_m_1_3__n N_211 \
+#  un1_sda_buf_13_sqmuxa_0 wrdata_m_2_3__n N_212 N_236_i wrdata_m_3_3__n N_214 N_235_i \
+#  N_763_i_1 N_220 N_83_i N_674_i_1 N_221 N_969_0 N_674_i_2 N_223 N_116_i N_711_1 N_224 \
+#  N_119_i N_374_i_1 N_225 N_123_0 N_374_i_2 N_226 key_delay_i_1__n N_374_i_3 N_228 \
+#  N_128_i N_374_i_4 N_229 N_129_i N_374_i_5 N_230 N_132_0 N_374_i_6 N_231 \
+#  key_delay_i_8__n N_374_i_7 N_233 key_delay_i_3__n N_374_i_8 N_242 key_delay_i_2__n \
+#  N_376_i_1 N_245 N_139_i N_376_i_2 N_248 N_140_0 N_376_i_3 N_249 N_151_i N_376_i_4 N_251 \
+#  N_155_0 N_495_1 N_253 N_156_0 N_496_1 N_255 N_160_0 N_497_1 N_265 N_245_i N_499_1 \
+#  bit_state_ns_i_0_x2_0_ N_258_i N_499_2 Flag_RW_0_sqmuxa_2_1_i_x2 N_232_i N_478_1 \
+#  G_401_0_x2 N_380_i N_482_1 N_176 N_204_i N_494_1 N_263 N_205_i un1_eeprom_state_3_0_1 \
+#  N_135 N_206_i un1_eeprom_state_3_0_2 N_179 un1_eeprom_state_3_0_3 N_180 N_194_i \
+#  un1_eeprom_state_3_0_4 N_181 N_195_i N_968_i_1 N_129 N_196_i N_792_i_1 N_182 \
+#  DataLED_1_sqmuxa_i N_777_i_1 N_183 N_198_i N_807_i_1 N_184 N_905_i_1 N_264 N_187_i \
+#  N_906_i_1 N_154 N_188_i N_231_1 N_227 N_189_i N_230_1 N_159 N_190_i N_229_1 N_238 N_192_i \
+#  N_228_1 N_244 N_191_i N_221_1 N_116 N_193_i N_220_1 N_210 N_904_0 N_214_1 N_131 N_153_i \
+#  N_212_1 N_401 N_142_i N_211_1 N_213 N_127_i N_209_1 N_215 N_124_i N_203_1 N_217 N_401_i \
+#  N_200_1 N_218 N_515_i N_196_1 N_219 N_516_i N_193_1 N_127 N_418_i N_192_1 N_222 N_88_i \
+#  N_191_1 N_216 N_131_0 N_190_1 N_538 N_134_i N_186_1 N_142 N_143_i N_178_1 N_516 N_144_i \
+#  N_177_1 N_515 N_210_i sda_buf_0_sqmuxa_17_i_m5_un3_n N_153 N_209_i \
+#  sda_buf_0_sqmuxa_17_i_m5_un1_n N_420 N_212_i sda_buf_0_sqmuxa_17_i_m5_un0_n N_187 \
+#  N_211_i N_156 N_213_i N_188 N_214_i N_140 N_215_i N_189 N_216_i N_132 N_217_i N_194 \
+#  N_219_i eeprom_state_ns_i_a2_0_0_x2_1_ N_218_i N_195 N_221_i N_246 N_220_i N_198 \
+#  N_222_i N_258 N_236 N_83 N_180_i N_206 N_179_i N_205 N_178_i \
+#  un1_eeprom_state_1_sqmuxa_i_x2_0_x2 N_176_i N_204 N_177_i N_232 \
+#  key_delay_3_i_0_x2_9_ N_182_i N_746 N_181_i N_160 N_186_i N_252 N_151 N_184_i N_139 \
+#  N_183_i N_171 N_235 N_264_i un1_sda_buf_13_sqmuxa N_676_2_i N_202 N_227_i N_476_i_1 \
+#  N_228_i N_410 N_422_i_1 N_263_i sda_buf_0_sqmuxa_14 N_231_i sda_buf_1_sqmuxa_1 \
+#  N_229_i N_479 N_230_i N_481 N_159_0 N_491 N_154_i N_441 N_135_i N_492 N_244_i N_498 \
+#  N_125_0 N_520 N_122_i N_521 N_238_i N_539 N_90_0 N_393 N_89_i N_395 N_87_i N_446 N_86_i \
+#  N_709 N_233_i sda_buf_m un1_eeprom_state_3 N_225_i N_765 N_226_i N_764 N_766 N_223_i \
+#  N_494 N_224_i N_493 N_482 N_207_i N_480 N_208_i N_495 N_496 N_199_i N_497 N_200_i N_499 \
+#  N_253_i wrdata_m_1__n wrdata_m_2__n N_111_i N_376 wrdata_m_3__n N_174_i wrdata_m_0__n \
+#  N_255_i N_374 N_967_i_1 N_384 N_967_i_2 sda_buf_1_sqmuxa_5 N_967_i_3 N_711 N_967_i_4 \
+#  N_478 N_967_i_5 N_525 N_967_i_6 N_744 N_967_i_7 N_742 N_967_i_8 N_740 N_967_i_9 N_738 \
+#  N_967_i_10 N_736 N_967_i_11 N_734 N_967_i_12 phase1_i N_967_i_13 bit_state_i_4__n \
+#  N_904_0_1 N_248_i N_904_0_2 bit_state_i_0__n N_904_0_3 bit_state_i_3__n N_904_0_4 \
+#  Flag_RW_i N_904_0_5 N_113_i N_660_i_1 bit_state_i_5__n N_660_i_2 eeprom_state_i_1__n \
+#  N_660_i_3 bit_state_i_2__n N_660_i_4 SDA_i N_966_i_1 rddata_i_3__n N_966_i_2 phase3_i \
+#  N_966_i_3 eeprom_state_i_0__n N_966_i_4 bit_state_i_1__n N_966_i_5 N_422_i_1_i \
+#  N_966_i_6 start_delay_i N_966_i_7 rddata_i_0__n N_380_i_1 phase0_i N_380_i_2 phase2_i \
+#  N_380_i_3 key_delay_i_0__n N_156_0_1 N_118_i_i N_139_i_1 RST_i N_139_i_2 CMD_RD_i \
+#  N_139_i_3 N_121_i_i N_139_i_4 rddata_i_2__n N_139_i_5 N_532_i N_139_i_6 rddata_i_1__n \
+#  N_393_i_1
+.model i2c
+.inputs DATA_IN_3_.BLIF CLK.BLIF RST.BLIF CMD_RD.BLIF CMD_WR.BLIF \
+DATA_IN_2_.BLIF DATA_IN_1_.BLIF DATA_IN_0_.BLIF SDA.BLIF N_84_i_i.BLIF \
+N_393_i_2.BLIF CMD_WR_i.BLIF N_393_i_3.BLIF clk_div_i_2__n.BLIF N_393_i_4.BLIF \
+inst_scl_bufreg.BLIF clk_div_i_3__n.BLIF N_393_i_5.BLIF G_403.BLIF \
+N_395_i_1.BLIF G_405.BLIF CLK_c.BLIF N_395_i_2.BLIF G_407.BLIF N_395_i_3.BLIF \
+G_409.BLIF RST_c.BLIF N_395_i_4.BLIF G_411.BLIF N_395_i_5.BLIF G_413.BLIF \
+SDA_c.BLIF phase38_1_0.BLIF inst_phase1.BLIF phase28_1.BLIF inst_phase3.BLIF \
+phase18_1.BLIF inst_phase2.BLIF CMD_RD_c.BLIF phase08_1.BLIF clk_div_2_.BLIF \
+N_159_0_1.BLIF clk_div_3_.BLIF CMD_WR_c.BLIF N_668_i_1.BLIF key_delay_4_.BLIF \
+N_668_i_2.BLIF key_delay_1_.BLIF N_668_i_3.BLIF key_delay_6_.BLIF \
+N_668_i_4.BLIF key_delay_0_.BLIF N_676_i_1.BLIF key_delay_5_.BLIF \
+N_672_i_1.BLIF key_delay_7_.BLIF N_672_i_2.BLIF key_delay_9_.BLIF \
+N_678_i_1.BLIF key_delay_2_.BLIF N_678_i_2.BLIF key_delay_3_.BLIF \
+N_670_i_1.BLIF key_delay_8_.BLIF DataLEDDFFCRH_0_reg.BLIF N_670_i_2.BLIF \
+inst_phase0.BLIF N_670_i_3.BLIF inst_sda_tem.BLIF DataLEDDFFCRH_1_reg.BLIF \
+N_670_i_4.BLIF inst_Flag_RW.BLIF N_210_1.BLIF inst_sda_buf.BLIF \
+DataLEDDFFCRH_2_reg.BLIF N_210_2.BLIF N_210_3.BLIF clk_div_0_.BLIF \
+DataLEDDFFCRH_3_reg.BLIF N_213_1.BLIF clk_div_1_.BLIF N_213_2.BLIF \
+WrData_0_.BLIF un1_eeprom_state_3_0.BLIF N_215_1.BLIF WrData_1_.BLIF \
+sda_buf_1_sqmuxa_5_i.BLIF N_215_2.BLIF WrData_2_.BLIF N_406_li_i.BLIF \
+N_217_1.BLIF WrData_3_.BLIF sda_buf_1_sqmuxa_1_i.BLIF N_217_2.BLIF \
+N_376_i.BLIF N_218_1.BLIF N_374_i.BLIF N_218_2.BLIF N_478_i.BLIF N_219_1.BLIF \
+RdData_3_.BLIF N_446_i.BLIF N_219_2.BLIF RdData_2_.BLIF N_222_1.BLIF \
+RdData_1_.BLIF N_711_i.BLIF N_222_2.BLIF RdData_0_.BLIF N_709_i.BLIF \
+N_515_1.BLIF N_187_1.BLIF inst_start_delay.BLIF N_766_i.BLIF N_187_2.BLIF \
+N_765_i.BLIF N_188_1.BLIF clk_div_n1.BLIF sda_buf_m_i.BLIF N_188_2.BLIF \
+clk_div_n2.BLIF sda_buf_61_0.BLIF N_189_1.BLIF clk_div_n3.BLIF \
+sda_buf_0_sqmuxa_14_i.BLIF N_189_2.BLIF bit_state_0_.BLIF N_384_i.BLIF \
+N_189_3.BLIF bit_state_1_.BLIF N_520_i.BLIF N_194_1.BLIF bit_state_2_.BLIF \
+N_130_i_i.BLIF N_194_2.BLIF bit_state_3_.BLIF wrdata_m_i_0__n.BLIF \
+N_194_3.BLIF bit_state_4_.BLIF wrdata_m_i_3__n.BLIF N_195_1.BLIF \
+bit_state_5_.BLIF wrdata_m_i_2__n.BLIF N_195_2.BLIF DataLED_1_sqmuxa.BLIF \
+wrdata_m_i_1__n.BLIF N_198_1.BLIF eeprom_state_0_.BLIF N_499_i.BLIF \
+N_198_2.BLIF eeprom_state_1_.BLIF N_498_i.BLIF N_236_1.BLIF N_406_li.BLIF \
+N_497_i.BLIF N_236_2.BLIF N_111.BLIF N_496_i.BLIF N_204_1.BLIF clk_div_c2.BLIF \
+N_495_i.BLIF N_491_1.BLIF phase38_1.BLIF N_252_i.BLIF N_492_1.BLIF N_532.BLIF \
+N_479_i.BLIF N_384_i_1.BLIF N_539_i.BLIF N_384_i_2.BLIF N_113.BLIF \
+N_480_i.BLIF N_384_i_3.BLIF N_969.BLIF N_482_i.BLIF N_384_i_4.BLIF N_86.BLIF \
+N_481_i.BLIF N_384_i_5.BLIF N_87.BLIF N_491_i.BLIF N_384_i_6.BLIF N_90.BLIF \
+N_493_i.BLIF N_493_1.BLIF N_122.BLIF N_538_i.BLIF N_493_2.BLIF N_123.BLIF \
+N_492_i.BLIF sda_buf_1_sqmuxa_5_1.BLIF N_125.BLIF N_494_i.BLIF \
+sda_buf_1_sqmuxa_5_2.BLIF N_128.BLIF N_521_i.BLIF sda_buf_1_sqmuxa_5_3.BLIF \
+N_143.BLIF N_764_i.BLIF sda_buf_1_sqmuxa_5_4.BLIF N_144.BLIF N_441_0.BLIF \
+sda_buf_1_sqmuxa_5_5.BLIF N_155.BLIF N_420_i.BLIF sda_buf_1_sqmuxa_5_6.BLIF \
+N_174.BLIF N_414_i.BLIF sda_buf_61_0_1.BLIF N_177.BLIF N_395_i.BLIF \
+sda_buf_61_0_2.BLIF N_178.BLIF N_393_i.BLIF sda_buf_61_0_3.BLIF N_186.BLIF \
+key_delay_i_5__n.BLIF sda_buf_61_0_4.BLIF N_190.BLIF key_delay_i_4__n.BLIF \
+sda_buf_61_0_5.BLIF N_191.BLIF key_delay_i_7__n.BLIF sda_buf_61_0_6.BLIF \
+N_192.BLIF key_delay_i_6__n.BLIF wrdata_m_1_0__n.BLIF N_193.BLIF N_4_i.BLIF \
+wrdata_m_2_0__n.BLIF N_196.BLIF N_171_i.BLIF wrdata_m_3_0__n.BLIF N_199.BLIF \
+N_251_i.BLIF wrdata_m_1_1__n.BLIF N_200.BLIF N_410_0.BLIF wrdata_m_2_1__n.BLIF \
+N_201.BLIF N_476_i_1_0.BLIF wrdata_m_3_1__n.BLIF N_203.BLIF N_965_i.BLIF \
+wrdata_m_1_2__n.BLIF N_207.BLIF wrdata_m_2_2__n.BLIF N_208.BLIF N_202_i.BLIF \
+wrdata_m_3_2__n.BLIF N_209.BLIF N_203_i.BLIF wrdata_m_1_3__n.BLIF N_211.BLIF \
+un1_sda_buf_13_sqmuxa_0.BLIF wrdata_m_2_3__n.BLIF N_212.BLIF N_236_i.BLIF \
+wrdata_m_3_3__n.BLIF N_214.BLIF N_235_i.BLIF N_763_i_1.BLIF N_220.BLIF \
+N_83_i.BLIF N_674_i_1.BLIF N_221.BLIF N_969_0.BLIF N_674_i_2.BLIF N_223.BLIF \
+N_116_i.BLIF N_711_1.BLIF N_224.BLIF N_119_i.BLIF N_374_i_1.BLIF N_225.BLIF \
+N_123_0.BLIF N_374_i_2.BLIF N_226.BLIF key_delay_i_1__n.BLIF N_374_i_3.BLIF \
+N_228.BLIF N_128_i.BLIF N_374_i_4.BLIF N_229.BLIF N_129_i.BLIF N_374_i_5.BLIF \
+N_230.BLIF N_132_0.BLIF N_374_i_6.BLIF N_231.BLIF key_delay_i_8__n.BLIF \
+N_374_i_7.BLIF N_233.BLIF key_delay_i_3__n.BLIF N_374_i_8.BLIF N_242.BLIF \
+key_delay_i_2__n.BLIF N_376_i_1.BLIF N_245.BLIF N_139_i.BLIF N_376_i_2.BLIF \
+N_248.BLIF N_140_0.BLIF N_376_i_3.BLIF N_249.BLIF N_151_i.BLIF N_376_i_4.BLIF \
+N_251.BLIF N_155_0.BLIF N_495_1.BLIF N_253.BLIF N_156_0.BLIF N_496_1.BLIF \
+N_255.BLIF N_160_0.BLIF N_497_1.BLIF N_265.BLIF N_245_i.BLIF N_499_1.BLIF \
+bit_state_ns_i_0_x2_0_.BLIF N_258_i.BLIF N_499_2.BLIF \
+Flag_RW_0_sqmuxa_2_1_i_x2.BLIF N_232_i.BLIF N_478_1.BLIF G_401_0_x2.BLIF \
+N_380_i.BLIF N_482_1.BLIF N_176.BLIF N_204_i.BLIF N_494_1.BLIF N_263.BLIF \
+N_205_i.BLIF un1_eeprom_state_3_0_1.BLIF N_135.BLIF N_206_i.BLIF \
+un1_eeprom_state_3_0_2.BLIF N_179.BLIF un1_eeprom_state_3_0_3.BLIF N_180.BLIF \
+N_194_i.BLIF un1_eeprom_state_3_0_4.BLIF N_181.BLIF N_195_i.BLIF \
+N_968_i_1.BLIF N_129.BLIF N_196_i.BLIF N_792_i_1.BLIF N_182.BLIF \
+DataLED_1_sqmuxa_i.BLIF N_777_i_1.BLIF N_183.BLIF N_198_i.BLIF N_807_i_1.BLIF \
+N_184.BLIF N_905_i_1.BLIF N_264.BLIF N_187_i.BLIF N_906_i_1.BLIF N_154.BLIF \
+N_188_i.BLIF N_231_1.BLIF N_227.BLIF N_189_i.BLIF N_230_1.BLIF N_159.BLIF \
+N_190_i.BLIF N_229_1.BLIF N_238.BLIF N_192_i.BLIF N_228_1.BLIF N_244.BLIF \
+N_191_i.BLIF N_221_1.BLIF N_116.BLIF N_193_i.BLIF N_220_1.BLIF N_210.BLIF \
+N_904_0.BLIF N_214_1.BLIF N_131.BLIF N_153_i.BLIF N_212_1.BLIF N_401.BLIF \
+N_142_i.BLIF N_211_1.BLIF N_213.BLIF N_127_i.BLIF N_209_1.BLIF N_215.BLIF \
+N_124_i.BLIF N_203_1.BLIF N_217.BLIF N_401_i.BLIF N_200_1.BLIF N_218.BLIF \
+N_515_i.BLIF N_196_1.BLIF N_219.BLIF N_516_i.BLIF N_193_1.BLIF N_127.BLIF \
+N_418_i.BLIF N_192_1.BLIF N_222.BLIF N_88_i.BLIF N_191_1.BLIF N_216.BLIF \
+N_131_0.BLIF N_190_1.BLIF N_538.BLIF N_134_i.BLIF N_186_1.BLIF N_142.BLIF \
+N_143_i.BLIF N_178_1.BLIF N_516.BLIF N_144_i.BLIF N_177_1.BLIF N_515.BLIF \
+N_210_i.BLIF sda_buf_0_sqmuxa_17_i_m5_un3_n.BLIF N_153.BLIF N_209_i.BLIF \
+sda_buf_0_sqmuxa_17_i_m5_un1_n.BLIF N_420.BLIF N_212_i.BLIF \
+sda_buf_0_sqmuxa_17_i_m5_un0_n.BLIF N_187.BLIF N_211_i.BLIF N_156.BLIF \
+N_213_i.BLIF N_188.BLIF N_214_i.BLIF N_140.BLIF N_215_i.BLIF N_189.BLIF \
+N_216_i.BLIF N_132.BLIF N_217_i.BLIF N_194.BLIF N_219_i.BLIF \
+eeprom_state_ns_i_a2_0_0_x2_1_.BLIF N_218_i.BLIF N_195.BLIF N_221_i.BLIF \
+N_246.BLIF N_220_i.BLIF N_198.BLIF N_222_i.BLIF N_258.BLIF N_236.BLIF \
+N_83.BLIF N_180_i.BLIF N_206.BLIF N_179_i.BLIF N_205.BLIF N_178_i.BLIF \
+un1_eeprom_state_1_sqmuxa_i_x2_0_x2.BLIF N_176_i.BLIF N_204.BLIF N_177_i.BLIF \
+N_232.BLIF key_delay_3_i_0_x2_9_.BLIF N_182_i.BLIF N_746.BLIF N_181_i.BLIF \
+N_160.BLIF N_186_i.BLIF N_252.BLIF N_151.BLIF N_184_i.BLIF N_139.BLIF \
+N_183_i.BLIF N_171.BLIF N_235.BLIF N_264_i.BLIF un1_sda_buf_13_sqmuxa.BLIF \
+N_676_2_i.BLIF N_202.BLIF N_227_i.BLIF N_476_i_1.BLIF N_228_i.BLIF N_410.BLIF \
+N_422_i_1.BLIF N_263_i.BLIF sda_buf_0_sqmuxa_14.BLIF N_231_i.BLIF \
+sda_buf_1_sqmuxa_1.BLIF N_229_i.BLIF N_479.BLIF N_230_i.BLIF N_481.BLIF \
+N_159_0.BLIF N_491.BLIF N_154_i.BLIF N_441.BLIF N_135_i.BLIF N_492.BLIF \
+N_244_i.BLIF N_498.BLIF N_125_0.BLIF N_520.BLIF N_122_i.BLIF N_521.BLIF \
+N_238_i.BLIF N_539.BLIF N_90_0.BLIF N_393.BLIF N_89_i.BLIF N_395.BLIF \
+N_87_i.BLIF N_446.BLIF N_86_i.BLIF N_709.BLIF N_233_i.BLIF sda_buf_m.BLIF \
+un1_eeprom_state_3.BLIF N_225_i.BLIF N_765.BLIF N_226_i.BLIF N_764.BLIF \
+N_766.BLIF N_223_i.BLIF N_494.BLIF N_224_i.BLIF N_493.BLIF N_482.BLIF \
+N_207_i.BLIF N_480.BLIF N_208_i.BLIF N_495.BLIF N_496.BLIF N_199_i.BLIF \
+N_497.BLIF N_200_i.BLIF N_499.BLIF N_253_i.BLIF wrdata_m_1__n.BLIF \
+wrdata_m_2__n.BLIF N_111_i.BLIF N_376.BLIF wrdata_m_3__n.BLIF N_174_i.BLIF \
+wrdata_m_0__n.BLIF N_255_i.BLIF N_374.BLIF N_967_i_1.BLIF N_384.BLIF \
+N_967_i_2.BLIF sda_buf_1_sqmuxa_5.BLIF N_967_i_3.BLIF N_711.BLIF \
+N_967_i_4.BLIF N_478.BLIF N_967_i_5.BLIF N_525.BLIF N_967_i_6.BLIF N_744.BLIF \
+N_967_i_7.BLIF N_742.BLIF N_967_i_8.BLIF N_740.BLIF N_967_i_9.BLIF N_738.BLIF \
+N_967_i_10.BLIF N_736.BLIF N_967_i_11.BLIF N_734.BLIF N_967_i_12.BLIF \
+phase1_i.BLIF N_967_i_13.BLIF bit_state_i_4__n.BLIF N_904_0_1.BLIF \
+N_248_i.BLIF N_904_0_2.BLIF bit_state_i_0__n.BLIF N_904_0_3.BLIF \
+bit_state_i_3__n.BLIF N_904_0_4.BLIF Flag_RW_i.BLIF N_904_0_5.BLIF \
+N_113_i.BLIF N_660_i_1.BLIF bit_state_i_5__n.BLIF N_660_i_2.BLIF \
+eeprom_state_i_1__n.BLIF N_660_i_3.BLIF bit_state_i_2__n.BLIF N_660_i_4.BLIF \
+SDA_i.BLIF N_966_i_1.BLIF rddata_i_3__n.BLIF N_966_i_2.BLIF phase3_i.BLIF \
+N_966_i_3.BLIF eeprom_state_i_0__n.BLIF N_966_i_4.BLIF bit_state_i_1__n.BLIF \
+N_966_i_5.BLIF N_422_i_1_i.BLIF N_966_i_6.BLIF start_delay_i.BLIF \
+N_966_i_7.BLIF rddata_i_0__n.BLIF N_380_i_1.BLIF phase0_i.BLIF N_380_i_2.BLIF \
+phase2_i.BLIF N_380_i_3.BLIF key_delay_i_0__n.BLIF N_156_0_1.BLIF \
+N_118_i_i.BLIF N_139_i_1.BLIF RST_i.BLIF N_139_i_2.BLIF CMD_RD_i.BLIF \
+N_139_i_3.BLIF N_121_i_i.BLIF N_139_i_4.BLIF rddata_i_2__n.BLIF N_139_i_5.BLIF \
+N_532_i.BLIF N_139_i_6.BLIF rddata_i_1__n.BLIF N_393_i_1.BLIF SDA.PIN.BLIF
+.outputs DataLED_3_ SCL DataLED_2_ DataLED_1_ DataLED_0_ eeprom_state_0_.D \
+eeprom_state_0_.C eeprom_state_0_.AR eeprom_state_1_.D eeprom_state_1_.C \
+eeprom_state_1_.AR bit_state_0_.D bit_state_0_.CE bit_state_0_.C \
+bit_state_1_.D bit_state_1_.CE bit_state_1_.C bit_state_2_.D bit_state_2_.CE \
+bit_state_2_.C bit_state_3_.D bit_state_3_.CE bit_state_3_.C bit_state_4_.D \
+bit_state_4_.CE bit_state_4_.C bit_state_5_.D bit_state_5_.CE bit_state_5_.C \
+key_delay_7_.D key_delay_7_.C key_delay_7_.AR key_delay_8_.D key_delay_8_.C \
+key_delay_8_.AR key_delay_9_.D key_delay_9_.C key_delay_9_.AR \
+DataLEDDFFCRH_0_reg.D DataLEDDFFCRH_0_reg.CE DataLEDDFFCRH_0_reg.C \
+DataLEDDFFCRH_0_reg.AR DataLEDDFFCRH_1_reg.D DataLEDDFFCRH_1_reg.CE \
+DataLEDDFFCRH_1_reg.C DataLEDDFFCRH_1_reg.AR DataLEDDFFCRH_2_reg.D \
+DataLEDDFFCRH_2_reg.CE DataLEDDFFCRH_2_reg.C DataLEDDFFCRH_2_reg.AR \
+DataLEDDFFCRH_3_reg.D DataLEDDFFCRH_3_reg.CE DataLEDDFFCRH_3_reg.C \
+DataLEDDFFCRH_3_reg.AR RdData_0_.D RdData_0_.CE RdData_0_.C RdData_1_.D \
+RdData_1_.CE RdData_1_.C RdData_2_.D RdData_2_.CE RdData_2_.C RdData_3_.D \
+RdData_3_.CE RdData_3_.C WrData_0_.D WrData_0_.CE WrData_0_.C WrData_1_.D \
+WrData_1_.CE WrData_1_.C WrData_2_.D WrData_2_.CE WrData_2_.C WrData_3_.D \
+WrData_3_.CE WrData_3_.C clk_div_1_.D clk_div_1_.C clk_div_1_.AR clk_div_2_.D \
+clk_div_2_.C clk_div_2_.AR clk_div_3_.D clk_div_3_.C clk_div_3_.AR \
+key_delay_0_.D key_delay_0_.C key_delay_0_.AR key_delay_1_.D key_delay_1_.C \
+key_delay_1_.AR key_delay_2_.D key_delay_2_.C key_delay_2_.AR key_delay_3_.D \
+key_delay_3_.C key_delay_3_.AR key_delay_4_.D key_delay_4_.C key_delay_4_.AR \
+key_delay_5_.D key_delay_5_.C key_delay_5_.AR key_delay_6_.D key_delay_6_.C \
+key_delay_6_.AR clk_div_0_.D clk_div_0_.C clk_div_0_.AR inst_Flag_RW.D \
+inst_Flag_RW.CE inst_Flag_RW.C inst_sda_buf.D inst_sda_buf.CE inst_sda_buf.C \
+inst_start_delay.D inst_start_delay.CE inst_start_delay.C inst_start_delay.AR \
+inst_sda_tem.D inst_sda_tem.CE inst_sda_tem.C inst_scl_bufreg.D \
+inst_scl_bufreg.CE inst_scl_bufreg.C inst_phase0.D inst_phase0.C \
+inst_phase0.AR inst_phase1.D inst_phase1.C inst_phase1.AR inst_phase2.D \
+inst_phase2.C inst_phase2.AR inst_phase3.D inst_phase3.C inst_phase3.AR SDA \
+N_84_i_i N_393_i_2 CMD_WR_i N_393_i_3 clk_div_i_2__n N_393_i_4 clk_div_i_3__n \
+N_393_i_5 N_395_i_1 CLK_c N_395_i_2 N_395_i_3 RST_c N_395_i_4 N_395_i_5 SDA_c \
+phase38_1_0 phase28_1 phase18_1 CMD_RD_c phase08_1 N_159_0_1 CMD_WR_c \
+N_668_i_1 N_668_i_2 N_668_i_3 N_668_i_4 N_676_i_1 N_672_i_1 N_672_i_2 \
+N_678_i_1 N_678_i_2 N_670_i_1 N_670_i_2 N_670_i_3 N_670_i_4 N_210_1 N_210_2 \
+N_210_3 N_213_1 N_213_2 un1_eeprom_state_3_0 N_215_1 sda_buf_1_sqmuxa_5_i \
+N_215_2 N_406_li_i N_217_1 sda_buf_1_sqmuxa_1_i N_217_2 N_376_i N_218_1 \
+N_374_i N_218_2 N_478_i N_219_1 N_446_i N_219_2 N_222_1 N_711_i N_222_2 \
+N_709_i N_515_1 N_187_1 N_766_i N_187_2 N_765_i N_188_1 sda_buf_m_i N_188_2 \
+sda_buf_61_0 N_189_1 sda_buf_0_sqmuxa_14_i N_189_2 N_384_i N_189_3 N_520_i \
+N_194_1 N_130_i_i N_194_2 wrdata_m_i_0__n N_194_3 wrdata_m_i_3__n N_195_1 \
+wrdata_m_i_2__n N_195_2 DataLED_1_sqmuxa wrdata_m_i_1__n N_198_1 N_499_i \
+N_198_2 N_498_i N_236_1 N_406_li N_497_i N_236_2 N_111 N_496_i N_204_1 \
+clk_div_c2 N_495_i N_491_1 phase38_1 N_252_i N_492_1 N_532 N_479_i N_384_i_1 \
+N_539_i N_384_i_2 N_113 N_480_i N_384_i_3 N_969 N_482_i N_384_i_4 N_86 N_481_i \
+N_384_i_5 N_87 N_491_i N_384_i_6 N_90 N_493_i N_493_1 N_122 N_538_i N_493_2 \
+N_123 N_492_i sda_buf_1_sqmuxa_5_1 N_125 N_494_i sda_buf_1_sqmuxa_5_2 N_128 \
+N_521_i sda_buf_1_sqmuxa_5_3 N_143 N_764_i sda_buf_1_sqmuxa_5_4 N_144 N_441_0 \
+sda_buf_1_sqmuxa_5_5 N_155 N_420_i sda_buf_1_sqmuxa_5_6 N_174 N_414_i \
+sda_buf_61_0_1 N_177 N_395_i sda_buf_61_0_2 N_178 N_393_i sda_buf_61_0_3 N_186 \
+key_delay_i_5__n sda_buf_61_0_4 N_190 key_delay_i_4__n sda_buf_61_0_5 N_191 \
+key_delay_i_7__n sda_buf_61_0_6 N_192 key_delay_i_6__n wrdata_m_1_0__n N_193 \
+N_4_i wrdata_m_2_0__n N_196 N_171_i wrdata_m_3_0__n N_199 N_251_i \
+wrdata_m_1_1__n N_200 N_410_0 wrdata_m_2_1__n N_201 N_476_i_1_0 \
+wrdata_m_3_1__n N_203 N_965_i wrdata_m_1_2__n N_207 wrdata_m_2_2__n N_208 \
+N_202_i wrdata_m_3_2__n N_209 N_203_i wrdata_m_1_3__n N_211 \
+un1_sda_buf_13_sqmuxa_0 wrdata_m_2_3__n N_212 N_236_i wrdata_m_3_3__n N_214 \
+N_235_i N_763_i_1 N_220 N_83_i N_674_i_1 N_221 N_969_0 N_674_i_2 N_223 N_116_i \
+N_711_1 N_224 N_119_i N_374_i_1 N_225 N_123_0 N_374_i_2 N_226 key_delay_i_1__n \
+N_374_i_3 N_228 N_128_i N_374_i_4 N_229 N_129_i N_374_i_5 N_230 N_132_0 \
+N_374_i_6 N_231 key_delay_i_8__n N_374_i_7 N_233 key_delay_i_3__n N_374_i_8 \
+N_242 key_delay_i_2__n N_376_i_1 N_245 N_139_i N_376_i_2 N_248 N_140_0 \
+N_376_i_3 N_249 N_151_i N_376_i_4 N_251 N_155_0 N_495_1 N_253 N_156_0 N_496_1 \
+N_255 N_160_0 N_497_1 N_265 N_245_i N_499_1 N_258_i N_499_2 N_232_i N_478_1 \
+N_380_i N_482_1 N_176 N_204_i N_494_1 N_263 N_205_i un1_eeprom_state_3_0_1 \
+N_135 N_206_i un1_eeprom_state_3_0_2 N_179 un1_eeprom_state_3_0_3 N_180 \
+N_194_i un1_eeprom_state_3_0_4 N_181 N_195_i N_968_i_1 N_129 N_196_i N_792_i_1 \
+N_182 DataLED_1_sqmuxa_i N_777_i_1 N_183 N_198_i N_807_i_1 N_184 N_905_i_1 \
+N_264 N_187_i N_906_i_1 N_154 N_188_i N_231_1 N_227 N_189_i N_230_1 N_159 \
+N_190_i N_229_1 N_238 N_192_i N_228_1 N_244 N_191_i N_221_1 N_116 N_193_i \
+N_220_1 N_210 N_904_0 N_214_1 N_131 N_153_i N_212_1 N_401 N_142_i N_211_1 \
+N_213 N_127_i N_209_1 N_215 N_124_i N_203_1 N_217 N_401_i N_200_1 N_218 \
+N_515_i N_196_1 N_219 N_516_i N_193_1 N_127 N_418_i N_192_1 N_222 N_88_i \
+N_191_1 N_216 N_131_0 N_190_1 N_538 N_134_i N_186_1 N_142 N_143_i N_178_1 \
+N_516 N_144_i N_177_1 N_515 N_210_i sda_buf_0_sqmuxa_17_i_m5_un3_n N_153 \
+N_209_i sda_buf_0_sqmuxa_17_i_m5_un1_n N_420 N_212_i \
+sda_buf_0_sqmuxa_17_i_m5_un0_n N_187 N_211_i N_156 N_213_i N_188 N_214_i N_140 \
+N_215_i N_189 N_216_i N_132 N_217_i N_194 N_219_i N_218_i N_195 N_221_i N_246 \
+N_220_i N_198 N_222_i N_258 N_236 N_83 N_180_i N_206 N_179_i N_205 N_178_i \
+N_176_i N_204 N_177_i N_232 N_182_i N_746 N_181_i N_160 N_186_i N_252 N_151 \
+N_184_i N_139 N_183_i N_171 N_235 N_264_i un1_sda_buf_13_sqmuxa N_676_2_i \
+N_202 N_227_i N_476_i_1 N_228_i N_410 N_422_i_1 N_263_i sda_buf_0_sqmuxa_14 \
+N_231_i sda_buf_1_sqmuxa_1 N_229_i N_479 N_230_i N_481 N_159_0 N_491 N_154_i \
+N_441 N_135_i N_492 N_244_i N_498 N_125_0 N_520 N_122_i N_521 N_238_i N_539 \
+N_90_0 N_393 N_89_i N_395 N_87_i N_446 N_86_i N_709 N_233_i sda_buf_m \
+un1_eeprom_state_3 N_225_i N_765 N_226_i N_764 N_766 N_223_i N_494 N_224_i \
+N_493 N_482 N_207_i N_480 N_208_i N_495 N_496 N_199_i N_497 N_200_i N_499 \
+N_253_i wrdata_m_1__n wrdata_m_2__n N_111_i N_376 wrdata_m_3__n N_174_i \
+wrdata_m_0__n N_255_i N_374 N_967_i_1 N_384 N_967_i_2 sda_buf_1_sqmuxa_5 \
+N_967_i_3 N_711 N_967_i_4 N_478 N_967_i_5 N_525 N_967_i_6 N_744 N_967_i_7 \
+N_742 N_967_i_8 N_740 N_967_i_9 N_738 N_967_i_10 N_736 N_967_i_11 N_734 \
+N_967_i_12 phase1_i N_967_i_13 bit_state_i_4__n N_904_0_1 N_248_i N_904_0_2 \
+bit_state_i_0__n N_904_0_3 bit_state_i_3__n N_904_0_4 Flag_RW_i N_904_0_5 \
+N_113_i N_660_i_1 bit_state_i_5__n N_660_i_2 eeprom_state_i_1__n N_660_i_3 \
+bit_state_i_2__n N_660_i_4 SDA_i N_966_i_1 rddata_i_3__n N_966_i_2 phase3_i \
+N_966_i_3 eeprom_state_i_0__n N_966_i_4 bit_state_i_1__n N_966_i_5 N_422_i_1_i \
+N_966_i_6 start_delay_i N_966_i_7 rddata_i_0__n N_380_i_1 phase0_i N_380_i_2 \
+phase2_i N_380_i_3 key_delay_i_0__n N_156_0_1 N_118_i_i N_139_i_1 RST_i \
+N_139_i_2 CMD_RD_i N_139_i_3 N_121_i_i N_139_i_4 rddata_i_2__n N_139_i_5 \
+N_532_i N_139_i_6 rddata_i_1__n N_393_i_1 SDA.OE G_403 G_405 G_407 G_409 G_411 \
+G_413 clk_div_n1 clk_div_n2 clk_div_n3 bit_state_ns_i_0_x2_0_ \
+Flag_RW_0_sqmuxa_2_1_i_x2 G_401_0_x2 eeprom_state_ns_i_a2_0_0_x2_1_ \
+un1_eeprom_state_1_sqmuxa_i_x2_0_x2 key_delay_3_i_0_x2_9_
+.names N_904_0.BLIF eeprom_state_0_.D
+0 1
+.names N_660_i_4.BLIF N_660_i_3.BLIF eeprom_state_1_.D
+11 1
+.names N_668_i_4.BLIF N_668_i_3.BLIF bit_state_0_.D
+11 1
+.names N_670_i_4.BLIF N_670_i_3.BLIF bit_state_1_.D
+11 1
+.names N_672_i_1.BLIF N_672_i_2.BLIF bit_state_2_.D
+11 1
+.names N_674_i_1.BLIF N_674_i_2.BLIF bit_state_3_.D
+11 1
+.names N_676_i_1.BLIF N_228_i.BLIF bit_state_4_.D
+11 1
+.names N_678_i_1.BLIF N_678_i_2.BLIF bit_state_5_.D
+11 1
+.names key_delay_3_i_0_x2_9_.BLIF inst_start_delay.BLIF key_delay_9_.D
+11 1
+.names N_807_i_1.BLIF eeprom_state_1_.BLIF RdData_0_.D
+11 1
+.names N_792_i_1.BLIF eeprom_state_1_.BLIF RdData_1_.D
+11 1
+.names N_777_i_1.BLIF eeprom_state_1_.BLIF RdData_2_.D
+11 1
+.names N_763_i_1.BLIF eeprom_state_1_.BLIF RdData_3_.D
+11 1
+.names key_delay_i_0__n.BLIF inst_start_delay.BLIF key_delay_0_.D
+11 1
+.names N_906_i_1.BLIF inst_start_delay.BLIF key_delay_1_.D
+11 1
+.names clk_div_0_.BLIF clk_div_0_.D
+0 1
+.names N_967_i_12.BLIF N_967_i_13.BLIF inst_Flag_RW.D
+11 1
+.names sda_buf_61_0.BLIF inst_sda_buf.D
+0 1
+.names N_905_i_1.BLIF N_200_i.BLIF inst_start_delay.D
+11 1
+.names N_966_i_7.BLIF bit_state_i_5__n.BLIF inst_sda_tem.CE
+11 1
+.names N_968_i_1.BLIF RST_c.BLIF inst_scl_bufreg.CE
+11 1
+.names phase08_1.BLIF phase38_1.BLIF inst_phase0.D
+11 1
+.names phase18_1.BLIF phase38_1.BLIF inst_phase1.D
+11 1
+.names phase28_1.BLIF phase38_1.BLIF inst_phase2.D
+11 1
+.names phase38_1_0.BLIF clk_div_i_2__n.BLIF inst_phase3.D
+11 1
+.names bit_state_ns_i_0_x2_0_.BLIF N_84_i_i
+0 1
+.names N_418_i.BLIF N_491_i.BLIF N_393_i_2
+11 1
+.names CMD_WR_c.BLIF CMD_WR_i
+0 1
+.names N_492_i.BLIF N_493_i.BLIF N_393_i_3
+11 1
+.names clk_div_2_.BLIF clk_div_i_2__n
+0 1
+.names N_393_i_1.BLIF N_393_i_2.BLIF N_393_i_4
+11 1
+.names clk_div_3_.BLIF clk_div_i_3__n
+0 1
+.names N_393_i_3.BLIF eeprom_state_1_.BLIF N_393_i_5
+11 1
+.names N_498_i.BLIF N_499_i.BLIF N_395_i_1
+11 1
+.names N_418_i.BLIF N_495_i.BLIF N_395_i_2
+11 1
+.names N_496_i.BLIF N_497_i.BLIF N_395_i_3
+11 1
+.names N_395_i_1.BLIF N_395_i_2.BLIF N_395_i_4
+11 1
+.names N_395_i_3.BLIF eeprom_state_0_.BLIF N_395_i_5
+11 1
+.names phase38_1.BLIF clk_div_3_.BLIF phase38_1_0
+11 1
+.names clk_div_2_.BLIF clk_div_i_3__n.BLIF phase28_1
+11 1
+.names clk_div_i_2__n.BLIF clk_div_i_3__n.BLIF phase18_1
+11 1
+.names clk_div_2_.BLIF clk_div_3_.BLIF phase08_1
+11 1
+.names N_129_i.BLIF bit_state_3_.BLIF N_159_0_1
+11 1
+.names N_231_i.BLIF N_263_i.BLIF N_668_i_1
+11 1
+.names N_135.BLIF N_179_i.BLIF N_668_i_2
+11 1
+.names N_229_i.BLIF N_230_i.BLIF N_668_i_3
+11 1
+.names N_668_i_1.BLIF N_668_i_2.BLIF N_668_i_4
+11 1
+.names N_676_2_i.BLIF N_227_i.BLIF N_676_i_1
+11 1
+.names N_183_i.BLIF N_184_i.BLIF N_672_i_1
+11 1
+.names N_186_i.BLIF N_676_2_i.BLIF N_672_i_2
+11 1
+.names N_86_i.BLIF N_181_i.BLIF N_678_i_1
+11 1
+.names N_182_i.BLIF eeprom_state_1_.BLIF N_678_i_2
+11 1
+.names N_179_i.BLIF N_180_i.BLIF N_670_i_1
+11 1
+.names N_116.BLIF N_176_i.BLIF N_670_i_2
+11 1
+.names N_177_i.BLIF N_178_i.BLIF N_670_i_3
+11 1
+.names N_670_i_1.BLIF N_670_i_2.BLIF N_670_i_4
+11 1
+.names N_88_i.BLIF N_131.BLIF N_210_1
+11 1
+.names N_249.BLIF N_401.BLIF N_210_2
+11 1
+.names N_210_1.BLIF N_210_2.BLIF N_210_3
+11 1
+.names N_122.BLIF N_265.BLIF N_213_1
+11 1
+.names N_401_i.BLIF bit_state_i_4__n.BLIF N_213_2
+11 1
+.names un1_eeprom_state_3_0_4.BLIF un1_eeprom_state_3_0_3.BLIF \
+un1_eeprom_state_3_0
+11 1
+.names Flag_RW_i.BLIF N_969.BLIF N_215_1
+11 1
+.names sda_buf_1_sqmuxa_5.BLIF sda_buf_1_sqmuxa_5_i
+0 1
+.names bit_state_1_.BLIF bit_state_i_3__n.BLIF N_215_2
+11 1
+.names N_406_li.BLIF N_406_li_i
+0 1
+.names N_124_i.BLIF N_420_i.BLIF N_217_1
+11 1
+.names sda_buf_1_sqmuxa_1.BLIF sda_buf_1_sqmuxa_1_i
+0 1
+.names bit_state_i_4__n.BLIF inst_phase3.BLIF N_217_2
+11 1
+.names N_376_i_4.BLIF N_376_i_3.BLIF N_376_i
+11 1
+.names N_124_i.BLIF N_248.BLIF N_218_1
+11 1
+.names N_374_i_8.BLIF N_374_i_5.BLIF N_374_i
+11 1
+.names bit_state_4_.BLIF inst_phase3.BLIF N_218_2
+11 1
+.names N_478.BLIF N_478_i
+0 1
+.names Flag_RW_i.BLIF N_86_i.BLIF N_219_1
+11 1
+.names N_446.BLIF N_446_i
+0 1
+.names N_127_i.BLIF eeprom_state_i_1__n.BLIF N_219_2
+11 1
+.names N_86_i.BLIF N_87_i.BLIF N_222_1
+11 1
+.names N_711.BLIF N_711_i
+0 1
+.names N_127_i.BLIF N_134_i.BLIF N_222_2
+11 1
+.names N_709.BLIF N_709_i
+0 1
+.names N_142_i.BLIF bit_state_i_0__n.BLIF N_515_1
+11 1
+.names N_87_i.BLIF N_156.BLIF N_187_1
+11 1
+.names N_766.BLIF N_766_i
+0 1
+.names bit_state_2_.BLIF eeprom_state_i_1__n.BLIF N_187_2
+11 1
+.names N_765.BLIF N_765_i
+0 1
+.names N_140.BLIF bit_state_i_4__n.BLIF N_188_1
+11 1
+.names sda_buf_m.BLIF sda_buf_m_i
+0 1
+.names eeprom_state_0_.BLIF eeprom_state_i_1__n.BLIF N_188_2
+11 1
+.names sda_buf_61_0_5.BLIF sda_buf_61_0_6.BLIF sda_buf_61_0
+11 1
+.names N_132.BLIF N_242.BLIF N_189_1
+11 1
+.names sda_buf_0_sqmuxa_14.BLIF sda_buf_0_sqmuxa_14_i
+0 1
+.names bit_state_0_.BLIF bit_state_3_.BLIF N_189_2
+11 1
+.names N_384_i_5.BLIF N_384_i_6.BLIF N_384_i
+11 1
+.names N_189_1.BLIF N_189_2.BLIF N_189_3
+11 1
+.names N_520.BLIF N_520_i
+0 1
+.names N_4_i.BLIF N_89_i.BLIF N_194_1
+11 1
+.names un1_eeprom_state_1_sqmuxa_i_x2_0_x2.BLIF N_130_i_i
+0 1
+.names N_121_i_i.BLIF N_245.BLIF N_194_2
+11 1
+.names wrdata_m_0__n.BLIF wrdata_m_i_0__n
+0 1
+.names N_194_1.BLIF N_194_2.BLIF N_194_3
+11 1
+.names wrdata_m_3__n.BLIF wrdata_m_i_3__n
+0 1
+.names N_86.BLIF N_116_i.BLIF N_195_1
+11 1
+.names wrdata_m_2__n.BLIF wrdata_m_i_2__n
+0 1
+.names N_246.BLIF bit_state_5_.BLIF N_195_2
+11 1
+.names N_264.BLIF eeprom_state_1_.BLIF DataLED_1_sqmuxa
+11 1
+.names wrdata_m_1__n.BLIF wrdata_m_i_1__n
+0 1
+.names N_119_i.BLIF N_124_i.BLIF N_198_1
+11 1
+.names N_499.BLIF N_499_i
+0 1
+.names N_258.BLIF bit_state_i_4__n.BLIF N_198_2
+11 1
+.names N_498.BLIF N_498_i
+0 1
+.names CMD_RD_i.BLIF CMD_WR_c.BLIF N_236_1
+11 1
+.names eeprom_state_i_0__n.BLIF eeprom_state_i_1__n.BLIF N_406_li
+11 1
+.names N_497.BLIF N_497_i
+0 1
+.names N_253.BLIF eeprom_state_i_0__n.BLIF N_236_2
+11 1
+.names key_delay_0_.BLIF key_delay_1_.BLIF N_111
+11 1
+.names N_496.BLIF N_496_i
+0 1
+.names N_160.BLIF bit_state_1_.BLIF N_204_1
+11 1
+.names clk_div_2_.BLIF phase38_1.BLIF clk_div_c2
+11 1
+.names N_495.BLIF N_495_i
+0 1
+.names N_441.BLIF bit_state_0_.BLIF N_491_1
+11 1
+.names clk_div_0_.BLIF clk_div_1_.BLIF phase38_1
+11 1
+.names N_252.BLIF N_252_i
+0 1
+.names N_401.BLIF bit_state_i_4__n.BLIF N_492_1
+11 1
+.names bit_state_1_.BLIF bit_state_3_.BLIF N_532
+11 1
+.names N_479.BLIF N_479_i
+0 1
+.names N_130_i_i.BLIF N_171_i.BLIF N_384_i_1
+11 1
+.names N_539.BLIF N_539_i
+0 1
+.names N_406_li_i.BLIF N_520_i.BLIF N_384_i_2
+11 1
+.names bit_state_3_.BLIF bit_state_i_4__n.BLIF N_113
+11 1
+.names N_480.BLIF N_480_i
+0 1
+.names N_521_i.BLIF bit_state_2_.BLIF N_384_i_3
+11 1
+.names N_969_0.BLIF N_969
+0 1
+.names N_482.BLIF N_482_i
+0 1
+.names bit_state_i_3__n.BLIF phase3_i.BLIF N_384_i_4
+11 1
+.names N_86_i.BLIF N_86
+0 1
+.names N_481.BLIF N_481_i
+0 1
+.names N_384_i_1.BLIF N_384_i_2.BLIF N_384_i_5
+11 1
+.names N_87_i.BLIF N_87
+0 1
+.names N_491.BLIF N_491_i
+0 1
+.names N_384_i_3.BLIF N_384_i_4.BLIF N_384_i_6
+11 1
+.names N_90_0.BLIF N_90
+0 1
+.names N_493.BLIF N_493_i
+0 1
+.names N_4_i.BLIF bit_state_3_.BLIF N_493_1
+11 1
+.names N_122_i.BLIF N_122
+0 1
+.names N_538.BLIF N_538_i
+0 1
+.names bit_state_i_0__n.BLIF bit_state_i_2__n.BLIF N_493_2
+11 1
+.names N_123_0.BLIF N_123
+0 1
+.names N_492.BLIF N_492_i
+0 1
+.names N_118_i_i.BLIF N_174_i.BLIF sda_buf_1_sqmuxa_5_1
+11 1
+.names N_125_0.BLIF N_125
+0 1
+.names N_494.BLIF N_494_i
+0 1
+.names N_255_i.BLIF N_406_li_i.BLIF sda_buf_1_sqmuxa_5_2
+11 1
+.names N_128_i.BLIF N_128
+0 1
+.names N_521.BLIF N_521_i
+0 1
+.names N_476_i_1.BLIF bit_state_i_0__n.BLIF sda_buf_1_sqmuxa_5_3
+11 1
+.names N_143_i.BLIF N_143
+0 1
+.names bit_state_i_1__n.BLIF inst_phase1.BLIF N_764_i
+11 1
+.names bit_state_i_2__n.BLIF phase1_i.BLIF sda_buf_1_sqmuxa_5_4
+11 1
+.names N_144_i.BLIF N_144
+0 1
+.names bit_state_i_5__n.BLIF phase3_i.BLIF N_441_0
+11 1
+.names sda_buf_1_sqmuxa_5_1.BLIF sda_buf_1_sqmuxa_5_2.BLIF \
+sda_buf_1_sqmuxa_5_5
+11 1
+.names N_155_0.BLIF N_155
+0 1
+.names bit_state_2_.BLIF bit_state_i_0__n.BLIF N_420_i
+11 1
+.names sda_buf_1_sqmuxa_5_3.BLIF sda_buf_1_sqmuxa_5_4.BLIF \
+sda_buf_1_sqmuxa_5_6
+11 1
+.names N_142.BLIF N_532_i.BLIF N_174
+11 1
+.names eeprom_state_0_.BLIF inst_phase3.BLIF N_414_i
+11 1
+.names N_374.BLIF N_376.BLIF sda_buf_61_0_1
+11 1
+.names N_177_1.BLIF bit_state_0_.BLIF N_177
+11 1
+.names N_395_i_4.BLIF N_395_i_5.BLIF N_395_i
+11 1
+.names wrdata_m_i_0__n.BLIF wrdata_m_i_1__n.BLIF sda_buf_61_0_2
+11 1
+.names N_178_1.BLIF inst_phase3.BLIF N_178
+11 1
+.names N_393_i_4.BLIF N_393_i_5.BLIF N_393_i
+11 1
+.names wrdata_m_i_2__n.BLIF wrdata_m_i_3__n.BLIF sda_buf_61_0_3
+11 1
+.names N_186_1.BLIF bit_state_i_2__n.BLIF N_186
+11 1
+.names key_delay_5_.BLIF key_delay_i_5__n
+0 1
+.names sda_buf_0_sqmuxa_14_i.BLIF sda_buf_m_i.BLIF sda_buf_61_0_4
+11 1
+.names N_190_1.BLIF bit_state_i_0__n.BLIF N_190
+11 1
+.names key_delay_4_.BLIF key_delay_i_4__n
+0 1
+.names sda_buf_61_0_1.BLIF sda_buf_61_0_2.BLIF sda_buf_61_0_5
+11 1
+.names N_191_1.BLIF eeprom_state_0_.BLIF N_191
+11 1
+.names key_delay_7_.BLIF key_delay_i_7__n
+0 1
+.names sda_buf_61_0_3.BLIF sda_buf_61_0_4.BLIF sda_buf_61_0_6
+11 1
+.names N_192_1.BLIF N_242.BLIF N_192
+11 1
+.names key_delay_6_.BLIF key_delay_i_6__n
+0 1
+.names N_414_i.BLIF N_539.BLIF wrdata_m_1_0__n
+11 1
+.names N_193_1.BLIF N_406_li.BLIF N_193
+11 1
+.names bit_state_1_.BLIF bit_state_4_.BLIF N_4_i
+11 1
+.names N_965_i.BLIF WrData_0_.BLIF wrdata_m_2_0__n
+11 1
+.names N_196_1.BLIF eeprom_state_1_.BLIF N_196
+11 1
+.names N_171.BLIF N_171_i
+0 1
+.names wrdata_m_1_0__n.BLIF wrdata_m_2_0__n.BLIF wrdata_m_3_0__n
+11 1
+.names N_139.BLIF start_delay_i.BLIF N_199
+11 1
+.names N_251.BLIF N_251_i
+0 1
+.names N_142_i.BLIF N_414_i.BLIF wrdata_m_1_1__n
+11 1
+.names N_200_1.BLIF start_delay_i.BLIF N_200
+11 1
+.names bit_state_5_.BLIF eeprom_state_1_.BLIF N_410_0
+11 1
+.names N_420_i.BLIF WrData_1_.BLIF wrdata_m_2_1__n
+11 1
+.names N_406_li.BLIF RST_c.BLIF N_201
+11 1
+.names inst_Flag_RW.BLIF inst_phase3.BLIF N_476_i_1_0
+11 1
+.names wrdata_m_1_1__n.BLIF wrdata_m_2_1__n.BLIF wrdata_m_3_1__n
+11 1
+.names N_203_1.BLIF N_251.BLIF N_203
+11 1
+.names bit_state_4_.BLIF bit_state_i_5__n.BLIF N_965_i
+11 1
+.names N_252.BLIF N_401_i.BLIF wrdata_m_1_2__n
+11 1
+.names N_151.BLIF rddata_i_0__n.BLIF N_207
+11 1
+.names N_414_i.BLIF WrData_2_.BLIF wrdata_m_2_2__n
+11 1
+.names N_151_i.BLIF SDA_i.BLIF N_208
+11 1
+.names N_202.BLIF N_202_i
+0 1
+.names wrdata_m_1_2__n.BLIF wrdata_m_2_2__n.BLIF wrdata_m_3_2__n
+11 1
+.names N_209_1.BLIF N_969.BLIF N_209
+11 1
+.names N_203.BLIF N_203_i
+0 1
+.names N_252.BLIF N_401_i.BLIF wrdata_m_1_3__n
+11 1
+.names N_211_1.BLIF bit_state_0_.BLIF N_211
+11 1
+.names N_202_i.BLIF N_203_i.BLIF un1_sda_buf_13_sqmuxa_0
+11 1
+.names N_414_i.BLIF WrData_3_.BLIF wrdata_m_2_3__n
+11 1
+.names N_212_1.BLIF N_532_i.BLIF N_212
+11 1
+.names N_236.BLIF N_236_i
+0 1
+.names wrdata_m_1_3__n.BLIF wrdata_m_2_3__n.BLIF wrdata_m_3_3__n
+11 1
+.names N_214_1.BLIF eeprom_state_i_1__n.BLIF N_214
+11 1
+.names N_235.BLIF N_235_i
+0 1
+.names N_765_i.BLIF N_766_i.BLIF N_763_i_1
+11 1
+.names N_220_1.BLIF phase1_i.BLIF N_220
+11 1
+.names N_235_i.BLIF N_236_i.BLIF N_83_i
+11 1
+.names N_122.BLIF N_406_li_i.BLIF N_674_i_1
+11 1
+.names N_221_1.BLIF N_245.BLIF N_221
+11 1
+.names N_171_i.BLIF inst_phase3.BLIF N_969_0
+11 1
+.names N_709_i.BLIF N_711_i.BLIF N_674_i_2
+11 1
+.names N_153.BLIF rddata_i_2__n.BLIF N_223
+11 1
+.names bit_state_i_0__n.BLIF bit_state_i_1__n.BLIF N_116_i
+11 1
+.names N_129_i.BLIF bit_state_2_.BLIF N_711_1
+11 1
+.names N_153_i.BLIF SDA_i.BLIF N_224
+11 1
+.names inst_phase1.BLIF inst_sda_tem.BLIF N_119_i
+11 1
+.names eeprom_state_1_.BLIF inst_phase3.BLIF N_374_i_1
+11 1
+.names N_154.BLIF rddata_i_1__n.BLIF N_225
+11 1
+.names Flag_RW_0_sqmuxa_2_1_i_x2.BLIF bit_state_i_5__n.BLIF N_123_0
+11 1
+.names N_251_i.BLIF N_252_i.BLIF N_374_i_2
+11 1
+.names N_154_i.BLIF SDA_i.BLIF N_226
+11 1
+.names key_delay_1_.BLIF key_delay_i_1__n
+0 1
+.names N_420.BLIF N_446_i.BLIF N_374_i_3
+11 1
+.names N_228_1.BLIF eeprom_state_i_1__n.BLIF N_228
+11 1
+.names key_delay_i_0__n.BLIF key_delay_i_1__n.BLIF N_128_i
+11 1
+.names N_478_i.BLIF N_479_i.BLIF N_374_i_4
+11 1
+.names N_229_1.BLIF inst_phase3.BLIF N_229
+11 1
+.names N_116_i.BLIF inst_phase3.BLIF N_129_i
+11 1
+.names N_480_i.BLIF N_539_i.BLIF N_374_i_5
+11 1
+.names N_230_1.BLIF inst_phase3.BLIF N_230
+11 1
+.names N_119_i.BLIF bit_state_i_5__n.BLIF N_132_0
+11 1
+.names N_374_i_1.BLIF N_374_i_2.BLIF N_374_i_6
+11 1
+.names N_231_1.BLIF bit_state_i_4__n.BLIF N_231
+11 1
+.names key_delay_8_.BLIF key_delay_i_8__n
+0 1
+.names N_374_i_3.BLIF N_374_i_4.BLIF N_374_i_7
+11 1
+.names phase0_i.BLIF phase2_i.BLIF N_233
+11 1
+.names key_delay_3_.BLIF key_delay_i_3__n
+0 1
+.names N_374_i_6.BLIF N_374_i_7.BLIF N_374_i_8
+11 1
+.names bit_state_i_2__n.BLIF eeprom_state_i_1__n.BLIF N_242
+11 1
+.names key_delay_2_.BLIF key_delay_i_2__n
+0 1
+.names bit_state_i_2__n.BLIF bit_state_i_4__n.BLIF N_376_i_1
+11 1
+.names bit_state_i_5__n.BLIF eeprom_state_1_.BLIF N_245
+11 1
+.names N_139_i_5.BLIF N_139_i_6.BLIF N_139_i
+11 1
+.names N_414_i.BLIF N_481_i.BLIF N_376_i_2
+11 1
+.names bit_state_0_.BLIF bit_state_i_2__n.BLIF N_248
+11 1
+.names N_124_i.BLIF bit_state_i_5__n.BLIF N_140_0
+11 1
+.names N_482_i.BLIF N_539_i.BLIF N_376_i_3
+11 1
+.names Flag_RW_i.BLIF bit_state_4_.BLIF N_249
+11 1
+.names bit_state_2_.BLIF inst_phase1.BLIF N_151_i
+11 1
+.names N_376_i_1.BLIF N_376_i_2.BLIF N_376_i_4
+11 1
+.names N_86_i.BLIF bit_state_i_2__n.BLIF N_251
+11 1
+.names N_89_i.BLIF N_113_i.BLIF N_155_0
+11 1
+.names N_420.BLIF bit_state_i_4__n.BLIF N_495_1
+11 1
+.names N_139_i.BLIF key_delay_9_.BLIF N_253
+11 1
+.names N_156_0_1.BLIF N_252_i.BLIF N_156_0
+11 1
+.names N_248_i.BLIF N_525.BLIF N_496_1
+11 1
+.names bit_state_3_.BLIF eeprom_state_i_1__n.BLIF N_255
+11 1
+.names bit_state_i_0__n.BLIF eeprom_state_0_.BLIF N_160_0
+11 1
+.names N_88_i.BLIF bit_state_i_5__n.BLIF N_497_1
+11 1
+.names Flag_RW_i.BLIF N_116_i.BLIF N_265
+11 1
+.names N_245.BLIF N_245_i
+0 1
+.names N_88_i.BLIF bit_state_4_.BLIF N_499_1
+11 1
+.names N_258.BLIF N_258_i
+0 1
+.names bit_state_i_3__n.BLIF bit_state_i_5__n.BLIF N_499_2
+11 1
+.names N_232.BLIF N_232_i
+0 1
+.names Flag_RW_i.BLIF N_113_i.BLIF N_478_1
+11 1
+.names N_380_i_3.BLIF N_258_i.BLIF N_380_i
+11 1
+.names Flag_RW_i.BLIF bit_state_i_0__n.BLIF N_482_1
+11 1
+.names N_135.BLIF N_263.BLIF N_176
+11 1
+.names N_204.BLIF N_204_i
+0 1
+.names N_525.BLIF bit_state_i_0__n.BLIF N_494_1
+11 1
+.names N_86_i.BLIF N_242.BLIF N_263
+11 1
+.names N_205.BLIF N_205_i
+0 1
+.names sda_buf_1_sqmuxa_1_i.BLIF sda_buf_1_sqmuxa_5_i.BLIF \
+un1_eeprom_state_3_0_1
+11 1
+.names N_135_i.BLIF N_135
+0 1
+.names N_206.BLIF N_206_i
+0 1
+.names N_384.BLIF N_393.BLIF un1_eeprom_state_3_0_2
+11 1
+.names N_87.BLIF eeprom_state_i_1__n.BLIF N_179
+11 1
+.names N_395.BLIF N_406_li_i.BLIF un1_eeprom_state_3_0_3
+11 1
+.names bit_state_i_1__n.BLIF phase3_i.BLIF N_180
+11 1
+.names N_194.BLIF N_194_i
+0 1
+.names un1_eeprom_state_3_0_1.BLIF un1_eeprom_state_3_0_2.BLIF \
+un1_eeprom_state_3_0_4
+11 1
+.names N_129.BLIF bit_state_i_5__n.BLIF N_181
+11 1
+.names N_195.BLIF N_195_i
+0 1
+.names N_233_i.BLIF N_406_li_i.BLIF N_968_i_1
+11 1
+.names N_129_i.BLIF N_129
+0 1
+.names N_196.BLIF N_196_i
+0 1
+.names N_225_i.BLIF N_226_i.BLIF N_792_i_1
+11 1
+.names N_134_i.BLIF bit_state_i_1__n.BLIF N_182
+11 1
+.names DataLED_1_sqmuxa.BLIF DataLED_1_sqmuxa_i
+0 1
+.names N_223_i.BLIF N_224_i.BLIF N_777_i_1
+11 1
+.names N_143.BLIF bit_state_i_2__n.BLIF N_183
+11 1
+.names N_198.BLIF N_198_i
+0 1
+.names N_207_i.BLIF N_208_i.BLIF N_807_i_1
+11 1
+.names N_90.BLIF N_143_i.BLIF N_184
+11 1
+.names N_253_i.BLIF N_199_i.BLIF N_905_i_1
+11 1
+.names N_134_i.BLIF N_244.BLIF N_264
+11 1
+.names N_187.BLIF N_187_i
+0 1
+.names N_111_i.BLIF N_128.BLIF N_906_i_1
+11 1
+.names N_154_i.BLIF N_154
+0 1
+.names N_188.BLIF N_188_i
+0 1
+.names N_265.BLIF bit_state_i_2__n.BLIF N_231_1
+11 1
+.names N_159.BLIF bit_state_i_4__n.BLIF N_227
+11 1
+.names N_189.BLIF N_189_i
+0 1
+.names N_84_i_i.BLIF N_90.BLIF N_230_1
+11 1
+.names N_159_0.BLIF N_159
+0 1
+.names N_190.BLIF N_190_i
+0 1
+.names bit_state_ns_i_0_x2_0_.BLIF N_123.BLIF N_229_1
+11 1
+.names N_86_i.BLIF bit_state_i_5__n.BLIF N_238
+11 1
+.names N_192.BLIF N_192_i
+0 1
+.names N_122_i.BLIF N_144.BLIF N_228_1
+11 1
+.names bit_state_5_.BLIF bit_state_i_1__n.BLIF N_244
+11 1
+.names N_191.BLIF N_191_i
+0 1
+.names N_86_i.BLIF N_143_i.BLIF N_221_1
+11 1
+.names N_116_i.BLIF N_116
+0 1
+.names N_193.BLIF N_193_i
+0 1
+.names N_122_i.BLIF N_265.BLIF N_220_1
+11 1
+.names N_210_3.BLIF eeprom_state_i_0__n.BLIF N_210
+11 1
+.names N_904_0_4.BLIF N_904_0_5.BLIF N_904_0
+11 1
+.names N_249.BLIF N_969.BLIF N_214_1
+11 1
+.names N_131_0.BLIF N_131
+0 1
+.names N_127_i.BLIF inst_phase1.BLIF N_153_i
+11 1
+.names N_125.BLIF N_249.BLIF N_212_1
+11 1
+.names N_401_i.BLIF N_401
+0 1
+.names bit_state_i_1__n.BLIF bit_state_i_3__n.BLIF N_142_i
+11 1
+.names Flag_RW_i.BLIF N_125.BLIF N_211_1
+11 1
+.names N_213_1.BLIF N_213_2.BLIF N_213
+11 1
+.names bit_state_0_.BLIF bit_state_1_.BLIF N_127_i
+11 1
+.names Flag_RW_i.BLIF N_155.BLIF N_209_1
+11 1
+.names N_215_1.BLIF N_215_2.BLIF N_215
+11 1
+.names bit_state_3_.BLIF bit_state_i_1__n.BLIF N_124_i
+11 1
+.names N_87_i.BLIF N_88_i.BLIF N_203_1
+11 1
+.names N_217_1.BLIF N_217_2.BLIF N_217
+11 1
+.names bit_state_2_.BLIF bit_state_3_.BLIF N_401_i
+11 1
+.names CMD_RD_c.BLIF CMD_WR_c.BLIF N_200_1
+11 1
+.names N_218_1.BLIF N_218_2.BLIF N_218
+11 1
+.names N_515.BLIF N_515_i
+0 1
+.names N_113.BLIF bit_state_5_.BLIF N_196_1
+11 1
+.names N_219_1.BLIF N_219_2.BLIF N_219
+11 1
+.names N_516.BLIF N_516_i
+0 1
+.names CMD_WR_i.BLIF N_253.BLIF N_193_1
+11 1
+.names N_127_i.BLIF N_127
+0 1
+.names N_515_i.BLIF N_516_i.BLIF N_418_i
+11 1
+.names N_87_i.BLIF N_144_i.BLIF N_192_1
+11 1
+.names N_222_1.BLIF N_222_2.BLIF N_222
+11 1
+.names bit_state_1_.BLIF bit_state_i_0__n.BLIF N_88_i
+11 1
+.names N_124_i.BLIF N_242.BLIF N_191_1
+11 1
+.names Flag_RW_i.BLIF N_251.BLIF N_216
+11 1
+.names N_89_i.BLIF bit_state_3_.BLIF N_131_0
+11 1
+.names N_87_i.BLIF N_255.BLIF N_190_1
+11 1
+.names N_134_i.BLIF N_142_i.BLIF N_538
+11 1
+.names bit_state_2_.BLIF inst_phase3.BLIF N_134_i
+11 1
+.names N_245.BLIF N_249.BLIF N_186_1
+11 1
+.names N_142_i.BLIF N_142
+0 1
+.names N_88_i.BLIF inst_phase3.BLIF N_143_i
+11 1
+.names N_90.BLIF N_248.BLIF N_178_1
+11 1
+.names N_532.BLIF inst_phase3.BLIF N_516
+11 1
+.names N_88_i.BLIF phase3_i.BLIF N_144_i
+11 1
+.names N_123.BLIF N_134_i.BLIF N_177_1
+11 1
+.names N_515_1.BLIF bit_state_i_4__n.BLIF N_515
+11 1
+.names N_210.BLIF N_210_i
+0 1
+.names bit_state_4_.BLIF sda_buf_0_sqmuxa_17_i_m5_un3_n
+0 1
+.names N_153_i.BLIF N_153
+0 1
+.names N_209.BLIF N_209_i
+0 1
+.names bit_state_5_.BLIF bit_state_4_.BLIF sda_buf_0_sqmuxa_17_i_m5_un1_n
+11 1
+.names N_420_i.BLIF N_420
+0 1
+.names N_212.BLIF N_212_i
+0 1
+.names bit_state_2_.BLIF sda_buf_0_sqmuxa_17_i_m5_un3_n.BLIF \
+sda_buf_0_sqmuxa_17_i_m5_un0_n
+11 1
+.names N_187_1.BLIF N_187_2.BLIF N_187
+11 1
+.names N_211.BLIF N_211_i
+0 1
+.names N_156_0.BLIF N_156
+0 1
+.names N_213.BLIF N_213_i
+0 1
+.names N_188_1.BLIF N_188_2.BLIF N_188
+11 1
+.names N_214.BLIF N_214_i
+0 1
+.names N_140_0.BLIF N_140
+0 1
+.names N_215.BLIF N_215_i
+0 1
+.names N_189_3.BLIF eeprom_state_0_.BLIF N_189
+11 1
+.names N_216.BLIF N_216_i
+0 1
+.names N_132_0.BLIF N_132
+0 1
+.names N_217.BLIF N_217_i
+0 1
+.names N_194_3.BLIF inst_sda_tem.BLIF N_194
+11 1
+.names N_219.BLIF N_219_i
+0 1
+.names N_218.BLIF N_218_i
+0 1
+.names N_195_1.BLIF N_195_2.BLIF N_195
+11 1
+.names N_221.BLIF N_221_i
+0 1
+.names bit_state_2_.BLIF eeprom_state_1_.BLIF N_246
+11 1
+.names N_220.BLIF N_220_i
+0 1
+.names N_198_1.BLIF N_198_2.BLIF N_198
+11 1
+.names N_222.BLIF N_222_i
+0 1
+.names N_246.BLIF bit_state_0_.BLIF N_258
+11 1
+.names N_236_1.BLIF N_236_2.BLIF N_236
+11 1
+.names N_83_i.BLIF N_83
+0 1
+.names N_180.BLIF N_180_i
+0 1
+.names N_242.BLIF bit_state_i_0__n.BLIF N_206
+11 1
+.names N_179.BLIF N_179_i
+0 1
+.names N_401.BLIF bit_state_i_1__n.BLIF N_205
+11 1
+.names N_178.BLIF N_178_i
+0 1
+.names N_176.BLIF N_176_i
+0 1
+.names N_204_1.BLIF bit_state_2_.BLIF N_204
+11 1
+.names N_177.BLIF N_177_i
+0 1
+.names N_116_i.BLIF eeprom_state_1_.BLIF N_232
+11 1
+.names N_182.BLIF N_182_i
+0 1
+.names N_744.BLIF key_delay_8_.BLIF N_746
+11 1
+.names N_181.BLIF N_181_i
+0 1
+.names N_160_0.BLIF N_160
+0 1
+.names N_186.BLIF N_186_i
+0 1
+.names bit_state_4_.BLIF bit_state_i_1__n.BLIF N_252
+11 1
+.names N_151_i.BLIF N_151
+0 1
+.names N_184.BLIF N_184_i
+0 1
+.names N_139_i.BLIF N_139
+0 1
+.names N_183.BLIF N_183_i
+0 1
+.names bit_state_5_.BLIF bit_state_i_0__n.BLIF N_171
+11 1
+.names eeprom_state_1_.BLIF eeprom_state_i_0__n.BLIF N_235
+11 1
+.names N_264.BLIF N_264_i
+0 1
+.names un1_sda_buf_13_sqmuxa_0.BLIF un1_sda_buf_13_sqmuxa
+0 1
+.names N_179_i.BLIF N_264_i.BLIF N_676_2_i
+11 1
+.names N_244.BLIF N_246.BLIF N_202
+11 1
+.names N_227.BLIF N_227_i
+0 1
+.names N_476_i_1_0.BLIF N_476_i_1
+0 1
+.names N_228.BLIF N_228_i
+0 1
+.names N_410_0.BLIF N_410
+0 1
+.names bit_state_0_.BLIF bit_state_i_3__n.BLIF N_422_i_1
+11 1
+.names N_263.BLIF N_263_i
+0 1
+.names inst_phase1.BLIF un1_sda_buf_13_sqmuxa.BLIF sda_buf_0_sqmuxa_14
+11 1
+.names N_231.BLIF N_231_i
+0 1
+.names phase1_i.BLIF un1_sda_buf_13_sqmuxa.BLIF sda_buf_1_sqmuxa_1
+11 1
+.names N_229.BLIF N_229_i
+0 1
+.names N_113.BLIF bit_state_1_.BLIF N_479
+11 1
+.names N_230.BLIF N_230_i
+0 1
+.names N_422_i_1_i.BLIF bit_state_1_.BLIF N_481
+11 1
+.names N_159_0_1.BLIF bit_state_i_2__n.BLIF N_159_0
+11 1
+.names N_491_1.BLIF bit_state_2_.BLIF N_491
+11 1
+.names N_89_i.BLIF bit_state_i_0__n.BLIF N_154_i
+11 1
+.names N_441_0.BLIF N_441
+0 1
+.names bit_state_i_0__n.BLIF phase3_i.BLIF N_135_i
+11 1
+.names N_492_1.BLIF inst_phase3.BLIF N_492
+11 1
+.names N_244.BLIF N_244_i
+0 1
+.names N_538.BLIF bit_state_i_5__n.BLIF N_498
+11 1
+.names N_244_i.BLIF inst_phase3.BLIF N_125_0
+11 1
+.names N_965_i.BLIF eeprom_state_i_0__n.BLIF N_520
+11 1
+.names bit_state_i_2__n.BLIF bit_state_i_3__n.BLIF N_122_i
+11 1
+.names N_410.BLIF bit_state_0_.BLIF N_521
+11 1
+.names N_238.BLIF N_238_i
+0 1
+.names N_422_i_1.BLIF bit_state_i_1__n.BLIF N_539
+11 1
+.names N_113_i.BLIF N_238_i.BLIF N_90_0
+11 1
+.names N_393_i.BLIF N_393
+0 1
+.names bit_state_i_2__n.BLIF inst_phase1.BLIF N_89_i
+11 1
+.names N_395_i.BLIF N_395
+0 1
+.names bit_state_i_5__n.BLIF eeprom_state_0_.BLIF N_87_i
+11 1
+.names sda_buf_0_sqmuxa_17_i_m5_un1_n.BLIF sda_buf_0_sqmuxa_17_i_m5_un0_n.BLIF \
+N_446
+1- 1
+-1 1
+.names bit_state_4_.BLIF bit_state_i_3__n.BLIF N_86_i
+11 1
+.names N_129.BLIF bit_state_i_3__n.BLIF N_709
+11 1
+.names N_233.BLIF N_233_i
+0 1
+.names inst_sda_buf.BLIF un1_eeprom_state_3.BLIF sda_buf_m
+11 1
+.names un1_eeprom_state_3_0.BLIF un1_eeprom_state_3
+0 1
+.names N_225.BLIF N_225_i
+0 1
+.names N_764.BLIF rddata_i_3__n.BLIF N_765
+11 1
+.names N_226.BLIF N_226_i
+0 1
+.names N_764_i.BLIF N_764
+0 1
+.names N_764_i.BLIF SDA_i.BLIF N_766
+11 1
+.names N_223.BLIF N_223_i
+0 1
+.names N_494_1.BLIF inst_phase3.BLIF N_494
+11 1
+.names N_224.BLIF N_224_i
+0 1
+.names N_493_1.BLIF N_493_2.BLIF N_493
+11 1
+.names N_482_1.BLIF bit_state_i_3__n.BLIF N_482
+11 1
+.names N_207.BLIF N_207_i
+0 1
+.names N_88_i.BLIF bit_state_i_3__n.BLIF N_480
+11 1
+.names N_208.BLIF N_208_i
+0 1
+.names N_495_1.BLIF inst_phase3.BLIF N_495
+11 1
+.names N_496_1.BLIF inst_phase3.BLIF N_496
+11 1
+.names N_199.BLIF N_199_i
+0 1
+.names N_497_1.BLIF inst_phase3.BLIF N_497
+11 1
+.names N_200.BLIF N_200_i
+0 1
+.names N_499_1.BLIF N_499_2.BLIF N_499
+11 1
+.names N_253.BLIF N_253_i
+0 1
+.names wrdata_m_3_1__n.BLIF bit_state_4_.BLIF wrdata_m_1__n
+11 1
+.names wrdata_m_3_2__n.BLIF bit_state_i_0__n.BLIF wrdata_m_2__n
+11 1
+.names N_111.BLIF N_111_i
+0 1
+.names N_376_i.BLIF N_376
+0 1
+.names wrdata_m_3_3__n.BLIF bit_state_0_.BLIF wrdata_m_3__n
+11 1
+.names N_174.BLIF N_174_i
+0 1
+.names wrdata_m_3_0__n.BLIF bit_state_2_.BLIF wrdata_m_0__n
+11 1
+.names N_255.BLIF N_255_i
+0 1
+.names N_374_i.BLIF N_374
+0 1
+.names N_209_i.BLIF N_210_i.BLIF N_967_i_1
+11 1
+.names N_384_i.BLIF N_384
+0 1
+.names N_211_i.BLIF N_212_i.BLIF N_967_i_2
+11 1
+.names sda_buf_1_sqmuxa_5_5.BLIF sda_buf_1_sqmuxa_5_6.BLIF sda_buf_1_sqmuxa_5
+11 1
+.names N_213_i.BLIF N_214_i.BLIF N_967_i_3
+11 1
+.names N_711_1.BLIF bit_state_4_.BLIF N_711
+11 1
+.names N_215_i.BLIF N_406_li_i.BLIF N_967_i_4
+11 1
+.names N_478_1.BLIF bit_state_i_0__n.BLIF N_478
+11 1
+.names N_216_i.BLIF N_217_i.BLIF N_967_i_5
+11 1
+.names bit_state_3_.BLIF bit_state_4_.BLIF N_525
+11 1
+.names N_218_i.BLIF N_219_i.BLIF N_967_i_6
+11 1
+.names N_742.BLIF key_delay_7_.BLIF N_744
+11 1
+.names N_222_i.BLIF N_220_i.BLIF N_967_i_7
+11 1
+.names N_740.BLIF key_delay_6_.BLIF N_742
+11 1
+.names N_967_i_1.BLIF N_967_i_2.BLIF N_967_i_8
+11 1
+.names N_738.BLIF key_delay_5_.BLIF N_740
+11 1
+.names N_967_i_3.BLIF N_967_i_4.BLIF N_967_i_9
+11 1
+.names N_736.BLIF key_delay_4_.BLIF N_738
+11 1
+.names N_967_i_5.BLIF N_967_i_6.BLIF N_967_i_10
+11 1
+.names N_734.BLIF key_delay_3_.BLIF N_736
+11 1
+.names N_967_i_7.BLIF N_221_i.BLIF N_967_i_11
+11 1
+.names N_111.BLIF key_delay_2_.BLIF N_734
+11 1
+.names N_967_i_8.BLIF N_967_i_9.BLIF N_967_i_12
+11 1
+.names inst_phase1.BLIF phase1_i
+0 1
+.names N_967_i_10.BLIF N_967_i_11.BLIF N_967_i_13
+11 1
+.names bit_state_4_.BLIF bit_state_i_4__n
+0 1
+.names N_187_i.BLIF N_188_i.BLIF N_904_0_1
+11 1
+.names N_248.BLIF N_248_i
+0 1
+.names N_189_i.BLIF N_190_i.BLIF N_904_0_2
+11 1
+.names bit_state_0_.BLIF bit_state_i_0__n
+0 1
+.names N_193_i.BLIF N_191_i.BLIF N_904_0_3
+11 1
+.names bit_state_3_.BLIF bit_state_i_3__n
+0 1
+.names N_904_0_1.BLIF N_904_0_2.BLIF N_904_0_4
+11 1
+.names inst_Flag_RW.BLIF Flag_RW_i
+0 1
+.names N_904_0_3.BLIF N_192_i.BLIF N_904_0_5
+11 1
+.names N_113.BLIF N_113_i
+0 1
+.names DataLED_1_sqmuxa_i.BLIF N_198_i.BLIF N_660_i_1
+11 1
+.names bit_state_5_.BLIF bit_state_i_5__n
+0 1
+.names N_194_i.BLIF N_195_i.BLIF N_660_i_2
+11 1
+.names eeprom_state_1_.BLIF eeprom_state_i_1__n
+0 1
+.names N_83.BLIF N_196_i.BLIF N_660_i_3
+11 1
+.names bit_state_2_.BLIF bit_state_i_2__n
+0 1
+.names N_660_i_1.BLIF N_660_i_2.BLIF N_660_i_4
+11 1
+.names SDA_c.BLIF SDA_i
+0 1
+.names N_206_i.BLIF N_130_i_i.BLIF N_966_i_1
+11 1
+.names RdData_3_.BLIF rddata_i_3__n
+0 1
+.names N_204_i.BLIF N_121_i_i.BLIF N_966_i_2
+11 1
+.names inst_phase3.BLIF phase3_i
+0 1
+.names N_406_li_i.BLIF RST_c.BLIF N_966_i_3
+11 1
+.names eeprom_state_0_.BLIF eeprom_state_i_0__n
+0 1
+.names inst_phase0.BLIF N_205_i.BLIF N_966_i_4
+11 1
+.names bit_state_1_.BLIF bit_state_i_1__n
+0 1
+.names N_966_i_1.BLIF N_966_i_2.BLIF N_966_i_5
+11 1
+.names N_422_i_1.BLIF N_422_i_1_i
+0 1
+.names N_966_i_3.BLIF N_966_i_4.BLIF N_966_i_6
+11 1
+.names inst_start_delay.BLIF start_delay_i
+0 1
+.names N_966_i_5.BLIF N_966_i_6.BLIF N_966_i_7
+11 1
+.names RdData_0_.BLIF rddata_i_0__n
+0 1
+.names N_232_i.BLIF RST_c.BLIF N_380_i_1
+11 1
+.names inst_phase0.BLIF phase0_i
+0 1
+.names eeprom_state_i_0__n.BLIF N_245_i.BLIF N_380_i_2
+11 1
+.names inst_phase2.BLIF phase2_i
+0 1
+.names N_380_i_1.BLIF N_380_i_2.BLIF N_380_i_3
+11 1
+.names key_delay_0_.BLIF key_delay_i_0__n
+0 1
+.names N_119_i.BLIF N_127.BLIF N_156_0_1
+11 1
+.names Flag_RW_0_sqmuxa_2_1_i_x2.BLIF N_118_i_i
+0 1
+.names N_128_i.BLIF key_delay_i_3__n.BLIF N_139_i_1
+11 1
+.names RST_c.BLIF RST_i
+0 1
+.names key_delay_i_8__n.BLIF key_delay_i_4__n.BLIF N_139_i_2
+11 1
+.names CMD_RD_c.BLIF CMD_RD_i
+0 1
+.names key_delay_i_5__n.BLIF key_delay_i_6__n.BLIF N_139_i_3
+11 1
+.names eeprom_state_ns_i_a2_0_0_x2_1_.BLIF N_121_i_i
+0 1
+.names key_delay_i_7__n.BLIF key_delay_i_2__n.BLIF N_139_i_4
+11 1
+.names RdData_2_.BLIF rddata_i_2__n
+0 1
+.names N_139_i_1.BLIF N_139_i_2.BLIF N_139_i_5
+11 1
+.names N_532.BLIF N_532_i
+0 1
+.names N_139_i_3.BLIF N_139_i_4.BLIF N_139_i_6
+11 1
+.names RdData_1_.BLIF rddata_i_1__n
+0 1
+.names N_494_i.BLIF N_538_i.BLIF N_393_i_1
+11 1
+.names DataLEDDFFCRH_3_reg.BLIF DataLED_3_
+1 1
+0 0
+.names inst_scl_bufreg.BLIF SCL
+1 1
+0 0
+.names DataLEDDFFCRH_2_reg.BLIF DataLED_2_
+1 1
+0 0
+.names DataLEDDFFCRH_1_reg.BLIF DataLED_1_
+1 1
+0 0
+.names DataLEDDFFCRH_0_reg.BLIF DataLED_0_
+1 1
+0 0
+.names CLK_c.BLIF eeprom_state_0_.C
+1 1
+0 0
+.names RST_i.BLIF eeprom_state_0_.AR
+1 1
+0 0
+.names CLK_c.BLIF eeprom_state_1_.C
+1 1
+0 0
+.names RST_i.BLIF eeprom_state_1_.AR
+1 1
+0 0
+.names RST_c.BLIF bit_state_0_.CE
+1 1
+0 0
+.names CLK_c.BLIF bit_state_0_.C
+1 1
+0 0
+.names RST_c.BLIF bit_state_1_.CE
+1 1
+0 0
+.names CLK_c.BLIF bit_state_1_.C
+1 1
+0 0
+.names RST_c.BLIF bit_state_2_.CE
+1 1
+0 0
+.names CLK_c.BLIF bit_state_2_.C
+1 1
+0 0
+.names RST_c.BLIF bit_state_3_.CE
+1 1
+0 0
+.names CLK_c.BLIF bit_state_3_.C
+1 1
+0 0
+.names RST_c.BLIF bit_state_4_.CE
+1 1
+0 0
+.names CLK_c.BLIF bit_state_4_.C
+1 1
+0 0
+.names RST_c.BLIF bit_state_5_.CE
+1 1
+0 0
+.names CLK_c.BLIF bit_state_5_.C
+1 1
+0 0
+.names G_411.BLIF key_delay_7_.D
+1 1
+0 0
+.names CLK_c.BLIF key_delay_7_.C
+1 1
+0 0
+.names RST_i.BLIF key_delay_7_.AR
+1 1
+0 0
+.names G_413.BLIF key_delay_8_.D
+1 1
+0 0
+.names CLK_c.BLIF key_delay_8_.C
+1 1
+0 0
+.names RST_i.BLIF key_delay_8_.AR
+1 1
+0 0
+.names CLK_c.BLIF key_delay_9_.C
+1 1
+0 0
+.names RST_i.BLIF key_delay_9_.AR
+1 1
+0 0
+.names RdData_0_.BLIF DataLEDDFFCRH_0_reg.D
+1 1
+0 0
+.names DataLED_1_sqmuxa.BLIF DataLEDDFFCRH_0_reg.CE
+1 1
+0 0
+.names CLK_c.BLIF DataLEDDFFCRH_0_reg.C
+1 1
+0 0
+.names RST_i.BLIF DataLEDDFFCRH_0_reg.AR
+1 1
+0 0
+.names RdData_1_.BLIF DataLEDDFFCRH_1_reg.D
+1 1
+0 0
+.names DataLED_1_sqmuxa.BLIF DataLEDDFFCRH_1_reg.CE
+1 1
+0 0
+.names CLK_c.BLIF DataLEDDFFCRH_1_reg.C
+1 1
+0 0
+.names RST_i.BLIF DataLEDDFFCRH_1_reg.AR
+1 1
+0 0
+.names RdData_2_.BLIF DataLEDDFFCRH_2_reg.D
+1 1
+0 0
+.names DataLED_1_sqmuxa.BLIF DataLEDDFFCRH_2_reg.CE
+1 1
+0 0
+.names CLK_c.BLIF DataLEDDFFCRH_2_reg.C
+1 1
+0 0
+.names RST_i.BLIF DataLEDDFFCRH_2_reg.AR
+1 1
+0 0
+.names RdData_3_.BLIF DataLEDDFFCRH_3_reg.D
+1 1
+0 0
+.names DataLED_1_sqmuxa.BLIF DataLEDDFFCRH_3_reg.CE
+1 1
+0 0
+.names CLK_c.BLIF DataLEDDFFCRH_3_reg.C
+1 1
+0 0
+.names RST_i.BLIF DataLEDDFFCRH_3_reg.AR
+1 1
+0 0
+.names N_380_i.BLIF RdData_0_.CE
+1 1
+0 0
+.names CLK_c.BLIF RdData_0_.C
+1 1
+0 0
+.names N_380_i.BLIF RdData_1_.CE
+1 1
+0 0
+.names CLK_c.BLIF RdData_1_.C
+1 1
+0 0
+.names N_380_i.BLIF RdData_2_.CE
+1 1
+0 0
+.names CLK_c.BLIF RdData_2_.C
+1 1
+0 0
+.names N_380_i.BLIF RdData_3_.CE
+1 1
+0 0
+.names CLK_c.BLIF RdData_3_.C
+1 1
+0 0
+.names DATA_IN_0_.BLIF WrData_0_.D
+1 1
+0 0
+.names N_201.BLIF WrData_0_.CE
+1 1
+0 0
+.names CLK_c.BLIF WrData_0_.C
+1 1
+0 0
+.names DATA_IN_1_.BLIF WrData_1_.D
+1 1
+0 0
+.names N_201.BLIF WrData_1_.CE
+1 1
+0 0
+.names CLK_c.BLIF WrData_1_.C
+1 1
+0 0
+.names DATA_IN_2_.BLIF WrData_2_.D
+1 1
+0 0
+.names N_201.BLIF WrData_2_.CE
+1 1
+0 0
+.names CLK_c.BLIF WrData_2_.C
+1 1
+0 0
+.names DATA_IN_3_.BLIF WrData_3_.D
+1 1
+0 0
+.names N_201.BLIF WrData_3_.CE
+1 1
+0 0
+.names CLK_c.BLIF WrData_3_.C
+1 1
+0 0
+.names clk_div_n1.BLIF clk_div_1_.D
+1 1
+0 0
+.names CLK_c.BLIF clk_div_1_.C
+1 1
+0 0
+.names RST_i.BLIF clk_div_1_.AR
+1 1
+0 0
+.names clk_div_n2.BLIF clk_div_2_.D
+1 1
+0 0
+.names CLK_c.BLIF clk_div_2_.C
+1 1
+0 0
+.names RST_i.BLIF clk_div_2_.AR
+1 1
+0 0
+.names clk_div_n3.BLIF clk_div_3_.D
+1 1
+0 0
+.names CLK_c.BLIF clk_div_3_.C
+1 1
+0 0
+.names RST_i.BLIF clk_div_3_.AR
+1 1
+0 0
+.names CLK_c.BLIF key_delay_0_.C
+1 1
+0 0
+.names RST_i.BLIF key_delay_0_.AR
+1 1
+0 0
+.names CLK_c.BLIF key_delay_1_.C
+1 1
+0 0
+.names RST_i.BLIF key_delay_1_.AR
+1 1
+0 0
+.names G_401_0_x2.BLIF key_delay_2_.D
+1 1
+0 0
+.names CLK_c.BLIF key_delay_2_.C
+1 1
+0 0
+.names RST_i.BLIF key_delay_2_.AR
+1 1
+0 0
+.names G_403.BLIF key_delay_3_.D
+1 1
+0 0
+.names CLK_c.BLIF key_delay_3_.C
+1 1
+0 0
+.names RST_i.BLIF key_delay_3_.AR
+1 1
+0 0
+.names G_405.BLIF key_delay_4_.D
+1 1
+0 0
+.names CLK_c.BLIF key_delay_4_.C
+1 1
+0 0
+.names RST_i.BLIF key_delay_4_.AR
+1 1
+0 0
+.names G_407.BLIF key_delay_5_.D
+1 1
+0 0
+.names CLK_c.BLIF key_delay_5_.C
+1 1
+0 0
+.names RST_i.BLIF key_delay_5_.AR
+1 1
+0 0
+.names G_409.BLIF key_delay_6_.D
+1 1
+0 0
+.names CLK_c.BLIF key_delay_6_.C
+1 1
+0 0
+.names RST_i.BLIF key_delay_6_.AR
+1 1
+0 0
+.names CLK_c.BLIF clk_div_0_.C
+1 1
+0 0
+.names RST_i.BLIF clk_div_0_.AR
+1 1
+0 0
+.names RST_c.BLIF inst_Flag_RW.CE
+1 1
+0 0
+.names CLK_c.BLIF inst_Flag_RW.C
+1 1
+0 0
+.names RST_c.BLIF inst_sda_buf.CE
+1 1
+0 0
+.names CLK_c.BLIF inst_sda_buf.C
+1 1
+0 0
+.names N_406_li.BLIF inst_start_delay.CE
+1 1
+0 0
+.names CLK_c.BLIF inst_start_delay.C
+1 1
+0 0
+.names RST_i.BLIF inst_start_delay.AR
+1 1
+0 0
+.names SDA_c.BLIF inst_sda_tem.D
+1 1
+0 0
+.names CLK_c.BLIF inst_sda_tem.C
+1 1
+0 0
+.names phase2_i.BLIF inst_scl_bufreg.D
+1 1
+0 0
+.names CLK_c.BLIF inst_scl_bufreg.C
+1 1
+0 0
+.names CLK_c.BLIF inst_phase0.C
+1 1
+0 0
+.names RST_i.BLIF inst_phase0.AR
+1 1
+0 0
+.names CLK_c.BLIF inst_phase1.C
+1 1
+0 0
+.names RST_i.BLIF inst_phase1.AR
+1 1
+0 0
+.names CLK_c.BLIF inst_phase2.C
+1 1
+0 0
+.names RST_i.BLIF inst_phase2.AR
+1 1
+0 0
+.names CLK_c.BLIF inst_phase3.C
+1 1
+0 0
+.names RST_i.BLIF inst_phase3.AR
+1 1
+0 0
+.names inst_sda_buf.BLIF SDA
+1 1
+0 0
+.names CLK.BLIF CLK_c
+1 1
+0 0
+.names RST.BLIF RST_c
+1 1
+0 0
+.names SDA.PIN.BLIF SDA_c
+1 1
+0 0
+.names CMD_RD.BLIF CMD_RD_c
+1 1
+0 0
+.names CMD_WR.BLIF CMD_WR_c
+1 1
+0 0
+.names inst_Flag_RW.BLIF SDA.OE
+1 1
+0 0
+.names key_delay_3_.BLIF N_734.BLIF G_403
+01 1
+10 1
+11 0
+00 0
+.names key_delay_4_.BLIF N_736.BLIF G_405
+01 1
+10 1
+11 0
+00 0
+.names key_delay_5_.BLIF N_738.BLIF G_407
+01 1
+10 1
+11 0
+00 0
+.names key_delay_6_.BLIF N_740.BLIF G_409
+01 1
+10 1
+11 0
+00 0
+.names key_delay_7_.BLIF N_742.BLIF G_411
+01 1
+10 1
+11 0
+00 0
+.names key_delay_8_.BLIF N_744.BLIF G_413
+01 1
+10 1
+11 0
+00 0
+.names clk_div_0_.BLIF clk_div_1_.BLIF clk_div_n1
+01 1
+10 1
+11 0
+00 0
+.names clk_div_2_.BLIF phase38_1.BLIF clk_div_n2
+01 1
+10 1
+11 0
+00 0
+.names clk_div_3_.BLIF clk_div_c2.BLIF clk_div_n3
+01 1
+10 1
+11 0
+00 0
+.names bit_state_1_.BLIF bit_state_2_.BLIF bit_state_ns_i_0_x2_0_
+01 1
+10 1
+11 0
+00 0
+.names bit_state_3_.BLIF bit_state_4_.BLIF Flag_RW_0_sqmuxa_2_1_i_x2
+01 1
+10 1
+11 0
+00 0
+.names key_delay_2_.BLIF N_111.BLIF G_401_0_x2
+01 1
+10 1
+11 0
+00 0
+.names bit_state_0_.BLIF bit_state_3_.BLIF eeprom_state_ns_i_a2_0_0_x2_1_
+01 1
+10 1
+11 0
+00 0
+.names bit_state_1_.BLIF bit_state_4_.BLIF un1_eeprom_state_1_sqmuxa_i_x2_0_x2
+01 1
+10 1
+11 0
+00 0
+.names key_delay_9_.BLIF N_746.BLIF key_delay_3_i_0_x2_9_
+01 1
+10 1
+11 0
+00 0
+.end

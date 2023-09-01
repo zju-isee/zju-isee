@@ -1,0 +1,54 @@
+#$ TOOL SCH2BLF 2.1.00.02 
+#$ TITLE xiaodou.bls 
+#$ MODULE xiaodou 
+#$ PINS 3  clk vin vout
+#$ NODES 4 N_1 N_2 N_3 VCC 
+#$ NODES 4 I4>CAO I4>Q0 I4>Q1 I4>Q3
+#$ NODES 12 I4>CLK I4>CAI I3>A0 I4>Q2 I4>CD I2>ZN0 I4>EN I1>Z0 I2>A0 \
+#   I1>A1 I1>A0 I3>ZN0
+#$ EXTERNAL and2 3 A0'i' A1'i' Z0'o'
+#$ EXTERNAL cbu24 9 CAI'i' CD'i' CLK'i' EN'i' CAO'o' Q0'o' Q1'o' Q2'o' \
+#   Q3'o'
+#$ EXTERNAL inv 2 A0'i' ZN0'o'
+#$ INSTANCE I1 and2 3 I1>A0 I1>A1 I1>Z0
+#$ INSTANCE I4 cbu24 9 I4>CAI I4>CD I4>CLK I4>EN I4>CAO I4>Q0 I4>Q1 \
+#   I4>Q2 I4>Q3
+#$ INSTANCE I2 inv 2 I2>A0 I2>ZN0
+#$ INSTANCE I3 inv 2 I3>A0 I3>ZN0
+.model xiaodou
+
+.inputs  clk.BLIF VCC.BLIF vout.BLIF I4>Q2.BLIF N_1.BLIF I2>ZN0.BLIF \
+   N_2.BLIF I1>Z0.BLIF vin.BLIF N_3.BLIF I3>ZN0.BLIF
+.outputs  VCC I4>CLK I4>CAI vout I3>A0 N_1 I4>CD N_2 I4>EN I2>A0 I1>A1 \
+   N_3 I1>A0
+.names clk.BLIF I4>CLK
+1 1
+.names VCC.BLIF I4>CAI
+1 1
+.names vout.BLIF I3>A0
+1 1
+.names I4>Q2.BLIF vout
+1 1
+
+.names N_1.BLIF I4>CD
+1 1
+.names I2>ZN0.BLIF N_1
+1 1
+
+.names N_2.BLIF I4>EN
+1 1
+.names I1>Z0.BLIF N_2
+1 1
+
+.names vin.BLIF I2>A0
+1 1
+.names vin.BLIF I1>A1
+1 1
+.names N_3.BLIF I1>A0
+1 1
+.names I3>ZN0.BLIF N_3
+1 1
+
+.names VCC
+1
+.end

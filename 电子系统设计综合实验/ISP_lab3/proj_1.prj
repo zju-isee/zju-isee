@@ -1,0 +1,65 @@
+#--  Synopsys, Inc.
+#--  Version I-2014.03LC 
+#--  Project file D:\MyDucuments\_Junior_1\ElectricSystemDesign\ISP_lab3\proj_1.prj
+
+#project files
+add_file -verilog "D:/MyDucuments/_Junior_1/ElectricSystemDesign/ISP_lab3/debouncer.v"
+add_file -verilog "D:/MyDucuments/_Junior_1/ElectricSystemDesign/ISP_lab3/dffre.v"
+add_file -verilog "D:/MyDucuments/_Junior_1/ElectricSystemDesign/ISP_lab3/ledscan_n.v"
+add_file -verilog "D:/MyDucuments/_Junior_1/ElectricSystemDesign/ISP_lab3/random_gen.v"
+add_file -verilog "D:/MyDucuments/_Junior_1/ElectricSystemDesign/ISP_lab3/top_level.v"
+add_file -verilog "D:/MyDucuments/_Junior_1/ElectricSystemDesign/ISP_lab3/width_trans.v"
+add_file -verilog "D:/MyDucuments/_Junior_1/ElectricSystemDesign/ISP_lab3/bit5_full_adder.v"
+add_file -verilog "D:/MyDucuments/_Junior_1/ElectricSystemDesign/ISP_lab3/clk_gen.v"
+add_file -verilog "D:/MyDucuments/_Junior_1/ElectricSystemDesign/ISP_lab3/controller.v"
+add_file -verilog "D:/MyDucuments/_Junior_1/ElectricSystemDesign/ISP_lab3/counter_n.v"
+
+
+
+#implementation: "rev_1"
+impl -add rev_1 -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std sysv
+set_option -project_relative_includes 1
+
+#device options
+set_option -technology ORCA2C
+set_option -part 2C04A
+set_option -package ""
+set_option -speed_grade -4
+set_option -part_companion ""
+
+#compilation/mapping options
+
+# mapper_options
+set_option -frequency 0
+set_option -write_verilog 0
+set_option -write_vhdl 0
+set_option -srs_instrumentation 1
+
+# Lattice ORCA 1C
+set_option -maxfan 100
+set_option -RWCheckOnRam 1
+set_option -disable_io_insertion 0
+set_option -forcegsr no
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 1
+set_option -multi_file_compilation_unit 1
+
+# Compiler Options
+set_option -auto_infer_blackbox 0
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "./rev_1/proj_1.edn"
+impl -active "rev_1"

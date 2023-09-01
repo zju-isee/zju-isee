@@ -1,0 +1,18 @@
+MODULE BIJIAO
+
+TITLE '比较电路'
+"inputs
+EN, AD7, AD6, AD5, AD4, AD3, AD2, AD1, AD0 PIN;
+"outputs
+V2, V4, V5 PIN;
+AD=[AD7, AD6, AD5, AD4, AD3, AD2, AD1, AD0];
+EQUATIONS
+"0<V2<1.2 
+V2=((AD>=0)&(AD<60))&EN;
+"1.2<V4<2.4 
+V4=((AD>=60)&(AD<120))&EN;
+"2.4<V5 
+V5=((AD>=120)&(AD<=255))&EN;
+
+END 
+

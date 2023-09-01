@@ -1,0 +1,479 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Mon May 01 09:08:13 2023
+#$ MODULE decode_module
+#$ PINS 15 clk key_in_2_ reset key_in_1_ key_in_0_ key_in_3_ key_out_2_ key_out_1_ \
+#  key_out_3_ key_out_0_ led_3_ led_4_ led_2_ led_1_ led_0_
+#$ NODES 100 clk_c reset_c key_out_i0_i4reg key_out_i0_i3reg key_out_i0_i2reg \
+#  key_out_i0_i1reg led_i5reg led_i4reg led_i3reg led_i2reg led_i1reg scanvalue_FSM_i0 \
+#  scanvalue_FSM_i1 scanvalue_FSM_i2 scanvalue_FSM_i3 combvalue_i7 combvalue_i6 \
+#  combvalue_i5 combvalue_i4 combvalue_i3 combvalue_i2 combvalue_i1 combvalue_i0 n31 \
+#  n219 n28 n363 n373 n274 n22 led_4__N_21 n359 n357 led_4__N_35 led_4__N_36 n11 n386 \
+#  n11_adj_1 n12 n4 n215 n34 n337 n6 n5 n346 n1 n6_adj_2 n284 n14 n15 n6_adj_3 n14_adj_4 \
+#  n15_adj_5 n1_adj_6 n7 n10 n260 n181 n14_adj_7 n14_adj_8 n15_adj_9 n11_adj_10 n13 \
+#  n15_adj_11 n2 n235 n15_adj_12 n12_adj_13 n371 n355 n8 n15_adj_14 n11_adj_15 n9 n178 \
+#  n11_adj_16 n10_adj_17 n151 n15_adj_18 n3 n4_adj_19 n15_adj_20 n15_adj_21 n11_adj_22 \
+#  n15_adj_23 n169 n327 n15_adj_24 n382 n332 n10_adj_25 i367 n379 n326 n353 n383 n375 n365 \
+#  n15_adj_26
+.model decode_module
+.inputs clk.BLIF reset.BLIF key_in_3_.BLIF key_in_2_.BLIF key_in_1_.BLIF \
+key_in_0_.BLIF clk_c.BLIF reset_c.BLIF key_out_i0_i4reg.BLIF \
+key_out_i0_i3reg.BLIF key_out_i0_i2reg.BLIF key_out_i0_i1reg.BLIF \
+led_i5reg.BLIF led_i4reg.BLIF led_i3reg.BLIF led_i2reg.BLIF led_i1reg.BLIF \
+scanvalue_FSM_i0.BLIF scanvalue_FSM_i1.BLIF scanvalue_FSM_i2.BLIF \
+scanvalue_FSM_i3.BLIF combvalue_i7.BLIF combvalue_i6.BLIF combvalue_i5.BLIF \
+combvalue_i4.BLIF combvalue_i3.BLIF combvalue_i2.BLIF combvalue_i1.BLIF \
+combvalue_i0.BLIF n31.BLIF n219.BLIF n28.BLIF n363.BLIF n373.BLIF n274.BLIF \
+n22.BLIF led_4__N_21.BLIF n359.BLIF n357.BLIF led_4__N_35.BLIF \
+led_4__N_36.BLIF n11.BLIF n386.BLIF n11_adj_1.BLIF n12.BLIF n4.BLIF n215.BLIF \
+n34.BLIF n337.BLIF n6.BLIF n5.BLIF n346.BLIF n1.BLIF n6_adj_2.BLIF n284.BLIF \
+n14.BLIF n15.BLIF n6_adj_3.BLIF n14_adj_4.BLIF n15_adj_5.BLIF n1_adj_6.BLIF \
+n7.BLIF n10.BLIF n260.BLIF n181.BLIF n14_adj_7.BLIF n14_adj_8.BLIF \
+n15_adj_9.BLIF n11_adj_10.BLIF n13.BLIF n15_adj_11.BLIF n2.BLIF n235.BLIF \
+n15_adj_12.BLIF n12_adj_13.BLIF n371.BLIF n355.BLIF n8.BLIF n15_adj_14.BLIF \
+n11_adj_15.BLIF n9.BLIF n178.BLIF n11_adj_16.BLIF n10_adj_17.BLIF n151.BLIF \
+n15_adj_18.BLIF n3.BLIF n4_adj_19.BLIF n15_adj_20.BLIF n15_adj_21.BLIF \
+n11_adj_22.BLIF n15_adj_23.BLIF n169.BLIF n327.BLIF n15_adj_24.BLIF n382.BLIF \
+n332.BLIF n10_adj_25.BLIF i367.BLIF n379.BLIF n326.BLIF n353.BLIF n383.BLIF \
+n375.BLIF n365.BLIF n15_adj_26.BLIF
+.outputs key_out_3_ led_4_ key_out_2_ key_out_1_ key_out_0_ led_3_ led_2_ \
+led_1_ led_0_ scanvalue_FSM_i0.D scanvalue_FSM_i0.C scanvalue_FSM_i0.AR \
+key_out_i0_i4reg.D key_out_i0_i4reg.C key_out_i0_i4reg.CE combvalue_i0.D \
+combvalue_i0.C combvalue_i0.AR key_out_i0_i3reg.D key_out_i0_i3reg.C \
+key_out_i0_i3reg.CE key_out_i0_i2reg.D key_out_i0_i2reg.C key_out_i0_i2reg.CE \
+scanvalue_FSM_i3.D scanvalue_FSM_i3.C scanvalue_FSM_i3.AP scanvalue_FSM_i2.D \
+scanvalue_FSM_i2.C scanvalue_FSM_i2.AR scanvalue_FSM_i1.D scanvalue_FSM_i1.C \
+scanvalue_FSM_i1.AR combvalue_i7.D combvalue_i7.C combvalue_i7.AR \
+combvalue_i6.D combvalue_i6.C combvalue_i6.AR combvalue_i5.D combvalue_i5.C \
+combvalue_i5.AR combvalue_i4.D combvalue_i4.C combvalue_i4.AR combvalue_i3.D \
+combvalue_i3.C combvalue_i3.AR combvalue_i2.D combvalue_i2.C combvalue_i2.AR \
+combvalue_i1.D combvalue_i1.C combvalue_i1.AR led_i5reg.D led_i5reg.C \
+led_i5reg.AP led_i4reg.D led_i4reg.C led_i4reg.AP led_i3reg.D led_i3reg.C \
+led_i3reg.AP led_i2reg.D led_i2reg.C led_i2reg.AP led_i1reg.D led_i1reg.C \
+led_i1reg.AP key_out_i0_i1reg.D key_out_i0_i1reg.C key_out_i0_i1reg.CE clk_c \
+reset_c n31 n219 n28 n363 n373 n274 n22 led_4__N_21 n359 n357 led_4__N_35 \
+led_4__N_36 n11 n386 n11_adj_1 n12 n4 n215 n34 n337 n6 n5 n346 n1 n6_adj_2 \
+n284 n14 n15 n6_adj_3 n14_adj_4 n15_adj_5 n1_adj_6 n7 n10 n260 n181 n14_adj_7 \
+n14_adj_8 n15_adj_9 n11_adj_10 n13 n15_adj_11 n2 n235 n15_adj_12 n12_adj_13 \
+n371 n355 n8 n15_adj_14 n11_adj_15 n9 n178 n11_adj_16 n10_adj_17 n151 \
+n15_adj_18 n3 n4_adj_19 n15_adj_20 n15_adj_21 n11_adj_22 n15_adj_23 n169 n327 \
+n15_adj_24 n382 n332 n10_adj_25 n379 n326 n353 n383 n375 n365 n15_adj_26 i367
+.names reset_c.BLIF scanvalue_FSM_i0.AR
+0 1
+.names reset_c.BLIF combvalue_i0.AR
+0 1
+.names reset_c.BLIF scanvalue_FSM_i3.AP
+0 1
+.names reset_c.BLIF scanvalue_FSM_i2.AR
+0 1
+.names reset_c.BLIF scanvalue_FSM_i1.AR
+0 1
+.names reset_c.BLIF combvalue_i7.AR
+0 1
+.names reset_c.BLIF combvalue_i6.AR
+0 1
+.names reset_c.BLIF combvalue_i5.AR
+0 1
+.names reset_c.BLIF combvalue_i4.AR
+0 1
+.names reset_c.BLIF combvalue_i3.AR
+0 1
+.names reset_c.BLIF combvalue_i2.AR
+0 1
+.names reset_c.BLIF combvalue_i1.AR
+0 1
+.names n346.BLIF n10_adj_17.BLIF led_4__N_36.BLIF n11_adj_15.BLIF led_i5reg.D
+1--- 1
+-1-- 1
+--1- 1
+---1 1
+.names reset_c.BLIF led_i5reg.AP
+0 1
+.names n1.BLIF n6.BLIF n181.BLIF led_i4reg.D
+1-- 1
+-1- 1
+--1 1
+.names reset_c.BLIF led_i4reg.AP
+0 1
+.names n284.BLIF n178.BLIF n5.BLIF led_i3reg.D
+1-- 1
+-1- 1
+--1 1
+.names reset_c.BLIF led_i3reg.AP
+0 1
+.names n178.BLIF n6_adj_2.BLIF n181.BLIF led_i2reg.D
+1-- 1
+-1- 1
+--1 1
+.names reset_c.BLIF led_i2reg.AP
+0 1
+.names n1.BLIF led_4__N_21.BLIF n169.BLIF led_i1reg.D
+1-- 1
+-1- 1
+--1 1
+.names reset_c.BLIF led_i1reg.AP
+0 1
+.names n326.BLIF combvalue_i3.BLIF n31
+11 1
+.names n11_adj_16.BLIF n11_adj_10.BLIF n219
+11 1
+.names n12_adj_13.BLIF combvalue_i6.BLIF n28
+11 1
+.names n15_adj_14.BLIF n15_adj_18.BLIF n363
+11 1
+.names n15_adj_21.BLIF n15.BLIF n15_adj_23.BLIF n373
+111 1
+.names n12_adj_13.BLIF combvalue_i6.BLIF n274
+1- 1
+-1 1
+.names combvalue_i0.BLIF combvalue_i1.BLIF n22
+11 1
+.names n15_adj_5.BLIF led_4__N_21
+0 1
+.names n14_adj_8.BLIF n14_adj_4.BLIF n359
+11 1
+.names n219.BLIF n14.BLIF n357
+1- 1
+-1 1
+.names n15_adj_26.BLIF led_4__N_35
+0 1
+.names n11_adj_1.BLIF n28.BLIF n10_adj_25.BLIF n34.BLIF n386.BLIF n151.BLIF \
+led_4__N_36
+1----- 1
+-1---- 1
+--1--- 1
+---1-- 1
+----1- 1
+-----1 1
+.names n1_adj_6.BLIF combvalue_i1.BLIF n10.BLIF n11
+1-- 1
+-1- 1
+--1 1
+.names i367.BLIF n386
+0 1
+.names combvalue_i4.BLIF combvalue_i5.BLIF n11_adj_1
+11 1
+.names combvalue_i3.BLIF n12
+0 1
+.names combvalue_i4.BLIF n4
+0 1
+.names n15_adj_9.BLIF n15_adj_11.BLIF n215
+11 1
+.names n9.BLIF combvalue_i2.BLIF n34
+11 1
+.names n353.BLIF n15_adj_24.BLIF n15_adj_9.BLIF n337
+111 1
+.names n383.BLIF n6
+0 1
+.names n382.BLIF n5
+0 1
+.names n355.BLIF n346
+0 1
+.names led_4__N_35.BLIF led_4__N_36.BLIF n1
+1- 1
+-1 1
+.names n373.BLIF n6_adj_2
+0 1
+.names n235.BLIF n284
+0 1
+.names n4.BLIF combvalue_i5.BLIF n13.BLIF n14
+1-- 1
+-1- 1
+--1 1
+.names n14.BLIF n11.BLIF n15
+1- 1
+-1 1
+.names combvalue_i5.BLIF n6_adj_3
+0 1
+.names combvalue_i4.BLIF n6_adj_3.BLIF n13.BLIF n14_adj_4
+1-- 1
+-1- 1
+--1 1
+.names n14_adj_4.BLIF n11.BLIF n15_adj_5
+1- 1
+-1 1
+.names combvalue_i0.BLIF n1_adj_6
+0 1
+.names combvalue_i6.BLIF n7
+0 1
+.names combvalue_i3.BLIF combvalue_i2.BLIF n10
+1- 1
+-1 1
+.names n4_adj_19.BLIF n14.BLIF n260
+11 1
+.names n215.BLIF n181
+0 1
+.names n12_adj_13.BLIF combvalue_i7.BLIF n7.BLIF n14_adj_7
+1-- 1
+-1- 1
+--1 1
+.names n12_adj_13.BLIF n8.BLIF combvalue_i6.BLIF n14_adj_8
+1-- 1
+-1- 1
+--1 1
+.names n14_adj_8.BLIF n11.BLIF n15_adj_9
+1- 1
+-1 1
+.names combvalue_i0.BLIF n2.BLIF n10.BLIF n11_adj_10
+1-- 1
+-1- 1
+--1 1
+.names combvalue_i7.BLIF combvalue_i6.BLIF n13
+1- 1
+-1 1
+.names n14.BLIF n11_adj_10.BLIF n15_adj_11
+1- 1
+-1 1
+.names combvalue_i1.BLIF n2
+0 1
+.names n260.BLIF n11.BLIF n235
+1- 1
+-1 1
+.names n14_adj_4.BLIF n11_adj_10.BLIF n15_adj_12
+1- 1
+-1 1
+.names combvalue_i4.BLIF combvalue_i5.BLIF n12_adj_13
+1- 1
+-1 1
+.names n14_adj_7.BLIF n11_adj_10.BLIF n371
+1- 1
+-1 1
+.names n14_adj_7.BLIF n11_adj_22.BLIF n355
+1- 1
+-1 1
+.names combvalue_i7.BLIF n8
+0 1
+.names n14_adj_8.BLIF n11_adj_10.BLIF n15_adj_14
+1- 1
+-1 1
+.names n379.BLIF n11_adj_15
+0 1
+.names combvalue_i1.BLIF combvalue_i0.BLIF n9
+1- 1
+-1 1
+.names n332.BLIF n1.BLIF n178
+1- 1
+-1 1
+.names n9.BLIF combvalue_i3.BLIF n3.BLIF n11_adj_16
+1-- 1
+-1- 1
+--1 1
+.names n365.BLIF n10_adj_17
+0 1
+.names n327.BLIF n151
+0 1
+.names n14.BLIF n11_adj_16.BLIF n15_adj_18
+1- 1
+-1 1
+.names combvalue_i2.BLIF n3
+0 1
+.names n14_adj_7.BLIF n14_adj_4.BLIF n4_adj_19
+11 1
+.names n14_adj_7.BLIF n11_adj_16.BLIF n15_adj_20
+1- 1
+-1 1
+.names n14_adj_8.BLIF n11_adj_16.BLIF n15_adj_21
+1- 1
+-1 1
+.names n9.BLIF n12.BLIF combvalue_i2.BLIF n11_adj_22
+1-- 1
+-1- 1
+--1 1
+.names n14.BLIF n11_adj_22.BLIF n15_adj_23
+1- 1
+-1 1
+.names n337.BLIF n169
+0 1
+.names n326.BLIF combvalue_i3.BLIF n327
+1- 1
+-1 1
+.names n14_adj_4.BLIF n11_adj_22.BLIF n15_adj_24
+1- 1
+-1 1
+.names n4_adj_19.BLIF n11_adj_16.BLIF n382
+1- 1
+-1 1
+.names n363.BLIF n332
+0 1
+.names n22.BLIF n31.BLIF n10_adj_25
+1- 1
+-1 1
+.names n357.BLIF n15_adj_20.BLIF n375.BLIF n379
+111 1
+.names combvalue_i1.BLIF combvalue_i2.BLIF combvalue_i0.BLIF n326
+1-- 1
+-1- 1
+--1 1
+.names n359.BLIF n219.BLIF n353
+1- 1
+-1 1
+.names n375.BLIF n15_adj_12.BLIF n383
+11 1
+.names n371.BLIF n235.BLIF n375
+11 1
+.names n337.BLIF n15_adj_23.BLIF n365
+11 1
+.names n14_adj_8.BLIF n11_adj_22.BLIF n15_adj_26
+1- 1
+-1 1
+.names key_out_i0_i4reg.BLIF key_out_3_
+1 1
+0 0
+.names led_i5reg.BLIF led_4_
+1 1
+0 0
+.names key_out_i0_i3reg.BLIF key_out_2_
+1 1
+0 0
+.names key_out_i0_i2reg.BLIF key_out_1_
+1 1
+0 0
+.names key_out_i0_i1reg.BLIF key_out_0_
+1 1
+0 0
+.names led_i4reg.BLIF led_3_
+1 1
+0 0
+.names led_i3reg.BLIF led_2_
+1 1
+0 0
+.names led_i2reg.BLIF led_1_
+1 1
+0 0
+.names led_i1reg.BLIF led_0_
+1 1
+0 0
+.names scanvalue_FSM_i1.BLIF scanvalue_FSM_i0.D
+1 1
+0 0
+.names clk_c.BLIF scanvalue_FSM_i0.C
+1 1
+0 0
+.names scanvalue_FSM_i0.BLIF key_out_i0_i4reg.D
+1 1
+0 0
+.names clk_c.BLIF key_out_i0_i4reg.C
+1 1
+0 0
+.names reset_c.BLIF key_out_i0_i4reg.CE
+1 1
+0 0
+.names key_out_i0_i1reg.BLIF combvalue_i0.D
+1 1
+0 0
+.names clk_c.BLIF combvalue_i0.C
+1 1
+0 0
+.names scanvalue_FSM_i1.BLIF key_out_i0_i3reg.D
+1 1
+0 0
+.names clk_c.BLIF key_out_i0_i3reg.C
+1 1
+0 0
+.names reset_c.BLIF key_out_i0_i3reg.CE
+1 1
+0 0
+.names scanvalue_FSM_i2.BLIF key_out_i0_i2reg.D
+1 1
+0 0
+.names clk_c.BLIF key_out_i0_i2reg.C
+1 1
+0 0
+.names reset_c.BLIF key_out_i0_i2reg.CE
+1 1
+0 0
+.names scanvalue_FSM_i0.BLIF scanvalue_FSM_i3.D
+1 1
+0 0
+.names clk_c.BLIF scanvalue_FSM_i3.C
+1 1
+0 0
+.names scanvalue_FSM_i3.BLIF scanvalue_FSM_i2.D
+1 1
+0 0
+.names clk_c.BLIF scanvalue_FSM_i2.C
+1 1
+0 0
+.names scanvalue_FSM_i2.BLIF scanvalue_FSM_i1.D
+1 1
+0 0
+.names clk_c.BLIF scanvalue_FSM_i1.C
+1 1
+0 0
+.names key_in_3_.BLIF combvalue_i7.D
+1 1
+0 0
+.names clk_c.BLIF combvalue_i7.C
+1 1
+0 0
+.names key_in_2_.BLIF combvalue_i6.D
+1 1
+0 0
+.names clk_c.BLIF combvalue_i6.C
+1 1
+0 0
+.names key_in_1_.BLIF combvalue_i5.D
+1 1
+0 0
+.names clk_c.BLIF combvalue_i5.C
+1 1
+0 0
+.names key_in_0_.BLIF combvalue_i4.D
+1 1
+0 0
+.names clk_c.BLIF combvalue_i4.C
+1 1
+0 0
+.names key_out_i0_i4reg.BLIF combvalue_i3.D
+1 1
+0 0
+.names clk_c.BLIF combvalue_i3.C
+1 1
+0 0
+.names key_out_i0_i3reg.BLIF combvalue_i2.D
+1 1
+0 0
+.names clk_c.BLIF combvalue_i2.C
+1 1
+0 0
+.names key_out_i0_i2reg.BLIF combvalue_i1.D
+1 1
+0 0
+.names clk_c.BLIF combvalue_i1.C
+1 1
+0 0
+.names clk_c.BLIF led_i5reg.C
+1 1
+0 0
+.names clk_c.BLIF led_i4reg.C
+1 1
+0 0
+.names clk_c.BLIF led_i3reg.C
+1 1
+0 0
+.names clk_c.BLIF led_i2reg.C
+1 1
+0 0
+.names clk_c.BLIF led_i1reg.C
+1 1
+0 0
+.names scanvalue_FSM_i3.BLIF key_out_i0_i1reg.D
+1 1
+0 0
+.names clk_c.BLIF key_out_i0_i1reg.C
+1 1
+0 0
+.names reset_c.BLIF key_out_i0_i1reg.CE
+1 1
+0 0
+.names clk.BLIF clk_c
+1 1
+0 0
+.names reset.BLIF reset_c
+1 1
+0 0
+.names combvalue_i7.BLIF n274.BLIF i367
+01 1
+10 1
+11 0
+00 0
+.end

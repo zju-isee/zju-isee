@@ -1,0 +1,784 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Tue May 30 21:04:06 2023
+#$ TITLE top.bls 
+#$ MODULE lab14
+#$ PINS 9 blank'o'  vga__0_'o'  vga__1_'o'  vga__2_'o'  VGA_VS'o'  VGA_HS'o'  orient reset clk
+#$ NODES 33 I1/inst_hsyncintreg I1/inst_enablereg I1/hcnt_0_ I1/hcnt_1_ I1/hcnt_2_ \
+#  I1/hcnt_3_ I1/hcnt_4_ I1/hcnt_5_ I1/hcnt_6_ I1/N_1049_0 I1/hcnt_7_ I1/hcnt_8_ \
+#  I1/hcnt_9_ I1/hcnt_10_ I1/vcnt_0_ I1/vcnt_1_ I1/vcnt_2_ I1/vcnt_3_ I1/vcnt_4_ \
+#  I1/vcnt_5_ I1/vcnt_6_ I1/N_854_i_li_0 I1/vcnt_7_ I1/vcnt_8_ I1/vcnt_9_ I1/N_90_0 \
+#  I1/N_146 I1/N_147 I1/N_150 I1/N_152 I1/N_165 I1/N_482 I1/vga_vsDFFSHreg
+.model top
+.inputs clk.BLIF orient.BLIF reset.BLIF I1/inst_hsyncintreg.BLIF \
+I1/inst_enablereg.BLIF I1/hcnt_0_.BLIF I1/hcnt_1_.BLIF I1/hcnt_2_.BLIF \
+I1/hcnt_3_.BLIF I1/hcnt_4_.BLIF I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF \
+I1/N_1049_0.BLIF I1/hcnt_7_.BLIF I1/hcnt_8_.BLIF I1/hcnt_9_.BLIF \
+I1/hcnt_10_.BLIF I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF \
+I1/vcnt_3_.BLIF I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF \
+I1/N_854_i_li_0.BLIF I1/vcnt_7_.BLIF I1/vcnt_8_.BLIF I1/vcnt_9_.BLIF \
+I1/N_90_0.BLIF I1/N_146.BLIF I1/N_147.BLIF I1/N_150.BLIF I1/N_152.BLIF \
+I1/N_165.BLIF I1/N_482.BLIF I1/vga_vsDFFSHreg.BLIF
+.outputs blank vga__1_ vga__2_ VGA_HS VGA_VS I1/inst_hsyncintreg.D \
+I1/inst_hsyncintreg.AP I1/inst_hsyncintreg.C I1/inst_enablereg.AR \
+I1/inst_enablereg.D I1/inst_enablereg.C I1/hcnt_0_.AR I1/hcnt_0_.D \
+I1/hcnt_0_.C I1/hcnt_1_.AR I1/hcnt_1_.D I1/hcnt_1_.C I1/hcnt_2_.AR \
+I1/hcnt_2_.D I1/hcnt_2_.C I1/hcnt_3_.AR I1/hcnt_3_.D I1/hcnt_3_.C \
+I1/hcnt_4_.AR I1/hcnt_4_.C I1/hcnt_5_.AR I1/hcnt_5_.C I1/hcnt_6_.AR \
+I1/hcnt_6_.C I1/N_1049_0 I1/hcnt_7_.AR I1/hcnt_7_.C I1/hcnt_8_.AR I1/hcnt_8_.C \
+I1/hcnt_9_.AR I1/hcnt_9_.C I1/hcnt_10_.AR I1/hcnt_10_.D I1/hcnt_10_.C \
+I1/vcnt_0_.AR I1/vcnt_0_.D I1/vcnt_0_.C I1/vcnt_1_.AR I1/vcnt_1_.D \
+I1/vcnt_1_.C I1/vcnt_2_.AR I1/vcnt_2_.D I1/vcnt_2_.C I1/vcnt_3_.AR \
+I1/vcnt_3_.D I1/vcnt_3_.C I1/vcnt_4_.AR I1/vcnt_4_.C I1/vcnt_5_.AR \
+I1/vcnt_5_.C I1/vcnt_6_.AR I1/vcnt_6_.C I1/N_854_i_li_0 I1/vcnt_7_.AR \
+I1/vcnt_7_.C I1/vcnt_8_.AR I1/vcnt_8_.C I1/vcnt_9_.AR I1/vcnt_9_.D \
+I1/vcnt_9_.C I1/N_90_0 I1/N_146 I1/N_147 I1/N_150 I1/N_152 I1/N_165 I1/N_482 \
+I1/vga_vsDFFSHreg.D I1/vga_vsDFFSHreg.AP I1/vga_vsDFFSHreg.C vga__0_.X1 \
+vga__0_.X2 I1/hcnt_4_.D.X1 I1/hcnt_4_.D.X2 I1/hcnt_5_.D.X1 I1/hcnt_5_.D.X2 \
+I1/hcnt_6_.D.X1 I1/hcnt_6_.D.X2 I1/hcnt_7_.D.X1 I1/hcnt_7_.D.X2 \
+I1/hcnt_8_.D.X1 I1/hcnt_8_.D.X2 I1/hcnt_9_.D.X1 I1/hcnt_9_.D.X2 \
+I1/vcnt_4_.D.X1 I1/vcnt_4_.D.X2 I1/vcnt_5_.D.X1 I1/vcnt_5_.D.X2 \
+I1/vcnt_6_.D.X1 I1/vcnt_6_.D.X2 I1/vcnt_7_.D.X1 I1/vcnt_7_.D.X2 \
+I1/vcnt_8_.D.X1 I1/vcnt_8_.D.X2
+.names I1/hcnt_0_.BLIF I1/hcnt_1_.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF \
+I1/hcnt_4_.BLIF I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/hcnt_7_.BLIF \
+I1/hcnt_8_.BLIF I1/hcnt_9_.BLIF I1/hcnt_10_.BLIF I1/inst_hsyncintreg.D
+0000--0---- 1
+-----00---- 1
+----0-0---- 1
+---------0- 1
+--------0-- 1
+-------1--- 1
+----------1 1
+---111-0110 0
+--1-11-0110 0
+-1--11-0110 0
+1---11-0110 0
+------10110 0
+.names I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/hcnt_7_.BLIF I1/hcnt_8_.BLIF \
+I1/hcnt_9_.BLIF I1/hcnt_10_.BLIF I1/vcnt_3_.BLIF I1/vcnt_4_.BLIF \
+I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/vcnt_7_.BLIF I1/vcnt_8_.BLIF \
+I1/vcnt_9_.BLIF I1/inst_enablereg.D
+000--0-00-00- 1
+000--00-0-00- 1
+000--0---000- 1
+000--0------0 1
+----00-00-00- 1
+---0-0-00-00- 1
+----000-0-00- 1
+---0-00-0-00- 1
+----00---000- 1
+---0-0---000- 1
+----00------0 1
+---0-0------0 1
+------11-1--1 0
+--111-------- 0
+-1-11-------- 0
+1--11-------- 0
+--------11--1 0
+-----1------- 0
+-----------11 0
+----------1-1 0
+.names I1/hcnt_0_.BLIF I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/hcnt_7_.BLIF \
+I1/hcnt_8_.BLIF I1/hcnt_9_.BLIF I1/hcnt_10_.BLIF I1/hcnt_0_.D
+000000- 1
+0-----0 1
+1------ 0
+-----11 0
+----1-1 0
+---1--1 0
+--1---1 0
+-1----1 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/N_1049_0
+----111 1
+---1-11 1
+--1--11 1
+-1---11 1
+1----11 1
+00000-- 0
+-----0- 0
+------0 0
+.names I1/hcnt_0_.BLIF I1/hcnt_1_.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF \
+I1/hcnt_4_.BLIF I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/hcnt_7_.BLIF \
+I1/hcnt_8_.BLIF I1/hcnt_9_.BLIF I1/hcnt_10_.BLIF I1/hcnt_10_.D
+11111111110 1
+-----000001 1
+0-----1---- 0
+-0----1---- 0
+--0---1---- 0
+---0--1---- 0
+----0-1---- 0
+-------0--0 0
+---------11 0
+------1--0- 0
+-----1--0-- 0
+------0-1-- 0
+-----0-1--- 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF \
+I1/vcnt_6_.BLIF I1/vcnt_7_.BLIF I1/vcnt_8_.BLIF I1/vcnt_9_.BLIF I1/vcnt_1_.D
+10--000- 1
+01--000- 1
+10-0-00- 1
+01-0-00- 1
+100--00- 1
+010--00- 1
+10-----0 1
+01-----0 1
+--111--1 0
+00------ 0
+11------ 0
+------11 0
+-----1-1 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/N_854_i_li_0
+11-1--1 1
+--11--1 1
+-----11 1
+----1-1 1
+-00-00- 0
+0-0-00- 0
+---000- 0
+------0 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/vcnt_7_.BLIF \
+I1/vcnt_8_.BLIF I1/vcnt_9_.BLIF I1/vcnt_9_.D
+1111111110 1
+0000---001 1
+------0001 1
+-----0-001 1
+----0--001 1
+-0-----1-- 0
+1---111-0- 0
+01--111--- 0
+--01111--- 0
+--1-111--1 0
+-------01- 0
+---0---1-- 0
+----0--1-- 0
+-----0-1-- 0
+-------0-0 0
+------01-- 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/vcnt_7_.BLIF \
+I1/vcnt_8_.BLIF I1/N_90_0
+00--00000 1
+---000000 1
+--0-00000 1
+-111----- 0
+1-11----- 0
+-------1- 0
+------1-- 0
+-----1--- 0
+----1---- 0
+--------1 0
+.names orient.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/vcnt_7_.BLIF \
+I1/vcnt_8_.BLIF I1/vcnt_9_.BLIF I1/N_90_0.BLIF I1/N_165.BLIF I1/N_146
+100000-110-- 1
+1-----0110-- 1
+1--------10- 1
+1------010-1 1
+-----111-0-- 0
+----1-11-0-- 0
+---1--11-0-- 0
+--1---11-0-- 0
+-1----11-0-- 0
+---------11- 0
+-------0-0-0 0
+--------00-- 0
+0----------- 0
+.names orient.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/N_854_i_li_0.BLIF \
+I1/vcnt_7_.BLIF I1/vcnt_8_.BLIF I1/vcnt_9_.BLIF I1/N_147
+1-00-00-100 1
+10-0-00-100 1
+1------1000 1
+1---000-100 1
+-11-1---1-- 0
+---11---1-- 0
+-------00-- 0
+------1-1-- 0
+-----1--1-- 0
+---------1- 0
+0---------- 0
+----------1 0
+.names orient.BLIF I1/N_1049_0.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/vcnt_7_.BLIF \
+I1/vcnt_8_.BLIF I1/vcnt_9_.BLIF I1/N_150
+11-----100 1
+1--00-0010 1
+1-0-0-0010 1
+1----00010 1
+--11-1-0-- 0
+-0-----1-- 0
+----11-0-- 0
+------10-- 0
+-------11- 0
+-------00- 0
+0--------- 0
+---------1 0
+.names orient.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF I1/hcnt_4_.BLIF \
+I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/hcnt_7_.BLIF I1/hcnt_8_.BLIF \
+I1/hcnt_9_.BLIF I1/hcnt_10_.BLIF I1/N_152
+0--1110000 1
+0-1-110000 1
+01--110000 1
+-000------ 0
+--------1- 0
+-------1-- 0
+------1--- 0
+-----0---- 0
+----0----- 0
+1--------- 0
+---------1 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/N_165
+111-111 1
+---1111 1
+--00--- 0
+-0-0--- 0
+0--0--- 0
+-----0- 0
+----0-- 0
+------0 0
+.names I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF I1/hcnt_4_.BLIF I1/hcnt_5_.BLIF \
+I1/hcnt_6_.BLIF I1/hcnt_7_.BLIF I1/hcnt_8_.BLIF I1/N_482
+---00-0 1
+--0-0-0 1
+-0--0-0 1
+0---0-0 1
+-----00 1
+1111-1- 0
+----11- 0
+------1 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/vcnt_7_.BLIF \
+I1/vcnt_8_.BLIF I1/vcnt_9_.BLIF I1/vga_vsDFFSHreg.D
+00-------- 1
+--1------- 1
+----0----- 1
+---0------ 1
+------0--- 1
+-----1---- 1
+--------1- 1
+-------1-- 1
+---------0 1
+-101101001 0
+1-01101001 0
+.names I1/inst_enablereg.BLIF blank
+1 1
+0 0
+.names orient.BLIF I1/inst_enablereg.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF \
+I1/hcnt_4_.BLIF I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/N_1049_0.BLIF \
+I1/hcnt_7_.BLIF I1/hcnt_8_.BLIF I1/hcnt_9_.BLIF I1/hcnt_10_.BLIF \
+I1/N_854_i_li_0.BLIF I1/vcnt_7_.BLIF I1/vcnt_8_.BLIF I1/vcnt_9_.BLIF \
+I1/N_90_0.BLIF I1/N_165.BLIF I1/N_482.BLIF vga__1_
+01-00-0-0100------- 1
+010-0-0-0100------- 1
+01-1111-1-00------- 1
+011-111-1-00------- 1
+01---00-0100------- 1
+11----------1000--- 1
+01-1-11--000------- 1
+011--11--000------- 1
+01--111--000------- 1
+11------------10-1- 1
+11-----0-----1-0--- 1
+11-----------110--- 1
+01------1000------- 1
+11-------------11-- 1
+01--------10------1 1
+0-11-10--10-------- 0
+0-000-1-0-0-------- 0
+0-00--1--10-------- 0
+0----01-0-0-------- 0
+0---11--010-------- 0
+0-----0-110-------- 0
+0---0-1--10-------- 0
+0----01--10-------- 0
+1------------010-0- 0
+1------1-----100--- 0
+1-----------0000--- 0
+0-----0-000-------- 0
+1--------------10-- 0
+0---------1-------0 0
+0----------1------- 0
+-0----------------- 0
+.names orient.BLIF I1/inst_enablereg.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF \
+I1/hcnt_4_.BLIF I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/N_1049_0.BLIF \
+I1/hcnt_7_.BLIF I1/hcnt_8_.BLIF I1/hcnt_9_.BLIF I1/hcnt_10_.BLIF \
+I1/vcnt_7_.BLIF I1/vcnt_8_.BLIF I1/vcnt_9_.BLIF I1/N_90_0.BLIF I1/N_482.BLIF \
+vga__2_
+0111-1---100----- 1
+01--11---100----- 1
+11-----1----1-0-- 1
+01------1100----- 1
+01----1--100----- 1
+11------------11- 1
+11-----------10-- 1
+01--------10----1 1
+0--00-0-0-0------ 0
+0-0-0-0-0-0------ 0
+0----00-0-0------ 0
+1-----------000-- 0
+1------0-----00-- 0
+1-------------10- 0
+0--------00------ 0
+0---------1-----0 0
+0----------1----- 0
+-0--------------- 0
+.names I1/inst_hsyncintreg.BLIF VGA_HS
+1 1
+0 0
+.names I1/vga_vsDFFSHreg.BLIF VGA_VS
+1 1
+0 0
+.names reset.BLIF I1/inst_hsyncintreg.AP
+0 1
+1 0
+.names clk.BLIF I1/inst_hsyncintreg.C
+1 1
+0 0
+.names reset.BLIF I1/inst_enablereg.AR
+0 1
+1 0
+.names clk.BLIF I1/inst_enablereg.C
+1 1
+0 0
+.names reset.BLIF I1/hcnt_0_.AR
+0 1
+1 0
+.names clk.BLIF I1/hcnt_0_.C
+1 1
+0 0
+.names reset.BLIF I1/hcnt_1_.AR
+0 1
+1 0
+.names I1/hcnt_0_.BLIF I1/hcnt_1_.BLIF I1/hcnt_1_.D
+10 1
+01 1
+00 0
+11 0
+.names clk.BLIF I1/hcnt_1_.C
+1 1
+0 0
+.names reset.BLIF I1/hcnt_2_.AR
+0 1
+1 0
+.names I1/hcnt_0_.BLIF I1/hcnt_1_.BLIF I1/hcnt_2_.BLIF I1/hcnt_2_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names clk.BLIF I1/hcnt_2_.C
+1 1
+0 0
+.names reset.BLIF I1/hcnt_3_.AR
+0 1
+1 0
+.names I1/hcnt_0_.BLIF I1/hcnt_1_.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF \
+I1/hcnt_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+1111 0
+--00 0
+-0-0 0
+0--0 0
+.names clk.BLIF I1/hcnt_3_.C
+1 1
+0 0
+.names reset.BLIF I1/hcnt_4_.AR
+0 1
+1 0
+.names clk.BLIF I1/hcnt_4_.C
+1 1
+0 0
+.names reset.BLIF I1/hcnt_5_.AR
+0 1
+1 0
+.names clk.BLIF I1/hcnt_5_.C
+1 1
+0 0
+.names reset.BLIF I1/hcnt_6_.AR
+0 1
+1 0
+.names clk.BLIF I1/hcnt_6_.C
+1 1
+0 0
+.names reset.BLIF I1/hcnt_7_.AR
+0 1
+1 0
+.names clk.BLIF I1/hcnt_7_.C
+1 1
+0 0
+.names reset.BLIF I1/hcnt_8_.AR
+0 1
+1 0
+.names clk.BLIF I1/hcnt_8_.C
+1 1
+0 0
+.names reset.BLIF I1/hcnt_9_.AR
+0 1
+1 0
+.names clk.BLIF I1/hcnt_9_.C
+1 1
+0 0
+.names reset.BLIF I1/hcnt_10_.AR
+0 1
+1 0
+.names clk.BLIF I1/hcnt_10_.C
+1 1
+0 0
+.names reset.BLIF I1/vcnt_0_.AR
+0 1
+1 0
+.names I1/vcnt_0_.BLIF I1/vcnt_0_.D
+0 1
+1 0
+.names I1/inst_hsyncintreg.BLIF I1/vcnt_0_.C
+1 1
+0 0
+.names reset.BLIF I1/vcnt_1_.AR
+0 1
+1 0
+.names I1/inst_hsyncintreg.BLIF I1/vcnt_1_.C
+1 1
+0 0
+.names reset.BLIF I1/vcnt_2_.AR
+0 1
+1 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_2_.D
+110 1
+-01 1
+0-1 1
+111 0
+-00 0
+0-0 0
+.names I1/inst_hsyncintreg.BLIF I1/vcnt_2_.C
+1 1
+0 0
+.names reset.BLIF I1/vcnt_3_.AR
+0 1
+1 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+1111 0
+--00 0
+-0-0 0
+0--0 0
+.names I1/inst_hsyncintreg.BLIF I1/vcnt_3_.C
+1 1
+0 0
+.names reset.BLIF I1/vcnt_4_.AR
+0 1
+1 0
+.names I1/inst_hsyncintreg.BLIF I1/vcnt_4_.C
+1 1
+0 0
+.names reset.BLIF I1/vcnt_5_.AR
+0 1
+1 0
+.names I1/inst_hsyncintreg.BLIF I1/vcnt_5_.C
+1 1
+0 0
+.names reset.BLIF I1/vcnt_6_.AR
+0 1
+1 0
+.names I1/inst_hsyncintreg.BLIF I1/vcnt_6_.C
+1 1
+0 0
+.names reset.BLIF I1/vcnt_7_.AR
+0 1
+1 0
+.names I1/inst_hsyncintreg.BLIF I1/vcnt_7_.C
+1 1
+0 0
+.names reset.BLIF I1/vcnt_8_.AR
+0 1
+1 0
+.names I1/inst_hsyncintreg.BLIF I1/vcnt_8_.C
+1 1
+0 0
+.names reset.BLIF I1/vcnt_9_.AR
+0 1
+1 0
+.names I1/inst_hsyncintreg.BLIF I1/vcnt_9_.C
+1 1
+0 0
+.names reset.BLIF I1/vga_vsDFFSHreg.AP
+0 1
+1 0
+.names I1/inst_hsyncintreg.BLIF I1/vga_vsDFFSHreg.C
+1 1
+0 0
+.names I1/inst_enablereg.BLIF I1/N_146.BLIF I1/N_147.BLIF I1/N_150.BLIF \
+I1/N_152.BLIF vga__0_.X1
+10000 1
+0---- 0
+-1--- 0
+--1-- 0
+---1- 0
+----1 0
+.names orient.BLIF I1/inst_enablereg.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF \
+I1/hcnt_4_.BLIF I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/hcnt_7_.BLIF \
+I1/hcnt_8_.BLIF I1/hcnt_9_.BLIF I1/hcnt_10_.BLIF I1/N_146.BLIF I1/N_147.BLIF \
+I1/N_150.BLIF I1/N_152.BLIF I1/N_482.BLIF vga__0_.X2
+01--------10000- 1
+01----0100-0000- 1
+01-000-100-0000- 1
+01--0001-0-0000- 1
+01----1010-0000- 1
+01--11-010-0000- 1
+011-111-10-0000- 1
+01-1111-10-0000- 1
+0111-1-010-0000- 1
+01-------1-00000 1
+01----00-1-0000- 1
+01-0-0-0-1-0000- 1
+01--00-0-1-0000- 1
+1--------------- 0
+-0-------------- 0
+-----------1---- 0
+------------1--- 0
+-------------1-- 0
+--------------1- 0
+-------0000----- 0
+-------1-10----1 0
+-----000-00----- 0
+---1--1-000----- 0
+----1-1-000----- 0
+-----11-000----- 0
+-----11--10----1 0
+----100-100----- 0
+----01-1100----- 0
+-----011100----- 0
+-----101100----- 0
+---11-1--10----1 0
+--0-010-100----- 0
+---0010-100----- 0
+--00-1-1100----- 0
+.names I1/hcnt_4_.BLIF I1/hcnt_4_.D.X1
+1 1
+0 0
+.names I1/hcnt_0_.BLIF I1/hcnt_1_.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF \
+I1/hcnt_4_.BLIF I1/hcnt_4_.D.X2
+1111- 1
+0---- 0
+-0--- 0
+--0-- 0
+---0- 0
+.names I1/hcnt_5_.BLIF I1/hcnt_5_.D.X1
+1 1
+0 0
+.names I1/hcnt_0_.BLIF I1/hcnt_1_.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF \
+I1/hcnt_4_.BLIF I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/hcnt_7_.BLIF \
+I1/hcnt_8_.BLIF I1/hcnt_9_.BLIF I1/hcnt_10_.BLIF I1/hcnt_5_.D.X2
+11111-----0 1
+11111-0000- 1
+-----1----1 1
+111111----- 1
+0----0----- 0
+-0---0----- 0
+--0--0----- 0
+---0-0----- 0
+----00----- 0
+0---------0 0
+-0--------0 0
+--0-------0 0
+---0------0 0
+----0-----0 0
+-----01---1 0
+-----0-1--1 0
+-----0--1-1 0
+-----0---11 0
+.names I1/hcnt_6_.BLIF I1/hcnt_6_.D.X1
+1 1
+0 0
+.names I1/hcnt_0_.BLIF I1/hcnt_1_.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF \
+I1/hcnt_4_.BLIF I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/hcnt_6_.D.X2
+111111- 1
+0------ 0
+-0----- 0
+--0---- 0
+---0--- 0
+----0-- 0
+-----0- 0
+.names I1/hcnt_7_.BLIF I1/hcnt_7_.D.X1
+1 1
+0 0
+.names I1/hcnt_0_.BLIF I1/hcnt_1_.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF \
+I1/hcnt_4_.BLIF I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/hcnt_7_.BLIF \
+I1/hcnt_7_.D.X2
+1111111- 1
+0------- 0
+-0------ 0
+--0----- 0
+---0---- 0
+----0--- 0
+-----0-- 0
+------0- 0
+.names I1/hcnt_8_.BLIF I1/hcnt_8_.D.X1
+1 1
+0 0
+.names I1/hcnt_0_.BLIF I1/hcnt_1_.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF \
+I1/hcnt_4_.BLIF I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/hcnt_7_.BLIF \
+I1/hcnt_8_.BLIF I1/hcnt_8_.D.X2
+11111111- 1
+0-------- 0
+-0------- 0
+--0------ 0
+---0----- 0
+----0---- 0
+-----0--- 0
+------0-- 0
+-------0- 0
+.names I1/hcnt_9_.BLIF I1/hcnt_9_.D.X1
+1 1
+0 0
+.names I1/hcnt_0_.BLIF I1/hcnt_1_.BLIF I1/hcnt_2_.BLIF I1/hcnt_3_.BLIF \
+I1/hcnt_4_.BLIF I1/hcnt_5_.BLIF I1/hcnt_6_.BLIF I1/hcnt_7_.BLIF \
+I1/hcnt_8_.BLIF I1/hcnt_9_.BLIF I1/hcnt_9_.D.X2
+111111111- 1
+0--------- 0
+-0-------- 0
+--0------- 0
+---0------ 0
+----0----- 0
+-----0---- 0
+------0--- 0
+-------0-- 0
+--------0- 0
+.names I1/vcnt_4_.BLIF I1/vcnt_4_.D.X1
+1 1
+0 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/vcnt_7_.BLIF \
+I1/vcnt_8_.BLIF I1/vcnt_9_.BLIF I1/vcnt_4_.D.X2
+1111-----0 1
+1111---00- 1
+----1--1-1 1
+----1---11 1
+11111----- 1
+1---111--1 1
+-1--111--1 1
+--1-111--1 1
+---1111--1 1
+0---0----- 0
+-0--0----- 0
+--0-0----- 0
+---00----- 0
+0--------0 0
+-0-------0 0
+--0------0 0
+---0-----0 0
+----0--1-1 0
+----0---11 0
+0----0-00- 0
+-0---0-00- 0
+--0--0-00- 0
+---0-0-00- 0
+0-----000- 0
+-0----000- 0
+--0---000- 0
+---0--000- 0
+0000---00- 0
+.names I1/vcnt_5_.BLIF I1/vcnt_9_.BLIF I1/vcnt_5_.D.X1
+10 1
+0- 0
+-1 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/vcnt_7_.BLIF \
+I1/vcnt_8_.BLIF I1/vcnt_9_.BLIF I1/vcnt_5_.D.X2
+11111----0 1
+111110-00- 1
+----01-001 1
+0----10001 1
+-0---10001 1
+--0--10001 1
+---0-10001 1
+0000-1-001 1
+0----0---- 0
+-0---0---- 0
+--0--0---- 0
+---0-0---- 0
+----00---- 0
+-------1-1 0
+--------11 0
+0--------0 0
+-0-------0 0
+--0------0 0
+---0-----0 0
+----0----0 0
+1---111--1 0
+-1--111--1 0
+--1-111--1 0
+---1111--1 0
+111111---1 0
+.names I1/vcnt_6_.BLIF I1/vcnt_9_.BLIF I1/vcnt_6_.D.X1
+10 1
+0- 0
+-1 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/vcnt_7_.BLIF \
+I1/vcnt_8_.BLIF I1/vcnt_9_.BLIF I1/vcnt_6_.D.X2
+111111---0 1
+111111000- 1
+----0-1001 1
+-----01001 1
+0000--1001 1
+0-----0--- 0
+-0----0--- 0
+--0---0--- 0
+---0--0--- 0
+----0-0--- 0
+-----00--- 0
+-------1-1 0
+--------11 0
+0--------0 0
+-0-------0 0
+--0------0 0
+---0-----0 0
+----0----0 0
+-----0---0 0
+1---111--1 0
+-1--111--1 0
+--1-111--1 0
+---1111--1 0
+.names I1/vcnt_7_.BLIF I1/vcnt_7_.D.X1
+1 1
+0 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/vcnt_7_.BLIF \
+I1/vcnt_7_.D.X2
+1111111- 1
+0------- 0
+-0------ 0
+--0----- 0
+---0---- 0
+----0--- 0
+-----0-- 0
+------0- 0
+.names I1/vcnt_8_.BLIF I1/vcnt_8_.D.X1
+1 1
+0 0
+.names I1/vcnt_0_.BLIF I1/vcnt_1_.BLIF I1/vcnt_2_.BLIF I1/vcnt_3_.BLIF \
+I1/vcnt_4_.BLIF I1/vcnt_5_.BLIF I1/vcnt_6_.BLIF I1/vcnt_7_.BLIF \
+I1/vcnt_8_.BLIF I1/vcnt_8_.D.X2
+11111111- 1
+0-------- 0
+-0------- 0
+--0------ 0
+---0----- 0
+----0---- 0
+-----0--- 0
+------0-- 0
+-------0- 0
+.end

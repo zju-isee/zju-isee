@@ -1,0 +1,26 @@
+MODULE CONVERTION
+
+TITLE '数制转换电路'
+"inputs
+EN, AD7, AD6, AD5, AD4, AD3, AD2, AD1, AD0 PIN;
+"outputs
+Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15 PIN;
+AD=[AD7..AD0];
+NUMBER0 = [Q0..Q3];
+NUMBER1 = [Q4..Q7];
+NUMBER2 = [Q8..Q11];
+NUMBER3 = [Q12..Q15];
+binary = 0;
+EQUATIONS
+binary = AD7*128+AD6*64+AD5*32+AD4*16+AD3*8+AD2*4+AD1*2+AD0*1;
+"LSC REAL real_number1;
+NUMBER0 = 0;
+NUMBER0 = binary*5/256;
+
+"real_number1 = AD*5>>8;
+"NUMBER1 = real_number1
+"NUMBER2 = AD*5%256*10/256;
+"NUMBER3 = AD*5%256*10%256*10/256;
+
+END 
+

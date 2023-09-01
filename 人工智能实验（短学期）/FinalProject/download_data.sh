@@ -1,0 +1,17 @@
+curl 'https://zjueducn-my.sharepoint.com/personal/lms_zju_edu_cn/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2Flms%5Fzju%5Fedu%5Fcn%2FDocuments%2Fdataset%2Ezip' \
+  -H 'authority: zjueducn-my.sharepoint.com' \
+  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
+  -H 'accept-language: zh-CN,zh;q=0.9' \
+  -H 'cookie: MicrosoftApplicationsTelemetryDeviceId=82d392f0-19b7-7905-5b30-ddcf030f25a4; MicrosoftApplicationsTelemetryFirstLaunchTime=1689689389160; WSS_FullScreenMode=false; rtFa=re6APVfrxUcjk1znSL9wSH0fp37N9y6frG1aS7NmcbUmRUI1RkMwRjQtMjE2MS00MEQ4LTg0OTItNTE1OTQyNDQ5NzkzIzEzMzM0MTU5ODI0Mzc2Mzk0OSMyOEI1QzdBMC0yMDQ2LTIwMDAtNjkxMC1BRTk2ODY5MUM2MUEjTE1TJTQwWkpVLkVEVS5DTnUhoSFrZ0FFrB3mMeUMCanV6Jw/EY13zRv82BK0DoDYOYcyt5mTiZalpm+j72L9r+YwOFKnNHGgjhv6qQXQGU8Sa44kdmxx67dwl5bLow6C9omDzA4YBGMSyRhj/UOiEp8LuNnNYShk2+JICYtRUmj5OHXrp+Bue0PT0j4ts9Pxesd/HFa9YazdMfVKL0AAM14OMNhkoMpHwizaNLCVOLSO1aOnFqjnuNV3/+W34bTnaTkntalLBTNxhh0807H9t+owu66Y6D8gV5uT3w9tKQk08nY7qlRwMOB5EK9hPTIEvX+/RCX7bCxWjf9Vl2B2bOlDyyp8AY8IfpV5SbAT4w+OAAAA; SIMI=eyJzdCI6MH0=; FedAuth=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMmMwNDExMjQ0QGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxsbXNAemp1LmVkdS5jbiwxMzMzMzcwOTE5MTAwMDAwMDAsMTMzMzM3MDkxOTAwMDAwMDAwLDEzMzM0NTkxODI0MzYwNzcwMCwyNDA0OmMxNDA6MjIxOjFlOjpiLDMsZWI1ZmMwZjQtMjE2MS00MGQ4LTg0OTItNTE1OTQyNDQ5NzkzLCwzODVmODM0Yi1iODE2LTQxZTUtOGE0NC04ZTRmNzUyOThmMWYsMjhiNWM3YTAtMjA0Ni0yMDAwLTY5MTAtYWU5Njg2OTFjNjFhLDI4YjVjN2EwLTIwNDYtMjAwMC02OTEwLWFlOTY4NjkxYzYxYSwsMCwxMzMzNDI0NjIyNDAzMjYzNzYsMTMzMzQ0MTkwMjQwMzI2Mzc2LCwsZXlKNGJYTmZZMk1pT2lKYlhDSkRVREZjSWwwaUxDSjRiWE5mYzNOdElqb2lNU0lzSW5CeVpXWmxjbkpsWkY5MWMyVnlibUZ0WlNJNklteHRjMEI2YW5VdVpXUjFMbU51SWl3aWRYUnBJam9pTTFjME4wbExVRWRCVlRZeVRGcFBXa0kzYjBWQlFTSjksMjY1MDQ2Nzc0Mzk5OTk5OTk5OSwxMzMzNDE1OTgyMjAwMDAwMDAsNmYwNWNlMmMtYjA4Ni00ODQ5LTk4ZWQtYzlhNWI0NmIyMWJhLCwsLCwsMCwsTDBucjhxSGZ4WFQrTk00L2JkQ0lSMFBoeXFjcTVBeVlaOVY1MWRYbWNDZkVYbThHYWNjT0ZDdDN0NFVLZjdsbGppVzZNVTRqRkQvTU9Jamg5ZFg4b3E1QXFKZmVoQUNYSDFxM3VtMUF1UHppb3lXMGpocVhMNm1iQnNwR0syVE84RTc2MDJ6cklDbWFOb1FCTnUwUkNSWkdnY2t0RHJoR21DWHZXeW9jcWZjMko0UjR1cW82QlNDalJpZmZ5TUR3Q3ZsMjdRS0ZNRGQzOVA0dVZFaW5Fc3VNZGtERE1rdUpWNzl5RjR6YnMzbDFTb0RZR2ljVHMvRjgzT0ZsV2NaWG9VKzRtOHZJYWJtczRwVU9vMkJmT3BvUFl3elg5TmxUc1ZqaVduYmVSUmp5MXRXTFdrY1Zka2NYV0wwNnU3RXpGSXlLY1VuTzdkNjFpV3BiMnhIMHN3PT08L1NQPg==; odbn=1' \
+  -H 'referer: https://zjueducn-my.sharepoint.com/personal/lms_zju_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Flms%5Fzju%5Fedu%5Fcn%2FDocuments%2Fdataset%2Ezip&parent=%2Fpersonal%2Flms%5Fzju%5Fedu%5Fcn%2FDocuments&ga=1' \
+  -H 'sec-ch-ua: "Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: iframe' \
+  -H 'sec-fetch-mode: navigate' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sec-fetch-user: ?1' \
+  -H 'service-worker-navigation-preload: true' \
+  -H 'upgrade-insecure-requests: 1' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36' \
+  --compressed --output dataset.zip

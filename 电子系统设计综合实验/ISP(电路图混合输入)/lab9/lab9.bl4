@@ -1,0 +1,1575 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Thu May 25 00:28:34 2023
+#$ TITLE lab.bls 
+#$ MODULE lab9
+#$ PINS 17 LED_VCC2'o'  LED_VCC1'o'  key_in clk1 Rx reset clk LED_VCC4'o'  LED_VCC3'o'  g'o'  f'o'  e'o'  d'o'  c'o'  \
+#  b'o'  a'o'  Tx'o' 
+#$ NODES 71 A0_pre_s_i1 A0_pre_s_i0 A0_next_s_i1 A0_next_s_i0 A0_dout_22reg \
+#  C0_scancnt__i1 C0_scancnt__i0 C0_count_186__i12 C0_count_186__i11 \
+#  C0_count_186__i10 C0_count_186__i9 C0_count_186__i8 C0_count_186__i7 \
+#  C0_count_186__i6 C0_count_186__i5 C0_count_186__i4 C0_count_186__i3 \
+#  C0_count_186__i2 C0_count_186__i1 C0_count_186__i0 B0_Data1_i4reg B0_Data1_i3reg \
+#  B0_Data1_i2reg B0_Data1_i1reg B0_Data2_i4reg B0_Data2_i3reg B0_Data2_i2reg \
+#  B0_Data2_i1reg B0_ClockCount_281__i9 B0_ClockCount_281__i8 B0_ClockCount_281__i7 \
+#  B0_ClockCount_281__i6 B0_ClockCount_281__i5 B0_ClockCount_281__i4 \
+#  B0_ClockCount_281__i3 B0_ClockCount_281__i2 B0_ClockCount_281__i1 \
+#  B0_ClockCount_281__i0 B0_ClockCount_Rx_280__i5 B0_ClockCount_Rx_280__i4 \
+#  B0_ClockCount_Rx_280__i3 B0_ClockCount_Rx_280__i2 B0_ClockCount_Rx_280__i1 \
+#  B0_ClockCount_Rx_280__i0 B0_Clock9600_92 B0_Clock16_94 B0_Send_en_100 \
+#  B0_Send_over_99 B0_Rx_Valid_102 B0_Send_count_i0_i3 B0_Send_count_i0_i2 \
+#  B0_Send_count_i0_i1 B0_Send_count_i0_i0 B0_Send_data_i1 B0_m_i7 B0_m_i6 B0_m_i5 \
+#  B0_m_i4 B0_m_i3 B0_m_i2 B0_m_i1 B0_m_i0 B0_Rx_Data_i0_i7 B0_Rx_Data_i0_i6 \
+#  B0_Rx_Data_i0_i5 B0_Rx_Data_i0_i4 B0_Rx_Data_i0_i3 B0_Rx_Data_i0_i2 \
+#  B0_Rx_Data_i0_i1 B0_Rx_Data_i0_i0 B0_Send_data_9__N_42
+.model lab
+.inputs reset.BLIF key_in.BLIF clk1.BLIF A0_pre_s_i1.Q A0_pre_s_i0.Q \
+A0_next_s_i1.Q A0_next_s_i0.Q A0_dout_22reg.Q clk.BLIF C0_scancnt__i1.Q \
+C0_scancnt__i0.Q C0_count_186__i12.Q C0_count_186__i11.Q C0_count_186__i10.Q \
+C0_count_186__i9.Q C0_count_186__i8.Q C0_count_186__i7.Q C0_count_186__i6.Q \
+C0_count_186__i5.Q C0_count_186__i4.Q C0_count_186__i3.Q C0_count_186__i2.Q \
+C0_count_186__i1.Q C0_count_186__i0.Q Rx.BLIF B0_Data1_i4reg.Q \
+B0_Data1_i3reg.Q B0_Data1_i2reg.Q B0_Data1_i1reg.Q B0_Data2_i4reg.Q \
+B0_Data2_i3reg.Q B0_Data2_i2reg.Q B0_Data2_i1reg.Q B0_ClockCount_281__i9.Q \
+B0_ClockCount_281__i8.Q B0_ClockCount_281__i7.Q B0_ClockCount_281__i6.Q \
+B0_ClockCount_281__i5.Q B0_ClockCount_281__i4.Q B0_ClockCount_281__i3.Q \
+B0_ClockCount_281__i2.Q B0_ClockCount_281__i1.Q B0_ClockCount_281__i0.Q \
+B0_ClockCount_Rx_280__i5.Q B0_ClockCount_Rx_280__i4.Q \
+B0_ClockCount_Rx_280__i3.Q B0_ClockCount_Rx_280__i2.Q \
+B0_ClockCount_Rx_280__i1.Q B0_ClockCount_Rx_280__i0.Q B0_Clock9600_92.Q \
+B0_Clock16_94.Q B0_Send_en_100.Q B0_Send_over_99.Q B0_Rx_Valid_102.Q \
+B0_Send_count_i0_i3.Q B0_Send_count_i0_i2.Q B0_Send_count_i0_i1.Q \
+B0_Send_count_i0_i0.Q B0_Send_data_i1.Q B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q \
+B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q B0_m_i1.Q B0_m_i0.Q B0_Rx_Data_i0_i7.Q \
+B0_Rx_Data_i0_i6.Q B0_Rx_Data_i0_i5.Q B0_Rx_Data_i0_i4.Q B0_Rx_Data_i0_i3.Q \
+B0_Rx_Data_i0_i2.Q B0_Rx_Data_i0_i1.Q B0_Rx_Data_i0_i0.Q \
+B0_Send_data_9__N_42.BLIF
+.outputs A0_pre_s_i1.C A0_pre_s_i0.C A0_next_s_i1.CE A0_next_s_i1.C \
+A0_next_s_i0.CE A0_next_s_i0.C A0_dout_22reg.CE A0_dout_22reg.C LED_VCC1 \
+LED_VCC2 a.CE a.AP a.C b.CE b.AP b.C c.CE c.AP c.C d.CE d.AP d.C e.CE e.AP e.C \
+f.CE f.AP f.C g.CE g.AP g.C LED_VCC3.CE LED_VCC3.AR LED_VCC3.C LED_VCC4.CE \
+LED_VCC4.AR LED_VCC4.C C0_scancnt__i1.CE C0_scancnt__i1.C C0_scancnt__i0.C \
+C0_count_186__i12.AR C0_count_186__i12.C C0_count_186__i11.AR \
+C0_count_186__i11.C C0_count_186__i10.AR C0_count_186__i10.C \
+C0_count_186__i9.AR C0_count_186__i9.C C0_count_186__i8.AR C0_count_186__i8.C \
+C0_count_186__i7.AR C0_count_186__i7.C C0_count_186__i6.AR C0_count_186__i6.C \
+C0_count_186__i5.AR C0_count_186__i5.C C0_count_186__i4.AR C0_count_186__i4.C \
+C0_count_186__i3.AR C0_count_186__i3.C C0_count_186__i2.AR C0_count_186__i2.C \
+C0_count_186__i1.AR C0_count_186__i1.C C0_count_186__i0.AR C0_count_186__i0.C \
+Tx.AP Tx.C B0_Data1_i4reg.AR B0_Data1_i4reg.C B0_Data1_i3reg.AR \
+B0_Data1_i3reg.C B0_Data1_i2reg.AR B0_Data1_i2reg.C B0_Data1_i1reg.AR \
+B0_Data1_i1reg.C B0_Data2_i4reg.AR B0_Data2_i4reg.C B0_Data2_i3reg.AR \
+B0_Data2_i3reg.C B0_Data2_i2reg.AR B0_Data2_i2reg.C B0_Data2_i1reg.AR \
+B0_Data2_i1reg.C B0_ClockCount_281__i9.CE B0_ClockCount_281__i9.C \
+B0_ClockCount_281__i8.CE B0_ClockCount_281__i8.C B0_ClockCount_281__i7.CE \
+B0_ClockCount_281__i7.C B0_ClockCount_281__i6.CE B0_ClockCount_281__i6.C \
+B0_ClockCount_281__i5.CE B0_ClockCount_281__i5.C B0_ClockCount_281__i4.CE \
+B0_ClockCount_281__i4.C B0_ClockCount_281__i3.CE B0_ClockCount_281__i3.C \
+B0_ClockCount_281__i2.CE B0_ClockCount_281__i2.C B0_ClockCount_281__i1.CE \
+B0_ClockCount_281__i1.C B0_ClockCount_281__i0.CE B0_ClockCount_281__i0.C \
+B0_ClockCount_Rx_280__i5.CE B0_ClockCount_Rx_280__i5.C \
+B0_ClockCount_Rx_280__i4.CE B0_ClockCount_Rx_280__i4.C \
+B0_ClockCount_Rx_280__i3.CE B0_ClockCount_Rx_280__i3.C \
+B0_ClockCount_Rx_280__i2.CE B0_ClockCount_Rx_280__i2.C \
+B0_ClockCount_Rx_280__i1.CE B0_ClockCount_Rx_280__i1.C \
+B0_ClockCount_Rx_280__i0.CE B0_ClockCount_Rx_280__i0.C B0_Clock9600_92.CE \
+B0_Clock9600_92.C B0_Clock16_94.CE B0_Clock16_94.C B0_Send_en_100.AP \
+B0_Send_en_100.C B0_Send_over_99.CE B0_Send_over_99.AP B0_Send_over_99.C \
+B0_Rx_Valid_102.CE B0_Rx_Valid_102.AR B0_Rx_Valid_102.C B0_Send_count_i0_i3.CE \
+B0_Send_count_i0_i3.AR B0_Send_count_i0_i3.C B0_Send_count_i0_i2.CE \
+B0_Send_count_i0_i2.AR B0_Send_count_i0_i2.C B0_Send_count_i0_i1.CE \
+B0_Send_count_i0_i1.AR B0_Send_count_i0_i1.C B0_Send_count_i0_i0.AR \
+B0_Send_count_i0_i0.C B0_Send_data_i1.AR B0_Send_data_i1.C B0_m_i7.AR \
+B0_m_i7.C B0_m_i6.AR B0_m_i6.C B0_m_i5.AR B0_m_i5.C B0_m_i4.AR B0_m_i4.C \
+B0_m_i3.AR B0_m_i3.C B0_m_i2.AR B0_m_i2.C B0_m_i1.AR B0_m_i1.C B0_m_i0.AR \
+B0_m_i0.C B0_Rx_Data_i0_i7.CE B0_Rx_Data_i0_i7.C B0_Rx_Data_i0_i6.CE \
+B0_Rx_Data_i0_i6.C B0_Rx_Data_i0_i5.CE B0_Rx_Data_i0_i5.C B0_Rx_Data_i0_i4.CE \
+B0_Rx_Data_i0_i4.C B0_Rx_Data_i0_i3.CE B0_Rx_Data_i0_i3.C B0_Rx_Data_i0_i2.CE \
+B0_Rx_Data_i0_i2.C B0_Rx_Data_i0_i1.CE B0_Rx_Data_i0_i1.C B0_Rx_Data_i0_i0.CE \
+B0_Rx_Data_i0_i0.C B0_Send_data_9__N_42 A0_pre_s_i1.D A0_pre_s_i0.D \
+A0_next_s_i1.D A0_next_s_i0.D A0_dout_22reg.D a.D b.D c.D d.D e.D f.D g.D \
+LED_VCC3.D LED_VCC4.D C0_scancnt__i1.D C0_scancnt__i0.T C0_count_186__i12.T \
+C0_count_186__i11.T C0_count_186__i10.T C0_count_186__i9.T C0_count_186__i8.T \
+C0_count_186__i7.T C0_count_186__i6.T C0_count_186__i5.T C0_count_186__i4.T \
+C0_count_186__i3.D C0_count_186__i2.D C0_count_186__i1.D C0_count_186__i0.D \
+Tx.D B0_Data1_i4reg.D B0_Data1_i3reg.D B0_Data1_i2reg.D B0_Data1_i1reg.D \
+B0_Data2_i4reg.D B0_Data2_i3reg.D B0_Data2_i2reg.D B0_Data2_i1reg.D \
+B0_ClockCount_281__i9.T B0_ClockCount_281__i8.T B0_ClockCount_281__i7.T \
+B0_ClockCount_281__i6.T B0_ClockCount_281__i5.T B0_ClockCount_281__i4.T \
+B0_ClockCount_281__i3.D B0_ClockCount_281__i2.D B0_ClockCount_281__i1.D \
+B0_ClockCount_281__i0.D B0_ClockCount_Rx_280__i5.T B0_ClockCount_Rx_280__i4.D \
+B0_ClockCount_Rx_280__i3.D B0_ClockCount_Rx_280__i2.D \
+B0_ClockCount_Rx_280__i1.D B0_ClockCount_Rx_280__i0.D B0_Clock9600_92.D \
+B0_Clock16_94.D B0_Send_en_100.D B0_Send_over_99.D B0_Rx_Valid_102.D \
+B0_Send_count_i0_i3.D B0_Send_count_i0_i2.D B0_Send_count_i0_i1.D \
+B0_Send_count_i0_i0.D B0_Send_data_i1.D B0_m_i7.T B0_m_i6.T B0_m_i5.T \
+B0_m_i4.D B0_m_i3.D B0_m_i2.D B0_m_i1.D B0_m_i0.D B0_Rx_Data_i0_i7.D \
+B0_Rx_Data_i0_i6.D B0_Rx_Data_i0_i5.D B0_Rx_Data_i0_i4.D B0_Rx_Data_i0_i3.D \
+B0_Rx_Data_i0_i2.D B0_Rx_Data_i0_i1.D B0_Rx_Data_i0_i0.D
+.names key_in.BLIF A0_pre_s_i1.Q A0_pre_s_i0.Q A0_next_s_i1.CE
+-0- 1
+1-- 1
+--1 1
+010 0
+.names key_in.BLIF A0_pre_s_i1.Q A0_pre_s_i0.Q A0_next_s_i0.CE
+-0- 1
+1-- 1
+--1 1
+010 0
+.names key_in.BLIF A0_pre_s_i1.Q A0_pre_s_i0.Q A0_dout_22reg.CE
+101 1
+-10 1
+0-1 0
+-00 0
+-11 0
+.names LED_VCC1
+.names LED_VCC2
+.names a.CE
+ 1
+.names reset.BLIF a.AP
+0 1
+1 0
+.names b.CE
+ 1
+.names reset.BLIF b.AP
+0 1
+1 0
+.names c.CE
+ 1
+.names reset.BLIF c.AP
+0 1
+1 0
+.names d.CE
+ 1
+.names reset.BLIF d.AP
+0 1
+1 0
+.names e.CE
+ 1
+.names reset.BLIF e.AP
+0 1
+1 0
+.names f.CE
+ 1
+.names reset.BLIF f.AP
+0 1
+1 0
+.names g.CE
+ 1
+.names reset.BLIF g.AP
+0 1
+1 0
+.names LED_VCC3.CE
+ 1
+.names reset.BLIF LED_VCC3.AR
+0 1
+1 0
+.names LED_VCC4.CE
+ 1
+.names reset.BLIF LED_VCC4.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i12.Q C0_count_186__i11.Q C0_count_186__i10.Q \
+C0_count_186__i9.Q C0_count_186__i8.Q C0_count_186__i7.Q C0_count_186__i6.Q \
+C0_count_186__i5.Q C0_count_186__i4.Q C0_count_186__i3.Q C0_count_186__i2.Q \
+C0_count_186__i1.Q C0_count_186__i0.Q C0_scancnt__i1.CE
+11011101101111 1
+------------0- 0
+-----------0-- 0
+----------0--- 0
+---------1---- 0
+--------0----- 0
+-------0------ 0
+------1------- 0
+-----0-------- 0
+----0--------- 0
+---0---------- 0
+--1----------- 0
+-0------------ 0
+0------------- 0
+-------------0 0
+.names reset.BLIF C0_count_186__i12.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i11.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i10.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i9.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i8.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i7.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i6.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i5.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i4.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i3.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i2.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i1.AR
+0 1
+1 0
+.names reset.BLIF C0_count_186__i0.AR
+0 1
+1 0
+.names reset.BLIF B0_Data1_i4reg.AR
+0 1
+1 0
+.names B0_Rx_Valid_102.Q B0_Data1_i4reg.C
+0 1
+1 0
+.names reset.BLIF B0_Data1_i3reg.AR
+0 1
+1 0
+.names B0_Rx_Valid_102.Q B0_Data1_i3reg.C
+0 1
+1 0
+.names reset.BLIF B0_Data1_i2reg.AR
+0 1
+1 0
+.names B0_Rx_Valid_102.Q B0_Data1_i2reg.C
+0 1
+1 0
+.names reset.BLIF B0_Data1_i1reg.AR
+0 1
+1 0
+.names B0_Rx_Valid_102.Q B0_Data1_i1reg.C
+0 1
+1 0
+.names reset.BLIF B0_Data2_i4reg.AR
+0 1
+1 0
+.names B0_Rx_Valid_102.Q B0_Data2_i4reg.C
+0 1
+1 0
+.names reset.BLIF B0_Data2_i3reg.AR
+0 1
+1 0
+.names B0_Rx_Valid_102.Q B0_Data2_i3reg.C
+0 1
+1 0
+.names reset.BLIF B0_Data2_i2reg.AR
+0 1
+1 0
+.names B0_Rx_Valid_102.Q B0_Data2_i2reg.C
+0 1
+1 0
+.names reset.BLIF B0_Data2_i1reg.AR
+0 1
+1 0
+.names B0_Rx_Valid_102.Q B0_Data2_i1reg.C
+0 1
+1 0
+.names B0_Send_count_i0_i3.Q B0_Send_count_i0_i2.Q B0_Send_count_i0_i1.Q \
+B0_Send_count_i0_i0.Q B0_Send_over_99.CE
+1001 1
+--1- 0
+-1-- 0
+0--- 0
+---0 0
+.names Rx.BLIF B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q \
+B0_m_i1.Q B0_m_i0.Q B0_Rx_Valid_102.CE
+100000000 1
+-10101000 1
+-10011000 1
+0----0--- 0
+---001--- 0
+-0-1----- 0
+-0--1---- 0
+-1---0--- 0
+---11---- 0
+-------1- 0
+------1-- 0
+--1------ 0
+--------1 0
+.names reset.BLIF B0_Rx_Valid_102.AR
+0 1
+1 0
+.names B0_Send_count_i0_i3.Q B0_Send_count_i0_i2.Q B0_Send_count_i0_i1.Q \
+B0_Send_count_i0_i0.Q B0_Send_count_i0_i3.CE
+--1- 1
+-1-- 1
+0--- 1
+---0 1
+1001 0
+.names B0_Send_count_i0_i3.Q B0_Send_count_i0_i2.Q B0_Send_count_i0_i1.Q \
+B0_Send_count_i0_i0.Q B0_Send_count_i0_i2.CE
+--1- 1
+-1-- 1
+0--- 1
+---0 1
+1001 0
+.names B0_Send_count_i0_i3.Q B0_Send_count_i0_i2.Q B0_Send_count_i0_i1.Q \
+B0_Send_count_i0_i0.Q B0_Send_count_i0_i1.CE
+--1- 1
+-1-- 1
+0--- 1
+---0 1
+1001 0
+.names reset.BLIF B0_m_i7.AR
+0 1
+1 0
+.names reset.BLIF B0_m_i6.AR
+0 1
+1 0
+.names reset.BLIF B0_m_i5.AR
+0 1
+1 0
+.names reset.BLIF B0_m_i4.AR
+0 1
+1 0
+.names reset.BLIF B0_m_i3.AR
+0 1
+1 0
+.names reset.BLIF B0_m_i2.AR
+0 1
+1 0
+.names reset.BLIF B0_m_i1.AR
+0 1
+1 0
+.names reset.BLIF B0_m_i0.AR
+0 1
+1 0
+.names reset.BLIF B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q \
+B0_m_i1.Q B0_m_i0.Q B0_Rx_Data_i0_i7.CE
+110001000 1
+-------1- 0
+------1-- 0
+-----0--- 0
+----1---- 0
+---1----- 0
+--1------ 0
+-0------- 0
+0-------- 0
+--------1 0
+.names reset.BLIF B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q \
+B0_m_i1.Q B0_m_i0.Q B0_Rx_Data_i0_i6.CE
+101111000 1
+-------1- 0
+------1-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--0------ 0
+-1------- 0
+0-------- 0
+--------1 0
+.names reset.BLIF B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q \
+B0_m_i1.Q B0_m_i0.Q B0_Rx_Data_i0_i5.CE
+101101000 1
+-------1- 0
+------1-- 0
+-----0--- 0
+----1---- 0
+---0----- 0
+--0------ 0
+-1------- 0
+0-------- 0
+--------1 0
+.names reset.BLIF B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q \
+B0_m_i1.Q B0_m_i0.Q B0_Rx_Data_i0_i4.CE
+101011000 1
+-------1- 0
+------1-- 0
+-----0--- 0
+----0---- 0
+---1----- 0
+--0------ 0
+-1------- 0
+0-------- 0
+--------1 0
+.names reset.BLIF B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q \
+B0_m_i1.Q B0_m_i0.Q B0_Rx_Data_i0_i3.CE
+101001000 1
+-------1- 0
+------1-- 0
+-----0--- 0
+----1---- 0
+---1----- 0
+--0------ 0
+-1------- 0
+0-------- 0
+--------1 0
+.names reset.BLIF B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q \
+B0_m_i1.Q B0_m_i0.Q B0_Rx_Data_i0_i2.CE
+100111000 1
+-------1- 0
+------1-- 0
+-----0--- 0
+----0---- 0
+---0----- 0
+--1------ 0
+-1------- 0
+0-------- 0
+--------1 0
+.names reset.BLIF B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q \
+B0_m_i1.Q B0_m_i0.Q B0_Rx_Data_i0_i1.CE
+100101000 1
+-------1- 0
+------1-- 0
+-----0--- 0
+----1---- 0
+---0----- 0
+--1------ 0
+-1------- 0
+0-------- 0
+--------1 0
+.names reset.BLIF B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q \
+B0_m_i1.Q B0_m_i0.Q B0_Rx_Data_i0_i0.CE
+100011000 1
+-------1- 0
+------1-- 0
+-----0--- 0
+----0---- 0
+---1----- 0
+--1------ 0
+-1------- 0
+0-------- 0
+--------1 0
+.names reset.BLIF B0_Send_over_99.Q B0_Send_data_9__N_42
+0- 1
+-0 1
+11 0
+.names clk1.BLIF A0_pre_s_i1.C
+1 1
+0 0
+.names clk1.BLIF A0_pre_s_i0.C
+1 1
+0 0
+.names clk1.BLIF A0_next_s_i1.C
+1 1
+0 0
+.names clk1.BLIF A0_next_s_i0.C
+1 1
+0 0
+.names clk1.BLIF A0_dout_22reg.C
+1 1
+0 0
+.names clk.BLIF a.C
+1 1
+0 0
+.names clk.BLIF b.C
+1 1
+0 0
+.names clk.BLIF c.C
+1 1
+0 0
+.names clk.BLIF d.C
+1 1
+0 0
+.names clk.BLIF e.C
+1 1
+0 0
+.names clk.BLIF f.C
+1 1
+0 0
+.names clk.BLIF g.C
+1 1
+0 0
+.names clk.BLIF LED_VCC3.C
+1 1
+0 0
+.names clk.BLIF LED_VCC4.C
+1 1
+0 0
+.names clk.BLIF C0_scancnt__i1.C
+1 1
+0 0
+.names clk.BLIF C0_scancnt__i0.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i12.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i11.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i10.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i9.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i8.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i7.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i6.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i5.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i4.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i3.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i2.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i1.C
+1 1
+0 0
+.names clk.BLIF C0_count_186__i0.C
+1 1
+0 0
+.names B0_Send_en_100.Q Tx.AP
+1 1
+0 0
+.names B0_Clock9600_92.Q Tx.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_281__i9.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_281__i9.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_281__i8.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_281__i8.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_281__i7.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_281__i7.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_281__i6.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_281__i6.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_281__i5.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_281__i5.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_281__i4.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_281__i4.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_281__i3.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_281__i3.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_281__i2.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_281__i2.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_281__i1.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_281__i1.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_281__i0.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_281__i0.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_Rx_280__i5.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_Rx_280__i5.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_Rx_280__i4.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_Rx_280__i4.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_Rx_280__i3.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_Rx_280__i3.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_Rx_280__i2.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_Rx_280__i2.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_Rx_280__i1.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_Rx_280__i1.C
+1 1
+0 0
+.names reset.BLIF B0_ClockCount_Rx_280__i0.CE
+1 1
+0 0
+.names clk.BLIF B0_ClockCount_Rx_280__i0.C
+1 1
+0 0
+.names reset.BLIF B0_Clock9600_92.CE
+1 1
+0 0
+.names clk.BLIF B0_Clock9600_92.C
+1 1
+0 0
+.names reset.BLIF B0_Clock16_94.CE
+1 1
+0 0
+.names clk.BLIF B0_Clock16_94.C
+1 1
+0 0
+.names B0_Send_data_9__N_42.BLIF B0_Send_en_100.AP
+1 1
+0 0
+.names A0_dout_22reg.Q B0_Send_en_100.C
+1 1
+0 0
+.names B0_Send_en_100.Q B0_Send_over_99.AP
+1 1
+0 0
+.names B0_Clock9600_92.Q B0_Send_over_99.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_Rx_Valid_102.C
+1 1
+0 0
+.names B0_Send_en_100.Q B0_Send_count_i0_i3.AR
+1 1
+0 0
+.names B0_Clock9600_92.Q B0_Send_count_i0_i3.C
+1 1
+0 0
+.names B0_Send_en_100.Q B0_Send_count_i0_i2.AR
+1 1
+0 0
+.names B0_Clock9600_92.Q B0_Send_count_i0_i2.C
+1 1
+0 0
+.names B0_Send_en_100.Q B0_Send_count_i0_i1.AR
+1 1
+0 0
+.names B0_Clock9600_92.Q B0_Send_count_i0_i1.C
+1 1
+0 0
+.names B0_Send_en_100.Q B0_Send_count_i0_i0.AR
+1 1
+0 0
+.names B0_Clock9600_92.Q B0_Send_count_i0_i0.C
+1 1
+0 0
+.names B0_Send_data_9__N_42.BLIF B0_Send_data_i1.AR
+1 1
+0 0
+.names A0_dout_22reg.Q B0_Send_data_i1.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_m_i7.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_m_i6.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_m_i5.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_m_i4.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_m_i3.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_m_i2.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_m_i1.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_m_i0.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_Rx_Data_i0_i7.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_Rx_Data_i0_i6.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_Rx_Data_i0_i5.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_Rx_Data_i0_i4.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_Rx_Data_i0_i3.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_Rx_Data_i0_i2.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_Rx_Data_i0_i1.C
+1 1
+0 0
+.names B0_Clock16_94.Q B0_Rx_Data_i0_i0.C
+1 1
+0 0
+.names reset.BLIF A0_next_s_i1.Q A0_pre_s_i1.D
+11 1
+0- 0
+-0 0
+.names reset.BLIF A0_next_s_i0.Q A0_pre_s_i0.D
+0- 1
+-1 1
+10 0
+.names key_in.BLIF A0_pre_s_i1.Q A0_pre_s_i0.Q A0_next_s_i1.D
+001 1
+-1- 0
+1-- 0
+--0 0
+.names key_in.BLIF A0_pre_s_i1.Q A0_pre_s_i0.Q A0_next_s_i0.D
+-1- 1
+1-- 1
+--0 1
+001 0
+.names key_in.BLIF A0_pre_s_i0.Q A0_dout_22reg.D
+1- 1
+-1 1
+00 0
+.names C0_scancnt__i1.Q C0_scancnt__i0.Q B0_Data1_i4reg.Q B0_Data1_i3reg.Q \
+B0_Data1_i2reg.Q B0_Data1_i1reg.Q B0_Data2_i4reg.Q B0_Data2_i3reg.Q \
+B0_Data2_i2reg.Q B0_Data2_i1reg.Q a.D
+1-----0100 1
+001010---- 1
+000100---- 1
+000001---- 1
+01----1010 1
+-1----0001 1
+-1----0100 1
+1-----0001 1
+10----1-1- 1
+10----11-- 1
+1------000 0
+11------1- 0
+00-000---- 0
+0011------ 0
+001--1---- 0
+000-1----- 0
+-1----11-- 0
+-1----1--1 0
+-1----0-1- 0
+-1-----000 0
+1-----100- 0
+00-1-1---- 0
+1-----01-1 0
+1-----0-1- 0
+-1-----1-1 0
+.names C0_scancnt__i1.Q C0_scancnt__i0.Q B0_Data1_i4reg.Q B0_Data1_i3reg.Q \
+B0_Data1_i2reg.Q B0_Data1_i1reg.Q B0_Data2_i4reg.Q B0_Data2_i3reg.Q \
+B0_Data2_i2reg.Q B0_Data2_i1reg.Q b.D
+1-----0110 1
+1-----0101 1
+001010---- 1
+000101---- 1
+000110---- 1
+01----1010 1
+-1----0101 1
+-1----0110 1
+10----1-1- 1
+10----11-- 1
+00-00----- 0
+11----1--- 0
+-1----1-0- 0
+00--11---- 0
+0011------ 0
+00--00---- 0
+0000------ 0
+-1----11-- 0
+1-----0-11 0
+1------00- 0
+1-----0-00 0
+1-----00-- 0
+-1----00-- 0
+-1------11 0
+-1------00 0
+.names C0_scancnt__i1.Q C0_scancnt__i0.Q B0_Data1_i3reg.Q B0_Data1_i2reg.Q \
+B0_Data1_i1reg.Q B0_Data2_i4reg.Q B0_Data2_i3reg.Q B0_Data2_i2reg.Q \
+B0_Data2_i1reg.Q c.D
+1----0010 1
+00010---- 1
+01----010 1
+10---11-- 1
+10---1-1- 1
+1-----00- 0
+1----01-- 0
+11---1--- 0
+00--1---- 0
+00-0----- 0
+001------ 0
+1----0--1 0
+-1----1-- 0
+-1-----0- 0
+-1------1 0
+.names C0_scancnt__i1.Q C0_scancnt__i0.Q B0_Data1_i4reg.Q B0_Data1_i3reg.Q \
+B0_Data1_i2reg.Q B0_Data1_i1reg.Q B0_Data2_i4reg.Q B0_Data2_i3reg.Q \
+B0_Data2_i2reg.Q B0_Data2_i1reg.Q d.D
+1-----0100 1
+1-----0111 1
+001010---- 1
+000100---- 1
+000001---- 1
+000111---- 1
+01----1010 1
+10----1-1- 1
+1-----0001 1
+-1----0100 1
+-1----0001 1
+-1----0111 1
+10----11-- 1
+00001----- 0
+1------000 0
+11----1--- 0
+001-0----- 0
+00-110---- 0
+0000-0---- 0
+-1----00-0 0
+-1----001- 0
+-1-----110 0
+001--1---- 0
+-1----1-0- 0
+-1----1--1 0
+00-101---- 0
+1-----0101 0
+1-----001- 0
+1-----100- 0
+1-----0-10 0
+-1-----101 0
+.names C0_scancnt__i1.Q C0_scancnt__i0.Q B0_Data1_i4reg.Q B0_Data1_i3reg.Q \
+B0_Data1_i2reg.Q B0_Data1_i1reg.Q B0_Data2_i4reg.Q B0_Data2_i3reg.Q \
+B0_Data2_i2reg.Q B0_Data2_i1reg.Q e.D
+10-----10- 1
+10-------1 1
+001010---- 1
+01----1010 1
+-1----010- 1
+00010----- 1
+00-001---- 1
+10----1-1- 1
+-1-----001 1
+000--1---- 1
+-1----0--1 1
+11----1--0 0
+00-000---- 0
+000-10---- 0
+-1-----000 0
+-1----0-10 0
+001-11---- 0
+0011------ 0
+1------000 0
+1-----0-10 0
+-1----11-- 0
+-1----1-11 0
+.names C0_scancnt__i1.Q C0_scancnt__i0.Q B0_Data1_i4reg.Q B0_Data1_i3reg.Q \
+B0_Data1_i2reg.Q B0_Data1_i1reg.Q B0_Data2_i4reg.Q B0_Data2_i3reg.Q \
+B0_Data2_i2reg.Q B0_Data2_i1reg.Q f.D
+1-----0-11 1
+1-----001- 1
+10----1-1- 1
+00-010---- 1
+000-11---- 1
+0000-1---- 1
+01-----010 1
+10----11-- 1
+-1----00-1 1
+-1----0-11 1
+1-----00-1 1
+1-----0-00 0
+1-----100- 0
+1-----010- 0
+001--1---- 0
+00--00---- 0
+00-1-0---- 0
+00-10----- 0
+1-----01-0 0
+-1-----10- 0
+11----1--- 0
+-1----1--1 0
+-1-----1-0 0
+-1------00 0
+.names C0_scancnt__i1.Q C0_scancnt__i0.Q B0_Data1_i4reg.Q B0_Data1_i3reg.Q \
+B0_Data1_i2reg.Q B0_Data1_i1reg.Q B0_Data2_i4reg.Q B0_Data2_i3reg.Q \
+B0_Data2_i2reg.Q B0_Data2_i1reg.Q g.D
+00000----- 1
+00-111---- 1
+1-----000- 1
+-1----000- 1
+001-1----- 1
+0011------ 1
+1-----1-10 1
+1------111 1
+-1----1-1- 1
+1-----11-- 1
+-1-----111 1
+-1----11-- 1
+000-10---- 0
+10----10-1 0
+-1----01-0 0
+1-----01-0 0
+1-----001- 0
+00100----- 0
+00010----- 0
+00001----- 0
+-1----010- 0
+-1----100- 0
+1-----010- 0
+1-----100- 0
+-1----001- 0
+.names C0_scancnt__i1.Q C0_scancnt__i0.Q LED_VCC3.D
+01 1
+1- 0
+-0 0
+.names C0_scancnt__i1.Q C0_scancnt__i0.Q LED_VCC4.D
+00 1
+1- 0
+-1 0
+.names C0_scancnt__i1.Q C0_scancnt__i0.Q C0_scancnt__i1.D
+10 1
+01 1
+00 0
+11 0
+.names reset.BLIF C0_count_186__i12.Q C0_count_186__i11.Q C0_count_186__i10.Q \
+C0_count_186__i9.Q C0_count_186__i8.Q C0_count_186__i7.Q C0_count_186__i6.Q \
+C0_count_186__i5.Q C0_count_186__i4.Q C0_count_186__i3.Q C0_count_186__i2.Q \
+C0_count_186__i1.Q C0_count_186__i0.Q C0_scancnt__i0.T
+11011101101111 1
+------------0- 0
+-----------0-- 0
+----------0--- 0
+---------1---- 0
+--------0----- 0
+-------0------ 0
+------1------- 0
+-----0-------- 0
+----0--------- 0
+---0---------- 0
+--1----------- 0
+-0------------ 0
+0------------- 0
+-------------0 0
+.names C0_count_186__i12.Q C0_count_186__i11.Q C0_count_186__i10.Q \
+C0_count_186__i9.Q C0_count_186__i8.Q C0_count_186__i7.Q C0_count_186__i6.Q \
+C0_count_186__i5.Q C0_count_186__i4.Q C0_count_186__i3.Q C0_count_186__i2.Q \
+C0_count_186__i1.Q C0_count_186__i0.Q C0_count_186__i12.T
+1011101101111 1
+-111111111111 1
+0----0------- 0
+-1------0---- 0
+-----0--1---- 0
+-0---1------- 0
+-----------0- 0
+----------0-- 0
+---------0--- 0
+-------0----- 0
+------0------ 0
+----0-------- 0
+---0--------- 0
+--0---------- 0
+------------0 0
+.names C0_count_186__i10.Q C0_count_186__i9.Q C0_count_186__i8.Q \
+C0_count_186__i7.Q C0_count_186__i6.Q C0_count_186__i5.Q C0_count_186__i4.Q \
+C0_count_186__i3.Q C0_count_186__i2.Q C0_count_186__i1.Q C0_count_186__i0.Q \
+C0_count_186__i11.T
+11111111111 1
+---------0- 0
+--------0-- 0
+-------0--- 0
+------0---- 0
+-----0----- 0
+----0------ 0
+---0------- 0
+--0-------- 0
+-0--------- 0
+0---------- 0
+----------0 0
+.names C0_count_186__i12.Q C0_count_186__i11.Q C0_count_186__i10.Q \
+C0_count_186__i9.Q C0_count_186__i8.Q C0_count_186__i7.Q C0_count_186__i6.Q \
+C0_count_186__i5.Q C0_count_186__i4.Q C0_count_186__i3.Q C0_count_186__i2.Q \
+C0_count_186__i1.Q C0_count_186__i0.Q C0_count_186__i10.T
+1011101101111 1
+---1111111111 1
+0-------0---- 0
+-1------0---- 0
+--0-----0---- 0
+-----0--1---- 0
+-----1--0---- 0
+-----------0- 0
+----------0-- 0
+---------0--- 0
+-------0----- 0
+------0------ 0
+----0-------- 0
+---0--------- 0
+------------0 0
+.names C0_count_186__i12.Q C0_count_186__i11.Q C0_count_186__i10.Q \
+C0_count_186__i9.Q C0_count_186__i8.Q C0_count_186__i7.Q C0_count_186__i6.Q \
+C0_count_186__i5.Q C0_count_186__i4.Q C0_count_186__i3.Q C0_count_186__i2.Q \
+C0_count_186__i1.Q C0_count_186__i0.Q C0_count_186__i9.T
+1011101101111 1
+----111111111 1
+0-------0---- 0
+-1------0---- 0
+--0-----0---- 0
+---0----0---- 0
+-----0--1---- 0
+-----1--0---- 0
+-----------0- 0
+----------0-- 0
+---------0--- 0
+-------0----- 0
+------0------ 0
+----0-------- 0
+------------0 0
+.names C0_count_186__i12.Q C0_count_186__i11.Q C0_count_186__i10.Q \
+C0_count_186__i9.Q C0_count_186__i8.Q C0_count_186__i7.Q C0_count_186__i6.Q \
+C0_count_186__i5.Q C0_count_186__i4.Q C0_count_186__i3.Q C0_count_186__i2.Q \
+C0_count_186__i1.Q C0_count_186__i0.Q C0_count_186__i8.T
+1011101101111 1
+-----11111111 1
+0-------0---- 0
+-1------0---- 0
+--0-----0---- 0
+---0----0---- 0
+----0---0---- 0
+-----0--1---- 0
+-----1--0---- 0
+-----------0- 0
+----------0-- 0
+---------0--- 0
+-------0----- 0
+------0------ 0
+------------0 0
+.names C0_count_186__i6.Q C0_count_186__i5.Q C0_count_186__i4.Q \
+C0_count_186__i3.Q C0_count_186__i2.Q C0_count_186__i1.Q C0_count_186__i0.Q \
+C0_count_186__i7.T
+1111111 1
+-----0- 0
+----0-- 0
+---0--- 0
+--0---- 0
+-0----- 0
+0------ 0
+------0 0
+.names C0_count_186__i12.Q C0_count_186__i11.Q C0_count_186__i10.Q \
+C0_count_186__i9.Q C0_count_186__i8.Q C0_count_186__i7.Q C0_count_186__i6.Q \
+C0_count_186__i5.Q C0_count_186__i4.Q C0_count_186__i3.Q C0_count_186__i2.Q \
+C0_count_186__i1.Q C0_count_186__i0.Q C0_count_186__i6.T
+10111011-1111 1
+-------111111 1
+------0-0---- 0
+-----1--0---- 0
+----0---0---- 0
+---0----0---- 0
+--0-----0---- 0
+-1------0---- 0
+0-------0---- 0
+-----------0- 0
+----------0-- 0
+---------0--- 0
+-------0----- 0
+------------0 0
+.names C0_count_186__i12.Q C0_count_186__i11.Q C0_count_186__i10.Q \
+C0_count_186__i9.Q C0_count_186__i8.Q C0_count_186__i7.Q C0_count_186__i6.Q \
+C0_count_186__i5.Q C0_count_186__i4.Q C0_count_186__i3.Q C0_count_186__i2.Q \
+C0_count_186__i1.Q C0_count_186__i0.Q C0_count_186__i5.T
+10111011-1111 1
+--------11111 1
+-------00---- 0
+------0-0---- 0
+-----1--0---- 0
+----0---0---- 0
+---0----0---- 0
+--0-----0---- 0
+-1------0---- 0
+0-------0---- 0
+-----------0- 0
+----------0-- 0
+---------0--- 0
+------------0 0
+.names C0_count_186__i12.Q C0_count_186__i11.Q C0_count_186__i10.Q \
+C0_count_186__i9.Q C0_count_186__i8.Q C0_count_186__i7.Q C0_count_186__i6.Q \
+C0_count_186__i5.Q C0_count_186__i4.Q C0_count_186__i3.Q C0_count_186__i2.Q \
+C0_count_186__i1.Q C0_count_186__i0.Q C0_count_186__i4.T
+--------11111 1
+-------0-1111 1
+------0--1111 1
+-----1---1111 1
+----0----1111 1
+---0-----1111 1
+--0------1111 1
+-1-------1111 1
+0--------1111 1
+101110110---- 0
+-----------0- 0
+----------0-- 0
+---------0--- 0
+------------0 0
+.names C0_count_186__i3.Q C0_count_186__i2.Q C0_count_186__i1.Q \
+C0_count_186__i0.Q C0_count_186__i3.D
+0111 1
+1-0- 1
+10-- 1
+1--0 1
+1111 0
+0-0- 0
+00-- 0
+0--0 0
+.names C0_count_186__i2.Q C0_count_186__i1.Q C0_count_186__i0.Q \
+C0_count_186__i2.D
+011 1
+10- 1
+1-0 1
+111 0
+00- 0
+0-0 0
+.names C0_count_186__i1.Q C0_count_186__i0.Q C0_count_186__i1.D
+10 1
+01 1
+00 0
+11 0
+.names C0_count_186__i0.Q C0_count_186__i0.D
+0 1
+1 0
+.names B0_Send_count_i0_i3.Q B0_Send_count_i0_i2.Q B0_Send_count_i0_i1.Q \
+B0_Send_count_i0_i0.Q B0_Send_data_i1.Q Tx.D
+1001- 1
+01-11 1
+001-1 1
+--00- 0
+0---0 0
+000-- 0
+1-1-- 0
+-1-0- 0
+11--- 0
+.names B0_Rx_Data_i0_i3.Q B0_Data1_i4reg.D
+1 1
+0 0
+.names B0_Rx_Data_i0_i2.Q B0_Data1_i3reg.D
+1 1
+0 0
+.names B0_Rx_Data_i0_i1.Q B0_Data1_i2reg.D
+1 1
+0 0
+.names B0_Rx_Data_i0_i0.Q B0_Data1_i1reg.D
+1 1
+0 0
+.names B0_Rx_Data_i0_i7.Q B0_Data2_i4reg.D
+1 1
+0 0
+.names B0_Rx_Data_i0_i6.Q B0_Data2_i3reg.D
+1 1
+0 0
+.names B0_Rx_Data_i0_i5.Q B0_Data2_i2reg.D
+1 1
+0 0
+.names B0_Rx_Data_i0_i4.Q B0_Data2_i1reg.D
+1 1
+0 0
+.names B0_ClockCount_281__i9.Q B0_ClockCount_281__i8.Q B0_ClockCount_281__i7.Q \
+B0_ClockCount_281__i6.Q B0_ClockCount_281__i5.Q B0_ClockCount_281__i4.Q \
+B0_ClockCount_281__i3.Q B0_ClockCount_281__i2.Q B0_ClockCount_281__i1.Q \
+B0_ClockCount_281__i0.Q B0_ClockCount_281__i9.T
+1001110000 1
+-111111111 1
+0--------0 0
+-1-------0 0
+------0--1 0
+--1-----0- 0
+-------01- 0
+-0-----1-- 0
+--0---1--- 0
+-----0---- 0
+----0----- 0
+---0------ 0
+.names B0_ClockCount_281__i7.Q B0_ClockCount_281__i6.Q B0_ClockCount_281__i5.Q \
+B0_ClockCount_281__i4.Q B0_ClockCount_281__i3.Q B0_ClockCount_281__i2.Q \
+B0_ClockCount_281__i1.Q B0_ClockCount_281__i0.Q B0_ClockCount_281__i8.T
+11111111 1
+------0- 0
+-----0-- 0
+----0--- 0
+---0---- 0
+--0----- 0
+-0------ 0
+0------- 0
+-------0 0
+.names B0_ClockCount_281__i6.Q B0_ClockCount_281__i5.Q B0_ClockCount_281__i4.Q \
+B0_ClockCount_281__i3.Q B0_ClockCount_281__i2.Q B0_ClockCount_281__i1.Q \
+B0_ClockCount_281__i0.Q B0_ClockCount_281__i7.T
+1111111 1
+-----0- 0
+----0-- 0
+---0--- 0
+--0---- 0
+-0----- 0
+0------ 0
+------0 0
+.names B0_ClockCount_281__i9.Q B0_ClockCount_281__i8.Q B0_ClockCount_281__i7.Q \
+B0_ClockCount_281__i6.Q B0_ClockCount_281__i5.Q B0_ClockCount_281__i4.Q \
+B0_ClockCount_281__i3.Q B0_ClockCount_281__i2.Q B0_ClockCount_281__i1.Q \
+B0_ClockCount_281__i0.Q B0_ClockCount_281__i6.T
+1001110000 1
+----111111 1
+0-------0- 0
+-1------0- 0
+--1-----0- 0
+---0----0- 0
+-------1-0 0
+--------01 0
+------0-1- 0
+------10-- 0
+-----0---- 0
+----0----- 0
+.names B0_ClockCount_281__i9.Q B0_ClockCount_281__i8.Q B0_ClockCount_281__i7.Q \
+B0_ClockCount_281__i6.Q B0_ClockCount_281__i5.Q B0_ClockCount_281__i4.Q \
+B0_ClockCount_281__i3.Q B0_ClockCount_281__i2.Q B0_ClockCount_281__i1.Q \
+B0_ClockCount_281__i0.Q B0_ClockCount_281__i5.T
+1001110000 1
+-----11111 1
+0-------0- 0
+-1------0- 0
+--1-----0- 0
+---0----0- 0
+----0---0- 0
+-------1-0 0
+--------01 0
+------0-1- 0
+------10-- 0
+-----0---- 0
+.names B0_ClockCount_281__i9.Q B0_ClockCount_281__i8.Q B0_ClockCount_281__i7.Q \
+B0_ClockCount_281__i6.Q B0_ClockCount_281__i5.Q B0_ClockCount_281__i4.Q \
+B0_ClockCount_281__i3.Q B0_ClockCount_281__i2.Q B0_ClockCount_281__i1.Q \
+B0_ClockCount_281__i0.Q B0_ClockCount_281__i4.T
+1001110000 1
+------1111 1
+0-------0- 0
+-1------0- 0
+--1-----0- 0
+---0----0- 0
+----0---0- 0
+-----0--0- 0
+-------1-0 0
+--------01 0
+------0-1- 0
+------10-- 0
+.names B0_ClockCount_281__i3.Q B0_ClockCount_281__i2.Q B0_ClockCount_281__i1.Q \
+B0_ClockCount_281__i0.Q B0_ClockCount_281__i3.D
+0111 1
+1-0- 1
+10-- 1
+1--0 1
+1111 0
+0-0- 0
+00-- 0
+0--0 0
+.names B0_ClockCount_281__i2.Q B0_ClockCount_281__i1.Q B0_ClockCount_281__i0.Q \
+B0_ClockCount_281__i2.D
+011 1
+10- 1
+1-0 1
+111 0
+00- 0
+0-0 0
+.names B0_ClockCount_281__i1.Q B0_ClockCount_281__i0.Q B0_ClockCount_281__i1.D
+10 1
+01 1
+00 0
+11 0
+.names B0_ClockCount_281__i9.Q B0_ClockCount_281__i8.Q B0_ClockCount_281__i7.Q \
+B0_ClockCount_281__i6.Q B0_ClockCount_281__i5.Q B0_ClockCount_281__i4.Q \
+B0_ClockCount_281__i3.Q B0_ClockCount_281__i2.Q B0_ClockCount_281__i1.Q \
+B0_ClockCount_281__i0.Q B0_ClockCount_281__i0.D
+--------10 1
+-------1-0 1
+------1--0 1
+-----0---0 1
+----0----0 1
+---0-----0 1
+--1------0 1
+-1-------0 1
+0--------0 1
+100111000- 0
+---------1 0
+.names B0_ClockCount_Rx_280__i5.Q B0_ClockCount_Rx_280__i4.Q \
+B0_ClockCount_Rx_280__i3.Q B0_ClockCount_Rx_280__i2.Q \
+B0_ClockCount_Rx_280__i1.Q B0_ClockCount_Rx_280__i0.Q \
+B0_ClockCount_Rx_280__i5.T
+100110 1
+-11111 1
+0----0 0
+-1---0 0
+--0--1 0
+-01--- 0
+----0- 0
+---0-- 0
+.names B0_ClockCount_Rx_280__i4.Q B0_ClockCount_Rx_280__i3.Q \
+B0_ClockCount_Rx_280__i2.Q B0_ClockCount_Rx_280__i1.Q \
+B0_ClockCount_Rx_280__i0.Q B0_ClockCount_Rx_280__i4.D
+01111 1
+1--0- 1
+1-0-- 1
+10--- 1
+1---0 1
+11111 0
+0--0- 0
+0-0-- 0
+00--- 0
+0---0 0
+.names B0_ClockCount_Rx_280__i3.Q B0_ClockCount_Rx_280__i2.Q \
+B0_ClockCount_Rx_280__i1.Q B0_ClockCount_Rx_280__i0.Q \
+B0_ClockCount_Rx_280__i3.D
+0111 1
+1-0- 1
+10-- 1
+1--0 1
+1111 0
+0-0- 0
+00-- 0
+0--0 0
+.names B0_ClockCount_Rx_280__i5.Q B0_ClockCount_Rx_280__i4.Q \
+B0_ClockCount_Rx_280__i3.Q B0_ClockCount_Rx_280__i2.Q \
+B0_ClockCount_Rx_280__i1.Q B0_ClockCount_Rx_280__i0.Q \
+B0_ClockCount_Rx_280__i2.D
+---011 1
+---10- 1
+--11-0 1
+-1-1-0 1
+0--1-0 1
+100-10 0
+---00- 0
+---111 0
+---0-0 0
+.names B0_ClockCount_Rx_280__i5.Q B0_ClockCount_Rx_280__i4.Q \
+B0_ClockCount_Rx_280__i3.Q B0_ClockCount_Rx_280__i2.Q \
+B0_ClockCount_Rx_280__i1.Q B0_ClockCount_Rx_280__i0.Q \
+B0_ClockCount_Rx_280__i1.D
+----01 1
+---010 1
+--1-10 1
+-1--10 1
+0---10 1
+10011- 0
+----00 0
+----11 0
+.names B0_ClockCount_Rx_280__i5.Q B0_ClockCount_Rx_280__i4.Q \
+B0_ClockCount_Rx_280__i3.Q B0_ClockCount_Rx_280__i2.Q \
+B0_ClockCount_Rx_280__i1.Q B0_ClockCount_Rx_280__i0.Q \
+B0_ClockCount_Rx_280__i0.D
+----00 1
+---0-0 1
+--1--0 1
+-1---0 1
+0----0 1
+10011- 0
+-----1 0
+.names B0_ClockCount_281__i9.Q B0_ClockCount_281__i8.Q B0_ClockCount_281__i7.Q \
+B0_ClockCount_281__i6.Q B0_ClockCount_281__i5.Q B0_ClockCount_281__i4.Q \
+B0_ClockCount_281__i3.Q B0_ClockCount_281__i2.Q B0_ClockCount_281__i1.Q \
+B0_ClockCount_281__i0.Q B0_Clock9600_92.D
+1001110000 1
+--------1- 0
+-------1-- 0
+------1--- 0
+-----0---- 0
+----0----- 0
+---0------ 0
+--1------- 0
+-1-------- 0
+0--------- 0
+---------1 0
+.names B0_ClockCount_Rx_280__i5.Q B0_ClockCount_Rx_280__i4.Q \
+B0_ClockCount_Rx_280__i3.Q B0_ClockCount_Rx_280__i2.Q \
+B0_ClockCount_Rx_280__i1.Q B0_ClockCount_Rx_280__i0.Q B0_Clock16_94.D
+100110 1
+----0- 0
+---0-- 0
+--1--- 0
+-1---- 0
+0----- 0
+-----1 0
+.names B0_Send_en_100.D
+.names B0_Send_over_99.D
+.names B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q B0_m_i1.Q \
+B0_m_i0.Q B0_Rx_Valid_102.D
+------1- 1
+-----1-- 1
+----1--- 1
+---1---- 1
+--1----- 1
+-1------ 1
+1------- 1
+-------1 1
+00000000 0
+.names B0_Send_count_i0_i3.Q B0_Send_count_i0_i2.Q B0_Send_count_i0_i1.Q \
+B0_Send_count_i0_i0.Q B0_Send_count_i0_i3.D
+0111 1
+1-0- 1
+10-- 1
+1--0 1
+1111 0
+0-0- 0
+00-- 0
+0--0 0
+.names B0_Send_count_i0_i2.Q B0_Send_count_i0_i1.Q B0_Send_count_i0_i0.Q \
+B0_Send_count_i0_i2.D
+011 1
+10- 1
+1-0 1
+111 0
+00- 0
+0-0 0
+.names B0_Send_count_i0_i1.Q B0_Send_count_i0_i0.Q B0_Send_count_i0_i1.D
+10 1
+01 1
+00 0
+11 0
+.names B0_Send_count_i0_i3.Q B0_Send_count_i0_i2.Q B0_Send_count_i0_i1.Q \
+B0_Send_count_i0_i0.Q B0_Send_count_i0_i0.D
+100- 1
+---0 1
+--11 0
+-1-1 0
+0--1 0
+.names B0_Send_data_i1.D
+ 1
+.names B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q B0_m_i1.Q \
+B0_m_i0.Q B0_m_i7.T
+10101000 1
+-1111111 1
+0------0 0
+------10 0
+-0-----1 0
+-----10- 0
+---1-0-- 0
+-1-0---- 0
+----0--- 0
+--0----- 0
+.names B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q B0_m_i1.Q B0_m_i0.Q B0_m_i6.T
+111111 1
+----0- 0
+---0-- 0
+--0--- 0
+-0---- 0
+0----- 0
+-----0 0
+.names B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q B0_m_i1.Q \
+B0_m_i0.Q B0_m_i5.T
+10101000 1
+---11111 1
+0------0 0
+-1-----0 0
+--0----0 0
+------10 0
+---0---1 0
+-----10- 0
+---1-0-- 0
+----0--- 0
+.names B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q B0_m_i1.Q B0_m_i0.Q B0_m_i4.D
+01111 1
+1--0- 1
+1-0-- 1
+10--- 1
+1---0 1
+11111 0
+0--0- 0
+0-0-- 0
+00--- 0
+0---0 0
+.names B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q B0_m_i1.Q \
+B0_m_i0.Q B0_m_i3.D
+0---1-0- 1
+-1--1-0- 1
+--0-1-0- 1
+---11-0- 1
+----1-10 1
+----10-1 1
+----110- 1
+----0111 1
+1010-000 0
+----1111 0
+----0-0- 0
+----00-- 0
+----0--0 0
+.names B0_m_i2.Q B0_m_i1.Q B0_m_i0.Q B0_m_i2.D
+011 1
+10- 1
+1-0 1
+111 0
+00- 0
+0-0 0
+.names B0_m_i1.Q B0_m_i0.Q B0_m_i1.D
+10 1
+01 1
+00 0
+11 0
+.names Rx.BLIF B0_m_i7.Q B0_m_i6.Q B0_m_i5.Q B0_m_i4.Q B0_m_i3.Q B0_m_i2.Q \
+B0_m_i1.Q B0_m_i0.Q B0_m_i0.D
+0----0--0 1
+-1---0--0 1
+---0-1--0 1
+-0-1----0 1
+-------10 1
+------1-0 1
+----1---0 1
+--1-----0 1
+10000000- 0
+-1010100- 0
+--------1 0
+.names Rx.BLIF B0_Rx_Data_i0_i7.D
+1 1
+0 0
+.names Rx.BLIF B0_Rx_Data_i0_i6.D
+1 1
+0 0
+.names Rx.BLIF B0_Rx_Data_i0_i5.D
+1 1
+0 0
+.names Rx.BLIF B0_Rx_Data_i0_i4.D
+1 1
+0 0
+.names Rx.BLIF B0_Rx_Data_i0_i3.D
+1 1
+0 0
+.names Rx.BLIF B0_Rx_Data_i0_i2.D
+1 1
+0 0
+.names Rx.BLIF B0_Rx_Data_i0_i1.D
+1 1
+0 0
+.names Rx.BLIF B0_Rx_Data_i0_i0.D
+1 1
+0 0
+.end

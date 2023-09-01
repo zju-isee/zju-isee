@@ -1,0 +1,1061 @@
+|--------------------------------------------------------------|
+|- ispLEVER Classic 2.1.00.02.49.20 Fitter Report File        -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+
+
+The Basic/Detailed Report Format can be selected in the dialog box
+Tools->Fitter Report File Format...
+
+Project_Summary
+~~~~~~~~~~~~~~~
+Project Name         :  isp_lab2
+Project Path         :  D:\MyDucuments\_Junior_1\ElectricSystemDesign\ISP_lab2
+Project Fitted on    :  Sat Apr 22 21:58:36 2023
+
+Device               :  M4256_64
+Package              :  100
+GLB Input Mux Size   :  33
+Available Blocks     :  16
+Speed                :  -7.5
+Part Number          :  LC4256V-75T100I
+Source Format        :  Schematic_Verilog_HDL
+
+
+// Project 'isp_lab2' Fit Successfully! //
+
+
+Compilation_Times
+~~~~~~~~~~~~~~~~~
+Prefit Time                     0 secs
+Load Design Time                0.05 secs
+Partition Time                  0.03 secs
+Place Time                      0.00 secs
+Route Time                      0.00 secs
+Total Fit Time                  00:00:01
+
+
+Design_Summary
+~~~~~~~~~~~~~~
+Total Input Pins                4
+Total Logic Functions           52
+  Total Output Pins             13
+  Total Bidir I/O Pins          0
+  Total Buried Nodes            39
+Total Flip-Flops                46
+  Total D Flip-Flops            36
+  Total T Flip-Flops            10
+  Total Latches                 0
+Total Product Terms             186
+
+Total Reserved Pins             0
+Total Locked Pins               17
+Total Locked Nodes              0
+
+Total Unique Output Enables     0
+Total Unique Clocks             4
+Total Unique Clock Enables      3
+Total Unique Resets             0
+Total Unique Presets            0
+
+Fmax Logic Levels               2
+
+
+Device_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~~~~
+                                 Device
+                                 Total    Used   Not Used   Utilization
+-----------------------------------------------------------------------
+Dedicated Pins
+  Clock/Input Pins                  4        2      2    -->    50
+  Input-Only Pins                   6        0      6    -->     0
+  I/O / Enable Pins                 2        0      2    -->     0
+I/O Pins                           62       15     47    -->    24
+Logic Functions                   256       52    204    -->    20
+  Input Registers                  64        0     64    -->     0
+
+GLB Inputs                        576      150    426    -->    26
+Logical Product Terms            1280      132   1148    -->    10
+Occupied GLBs                      16       16      0    -->   100
+Macrocells                        256       52    204    -->    20
+
+Control Product Terms:
+  GLB Clock/Clock Enables          16        7      9    -->    43
+  GLB Reset/Presets                16        0     16    -->     0
+  Macrocell Clocks                256        0    256    -->     0
+  Macrocell Clock Enables         256       17    239    -->     6
+  Macrocell Enables               256        0    256    -->     0
+  Macrocell Resets                256        0    256    -->     0
+  Macrocell Presets               256        0    256    -->     0
+
+Global Routing Pool               324       41    283    -->    12
+  GRP from IFB                     ..        2     ..    -->    ..
+    (from input signals)           ..        2     ..    -->    ..
+    (from output signals)          ..        0     ..    -->    ..
+    (from bidir signals)           ..        0     ..    -->    ..
+  GRP from MFB                     ..       39     ..    -->    ..
+----------------------------------------------------------------------
+
+<Note> 1 : The available PT is the product term that has not been used.
+<Note> 2 : IFB is I/O feedback.
+<Note> 3 : MFB is macrocell feedback.
+
+
+
+GLB_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~
+                                                                                     # of PT
+               ---  Fanin  ---    I/O    Input  Macrocells       Macrocells   Logic  clusters
+             Unique Shared Total  Pins    Regs Used Inaccessible  available    PTs   used
+-------------------------------------------------------------------------------------------
+Maximum
+  GLB                      36      *(1)     8   --     --             16       80       16
+-------------------------------------------------------------------------------------------
+  GLB    A      1     2     3      0/4      0    2      0             14        3        2
+  GLB    B      2     1     3      0/4      0    2      0             14        6        2
+  GLB    C      0     6     6      0/4      0    4      0             12       11        4
+  GLB    D      0     5     5      0/4      0    6      0             10       13        6
+-------------------------------------------------------------------------------------------
+  GLB    E      3     0     3      0/4      0    1      0             15        4        1
+  GLB    F      3    18    21      0/4      0    4      0             12        8        4
+  GLB    G      2    18    20      0/4      0    4      0             12       10        4
+  GLB    H      0     6     6      0/4      0    4      0             12       11        4
+-------------------------------------------------------------------------------------------
+  GLB    I      2     1     3      2/4      0    3      0             13        5        3
+  GLB    J      0     0     0      2/4      0    0      0             16        0        0
+  GLB    K      4    17    21      3/4      0    9      0              7       20        9
+  GLB    L      0    20    20      3/4      0    3      0             13       14        3
+-------------------------------------------------------------------------------------------
+  GLB    M      0    20    20      3/4      0    4      0             12       15        5
+  GLB    N      1    13    14      1/4      0    4      0             12        9        4
+  GLB    O      0     0     0      1/4      0    1      0             15        0        1
+  GLB    P      5     0     5      0/4      0    1      0             15        3        1
+-------------------------------------------------------------------------------------------
+TOTALS:        23   127   150     15/64     0   52      0            204      132       53
+
+<Note> 1 : For ispMACH 4000 devices, the number of IOs depends on the GLB.
+<Note> 2 : Four rightmost columns above reflect last status of the placement process.
+
+
+
+GLB_Control_Summary
+~~~~~~~~~~~~~~~~~~~
+           Shared Shared | Mcell  Mcell  Mcell  Mcell  Mcell 
+           Clk/CE Rst/Pr | Clock  CE     Enable Reset  Preset
+------------------------------------------------------------------------------
+Maximum
+  GLB        1      1        16     16     16     16     16  
+==============================================================================
+  GLB    A   0      0         0      0      0      0      0
+  GLB    B   0      0         0      2      0      0      0
+  GLB    C   1      0         0      0      0      0      0
+  GLB    D   1      0         0      2      0      0      0
+------------------------------------------------------------------------------
+  GLB    E   0      0         0      1      0      0      0
+  GLB    F   0      0         0      1      0      0      0
+  GLB    G   0      0         0      2      0      0      0
+  GLB    H   1      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    I   0      0         0      1      0      0      0
+  GLB    J   0      0         0      0      0      0      0
+  GLB    K   1      0         0      4      0      0      0
+  GLB    L   1      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    M   1      0         0      1      0      0      0
+  GLB    N   1      0         0      2      0      0      0
+  GLB    O   0      0         0      0      0      0      0
+  GLB    P   0      0         0      1      0      0      0
+------------------------------------------------------------------------------
+
+<Note> 1 : For ispMACH 4000 devices, the number of output enables depends on the GLB.
+
+
+
+Optimizer_and_Fitter_Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pin Assignment :                       Yes
+Group Assignment :                     No
+Pin Reservation :                      No
+
+@Ignore_Project_Constraints :
+  Pin Assignments :                    No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+  Group Assignments :                  No
+  Macrocell Assignment :               No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+
+@Backannotate_Project_Constraints
+  Pin Assignments :                    No
+  Pin And Block Assignments :          No
+  Pin, Macrocell and Block :           No
+
+@Timing_Constraints :                  No
+
+@Global_Project_Optimization :
+  Balanced Partitioning :              Yes
+  Spread Placement :                   Yes
+
+  Note :
+    Pack Design :
+       Balanced Partitioning = No
+       Spread Placement      = No
+    Spread Design :
+       Balanced Partitioning = Yes
+       Spread Placement      = Yes
+
+
+@Logic_Synthesis :
+  Logic Reduction :                    Yes
+  Node Collapsing :                    FMAX
+  Fmax_Logic_Level :                   1
+  D/T Synthesis :                      Yes
+  XOR Synthesis :                      Yes
+  Max. P-Term for Collapsing :         16
+  Max. P-Term for Splitting :          80
+  Max Symbols :                        24
+
+@Utilization_options
+  Max. % of Macrocells used :          100
+@Usercode                               (HEX)
+@IO_Types                              Default = LVCMOS18 (2)
+@Output_Slew_Rate                      Default = FAST (2)
+@Power                                 Default = HIGH (2)
+@Pull                                  Default = PULLUP_UP (2)
+@Fast_Bypass                           Default = None (2)
+@ORP_Bypass                            Default = None
+@Input_Registers                       Default = None (2)
+@Register_Powerup                      Default = None
+
+Device Options:
+<Note> 1 : Reserved unused I/Os can be independently driven to Low or High, and does not
+           follow the drive level set for the Global Configure Unused I/O Option.
+<Note> 2 : For user-specified constraints on individual signals, refer to the Output,
+           Bidir and Buried Signal Lists.
+
+
+
+Pinout_Listing
+~~~~~~~~~~~~~~
+      | Pin   | Bank |GLB |Assigned|                 | Signal|
+Pin No| Type  |Number|Pad |Pin     |     I/O Type    | Type  | Signal name
+----------------------------------------------------------------------------------------------------------
+1     | GND   |   -  |    |        |                 |       |
+2     | TDI   |   -  |    |        |                 |       |
+3     |  I_O  |   0  |C12 |        |                 |       |
+4     |  I_O  |   0  |C10 |        |                 |       |
+5     |  I_O  |   0  |C6  |        |                 |       |
+6     |  I_O  |   0  |C2  |        |                 |       |
+7     |GNDIO0 |   -  |    |        |                 |       |
+8     |  I_O  |   0  |D12 |        |                 |       |
+9     |  I_O  |   0  |D10 |        |                 |       |
+10    |  I_O  |   0  |D6  |        |                 |       |
+11    |  I_O  |   0  |D4  |        |                 |       |
+12    | IN0   |   0  |    |        |                 |       |
+13    |VCCIO0 |   -  |    |        |                 |       |
+14    |  I_O  |   0  |E4  |        |                 |       |
+15    |  I_O  |   0  |E6  |        |                 |       |
+16    |  I_O  |   0  |E10 |        |                 |       |
+17    |  I_O  |   0  |E12 |        |                 |       |
+18    |GNDIO0 |   -  |    |        |                 |       |
+19    |  I_O  |   0  |F2  |        |                 |       |
+20    |  I_O  |   0  |F6  |        |                 |       |
+21    |  I_O  |   0  |F10 |        |                 |       |
+22    |  I_O  |   0  |F12 |        |                 |       |
+23    | IN1   |   0  |    |        |                 |       |
+24    | TCK   |   -  |    |        |                 |       |
+25    | VCC   |   -  |    |        |                 |       |
+26    | GND   |   -  |    |        |                 |       |
+27    | IN2   |   0  |    |        |                 |       |
+28    |  I_O  |   0  |G12 |        |                 |       |
+29    |  I_O  |   0  |G10 |        |                 |       |
+30    |  I_O  |   0  |G6  |        |                 |       |
+31    |  I_O  |   0  |G2  |        |                 |       |
+32    |GNDIO0 |   -  |    |        |                 |       |
+33    |VCCIO0 |   -  |    |        |                 |       |
+34    |  I_O  |   0  |H12 |        |                 |       |
+35    |  I_O  |   0  |H10 |        |                 |       |
+36    |  I_O  |   0  |H6  |        |                 |       |
+37    |  I_O  |   0  |H2  |        |                 |       |
+38    |INCLK1 |   0  |    |        |                 |       |
+39    |INCLK2 |   1  |    |    *   |LVCMOS18         | Input |clk_low
+40    | VCC   |   -  |    |        |                 |       |
+41    |  I_O  |   1  |I2  |    *   |LVCMOS18         | Output|light_2
+42    |  I_O  |   1  |I6  |    *   |LVCMOS18         | Output|light_1
+43    |  I_O  |   1  |I10 |        |                 |       |
+44    |  I_O  |   1  |I12 |        |                 |       |
+45    |VCCIO1 |   -  |    |        |                 |       |
+46    |GNDIO1 |   -  |    |        |                 |       |
+47    |  I_O  |   1  |J2  |        |                 |       |
+48    |  I_O  |   1  |J6  |    *   |LVCMOS18         | Input |resetIn
+49    |  I_O  |   1  |J10 |    *   |LVCMOS18         | Input |ButtonIn
+50    |  I_O  |   1  |J12 |        |                 |       |
+51    | GND   |   -  |    |        |                 |       |
+52    | TMS   |   -  |    |        |                 |       |
+53    |  I_O  |   1  |K12 |        |                 |       |
+54    |  I_O  |   1  |K10 |    *   |LVCMOS18         | Output|LED_VCC4
+55    |  I_O  |   1  |K6  |    *   |LVCMOS18         | Output|LED_VCC3
+56    |  I_O  |   1  |K2  |    *   |LVCMOS18         | Output|LED_B
+57    |GNDIO1 |   -  |    |        |                 |       |
+58    |  I_O  |   1  |L12 |    *   |LVCMOS18         | Output|LED_G
+59    |  I_O  |   1  |L10 |        |                 |       |
+60    |  I_O  |   1  |L6  |    *   |LVCMOS18         | Output|LED_F
+61    |  I_O  |   1  |L4  |    *   |LVCMOS18         | Output|LED_A
+62    | IN3   |   1  |    |        |                 |       |
+63    |VCCIO1 |   -  |    |        |                 |       |
+64    |  I_O  |   1  |M4  |    *   |LVCMOS18         | Output|LED_D
+65    |  I_O  |   1  |M6  |    *   |LVCMOS18         | Output|LED_E
+66    |  I_O  |   1  |M10 |    *   |LVCMOS18         | Output|LED_C
+67    |  I_O  |   1  |M12 |        |                 |       |
+68    |GNDIO1 |   -  |    |        |                 |       |
+69    |  I_O  |   1  |N2  |        |                 |       |
+70    |  I_O  |   1  |N6  |        |                 |       |
+71    |  I_O  |   1  |N10 |        |                 |       |
+72    |  I_O  |   1  |N12 |    *   |LVCMOS18         | Output|LED_VCC1
+73    | IN4   |   1  |    |        |                 |       |
+74    | TDO   |   -  |    |        |                 |       |
+75    | VCC   |   -  |    |        |                 |       |
+76    | GND   |   -  |    |        |                 |       |
+77    | IN5   |   1  |    |        |                 |       |
+78    |  I_O  |   1  |O12 |    *   |LVCMOS18         | Output|LED_VCC2
+79    |  I_O  |   1  |O10 |        |                 |       |
+80    |  I_O  |   1  |O6  |        |                 |       |
+81    |  I_O  |   1  |O2  |        |                 |       |
+82    |GNDIO1 |   -  |    |        |                 |       |
+83    |VCCIO1 |   -  |    |        |                 |       |
+84    |  I_O  |   1  |P12 |        |                 |       |
+85    |  I_O  |   1  |P10 |        |                 |       |
+86    |  I_O  |   1  |P6  |        |                 |       |
+87    | I_O/OE|   1  |P2  |        |                 |       |
+88    |INCLK3 |   1  |    |    *   |LVCMOS18         | Input |clk
+89    |INCLK0 |   0  |    |        |                 |       |
+90    | VCC   |   -  |    |        |                 |       |
+91    | I_O/OE|   0  |A2  |        |                 |       |
+92    |  I_O  |   0  |A6  |        |                 |       |
+93    |  I_O  |   0  |A10 |        |                 |       |
+94    |  I_O  |   0  |A12 |        |                 |       |
+95    |VCCIO0 |   -  |    |        |                 |       |
+96    |GNDIO0 |   -  |    |        |                 |       |
+97    |  I_O  |   0  |B2  |        |                 |       |
+98    |  I_O  |   0  |B6  |        |                 |       |
+99    |  I_O  |   0  |B10 |        |                 |       |
+100   |  I_O  |   0  |B12 |        |                 |       |
+----------------------------------------------------------------------------------------------------------
+
+<Note> GLB Pad : This notation refers to the GLB I/O pad number in the device.
+<Note> Assigned Pin : user or dedicated input assignment (E.g. Clock pins).
+<Note> Pin Type : 
+          ClkIn : Dedicated input or clock pin 
+           CLK  : Dedicated clock pin
+           I_O  : Input/Output pin
+           INP  : Dedicated input pin
+           JTAG : JTAG Control and test pin
+           NC   : No connected
+
+
+
+Input_Signal_List
+~~~~~~~~~~~~~~~~~
+                Input
+         Pin    Fanout
+ Pin GLB Type                       Pullup Signal
+---------------------------------------------------
+  49   J  I/O   1  ------G---------      Up ButtonIn
+  88  -- INCLK     ----------------      Up clk
+  39  -- INCLK     ----------------      Up clk_low
+  48   J  I/O   1  -----F----------      Up resetIn
+---------------------------------------------------
+
+
+
+Output_Signal_List
+~~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Output
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+---------------------------------------------------------------------------------
+  61   L 20  1   5  1 DFF      R            ----------------  Fast     Up LED_A
+  56   K 20  1   5  1 DFF      R            ----------------  Fast     Up LED_B
+  66   M 20  1   4  1 DFF      R            ----------------  Fast     Up LED_C
+  64   M 20  1   6  2 DFF      R            ----------------  Fast     Up LED_D
+  65   M 20  1   3  1 DFF      R            ----------------  Fast     Up LED_E
+  60   L 20  1   5  1 DFF      R            ----------------  Fast     Up LED_F
+  58   L 20  1   4  1 DFF      R            ----------------  Fast     Up LED_G
+  72   N 13  -   0  1 DFF      R            ----------------  Fast     Up LED_VCC1
+  78   O  0  -   0  1 COM                   ----------------  Fast     Up LED_VCC2
+  55   K 16  1   1  1 DFF      R            ----------------  Fast     Up LED_VCC3
+  54   K 16  1   1  1 DFF      R            ----------------  Fast     Up LED_VCC4
+  42   I  1  -   1  1 COM                   ----------------  Fast     Up light_1
+  41   I  1  -   1  1 COM                   ----------------  Fast     Up light_2
+---------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Bidir_Signal_List
+~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Bidir
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Buried_Signal_List
+~~~~~~~~~~~~~~~~~~
+        I         C      P R P       Node
+        N         L Mc   R E U C I F Fanout
+Mc GLB  P LL PTs  S Type E S P E R P                     Signal
+----------------------------------------------------------------------------------------------------
+ 6   G 20  1   3  1 DFF      R       4  A-C--FG---------  buttonInst_1_Debouncer_ControlInst_state_0_
+10   G 18  1   1  1 TFF      R       2  A-----G---------  buttonInst_1_Debouncer_ControlInst_state_1_
+10   C  3  1   1  1 DFF      R *     2  --C---G---------  buttonInst_1_Debouncer_Timer_q_1_
+ 6   F 14  -   2  1 COM              1  --C-------------  buttonInst_1_Debouncer_Timer_q_1__0
+ 3   C  6  1   3  1 DFF      R *     2  --C---G---------  buttonInst_1_Debouncer_Timer_q_2_
+ 6   C  5  1   3  1 DFF      R *     2  --C---G---------  buttonInst_1_Debouncer_Timer_q_3_
+ 1   C  6  1   4  1 DFF      R *     2  --C---G---------  buttonInst_1_Debouncer_Timer_q_4_
+ 9   A  2  1   1  1 DFF      R       1  A---------------  buttonInst_1_Width_TransInst_q
+ 1   F 20  1   3  1 DFF      R       6  -----F-H--KLMN--  buttonInst_2_ControlInst_state_0_
+10   F 18  1   1  1 TFF      R       4  -----F----KLM---  buttonInst_2_ControlInst_state_1_
+10   H  3  1   1  1 DFF      R *     2  -----F-H--------  buttonInst_2_Timer_q_1_
+10   N 14  -   2  1 COM              1  -------H--------  buttonInst_2_Timer_q_1__0
+ 3   H  6  1   3  1 DFF      R *     2  -----F-H--------  buttonInst_2_Timer_q_2_
+ 6   H  5  1   3  1 DFF      R *     2  -----F-H--------  buttonInst_2_Timer_q_3_
+ 1   H  6  1   4  1 DFF      R *     2  -----F-H--------  buttonInst_2_Timer_q_4_
+ 3   A  3  -   2  1 COM              1  ---D------------  buttoninst_1_width_transinst_un1_out_i_n
+ 6   N 13  1   3  1 TFF      R *     6  -----FG---KLMN--  clkGenerate_FreqDivide_q_10_
+ 4   K 10  1   2  1 TFF      R *     6  -----FG---KLMN--  clkGenerate_FreqDivide_q_11_
+ 3   M 11  1   2  1 TFF      R *     6  -----FG---KLMN--  clkGenerate_FreqDivide_q_12_
+ 5   K 12  1   2  1 TFF      R *     6  -----FG---KLMN--  clkGenerate_FreqDivide_q_13_
+ 3   F  1  1   2  1 DFF      R *     9  ----EFG-I-KLMN-P  clkGenerate_FreqDivide_q_1_
+ 5   I  2  1   3  1 DFF      R *     9  ----EFG-I-KLMN-P  clkGenerate_FreqDivide_q_2_
+ 7   E  3  1   4  1 DFF      R *     8  ----EFG---KLMN-P  clkGenerate_FreqDivide_q_3_
+ 3   N 13  1   4  1 DFF      R *     7  -----FG---KLMN-P  clkGenerate_FreqDivide_q_4_
+ 7   P  5  1   3  1 DFF      R *     7  -----FG---KLMN-P  clkGenerate_FreqDivide_q_5_
+ 1   K 13  1   3  1 TFF      R *     6  -----FG---KLMN--  clkGenerate_FreqDivide_q_6_
+ 3   K 13  1   3  1 TFF      R *     6  -----FG---KLMN--  clkGenerate_FreqDivide_q_7_
+ 1   G 13  1   3  1 TFF      R *     6  -----FG---KLMN--  clkGenerate_FreqDivide_q_8_
+ 3   G 13  1   3  1 TFF      R *     6  -----FG---KLMN--  clkGenerate_FreqDivide_q_9_
+12   K 15  1   1  1 DFF      R       3  ----------KLM---  clkGenerate_scancnt_0_
+ 9   K 15  1   2  1 DFF      R       1  ----------K-----  clkGenerate_scancnt_1_
+ 9   B  1  1   2  1 DFF      R *     2  -B-D------------  randomNumGenetate_conter_9_q_1_
+ 3   D  4  1   4  1 DFF      R *     2  -B-D------------  randomNumGenetate_conter_9_q_2_
+ 3   B  3  1   4  1 DFF      R *     2  -B-D------------  randomNumGenetate_conter_9_q_3_
+ 1   D  4  1   5  1 DFF      R *     1  ---D------------  randomNumGenetate_conter_9_q_4_
+ 7   D  2  1   1  1 DFF      R       3  ----------KLM---  randomNumGenetate_num_1_
+ 9   D  2  1   1  1 DFF      R       3  ----------KLM---  randomNumGenetate_num_2_
+12   D  2  1   1  1 DFF      R       3  ----------KLM---  randomNumGenetate_num_3_
+ 5   D  2  1   1  1 DFF      R       4  --------I-KLM---  randomNumGenetate_oddreg
+----------------------------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        IR = Input register
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+PostFit_Equations
+~~~~~~~~~~~~~~~~~
+LED_A.D = !( !randomNumGenetate_oddreg.Q & !randomNumGenetate_num_1_.Q
+       & !randomNumGenetate_num_2_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_oddreg.Q & randomNumGenetate_num_2_.Q
+       & !randomNumGenetate_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_num_1_.Q & !randomNumGenetate_num_2_.Q
+       & randomNumGenetate_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_num_1_.Q & !randomNumGenetate_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (5 pterms, 7 signals)
+LED_A.C = clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_B.D = !( randomNumGenetate_oddreg.Q & randomNumGenetate_num_1_.Q
+       & !randomNumGenetate_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_oddreg.Q & !randomNumGenetate_num_1_.Q
+       & !randomNumGenetate_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_num_1_.Q & !randomNumGenetate_num_2_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_num_2_.Q & !randomNumGenetate_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (5 pterms, 7 signals)
+LED_B.C = clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_C.D = !( !randomNumGenetate_num_1_.Q & !randomNumGenetate_num_2_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_num_2_.Q & !randomNumGenetate_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_oddreg.Q & !randomNumGenetate_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (4 pterms, 7 signals)
+LED_C.C = clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_D.D = !( !randomNumGenetate_oddreg.Q & !randomNumGenetate_num_1_.Q
+       & !randomNumGenetate_num_2_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_oddreg.Q & !randomNumGenetate_num_1_.Q
+       & randomNumGenetate_num_2_.Q & !randomNumGenetate_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_oddreg.Q & randomNumGenetate_num_1_.Q
+       & !randomNumGenetate_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_num_1_.Q & !randomNumGenetate_num_2_.Q
+       & randomNumGenetate_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # randomNumGenetate_num_1_.Q & !randomNumGenetate_num_2_.Q
+       & !randomNumGenetate_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (6 pterms, 7 signals)
+LED_D.C = clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_E.D = !( !randomNumGenetate_oddreg.Q & randomNumGenetate_num_1_.Q
+       & !randomNumGenetate_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_oddreg.Q & !randomNumGenetate_num_1_.Q
+       & !randomNumGenetate_num_2_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (3 pterms, 7 signals)
+LED_E.C = clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_F.D = !( !randomNumGenetate_oddreg.Q & !randomNumGenetate_num_1_.Q
+       & !randomNumGenetate_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_num_1_.Q & !randomNumGenetate_num_2_.Q
+       & randomNumGenetate_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_oddreg.Q & randomNumGenetate_num_2_.Q
+       & !randomNumGenetate_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !randomNumGenetate_num_1_.Q & randomNumGenetate_num_2_.Q
+       & !randomNumGenetate_num_3_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # clkGenerate_scancnt_0_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (5 pterms, 7 signals)
+LED_F.C = clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_G.D = !( !clkGenerate_scancnt_0_.Q & !randomNumGenetate_oddreg.Q
+       & randomNumGenetate_num_1_.Q & !randomNumGenetate_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & !randomNumGenetate_num_1_.Q
+       & !randomNumGenetate_num_2_.Q & randomNumGenetate_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & !randomNumGenetate_num_1_.Q
+       & randomNumGenetate_num_2_.Q & !randomNumGenetate_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !clkGenerate_scancnt_0_.Q & randomNumGenetate_num_1_.Q
+       & !randomNumGenetate_num_2_.Q & !randomNumGenetate_num_3_.Q
+       & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ) ; (4 pterms, 7 signals)
+LED_G.C = clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_VCC1.D = 0 ; (0 pterm, 0 signal)
+LED_VCC1.C = clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_VCC2 = 0 ; (0 pterm, 0 signal)
+
+LED_VCC3.D = clkGenerate_scancnt_0_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 3 signals)
+LED_VCC3.C = clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (1 pterm, 13 signals)
+
+LED_VCC4.D = !clkGenerate_scancnt_0_.Q & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q ; (1 pterm, 3 signals)
+LED_VCC4.C = clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (1 pterm, 13 signals)
+
+buttonInst_1_Debouncer_ControlInst_state_0_.D = !( 
+      clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & !clkGenerate_FreqDivide_q_4_.Q & !clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & !clkGenerate_FreqDivide_q_11_.Q
+       & !clkGenerate_FreqDivide_q_12_.Q & !clkGenerate_FreqDivide_q_13_.Q
+       & buttonInst_1_Debouncer_Timer_q_1_.Q
+       & !buttonInst_1_Debouncer_Timer_q_2_.Q
+       & !buttonInst_1_Debouncer_Timer_q_3_.Q
+       & buttonInst_1_Debouncer_Timer_q_4_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q
+    # ButtonIn & !buttonInst_1_Debouncer_ControlInst_state_0_.Q
+       & !buttonInst_1_Debouncer_ControlInst_state_1_.Q
+    # !ButtonIn & !buttonInst_1_Debouncer_ControlInst_state_0_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_1_.Q ) ; (3 pterms, 20 signals)
+buttonInst_1_Debouncer_ControlInst_state_0_.C = clk ; (1 pterm, 1 signal)
+
+buttonInst_1_Debouncer_ControlInst_state_1_.T = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & !clkGenerate_FreqDivide_q_4_.Q & !clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & !clkGenerate_FreqDivide_q_11_.Q
+       & !clkGenerate_FreqDivide_q_12_.Q & !clkGenerate_FreqDivide_q_13_.Q
+       & buttonInst_1_Debouncer_Timer_q_1_.Q
+       & !buttonInst_1_Debouncer_Timer_q_2_.Q
+       & !buttonInst_1_Debouncer_Timer_q_3_.Q
+       & buttonInst_1_Debouncer_Timer_q_4_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q ; (1 pterm, 18 signals)
+buttonInst_1_Debouncer_ControlInst_state_1_.C = clk ; (1 pterm, 1 signal)
+
+buttonInst_1_Debouncer_Timer_q_1_.D = !buttonInst_1_Debouncer_Timer_q_1_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q ; (1 pterm, 2 signals)
+buttonInst_1_Debouncer_Timer_q_1_.C = clk ; (1 pterm, 1 signal)
+buttonInst_1_Debouncer_Timer_q_1_.CE = buttonInst_1_Debouncer_Timer_q_1__0 ; (1 pterm, 1 signal)
+
+buttonInst_1_Debouncer_Timer_q_1__0 = 
+      !buttonInst_1_Debouncer_ControlInst_state_0_.Q
+    # clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (2 pterms, 14 signals)
+
+buttonInst_1_Debouncer_Timer_q_2_.D = buttonInst_1_Debouncer_Timer_q_1_.Q
+       & !buttonInst_1_Debouncer_Timer_q_2_.Q
+       & !buttonInst_1_Debouncer_Timer_q_4_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q
+    # buttonInst_1_Debouncer_Timer_q_1_.Q
+       & !buttonInst_1_Debouncer_Timer_q_2_.Q
+       & buttonInst_1_Debouncer_Timer_q_3_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q
+    # !buttonInst_1_Debouncer_Timer_q_1_.Q
+       & buttonInst_1_Debouncer_Timer_q_2_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q ; (3 pterms, 5 signals)
+buttonInst_1_Debouncer_Timer_q_2_.C = clk ; (1 pterm, 1 signal)
+buttonInst_1_Debouncer_Timer_q_2_.CE = buttonInst_1_Debouncer_Timer_q_1__0 ; (1 pterm, 1 signal)
+
+buttonInst_1_Debouncer_Timer_q_3_.D = buttonInst_1_Debouncer_Timer_q_1_.Q
+       & buttonInst_1_Debouncer_Timer_q_2_.Q
+       & !buttonInst_1_Debouncer_Timer_q_3_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q
+    # !buttonInst_1_Debouncer_Timer_q_2_.Q
+       & buttonInst_1_Debouncer_Timer_q_3_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q
+    # !buttonInst_1_Debouncer_Timer_q_1_.Q
+       & buttonInst_1_Debouncer_Timer_q_3_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q ; (3 pterms, 4 signals)
+buttonInst_1_Debouncer_Timer_q_3_.C = clk ; (1 pterm, 1 signal)
+buttonInst_1_Debouncer_Timer_q_3_.CE = buttonInst_1_Debouncer_Timer_q_1__0 ; (1 pterm, 1 signal)
+
+buttonInst_1_Debouncer_Timer_q_4_.D = buttonInst_1_Debouncer_Timer_q_1_.Q
+       & buttonInst_1_Debouncer_Timer_q_2_.Q
+       & buttonInst_1_Debouncer_Timer_q_3_.Q
+       & !buttonInst_1_Debouncer_Timer_q_4_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q
+    # buttonInst_1_Debouncer_Timer_q_2_.Q
+       & !buttonInst_1_Debouncer_Timer_q_3_.Q
+       & buttonInst_1_Debouncer_Timer_q_4_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q
+    # !buttonInst_1_Debouncer_Timer_q_2_.Q
+       & buttonInst_1_Debouncer_Timer_q_3_.Q
+       & buttonInst_1_Debouncer_Timer_q_4_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q
+    # !buttonInst_1_Debouncer_Timer_q_1_.Q
+       & buttonInst_1_Debouncer_Timer_q_4_.Q
+       & buttonInst_1_Debouncer_ControlInst_state_0_.Q ; (4 pterms, 5 signals)
+buttonInst_1_Debouncer_Timer_q_4_.C = clk ; (1 pterm, 1 signal)
+buttonInst_1_Debouncer_Timer_q_4_.CE = buttonInst_1_Debouncer_Timer_q_1__0 ; (1 pterm, 1 signal)
+
+buttonInst_1_Width_TransInst_q.D = 
+      !buttonInst_1_Debouncer_ControlInst_state_0_.Q
+       & !buttonInst_1_Debouncer_ControlInst_state_1_.Q ; (1 pterm, 2 signals)
+buttonInst_1_Width_TransInst_q.C = clk ; (1 pterm, 1 signal)
+
+buttonInst_2_ControlInst_state_0_.D = !( clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & !clkGenerate_FreqDivide_q_4_.Q & !clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & !clkGenerate_FreqDivide_q_11_.Q
+       & !clkGenerate_FreqDivide_q_12_.Q & !clkGenerate_FreqDivide_q_13_.Q
+       & buttonInst_2_Timer_q_1_.Q & !buttonInst_2_Timer_q_2_.Q
+       & !buttonInst_2_Timer_q_3_.Q & buttonInst_2_Timer_q_4_.Q
+       & buttonInst_2_ControlInst_state_0_.Q
+    # resetIn & !buttonInst_2_ControlInst_state_0_.Q
+       & !buttonInst_2_ControlInst_state_1_.Q
+    # !resetIn & !buttonInst_2_ControlInst_state_0_.Q
+       & buttonInst_2_ControlInst_state_1_.Q ) ; (3 pterms, 20 signals)
+buttonInst_2_ControlInst_state_0_.C = clk ; (1 pterm, 1 signal)
+
+buttonInst_2_ControlInst_state_1_.T = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & !clkGenerate_FreqDivide_q_4_.Q & !clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & !clkGenerate_FreqDivide_q_11_.Q
+       & !clkGenerate_FreqDivide_q_12_.Q & !clkGenerate_FreqDivide_q_13_.Q
+       & buttonInst_2_Timer_q_1_.Q & !buttonInst_2_Timer_q_2_.Q
+       & !buttonInst_2_Timer_q_3_.Q & buttonInst_2_Timer_q_4_.Q
+       & buttonInst_2_ControlInst_state_0_.Q ; (1 pterm, 18 signals)
+buttonInst_2_ControlInst_state_1_.C = clk ; (1 pterm, 1 signal)
+
+buttonInst_2_Timer_q_1_.D = !buttonInst_2_Timer_q_1_.Q
+       & buttonInst_2_ControlInst_state_0_.Q ; (1 pterm, 2 signals)
+buttonInst_2_Timer_q_1_.C = clk ; (1 pterm, 1 signal)
+buttonInst_2_Timer_q_1_.CE = buttonInst_2_Timer_q_1__0 ; (1 pterm, 1 signal)
+
+buttonInst_2_Timer_q_1__0 = !buttonInst_2_ControlInst_state_0_.Q
+    # clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (2 pterms, 14 signals)
+
+buttonInst_2_Timer_q_2_.D = buttonInst_2_Timer_q_1_.Q
+       & !buttonInst_2_Timer_q_2_.Q & !buttonInst_2_Timer_q_4_.Q
+       & buttonInst_2_ControlInst_state_0_.Q
+    # buttonInst_2_Timer_q_1_.Q & !buttonInst_2_Timer_q_2_.Q
+       & buttonInst_2_Timer_q_3_.Q & buttonInst_2_ControlInst_state_0_.Q
+    # !buttonInst_2_Timer_q_1_.Q & buttonInst_2_Timer_q_2_.Q
+       & buttonInst_2_ControlInst_state_0_.Q ; (3 pterms, 5 signals)
+buttonInst_2_Timer_q_2_.C = clk ; (1 pterm, 1 signal)
+buttonInst_2_Timer_q_2_.CE = buttonInst_2_Timer_q_1__0 ; (1 pterm, 1 signal)
+
+buttonInst_2_Timer_q_3_.D = buttonInst_2_Timer_q_1_.Q
+       & buttonInst_2_Timer_q_2_.Q & !buttonInst_2_Timer_q_3_.Q
+       & buttonInst_2_ControlInst_state_0_.Q
+    # !buttonInst_2_Timer_q_2_.Q & buttonInst_2_Timer_q_3_.Q
+       & buttonInst_2_ControlInst_state_0_.Q
+    # !buttonInst_2_Timer_q_1_.Q & buttonInst_2_Timer_q_3_.Q
+       & buttonInst_2_ControlInst_state_0_.Q ; (3 pterms, 4 signals)
+buttonInst_2_Timer_q_3_.C = clk ; (1 pterm, 1 signal)
+buttonInst_2_Timer_q_3_.CE = buttonInst_2_Timer_q_1__0 ; (1 pterm, 1 signal)
+
+buttonInst_2_Timer_q_4_.D = buttonInst_2_Timer_q_1_.Q
+       & buttonInst_2_Timer_q_2_.Q & buttonInst_2_Timer_q_3_.Q
+       & !buttonInst_2_Timer_q_4_.Q & buttonInst_2_ControlInst_state_0_.Q
+    # buttonInst_2_Timer_q_2_.Q & !buttonInst_2_Timer_q_3_.Q
+       & buttonInst_2_Timer_q_4_.Q & buttonInst_2_ControlInst_state_0_.Q
+    # !buttonInst_2_Timer_q_2_.Q & buttonInst_2_Timer_q_3_.Q
+       & buttonInst_2_Timer_q_4_.Q & buttonInst_2_ControlInst_state_0_.Q
+    # !buttonInst_2_Timer_q_1_.Q & buttonInst_2_Timer_q_4_.Q
+       & buttonInst_2_ControlInst_state_0_.Q ; (4 pterms, 5 signals)
+buttonInst_2_Timer_q_4_.C = clk ; (1 pterm, 1 signal)
+buttonInst_2_Timer_q_4_.CE = buttonInst_2_Timer_q_1__0 ; (1 pterm, 1 signal)
+
+buttoninst_1_width_transinst_un1_out_i_n = 
+      !buttonInst_1_Debouncer_ControlInst_state_0_.Q
+       & !buttonInst_1_Debouncer_ControlInst_state_1_.Q
+    # !buttonInst_1_Width_TransInst_q.Q ; (2 pterms, 3 signals)
+
+clkGenerate_FreqDivide_q_10_.T = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & !clkGenerate_FreqDivide_q_4_.Q & !clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & !clkGenerate_FreqDivide_q_11_.Q
+       & !clkGenerate_FreqDivide_q_12_.Q & !clkGenerate_FreqDivide_q_13_.Q
+    # clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & clkGenerate_FreqDivide_q_4_.Q
+       & clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q ; (2 pterms, 13 signals)
+clkGenerate_FreqDivide_q_10_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_10_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_q_11_.T = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & clkGenerate_FreqDivide_q_4_.Q & clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q ; (1 pterm, 10 signals)
+clkGenerate_FreqDivide_q_11_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_11_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_q_12_.T = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & clkGenerate_FreqDivide_q_4_.Q & clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & clkGenerate_FreqDivide_q_11_.Q ; (1 pterm, 11 signals)
+clkGenerate_FreqDivide_q_12_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_12_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_q_13_.T = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & clkGenerate_FreqDivide_q_4_.Q & clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & clkGenerate_FreqDivide_q_11_.Q
+       & clkGenerate_FreqDivide_q_12_.Q ; (1 pterm, 12 signals)
+clkGenerate_FreqDivide_q_13_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_13_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_q_1_.D = !clkGenerate_FreqDivide_q_1_.Q ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_1_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_q_2_.D = clkGenerate_FreqDivide_q_1_.Q
+       & !clkGenerate_FreqDivide_q_2_.Q
+    # !clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q ; (2 pterms, 2 signals)
+clkGenerate_FreqDivide_q_2_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_q_3_.D = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & !clkGenerate_FreqDivide_q_3_.Q
+    # !clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+    # !clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_3_.Q ; (3 pterms, 3 signals)
+clkGenerate_FreqDivide_q_3_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_q_4_.D.X1 = clkGenerate_FreqDivide_q_4_.Q
+    # clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & !clkGenerate_FreqDivide_q_4_.Q
+       & !clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q
+       & clkGenerate_FreqDivide_q_9_.Q & clkGenerate_FreqDivide_q_10_.Q
+       & !clkGenerate_FreqDivide_q_11_.Q & !clkGenerate_FreqDivide_q_12_.Q
+       & !clkGenerate_FreqDivide_q_13_.Q ; (2 pterms, 13 signals)
+clkGenerate_FreqDivide_q_4_.D.X2 = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q ; (1 pterm, 3 signals)
+clkGenerate_FreqDivide_q_4_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_q_5_.D.X1 = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & clkGenerate_FreqDivide_q_4_.Q ; (1 pterm, 4 signals)
+clkGenerate_FreqDivide_q_5_.D.X2 = clkGenerate_FreqDivide_q_5_.Q ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_5_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_5_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_q_6_.T = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & !clkGenerate_FreqDivide_q_4_.Q & !clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & !clkGenerate_FreqDivide_q_11_.Q
+       & !clkGenerate_FreqDivide_q_12_.Q & !clkGenerate_FreqDivide_q_13_.Q
+    # clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & clkGenerate_FreqDivide_q_4_.Q
+       & clkGenerate_FreqDivide_q_5_.Q ; (2 pterms, 13 signals)
+clkGenerate_FreqDivide_q_6_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_6_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_q_7_.T = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & !clkGenerate_FreqDivide_q_4_.Q & !clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & !clkGenerate_FreqDivide_q_11_.Q
+       & !clkGenerate_FreqDivide_q_12_.Q & !clkGenerate_FreqDivide_q_13_.Q
+    # clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & clkGenerate_FreqDivide_q_4_.Q
+       & clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q ; (2 pterms, 13 signals)
+clkGenerate_FreqDivide_q_7_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_7_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_q_8_.T = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & !clkGenerate_FreqDivide_q_4_.Q & !clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & !clkGenerate_FreqDivide_q_11_.Q
+       & !clkGenerate_FreqDivide_q_12_.Q & !clkGenerate_FreqDivide_q_13_.Q
+    # clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & clkGenerate_FreqDivide_q_4_.Q
+       & clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q ; (2 pterms, 13 signals)
+clkGenerate_FreqDivide_q_8_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_8_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_FreqDivide_q_9_.T = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & !clkGenerate_FreqDivide_q_4_.Q & !clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & !clkGenerate_FreqDivide_q_11_.Q
+       & !clkGenerate_FreqDivide_q_12_.Q & !clkGenerate_FreqDivide_q_13_.Q
+    # clkGenerate_FreqDivide_q_1_.Q & clkGenerate_FreqDivide_q_2_.Q
+       & clkGenerate_FreqDivide_q_3_.Q & clkGenerate_FreqDivide_q_4_.Q
+       & clkGenerate_FreqDivide_q_5_.Q & clkGenerate_FreqDivide_q_6_.Q
+       & clkGenerate_FreqDivide_q_7_.Q & clkGenerate_FreqDivide_q_8_.Q ; (2 pterms, 13 signals)
+clkGenerate_FreqDivide_q_9_.C = clk ; (1 pterm, 1 signal)
+clkGenerate_FreqDivide_q_9_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerate_scancnt_0_.D = clkGenerate_scancnt_1_.Q
+       & !clkGenerate_scancnt_0_.Q ; (1 pterm, 2 signals)
+clkGenerate_scancnt_0_.C = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & !clkGenerate_FreqDivide_q_4_.Q & !clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & !clkGenerate_FreqDivide_q_11_.Q
+       & !clkGenerate_FreqDivide_q_12_.Q & !clkGenerate_FreqDivide_q_13_.Q ; (1 pterm, 13 signals)
+
+clkGenerate_scancnt_1_.D = clkGenerate_scancnt_1_.Q
+       & !clkGenerate_scancnt_0_.Q
+    # !clkGenerate_scancnt_1_.Q & clkGenerate_scancnt_0_.Q ; (2 pterms, 2 signals)
+clkGenerate_scancnt_1_.C = clkGenerate_FreqDivide_q_1_.Q
+       & clkGenerate_FreqDivide_q_2_.Q & clkGenerate_FreqDivide_q_3_.Q
+       & !clkGenerate_FreqDivide_q_4_.Q & !clkGenerate_FreqDivide_q_5_.Q
+       & clkGenerate_FreqDivide_q_6_.Q & clkGenerate_FreqDivide_q_7_.Q
+       & clkGenerate_FreqDivide_q_8_.Q & clkGenerate_FreqDivide_q_9_.Q
+       & clkGenerate_FreqDivide_q_10_.Q & !clkGenerate_FreqDivide_q_11_.Q
+       & !clkGenerate_FreqDivide_q_12_.Q & !clkGenerate_FreqDivide_q_13_.Q ; (1 pterm, 13 signals)
+
+light_1 = randomNumGenetate_oddreg.Q ; (1 pterm, 1 signal)
+
+light_2 = !randomNumGenetate_oddreg.Q ; (1 pterm, 1 signal)
+
+randomNumGenetate_conter_9_q_1_.D = !randomNumGenetate_conter_9_q_1_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_conter_9_q_1_.C = clk_low ; (1 pterm, 1 signal)
+randomNumGenetate_conter_9_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+randomNumGenetate_conter_9_q_2_.D = randomNumGenetate_conter_9_q_1_.Q
+       & !randomNumGenetate_conter_9_q_2_.Q
+       & randomNumGenetate_conter_9_q_3_.Q
+    # randomNumGenetate_conter_9_q_1_.Q & !randomNumGenetate_conter_9_q_2_.Q
+       & !randomNumGenetate_conter_9_q_4_.Q
+    # !randomNumGenetate_conter_9_q_1_.Q & randomNumGenetate_conter_9_q_2_.Q ; (3 pterms, 4 signals)
+randomNumGenetate_conter_9_q_2_.C = clk_low ; (1 pterm, 1 signal)
+randomNumGenetate_conter_9_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+randomNumGenetate_conter_9_q_3_.D = randomNumGenetate_conter_9_q_1_.Q
+       & randomNumGenetate_conter_9_q_2_.Q
+       & !randomNumGenetate_conter_9_q_3_.Q
+    # !randomNumGenetate_conter_9_q_2_.Q & randomNumGenetate_conter_9_q_3_.Q
+    # !randomNumGenetate_conter_9_q_1_.Q & randomNumGenetate_conter_9_q_3_.Q ; (3 pterms, 3 signals)
+randomNumGenetate_conter_9_q_3_.C = clk_low ; (1 pterm, 1 signal)
+randomNumGenetate_conter_9_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+randomNumGenetate_conter_9_q_4_.D = randomNumGenetate_conter_9_q_1_.Q
+       & randomNumGenetate_conter_9_q_2_.Q & randomNumGenetate_conter_9_q_3_.Q
+       & !randomNumGenetate_conter_9_q_4_.Q
+    # randomNumGenetate_conter_9_q_2_.Q & !randomNumGenetate_conter_9_q_3_.Q
+       & randomNumGenetate_conter_9_q_4_.Q
+    # !randomNumGenetate_conter_9_q_2_.Q & randomNumGenetate_conter_9_q_3_.Q
+       & randomNumGenetate_conter_9_q_4_.Q
+    # !randomNumGenetate_conter_9_q_1_.Q & randomNumGenetate_conter_9_q_4_.Q ; (4 pterms, 4 signals)
+randomNumGenetate_conter_9_q_4_.C = clk_low ; (1 pterm, 1 signal)
+randomNumGenetate_conter_9_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+randomNumGenetate_num_1_.D = randomNumGenetate_conter_9_q_2_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_num_1_.C = buttoninst_1_width_transinst_un1_out_i_n ; (1 pterm, 1 signal)
+
+randomNumGenetate_num_2_.D = randomNumGenetate_conter_9_q_3_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_num_2_.C = buttoninst_1_width_transinst_un1_out_i_n ; (1 pterm, 1 signal)
+
+randomNumGenetate_num_3_.D = randomNumGenetate_conter_9_q_4_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_num_3_.C = buttoninst_1_width_transinst_un1_out_i_n ; (1 pterm, 1 signal)
+
+randomNumGenetate_oddreg.D = randomNumGenetate_conter_9_q_1_.Q ; (1 pterm, 1 signal)
+randomNumGenetate_oddreg.C = buttoninst_1_width_transinst_un1_out_i_n ; (1 pterm, 1 signal)
+
+
+
+

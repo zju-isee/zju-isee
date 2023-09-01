@@ -1,0 +1,670 @@
+#$ TOOL  ispLEVER Classic 2.1.00.02.49.20
+#$ DATE  Wed Jun 07 22:24:56 2023
+#$ MODULE  top
+#$ TITLE  top.bls 
+#$ PINS 18 led_col_0_ led_col_1_ led_col_2_ led_col_3_ led_col_4_ led_col_5_
+ led_col_6_ led_col_7_ reset clk led_row_0_ led_row_1_ led_row_2_ led_row_3_
+ led_row_4_ led_row_5_ led_row_6_ led_row_7_
+#$ NODES 70 A0_cnt_next_24_ A0_cnt_next_9_ A0_cnt_next_20_ A0_cnt_next_13_
+ A0_cnt_next_16_ A0_cnt_next_23_ A0_cnt_next_18_ A0_cnt_next_15_ A0_cnt_next_19_
+ A0_cnt_next_10_ A0_scan_data_1_ A0_scan_data_3_ A0_scan_data_4_ A0_scan_data_5_
+ A0_scan_data_6_ A0_scan_data_0_ A0_scan_data_2_ A0_cnt_scan_0_ A0_cnt_scan_1_
+ A0_cnt_scan_2_ A0_cnt_scan_3_ A0_cnt_scan_4_ A0_cnt_scan_5_ A0_cnt_scan_6_
+ A0_cnt_scan_7_ A0_cnt_scan_8_ A0_cnt_scan_9_ A0_cnt_scan_10_ A0_cnt_scan_11_
+ A0_cnt_scan_12_ A0_cnt_scan_13_ A0_cnt_scan_14_ A0_cnt_scan_15_ A0_cnt_next_0_
+ A0_cnt_next_1_ A0_cnt_next_2_ A0_cnt_next_3_ A0_cnt_next_4_ A0_cnt_next_5_
+ A0_cnt_next_6_ A0_cnt_next_7_ A0_cnt_next_8_ A0_cnt_next_11_ A0_cnt_next_12_
+ A0_cnt_next_14_ A0_cnt_next_17_ A0_cnt_next_21_ A0_cnt_next_22_ A0_cnt_next_25_
+ A0_N_339 A0_N_46_i A0_N_37_i A0_N_32_i A0_N_30_0 A0_col_buf_i_3_4__n A0_N_132
+ A0_N_150 A0_N_152 A0_N_154 A0_N_155 A0_un1_cnt_scan_9 A0_N_271 A0_N_263
+ A0_un1_cnt_next_10_20_3 A0_un1_cnt_next_10 A0_un1_cnt_next_10_14 A0_N_301
+ A0_N_307 A0_N_327 A0_N_317
+.model top 
+.inputs clk.BLIF reset.BLIF led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q \
+ led_row_4_.Q led_row_5_.Q led_row_6_.Q led_row_7_.Q A0_cnt_next_24_.Q \
+ A0_cnt_next_9_.Q A0_cnt_next_20_.Q A0_cnt_next_13_.Q A0_cnt_next_16_.Q \
+ A0_cnt_next_23_.Q A0_cnt_next_18_.Q A0_cnt_next_15_.Q A0_cnt_next_19_.Q \
+ A0_cnt_next_10_.Q A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_4_.Q \
+ A0_scan_data_5_.Q A0_scan_data_6_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q \
+ A0_cnt_scan_0_.Q A0_cnt_scan_1_.Q A0_cnt_scan_2_.Q A0_cnt_scan_3_.Q \
+ A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q \
+ A0_cnt_scan_8_.Q A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q \
+ A0_cnt_scan_12_.Q A0_cnt_scan_13_.Q A0_cnt_scan_14_.Q A0_cnt_scan_15_.Q \
+ A0_cnt_next_0_.Q A0_cnt_next_1_.Q A0_cnt_next_2_.Q A0_cnt_next_3_.Q \
+ A0_cnt_next_4_.Q A0_cnt_next_5_.Q A0_cnt_next_6_.Q A0_cnt_next_7_.Q \
+ A0_cnt_next_8_.Q A0_cnt_next_11_.Q A0_cnt_next_12_.Q A0_cnt_next_14_.Q \
+ A0_cnt_next_17_.Q A0_cnt_next_21_.Q A0_cnt_next_22_.Q A0_cnt_next_25_.Q \
+ A0_N_339.BLIF A0_N_46_i.BLIF A0_N_37_i.BLIF A0_N_32_i.BLIF A0_N_30_0.BLIF \
+ A0_col_buf_i_3_4__n.BLIF A0_N_132.BLIF A0_N_150.BLIF A0_N_152.BLIF A0_N_154.BLIF \
+ A0_N_155.BLIF A0_un1_cnt_scan_9.BLIF A0_N_271.BLIF A0_N_263.BLIF \
+ A0_un1_cnt_next_10_20_3.BLIF A0_un1_cnt_next_10.BLIF A0_un1_cnt_next_10_14.BLIF \
+ A0_N_301.BLIF A0_N_307.BLIF A0_N_327.BLIF A0_N_317.BLIF
+.outputs led_col_0_.X1 led_col_0_.X2 led_col_1_- led_col_2_- led_col_3_ \
+ led_col_4_.X1 led_col_4_.X2 led_col_5_ led_col_6_ led_col_7_ led_row_0_.D \
+ led_row_0_.C led_row_0_.CE led_row_0_.AR led_row_1_.D led_row_1_.C led_row_1_.CE \
+ led_row_1_.AR led_row_2_.D led_row_2_.C led_row_2_.CE led_row_2_.AR led_row_3_.D \
+ led_row_3_.C led_row_3_.CE led_row_3_.AR led_row_4_.D led_row_4_.C led_row_4_.CE \
+ led_row_4_.AR led_row_5_.D led_row_5_.C led_row_5_.CE led_row_5_.AR led_row_6_.D \
+ led_row_6_.C led_row_6_.CE led_row_6_.AR led_row_7_.D led_row_7_.C led_row_7_.CE \
+ led_row_7_.AP A0_cnt_next_24_.D A0_cnt_next_24_.C A0_cnt_next_24_.AR \
+ A0_cnt_next_9_.D A0_cnt_next_9_.C A0_cnt_next_9_.AR A0_cnt_next_20_.D \
+ A0_cnt_next_20_.C A0_cnt_next_20_.AR A0_cnt_next_13_.D A0_cnt_next_13_.C \
+ A0_cnt_next_13_.AR A0_cnt_next_16_.D A0_cnt_next_16_.C A0_cnt_next_16_.AR \
+ A0_cnt_next_23_.T A0_cnt_next_23_.C A0_cnt_next_23_.AR A0_cnt_next_18_.T \
+ A0_cnt_next_18_.C A0_cnt_next_18_.AR A0_cnt_next_15_.D A0_cnt_next_15_.C \
+ A0_cnt_next_15_.AR A0_cnt_next_19_.D A0_cnt_next_19_.C A0_cnt_next_19_.AR \
+ A0_cnt_next_10_.D.X1 A0_cnt_next_10_.D.X2 A0_cnt_next_10_.C A0_cnt_next_10_.AR \
+ A0_scan_data_1_.D A0_scan_data_1_.C A0_scan_data_1_.AR A0_scan_data_3_.T \
+ A0_scan_data_3_.C A0_scan_data_3_.AR A0_scan_data_4_.T A0_scan_data_4_.C \
+ A0_scan_data_4_.AR A0_scan_data_5_.D.X1 A0_scan_data_5_.D.X2 A0_scan_data_5_.C \
+ A0_scan_data_5_.AR A0_scan_data_6_.D.X1 A0_scan_data_6_.D.X2 A0_scan_data_6_.C \
+ A0_scan_data_6_.AR A0_scan_data_0_.D A0_scan_data_0_.C A0_scan_data_0_.AR \
+ A0_scan_data_2_.D A0_scan_data_2_.C A0_scan_data_2_.AR A0_cnt_scan_0_.D \
+ A0_cnt_scan_0_.C A0_cnt_scan_0_.AR A0_cnt_scan_1_.D A0_cnt_scan_1_.C \
+ A0_cnt_scan_1_.AR A0_cnt_scan_2_.D A0_cnt_scan_2_.C A0_cnt_scan_2_.AR \
+ A0_cnt_scan_3_.D A0_cnt_scan_3_.C A0_cnt_scan_3_.AR A0_cnt_scan_4_.D \
+ A0_cnt_scan_4_.C A0_cnt_scan_4_.AR A0_cnt_scan_5_.D A0_cnt_scan_5_.C \
+ A0_cnt_scan_5_.AR A0_cnt_scan_6_.D A0_cnt_scan_6_.C A0_cnt_scan_6_.AR \
+ A0_cnt_scan_7_.D.X1 A0_cnt_scan_7_.D.X2 A0_cnt_scan_7_.C A0_cnt_scan_7_.AR \
+ A0_cnt_scan_8_.T A0_cnt_scan_8_.C A0_cnt_scan_8_.AR A0_cnt_scan_9_.D \
+ A0_cnt_scan_9_.C A0_cnt_scan_9_.AR A0_cnt_scan_10_.D A0_cnt_scan_10_.C \
+ A0_cnt_scan_10_.AR A0_cnt_scan_11_.D A0_cnt_scan_11_.C A0_cnt_scan_11_.AR \
+ A0_cnt_scan_12_.D.X1 A0_cnt_scan_12_.D.X2 A0_cnt_scan_12_.C A0_cnt_scan_12_.AR \
+ A0_cnt_scan_13_.D A0_cnt_scan_13_.C A0_cnt_scan_13_.AR A0_cnt_scan_14_.D \
+ A0_cnt_scan_14_.C A0_cnt_scan_14_.AR A0_cnt_scan_15_.D A0_cnt_scan_15_.C \
+ A0_cnt_scan_15_.AR A0_cnt_next_0_.D A0_cnt_next_0_.C A0_cnt_next_0_.AR \
+ A0_cnt_next_1_.D A0_cnt_next_1_.C A0_cnt_next_1_.AR A0_cnt_next_2_.D \
+ A0_cnt_next_2_.C A0_cnt_next_2_.AR A0_cnt_next_3_.D A0_cnt_next_3_.C \
+ A0_cnt_next_3_.AR A0_cnt_next_4_.D A0_cnt_next_4_.C A0_cnt_next_4_.AR \
+ A0_cnt_next_5_.D A0_cnt_next_5_.C A0_cnt_next_5_.AR A0_cnt_next_6_.D \
+ A0_cnt_next_6_.C A0_cnt_next_6_.AR A0_cnt_next_7_.D.X1 A0_cnt_next_7_.D.X2 \
+ A0_cnt_next_7_.C A0_cnt_next_7_.AR A0_cnt_next_8_.D A0_cnt_next_8_.C \
+ A0_cnt_next_8_.AR A0_cnt_next_11_.D A0_cnt_next_11_.C A0_cnt_next_11_.AR \
+ A0_cnt_next_12_.D A0_cnt_next_12_.C A0_cnt_next_12_.AR A0_cnt_next_14_.D \
+ A0_cnt_next_14_.C A0_cnt_next_14_.AR A0_cnt_next_17_.D.X1 A0_cnt_next_17_.D.X2 \
+ A0_cnt_next_17_.C A0_cnt_next_17_.AR A0_cnt_next_21_.D A0_cnt_next_21_.C \
+ A0_cnt_next_21_.AR A0_cnt_next_22_.D.X1 A0_cnt_next_22_.D.X2 A0_cnt_next_22_.C \
+ A0_cnt_next_22_.AR A0_cnt_next_25_.D A0_cnt_next_25_.C A0_cnt_next_25_.AR \
+ A0_N_339 A0_N_46_i- A0_N_37_i- A0_N_32_i- A0_N_30_0- A0_col_buf_i_3_4__n- \
+ A0_N_132 A0_N_150 A0_N_152 A0_N_154 A0_N_155 A0_un1_cnt_scan_9 A0_N_271 A0_N_263 \
+ A0_un1_cnt_next_10_20_3 A0_un1_cnt_next_10 A0_un1_cnt_next_10_14 A0_N_301 \
+ A0_N_307 A0_N_327 A0_N_317
+.names A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_N_46_i.BLIF A0_N_32_i.BLIF A0_N_132.BLIF A0_N_150.BLIF A0_N_152.BLIF A0_N_154.BLIF A0_N_155.BLIF led_col_0_.X1
+0-1-111---- 1
+---011-1--- 1
+0-1-11---1- 1
+00-0111---- 1
+001-11--1-- 1
+001-11----1 1
+10-111---1- 1
+100111--1-- 1
+100111----1 1
+.names A0_N_46_i.BLIF A0_N_32_i.BLIF led_col_0_.X2
+11 1
+.names led_row_2_.Q led_row_3_.Q led_row_5_.Q A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_N_37_i.BLIF A0_N_30_0.BLIF A0_N_132.BLIF A0_N_150.BLIF A0_N_152.BLIF A0_N_154.BLIF A0_N_155.BLIF led_col_1_-
+---0101-----1- 1
+000-----0----- 1
+---0000-----1- 1
+---1110--1---- 1
+---1010-----1- 1
+---1011--1---- 1
+----101--1---- 1
+----000--1---- 1
+-----11---1--- 1
+---1--0----1-- 1
+---011-------1 1
+----01-----1-- 1
+---10-1------1 1
+---101-------1 1
+-------0------ 1
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q led_row_5_.Q led_row_6_.Q led_row_7_.Q A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_6_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_N_30_0.BLIF A0_N_132.BLIF A0_N_150.BLIF A0_N_152.BLIF A0_N_154.BLIF A0_N_155.BLIF led_col_2_-
+--------0----1----1-- 1
+100000000000011------ 1
+--------00---01----1- 1
+--00-0---------0----- 1
+--------10----0--1--- 1
+--------11----1----1- 1
+--------00---0--1---- 1
+-------------00-1---- 1
+---------1----1--1--- 1
+---------1---1----1-- 1
+--------1----1--1---- 1
+--------11------1---- 1
+---------0---0----1-- 1
+--------0----01-----1 1
+--------11----1-----1 1
+--------------1---1-- 1
+.names A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_N_37_i.BLIF A0_N_132.BLIF A0_N_150.BLIF A0_N_152.BLIF A0_N_154.BLIF A0_N_155.BLIF led_col_3_
+1-1-1000-- 1
+0-001-0--0 1
+00-11-00-- 1
+10011---0- 1
+011-10--0- 1
+00101--0-- 1
+101-100--- 1
+11111-0--- 1
+1-0010-0-- 1
+00011-0--- 1
+110110---- 1
+----100000 1
+01-01---0- 1
+-1001--0-- 1
+01001----- 1
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q led_row_5_.Q led_row_6_.Q led_row_7_.Q A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_6_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_N_46_i.BLIF A0_N_32_i.BLIF A0_col_buf_i_3_4__n.BLIF A0_N_132.BLIF A0_N_155.BLIF led_col_4_.X1
+--------00----01111- 1
+00010000000001-111-- 1
+00100000000001-111-- 1
+--------00---1-1111- 1
+--------10-----111-1 1
+00010000100000-111-- 1
+0001000010000-1111-- 1
+00100000100000-111-- 1
+0010000010000-1111-- 1
+00010000-100010111-- 1
+00100000-100010111-- 1
+.names A0_N_46_i.BLIF A0_N_32_i.BLIF A0_col_buf_i_3_4__n.BLIF led_col_4_.X2
+111 1
+.names led_col_5_
+ 1
+.names led_col_6_
+ 1
+.names led_col_7_
+ 1
+.names led_row_7_.Q led_row_0_.D
+1 1
+.names clk.BLIF led_row_0_.C
+1 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_cnt_scan_8_.Q A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q A0_cnt_scan_12_.Q A0_cnt_scan_13_.Q A0_cnt_scan_14_.Q A0_cnt_scan_15_.Q A0_un1_cnt_scan_9.BLIF led_row_0_.CE
+1111111111111 1
+.names reset.BLIF led_row_0_.AR
+0 1
+.names led_row_0_.Q led_row_1_.D
+1 1
+.names clk.BLIF led_row_1_.C
+1 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_cnt_scan_8_.Q A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q A0_cnt_scan_12_.Q A0_cnt_scan_13_.Q A0_cnt_scan_14_.Q A0_cnt_scan_15_.Q A0_un1_cnt_scan_9.BLIF led_row_1_.CE
+1111111111111 1
+.names reset.BLIF led_row_1_.AR
+0 1
+.names led_row_1_.Q led_row_2_.D
+1 1
+.names clk.BLIF led_row_2_.C
+1 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_cnt_scan_8_.Q A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q A0_cnt_scan_12_.Q A0_cnt_scan_13_.Q A0_cnt_scan_14_.Q A0_cnt_scan_15_.Q A0_un1_cnt_scan_9.BLIF led_row_2_.CE
+1111111111111 1
+.names reset.BLIF led_row_2_.AR
+0 1
+.names led_row_2_.Q led_row_3_.D
+1 1
+.names clk.BLIF led_row_3_.C
+1 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_cnt_scan_8_.Q A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q A0_cnt_scan_12_.Q A0_cnt_scan_13_.Q A0_cnt_scan_14_.Q A0_cnt_scan_15_.Q A0_un1_cnt_scan_9.BLIF led_row_3_.CE
+1111111111111 1
+.names reset.BLIF led_row_3_.AR
+0 1
+.names led_row_3_.Q led_row_4_.D
+1 1
+.names clk.BLIF led_row_4_.C
+1 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_cnt_scan_8_.Q A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q A0_cnt_scan_12_.Q A0_cnt_scan_13_.Q A0_cnt_scan_14_.Q A0_cnt_scan_15_.Q A0_un1_cnt_scan_9.BLIF led_row_4_.CE
+1111111111111 1
+.names reset.BLIF led_row_4_.AR
+0 1
+.names led_row_4_.Q led_row_5_.D
+1 1
+.names clk.BLIF led_row_5_.C
+1 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_cnt_scan_8_.Q A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q A0_cnt_scan_12_.Q A0_cnt_scan_13_.Q A0_cnt_scan_14_.Q A0_cnt_scan_15_.Q A0_un1_cnt_scan_9.BLIF led_row_5_.CE
+1111111111111 1
+.names reset.BLIF led_row_5_.AR
+0 1
+.names led_row_5_.Q led_row_6_.D
+1 1
+.names clk.BLIF led_row_6_.C
+1 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_cnt_scan_8_.Q A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q A0_cnt_scan_12_.Q A0_cnt_scan_13_.Q A0_cnt_scan_14_.Q A0_cnt_scan_15_.Q A0_un1_cnt_scan_9.BLIF led_row_6_.CE
+1111111111111 1
+.names reset.BLIF led_row_6_.AR
+0 1
+.names led_row_6_.Q led_row_7_.D
+1 1
+.names clk.BLIF led_row_7_.C
+1 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_cnt_scan_8_.Q A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q A0_cnt_scan_12_.Q A0_cnt_scan_13_.Q A0_cnt_scan_14_.Q A0_cnt_scan_15_.Q A0_un1_cnt_scan_9.BLIF led_row_7_.CE
+1111111111111 1
+.names reset.BLIF led_row_7_.AP
+0 1
+.names A0_cnt_next_24_.Q A0_N_327.BLIF A0_cnt_next_24_.D
+10 1
+01 1
+.names clk.BLIF A0_cnt_next_24_.C
+1 1
+.names reset.BLIF A0_cnt_next_24_.AR
+0 1
+.names A0_cnt_next_9_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_un1_cnt_next_10_20_3.BLIF A0_un1_cnt_next_10.BLIF A0_cnt_next_9_.D
+01110 1
+1--00 1
+1-0-0 1
+10--0 1
+.names clk.BLIF A0_cnt_next_9_.C
+1 1
+.names reset.BLIF A0_cnt_next_9_.AR
+0 1
+.names A0_cnt_next_20_.Q A0_cnt_next_19_.Q A0_N_317.BLIF A0_cnt_next_20_.D
+011 1
+10- 1
+1-0 1
+.names clk.BLIF A0_cnt_next_20_.C
+1 1
+.names reset.BLIF A0_cnt_next_20_.AR
+0 1
+.names A0_cnt_next_13_.Q A0_cnt_next_11_.Q A0_cnt_next_12_.Q A0_N_301.BLIF A0_cnt_next_13_.D
+0111 1
+1-0- 1
+10-- 1
+1--0 1
+.names clk.BLIF A0_cnt_next_13_.C
+1 1
+.names reset.BLIF A0_cnt_next_13_.AR
+0 1
+.names A0_cnt_next_16_.Q A0_cnt_next_15_.Q A0_cnt_next_14_.Q A0_N_307.BLIF A0_cnt_next_16_.D
+0111 1
+1-0- 1
+10-- 1
+1--0 1
+.names clk.BLIF A0_cnt_next_16_.C
+1 1
+.names reset.BLIF A0_cnt_next_16_.AR
+0 1
+.names A0_cnt_next_20_.Q A0_cnt_next_19_.Q A0_cnt_next_21_.Q A0_cnt_next_22_.Q A0_N_317.BLIF A0_cnt_next_23_.T
+11111 1
+.names clk.BLIF A0_cnt_next_23_.C
+1 1
+.names reset.BLIF A0_cnt_next_23_.AR
+0 1
+.names A0_cnt_next_16_.Q A0_cnt_next_15_.Q A0_cnt_next_14_.Q A0_cnt_next_17_.Q A0_N_307.BLIF A0_cnt_next_18_.T
+11111 1
+.names clk.BLIF A0_cnt_next_18_.C
+1 1
+.names reset.BLIF A0_cnt_next_18_.AR
+0 1
+.names A0_cnt_next_15_.Q A0_cnt_next_14_.Q A0_N_307.BLIF A0_cnt_next_15_.D
+011 1
+10- 1
+1-0 1
+.names clk.BLIF A0_cnt_next_15_.C
+1 1
+.names reset.BLIF A0_cnt_next_15_.AR
+0 1
+.names A0_cnt_next_19_.Q A0_N_317.BLIF A0_cnt_next_19_.D
+10 1
+01 1
+.names clk.BLIF A0_cnt_next_19_.C
+1 1
+.names reset.BLIF A0_cnt_next_19_.AR
+0 1
+.names A0_cnt_next_9_.Q A0_cnt_next_10_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_un1_cnt_next_10_20_3.BLIF A0_cnt_next_10_.D.X1
+-1--- 1
+.names A0_cnt_next_9_.Q A0_cnt_next_10_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_un1_cnt_next_10_20_3.BLIF A0_cnt_next_10_.D.X2
+1-111 1
+.names clk.BLIF A0_cnt_next_10_.C
+1 1
+.names reset.BLIF A0_cnt_next_10_.AR
+0 1
+.names A0_scan_data_1_.Q A0_scan_data_0_.Q A0_un1_cnt_next_10.BLIF A0_scan_data_1_.D
+011 1
+10- 1
+1-0 1
+.names clk.BLIF A0_scan_data_1_.C
+1 1
+.names reset.BLIF A0_scan_data_1_.AR
+0 1
+.names A0_cnt_next_24_.Q A0_cnt_next_9_.Q A0_cnt_next_20_.Q A0_cnt_next_13_.Q A0_cnt_next_16_.Q A0_cnt_next_23_.Q A0_cnt_next_18_.Q A0_cnt_next_15_.Q A0_cnt_next_19_.Q A0_cnt_next_10_.Q A0_scan_data_1_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_cnt_next_11_.Q A0_cnt_next_12_.Q A0_cnt_next_14_.Q A0_cnt_next_17_.Q A0_cnt_next_21_.Q A0_cnt_next_22_.Q A0_cnt_next_25_.Q A0_un1_cnt_next_10_20_3.BLIF A0_scan_data_3_.T
+00000000001111111111111 1
+.names clk.BLIF A0_scan_data_3_.C
+1 1
+.names reset.BLIF A0_scan_data_3_.AR
+0 1
+.names A0_cnt_next_24_.Q A0_cnt_next_9_.Q A0_cnt_next_20_.Q A0_cnt_next_13_.Q A0_cnt_next_16_.Q A0_cnt_next_23_.Q A0_cnt_next_18_.Q A0_cnt_next_15_.Q A0_cnt_next_19_.Q A0_cnt_next_10_.Q A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_cnt_next_11_.Q A0_cnt_next_12_.Q A0_cnt_next_14_.Q A0_cnt_next_17_.Q A0_cnt_next_21_.Q A0_cnt_next_22_.Q A0_cnt_next_25_.Q A0_un1_cnt_next_10_20_3.BLIF A0_scan_data_4_.T
+000000000011111111111111 1
+.names clk.BLIF A0_scan_data_4_.C
+1 1
+.names reset.BLIF A0_scan_data_4_.AR
+0 1
+.names A0_cnt_next_24_.Q A0_cnt_next_9_.Q A0_cnt_next_20_.Q A0_cnt_next_13_.Q A0_cnt_next_16_.Q A0_cnt_next_23_.Q A0_cnt_next_18_.Q A0_cnt_next_15_.Q A0_cnt_next_19_.Q A0_cnt_next_10_.Q A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_cnt_next_11_.Q A0_cnt_next_12_.Q A0_cnt_next_14_.Q A0_cnt_next_17_.Q A0_cnt_next_21_.Q A0_cnt_next_22_.Q A0_cnt_next_25_.Q A0_un1_cnt_next_10_20_3.BLIF A0_scan_data_5_.D.X1
+0000000000111-111111111111 1
+.names A0_cnt_next_24_.Q A0_cnt_next_9_.Q A0_cnt_next_20_.Q A0_cnt_next_13_.Q A0_cnt_next_16_.Q A0_cnt_next_23_.Q A0_cnt_next_18_.Q A0_cnt_next_15_.Q A0_cnt_next_19_.Q A0_cnt_next_10_.Q A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_cnt_next_11_.Q A0_cnt_next_12_.Q A0_cnt_next_14_.Q A0_cnt_next_17_.Q A0_cnt_next_21_.Q A0_cnt_next_22_.Q A0_cnt_next_25_.Q A0_un1_cnt_next_10_20_3.BLIF A0_scan_data_5_.D.X2
+-------------1------------ 1
+.names clk.BLIF A0_scan_data_5_.C
+1 1
+.names reset.BLIF A0_scan_data_5_.AR
+0 1
+.names A0_scan_data_3_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_6_.Q A0_N_339.BLIF A0_scan_data_6_.D.X1
+111-1 1
+.names A0_scan_data_3_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_6_.Q A0_N_339.BLIF A0_scan_data_6_.D.X2
+---1- 1
+.names clk.BLIF A0_scan_data_6_.C
+1 1
+.names reset.BLIF A0_scan_data_6_.AR
+0 1
+.names A0_scan_data_0_.Q A0_un1_cnt_next_10.BLIF A0_scan_data_0_.D
+10 1
+01 1
+.names clk.BLIF A0_scan_data_0_.C
+1 1
+.names reset.BLIF A0_scan_data_0_.AR
+0 1
+.names A0_scan_data_1_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_un1_cnt_next_10.BLIF A0_scan_data_2_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+.names clk.BLIF A0_scan_data_2_.C
+1 1
+.names reset.BLIF A0_scan_data_2_.AR
+0 1
+.names A0_cnt_scan_0_.Q A0_cnt_scan_0_.D
+0 1
+.names clk.BLIF A0_cnt_scan_0_.C
+1 1
+.names reset.BLIF A0_cnt_scan_0_.AR
+0 1
+.names A0_cnt_scan_0_.Q A0_cnt_scan_1_.Q A0_cnt_scan_1_.D
+10 1
+01 1
+.names clk.BLIF A0_cnt_scan_1_.C
+1 1
+.names reset.BLIF A0_cnt_scan_1_.AR
+0 1
+.names A0_cnt_scan_0_.Q A0_cnt_scan_1_.Q A0_cnt_scan_2_.Q A0_cnt_scan_2_.D
+110 1
+-01 1
+0-1 1
+.names clk.BLIF A0_cnt_scan_2_.C
+1 1
+.names reset.BLIF A0_cnt_scan_2_.AR
+0 1
+.names A0_cnt_scan_0_.Q A0_cnt_scan_1_.Q A0_cnt_scan_2_.Q A0_cnt_scan_3_.Q A0_cnt_scan_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+.names clk.BLIF A0_cnt_scan_3_.C
+1 1
+.names reset.BLIF A0_cnt_scan_3_.AR
+0 1
+.names A0_cnt_scan_4_.Q A0_un1_cnt_scan_9.BLIF A0_cnt_scan_4_.D
+10 1
+01 1
+.names clk.BLIF A0_cnt_scan_4_.C
+1 1
+.names reset.BLIF A0_cnt_scan_4_.AR
+0 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_un1_cnt_scan_9.BLIF A0_cnt_scan_5_.D
+101 1
+01- 1
+-10 1
+.names clk.BLIF A0_cnt_scan_5_.C
+1 1
+.names reset.BLIF A0_cnt_scan_5_.AR
+0 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_un1_cnt_scan_9.BLIF A0_cnt_scan_6_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+.names clk.BLIF A0_cnt_scan_6_.C
+1 1
+.names reset.BLIF A0_cnt_scan_6_.AR
+0 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_un1_cnt_scan_9.BLIF A0_cnt_scan_7_.D.X1
+111-1 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_un1_cnt_scan_9.BLIF A0_cnt_scan_7_.D.X2
+---1- 1
+.names clk.BLIF A0_cnt_scan_7_.C
+1 1
+.names reset.BLIF A0_cnt_scan_7_.AR
+0 1
+.names A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_un1_cnt_scan_9.BLIF A0_cnt_scan_8_.T
+11111 1
+.names clk.BLIF A0_cnt_scan_8_.C
+1 1
+.names reset.BLIF A0_cnt_scan_8_.AR
+0 1
+.names A0_cnt_scan_9_.Q A0_N_263.BLIF A0_cnt_scan_9_.D
+10 1
+01 1
+.names clk.BLIF A0_cnt_scan_9_.C
+1 1
+.names reset.BLIF A0_cnt_scan_9_.AR
+0 1
+.names A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_N_263.BLIF A0_cnt_scan_10_.D
+101 1
+01- 1
+-10 1
+.names clk.BLIF A0_cnt_scan_10_.C
+1 1
+.names reset.BLIF A0_cnt_scan_10_.AR
+0 1
+.names A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q A0_N_263.BLIF A0_cnt_scan_11_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+.names clk.BLIF A0_cnt_scan_11_.C
+1 1
+.names reset.BLIF A0_cnt_scan_11_.AR
+0 1
+.names A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q A0_cnt_scan_12_.Q A0_N_263.BLIF A0_cnt_scan_12_.D.X1
+111-1 1
+.names A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q A0_cnt_scan_12_.Q A0_N_263.BLIF A0_cnt_scan_12_.D.X2
+---1- 1
+.names clk.BLIF A0_cnt_scan_12_.C
+1 1
+.names reset.BLIF A0_cnt_scan_12_.AR
+0 1
+.names A0_cnt_scan_13_.Q A0_N_271.BLIF A0_cnt_scan_13_.D
+10 1
+01 1
+.names clk.BLIF A0_cnt_scan_13_.C
+1 1
+.names reset.BLIF A0_cnt_scan_13_.AR
+0 1
+.names A0_cnt_scan_13_.Q A0_cnt_scan_14_.Q A0_N_271.BLIF A0_cnt_scan_14_.D
+101 1
+01- 1
+-10 1
+.names clk.BLIF A0_cnt_scan_14_.C
+1 1
+.names reset.BLIF A0_cnt_scan_14_.AR
+0 1
+.names A0_cnt_scan_13_.Q A0_cnt_scan_14_.Q A0_cnt_scan_15_.Q A0_N_271.BLIF A0_cnt_scan_15_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+.names clk.BLIF A0_cnt_scan_15_.C
+1 1
+.names reset.BLIF A0_cnt_scan_15_.AR
+0 1
+.names A0_cnt_next_0_.Q A0_cnt_next_0_.D
+0 1
+.names clk.BLIF A0_cnt_next_0_.C
+1 1
+.names reset.BLIF A0_cnt_next_0_.AR
+0 1
+.names A0_cnt_next_0_.Q A0_cnt_next_1_.Q A0_cnt_next_1_.D
+10 1
+01 1
+.names clk.BLIF A0_cnt_next_1_.C
+1 1
+.names reset.BLIF A0_cnt_next_1_.AR
+0 1
+.names A0_cnt_next_0_.Q A0_cnt_next_1_.Q A0_cnt_next_2_.Q A0_cnt_next_2_.D
+110 1
+-01 1
+0-1 1
+.names clk.BLIF A0_cnt_next_2_.C
+1 1
+.names reset.BLIF A0_cnt_next_2_.AR
+0 1
+.names A0_cnt_next_0_.Q A0_cnt_next_1_.Q A0_cnt_next_2_.Q A0_cnt_next_3_.Q A0_cnt_next_3_.D
+1110 1
+--01 1
+-0-1 1
+0--1 1
+.names clk.BLIF A0_cnt_next_3_.C
+1 1
+.names reset.BLIF A0_cnt_next_3_.AR
+0 1
+.names A0_cnt_next_4_.Q A0_un1_cnt_next_10_14.BLIF A0_cnt_next_4_.D
+10 1
+01 1
+.names clk.BLIF A0_cnt_next_4_.C
+1 1
+.names reset.BLIF A0_cnt_next_4_.AR
+0 1
+.names A0_cnt_next_4_.Q A0_cnt_next_5_.Q A0_un1_cnt_next_10_14.BLIF A0_cnt_next_5_.D
+101 1
+01- 1
+-10 1
+.names clk.BLIF A0_cnt_next_5_.C
+1 1
+.names reset.BLIF A0_cnt_next_5_.AR
+0 1
+.names A0_cnt_next_4_.Q A0_cnt_next_5_.Q A0_cnt_next_6_.Q A0_un1_cnt_next_10_14.BLIF A0_cnt_next_6_.D
+1101 1
+-01- 1
+0-1- 1
+--10 1
+.names clk.BLIF A0_cnt_next_6_.C
+1 1
+.names reset.BLIF A0_cnt_next_6_.AR
+0 1
+.names A0_cnt_next_4_.Q A0_cnt_next_5_.Q A0_cnt_next_6_.Q A0_cnt_next_7_.Q A0_un1_cnt_next_10_14.BLIF A0_cnt_next_7_.D.X1
+111-1 1
+.names A0_cnt_next_4_.Q A0_cnt_next_5_.Q A0_cnt_next_6_.Q A0_cnt_next_7_.Q A0_un1_cnt_next_10_14.BLIF A0_cnt_next_7_.D.X2
+---1- 1
+.names clk.BLIF A0_cnt_next_7_.C
+1 1
+.names reset.BLIF A0_cnt_next_7_.AR
+0 1
+.names A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_un1_cnt_next_10_20_3.BLIF A0_cnt_next_8_.D
+101 1
+01- 1
+-10 1
+.names clk.BLIF A0_cnt_next_8_.C
+1 1
+.names reset.BLIF A0_cnt_next_8_.AR
+0 1
+.names A0_cnt_next_11_.Q A0_un1_cnt_next_10.BLIF A0_N_301.BLIF A0_cnt_next_11_.D
+100 1
+001 1
+.names clk.BLIF A0_cnt_next_11_.C
+1 1
+.names reset.BLIF A0_cnt_next_11_.AR
+0 1
+.names A0_cnt_next_11_.Q A0_cnt_next_12_.Q A0_un1_cnt_next_10.BLIF A0_N_301.BLIF A0_cnt_next_12_.D
+1001 1
+010- 1
+-100 1
+.names clk.BLIF A0_cnt_next_12_.C
+1 1
+.names reset.BLIF A0_cnt_next_12_.AR
+0 1
+.names A0_cnt_next_14_.Q A0_un1_cnt_next_10.BLIF A0_N_307.BLIF A0_cnt_next_14_.D
+100 1
+001 1
+.names clk.BLIF A0_cnt_next_14_.C
+1 1
+.names reset.BLIF A0_cnt_next_14_.AR
+0 1
+.names A0_cnt_next_16_.Q A0_cnt_next_15_.Q A0_cnt_next_14_.Q A0_cnt_next_17_.Q A0_un1_cnt_next_10.BLIF A0_N_307.BLIF A0_cnt_next_17_.D.X1
+111-01 1
+.names A0_cnt_next_16_.Q A0_cnt_next_15_.Q A0_cnt_next_14_.Q A0_cnt_next_17_.Q A0_un1_cnt_next_10.BLIF A0_N_307.BLIF A0_cnt_next_17_.D.X2
+---10- 1
+.names clk.BLIF A0_cnt_next_17_.C
+1 1
+.names reset.BLIF A0_cnt_next_17_.AR
+0 1
+.names A0_cnt_next_20_.Q A0_cnt_next_19_.Q A0_cnt_next_21_.Q A0_un1_cnt_next_10.BLIF A0_N_317.BLIF A0_cnt_next_21_.D
+11001 1
+-010- 1
+0-10- 1
+--100 1
+.names clk.BLIF A0_cnt_next_21_.C
+1 1
+.names reset.BLIF A0_cnt_next_21_.AR
+0 1
+.names A0_cnt_next_20_.Q A0_cnt_next_19_.Q A0_cnt_next_21_.Q A0_cnt_next_22_.Q A0_un1_cnt_next_10.BLIF A0_N_317.BLIF A0_cnt_next_22_.D.X1
+111-01 1
+.names A0_cnt_next_20_.Q A0_cnt_next_19_.Q A0_cnt_next_21_.Q A0_cnt_next_22_.Q A0_un1_cnt_next_10.BLIF A0_N_317.BLIF A0_cnt_next_22_.D.X2
+---10- 1
+.names clk.BLIF A0_cnt_next_22_.C
+1 1
+.names reset.BLIF A0_cnt_next_22_.AR
+0 1
+.names A0_cnt_next_24_.Q A0_cnt_next_25_.Q A0_un1_cnt_next_10.BLIF A0_N_327.BLIF A0_cnt_next_25_.D
+1001 1
+010- 1
+-100 1
+.names clk.BLIF A0_cnt_next_25_.C
+1 1
+.names reset.BLIF A0_cnt_next_25_.AR
+0 1
+.names A0_cnt_next_24_.Q A0_cnt_next_9_.Q A0_cnt_next_20_.Q A0_cnt_next_13_.Q A0_cnt_next_16_.Q A0_cnt_next_23_.Q A0_cnt_next_18_.Q A0_cnt_next_15_.Q A0_cnt_next_19_.Q A0_cnt_next_10_.Q A0_scan_data_1_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_cnt_next_11_.Q A0_cnt_next_12_.Q A0_cnt_next_14_.Q A0_cnt_next_17_.Q A0_cnt_next_21_.Q A0_cnt_next_22_.Q A0_cnt_next_25_.Q A0_un1_cnt_next_10_20_3.BLIF A0_N_339
+00000000001111111111111 1
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q led_row_5_.Q led_row_6_.Q led_row_7_.Q A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_6_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_N_132.BLIF A0_N_46_i-
+000000100000011- 1
+0000100001000-0- 1
+--------10---0-1 1
+---------1---101 1
+.names A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_N_132.BLIF A0_N_150.BLIF A0_N_37_i-
+0-0-1- 1
+10-0-1 1
+11-1-1 1
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q led_row_5_.Q led_row_6_.Q led_row_7_.Q A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_6_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_N_150.BLIF A0_N_32_i-
+0010000001000-0- 1
+0001000001000-0- 1
+--------10---0-1 1
+--------11---1-1 1
+.names led_row_0_.Q led_row_1_.Q led_row_4_.Q led_row_6_.Q led_row_7_.Q A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_6_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_N_30_0-
+000100100011 1
+01000000000- 1
+010001-0001- 1
+.names A0_scan_data_1_.Q A0_scan_data_3_.Q A0_scan_data_0_.Q A0_scan_data_2_.Q A0_N_150.BLIF A0_N_155.BLIF A0_col_buf_i_3_4__n-
+-1-01- 1
+0--01- 1
+-01--1 1
+--10-1 1
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q led_row_5_.Q led_row_6_.Q led_row_7_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_6_.Q A0_N_132
+00000100000 1
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q led_row_5_.Q led_row_6_.Q led_row_7_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_6_.Q A0_N_150
+01000000000 1
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q led_row_5_.Q led_row_6_.Q led_row_7_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_6_.Q A0_N_152
+00010000000 1
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q led_row_5_.Q led_row_6_.Q led_row_7_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_6_.Q A0_N_154
+00100000000 1
+.names led_row_0_.Q led_row_1_.Q led_row_2_.Q led_row_3_.Q led_row_4_.Q led_row_5_.Q led_row_6_.Q led_row_7_.Q A0_scan_data_4_.Q A0_scan_data_5_.Q A0_scan_data_6_.Q A0_N_155
+00001000000 1
+.names A0_cnt_scan_0_.Q A0_cnt_scan_1_.Q A0_cnt_scan_2_.Q A0_cnt_scan_3_.Q A0_un1_cnt_scan_9
+1111 1
+.names A0_cnt_scan_0_.Q A0_cnt_scan_1_.Q A0_cnt_scan_2_.Q A0_cnt_scan_3_.Q A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_cnt_scan_8_.Q A0_cnt_scan_9_.Q A0_cnt_scan_10_.Q A0_cnt_scan_11_.Q A0_cnt_scan_12_.Q A0_N_271
+1111111111111 1
+.names A0_cnt_scan_0_.Q A0_cnt_scan_1_.Q A0_cnt_scan_2_.Q A0_cnt_scan_3_.Q A0_cnt_scan_4_.Q A0_cnt_scan_5_.Q A0_cnt_scan_6_.Q A0_cnt_scan_7_.Q A0_cnt_scan_8_.Q A0_N_263
+111111111 1
+.names A0_cnt_next_0_.Q A0_cnt_next_1_.Q A0_cnt_next_2_.Q A0_cnt_next_3_.Q A0_cnt_next_4_.Q A0_cnt_next_5_.Q A0_cnt_next_6_.Q A0_un1_cnt_next_10_20_3
+1111111 1
+.names A0_cnt_next_24_.Q A0_cnt_next_9_.Q A0_cnt_next_20_.Q A0_cnt_next_13_.Q A0_cnt_next_16_.Q A0_cnt_next_23_.Q A0_cnt_next_18_.Q A0_cnt_next_15_.Q A0_cnt_next_19_.Q A0_cnt_next_10_.Q A0_cnt_next_0_.Q A0_cnt_next_1_.Q A0_cnt_next_2_.Q A0_cnt_next_3_.Q A0_cnt_next_4_.Q A0_cnt_next_5_.Q A0_cnt_next_6_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_cnt_next_11_.Q A0_cnt_next_12_.Q A0_cnt_next_14_.Q A0_cnt_next_17_.Q A0_cnt_next_21_.Q A0_cnt_next_22_.Q A0_cnt_next_25_.Q A0_un1_cnt_next_10
+00000000001111111111111111 1
+.names A0_cnt_next_0_.Q A0_cnt_next_1_.Q A0_cnt_next_2_.Q A0_cnt_next_3_.Q A0_un1_cnt_next_10_14
+1111 1
+.names A0_cnt_next_9_.Q A0_cnt_next_10_.Q A0_cnt_next_0_.Q A0_cnt_next_1_.Q A0_cnt_next_2_.Q A0_cnt_next_3_.Q A0_cnt_next_4_.Q A0_cnt_next_5_.Q A0_cnt_next_6_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_N_301
+11111111111 1
+.names A0_cnt_next_9_.Q A0_cnt_next_13_.Q A0_cnt_next_10_.Q A0_cnt_next_0_.Q A0_cnt_next_1_.Q A0_cnt_next_2_.Q A0_cnt_next_3_.Q A0_cnt_next_4_.Q A0_cnt_next_5_.Q A0_cnt_next_6_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_cnt_next_11_.Q A0_cnt_next_12_.Q A0_N_307
+11111111111111 1
+.names A0_cnt_next_9_.Q A0_cnt_next_20_.Q A0_cnt_next_13_.Q A0_cnt_next_16_.Q A0_cnt_next_23_.Q A0_cnt_next_18_.Q A0_cnt_next_15_.Q A0_cnt_next_19_.Q A0_cnt_next_10_.Q A0_cnt_next_0_.Q A0_cnt_next_1_.Q A0_cnt_next_2_.Q A0_cnt_next_3_.Q A0_cnt_next_4_.Q A0_cnt_next_5_.Q A0_cnt_next_6_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_cnt_next_11_.Q A0_cnt_next_12_.Q A0_cnt_next_14_.Q A0_cnt_next_17_.Q A0_cnt_next_21_.Q A0_cnt_next_22_.Q A0_N_327
+111111111111111111111111 1
+.names A0_cnt_next_9_.Q A0_cnt_next_13_.Q A0_cnt_next_16_.Q A0_cnt_next_18_.Q A0_cnt_next_15_.Q A0_cnt_next_10_.Q A0_cnt_next_0_.Q A0_cnt_next_1_.Q A0_cnt_next_2_.Q A0_cnt_next_3_.Q A0_cnt_next_4_.Q A0_cnt_next_5_.Q A0_cnt_next_6_.Q A0_cnt_next_7_.Q A0_cnt_next_8_.Q A0_cnt_next_11_.Q A0_cnt_next_12_.Q A0_cnt_next_14_.Q A0_cnt_next_17_.Q A0_N_317
+1111111111111111111 1
+.end

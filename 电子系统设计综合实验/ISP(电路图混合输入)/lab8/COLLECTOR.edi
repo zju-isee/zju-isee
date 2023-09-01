@@ -1,0 +1,219 @@
+(edif root
+  (edifVersion 2 0 0)
+  (edifLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timeStamp 2023 5 18 21 33 56)
+      (author "Lattice Semiconductor Corp.")
+      (program "EDIF Writer"(version "lse"))
+    )
+  )
+  (external mach
+    (edifLevel 0)
+    (technology (numberDefinition))
+    (cell OBUF
+      (cellType generic)
+      (view (rename INTERFACE_c "INTERFACE")
+        (viewType netlist)
+        (interface
+          (port O (direction OUTPUT))
+          (port I0 (direction INPUT))
+        )
+        (property black_box_pad_pin (string "O"))
+      )
+    )
+    (cell VCC
+      (cellType generic)
+      (view (rename uNoName_ "<NoName>")
+        (viewType netlist)
+        (interface
+          (port X (direction OUTPUT))
+        )
+      )
+    )
+    (cell IBUF
+      (cellType generic)
+      (view (rename INTERFACE_c "INTERFACE")
+        (viewType netlist)
+        (interface
+          (port O (direction OUTPUT))
+          (port I0 (direction INPUT))
+        )
+        (property black_box_pad_pin (string "I0"))
+      )
+    )
+    (cell DFF
+      (cellType generic)
+      (view (rename INTERFACE_c "INTERFACE")
+        (viewType netlist)
+        (interface
+          (port Q (direction OUTPUT))
+          (port D (direction INPUT))
+          (port CLK (direction INPUT))
+        )
+      )
+    )
+    (cell GND
+      (cellType generic)
+      (view (rename uNoName_ "<NoName>")
+        (viewType netlist)
+        (interface
+          (port X (direction OUTPUT))
+        )
+      )
+    )
+    (cell XOR2
+      (cellType generic)
+      (view (rename uNoName_ "<NoName>")
+        (viewType netlist)
+        (interface
+          (port O (direction OUTPUT))
+          (port I0 (direction INPUT))
+          (port I1 (direction INPUT))
+        )
+      )
+    )
+    (cell INV
+      (cellType generic)
+      (view (rename uNoName_ "<NoName>")
+        (viewType netlist)
+        (interface
+          (port O (direction OUTPUT))
+          (port I0 (direction INPUT))
+        )
+      )
+    )
+  )
+  (library work
+    (edifLevel 0)
+    (technology (numberDefinition))
+    (cell (rename COLLECTOR_c "COLLECTOR")
+      (cellType generic)
+      (view TECH
+        (viewType netlist)
+        (interface
+          (port clk (direction INPUT))
+          (port q1 (direction OUTPUT))
+          (port q0 (direction OUTPUT))
+        )
+        (contents
+          (instance q0_pad
+            (viewRef INTERFACE_c (cellRef OBUF (libraryref mach)))
+          )
+          (instance i75
+            (viewRef uNoName_ (cellRef VCC (libraryref mach)))
+          )
+          (instance clk_pad
+            (viewRef INTERFACE_c (cellRef IBUF (libraryref mach)))
+          )
+          (instance q0_19
+            (viewRef INTERFACE_c (cellRef DFF (libraryref mach)))
+          )
+          (instance q1_18
+            (viewRef INTERFACE_c (cellRef DFF (libraryref mach)))
+          )
+          (instance counter__i1
+            (viewRef INTERFACE_c (cellRef DFF (libraryref mach)))
+          )
+          (instance q1_pad
+            (viewRef INTERFACE_c (cellRef OBUF (libraryref mach)))
+          )
+          (instance i74
+            (viewRef uNoName_ (cellRef GND (libraryref mach)))
+          )
+          (instance counter__i0
+            (viewRef INTERFACE_c (cellRef DFF (libraryref mach)))
+          )
+          (instance i76
+            (viewRef uNoName_ (cellRef XOR2 (libraryref mach)))
+          )
+          (instance i35
+            (viewRef uNoName_ (cellRef INV (libraryref mach)))
+          )
+          (net pwr
+            (joined
+              (portRef X (instanceRef i75))
+            )
+          )
+          (net gnd
+            (joined
+              (portRef X (instanceRef i74))
+            )
+          )
+          (net clk_c
+            (joined
+              (portRef CLK (instanceRef q1_18))
+              (portRef O (instanceRef clk_pad))
+              (portRef CLK (instanceRef counter__i1))
+              (portRef CLK (instanceRef q0_19))
+              (portRef CLK (instanceRef counter__i0))
+            )
+            (property is_clock (string "1"))
+            (property SET_AS_NETWORK (string "clk_c"))
+          )
+          (net q1_c
+            (joined
+              (portRef Q (instanceRef q1_18))
+              (portRef I0 (instanceRef q1_pad))
+            )
+          )
+          (net q0_c
+            (joined
+              (portRef Q (instanceRef q0_19))
+              (portRef I0 (instanceRef q0_pad))
+            )
+          )
+          (net counter_1
+            (joined
+              (portRef I1 (instanceRef i76))
+              (portRef Q (instanceRef counter__i1))
+              (portRef D (instanceRef q1_18))
+            )
+          )
+          (net counter_0
+            (joined
+              (portRef I0 (instanceRef i35))
+              (portRef Q (instanceRef counter__i0))
+              (portRef D (instanceRef q0_19))
+              (portRef I0 (instanceRef i76))
+            )
+          )
+          (net q0
+            (joined
+              (portRef q0)
+              (portRef O (instanceRef q0_pad))
+            )
+          )
+          (net n1
+            (joined
+              (portRef O (instanceRef i35))
+              (portRef D (instanceRef counter__i0))
+            )
+          )
+          (net q1
+            (joined
+              (portRef q1)
+              (portRef O (instanceRef q1_pad))
+            )
+          )
+          (net clk
+            (joined
+              (portRef clk)
+              (portRef I0 (instanceRef clk_pad))
+            )
+          )
+          (net n72
+            (joined
+              (portRef O (instanceRef i76))
+              (portRef D (instanceRef counter__i1))
+            )
+          )
+        )
+      )
+    )
+  )
+  (design TECH
+    (cellRef COLLECTOR_c (libraryref work))
+  )
+)

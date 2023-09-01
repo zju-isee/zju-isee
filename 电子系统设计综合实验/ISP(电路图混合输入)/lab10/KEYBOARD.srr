@@ -1,0 +1,87 @@
+#Build: Synplify Pro I-2014.03LC , Build 063R, May 27 2014
+#install: E:\Bin\synpbase
+#OS: Windows 7 6.2
+#Hostname: LAPTOP-BV60RUMV
+
+#Implementation: lab10
+
+$ Start of Compile
+#Fri May 26 12:02:46 2023
+
+Synopsys Verilog Compiler, version comp201403rcp1, Build 060R, built May 27 2014
+@N|Running in 64-bit mode
+Copyright (C) 1994-2014 Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+
+@I::"E:\Bin\synpbase\lib\vlog\umr_capim.v"
+@I::"E:\Bin\synpbase\lib\vlog\scemi_objects.v"
+@I::"E:\Bin\synpbase\lib\vlog\scemi_pipes.svh"
+@I::"E:\Bin\synpbase\lib\vlog\hypermods.v"
+@I::"E:\Bin\ispcpld\..\cae_library\synthesis\verilog\mach.v"
+@I::"D:\isp\lab10\lab10.h"
+@I::"D:\isp\lab10\keyboard.v"
+Verilog syntax check successful!
+Selecting top level module KEYBOARD
+@N: CG364 :"D:\isp\lab10\keyboard.v":1:7:1:14|Synthesizing module KEYBOARD
+
+@W: CL271 :"D:\isp\lab10\keyboard.v":33:0:33:5|Pruning bits 10 to 9 of RxData[10:0] -- not in use ...
+
+@W: CL265 :"D:\isp\lab10\keyboard.v":33:0:33:5|Pruning bit 0 of RxData[10:0] -- not in use ...
+
+@W: CL118 :"D:\isp\lab10\keyboard.v":75:4:75:5|Latch generated from always block for signal save[3:0]; possible missing assignment in an if or case statement.
+@W: CL118 :"D:\isp\lab10\keyboard.v":75:4:75:5|Latch generated from always block for signal PS_Data[3:0]; possible missing assignment in an if or case statement.
+@A: CL282 :"D:\isp\lab10\keyboard.v":33:0:33:5|Feedback mux created for signal RxData[8:1] -- possible set/reset assignment for signal missing. Specifying a reset value will improve timing and area.
+@END
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 68MB peak: 69MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Fri May 26 12:02:46 2023
+
+###########################################################]
+Synopsys Netlist Linker, version comp201403rcp1, Build 060R, built May 27 2014
+@N|Running in 64-bit mode
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Fri May 26 12:02:47 2023
+
+###########################################################]
+Map & Optimize Report
+
+Synopsys CPLD Technology Mapper, Version maplat, Build 923R, Built May  6 2014
+Copyright (C) 1994-2013, Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use or distribution of the software is strictly prohibited.
+Product Version I-2014.03LC 
+@N: MF248 |Running in 64-bit mode.
+@N:"d:\isp\lab10\keyboard.v":33:0:33:5|Found counter in view:work.KEYBOARD(verilog) inst counter[3:0]
+@W: MT462 :"d:\isp\lab10\keyboard.v":35:7:77:20|Net PS_Data38 appears to be an unidentified clock source. Assuming default frequency. 
+@W: MT462 :"d:\isp\lab10\keyboard.v":57:0:57:5|Net LedEn appears to be an unidentified clock source. Assuming default frequency. 
+---------------------------------------
+Resource Usage Report
+
+Simple gate primitives:
+DFFC            8 uses
+DFFRH           9 uses
+DFFSH           3 uses
+DFFCRH          4 uses
+DFFCSH          1 use
+IBUF            4 uses
+OBUF            8 uses
+AND2            113 uses
+XOR2            8 uses
+INV             48 uses
+OR2             15 uses
+DLAT            4 uses
+DLATRH          4 uses
+
+
+@N: FC100 |Timing Report not generated for this device, please use place and route tools for timing analysis.
+I-2014.03LC 
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 38MB peak: 103MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Fri May 26 12:02:47 2023
+
+###########################################################]

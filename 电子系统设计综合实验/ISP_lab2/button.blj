@@ -1,0 +1,370 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Fri Apr 21 11:09:59 2023
+#$ MODULE button
+#$ PINS 5 clk reset ButtonIn ButtonOut pulse1kHz
+#$ NODES 58 SynchroInst_D2_q_1_ Width_TransInst_D3_q_1_ SynchroInst_D1_q_1_ \
+#  Debouncer_Timer_q_1_ Debouncer_Timer_q_2_ Debouncer_Timer_q_3_ \
+#  Debouncer_Timer_q_4_ debouncer_timer_done_n Debouncer_ControlInst_state_0_ \
+#  Debouncer_ControlInst_state_1_ debouncer_controlinst_n_29_n \
+#  debouncer_timer_n_22_n debouncer_timer_n_23_n debouncer_timer_n_24_n \
+#  debouncer_timer_n_25_n debouncer_timer_n_26_n debouncer_timer_n_27_n \
+#  debouncer_timer_n_29_n debouncer_timer_n_34_n \
+#  debouncer_controlinst_state_ns_0__n Debouncer_ControlInst_state_ns_1_0__m1 \
+#  debouncer_controlinst_state_ns_1_0__n_7_n \
+#  Debouncer_ControlInst_state_ns_1_0__m5 pulse1kHz_i debouncer_un1_timer_i_3__n \
+#  debouncer_un1_timer_i_2__n debouncer_un1_timer_i_0__n debouncer_un1_timer_i_1__n \
+#  debouncer_timer_r_i_0_i_n reset_i debouncer_timer_done_i_n \
+#  debouncer_controlinst_state_i_1__n debouncer_controlinst_n_29_i_n \
+#  width_transinst_q_i_n debouncer_timer_n_24_i_0_n clk_c reset_c ButtonOut_c \
+#  pulse1kHz_c debouncer_timer_n_34_i_n debouncer_timer_n_18_i_n \
+#  debouncer_timer_n_22_0_n debouncer_timer_n_23_0_n debouncer_timer_n_29_i_n \
+#  debouncer_timer_n_27_i_n debouncer_timer_n_25_i_n debouncer_timer_n_26_i_n \
+#  debouncer_timer_n_19_0_1_n debouncer_timer_n_31_0_1_n debouncer_timer_n_8_0_1_n \
+#  debouncer_timer_done_1_n debouncer_timer_done_2_n debouncer_timer_done_3_n \
+#  debouncer_timer_n_34_1_n debouncer_timer_n_34_2_n \
+#  debouncer_controlinst_state_ns_1_0__m3_un3_n \
+#  debouncer_controlinst_state_ns_1_0__m3_un1_n \
+#  debouncer_controlinst_state_ns_1_0__m3_un0_n
+.model button
+.inputs clk.BLIF reset.BLIF ButtonIn.BLIF pulse1kHz.BLIF SynchroInst_D2_q_1_.Q \
+Width_TransInst_D3_q_1_.Q SynchroInst_D1_q_1_.Q Debouncer_Timer_q_1_.Q \
+Debouncer_Timer_q_2_.Q Debouncer_Timer_q_3_.Q Debouncer_Timer_q_4_.Q \
+debouncer_timer_done_n.BLIF Debouncer_ControlInst_state_0_.Q \
+Debouncer_ControlInst_state_1_.Q debouncer_controlinst_n_29_n.BLIF \
+debouncer_timer_n_22_n.BLIF debouncer_timer_n_23_n.BLIF \
+debouncer_timer_n_24_n.BLIF debouncer_timer_n_25_n.BLIF \
+debouncer_timer_n_26_n.BLIF debouncer_timer_n_27_n.BLIF \
+debouncer_timer_n_29_n.BLIF debouncer_timer_n_34_n.BLIF \
+debouncer_controlinst_state_ns_0__n.BLIF \
+Debouncer_ControlInst_state_ns_1_0__m1.BLIF \
+debouncer_controlinst_state_ns_1_0__n_7_n.BLIF \
+Debouncer_ControlInst_state_ns_1_0__m5.BLIF pulse1kHz_i.BLIF \
+debouncer_un1_timer_i_3__n.BLIF debouncer_un1_timer_i_2__n.BLIF \
+debouncer_un1_timer_i_0__n.BLIF debouncer_un1_timer_i_1__n.BLIF \
+debouncer_timer_r_i_0_i_n.BLIF reset_i.BLIF debouncer_timer_done_i_n.BLIF \
+debouncer_controlinst_state_i_1__n.BLIF debouncer_controlinst_n_29_i_n.BLIF \
+width_transinst_q_i_n.BLIF debouncer_timer_n_24_i_0_n.BLIF clk_c.BLIF \
+reset_c.BLIF ButtonOut_c.BLIF pulse1kHz_c.BLIF debouncer_timer_n_34_i_n.BLIF \
+debouncer_timer_n_18_i_n.BLIF debouncer_timer_n_22_0_n.BLIF \
+debouncer_timer_n_23_0_n.BLIF debouncer_timer_n_29_i_n.BLIF \
+debouncer_timer_n_27_i_n.BLIF debouncer_timer_n_25_i_n.BLIF \
+debouncer_timer_n_26_i_n.BLIF debouncer_timer_n_19_0_1_n.BLIF \
+debouncer_timer_n_31_0_1_n.BLIF debouncer_timer_n_8_0_1_n.BLIF \
+debouncer_timer_done_1_n.BLIF debouncer_timer_done_2_n.BLIF \
+debouncer_timer_done_3_n.BLIF debouncer_timer_n_34_1_n.BLIF \
+debouncer_timer_n_34_2_n.BLIF \
+debouncer_controlinst_state_ns_1_0__m3_un3_n.BLIF \
+debouncer_controlinst_state_ns_1_0__m3_un1_n.BLIF \
+debouncer_controlinst_state_ns_1_0__m3_un0_n.BLIF
+.outputs ButtonOut Debouncer_Timer_q_3_.CE Debouncer_Timer_q_3_.C \
+Debouncer_Timer_q_4_.CE Debouncer_Timer_q_4_.C Debouncer_Timer_q_1_.CE \
+Debouncer_Timer_q_1_.C Debouncer_Timer_q_2_.CE Debouncer_Timer_q_2_.C \
+Debouncer_ControlInst_state_0_.C Debouncer_ControlInst_state_1_.C \
+SynchroInst_D1_q_1_.C SynchroInst_D2_q_1_.C Width_TransInst_D3_q_1_.C \
+debouncer_timer_done_n debouncer_controlinst_n_29_n debouncer_timer_n_22_n \
+debouncer_timer_n_23_n debouncer_timer_n_24_n debouncer_timer_n_25_n \
+debouncer_timer_n_26_n debouncer_timer_n_27_n debouncer_timer_n_29_n \
+debouncer_timer_n_34_n debouncer_controlinst_state_ns_0__n \
+debouncer_controlinst_state_ns_1_0__n_7_n pulse1kHz_i \
+debouncer_un1_timer_i_3__n debouncer_un1_timer_i_2__n \
+debouncer_un1_timer_i_0__n debouncer_un1_timer_i_1__n \
+debouncer_timer_r_i_0_i_n reset_i debouncer_timer_done_i_n \
+debouncer_controlinst_state_i_1__n debouncer_controlinst_n_29_i_n \
+width_transinst_q_i_n debouncer_timer_n_24_i_0_n clk_c reset_c ButtonOut_c \
+pulse1kHz_c debouncer_timer_n_34_i_n debouncer_timer_n_18_i_n \
+debouncer_timer_n_22_0_n debouncer_timer_n_23_0_n debouncer_timer_n_29_i_n \
+debouncer_timer_n_27_i_n debouncer_timer_n_25_i_n debouncer_timer_n_26_i_n \
+debouncer_timer_n_19_0_1_n debouncer_timer_n_31_0_1_n \
+debouncer_timer_n_8_0_1_n debouncer_timer_done_1_n debouncer_timer_done_2_n \
+debouncer_timer_done_3_n debouncer_timer_n_34_1_n debouncer_timer_n_34_2_n \
+debouncer_controlinst_state_ns_1_0__m3_un3_n \
+debouncer_controlinst_state_ns_1_0__m3_un1_n \
+debouncer_controlinst_state_ns_1_0__m3_un0_n \
+Debouncer_ControlInst_state_ns_1_0__m1 Debouncer_ControlInst_state_ns_1_0__m5 \
+SynchroInst_D2_q_1_.D Width_TransInst_D3_q_1_.D SynchroInst_D1_q_1_.D \
+Debouncer_Timer_q_1_.D Debouncer_Timer_q_2_.D Debouncer_Timer_q_3_.D \
+Debouncer_Timer_q_4_.D Debouncer_ControlInst_state_0_.D \
+Debouncer_ControlInst_state_1_.D
+.names debouncer_timer_done_3_n.BLIF pulse1kHz_c.BLIF debouncer_timer_done_n
+11 1
+0- 0
+-0 0
+.names debouncer_controlinst_state_i_1__n.BLIF debouncer_timer_r_i_0_i_n.BLIF \
+debouncer_controlinst_n_29_n
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_22_0_n.BLIF debouncer_timer_n_22_n
+0 1
+1 0
+.names debouncer_timer_n_23_0_n.BLIF debouncer_timer_n_23_n
+0 1
+1 0
+.names Debouncer_ControlInst_state_0_.Q pulse1kHz_i.BLIF \
+debouncer_timer_n_24_n
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_23_n.BLIF debouncer_un1_timer_i_3__n.BLIF \
+debouncer_timer_n_25_n
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_23_0_n.BLIF Debouncer_Timer_q_4_.Q \
+debouncer_timer_n_26_n
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_22_n.BLIF debouncer_un1_timer_i_2__n.BLIF \
+debouncer_timer_n_27_n
+11 1
+0- 0
+-0 0
+.names debouncer_un1_timer_i_0__n.BLIF debouncer_un1_timer_i_1__n.BLIF \
+debouncer_timer_n_29_n
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_34_1_n.BLIF debouncer_timer_n_34_2_n.BLIF \
+debouncer_timer_n_34_n
+11 1
+0- 0
+-0 0
+.names debouncer_controlinst_state_ns_1_0__m3_un1_n.BLIF \
+debouncer_controlinst_state_ns_1_0__m3_un0_n.BLIF \
+debouncer_controlinst_state_ns_0__n
+1- 1
+-1 1
+00 0
+.names Debouncer_ControlInst_state_0_.Q debouncer_timer_done_n.BLIF \
+debouncer_controlinst_state_ns_1_0__n_7_n
+11 1
+0- 0
+-0 0
+.names pulse1kHz_c.BLIF pulse1kHz_i
+0 1
+1 0
+.names Debouncer_Timer_q_4_.Q debouncer_un1_timer_i_3__n
+0 1
+1 0
+.names Debouncer_Timer_q_3_.Q debouncer_un1_timer_i_2__n
+0 1
+1 0
+.names Debouncer_Timer_q_1_.Q debouncer_un1_timer_i_0__n
+0 1
+1 0
+.names Debouncer_Timer_q_2_.Q debouncer_un1_timer_i_1__n
+0 1
+1 0
+.names Debouncer_ControlInst_state_0_.Q debouncer_timer_r_i_0_i_n
+0 1
+1 0
+.names reset_c.BLIF reset_i
+0 1
+1 0
+.names debouncer_timer_done_n.BLIF debouncer_timer_done_i_n
+0 1
+1 0
+.names Debouncer_ControlInst_state_1_.Q debouncer_controlinst_state_i_1__n
+0 1
+1 0
+.names debouncer_controlinst_n_29_n.BLIF debouncer_controlinst_n_29_i_n
+0 1
+1 0
+.names Width_TransInst_D3_q_1_.Q width_transinst_q_i_n
+0 1
+1 0
+.names debouncer_timer_n_24_n.BLIF debouncer_timer_n_24_i_0_n
+0 1
+1 0
+.names debouncer_controlinst_n_29_i_n.BLIF width_transinst_q_i_n.BLIF \
+ButtonOut_c
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_34_n.BLIF debouncer_timer_n_34_i_n
+0 1
+1 0
+.names debouncer_timer_n_34_i_n.BLIF Debouncer_ControlInst_state_0_.Q \
+debouncer_timer_n_18_i_n
+11 1
+0- 0
+-0 0
+.names Debouncer_Timer_q_1_.Q Debouncer_Timer_q_2_.Q debouncer_timer_n_22_0_n
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_22_0_n.BLIF Debouncer_Timer_q_3_.Q \
+debouncer_timer_n_23_0_n
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_29_n.BLIF debouncer_timer_n_29_i_n
+0 1
+1 0
+.names debouncer_timer_n_27_n.BLIF debouncer_timer_n_27_i_n
+0 1
+1 0
+.names debouncer_timer_n_25_n.BLIF debouncer_timer_n_25_i_n
+0 1
+1 0
+.names debouncer_timer_n_26_n.BLIF debouncer_timer_n_26_i_n
+0 1
+1 0
+.names debouncer_timer_n_18_i_n.BLIF debouncer_timer_n_22_n.BLIF \
+debouncer_timer_n_19_0_1_n
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_27_i_n.BLIF debouncer_timer_n_18_i_n.BLIF \
+debouncer_timer_n_31_0_1_n
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_18_i_n.BLIF debouncer_timer_n_25_i_n.BLIF \
+debouncer_timer_n_8_0_1_n
+11 1
+0- 0
+-0 0
+.names Debouncer_Timer_q_1_.Q Debouncer_Timer_q_4_.Q debouncer_timer_done_1_n
+11 1
+0- 0
+-0 0
+.names debouncer_un1_timer_i_1__n.BLIF debouncer_un1_timer_i_2__n.BLIF \
+debouncer_timer_done_2_n
+11 1
+0- 0
+-0 0
+.names debouncer_timer_done_1_n.BLIF debouncer_timer_done_2_n.BLIF \
+debouncer_timer_done_3_n
+11 1
+0- 0
+-0 0
+.names Debouncer_Timer_q_1_.Q Debouncer_Timer_q_4_.Q debouncer_timer_n_34_1_n
+11 1
+0- 0
+-0 0
+.names debouncer_un1_timer_i_1__n.BLIF debouncer_un1_timer_i_2__n.BLIF \
+debouncer_timer_n_34_2_n
+11 1
+0- 0
+-0 0
+.names Debouncer_ControlInst_state_0_.Q \
+debouncer_controlinst_state_ns_1_0__m3_un3_n
+0 1
+1 0
+.names debouncer_timer_done_i_n.BLIF Debouncer_ControlInst_state_0_.Q \
+debouncer_controlinst_state_ns_1_0__m3_un1_n
+11 1
+0- 0
+-0 0
+.names Debouncer_ControlInst_state_ns_1_0__m1.BLIF \
+debouncer_controlinst_state_ns_1_0__m3_un3_n.BLIF \
+debouncer_controlinst_state_ns_1_0__m3_un0_n
+11 1
+0- 0
+-0 0
+.names SynchroInst_D2_q_1_.Q Debouncer_ControlInst_state_1_.Q \
+Debouncer_ControlInst_state_ns_1_0__m1
+10 1
+01 1
+00 0
+11 0
+.names Debouncer_ControlInst_state_1_.Q \
+debouncer_controlinst_state_ns_1_0__n_7_n.BLIF \
+Debouncer_ControlInst_state_ns_1_0__m5
+10 1
+01 1
+00 0
+11 0
+.names ButtonOut_c.BLIF ButtonOut
+1 1
+0 0
+.names debouncer_timer_n_24_i_0_n.BLIF Debouncer_Timer_q_3_.CE
+1 1
+0 0
+.names clk_c.BLIF Debouncer_Timer_q_3_.C
+1 1
+0 0
+.names debouncer_timer_n_24_i_0_n.BLIF Debouncer_Timer_q_4_.CE
+1 1
+0 0
+.names clk_c.BLIF Debouncer_Timer_q_4_.C
+1 1
+0 0
+.names debouncer_timer_n_24_i_0_n.BLIF Debouncer_Timer_q_1_.CE
+1 1
+0 0
+.names clk_c.BLIF Debouncer_Timer_q_1_.C
+1 1
+0 0
+.names debouncer_timer_n_24_i_0_n.BLIF Debouncer_Timer_q_2_.CE
+1 1
+0 0
+.names clk_c.BLIF Debouncer_Timer_q_2_.C
+1 1
+0 0
+.names clk_c.BLIF Debouncer_ControlInst_state_0_.C
+1 1
+0 0
+.names clk_c.BLIF Debouncer_ControlInst_state_1_.C
+1 1
+0 0
+.names clk_c.BLIF SynchroInst_D1_q_1_.C
+1 1
+0 0
+.names clk_c.BLIF SynchroInst_D2_q_1_.C
+1 1
+0 0
+.names clk_c.BLIF Width_TransInst_D3_q_1_.C
+1 1
+0 0
+.names clk.BLIF clk_c
+1 1
+0 0
+.names reset.BLIF reset_c
+1 1
+0 0
+.names pulse1kHz.BLIF pulse1kHz_c
+1 1
+0 0
+.names SynchroInst_D1_q_1_.Q SynchroInst_D2_q_1_.D
+1 1
+0 0
+.names debouncer_controlinst_n_29_i_n.BLIF Width_TransInst_D3_q_1_.D
+1 1
+0 0
+.names ButtonIn.BLIF SynchroInst_D1_q_1_.D
+1 1
+0 0
+.names debouncer_timer_n_18_i_n.BLIF debouncer_un1_timer_i_0__n.BLIF \
+Debouncer_Timer_q_1_.D
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_19_0_1_n.BLIF debouncer_timer_n_29_i_n.BLIF \
+Debouncer_Timer_q_2_.D
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_31_0_1_n.BLIF debouncer_timer_n_23_n.BLIF \
+Debouncer_Timer_q_3_.D
+11 1
+0- 0
+-0 0
+.names debouncer_timer_n_8_0_1_n.BLIF debouncer_timer_n_26_i_n.BLIF \
+Debouncer_Timer_q_4_.D
+11 1
+0- 0
+-0 0
+.names debouncer_controlinst_state_ns_0__n.BLIF reset_i.BLIF \
+Debouncer_ControlInst_state_0_.D
+11 1
+0- 0
+-0 0
+.names Debouncer_ControlInst_state_ns_1_0__m5.BLIF reset_i.BLIF \
+Debouncer_ControlInst_state_1_.D
+11 1
+0- 0
+-0 0
+.end

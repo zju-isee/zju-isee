@@ -1,0 +1,107 @@
+#Build: Synplify Pro I-2014.03LC , Build 063R, May 27 2014
+#install: D:\ispLEVER_Classic2_1\synpbase
+#OS: Windows 7 6.2
+#Hostname: LAPTOP-SCOTTCHE
+
+#Implementation: isp_lab2
+
+$ Start of Compile
+#Sat Apr 22 21:40:25 2023
+
+Synopsys Verilog Compiler, version comp201403rcp1, Build 060R, built May 27 2014
+@N|Running in 64-bit mode
+Copyright (C) 1994-2014 Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+
+@I::"D:\ispLEVER_Classic2_1\synpbase\lib\vlog\umr_capim.v"
+@I::"D:\ispLEVER_Classic2_1\synpbase\lib\vlog\scemi_objects.v"
+@I::"D:\ispLEVER_Classic2_1\synpbase\lib\vlog\scemi_pipes.svh"
+@I::"D:\ispLEVER_Classic2_1\synpbase\lib\vlog\hypermods.v"
+@I::"D:\ispLEVER_Classic2_1\ispcpld\..\cae_library\synthesis\verilog\mach.v"
+@I::"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\isp_lab2.h"
+@I::"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\width_trans.v"
+@I::"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\controller.v"
+@I::"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\counter_n.v"
+@I::"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\debouncer.v"
+@I::"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\button.v"
+Verilog syntax check successful!
+Options changed - recompiling
+Selecting top level module button
+@N: CG364 :"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\counter_n.v":18:7:18:15|Synthesizing module counter_n
+
+	n=32'b00000000000000000000000000001010
+	counter_bits=32'b00000000000000000000000000000100
+   Generated name = counter_n_10s_4s
+
+@N: CG179 :"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\counter_n.v":34:22:34:22|Removing redundant assignment
+@N: CG364 :"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\controller.v":1:7:1:16|Synthesizing module controller
+
+@N: CG364 :"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\debouncer.v":1:7:1:15|Synthesizing module debouncer
+
+@N: CG364 :"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\width_trans.v":5:7:5:17|Synthesizing module width_trans
+
+@N: CG364 :"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\button.v":1:7:1:12|Synthesizing module button
+
+@N: CL201 :"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\controller.v":7:4:7:9|Trying to extract state machine for register state
+Extracted state machine for register state
+State machine has 4 reachable states with original encodings of:
+   00
+   01
+   10
+   11
+@W: CL249 :"D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\controller.v":7:4:7:9|Initial value is not supported on state machine state
+@END
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 68MB peak: 69MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Sat Apr 22 21:40:25 2023
+
+###########################################################]
+Synopsys Netlist Linker, version comp201403rcp1, Build 060R, built May 27 2014
+@N|Running in 64-bit mode
+File D:\myducuments\_junior_1\electricsystemdesign\isp_lab2\synwork\button_comp.srs changed - recompiling
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Sat Apr 22 21:40:26 2023
+
+###########################################################]
+Map & Optimize Report
+
+Synopsys CPLD Technology Mapper, Version maplat, Build 923R, Built May  6 2014
+Copyright (C) 1994-2013, Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use or distribution of the software is strictly prohibited.
+Product Version I-2014.03LC 
+@N: MF248 |Running in 64-bit mode.
+@N:"d:\myducuments\_junior_1\electricsystemdesign\isp_lab2\counter_n.v":27:4:27:9|Found counter in view:work.counter_n_10s_4s(verilog) inst q[4:1]
+Encoding state machine state[3:0] (view:work.controller(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+   11 -> 11
+@N: MO225 :"d:\myducuments\_junior_1\electricsystemdesign\isp_lab2\controller.v":7:4:7:9|No possible illegal states for state machine state[3:0],safe FSM implementation is disabled
+---------------------------------------
+Resource Usage Report
+
+Simple gate primitives:
+DFFC            4 uses
+DFF             3 uses
+IBUF            4 uses
+OBUF            1 use
+AND2            29 uses
+INV             21 uses
+OR2             1 use
+XOR2            2 uses
+
+
+@N: FC100 |Timing Report not generated for this device, please use place and route tools for timing analysis.
+I-2014.03LC 
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 38MB peak: 103MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Sat Apr 22 21:40:26 2023
+
+###########################################################]

@@ -1,0 +1,292 @@
+[DEVICE]
+Family = lc4k;
+PartType = LC4256V;
+Package = 100TQFP;
+PartNumber = LC4256V-75T100I;
+Speed = -7.5;
+Operating_condition = IND;
+EN_Segment = Yes;
+Pin_MC_1to1 = No;
+Default_Device_Io_Types=LVCMOS18,-;
+Voltage = 3.3;
+
+[REVISION]
+RCS = "$Header $";
+Parent = lc4k256v.lci;
+Design = ;
+DATE = 05/19/2023;
+TIME = 11:29:56;
+Source_Format = Schematic_Verilog_HDL;
+Type = ;
+Pre_Fit_Time = ;
+
+[IGNORE ASSIGNMENTS]
+Pin_Assignments = No;
+Pin_Keep_Block = No;
+Pin_Keep_Segment = No;
+Group_Assignments = No;
+Macrocell_Assignments = No;
+Macrocell_Keep_Block = No;
+Macrocell_Keep_Segment = No;
+Pin_Reservation = No;
+Block_Reservation = No;
+Segment_Reservation = No;
+Timing_Constraints = No;
+IO_Types = No;
+
+[CLEAR ASSIGNMENTS]
+Pin_Assignments = No;
+Pin_Keep_Block = No;
+Pin_Keep_Segment = No;
+Group_Assignments = No;
+Macrocell_Assignments = No;
+Macrocell_Keep_Block = No;
+Macrocell_Keep_Segment = No;
+Pin_Reservation = No;
+Block_Reservation = No;
+Segment_Reservation = No;
+Timing_Constraints = No;
+IO_Types = No;
+
+[BACKANNOTATE ASSIGNMENTS]
+Pin_Assignment = No;
+Pin_Block = No;
+Pin_Macrocell_Block = No;
+Routing = No;
+Io_Types = No;
+
+[GLOBAL CONSTRAINTS]
+Max_Fanin = 24;
+Max_PTerm_Split = 80;
+Max_PTerm_Collapse = 16;
+Max_Pin_Percent = 100;
+Max_Macrocell_Percent = 100;
+Max_GLB_Input_Percent = 100;
+Logic_Reduction = Yes;
+XOR_Synthesis = Yes;
+Keep_XOR = No;
+DT_Synthesis = Yes;
+Node_Collapse = Yes;
+Nodes_collapsing_mode = FMAX;
+Fmax_Logic_Level = 1;
+Use_CE = Yes;
+Use_Internal_COM_FB = Yes;
+Set_Reset_Swap = No;
+Clock_Optimize = No;
+EN_Set_Reset_Dont_Care = No;
+TOE_AS_IO = No;
+Set_Reset_Dont_Care = No;
+EN_In_Reg_Optimize = No;
+In_Reg_Optimize = Yes;
+Run_Time = 0;
+Routing_Attempts = 2;
+Balanced_Partitioning = Yes;
+Spread_Placement = Yes;
+Usercode = ;
+Usercode_Format = HEX;
+Vcc = ;
+Dual_Function_Macrocell = 1;
+Global_PTOE = Yes;
+Hard_Fast_Bypass = No;
+Fitter_Effort_Level = LOW;
+Auto_buffering_for_high_glb_fanin = Off;
+Auto_buffering_for_low_bonded_io = Off;
+User_max_glb_fanin = 36;
+Adjust_input_assignments = Off;
+
+[LOCATION ASSIGNMENTS]
+// Block A
+clkGenerator_FreqDivide_3_q_2_=node,-,-,A,10;
+clkGenerator_FreqDivide_3_q_4_=node,-,-,A,1;
+clkGenerator_FreqDivide_3_q_6_=node,-,-,A,3;
+clkGenerator_FreqDivide_3_q_10_=node,-,-,A,6;
+// Block B
+Rx=pin,98,-,B,6;
+Tx=pin,97,-,B,3;
+senderInst_Send_count_1_=node,-,-,B,10;
+senderInst_Send_count_3_=node,-,-,B,6;
+clkGenerator_FreqDivide_3_q_7_=node,-,-,B,1;
+// Block C
+senderInst_Send_count_0_=node,-,-,C,5;
+senderInst_Send_count_2_=node,-,-,C,3;
+senderInst_Send_over=node,-,-,C,7;
+clkGenerator_FreqDivide_3_q_8_=node,-,-,C,1;
+senderInst_Send_data_4__1=node,-,-,C,11;
+// Block D
+clkGenerator_FreqDivide_3_q_1_=node,-,-,D,1;
+clkGenerator_FreqDivide_3_q_3_=node,-,-,D,3;
+clkGenerator_FreqDivide_3_q_5_=node,-,-,D,6;
+clkGenerator_FreqDivide_3_q_9_=node,-,-,D,10;
+// Block E
+receiverInst_Data1_2_=node,-,-,E,7;
+receiverInst_Data2_2_=node,-,-,E,9;
+senderInst_Send_data_4_=node,-,-,E,0;
+receiverInst_m_3_=node,-,-,E,3;
+receiverInst_m_7_=node,-,-,E,12;
+receiverInst_Rx_Data_2_=node,-,-,E,1;
+receiverInst_Rx_Data_6_=node,-,-,E,2;
+receiverInst_Rx_Valid_0=node,-,-,E,5;
+// Block F
+receiverInst_Data1_3_=node,-,-,F,7;
+receiverInst_Data2_3_=node,-,-,F,9;
+receiverInst_m_0_=node,-,-,F,5;
+receiverInst_m_5_=node,-,-,F,12;
+receiverInst_Rx_Data_3_=node,-,-,F,1;
+receiverInst_Rx_Data_7_=node,-,-,F,0;
+receiverInst_Rx_Data_0__0=node,-,-,F,3;
+// Block G
+receiverInst_Data1_0_=node,-,-,G,7;
+receiverInst_Data2_0_=node,-,-,G,9;
+receiverInst_m_1_=node,-,-,G,12;
+receiverInst_Rx_Data_0_=node,-,-,G,1;
+receiverInst_Rx_Data_4_=node,-,-,G,3;
+clkGenerator_FreqDivide_4_q_1_=node,-,-,G,5;
+// Block H
+receiverInst_Data1_1_=node,-,-,H,3;
+receiverInst_Data2_1_=node,-,-,H,5;
+receiverInst_m_2_=node,-,-,H,0;
+receiverInst_m_4_=node,-,-,H,7;
+receiverInst_m_6_=node,-,-,H,12;
+receiverInst_Rx_Valid=node,-,-,H,9;
+receiverInst_Rx_Data_1_=node,-,-,H,1;
+receiverInst_Rx_Data_5_=node,-,-,H,2;
+clkGenerator_FreqDivide_4_q_2_=node,-,-,H,4;
+// Block I
+clkGenerator_FreqDivide_1_q_1_=node,-,-,I,12;
+clkGenerator_FreqDivide_1_q_2_=node,-,-,I,9;
+clkGenerator_FreqDivide_1_q_3_=node,-,-,I,1;
+clkGenerator_FreqDivide_1_q_9_=node,-,-,I,3;
+clkGenerator_FreqDivide_1_q_10_=node,-,-,I,5;
+clkGenerator_FreqDivide_1_q_11_=node,-,-,I,7;
+// Block J
+dout=pin,49,-,J,10;
+clkGenerator_FreqDivide_4_q_3_=node,-,-,J,3;
+clkGenerator_FreqDivide_4_q_4_=node,-,-,J,1;
+clkGenerator_FreqDivide_4_q_5_=node,-,-,J,10;
+clkGenerator_FreqDivide_4_q_6_=node,-,-,J,6;
+// Block K
+LED_B=pin,56,-,K,3;
+LED_VCC3=pin,55,-,K,7;
+LED_VCC4=pin,54,-,K,1;
+clkGenerator_FreqDivide_1_q_8_=node,-,-,K,11;
+clkGenerator_FreqDivide_1_q_13_=node,-,-,K,5;
+// Block L
+LED_A=pin,61,-,L,5;
+LED_F=pin,60,-,L,8;
+LED_G=pin,58,-,L,2;
+// Block M
+LED_C=pin,66,-,M,1;
+LED_D=pin,64,-,M,6;
+LED_E=pin,65,-,M,10;
+clkGenerator_scancnt_1_0_=node,-,-,M,3;
+// Block N
+LED_VCC1=pin,72,-,N,1;
+clkGenerator_FreqDivide_1_q_5_=node,-,-,N,3;
+clkGenerator_FreqDivide_1_q_6_=node,-,-,N,5;
+clkGenerator_FreqDivide_1_q_7_=node,-,-,N,7;
+debouncer_Inst_timer30ms_q_1__0=node,-,-,N,11;
+// Block O
+LED_VCC2=pin,78,-,O,0;
+debouncer_Inst_widthTransInst_q_0_=node,-,-,O,12;
+debouncer_Inst_controllerInst_state_0_=node,-,-,O,3;
+debouncer_Inst_controllerInst_state_1_=node,-,-,O,7;
+clkGenerator_FreqDivide_1_q_4_=node,-,-,O,1;
+clkGenerator_FreqDivide_1_q_12_=node,-,-,O,5;
+senderInst_Send_data_4__0=node,-,-,O,9;
+// Block P
+debouncer_Inst_timer30ms_q_1_=node,-,-,P,11;
+debouncer_Inst_timer30ms_q_2_=node,-,-,P,1;
+debouncer_Inst_timer30ms_q_3_=node,-,-,P,3;
+debouncer_Inst_timer30ms_q_4_=node,-,-,P,5;
+debouncer_Inst_timer30ms_q_5_=node,-,-,P,7;
+// Input/Clock Pins
+reset=pin,38,-,-,-;
+clk=pin,88,-,-,-;
+
+[PTOE ASSIGNMENTS]
+
+[FAST BYPASS]
+Default=NONE;
+BYPASS=;
+
+[ORP BYPASS]
+default=NONE;
+
+[INPUT REGISTERS]
+Default=NONE;
+;
+
+[IO TYPES]
+clk=LVCMOS18,pin,-,-;
+dout=LVCMOS18,pin,-,-;
+reset=LVCMOS18,pin,-,-;
+Rx=LVCMOS18,pin,-,-;
+LED_VCC2=LVCMOS18,pin,1,-;
+Tx=LVCMOS18,pin,0,-;
+LED_A=LVCMOS18,pin,1,-;
+LED_B=LVCMOS18,pin,1,-;
+LED_C=LVCMOS18,pin,1,-;
+LED_D=LVCMOS18,pin,1,-;
+LED_E=LVCMOS18,pin,1,-;
+LED_F=LVCMOS18,pin,1,-;
+LED_G=LVCMOS18,pin,1,-;
+LED_VCC1=LVCMOS18,pin,1,-;
+LED_VCC3=LVCMOS18,pin,1,-;
+LED_VCC4=LVCMOS18,pin,1,-;
+
+[PLL ASSIGNMENTS]
+
+[RESOURCE RESERVATIONS]
+layer=OFF;
+
+[SLEWRATE]
+Default=FAST;
+
+[PULLUP]
+Default=UP;
+
+[FITTER RESULTS]
+I/O_pin_util = 21;
+I/O_pin = 14;
+Logic_PT_util = 24;
+Logic_PT = 311;
+Occupied_MC_util = 38;
+Occupied_MC = 98;
+Occupied_PT_util = 34;
+Occupied_PT = 455;
+GLB_input_util = 46;
+GLB_input = 269;
+
+[TIMING CONSTRAINTS]
+layer=OFF;
+
+[FITTER REPORT FORMAT]
+Fitter_Options = Yes;
+Pinout_Diagram = No;
+Pinout_Listing = Yes;
+Detailed_Block_Segment_Summary = Yes;
+Input_Signal_List = Yes;
+Output_Signal_List = Yes;
+Bidir_Signal_List = Yes;
+Node_Signal_List = Yes;
+Signal_Fanout_List = Yes;
+Block_Segment_Fanin_List = Yes;
+Postfit_Eqn = Yes;
+Page_Break = Yes;
+Detailed = No;
+
+[POWER]
+Default=HIGH;
+
+[SOURCE_CONSTRAINT_OPTION]
+
+[HARDWARE DEVICE OPTIONS]
+Zero_Hold_Time = No;
+Signature_Word = ;
+Pullup = No;
+Slew_Rate = FAST;
+
+[TIMING ANALYZER]
+Last_source=;
+Last_source_type=Fmax;
+

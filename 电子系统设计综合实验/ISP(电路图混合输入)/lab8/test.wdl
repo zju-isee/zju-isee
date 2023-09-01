@@ -1,0 +1,5 @@
+%MASTERCLOCKMULT = 1;
+%SMALLESTUNIT    = 12;
+%AUTOASSIGN      = 1;
+%DECIMALS        = 0;
+%ENDTIME         = 100000;

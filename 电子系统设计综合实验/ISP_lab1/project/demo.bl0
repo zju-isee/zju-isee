@@ -1,0 +1,81 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Fri Apr 07 10:43:44 2023
+#$ TITLE demo.bls 
+#$ PROPERTY Lattice LOCK A *15
+#$ PROPERTY Lattice ECP D path1
+#$ PROPERTY Lattice SCP C path1
+#$ MODULE demo
+#$ PINS 6 OUT'o'  CK D C B A
+#$ NODES 9 N_1'o'  N_2'o'  N_3'o'  N_4'o'  N_5'o'  N_6'o'  N_7'o'  N_8'o'  N_9'o' 
+.model demo
+.inputs N_8.BLIF N_9.BLIF N_6.BLIF N_7.BLIF N_5.BLIF N_4.BLIF CK.BLIF N_3.BLIF \
+N_2.BLIF D.BLIF C.BLIF B.BLIF A.BLIF N_1.BLIF
+.outputs N_4 N_5 N_2 N_3 N_1.D N_1.C N_6 N_7 N_8 N_9 OUT
+
+.subckt g_2and A.BLIF=N_8.BLIF B.BLIF=N_9.BLIF Y=N_4
+
+.subckt g_2and A.BLIF=N_6.BLIF B.BLIF=N_7.BLIF Y=N_5
+
+.subckt g_2or A.BLIF=N_5.BLIF B.BLIF=N_4.BLIF Y=N_2
+
+.subckt g_clkbuf I.BLIF=CK.BLIF O=N_3
+
+.subckt g_d CLK.BLIF=N_3.BLIF D.BLIF=N_2.BLIF Q.D=N_1.D Q.C=N_1.C
+
+.subckt g_input I.BLIF=D.BLIF O=N_6
+
+.subckt g_input I.BLIF=C.BLIF O=N_7
+
+.subckt g_input I.BLIF=B.BLIF O=N_8
+
+.subckt g_input I.BLIF=A.BLIF O=N_9
+
+.subckt g_output I.BLIF=N_1.BLIF O=OUT
+.end
+.model g_2and
+.inputs A.BLIF B.BLIF
+.outputs Y
+.names A.BLIF B.BLIF Y
+11 1
+0- 0
+-0 0
+.end
+.model g_2or
+.inputs A.BLIF B.BLIF
+.outputs Y
+.names A.BLIF B.BLIF Y
+1- 1
+-1 1
+00 0
+.end
+.model g_clkbuf
+.inputs I.BLIF
+.outputs O
+.names I.BLIF O
+1 1
+0 0
+.end
+.model g_d
+.inputs D.BLIF CLK.BLIF
+.outputs Q.D Q.C
+.names D.BLIF Q.D
+1 1
+0 0
+.names CLK.BLIF Q.C
+1 1
+0 0
+.end
+.model g_input
+.inputs I.BLIF
+.outputs O
+.names I.BLIF O
+1 1
+0 0
+.end
+.model g_output
+.inputs I.BLIF
+.outputs O
+.names I.BLIF O
+1 1
+0 0
+.end

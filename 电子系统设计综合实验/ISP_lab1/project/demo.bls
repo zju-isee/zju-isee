@@ -1,0 +1,27 @@
+#$ TOOL SCH2BLF 2.1.00.02 
+#$ TITLE demo.bls 
+#$ PROPERTY Lattice LOCK A *15
+#$ PROPERTY Lattice ECP D path1
+#$ PROPERTY Lattice SCP C path1
+#$ MODULE demo 
+#$ PINS 6  OUT CK D C B A
+#$ NODES 9 N_1 N_2 N_3 N_4 N_5 N_6 N_7 N_8 N_9 
+#$ INTERFACE g_2and 3 A'i' B'i' Y'o'
+#$ INTERFACE g_2or 3 A'i' B'i' Y'o'
+#$ INTERFACE g_clkbuf 2 I'i' O'o'
+#$ INTERFACE g_d 3 CLK'i' D'i' Q'o'
+#$ INTERFACE g_input 2 I'i' O'o'
+#$ INTERFACE g_output 2 I'i' O'o'
+#$ PRIMITIVE I10 g_2and 3 N_8 N_9 N_4
+#$ PRIMITIVE I9 g_2and 3 N_6 N_7 N_5
+#$ PRIMITIVE I8 g_2or 3 N_5 N_4 N_2
+#$ PRIMITIVE I1 g_clkbuf 2 CK N_3
+#$ PRIMITIVE I7 g_d 3 N_3 N_2 N_1
+#$ PRIMITIVE I2 g_input 2 D N_6
+#$ PRIMITIVE I3 g_input 2 C N_7
+#$ PRIMITIVE I4 g_input 2 B N_8
+#$ PRIMITIVE I5 g_input 2 A N_9
+#$ PRIMITIVE I6 g_output 2 N_1 OUT
+.model demo
+
+.end

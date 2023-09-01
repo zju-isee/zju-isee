@@ -1,0 +1,145 @@
+#PLAFILE     isp_lab14.bl5
+#DATE        Mon May 29 16:22:37 2023
+
+#DESIGN      isp_lab14
+#DEVICE      MACH4S-256
+
+
+// Default settings.
+DATA GLOBAL tINDIO:0
+
+
+// Signal locations
+DATA LOCATION reset_n:J_*_68
+DATA LOCATION sys_clk:*_*_128
+DATA LOCATION orient:B_*_141
+DATA LOCATION vga_d_2_:D_2_11
+DATA LOCATION vga_d_1_:D_10_13
+DATA LOCATION hsync:C_5_8
+DATA LOCATION vga_d_0_:D_7_15
+DATA LOCATION vsync:C_9_6
+DATA LOCATION EndFrame:P_6_125
+DATA LOCATION vga_ctrl_HCounter_hcnt_0_:B_6
+DATA LOCATION vga_ctrl_HCounter_hcnt_1_:A_3
+DATA LOCATION vga_ctrl_HCounter_hcnt_2_:I_3
+DATA LOCATION vga_ctrl_HCounter_hcnt_3_:K_1
+DATA LOCATION vga_ctrl_HCounter_hcnt_4_:L_2
+DATA LOCATION vga_ctrl_HCounter_hcnt_5_:M_6
+DATA LOCATION vga_ctrl_HCounter_hcnt_6_:B_1
+DATA LOCATION vga_ctrl_HCounter_hcnt_7_:I_1
+DATA LOCATION vga_ctrl_HCounter_hcnt_8_:J_1
+DATA LOCATION vga_ctrl_HCounter_hcnt_9_:B_3
+DATA LOCATION vga_ctrl_VCounter_vcnt_0_:G_1
+DATA LOCATION vga_ctrl_VCounter_vcnt_1_:O_9
+DATA LOCATION vga_ctrl_VCounter_vcnt_2_:F_10
+DATA LOCATION vga_ctrl_VCounter_vcnt_3_:G_3
+DATA LOCATION vga_ctrl_VCounter_vcnt_4_:C_12
+DATA LOCATION vga_ctrl_VCounter_vcnt_5_:H_3
+DATA LOCATION vga_ctrl_VCounter_vcnt_6_:E_9
+DATA LOCATION vga_ctrl_VCounter_vcnt_7_:F_5
+DATA LOCATION vga_ctrl_VCounter_vcnt_8_:G_6
+DATA LOCATION vga_ctrl_VCounter_vcnt_9_:H_9
+DATA LOCATION vga_ctrl_LineScan_q1_1_0_:M_2
+DATA LOCATION vga_ctrl_LineScan_q1_1_1_:B_12
+DATA LOCATION vga_ctrl_co1_n:N_2
+DATA LOCATION vga_ctrl_FrameScan_q2_1_0_:J_9
+DATA LOCATION vga_ctrl_FrameScan_q2_1_1_:P_7
+DATA LOCATION vga_data_n_435_0_n:L_5
+DATA LOCATION vga_data_un1_hcnt_4_n:I_5
+DATA LOCATION vga_data_un1_hcnt_6_i_n:N_5
+DATA LOCATION vga_ctrl_vcounter_un7_co2_n:P_5
+DATA LOCATION vga_ctrl_VCounter_cnt_0_:P_8
+DATA LOCATION vga_ctrl_VCounter_cnt_1_:C_3
+DATA LOCATION vga_ctrl_VCounter_cnt_2_:J_3
+DATA LOCATION vga_ctrl_VCounter_cnt_3_:C_7
+DATA LOCATION vga_data_n_246_0_n:E_3
+DATA LOCATION vga_ctrl_VCounter_cnt_4_:N_10
+DATA LOCATION vga_ctrl_vcounter_vcnte_n:K_12
+DATA LOCATION vga_data_un1_vcnt_5_i_n:O_1
+DATA LOCATION vga_data_n_357_0_n:L_10
+DATA LOCATION vga_data_n_396_0_n:I_7
+DATA LOCATION vga_ctrl_HCounter_cnt_4_:K_3
+DATA LOCATION vga_ctrl_HCounter_cnt_6_:K_6
+DATA LOCATION vga_data_n_98_0_n:F_2
+DATA LOCATION vga_ctrl_HCounter_cnt_7_:P_9
+DATA LOCATION vga_ctrl_HCounter_cnt_8_:J_6
+DATA LOCATION nblank:P_12
+DATA LOCATION vga_data_n_134_n:O_3
+DATA LOCATION vga_data_n_280_n:O_6
+DATA LOCATION vga_data_n_18_n:C_1
+DATA LOCATION vga_data_n_539_n:I_11
+DATA LOCATION vga_ctrl_vcounter_un7_co2_11_n:A_12
+DATA LOCATION vga_data_n_174_0_1_n:G_10
+
+// Signals direction
+DATA IO_DIR reset_n:IN
+DATA IO_DIR sys_clk:IN
+DATA IO_DIR orient:IN
+DATA IO_DIR vga_d_2_:OUT
+DATA IO_DIR vga_d_1_:OUT
+DATA IO_DIR hsync:OUT
+DATA IO_DIR vga_d_0_:OUT
+DATA IO_DIR vsync:OUT
+DATA IO_DIR EndFrame:OUT
+
+// Pterm Expanders
+DATA tEXP vga_ctrl_vcounter_un7_co2_n:1
+
+// Global Clocks
+DATA GLB_CLOCK sys_clk:0
+
+// Signals using Shared Clock or CE
+DATA tBCLK vga_ctrl_VCounter_vcnt_0_.CE
+DATA tBCLK vga_ctrl_VCounter_vcnt_1_.CE
+DATA tBCLK vga_ctrl_VCounter_vcnt_2_.CE
+DATA tBCLK vga_ctrl_VCounter_vcnt_3_.CE
+DATA tBCLK vga_ctrl_VCounter_vcnt_4_.CE
+DATA tBCLK vga_ctrl_VCounter_vcnt_6_.CE
+DATA tBCLK vga_ctrl_VCounter_vcnt_9_.CE
+
+// Block Load Adders
+DATA tBLA reset_n:13
+DATA tBLA vga_ctrl_VCounter_cnt_4_:7
+DATA tBLA vga_ctrl_VCounter_cnt_3_:7
+DATA tBLA vga_ctrl_VCounter_cnt_2_:7
+DATA tBLA vga_ctrl_VCounter_cnt_1_:7
+DATA tBLA vga_ctrl_VCounter_cnt_0_:7
+DATA tBLA vga_ctrl_VCounter_vcnt_9_:7
+DATA tBLA vga_ctrl_VCounter_vcnt_8_:7
+DATA tBLA vga_ctrl_VCounter_vcnt_7_:7
+DATA tBLA vga_ctrl_VCounter_vcnt_6_:7
+DATA tBLA vga_ctrl_VCounter_vcnt_4_:7
+DATA tBLA vga_ctrl_VCounter_vcnt_2_:7
+DATA tBLA vga_ctrl_VCounter_vcnt_1_:7
+DATA tBLA vga_ctrl_VCounter_vcnt_0_:7
+DATA tBLA vga_ctrl_HCounter_hcnt_9_:7
+DATA tBLA vga_ctrl_HCounter_hcnt_8_:7
+DATA tBLA vga_ctrl_HCounter_hcnt_7_:7
+DATA tBLA vga_ctrl_HCounter_hcnt_6_:7
+DATA tBLA vga_ctrl_HCounter_hcnt_5_:7
+DATA tBLA vga_ctrl_HCounter_hcnt_4_:7
+DATA tBLA vga_ctrl_HCounter_hcnt_1_:7
+DATA tBLA vga_ctrl_HCounter_hcnt_0_:7
+DATA tBLA vga_ctrl_HCounter_cnt_8_:6
+DATA tBLA vga_ctrl_HCounter_cnt_7_:6
+DATA tBLA vga_ctrl_HCounter_cnt_6_:6
+DATA tBLA vga_ctrl_HCounter_cnt_4_:6
+DATA tBLA vga_ctrl_VCounter_vcnt_5_:6
+DATA tBLA vga_ctrl_VCounter_vcnt_3_:6
+DATA tBLA vga_ctrl_HCounter_hcnt_3_:6
+DATA tBLA vga_ctrl_HCounter_hcnt_2_:6
+DATA tBLA vga_ctrl_vcounter_vcnte_n:5
+DATA tBLA vga_ctrl_LineScan_q1_1_0_:5
+DATA tBLA vga_ctrl_LineScan_q1_1_1_:4
+DATA tBLA vga_ctrl_FrameScan_q2_1_1_:3
+DATA tBLA vga_ctrl_FrameScan_q2_1_0_:3
+DATA tBLA vga_data_n_174_0_1_n:1
+DATA tBLA orient:1
+
+// Signals using OSM or fast 5-PTs path
+DATA tOSM vga_d_2_
+DATA tOSM vga_d_1_
+DATA tOSM hsync
+DATA tOSM vga_d_0_
+DATA tOSM vsync
+DATA tOSM EndFrame

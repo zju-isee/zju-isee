@@ -1,0 +1,3008 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Mon May 29 11:06:37 2023
+#$ MODULE lcd
+#$ PINS 13 lcd_d_7_ reset_n clk_50m lcd_rs lcd_rw lcd_en lcd_d_6_ lcd_d_5_ lcd_d_4_ \
+#  lcd_d_3_ lcd_d_2_ lcd_d_1_ lcd_d_0_
+#$ NODES 496 data_in_buf_48_ state_i_6__n data_in_buf_49_ reset_n_i gnd_n_n \
+#  data_in_buf_51_ state_i_5__n inst_clkhzreg data_in_buf_53_ disp_count_i_4__n G_66 \
+#  data_in_buf_56_ disp_count_i_5__n G_68 data_in_buf_57_ disp_count_i_0__n G_70 \
+#  data_in_buf_58_ disp_count_i_2__n G_72 data_in_buf_59_ disp_count_i_1__n G_74 \
+#  data_in_buf_61_ disp_count_i_3__n G_76 data_in_buf_64_ state_i_0__n G_78 \
+#  data_in_buf_65_ N_611_i G_80 data_in_buf_66_ G_82 data_in_buf_67_ G_84 \
+#  data_in_buf_69_ state_ns_i_0__n G_86 data_in_buf_70_ G_88 data_in_buf_72_ reset_n_c \
+#  G_90 data_in_buf_73_ G_92 data_in_buf_74_ clk_50m_c G_94 data_in_buf_75_ G_96 \
+#  data_in_buf_77_ lcd_rsDFFRHreg G_98 data_in_buf_78_ G_100 data_in_buf_80_ G_102 \
+#  data_in_buf_81_ G_126 data_in_buf_82_ lcd_dDFFCSH_0_reg G_128 data_in_buf_83_ G_130 \
+#  data_in_buf_85_ lcd_dDFFCRH_1_reg G_132 data_in_buf_86_ disp_count_4_ \
+#  data_in_buf_87_ lcd_dDFFCRH_2_reg disp_count_1_ data_in_buf_88_ disp_count_0_ \
+#  data_in_buf_89_ lcd_dDFFCRH_3_reg disp_count_3_ data_in_buf_90_ disp_count_2_ \
+#  data_in_buf_91_ lcd_dDFFCRH_4_reg disp_count_5_ data_in_buf_93_ state_0_ \
+#  data_in_buf_94_ lcd_dDFFCRH_5_reg state_5_ data_in_buf_95_ data_in_buf_96_ \
+#  lcd_dDFFCRH_6_reg data_in_buf_5_ data_in_buf_97_ data_in_buf_98_ lcd_dDFFCRH_7_reg \
+#  data_in_buf_13_ data_in_buf_100_ data_in_buf_101_ N_40_i data_in_buf_21_ \
+#  data_in_buf_102_ N_19_0 data_in_buf_103_ N_18_0 data_in_buf_29_ data_in_buf_104_ \
+#  N_49_i cnt_0_ data_in_buf_105_ N_17_i cnt_1_ data_in_buf_106_ N_39_i cnt_2_ \
+#  data_in_buf_107_ cnt_3_ data_in_buf_109_ N_34_i cnt_4_ data_in_buf_110_ N_36_i cnt_5_ \
+#  data_in_buf_111_ N_629_0 cnt_6_ data_in_buf_112_ N_35_i cnt_7_ data_in_buf_113_ \
+#  N_10_i cnt_8_ data_in_buf_114_ N_28_i cnt_9_ data_in_buf_115_ N_614_0 cnt_10_ \
+#  data_in_buf_117_ data_in_buf_i_54__n cnt_11_ data_in_buf_118_ \
+#  data_in_buf_6_0_62__n cnt_12_ data_in_buf_119_ data_in_buf_i_62__n cnt_13_ \
+#  data_in_buf_120_ data_in_buf_6_0_70__n cnt_14_ data_in_buf_121_ data_in_buf_i_5__n \
+#  cnt_15_ data_in_buf_122_ data_in_buf_6_0_46__n cnt_16_ data_in_buf_123_ \
+#  data_in_buf_i_79__n cnt_17_ data_in_buf_125_ data_in_buf_6_0_84__n cnt_18_ \
+#  data_in_buf_126_ data_in_buf_i_47__n cnt_19_ data_in_buf_127_ \
+#  data_in_buf_6_0_48__n data_in_buf_128_ N_37_i data_in_buf_129_ N_38_i \
+#  data_in_buf_130_ data_in_buf_131_ data_in_buf_i_245__n data_in_buf_133_ \
+#  data_in_buf_6_0_253__n data_in_buf_134_ data_in_buf_i_237__n data_in_buf_135_ \
+#  data_in_buf_6_0_245__n data_in_buf_136_ data_in_buf_i_229__n data_in_buf_137_ \
+#  data_in_buf_6_0_237__n data_in_buf_138_ data_in_buf_i_221__n data_in_buf_139_ \
+#  data_in_buf_6_0_229__n data_in_buf_141_ data_in_buf_i_213__n data_in_buf_142_ \
+#  data_in_buf_6_0_221__n data_in_buf_143_ data_in_buf_i_212__n data_in_buf_144_ \
+#  data_in_buf_6_0_220__n data_in_buf_145_ data_in_buf_i_205__n data_in_buf_146_ \
+#  data_in_buf_6_0_213__n data_in_buf_147_ data_in_buf_i_204__n data_in_buf_149_ \
+#  data_in_buf_6_0_212__n data_in_buf_150_ data_in_buf_i_200__n data_in_buf_151_ \
+#  data_in_buf_6_0_208__n data_in_buf_152_ data_in_buf_i_197__n data_in_buf_153_ \
+#  data_in_buf_6_0_205__n data_in_buf_154_ data_in_buf_i_196__n data_in_buf_155_ \
+#  data_in_buf_6_0_204__n data_in_buf_157_ data_in_buf_i_193__n data_in_buf_158_ \
+#  data_in_buf_6_0_201__n data_in_buf_159_ data_in_buf_i_189__n data_in_buf_160_ \
+#  data_in_buf_6_0_197__n data_in_buf_161_ data_in_buf_i_188__n data_in_buf_162_ \
+#  data_in_buf_6_0_196__n data_in_buf_163_ data_in_buf_i_185__n data_in_buf_164_ \
+#  data_in_buf_6_0_193__n data_in_buf_165_ data_in_buf_i_184__n data_in_buf_166_ \
+#  data_in_buf_6_0_192__n data_in_buf_167_ data_in_buf_i_181__n data_in_buf_168_ \
+#  data_in_buf_6_0_189__n data_in_buf_169_ data_in_buf_i_180__n data_in_buf_170_ \
+#  data_in_buf_6_0_188__n data_in_buf_171_ data_in_buf_i_178__n data_in_buf_172_ \
+#  data_in_buf_6_0_186__n data_in_buf_173_ data_in_buf_i_173__n data_in_buf_174_ \
+#  data_in_buf_6_0_181__n data_in_buf_175_ data_in_buf_i_172__n data_in_buf_176_ \
+#  data_in_buf_6_0_180__n data_in_buf_177_ data_in_buf_i_170__n data_in_buf_178_ \
+#  data_in_buf_6_0_178__n data_in_buf_179_ data_in_buf_i_168__n data_in_buf_180_ \
+#  data_in_buf_6_0_176__n data_in_buf_181_ data_in_buf_i_165__n data_in_buf_182_ \
+#  data_in_buf_6_0_173__n data_in_buf_183_ data_in_buf_i_164__n data_in_buf_184_ \
+#  data_in_buf_6_0_172__n data_in_buf_185_ data_in_buf_i_162__n data_in_buf_186_ \
+#  data_in_buf_6_0_170__n data_in_buf_187_ data_in_buf_i_161__n data_in_buf_188_ \
+#  data_in_buf_6_0_169__n data_in_buf_189_ data_in_buf_i_157__n data_in_buf_190_ \
+#  data_in_buf_6_0_165__n data_in_buf_191_ data_in_buf_i_156__n data_in_buf_192_ \
+#  data_in_buf_6_0_164__n data_in_buf_193_ data_in_buf_i_154__n data_in_buf_194_ \
+#  data_in_buf_6_0_162__n data_in_buf_195_ data_in_buf_i_153__n data_in_buf_196_ \
+#  data_in_buf_6_0_161__n data_in_buf_197_ data_in_buf_i_152__n data_in_buf_198_ \
+#  data_in_buf_6_0_160__n data_in_buf_199_ data_in_buf_i_149__n data_in_buf_200_ \
+#  data_in_buf_6_0_157__n data_in_buf_201_ data_in_buf_i_141__n data_in_buf_202_ \
+#  data_in_buf_6_0_149__n data_in_buf_203_ data_in_buf_i_133__n data_in_buf_204_ \
+#  data_in_buf_6_0_141__n data_in_buf_205_ data_in_buf_i_125__n data_in_buf_206_ \
+#  data_in_buf_6_0_133__n data_in_buf_207_ data_in_buf_i_117__n data_in_buf_208_ \
+#  data_in_buf_6_0_125__n data_in_buf_209_ data_in_buf_i_109__n data_in_buf_210_ \
+#  data_in_buf_6_0_117__n data_in_buf_211_ data_in_buf_i_101__n data_in_buf_212_ \
+#  data_in_buf_6_0_109__n data_in_buf_213_ data_in_buf_i_93__n data_in_buf_214_ \
+#  data_in_buf_6_0_101__n data_in_buf_215_ data_in_buf_i_85__n data_in_buf_216_ \
+#  data_in_buf_6_0_93__n data_in_buf_217_ data_in_buf_i_84__n data_in_buf_218_ \
+#  data_in_buf_6_0_92__n data_in_buf_219_ data_in_buf_i_77__n data_in_buf_220_ \
+#  data_in_buf_6_0_85__n data_in_buf_221_ data_in_buf_i_72__n data_in_buf_222_ \
+#  data_in_buf_6_0_80__n data_in_buf_223_ data_in_buf_i_70__n data_in_buf_224_ \
+#  data_in_buf_6_0_78__n data_in_buf_225_ data_in_buf_i_64__n data_in_buf_226_ \
+#  data_in_buf_6_0_72__n data_in_buf_227_ data_in_buf_i_57__n data_in_buf_228_ \
+#  data_in_buf_6_0_65__n data_in_buf_229_ data_in_buf_i_49__n data_in_buf_230_ \
+#  data_in_buf_6_0_57__n data_in_buf_231_ data_in_buf_i_48__n data_in_buf_232_ \
+#  data_in_buf_6_0_56__n data_in_buf_233_ data_in_buf_i_46__n data_in_buf_234_ \
+#  data_in_buf_6_0_54__n data_in_buf_235_ cnt12_11_1 data_in_buf_236_ cnt12_1_0 \
+#  data_in_buf_237_ cnt12_2 data_in_buf_238_ cnt12_3 data_in_buf_239_ cnt12_18_1 \
+#  data_in_buf_240_ cnt12_18_2 data_in_buf_241_ cnt12_18_3 data_in_buf_242_ cnt12_18_4 \
+#  data_in_buf_243_ cnt12_18_5 data_in_buf_244_ cnt12_18_6 data_in_buf_245_ cnt12_18_7 \
+#  data_in_buf_246_ cnt12_16_1 data_in_buf_247_ cnt12_16_2 state_6_ cnt12_16_3 state_1_ \
+#  N_42_1 state_2_ N_14_i_1 state_3_ N_39_1 state_4_ N_37_1 data_in_buf_248_ \
+#  lcd_d_14_6_152_0_m3_un3_n data_in_buf_249_ lcd_d_14_6_152_0_m3_un1_n \
+#  data_in_buf_250_ lcd_d_14_6_152_0_m3_un0_n data_in_buf_251_ lcd_d_14_5__un3_n \
+#  data_in_buf_252_ lcd_d_14_5__un1_n data_in_buf_253_ lcd_d_14_5__un0_n \
+#  data_in_buf_254_ lcd_d_14_4__un3_n data_in_buf_255_ lcd_d_14_4__un1_n clkhz_0 \
+#  lcd_d_14_4__un0_n N_300 lcd_d_14_3__un3_n state_ns_5__n lcd_d_14_3__un1_n \
+#  state_ns_0__n lcd_d_14_3__un0_n N_312 lcd_d_14_2__un3_n N_611 lcd_d_14_2__un1_n N_37 \
+#  lcd_d_14_2__un0_n N_38 lcd_d_14_1__un3_n N_39 lcd_d_14_1__un1_n N_42 \
+#  lcd_d_14_1__un0_n N_44 lcd_d_14_0__un3_n N_46 lcd_d_14_0__un1_n \
+#  disp_count_5_i_x2_0_ lcd_d_14_0__un0_n cnt12_11 cnt12_1 N_587 N_585 N_583 N_579 N_577 \
+#  N_575 N_573 N_571 N_569 N_567 N_563 N_561 N_559 N_555 cnt12 cnt12_18 cnt12_16 N_43 N_49 \
+#  N_602 N_605 N_607 N_609 N_17 N_34 N_35 N_321 N_36 N_18 N_40 N_45 N_19 N_28 \
+#  disp_count_5_i_x2_5_ N_310 N_309 state_i_4__n data_in_buf_37_ state_i_3__n \
+#  data_in_buf_40_ state_i_2__n data_in_buf_41_ N_309_i data_in_buf_45_ N_310_i
+.model lcd
+.inputs reset_n.BLIF clk_50m.BLIF data_in_buf_48_.BLIF state_i_6__n.BLIF \
+data_in_buf_49_.BLIF reset_n_i.BLIF gnd_n_n.BLIF data_in_buf_51_.BLIF \
+state_i_5__n.BLIF inst_clkhzreg.BLIF data_in_buf_53_.BLIF \
+disp_count_i_4__n.BLIF G_66.BLIF data_in_buf_56_.BLIF disp_count_i_5__n.BLIF \
+G_68.BLIF data_in_buf_57_.BLIF disp_count_i_0__n.BLIF G_70.BLIF \
+data_in_buf_58_.BLIF disp_count_i_2__n.BLIF G_72.BLIF data_in_buf_59_.BLIF \
+disp_count_i_1__n.BLIF G_74.BLIF data_in_buf_61_.BLIF disp_count_i_3__n.BLIF \
+G_76.BLIF data_in_buf_64_.BLIF state_i_0__n.BLIF G_78.BLIF \
+data_in_buf_65_.BLIF N_611_i.BLIF G_80.BLIF data_in_buf_66_.BLIF G_82.BLIF \
+data_in_buf_67_.BLIF G_84.BLIF data_in_buf_69_.BLIF state_ns_i_0__n.BLIF \
+G_86.BLIF data_in_buf_70_.BLIF G_88.BLIF data_in_buf_72_.BLIF reset_n_c.BLIF \
+G_90.BLIF data_in_buf_73_.BLIF G_92.BLIF data_in_buf_74_.BLIF clk_50m_c.BLIF \
+G_94.BLIF data_in_buf_75_.BLIF G_96.BLIF data_in_buf_77_.BLIF \
+lcd_rsDFFRHreg.BLIF G_98.BLIF data_in_buf_78_.BLIF G_100.BLIF \
+data_in_buf_80_.BLIF G_102.BLIF data_in_buf_81_.BLIF G_126.BLIF \
+data_in_buf_82_.BLIF lcd_dDFFCSH_0_reg.BLIF G_128.BLIF data_in_buf_83_.BLIF \
+G_130.BLIF data_in_buf_85_.BLIF lcd_dDFFCRH_1_reg.BLIF G_132.BLIF \
+data_in_buf_86_.BLIF disp_count_4_.BLIF data_in_buf_87_.BLIF \
+lcd_dDFFCRH_2_reg.BLIF disp_count_1_.BLIF data_in_buf_88_.BLIF \
+disp_count_0_.BLIF data_in_buf_89_.BLIF lcd_dDFFCRH_3_reg.BLIF \
+disp_count_3_.BLIF data_in_buf_90_.BLIF disp_count_2_.BLIF \
+data_in_buf_91_.BLIF lcd_dDFFCRH_4_reg.BLIF disp_count_5_.BLIF \
+data_in_buf_93_.BLIF state_0_.BLIF data_in_buf_94_.BLIF lcd_dDFFCRH_5_reg.BLIF \
+state_5_.BLIF data_in_buf_95_.BLIF data_in_buf_96_.BLIF lcd_dDFFCRH_6_reg.BLIF \
+data_in_buf_5_.BLIF data_in_buf_97_.BLIF data_in_buf_98_.BLIF \
+lcd_dDFFCRH_7_reg.BLIF data_in_buf_13_.BLIF data_in_buf_100_.BLIF \
+data_in_buf_101_.BLIF N_40_i.BLIF data_in_buf_21_.BLIF data_in_buf_102_.BLIF \
+N_19_0.BLIF data_in_buf_103_.BLIF N_18_0.BLIF data_in_buf_29_.BLIF \
+data_in_buf_104_.BLIF N_49_i.BLIF cnt_0_.BLIF data_in_buf_105_.BLIF \
+N_17_i.BLIF cnt_1_.BLIF data_in_buf_106_.BLIF N_39_i.BLIF cnt_2_.BLIF \
+data_in_buf_107_.BLIF cnt_3_.BLIF data_in_buf_109_.BLIF N_34_i.BLIF \
+cnt_4_.BLIF data_in_buf_110_.BLIF N_36_i.BLIF cnt_5_.BLIF \
+data_in_buf_111_.BLIF N_629_0.BLIF cnt_6_.BLIF data_in_buf_112_.BLIF \
+N_35_i.BLIF cnt_7_.BLIF data_in_buf_113_.BLIF N_10_i.BLIF cnt_8_.BLIF \
+data_in_buf_114_.BLIF N_28_i.BLIF cnt_9_.BLIF data_in_buf_115_.BLIF \
+N_614_0.BLIF cnt_10_.BLIF data_in_buf_117_.BLIF data_in_buf_i_54__n.BLIF \
+cnt_11_.BLIF data_in_buf_118_.BLIF data_in_buf_6_0_62__n.BLIF cnt_12_.BLIF \
+data_in_buf_119_.BLIF data_in_buf_i_62__n.BLIF cnt_13_.BLIF \
+data_in_buf_120_.BLIF data_in_buf_6_0_70__n.BLIF cnt_14_.BLIF \
+data_in_buf_121_.BLIF data_in_buf_i_5__n.BLIF cnt_15_.BLIF \
+data_in_buf_122_.BLIF data_in_buf_6_0_46__n.BLIF cnt_16_.BLIF \
+data_in_buf_123_.BLIF data_in_buf_i_79__n.BLIF cnt_17_.BLIF \
+data_in_buf_125_.BLIF data_in_buf_6_0_84__n.BLIF cnt_18_.BLIF \
+data_in_buf_126_.BLIF data_in_buf_i_47__n.BLIF cnt_19_.BLIF \
+data_in_buf_127_.BLIF data_in_buf_6_0_48__n.BLIF data_in_buf_128_.BLIF \
+N_37_i.BLIF data_in_buf_129_.BLIF N_38_i.BLIF data_in_buf_130_.BLIF \
+data_in_buf_131_.BLIF data_in_buf_i_245__n.BLIF data_in_buf_133_.BLIF \
+data_in_buf_6_0_253__n.BLIF data_in_buf_134_.BLIF data_in_buf_i_237__n.BLIF \
+data_in_buf_135_.BLIF data_in_buf_6_0_245__n.BLIF data_in_buf_136_.BLIF \
+data_in_buf_i_229__n.BLIF data_in_buf_137_.BLIF data_in_buf_6_0_237__n.BLIF \
+data_in_buf_138_.BLIF data_in_buf_i_221__n.BLIF data_in_buf_139_.BLIF \
+data_in_buf_6_0_229__n.BLIF data_in_buf_141_.BLIF data_in_buf_i_213__n.BLIF \
+data_in_buf_142_.BLIF data_in_buf_6_0_221__n.BLIF data_in_buf_143_.BLIF \
+data_in_buf_i_212__n.BLIF data_in_buf_144_.BLIF data_in_buf_6_0_220__n.BLIF \
+data_in_buf_145_.BLIF data_in_buf_i_205__n.BLIF data_in_buf_146_.BLIF \
+data_in_buf_6_0_213__n.BLIF data_in_buf_147_.BLIF data_in_buf_i_204__n.BLIF \
+data_in_buf_149_.BLIF data_in_buf_6_0_212__n.BLIF data_in_buf_150_.BLIF \
+data_in_buf_i_200__n.BLIF data_in_buf_151_.BLIF data_in_buf_6_0_208__n.BLIF \
+data_in_buf_152_.BLIF data_in_buf_i_197__n.BLIF data_in_buf_153_.BLIF \
+data_in_buf_6_0_205__n.BLIF data_in_buf_154_.BLIF data_in_buf_i_196__n.BLIF \
+data_in_buf_155_.BLIF data_in_buf_6_0_204__n.BLIF data_in_buf_157_.BLIF \
+data_in_buf_i_193__n.BLIF data_in_buf_158_.BLIF data_in_buf_6_0_201__n.BLIF \
+data_in_buf_159_.BLIF data_in_buf_i_189__n.BLIF data_in_buf_160_.BLIF \
+data_in_buf_6_0_197__n.BLIF data_in_buf_161_.BLIF data_in_buf_i_188__n.BLIF \
+data_in_buf_162_.BLIF data_in_buf_6_0_196__n.BLIF data_in_buf_163_.BLIF \
+data_in_buf_i_185__n.BLIF data_in_buf_164_.BLIF data_in_buf_6_0_193__n.BLIF \
+data_in_buf_165_.BLIF data_in_buf_i_184__n.BLIF data_in_buf_166_.BLIF \
+data_in_buf_6_0_192__n.BLIF data_in_buf_167_.BLIF data_in_buf_i_181__n.BLIF \
+data_in_buf_168_.BLIF data_in_buf_6_0_189__n.BLIF data_in_buf_169_.BLIF \
+data_in_buf_i_180__n.BLIF data_in_buf_170_.BLIF data_in_buf_6_0_188__n.BLIF \
+data_in_buf_171_.BLIF data_in_buf_i_178__n.BLIF data_in_buf_172_.BLIF \
+data_in_buf_6_0_186__n.BLIF data_in_buf_173_.BLIF data_in_buf_i_173__n.BLIF \
+data_in_buf_174_.BLIF data_in_buf_6_0_181__n.BLIF data_in_buf_175_.BLIF \
+data_in_buf_i_172__n.BLIF data_in_buf_176_.BLIF data_in_buf_6_0_180__n.BLIF \
+data_in_buf_177_.BLIF data_in_buf_i_170__n.BLIF data_in_buf_178_.BLIF \
+data_in_buf_6_0_178__n.BLIF data_in_buf_179_.BLIF data_in_buf_i_168__n.BLIF \
+data_in_buf_180_.BLIF data_in_buf_6_0_176__n.BLIF data_in_buf_181_.BLIF \
+data_in_buf_i_165__n.BLIF data_in_buf_182_.BLIF data_in_buf_6_0_173__n.BLIF \
+data_in_buf_183_.BLIF data_in_buf_i_164__n.BLIF data_in_buf_184_.BLIF \
+data_in_buf_6_0_172__n.BLIF data_in_buf_185_.BLIF data_in_buf_i_162__n.BLIF \
+data_in_buf_186_.BLIF data_in_buf_6_0_170__n.BLIF data_in_buf_187_.BLIF \
+data_in_buf_i_161__n.BLIF data_in_buf_188_.BLIF data_in_buf_6_0_169__n.BLIF \
+data_in_buf_189_.BLIF data_in_buf_i_157__n.BLIF data_in_buf_190_.BLIF \
+data_in_buf_6_0_165__n.BLIF data_in_buf_191_.BLIF data_in_buf_i_156__n.BLIF \
+data_in_buf_192_.BLIF data_in_buf_6_0_164__n.BLIF data_in_buf_193_.BLIF \
+data_in_buf_i_154__n.BLIF data_in_buf_194_.BLIF data_in_buf_6_0_162__n.BLIF \
+data_in_buf_195_.BLIF data_in_buf_i_153__n.BLIF data_in_buf_196_.BLIF \
+data_in_buf_6_0_161__n.BLIF data_in_buf_197_.BLIF data_in_buf_i_152__n.BLIF \
+data_in_buf_198_.BLIF data_in_buf_6_0_160__n.BLIF data_in_buf_199_.BLIF \
+data_in_buf_i_149__n.BLIF data_in_buf_200_.BLIF data_in_buf_6_0_157__n.BLIF \
+data_in_buf_201_.BLIF data_in_buf_i_141__n.BLIF data_in_buf_202_.BLIF \
+data_in_buf_6_0_149__n.BLIF data_in_buf_203_.BLIF data_in_buf_i_133__n.BLIF \
+data_in_buf_204_.BLIF data_in_buf_6_0_141__n.BLIF data_in_buf_205_.BLIF \
+data_in_buf_i_125__n.BLIF data_in_buf_206_.BLIF data_in_buf_6_0_133__n.BLIF \
+data_in_buf_207_.BLIF data_in_buf_i_117__n.BLIF data_in_buf_208_.BLIF \
+data_in_buf_6_0_125__n.BLIF data_in_buf_209_.BLIF data_in_buf_i_109__n.BLIF \
+data_in_buf_210_.BLIF data_in_buf_6_0_117__n.BLIF data_in_buf_211_.BLIF \
+data_in_buf_i_101__n.BLIF data_in_buf_212_.BLIF data_in_buf_6_0_109__n.BLIF \
+data_in_buf_213_.BLIF data_in_buf_i_93__n.BLIF data_in_buf_214_.BLIF \
+data_in_buf_6_0_101__n.BLIF data_in_buf_215_.BLIF data_in_buf_i_85__n.BLIF \
+data_in_buf_216_.BLIF data_in_buf_6_0_93__n.BLIF data_in_buf_217_.BLIF \
+data_in_buf_i_84__n.BLIF data_in_buf_218_.BLIF data_in_buf_6_0_92__n.BLIF \
+data_in_buf_219_.BLIF data_in_buf_i_77__n.BLIF data_in_buf_220_.BLIF \
+data_in_buf_6_0_85__n.BLIF data_in_buf_221_.BLIF data_in_buf_i_72__n.BLIF \
+data_in_buf_222_.BLIF data_in_buf_6_0_80__n.BLIF data_in_buf_223_.BLIF \
+data_in_buf_i_70__n.BLIF data_in_buf_224_.BLIF data_in_buf_6_0_78__n.BLIF \
+data_in_buf_225_.BLIF data_in_buf_i_64__n.BLIF data_in_buf_226_.BLIF \
+data_in_buf_6_0_72__n.BLIF data_in_buf_227_.BLIF data_in_buf_i_57__n.BLIF \
+data_in_buf_228_.BLIF data_in_buf_6_0_65__n.BLIF data_in_buf_229_.BLIF \
+data_in_buf_i_49__n.BLIF data_in_buf_230_.BLIF data_in_buf_6_0_57__n.BLIF \
+data_in_buf_231_.BLIF data_in_buf_i_48__n.BLIF data_in_buf_232_.BLIF \
+data_in_buf_6_0_56__n.BLIF data_in_buf_233_.BLIF data_in_buf_i_46__n.BLIF \
+data_in_buf_234_.BLIF data_in_buf_6_0_54__n.BLIF data_in_buf_235_.BLIF \
+cnt12_11_1.BLIF data_in_buf_236_.BLIF cnt12_1_0.BLIF data_in_buf_237_.BLIF \
+cnt12_2.BLIF data_in_buf_238_.BLIF cnt12_3.BLIF data_in_buf_239_.BLIF \
+cnt12_18_1.BLIF data_in_buf_240_.BLIF cnt12_18_2.BLIF data_in_buf_241_.BLIF \
+cnt12_18_3.BLIF data_in_buf_242_.BLIF cnt12_18_4.BLIF data_in_buf_243_.BLIF \
+cnt12_18_5.BLIF data_in_buf_244_.BLIF cnt12_18_6.BLIF data_in_buf_245_.BLIF \
+cnt12_18_7.BLIF data_in_buf_246_.BLIF cnt12_16_1.BLIF data_in_buf_247_.BLIF \
+cnt12_16_2.BLIF state_6_.BLIF cnt12_16_3.BLIF state_1_.BLIF N_42_1.BLIF \
+state_2_.BLIF N_14_i_1.BLIF state_3_.BLIF N_39_1.BLIF state_4_.BLIF \
+N_37_1.BLIF data_in_buf_248_.BLIF lcd_d_14_6_152_0_m3_un3_n.BLIF \
+data_in_buf_249_.BLIF lcd_d_14_6_152_0_m3_un1_n.BLIF data_in_buf_250_.BLIF \
+lcd_d_14_6_152_0_m3_un0_n.BLIF data_in_buf_251_.BLIF lcd_d_14_5__un3_n.BLIF \
+data_in_buf_252_.BLIF lcd_d_14_5__un1_n.BLIF data_in_buf_253_.BLIF \
+lcd_d_14_5__un0_n.BLIF data_in_buf_254_.BLIF lcd_d_14_4__un3_n.BLIF \
+data_in_buf_255_.BLIF lcd_d_14_4__un1_n.BLIF clkhz_0.BLIF \
+lcd_d_14_4__un0_n.BLIF N_300.BLIF lcd_d_14_3__un3_n.BLIF state_ns_5__n.BLIF \
+lcd_d_14_3__un1_n.BLIF state_ns_0__n.BLIF lcd_d_14_3__un0_n.BLIF N_312.BLIF \
+lcd_d_14_2__un3_n.BLIF N_611.BLIF lcd_d_14_2__un1_n.BLIF N_37.BLIF \
+lcd_d_14_2__un0_n.BLIF N_38.BLIF lcd_d_14_1__un3_n.BLIF N_39.BLIF \
+lcd_d_14_1__un1_n.BLIF N_42.BLIF lcd_d_14_1__un0_n.BLIF N_44.BLIF \
+lcd_d_14_0__un3_n.BLIF N_46.BLIF lcd_d_14_0__un1_n.BLIF \
+disp_count_5_i_x2_0_.BLIF lcd_d_14_0__un0_n.BLIF cnt12_11.BLIF cnt12_1.BLIF \
+N_587.BLIF N_585.BLIF N_583.BLIF N_579.BLIF N_577.BLIF N_575.BLIF N_573.BLIF \
+N_571.BLIF N_569.BLIF N_567.BLIF N_563.BLIF N_561.BLIF N_559.BLIF N_555.BLIF \
+cnt12.BLIF cnt12_18.BLIF cnt12_16.BLIF N_43.BLIF N_49.BLIF N_602.BLIF \
+N_605.BLIF N_607.BLIF N_609.BLIF N_17.BLIF N_34.BLIF N_35.BLIF N_321.BLIF \
+N_36.BLIF N_18.BLIF N_40.BLIF N_45.BLIF N_19.BLIF N_28.BLIF \
+disp_count_5_i_x2_5_.BLIF N_310.BLIF N_309.BLIF state_i_4__n.BLIF \
+data_in_buf_37_.BLIF state_i_3__n.BLIF data_in_buf_40_.BLIF state_i_2__n.BLIF \
+data_in_buf_41_.BLIF N_309_i.BLIF data_in_buf_45_.BLIF N_310_i.BLIF
+.outputs lcd_d_7_ lcd_rs lcd_rw lcd_en lcd_d_6_ lcd_d_5_ lcd_d_4_ lcd_d_3_ \
+lcd_d_2_ lcd_d_1_ lcd_d_0_ state_0_.D state_0_.C state_0_.AP state_1_.D \
+state_1_.C state_1_.AR state_2_.D state_2_.C state_2_.AR state_3_.D state_3_.C \
+state_3_.AR state_4_.D state_4_.C state_4_.AR state_5_.D state_5_.C \
+state_5_.AR state_6_.D state_6_.C state_6_.AR data_in_buf_248_.D \
+data_in_buf_248_.CE data_in_buf_248_.C data_in_buf_249_.D data_in_buf_249_.CE \
+data_in_buf_249_.C data_in_buf_250_.D data_in_buf_250_.CE data_in_buf_250_.C \
+data_in_buf_251_.D data_in_buf_251_.CE data_in_buf_251_.C data_in_buf_252_.D \
+data_in_buf_252_.CE data_in_buf_252_.C data_in_buf_253_.D data_in_buf_253_.CE \
+data_in_buf_253_.C data_in_buf_254_.D data_in_buf_254_.CE data_in_buf_254_.C \
+data_in_buf_255_.D data_in_buf_255_.CE data_in_buf_255_.C data_in_buf_233_.D \
+data_in_buf_233_.CE data_in_buf_233_.C data_in_buf_234_.D data_in_buf_234_.CE \
+data_in_buf_234_.C data_in_buf_235_.D data_in_buf_235_.CE data_in_buf_235_.C \
+data_in_buf_236_.D data_in_buf_236_.CE data_in_buf_236_.C data_in_buf_237_.D \
+data_in_buf_237_.CE data_in_buf_237_.C data_in_buf_238_.D data_in_buf_238_.CE \
+data_in_buf_238_.C data_in_buf_239_.D data_in_buf_239_.CE data_in_buf_239_.C \
+data_in_buf_240_.D data_in_buf_240_.CE data_in_buf_240_.C data_in_buf_241_.D \
+data_in_buf_241_.CE data_in_buf_241_.C data_in_buf_242_.D data_in_buf_242_.CE \
+data_in_buf_242_.C data_in_buf_243_.D data_in_buf_243_.CE data_in_buf_243_.C \
+data_in_buf_244_.D data_in_buf_244_.CE data_in_buf_244_.C data_in_buf_245_.D \
+data_in_buf_245_.CE data_in_buf_245_.C data_in_buf_246_.D data_in_buf_246_.CE \
+data_in_buf_246_.C data_in_buf_247_.D data_in_buf_247_.CE data_in_buf_247_.C \
+data_in_buf_218_.D data_in_buf_218_.CE data_in_buf_218_.C data_in_buf_219_.D \
+data_in_buf_219_.CE data_in_buf_219_.C data_in_buf_220_.D data_in_buf_220_.CE \
+data_in_buf_220_.C data_in_buf_221_.D data_in_buf_221_.CE data_in_buf_221_.C \
+data_in_buf_222_.D data_in_buf_222_.CE data_in_buf_222_.C data_in_buf_223_.D \
+data_in_buf_223_.CE data_in_buf_223_.C data_in_buf_224_.D data_in_buf_224_.CE \
+data_in_buf_224_.C data_in_buf_225_.D data_in_buf_225_.CE data_in_buf_225_.C \
+data_in_buf_226_.D data_in_buf_226_.CE data_in_buf_226_.C data_in_buf_227_.D \
+data_in_buf_227_.CE data_in_buf_227_.C data_in_buf_228_.D data_in_buf_228_.CE \
+data_in_buf_228_.C data_in_buf_229_.D data_in_buf_229_.CE data_in_buf_229_.C \
+data_in_buf_230_.D data_in_buf_230_.CE data_in_buf_230_.C data_in_buf_231_.D \
+data_in_buf_231_.CE data_in_buf_231_.C data_in_buf_232_.D data_in_buf_232_.CE \
+data_in_buf_232_.C data_in_buf_203_.D data_in_buf_203_.CE data_in_buf_203_.C \
+data_in_buf_204_.D data_in_buf_204_.CE data_in_buf_204_.C data_in_buf_205_.D \
+data_in_buf_205_.CE data_in_buf_205_.C data_in_buf_206_.D data_in_buf_206_.CE \
+data_in_buf_206_.C data_in_buf_207_.D data_in_buf_207_.CE data_in_buf_207_.C \
+data_in_buf_208_.D data_in_buf_208_.CE data_in_buf_208_.C data_in_buf_209_.D \
+data_in_buf_209_.CE data_in_buf_209_.C data_in_buf_210_.D data_in_buf_210_.CE \
+data_in_buf_210_.C data_in_buf_211_.D data_in_buf_211_.CE data_in_buf_211_.C \
+data_in_buf_212_.D data_in_buf_212_.CE data_in_buf_212_.C data_in_buf_213_.D \
+data_in_buf_213_.CE data_in_buf_213_.C data_in_buf_214_.D data_in_buf_214_.CE \
+data_in_buf_214_.C data_in_buf_215_.D data_in_buf_215_.CE data_in_buf_215_.C \
+data_in_buf_216_.D data_in_buf_216_.CE data_in_buf_216_.C data_in_buf_217_.D \
+data_in_buf_217_.CE data_in_buf_217_.C data_in_buf_188_.D data_in_buf_188_.CE \
+data_in_buf_188_.C data_in_buf_189_.D data_in_buf_189_.CE data_in_buf_189_.C \
+data_in_buf_190_.D data_in_buf_190_.CE data_in_buf_190_.C data_in_buf_191_.D \
+data_in_buf_191_.CE data_in_buf_191_.C data_in_buf_192_.D data_in_buf_192_.CE \
+data_in_buf_192_.C data_in_buf_193_.D data_in_buf_193_.CE data_in_buf_193_.C \
+data_in_buf_194_.D data_in_buf_194_.CE data_in_buf_194_.C data_in_buf_195_.D \
+data_in_buf_195_.CE data_in_buf_195_.C data_in_buf_196_.D data_in_buf_196_.CE \
+data_in_buf_196_.C data_in_buf_197_.D data_in_buf_197_.CE data_in_buf_197_.C \
+data_in_buf_198_.D data_in_buf_198_.CE data_in_buf_198_.C data_in_buf_199_.D \
+data_in_buf_199_.CE data_in_buf_199_.C data_in_buf_200_.D data_in_buf_200_.CE \
+data_in_buf_200_.C data_in_buf_201_.D data_in_buf_201_.CE data_in_buf_201_.C \
+data_in_buf_202_.D data_in_buf_202_.CE data_in_buf_202_.C data_in_buf_173_.D \
+data_in_buf_173_.CE data_in_buf_173_.C data_in_buf_174_.D data_in_buf_174_.CE \
+data_in_buf_174_.C data_in_buf_175_.D data_in_buf_175_.CE data_in_buf_175_.C \
+data_in_buf_176_.D data_in_buf_176_.CE data_in_buf_176_.C data_in_buf_177_.D \
+data_in_buf_177_.CE data_in_buf_177_.C data_in_buf_178_.D data_in_buf_178_.CE \
+data_in_buf_178_.C data_in_buf_179_.D data_in_buf_179_.CE data_in_buf_179_.C \
+data_in_buf_180_.D data_in_buf_180_.CE data_in_buf_180_.C data_in_buf_181_.D \
+data_in_buf_181_.CE data_in_buf_181_.C data_in_buf_182_.D data_in_buf_182_.CE \
+data_in_buf_182_.C data_in_buf_183_.D data_in_buf_183_.CE data_in_buf_183_.C \
+data_in_buf_184_.D data_in_buf_184_.CE data_in_buf_184_.C data_in_buf_185_.D \
+data_in_buf_185_.CE data_in_buf_185_.C data_in_buf_186_.D data_in_buf_186_.CE \
+data_in_buf_186_.C data_in_buf_187_.D data_in_buf_187_.CE data_in_buf_187_.C \
+data_in_buf_158_.D data_in_buf_158_.CE data_in_buf_158_.C data_in_buf_159_.D \
+data_in_buf_159_.CE data_in_buf_159_.C data_in_buf_160_.D data_in_buf_160_.CE \
+data_in_buf_160_.C data_in_buf_161_.D data_in_buf_161_.CE data_in_buf_161_.C \
+data_in_buf_162_.D data_in_buf_162_.CE data_in_buf_162_.C data_in_buf_163_.D \
+data_in_buf_163_.CE data_in_buf_163_.C data_in_buf_164_.D data_in_buf_164_.CE \
+data_in_buf_164_.C data_in_buf_165_.D data_in_buf_165_.CE data_in_buf_165_.C \
+data_in_buf_166_.D data_in_buf_166_.CE data_in_buf_166_.C data_in_buf_167_.D \
+data_in_buf_167_.CE data_in_buf_167_.C data_in_buf_168_.D data_in_buf_168_.CE \
+data_in_buf_168_.C data_in_buf_169_.D data_in_buf_169_.CE data_in_buf_169_.C \
+data_in_buf_170_.D data_in_buf_170_.CE data_in_buf_170_.C data_in_buf_171_.D \
+data_in_buf_171_.CE data_in_buf_171_.C data_in_buf_172_.D data_in_buf_172_.CE \
+data_in_buf_172_.C data_in_buf_143_.D data_in_buf_143_.CE data_in_buf_143_.C \
+data_in_buf_144_.D data_in_buf_144_.CE data_in_buf_144_.C data_in_buf_145_.D \
+data_in_buf_145_.CE data_in_buf_145_.C data_in_buf_146_.D data_in_buf_146_.CE \
+data_in_buf_146_.C data_in_buf_147_.D data_in_buf_147_.CE data_in_buf_147_.C \
+data_in_buf_149_.D data_in_buf_149_.CE data_in_buf_149_.C data_in_buf_150_.D \
+data_in_buf_150_.CE data_in_buf_150_.C data_in_buf_151_.D data_in_buf_151_.CE \
+data_in_buf_151_.C data_in_buf_152_.D data_in_buf_152_.CE data_in_buf_152_.C \
+data_in_buf_153_.D data_in_buf_153_.CE data_in_buf_153_.C data_in_buf_154_.D \
+data_in_buf_154_.CE data_in_buf_154_.C data_in_buf_155_.D data_in_buf_155_.CE \
+data_in_buf_155_.C data_in_buf_157_.D data_in_buf_157_.CE data_in_buf_157_.C \
+data_in_buf_128_.D data_in_buf_128_.CE data_in_buf_128_.C data_in_buf_129_.D \
+data_in_buf_129_.CE data_in_buf_129_.C data_in_buf_130_.D data_in_buf_130_.CE \
+data_in_buf_130_.C data_in_buf_131_.D data_in_buf_131_.CE data_in_buf_131_.C \
+data_in_buf_133_.D data_in_buf_133_.CE data_in_buf_133_.C data_in_buf_134_.D \
+data_in_buf_134_.CE data_in_buf_134_.C data_in_buf_135_.D data_in_buf_135_.CE \
+data_in_buf_135_.C data_in_buf_136_.D data_in_buf_136_.CE data_in_buf_136_.C \
+data_in_buf_137_.D data_in_buf_137_.CE data_in_buf_137_.C data_in_buf_138_.D \
+data_in_buf_138_.CE data_in_buf_138_.C data_in_buf_139_.D data_in_buf_139_.CE \
+data_in_buf_139_.C data_in_buf_141_.D data_in_buf_141_.CE data_in_buf_141_.C \
+data_in_buf_142_.D data_in_buf_142_.CE data_in_buf_142_.C data_in_buf_113_.D \
+data_in_buf_113_.CE data_in_buf_113_.C data_in_buf_114_.D data_in_buf_114_.CE \
+data_in_buf_114_.C data_in_buf_115_.D data_in_buf_115_.CE data_in_buf_115_.C \
+data_in_buf_117_.D data_in_buf_117_.CE data_in_buf_117_.C data_in_buf_118_.D \
+data_in_buf_118_.CE data_in_buf_118_.C data_in_buf_119_.D data_in_buf_119_.CE \
+data_in_buf_119_.C data_in_buf_120_.D data_in_buf_120_.CE data_in_buf_120_.C \
+data_in_buf_121_.D data_in_buf_121_.CE data_in_buf_121_.C data_in_buf_122_.D \
+data_in_buf_122_.CE data_in_buf_122_.C data_in_buf_123_.D data_in_buf_123_.CE \
+data_in_buf_123_.C data_in_buf_125_.D data_in_buf_125_.CE data_in_buf_125_.C \
+data_in_buf_126_.D data_in_buf_126_.CE data_in_buf_126_.C data_in_buf_127_.D \
+data_in_buf_127_.CE data_in_buf_127_.C data_in_buf_98_.D data_in_buf_98_.CE \
+data_in_buf_98_.C data_in_buf_100_.D data_in_buf_100_.CE data_in_buf_100_.C \
+data_in_buf_101_.D data_in_buf_101_.CE data_in_buf_101_.C data_in_buf_102_.D \
+data_in_buf_102_.CE data_in_buf_102_.C data_in_buf_103_.D data_in_buf_103_.CE \
+data_in_buf_103_.C data_in_buf_104_.D data_in_buf_104_.CE data_in_buf_104_.C \
+data_in_buf_105_.D data_in_buf_105_.CE data_in_buf_105_.C data_in_buf_106_.D \
+data_in_buf_106_.CE data_in_buf_106_.C data_in_buf_107_.D data_in_buf_107_.CE \
+data_in_buf_107_.C data_in_buf_109_.D data_in_buf_109_.CE data_in_buf_109_.C \
+data_in_buf_110_.D data_in_buf_110_.CE data_in_buf_110_.C data_in_buf_111_.D \
+data_in_buf_111_.CE data_in_buf_111_.C data_in_buf_112_.D data_in_buf_112_.CE \
+data_in_buf_112_.C data_in_buf_83_.D data_in_buf_83_.CE data_in_buf_83_.C \
+data_in_buf_85_.D data_in_buf_85_.CE data_in_buf_85_.C data_in_buf_86_.D \
+data_in_buf_86_.CE data_in_buf_86_.C data_in_buf_87_.D data_in_buf_87_.CE \
+data_in_buf_87_.C data_in_buf_88_.D data_in_buf_88_.CE data_in_buf_88_.C \
+data_in_buf_89_.D data_in_buf_89_.CE data_in_buf_89_.C data_in_buf_90_.D \
+data_in_buf_90_.CE data_in_buf_90_.C data_in_buf_91_.D data_in_buf_91_.CE \
+data_in_buf_91_.C data_in_buf_93_.D data_in_buf_93_.CE data_in_buf_93_.C \
+data_in_buf_94_.D data_in_buf_94_.CE data_in_buf_94_.C data_in_buf_95_.D \
+data_in_buf_95_.CE data_in_buf_95_.C data_in_buf_96_.D data_in_buf_96_.CE \
+data_in_buf_96_.C data_in_buf_97_.D data_in_buf_97_.CE data_in_buf_97_.C \
+data_in_buf_69_.D data_in_buf_69_.CE data_in_buf_69_.C data_in_buf_70_.D \
+data_in_buf_70_.CE data_in_buf_70_.C data_in_buf_72_.D data_in_buf_72_.CE \
+data_in_buf_72_.C data_in_buf_73_.D data_in_buf_73_.CE data_in_buf_73_.C \
+data_in_buf_74_.D data_in_buf_74_.CE data_in_buf_74_.C data_in_buf_75_.D \
+data_in_buf_75_.CE data_in_buf_75_.C data_in_buf_77_.D data_in_buf_77_.CE \
+data_in_buf_77_.C data_in_buf_78_.D data_in_buf_78_.CE data_in_buf_78_.C \
+data_in_buf_80_.D data_in_buf_80_.CE data_in_buf_80_.C data_in_buf_81_.D \
+data_in_buf_81_.CE data_in_buf_81_.C data_in_buf_82_.D data_in_buf_82_.CE \
+data_in_buf_82_.C data_in_buf_53_.D data_in_buf_53_.CE data_in_buf_53_.C \
+data_in_buf_56_.D data_in_buf_56_.CE data_in_buf_56_.C data_in_buf_57_.D \
+data_in_buf_57_.CE data_in_buf_57_.C data_in_buf_58_.D data_in_buf_58_.CE \
+data_in_buf_58_.C data_in_buf_59_.D data_in_buf_59_.CE data_in_buf_59_.C \
+data_in_buf_61_.D data_in_buf_61_.CE data_in_buf_61_.C data_in_buf_64_.D \
+data_in_buf_64_.CE data_in_buf_64_.C data_in_buf_65_.D data_in_buf_65_.CE \
+data_in_buf_65_.C data_in_buf_66_.D data_in_buf_66_.CE data_in_buf_66_.C \
+data_in_buf_67_.D data_in_buf_67_.CE data_in_buf_67_.C data_in_buf_40_.D \
+data_in_buf_40_.CE data_in_buf_40_.C data_in_buf_41_.D data_in_buf_41_.CE \
+data_in_buf_41_.C data_in_buf_45_.D data_in_buf_45_.CE data_in_buf_45_.C \
+data_in_buf_48_.D data_in_buf_48_.CE data_in_buf_48_.C data_in_buf_49_.D \
+data_in_buf_49_.CE data_in_buf_49_.C data_in_buf_51_.D data_in_buf_51_.CE \
+data_in_buf_51_.C disp_count_5_.D disp_count_5_.C disp_count_5_.AR \
+lcd_dDFFCSH_0_reg.D lcd_dDFFCSH_0_reg.CE lcd_dDFFCSH_0_reg.C \
+lcd_dDFFCSH_0_reg.AP lcd_dDFFCRH_1_reg.D lcd_dDFFCRH_1_reg.CE \
+lcd_dDFFCRH_1_reg.C lcd_dDFFCRH_1_reg.AR lcd_dDFFCRH_2_reg.D \
+lcd_dDFFCRH_2_reg.CE lcd_dDFFCRH_2_reg.C lcd_dDFFCRH_2_reg.AR \
+lcd_dDFFCRH_3_reg.D lcd_dDFFCRH_3_reg.CE lcd_dDFFCRH_3_reg.C \
+lcd_dDFFCRH_3_reg.AR lcd_dDFFCRH_4_reg.D lcd_dDFFCRH_4_reg.CE \
+lcd_dDFFCRH_4_reg.C lcd_dDFFCRH_4_reg.AR lcd_dDFFCRH_5_reg.D \
+lcd_dDFFCRH_5_reg.CE lcd_dDFFCRH_5_reg.C lcd_dDFFCRH_5_reg.AR \
+lcd_dDFFCRH_6_reg.D lcd_dDFFCRH_6_reg.CE lcd_dDFFCRH_6_reg.C \
+lcd_dDFFCRH_6_reg.AR lcd_dDFFCRH_7_reg.D lcd_dDFFCRH_7_reg.CE \
+lcd_dDFFCRH_7_reg.C lcd_dDFFCRH_7_reg.AR cnt_10_.D cnt_10_.C cnt_11_.D \
+cnt_11_.C cnt_12_.D cnt_12_.C cnt_13_.D cnt_13_.C cnt_14_.D cnt_14_.C \
+cnt_15_.D cnt_15_.C cnt_16_.D cnt_16_.C cnt_17_.D cnt_17_.C cnt_18_.D \
+cnt_18_.C cnt_19_.D cnt_19_.C disp_count_0_.D disp_count_0_.C disp_count_0_.AR \
+disp_count_1_.D disp_count_1_.C disp_count_1_.AR disp_count_2_.D \
+disp_count_2_.C disp_count_2_.AR disp_count_3_.D disp_count_3_.C \
+disp_count_3_.AR disp_count_4_.D disp_count_4_.C disp_count_4_.AR cnt_0_.D \
+cnt_0_.C cnt_1_.D cnt_1_.C cnt_2_.D cnt_2_.C cnt_3_.D cnt_3_.C cnt_4_.D \
+cnt_4_.C cnt_5_.D cnt_5_.C cnt_6_.D cnt_6_.C cnt_7_.D cnt_7_.C cnt_8_.D \
+cnt_8_.C cnt_9_.D cnt_9_.C data_in_buf_29_.D data_in_buf_29_.CE \
+data_in_buf_29_.C data_in_buf_21_.D data_in_buf_21_.CE data_in_buf_21_.C \
+data_in_buf_13_.D data_in_buf_13_.CE data_in_buf_13_.C data_in_buf_5_.D \
+data_in_buf_5_.CE data_in_buf_5_.C inst_clkhzreg.D inst_clkhzreg.C \
+lcd_rsDFFRHreg.D lcd_rsDFFRHreg.C lcd_rsDFFRHreg.AR data_in_buf_37_.D \
+data_in_buf_37_.CE data_in_buf_37_.C state_i_6__n reset_n_i gnd_n_n \
+state_i_5__n disp_count_i_4__n disp_count_i_5__n disp_count_i_0__n \
+disp_count_i_2__n disp_count_i_1__n disp_count_i_3__n state_i_0__n N_611_i \
+state_ns_i_0__n reset_n_c clk_50m_c N_40_i N_19_0 N_18_0 N_49_i N_17_i N_39_i \
+N_34_i N_36_i N_629_0 N_35_i N_10_i N_28_i N_614_0 data_in_buf_i_54__n \
+data_in_buf_6_0_62__n data_in_buf_i_62__n data_in_buf_6_0_70__n \
+data_in_buf_i_5__n data_in_buf_6_0_46__n data_in_buf_i_79__n \
+data_in_buf_6_0_84__n data_in_buf_i_47__n data_in_buf_6_0_48__n N_37_i N_38_i \
+data_in_buf_i_245__n data_in_buf_6_0_253__n data_in_buf_i_237__n \
+data_in_buf_6_0_245__n data_in_buf_i_229__n data_in_buf_6_0_237__n \
+data_in_buf_i_221__n data_in_buf_6_0_229__n data_in_buf_i_213__n \
+data_in_buf_6_0_221__n data_in_buf_i_212__n data_in_buf_6_0_220__n \
+data_in_buf_i_205__n data_in_buf_6_0_213__n data_in_buf_i_204__n \
+data_in_buf_6_0_212__n data_in_buf_i_200__n data_in_buf_6_0_208__n \
+data_in_buf_i_197__n data_in_buf_6_0_205__n data_in_buf_i_196__n \
+data_in_buf_6_0_204__n data_in_buf_i_193__n data_in_buf_6_0_201__n \
+data_in_buf_i_189__n data_in_buf_6_0_197__n data_in_buf_i_188__n \
+data_in_buf_6_0_196__n data_in_buf_i_185__n data_in_buf_6_0_193__n \
+data_in_buf_i_184__n data_in_buf_6_0_192__n data_in_buf_i_181__n \
+data_in_buf_6_0_189__n data_in_buf_i_180__n data_in_buf_6_0_188__n \
+data_in_buf_i_178__n data_in_buf_6_0_186__n data_in_buf_i_173__n \
+data_in_buf_6_0_181__n data_in_buf_i_172__n data_in_buf_6_0_180__n \
+data_in_buf_i_170__n data_in_buf_6_0_178__n data_in_buf_i_168__n \
+data_in_buf_6_0_176__n data_in_buf_i_165__n data_in_buf_6_0_173__n \
+data_in_buf_i_164__n data_in_buf_6_0_172__n data_in_buf_i_162__n \
+data_in_buf_6_0_170__n data_in_buf_i_161__n data_in_buf_6_0_169__n \
+data_in_buf_i_157__n data_in_buf_6_0_165__n data_in_buf_i_156__n \
+data_in_buf_6_0_164__n data_in_buf_i_154__n data_in_buf_6_0_162__n \
+data_in_buf_i_153__n data_in_buf_6_0_161__n data_in_buf_i_152__n \
+data_in_buf_6_0_160__n data_in_buf_i_149__n data_in_buf_6_0_157__n \
+data_in_buf_i_141__n data_in_buf_6_0_149__n data_in_buf_i_133__n \
+data_in_buf_6_0_141__n data_in_buf_i_125__n data_in_buf_6_0_133__n \
+data_in_buf_i_117__n data_in_buf_6_0_125__n data_in_buf_i_109__n \
+data_in_buf_6_0_117__n data_in_buf_i_101__n data_in_buf_6_0_109__n \
+data_in_buf_i_93__n data_in_buf_6_0_101__n data_in_buf_i_85__n \
+data_in_buf_6_0_93__n data_in_buf_i_84__n data_in_buf_6_0_92__n \
+data_in_buf_i_77__n data_in_buf_6_0_85__n data_in_buf_i_72__n \
+data_in_buf_6_0_80__n data_in_buf_i_70__n data_in_buf_6_0_78__n \
+data_in_buf_i_64__n data_in_buf_6_0_72__n data_in_buf_i_57__n \
+data_in_buf_6_0_65__n data_in_buf_i_49__n data_in_buf_6_0_57__n \
+data_in_buf_i_48__n data_in_buf_6_0_56__n data_in_buf_i_46__n \
+data_in_buf_6_0_54__n cnt12_11_1 cnt12_1_0 cnt12_2 cnt12_3 cnt12_18_1 \
+cnt12_18_2 cnt12_18_3 cnt12_18_4 cnt12_18_5 cnt12_18_6 cnt12_18_7 cnt12_16_1 \
+cnt12_16_2 cnt12_16_3 N_42_1 N_14_i_1 N_39_1 N_37_1 lcd_d_14_6_152_0_m3_un3_n \
+lcd_d_14_6_152_0_m3_un1_n lcd_d_14_6_152_0_m3_un0_n lcd_d_14_5__un3_n \
+lcd_d_14_5__un1_n lcd_d_14_5__un0_n lcd_d_14_4__un3_n lcd_d_14_4__un1_n \
+lcd_d_14_4__un0_n N_300 lcd_d_14_3__un3_n state_ns_5__n lcd_d_14_3__un1_n \
+state_ns_0__n lcd_d_14_3__un0_n N_312 lcd_d_14_2__un3_n N_611 \
+lcd_d_14_2__un1_n N_37 lcd_d_14_2__un0_n N_38 lcd_d_14_1__un3_n N_39 \
+lcd_d_14_1__un1_n N_42 lcd_d_14_1__un0_n N_44 lcd_d_14_0__un3_n N_46 \
+lcd_d_14_0__un1_n lcd_d_14_0__un0_n cnt12_11 cnt12_1 N_587 N_585 N_583 N_579 \
+N_577 N_575 N_573 N_571 N_569 N_567 N_563 N_561 N_559 N_555 cnt12 cnt12_18 \
+cnt12_16 N_43 N_49 N_602 N_605 N_607 N_609 N_17 N_34 N_35 N_321 N_36 N_18 N_40 \
+N_45 N_19 N_28 N_310 N_309 state_i_4__n state_i_3__n state_i_2__n N_309_i \
+N_310_i G_66 G_68 G_70 G_72 G_74 G_76 G_78 G_80 G_82 G_84 G_86 G_88 G_90 G_92 \
+G_94 G_96 G_98 G_100 G_102 G_126 G_128 G_130 G_132 clkhz_0 \
+disp_count_5_i_x2_0_ disp_count_5_i_x2_5_
+.names N_312.BLIF state_6_.D
+0 1
+.names data_in_buf_240_.BLIF state_i_0__n.BLIF data_in_buf_248_.D
+11 1
+.names data_in_buf_241_.BLIF state_i_0__n.BLIF data_in_buf_249_.D
+11 1
+.names data_in_buf_242_.BLIF state_i_0__n.BLIF data_in_buf_250_.D
+11 1
+.names data_in_buf_243_.BLIF state_i_0__n.BLIF data_in_buf_251_.D
+11 1
+.names data_in_buf_244_.BLIF state_i_0__n.BLIF data_in_buf_252_.D
+11 1
+.names data_in_buf_6_0_253__n.BLIF data_in_buf_253_.D
+0 1
+.names data_in_buf_246_.BLIF state_i_0__n.BLIF data_in_buf_254_.D
+11 1
+.names data_in_buf_247_.BLIF state_i_0__n.BLIF data_in_buf_255_.D
+11 1
+.names data_in_buf_225_.BLIF state_i_0__n.BLIF data_in_buf_233_.D
+11 1
+.names data_in_buf_226_.BLIF state_i_0__n.BLIF data_in_buf_234_.D
+11 1
+.names data_in_buf_227_.BLIF state_i_0__n.BLIF data_in_buf_235_.D
+11 1
+.names data_in_buf_228_.BLIF state_i_0__n.BLIF data_in_buf_236_.D
+11 1
+.names data_in_buf_6_0_237__n.BLIF data_in_buf_237_.D
+0 1
+.names data_in_buf_230_.BLIF state_i_0__n.BLIF data_in_buf_238_.D
+11 1
+.names data_in_buf_231_.BLIF state_i_0__n.BLIF data_in_buf_239_.D
+11 1
+.names data_in_buf_232_.BLIF state_i_0__n.BLIF data_in_buf_240_.D
+11 1
+.names data_in_buf_233_.BLIF state_i_0__n.BLIF data_in_buf_241_.D
+11 1
+.names data_in_buf_234_.BLIF state_i_0__n.BLIF data_in_buf_242_.D
+11 1
+.names data_in_buf_235_.BLIF state_i_0__n.BLIF data_in_buf_243_.D
+11 1
+.names data_in_buf_236_.BLIF state_i_0__n.BLIF data_in_buf_244_.D
+11 1
+.names data_in_buf_6_0_245__n.BLIF data_in_buf_245_.D
+0 1
+.names data_in_buf_238_.BLIF state_i_0__n.BLIF data_in_buf_246_.D
+11 1
+.names data_in_buf_239_.BLIF state_i_0__n.BLIF data_in_buf_247_.D
+11 1
+.names data_in_buf_210_.BLIF state_i_0__n.BLIF data_in_buf_218_.D
+11 1
+.names data_in_buf_211_.BLIF state_i_0__n.BLIF data_in_buf_219_.D
+11 1
+.names data_in_buf_6_0_220__n.BLIF data_in_buf_220_.D
+0 1
+.names data_in_buf_6_0_221__n.BLIF data_in_buf_221_.D
+0 1
+.names data_in_buf_214_.BLIF state_i_0__n.BLIF data_in_buf_222_.D
+11 1
+.names data_in_buf_215_.BLIF state_i_0__n.BLIF data_in_buf_223_.D
+11 1
+.names data_in_buf_216_.BLIF state_i_0__n.BLIF data_in_buf_224_.D
+11 1
+.names data_in_buf_217_.BLIF state_i_0__n.BLIF data_in_buf_225_.D
+11 1
+.names data_in_buf_218_.BLIF state_i_0__n.BLIF data_in_buf_226_.D
+11 1
+.names data_in_buf_219_.BLIF state_i_0__n.BLIF data_in_buf_227_.D
+11 1
+.names data_in_buf_220_.BLIF state_i_0__n.BLIF data_in_buf_228_.D
+11 1
+.names data_in_buf_6_0_229__n.BLIF data_in_buf_229_.D
+0 1
+.names data_in_buf_222_.BLIF state_i_0__n.BLIF data_in_buf_230_.D
+11 1
+.names data_in_buf_223_.BLIF state_i_0__n.BLIF data_in_buf_231_.D
+11 1
+.names data_in_buf_224_.BLIF state_i_0__n.BLIF data_in_buf_232_.D
+11 1
+.names data_in_buf_195_.BLIF state_i_0__n.BLIF data_in_buf_203_.D
+11 1
+.names data_in_buf_6_0_204__n.BLIF data_in_buf_204_.D
+0 1
+.names data_in_buf_6_0_205__n.BLIF data_in_buf_205_.D
+0 1
+.names data_in_buf_198_.BLIF state_i_0__n.BLIF data_in_buf_206_.D
+11 1
+.names data_in_buf_199_.BLIF state_i_0__n.BLIF data_in_buf_207_.D
+11 1
+.names data_in_buf_6_0_208__n.BLIF data_in_buf_208_.D
+0 1
+.names data_in_buf_201_.BLIF state_i_0__n.BLIF data_in_buf_209_.D
+11 1
+.names data_in_buf_202_.BLIF state_i_0__n.BLIF data_in_buf_210_.D
+11 1
+.names data_in_buf_203_.BLIF state_i_0__n.BLIF data_in_buf_211_.D
+11 1
+.names data_in_buf_6_0_212__n.BLIF data_in_buf_212_.D
+0 1
+.names data_in_buf_6_0_213__n.BLIF data_in_buf_213_.D
+0 1
+.names data_in_buf_206_.BLIF state_i_0__n.BLIF data_in_buf_214_.D
+11 1
+.names data_in_buf_207_.BLIF state_i_0__n.BLIF data_in_buf_215_.D
+11 1
+.names data_in_buf_208_.BLIF state_i_0__n.BLIF data_in_buf_216_.D
+11 1
+.names data_in_buf_209_.BLIF state_i_0__n.BLIF data_in_buf_217_.D
+11 1
+.names data_in_buf_6_0_188__n.BLIF data_in_buf_188_.D
+0 1
+.names data_in_buf_6_0_189__n.BLIF data_in_buf_189_.D
+0 1
+.names data_in_buf_182_.BLIF state_i_0__n.BLIF data_in_buf_190_.D
+11 1
+.names data_in_buf_183_.BLIF state_i_0__n.BLIF data_in_buf_191_.D
+11 1
+.names data_in_buf_6_0_192__n.BLIF data_in_buf_192_.D
+0 1
+.names data_in_buf_6_0_193__n.BLIF data_in_buf_193_.D
+0 1
+.names data_in_buf_186_.BLIF state_i_0__n.BLIF data_in_buf_194_.D
+11 1
+.names data_in_buf_187_.BLIF state_i_0__n.BLIF data_in_buf_195_.D
+11 1
+.names data_in_buf_6_0_196__n.BLIF data_in_buf_196_.D
+0 1
+.names data_in_buf_6_0_197__n.BLIF data_in_buf_197_.D
+0 1
+.names data_in_buf_190_.BLIF state_i_0__n.BLIF data_in_buf_198_.D
+11 1
+.names data_in_buf_191_.BLIF state_i_0__n.BLIF data_in_buf_199_.D
+11 1
+.names data_in_buf_192_.BLIF state_i_0__n.BLIF data_in_buf_200_.D
+11 1
+.names data_in_buf_6_0_201__n.BLIF data_in_buf_201_.D
+0 1
+.names data_in_buf_194_.BLIF state_i_0__n.BLIF data_in_buf_202_.D
+11 1
+.names data_in_buf_6_0_173__n.BLIF data_in_buf_173_.D
+0 1
+.names data_in_buf_166_.BLIF state_i_0__n.BLIF data_in_buf_174_.D
+11 1
+.names data_in_buf_167_.BLIF state_i_0__n.BLIF data_in_buf_175_.D
+11 1
+.names data_in_buf_6_0_176__n.BLIF data_in_buf_176_.D
+0 1
+.names data_in_buf_169_.BLIF state_i_0__n.BLIF data_in_buf_177_.D
+11 1
+.names data_in_buf_6_0_178__n.BLIF data_in_buf_178_.D
+0 1
+.names data_in_buf_171_.BLIF state_i_0__n.BLIF data_in_buf_179_.D
+11 1
+.names data_in_buf_6_0_180__n.BLIF data_in_buf_180_.D
+0 1
+.names data_in_buf_6_0_181__n.BLIF data_in_buf_181_.D
+0 1
+.names data_in_buf_174_.BLIF state_i_0__n.BLIF data_in_buf_182_.D
+11 1
+.names data_in_buf_175_.BLIF state_i_0__n.BLIF data_in_buf_183_.D
+11 1
+.names data_in_buf_176_.BLIF state_i_0__n.BLIF data_in_buf_184_.D
+11 1
+.names data_in_buf_177_.BLIF state_i_0__n.BLIF data_in_buf_185_.D
+11 1
+.names data_in_buf_6_0_186__n.BLIF data_in_buf_186_.D
+0 1
+.names data_in_buf_179_.BLIF state_i_0__n.BLIF data_in_buf_187_.D
+11 1
+.names data_in_buf_150_.BLIF state_i_0__n.BLIF data_in_buf_158_.D
+11 1
+.names data_in_buf_151_.BLIF state_i_0__n.BLIF data_in_buf_159_.D
+11 1
+.names data_in_buf_6_0_160__n.BLIF data_in_buf_160_.D
+0 1
+.names data_in_buf_6_0_161__n.BLIF data_in_buf_161_.D
+0 1
+.names data_in_buf_6_0_162__n.BLIF data_in_buf_162_.D
+0 1
+.names data_in_buf_155_.BLIF state_i_0__n.BLIF data_in_buf_163_.D
+11 1
+.names data_in_buf_6_0_164__n.BLIF data_in_buf_164_.D
+0 1
+.names data_in_buf_6_0_165__n.BLIF data_in_buf_165_.D
+0 1
+.names data_in_buf_158_.BLIF state_i_0__n.BLIF data_in_buf_166_.D
+11 1
+.names data_in_buf_159_.BLIF state_i_0__n.BLIF data_in_buf_167_.D
+11 1
+.names data_in_buf_160_.BLIF state_i_0__n.BLIF data_in_buf_168_.D
+11 1
+.names data_in_buf_6_0_169__n.BLIF data_in_buf_169_.D
+0 1
+.names data_in_buf_6_0_170__n.BLIF data_in_buf_170_.D
+0 1
+.names data_in_buf_163_.BLIF state_i_0__n.BLIF data_in_buf_171_.D
+11 1
+.names data_in_buf_6_0_172__n.BLIF data_in_buf_172_.D
+0 1
+.names data_in_buf_135_.BLIF state_i_0__n.BLIF data_in_buf_143_.D
+11 1
+.names data_in_buf_136_.BLIF state_i_0__n.BLIF data_in_buf_144_.D
+11 1
+.names data_in_buf_137_.BLIF state_i_0__n.BLIF data_in_buf_145_.D
+11 1
+.names data_in_buf_138_.BLIF state_i_0__n.BLIF data_in_buf_146_.D
+11 1
+.names data_in_buf_139_.BLIF state_i_0__n.BLIF data_in_buf_147_.D
+11 1
+.names data_in_buf_6_0_149__n.BLIF data_in_buf_149_.D
+0 1
+.names data_in_buf_142_.BLIF state_i_0__n.BLIF data_in_buf_150_.D
+11 1
+.names data_in_buf_143_.BLIF state_i_0__n.BLIF data_in_buf_151_.D
+11 1
+.names data_in_buf_144_.BLIF state_i_0__n.BLIF data_in_buf_152_.D
+11 1
+.names data_in_buf_145_.BLIF state_i_0__n.BLIF data_in_buf_153_.D
+11 1
+.names data_in_buf_146_.BLIF state_i_0__n.BLIF data_in_buf_154_.D
+11 1
+.names data_in_buf_147_.BLIF state_i_0__n.BLIF data_in_buf_155_.D
+11 1
+.names data_in_buf_6_0_157__n.BLIF data_in_buf_157_.D
+0 1
+.names data_in_buf_120_.BLIF state_i_0__n.BLIF data_in_buf_128_.D
+11 1
+.names data_in_buf_121_.BLIF state_i_0__n.BLIF data_in_buf_129_.D
+11 1
+.names data_in_buf_122_.BLIF state_i_0__n.BLIF data_in_buf_130_.D
+11 1
+.names data_in_buf_123_.BLIF state_i_0__n.BLIF data_in_buf_131_.D
+11 1
+.names data_in_buf_6_0_133__n.BLIF data_in_buf_133_.D
+0 1
+.names data_in_buf_126_.BLIF state_i_0__n.BLIF data_in_buf_134_.D
+11 1
+.names data_in_buf_127_.BLIF state_i_0__n.BLIF data_in_buf_135_.D
+11 1
+.names data_in_buf_128_.BLIF state_i_0__n.BLIF data_in_buf_136_.D
+11 1
+.names data_in_buf_129_.BLIF state_i_0__n.BLIF data_in_buf_137_.D
+11 1
+.names data_in_buf_130_.BLIF state_i_0__n.BLIF data_in_buf_138_.D
+11 1
+.names data_in_buf_131_.BLIF state_i_0__n.BLIF data_in_buf_139_.D
+11 1
+.names data_in_buf_6_0_141__n.BLIF data_in_buf_141_.D
+0 1
+.names data_in_buf_134_.BLIF state_i_0__n.BLIF data_in_buf_142_.D
+11 1
+.names data_in_buf_105_.BLIF state_i_0__n.BLIF data_in_buf_113_.D
+11 1
+.names data_in_buf_106_.BLIF state_i_0__n.BLIF data_in_buf_114_.D
+11 1
+.names data_in_buf_107_.BLIF state_i_0__n.BLIF data_in_buf_115_.D
+11 1
+.names data_in_buf_6_0_117__n.BLIF data_in_buf_117_.D
+0 1
+.names data_in_buf_110_.BLIF state_i_0__n.BLIF data_in_buf_118_.D
+11 1
+.names data_in_buf_111_.BLIF state_i_0__n.BLIF data_in_buf_119_.D
+11 1
+.names data_in_buf_112_.BLIF state_i_0__n.BLIF data_in_buf_120_.D
+11 1
+.names data_in_buf_113_.BLIF state_i_0__n.BLIF data_in_buf_121_.D
+11 1
+.names data_in_buf_114_.BLIF state_i_0__n.BLIF data_in_buf_122_.D
+11 1
+.names data_in_buf_115_.BLIF state_i_0__n.BLIF data_in_buf_123_.D
+11 1
+.names data_in_buf_6_0_125__n.BLIF data_in_buf_125_.D
+0 1
+.names data_in_buf_118_.BLIF state_i_0__n.BLIF data_in_buf_126_.D
+11 1
+.names data_in_buf_119_.BLIF state_i_0__n.BLIF data_in_buf_127_.D
+11 1
+.names data_in_buf_90_.BLIF state_i_0__n.BLIF data_in_buf_98_.D
+11 1
+.names data_in_buf_91_.BLIF state_i_0__n.BLIF data_in_buf_100_.D
+11 1
+.names data_in_buf_6_0_101__n.BLIF data_in_buf_101_.D
+0 1
+.names data_in_buf_94_.BLIF state_i_0__n.BLIF data_in_buf_102_.D
+11 1
+.names data_in_buf_95_.BLIF state_i_0__n.BLIF data_in_buf_103_.D
+11 1
+.names data_in_buf_96_.BLIF state_i_0__n.BLIF data_in_buf_104_.D
+11 1
+.names data_in_buf_97_.BLIF state_i_0__n.BLIF data_in_buf_105_.D
+11 1
+.names data_in_buf_98_.BLIF state_i_0__n.BLIF data_in_buf_106_.D
+11 1
+.names data_in_buf_100_.BLIF state_i_0__n.BLIF data_in_buf_107_.D
+11 1
+.names data_in_buf_6_0_109__n.BLIF data_in_buf_109_.D
+0 1
+.names data_in_buf_102_.BLIF state_i_0__n.BLIF data_in_buf_110_.D
+11 1
+.names data_in_buf_103_.BLIF state_i_0__n.BLIF data_in_buf_111_.D
+11 1
+.names data_in_buf_104_.BLIF state_i_0__n.BLIF data_in_buf_112_.D
+11 1
+.names data_in_buf_6_0_84__n.BLIF data_in_buf_83_.D
+0 1
+.names data_in_buf_6_0_85__n.BLIF data_in_buf_85_.D
+0 1
+.names data_in_buf_78_.BLIF state_i_0__n.BLIF data_in_buf_86_.D
+11 1
+.names data_in_buf_75_.BLIF state_i_0__n.BLIF data_in_buf_87_.D
+11 1
+.names data_in_buf_80_.BLIF state_i_0__n.BLIF data_in_buf_88_.D
+11 1
+.names data_in_buf_81_.BLIF state_i_0__n.BLIF data_in_buf_89_.D
+11 1
+.names data_in_buf_82_.BLIF state_i_0__n.BLIF data_in_buf_90_.D
+11 1
+.names data_in_buf_6_0_92__n.BLIF data_in_buf_91_.D
+0 1
+.names data_in_buf_6_0_93__n.BLIF data_in_buf_93_.D
+0 1
+.names data_in_buf_86_.BLIF state_i_0__n.BLIF data_in_buf_94_.D
+11 1
+.names data_in_buf_87_.BLIF state_i_0__n.BLIF data_in_buf_95_.D
+11 1
+.names data_in_buf_88_.BLIF state_i_0__n.BLIF data_in_buf_96_.D
+11 1
+.names data_in_buf_89_.BLIF state_i_0__n.BLIF data_in_buf_97_.D
+11 1
+.names data_in_buf_61_.BLIF state_i_0__n.BLIF data_in_buf_69_.D
+11 1
+.names data_in_buf_6_0_70__n.BLIF data_in_buf_70_.D
+0 1
+.names data_in_buf_6_0_72__n.BLIF data_in_buf_72_.D
+0 1
+.names data_in_buf_65_.BLIF state_i_0__n.BLIF data_in_buf_73_.D
+11 1
+.names data_in_buf_66_.BLIF state_i_0__n.BLIF data_in_buf_74_.D
+11 1
+.names data_in_buf_67_.BLIF state_i_0__n.BLIF data_in_buf_75_.D
+11 1
+.names data_in_buf_69_.BLIF state_i_0__n.BLIF data_in_buf_77_.D
+11 1
+.names data_in_buf_6_0_78__n.BLIF data_in_buf_78_.D
+0 1
+.names data_in_buf_6_0_80__n.BLIF data_in_buf_80_.D
+0 1
+.names data_in_buf_73_.BLIF state_i_0__n.BLIF data_in_buf_81_.D
+11 1
+.names data_in_buf_74_.BLIF state_i_0__n.BLIF data_in_buf_82_.D
+11 1
+.names data_in_buf_45_.BLIF state_i_0__n.BLIF data_in_buf_53_.D
+11 1
+.names data_in_buf_6_0_56__n.BLIF data_in_buf_56_.D
+0 1
+.names data_in_buf_6_0_57__n.BLIF data_in_buf_57_.D
+0 1
+.names data_in_buf_21_.BLIF state_i_0__n.BLIF data_in_buf_58_.D
+11 1
+.names data_in_buf_51_.BLIF state_i_0__n.BLIF data_in_buf_59_.D
+11 1
+.names data_in_buf_53_.BLIF state_i_0__n.BLIF data_in_buf_61_.D
+11 1
+.names data_in_buf_56_.BLIF state_i_0__n.BLIF data_in_buf_64_.D
+11 1
+.names data_in_buf_6_0_65__n.BLIF data_in_buf_65_.D
+0 1
+.names data_in_buf_58_.BLIF state_i_0__n.BLIF data_in_buf_66_.D
+11 1
+.names data_in_buf_59_.BLIF state_i_0__n.BLIF data_in_buf_67_.D
+11 1
+.names data_in_buf_5_.BLIF state_i_0__n.BLIF data_in_buf_41_.D
+11 1
+.names data_in_buf_37_.BLIF state_i_0__n.BLIF data_in_buf_45_.D
+11 1
+.names data_in_buf_6_0_48__n.BLIF data_in_buf_48_.D
+0 1
+.names data_in_buf_41_.BLIF state_i_0__n.BLIF data_in_buf_49_.D
+11 1
+.names data_in_buf_40_.BLIF state_i_0__n.BLIF data_in_buf_51_.D
+11 1
+.names disp_count_5_i_x2_5_.BLIF N_39_i.BLIF disp_count_5_.D
+11 1
+.names lcd_d_14_0__un1_n.BLIF lcd_d_14_0__un0_n.BLIF lcd_dDFFCSH_0_reg.D
+1- 1
+-1 1
+.names lcd_d_14_1__un1_n.BLIF lcd_d_14_1__un0_n.BLIF lcd_dDFFCRH_1_reg.D
+1- 1
+-1 1
+.names lcd_d_14_2__un1_n.BLIF lcd_d_14_2__un0_n.BLIF lcd_dDFFCRH_2_reg.D
+1- 1
+-1 1
+.names lcd_d_14_3__un1_n.BLIF lcd_d_14_3__un0_n.BLIF lcd_dDFFCRH_3_reg.D
+1- 1
+-1 1
+.names lcd_d_14_4__un1_n.BLIF lcd_d_14_4__un0_n.BLIF lcd_dDFFCRH_4_reg.D
+1- 1
+-1 1
+.names lcd_d_14_5__un1_n.BLIF lcd_d_14_5__un0_n.BLIF lcd_dDFFCRH_5_reg.D
+1- 1
+-1 1
+.names N_629_0.BLIF lcd_dDFFCRH_6_reg.D
+0 1
+.names N_614_0.BLIF lcd_dDFFCRH_7_reg.D
+0 1
+.names N_14_i_1.BLIF N_38_i.BLIF disp_count_0_.D
+11 1
+.names cnt_0_.BLIF cnt_0_.D
+0 1
+.names data_in_buf_6_0_62__n.BLIF data_in_buf_29_.D
+0 1
+.names data_in_buf_6_0_54__n.BLIF data_in_buf_21_.D
+0 1
+.names data_in_buf_6_0_46__n.BLIF data_in_buf_13_.D
+0 1
+.names N_300.BLIF lcd_rsDFFRHreg.D
+0 1
+.names data_in_buf_29_.BLIF state_i_0__n.BLIF data_in_buf_37_.D
+11 1
+.names state_6_.BLIF state_i_6__n
+0 1
+.names reset_n_c.BLIF reset_n_i
+0 1
+.names gnd_n_n
+.names state_5_.BLIF state_i_5__n
+0 1
+.names disp_count_4_.BLIF disp_count_i_4__n
+0 1
+.names disp_count_5_.BLIF disp_count_i_5__n
+0 1
+.names disp_count_0_.BLIF disp_count_i_0__n
+0 1
+.names disp_count_2_.BLIF disp_count_i_2__n
+0 1
+.names disp_count_1_.BLIF disp_count_i_1__n
+0 1
+.names disp_count_3_.BLIF disp_count_i_3__n
+0 1
+.names state_0_.BLIF state_i_0__n
+0 1
+.names N_611.BLIF N_611_i
+0 1
+.names state_ns_0__n.BLIF state_ns_i_0__n
+0 1
+.names N_40.BLIF N_40_i
+0 1
+.names N_17_i.BLIF N_40_i.BLIF N_19_0
+11 1
+.names state_i_5__n.BLIF state_i_6__n.BLIF N_18_0
+11 1
+.names N_49.BLIF N_49_i
+0 1
+.names N_49_i.BLIF state_6_.BLIF N_17_i
+11 1
+.names N_39.BLIF N_39_i
+0 1
+.names N_34.BLIF N_34_i
+0 1
+.names N_36.BLIF N_36_i
+0 1
+.names N_34_i.BLIF N_36_i.BLIF N_629_0
+11 1
+.names N_35.BLIF N_35_i
+0 1
+.names N_35_i.BLIF reset_n_c.BLIF N_10_i
+11 1
+.names N_28.BLIF N_28_i
+0 1
+.names N_28_i.BLIF N_34_i.BLIF N_614_0
+11 1
+.names data_in_buf_21_.BLIF data_in_buf_i_54__n
+0 1
+.names data_in_buf_i_54__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_62__n
+11 1
+.names data_in_buf_29_.BLIF data_in_buf_i_62__n
+0 1
+.names data_in_buf_i_62__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_70__n
+11 1
+.names data_in_buf_5_.BLIF data_in_buf_i_5__n
+0 1
+.names data_in_buf_i_5__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_46__n
+11 1
+.names data_in_buf_75_.BLIF data_in_buf_i_79__n
+0 1
+.names data_in_buf_i_79__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_84__n
+11 1
+.names data_in_buf_40_.BLIF data_in_buf_i_47__n
+0 1
+.names data_in_buf_i_47__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_48__n
+11 1
+.names N_37.BLIF N_37_i
+0 1
+.names N_38.BLIF N_38_i
+0 1
+.names data_in_buf_245_.BLIF data_in_buf_i_245__n
+0 1
+.names data_in_buf_i_245__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_253__n
+11 1
+.names data_in_buf_237_.BLIF data_in_buf_i_237__n
+0 1
+.names data_in_buf_i_237__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_245__n
+11 1
+.names data_in_buf_229_.BLIF data_in_buf_i_229__n
+0 1
+.names data_in_buf_i_229__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_237__n
+11 1
+.names data_in_buf_221_.BLIF data_in_buf_i_221__n
+0 1
+.names data_in_buf_i_221__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_229__n
+11 1
+.names data_in_buf_213_.BLIF data_in_buf_i_213__n
+0 1
+.names data_in_buf_i_213__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_221__n
+11 1
+.names data_in_buf_212_.BLIF data_in_buf_i_212__n
+0 1
+.names data_in_buf_i_212__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_220__n
+11 1
+.names data_in_buf_205_.BLIF data_in_buf_i_205__n
+0 1
+.names data_in_buf_i_205__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_213__n
+11 1
+.names data_in_buf_204_.BLIF data_in_buf_i_204__n
+0 1
+.names data_in_buf_i_204__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_212__n
+11 1
+.names data_in_buf_200_.BLIF data_in_buf_i_200__n
+0 1
+.names data_in_buf_i_200__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_208__n
+11 1
+.names data_in_buf_197_.BLIF data_in_buf_i_197__n
+0 1
+.names data_in_buf_i_197__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_205__n
+11 1
+.names data_in_buf_196_.BLIF data_in_buf_i_196__n
+0 1
+.names data_in_buf_i_196__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_204__n
+11 1
+.names data_in_buf_193_.BLIF data_in_buf_i_193__n
+0 1
+.names data_in_buf_i_193__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_201__n
+11 1
+.names data_in_buf_189_.BLIF data_in_buf_i_189__n
+0 1
+.names data_in_buf_i_189__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_197__n
+11 1
+.names data_in_buf_188_.BLIF data_in_buf_i_188__n
+0 1
+.names data_in_buf_i_188__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_196__n
+11 1
+.names data_in_buf_185_.BLIF data_in_buf_i_185__n
+0 1
+.names data_in_buf_i_185__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_193__n
+11 1
+.names data_in_buf_184_.BLIF data_in_buf_i_184__n
+0 1
+.names data_in_buf_i_184__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_192__n
+11 1
+.names data_in_buf_181_.BLIF data_in_buf_i_181__n
+0 1
+.names data_in_buf_i_181__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_189__n
+11 1
+.names data_in_buf_180_.BLIF data_in_buf_i_180__n
+0 1
+.names data_in_buf_i_180__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_188__n
+11 1
+.names data_in_buf_178_.BLIF data_in_buf_i_178__n
+0 1
+.names data_in_buf_i_178__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_186__n
+11 1
+.names data_in_buf_173_.BLIF data_in_buf_i_173__n
+0 1
+.names data_in_buf_i_173__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_181__n
+11 1
+.names data_in_buf_172_.BLIF data_in_buf_i_172__n
+0 1
+.names data_in_buf_i_172__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_180__n
+11 1
+.names data_in_buf_170_.BLIF data_in_buf_i_170__n
+0 1
+.names data_in_buf_i_170__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_178__n
+11 1
+.names data_in_buf_168_.BLIF data_in_buf_i_168__n
+0 1
+.names data_in_buf_i_168__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_176__n
+11 1
+.names data_in_buf_165_.BLIF data_in_buf_i_165__n
+0 1
+.names data_in_buf_i_165__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_173__n
+11 1
+.names data_in_buf_164_.BLIF data_in_buf_i_164__n
+0 1
+.names data_in_buf_i_164__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_172__n
+11 1
+.names data_in_buf_162_.BLIF data_in_buf_i_162__n
+0 1
+.names data_in_buf_i_162__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_170__n
+11 1
+.names data_in_buf_161_.BLIF data_in_buf_i_161__n
+0 1
+.names data_in_buf_i_161__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_169__n
+11 1
+.names data_in_buf_157_.BLIF data_in_buf_i_157__n
+0 1
+.names data_in_buf_i_157__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_165__n
+11 1
+.names data_in_buf_155_.BLIF data_in_buf_i_156__n
+0 1
+.names data_in_buf_i_156__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_164__n
+11 1
+.names data_in_buf_154_.BLIF data_in_buf_i_154__n
+0 1
+.names data_in_buf_i_154__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_162__n
+11 1
+.names data_in_buf_153_.BLIF data_in_buf_i_153__n
+0 1
+.names data_in_buf_i_153__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_161__n
+11 1
+.names data_in_buf_152_.BLIF data_in_buf_i_152__n
+0 1
+.names data_in_buf_i_152__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_160__n
+11 1
+.names data_in_buf_149_.BLIF data_in_buf_i_149__n
+0 1
+.names data_in_buf_i_149__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_157__n
+11 1
+.names data_in_buf_141_.BLIF data_in_buf_i_141__n
+0 1
+.names data_in_buf_i_141__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_149__n
+11 1
+.names data_in_buf_133_.BLIF data_in_buf_i_133__n
+0 1
+.names data_in_buf_i_133__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_141__n
+11 1
+.names data_in_buf_125_.BLIF data_in_buf_i_125__n
+0 1
+.names data_in_buf_i_125__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_133__n
+11 1
+.names data_in_buf_117_.BLIF data_in_buf_i_117__n
+0 1
+.names data_in_buf_i_117__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_125__n
+11 1
+.names data_in_buf_109_.BLIF data_in_buf_i_109__n
+0 1
+.names data_in_buf_i_109__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_117__n
+11 1
+.names data_in_buf_101_.BLIF data_in_buf_i_101__n
+0 1
+.names data_in_buf_i_101__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_109__n
+11 1
+.names data_in_buf_93_.BLIF data_in_buf_i_93__n
+0 1
+.names data_in_buf_i_93__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_101__n
+11 1
+.names data_in_buf_85_.BLIF data_in_buf_i_85__n
+0 1
+.names data_in_buf_i_85__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_93__n
+11 1
+.names data_in_buf_83_.BLIF data_in_buf_i_84__n
+0 1
+.names data_in_buf_i_84__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_92__n
+11 1
+.names data_in_buf_77_.BLIF data_in_buf_i_77__n
+0 1
+.names data_in_buf_i_77__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_85__n
+11 1
+.names data_in_buf_72_.BLIF data_in_buf_i_72__n
+0 1
+.names data_in_buf_i_72__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_80__n
+11 1
+.names data_in_buf_70_.BLIF data_in_buf_i_70__n
+0 1
+.names data_in_buf_i_70__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_78__n
+11 1
+.names data_in_buf_64_.BLIF data_in_buf_i_64__n
+0 1
+.names data_in_buf_i_64__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_72__n
+11 1
+.names data_in_buf_57_.BLIF data_in_buf_i_57__n
+0 1
+.names data_in_buf_i_57__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_65__n
+11 1
+.names data_in_buf_49_.BLIF data_in_buf_i_49__n
+0 1
+.names data_in_buf_i_49__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_57__n
+11 1
+.names data_in_buf_48_.BLIF data_in_buf_i_48__n
+0 1
+.names data_in_buf_i_48__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_56__n
+11 1
+.names data_in_buf_13_.BLIF data_in_buf_i_46__n
+0 1
+.names data_in_buf_i_46__n.BLIF state_i_0__n.BLIF data_in_buf_6_0_54__n
+11 1
+.names cnt12_1.BLIF cnt_2_.BLIF cnt12_11_1
+11 1
+.names cnt12_18.BLIF cnt_16_.BLIF cnt12_1_0
+11 1
+.names cnt_17_.BLIF cnt_18_.BLIF cnt12_2
+11 1
+.names cnt12_1_0.BLIF cnt12_2.BLIF cnt12_3
+11 1
+.names cnt12_16.BLIF cnt_8_.BLIF cnt12_18_1
+11 1
+.names cnt_9_.BLIF cnt_10_.BLIF cnt12_18_2
+11 1
+.names cnt_11_.BLIF cnt_12_.BLIF cnt12_18_3
+11 1
+.names cnt_13_.BLIF cnt_14_.BLIF cnt12_18_4
+11 1
+.names cnt12_18_1.BLIF cnt12_18_2.BLIF cnt12_18_5
+11 1
+.names cnt12_18_3.BLIF cnt12_18_4.BLIF cnt12_18_6
+11 1
+.names cnt12_18_5.BLIF cnt12_18_6.BLIF cnt12_18_7
+11 1
+.names cnt12_11.BLIF cnt_4_.BLIF cnt12_16_1
+11 1
+.names cnt_5_.BLIF cnt_6_.BLIF cnt12_16_2
+11 1
+.names cnt12_16_1.BLIF cnt12_16_2.BLIF cnt12_16_3
+11 1
+.names disp_count_i_1__n.BLIF disp_count_i_2__n.BLIF N_42_1
+11 1
+.names disp_count_5_i_x2_0_.BLIF N_37_i.BLIF N_14_i_1
+11 1
+.names N_44.BLIF N_611_i.BLIF N_39_1
+11 1
+.names N_42.BLIF N_46.BLIF N_37_1
+11 1
+.names N_18.BLIF lcd_d_14_6_152_0_m3_un3_n
+0 1
+.names data_in_buf_255_.BLIF N_18.BLIF lcd_d_14_6_152_0_m3_un1_n
+11 1
+.names state_1_.BLIF lcd_d_14_6_152_0_m3_un3_n.BLIF lcd_d_14_6_152_0_m3_un0_n
+11 1
+.names N_300.BLIF lcd_d_14_5__un3_n
+0 1
+.names state_2_.BLIF N_300.BLIF lcd_d_14_5__un1_n
+11 1
+.names data_in_buf_253_.BLIF lcd_d_14_5__un3_n.BLIF lcd_d_14_5__un0_n
+11 1
+.names N_300.BLIF lcd_d_14_4__un3_n
+0 1
+.names state_2_.BLIF N_300.BLIF lcd_d_14_4__un1_n
+11 1
+.names data_in_buf_252_.BLIF lcd_d_14_4__un3_n.BLIF lcd_d_14_4__un0_n
+11 1
+.names N_17.BLIF state_i_5__n.BLIF N_300
+11 1
+.names N_300.BLIF lcd_d_14_3__un3_n
+0 1
+.names N_44.BLIF N_45.BLIF state_ns_5__n
+11 1
+.names N_310_i.BLIF N_300.BLIF lcd_d_14_3__un1_n
+11 1
+.names N_44.BLIF N_46.BLIF state_ns_0__n
+11 1
+.names data_in_buf_251_.BLIF lcd_d_14_3__un3_n.BLIF lcd_d_14_3__un0_n
+11 1
+.names N_321.BLIF state_i_4__n.BLIF N_312
+11 1
+.names N_300.BLIF lcd_d_14_2__un3_n
+0 1
+.names N_609.BLIF disp_count_4_.BLIF N_611
+11 1
+.names N_309_i.BLIF N_300.BLIF lcd_d_14_2__un1_n
+11 1
+.names N_37_1.BLIF state_6_.BLIF N_37
+11 1
+.names data_in_buf_250_.BLIF lcd_d_14_2__un3_n.BLIF lcd_d_14_2__un0_n
+11 1
+.names N_49.BLIF state_i_5__n.BLIF N_38
+11 1
+.names N_300.BLIF lcd_d_14_1__un3_n
+0 1
+.names N_39_1.BLIF disp_count_i_4__n.BLIF N_39
+11 1
+.names state_4_.BLIF N_300.BLIF lcd_d_14_1__un1_n
+11 1
+.names N_42_1.BLIF disp_count_i_3__n.BLIF N_42
+11 1
+.names data_in_buf_249_.BLIF lcd_d_14_1__un3_n.BLIF lcd_d_14_1__un0_n
+11 1
+.names N_43.BLIF state_6_.BLIF N_44
+11 1
+.names N_300.BLIF lcd_d_14_0__un3_n
+0 1
+.names disp_count_5_.BLIF disp_count_i_4__n.BLIF N_46
+11 1
+.names state_0_.BLIF N_300.BLIF lcd_d_14_0__un1_n
+11 1
+.names data_in_buf_248_.BLIF lcd_d_14_0__un3_n.BLIF lcd_d_14_0__un0_n
+11 1
+.names cnt12_11_1.BLIF cnt_3_.BLIF cnt12_11
+11 1
+.names cnt_0_.BLIF cnt_1_.BLIF cnt12_1
+11 1
+.names N_585.BLIF cnt_18_.BLIF N_587
+11 1
+.names N_583.BLIF cnt_17_.BLIF N_585
+11 1
+.names cnt12_18.BLIF cnt_16_.BLIF N_583
+11 1
+.names N_577.BLIF cnt_14_.BLIF N_579
+11 1
+.names N_575.BLIF cnt_13_.BLIF N_577
+11 1
+.names N_573.BLIF cnt_12_.BLIF N_575
+11 1
+.names N_571.BLIF cnt_11_.BLIF N_573
+11 1
+.names N_569.BLIF cnt_10_.BLIF N_571
+11 1
+.names N_567.BLIF cnt_9_.BLIF N_569
+11 1
+.names cnt12_16.BLIF cnt_8_.BLIF N_567
+11 1
+.names N_561.BLIF cnt_6_.BLIF N_563
+11 1
+.names N_559.BLIF cnt_5_.BLIF N_561
+11 1
+.names cnt12_11.BLIF cnt_4_.BLIF N_559
+11 1
+.names cnt12_1.BLIF cnt_2_.BLIF N_555
+11 1
+.names cnt12_3.BLIF cnt_19_.BLIF cnt12
+11 1
+.names cnt12_18_7.BLIF cnt_15_.BLIF cnt12_18
+11 1
+.names cnt12_16_3.BLIF cnt_7_.BLIF cnt12_16
+11 1
+.names N_42.BLIF disp_count_i_0__n.BLIF N_43
+11 1
+.names N_43.BLIF N_45.BLIF N_49
+11 1
+.names N_18.BLIF disp_count_0_.BLIF N_602
+11 1
+.names N_602.BLIF disp_count_1_.BLIF N_605
+11 1
+.names N_605.BLIF disp_count_2_.BLIF N_607
+11 1
+.names N_607.BLIF disp_count_3_.BLIF N_609
+11 1
+.names N_17_i.BLIF N_17
+0 1
+.names state_i_5__n.BLIF state_ns_5__n.BLIF N_34
+11 1
+.names N_321.BLIF state_i_0__n.BLIF N_35
+11 1
+.names N_19.BLIF state_i_5__n.BLIF N_321
+11 1
+.names N_18.BLIF data_in_buf_254_.BLIF N_36
+11 1
+.names N_18_0.BLIF N_18
+0 1
+.names N_43.BLIF N_46.BLIF N_40
+11 1
+.names disp_count_4_.BLIF disp_count_i_5__n.BLIF N_45
+11 1
+.names N_19_0.BLIF N_19
+0 1
+.names lcd_d_14_6_152_0_m3_un1_n.BLIF lcd_d_14_6_152_0_m3_un0_n.BLIF N_28
+1- 1
+-1 1
+.names state_i_2__n.BLIF state_i_3__n.BLIF N_310
+11 1
+.names state_i_3__n.BLIF state_i_4__n.BLIF N_309
+11 1
+.names state_4_.BLIF state_i_4__n
+0 1
+.names state_3_.BLIF state_i_3__n
+0 1
+.names state_2_.BLIF state_i_2__n
+0 1
+.names N_309.BLIF N_309_i
+0 1
+.names N_310.BLIF N_310_i
+0 1
+.names lcd_dDFFCRH_7_reg.BLIF lcd_d_7_
+1 1
+0 0
+.names lcd_rsDFFRHreg.BLIF lcd_rs
+1 1
+0 0
+.names gnd_n_n.BLIF lcd_rw
+1 1
+0 0
+.names inst_clkhzreg.BLIF lcd_en
+1 1
+0 0
+.names lcd_dDFFCRH_6_reg.BLIF lcd_d_6_
+1 1
+0 0
+.names lcd_dDFFCRH_5_reg.BLIF lcd_d_5_
+1 1
+0 0
+.names lcd_dDFFCRH_4_reg.BLIF lcd_d_4_
+1 1
+0 0
+.names lcd_dDFFCRH_3_reg.BLIF lcd_d_3_
+1 1
+0 0
+.names lcd_dDFFCRH_2_reg.BLIF lcd_d_2_
+1 1
+0 0
+.names lcd_dDFFCRH_1_reg.BLIF lcd_d_1_
+1 1
+0 0
+.names lcd_dDFFCSH_0_reg.BLIF lcd_d_0_
+1 1
+0 0
+.names state_ns_0__n.BLIF state_0_.D
+1 1
+0 0
+.names inst_clkhzreg.BLIF state_0_.C
+1 1
+0 0
+.names reset_n_i.BLIF state_0_.AP
+1 1
+0 0
+.names state_0_.BLIF state_1_.D
+1 1
+0 0
+.names inst_clkhzreg.BLIF state_1_.C
+1 1
+0 0
+.names reset_n_i.BLIF state_1_.AR
+1 1
+0 0
+.names state_1_.BLIF state_2_.D
+1 1
+0 0
+.names inst_clkhzreg.BLIF state_2_.C
+1 1
+0 0
+.names reset_n_i.BLIF state_2_.AR
+1 1
+0 0
+.names state_2_.BLIF state_3_.D
+1 1
+0 0
+.names inst_clkhzreg.BLIF state_3_.C
+1 1
+0 0
+.names reset_n_i.BLIF state_3_.AR
+1 1
+0 0
+.names state_3_.BLIF state_4_.D
+1 1
+0 0
+.names inst_clkhzreg.BLIF state_4_.C
+1 1
+0 0
+.names reset_n_i.BLIF state_4_.AR
+1 1
+0 0
+.names state_ns_5__n.BLIF state_5_.D
+1 1
+0 0
+.names inst_clkhzreg.BLIF state_5_.C
+1 1
+0 0
+.names reset_n_i.BLIF state_5_.AR
+1 1
+0 0
+.names inst_clkhzreg.BLIF state_6_.C
+1 1
+0 0
+.names reset_n_i.BLIF state_6_.AR
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_248_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_248_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_249_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_249_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_250_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_250_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_251_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_251_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_252_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_252_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_253_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_253_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_254_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_254_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_255_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_255_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_233_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_233_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_234_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_234_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_235_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_235_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_236_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_236_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_237_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_237_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_238_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_238_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_239_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_239_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_240_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_240_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_241_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_241_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_242_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_242_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_243_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_243_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_244_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_244_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_245_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_245_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_246_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_246_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_247_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_247_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_218_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_218_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_219_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_219_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_220_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_220_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_221_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_221_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_222_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_222_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_223_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_223_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_224_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_224_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_225_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_225_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_226_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_226_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_227_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_227_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_228_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_228_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_229_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_229_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_230_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_230_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_231_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_231_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_232_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_232_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_203_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_203_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_204_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_204_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_205_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_205_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_206_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_206_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_207_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_207_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_208_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_208_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_209_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_209_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_210_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_210_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_211_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_211_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_212_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_212_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_213_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_213_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_214_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_214_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_215_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_215_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_216_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_216_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_217_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_217_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_188_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_188_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_189_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_189_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_190_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_190_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_191_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_191_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_192_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_192_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_193_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_193_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_194_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_194_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_195_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_195_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_196_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_196_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_197_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_197_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_198_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_198_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_199_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_199_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_200_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_200_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_201_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_201_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_202_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_202_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_173_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_173_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_174_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_174_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_175_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_175_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_176_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_176_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_177_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_177_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_178_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_178_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_179_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_179_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_180_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_180_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_181_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_181_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_182_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_182_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_183_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_183_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_184_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_184_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_185_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_185_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_186_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_186_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_187_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_187_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_158_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_158_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_159_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_159_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_160_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_160_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_161_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_161_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_162_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_162_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_163_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_163_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_164_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_164_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_165_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_165_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_166_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_166_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_167_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_167_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_168_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_168_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_169_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_169_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_170_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_170_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_171_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_171_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_172_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_172_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_143_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_143_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_144_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_144_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_145_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_145_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_146_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_146_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_147_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_147_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_149_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_149_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_150_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_150_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_151_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_151_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_152_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_152_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_153_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_153_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_154_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_154_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_155_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_155_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_157_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_157_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_128_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_128_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_129_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_129_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_130_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_130_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_131_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_131_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_133_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_133_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_134_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_134_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_135_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_135_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_136_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_136_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_137_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_137_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_138_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_138_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_139_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_139_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_141_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_141_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_142_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_142_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_113_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_113_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_114_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_114_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_115_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_115_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_117_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_117_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_118_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_118_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_119_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_119_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_120_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_120_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_121_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_121_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_122_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_122_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_123_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_123_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_125_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_125_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_126_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_126_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_127_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_127_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_98_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_98_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_100_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_100_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_101_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_101_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_102_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_102_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_103_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_103_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_104_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_104_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_105_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_105_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_106_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_106_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_107_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_107_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_109_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_109_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_110_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_110_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_111_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_111_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_112_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_112_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_83_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_83_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_85_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_85_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_86_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_86_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_87_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_87_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_88_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_88_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_89_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_89_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_90_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_90_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_91_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_91_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_93_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_93_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_94_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_94_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_95_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_95_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_96_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_96_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_97_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_97_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_69_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_69_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_70_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_70_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_72_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_72_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_73_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_73_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_74_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_74_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_75_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_75_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_77_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_77_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_78_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_78_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_80_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_80_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_81_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_81_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_82_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_82_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_53_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_53_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_56_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_56_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_57_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_57_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_58_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_58_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_59_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_59_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_61_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_61_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_64_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_64_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_65_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_65_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_66_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_66_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_67_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_67_.C
+1 1
+0 0
+.names gnd_n_n.BLIF data_in_buf_40_.D
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_40_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_40_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_41_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_41_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_45_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_45_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_48_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_48_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_49_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_49_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_51_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_51_.C
+1 1
+0 0
+.names inst_clkhzreg.BLIF disp_count_5_.C
+1 1
+0 0
+.names reset_n_i.BLIF disp_count_5_.AR
+1 1
+0 0
+.names state_ns_i_0__n.BLIF lcd_dDFFCSH_0_reg.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF lcd_dDFFCSH_0_reg.C
+1 1
+0 0
+.names reset_n_i.BLIF lcd_dDFFCSH_0_reg.AP
+1 1
+0 0
+.names state_ns_i_0__n.BLIF lcd_dDFFCRH_1_reg.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF lcd_dDFFCRH_1_reg.C
+1 1
+0 0
+.names reset_n_i.BLIF lcd_dDFFCRH_1_reg.AR
+1 1
+0 0
+.names state_ns_i_0__n.BLIF lcd_dDFFCRH_2_reg.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF lcd_dDFFCRH_2_reg.C
+1 1
+0 0
+.names reset_n_i.BLIF lcd_dDFFCRH_2_reg.AR
+1 1
+0 0
+.names state_ns_i_0__n.BLIF lcd_dDFFCRH_3_reg.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF lcd_dDFFCRH_3_reg.C
+1 1
+0 0
+.names reset_n_i.BLIF lcd_dDFFCRH_3_reg.AR
+1 1
+0 0
+.names state_ns_i_0__n.BLIF lcd_dDFFCRH_4_reg.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF lcd_dDFFCRH_4_reg.C
+1 1
+0 0
+.names reset_n_i.BLIF lcd_dDFFCRH_4_reg.AR
+1 1
+0 0
+.names state_ns_i_0__n.BLIF lcd_dDFFCRH_5_reg.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF lcd_dDFFCRH_5_reg.C
+1 1
+0 0
+.names reset_n_i.BLIF lcd_dDFFCRH_5_reg.AR
+1 1
+0 0
+.names state_ns_i_0__n.BLIF lcd_dDFFCRH_6_reg.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF lcd_dDFFCRH_6_reg.C
+1 1
+0 0
+.names reset_n_i.BLIF lcd_dDFFCRH_6_reg.AR
+1 1
+0 0
+.names state_ns_i_0__n.BLIF lcd_dDFFCRH_7_reg.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF lcd_dDFFCRH_7_reg.C
+1 1
+0 0
+.names reset_n_i.BLIF lcd_dDFFCRH_7_reg.AR
+1 1
+0 0
+.names G_84.BLIF cnt_10_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_10_.C
+1 1
+0 0
+.names G_86.BLIF cnt_11_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_11_.C
+1 1
+0 0
+.names G_88.BLIF cnt_12_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_12_.C
+1 1
+0 0
+.names G_90.BLIF cnt_13_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_13_.C
+1 1
+0 0
+.names G_92.BLIF cnt_14_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_14_.C
+1 1
+0 0
+.names G_94.BLIF cnt_15_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_15_.C
+1 1
+0 0
+.names G_96.BLIF cnt_16_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_16_.C
+1 1
+0 0
+.names G_98.BLIF cnt_17_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_17_.C
+1 1
+0 0
+.names G_100.BLIF cnt_18_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_18_.C
+1 1
+0 0
+.names G_102.BLIF cnt_19_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_19_.C
+1 1
+0 0
+.names inst_clkhzreg.BLIF disp_count_0_.C
+1 1
+0 0
+.names reset_n_i.BLIF disp_count_0_.AR
+1 1
+0 0
+.names G_126.BLIF disp_count_1_.D
+1 1
+0 0
+.names inst_clkhzreg.BLIF disp_count_1_.C
+1 1
+0 0
+.names reset_n_i.BLIF disp_count_1_.AR
+1 1
+0 0
+.names G_128.BLIF disp_count_2_.D
+1 1
+0 0
+.names inst_clkhzreg.BLIF disp_count_2_.C
+1 1
+0 0
+.names reset_n_i.BLIF disp_count_2_.AR
+1 1
+0 0
+.names G_130.BLIF disp_count_3_.D
+1 1
+0 0
+.names inst_clkhzreg.BLIF disp_count_3_.C
+1 1
+0 0
+.names reset_n_i.BLIF disp_count_3_.AR
+1 1
+0 0
+.names G_132.BLIF disp_count_4_.D
+1 1
+0 0
+.names inst_clkhzreg.BLIF disp_count_4_.C
+1 1
+0 0
+.names reset_n_i.BLIF disp_count_4_.AR
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_0_.C
+1 1
+0 0
+.names G_66.BLIF cnt_1_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_1_.C
+1 1
+0 0
+.names G_68.BLIF cnt_2_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_2_.C
+1 1
+0 0
+.names G_70.BLIF cnt_3_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_3_.C
+1 1
+0 0
+.names G_72.BLIF cnt_4_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_4_.C
+1 1
+0 0
+.names G_74.BLIF cnt_5_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_5_.C
+1 1
+0 0
+.names G_76.BLIF cnt_6_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_6_.C
+1 1
+0 0
+.names G_78.BLIF cnt_7_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_7_.C
+1 1
+0 0
+.names G_80.BLIF cnt_8_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_8_.C
+1 1
+0 0
+.names G_82.BLIF cnt_9_.D
+1 1
+0 0
+.names clk_50m_c.BLIF cnt_9_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_29_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_29_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_21_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_21_.C
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_13_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_13_.C
+1 1
+0 0
+.names state_0_.BLIF data_in_buf_5_.D
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_5_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_5_.C
+1 1
+0 0
+.names clkhz_0.BLIF inst_clkhzreg.D
+1 1
+0 0
+.names clk_50m_c.BLIF inst_clkhzreg.C
+1 1
+0 0
+.names inst_clkhzreg.BLIF lcd_rsDFFRHreg.C
+1 1
+0 0
+.names reset_n_i.BLIF lcd_rsDFFRHreg.AR
+1 1
+0 0
+.names N_10_i.BLIF data_in_buf_37_.CE
+1 1
+0 0
+.names inst_clkhzreg.BLIF data_in_buf_37_.C
+1 1
+0 0
+.names reset_n.BLIF reset_n_c
+1 1
+0 0
+.names clk_50m.BLIF clk_50m_c
+1 1
+0 0
+.names cnt_0_.BLIF cnt_1_.BLIF G_66
+01 1
+10 1
+11 0
+00 0
+.names cnt_2_.BLIF cnt12_1.BLIF G_68
+01 1
+10 1
+11 0
+00 0
+.names cnt_3_.BLIF N_555.BLIF G_70
+01 1
+10 1
+11 0
+00 0
+.names cnt_4_.BLIF cnt12_11.BLIF G_72
+01 1
+10 1
+11 0
+00 0
+.names cnt_5_.BLIF N_559.BLIF G_74
+01 1
+10 1
+11 0
+00 0
+.names cnt_6_.BLIF N_561.BLIF G_76
+01 1
+10 1
+11 0
+00 0
+.names cnt_7_.BLIF N_563.BLIF G_78
+01 1
+10 1
+11 0
+00 0
+.names cnt_8_.BLIF cnt12_16.BLIF G_80
+01 1
+10 1
+11 0
+00 0
+.names cnt_9_.BLIF N_567.BLIF G_82
+01 1
+10 1
+11 0
+00 0
+.names cnt_10_.BLIF N_569.BLIF G_84
+01 1
+10 1
+11 0
+00 0
+.names cnt_11_.BLIF N_571.BLIF G_86
+01 1
+10 1
+11 0
+00 0
+.names cnt_12_.BLIF N_573.BLIF G_88
+01 1
+10 1
+11 0
+00 0
+.names cnt_13_.BLIF N_575.BLIF G_90
+01 1
+10 1
+11 0
+00 0
+.names cnt_14_.BLIF N_577.BLIF G_92
+01 1
+10 1
+11 0
+00 0
+.names cnt_15_.BLIF N_579.BLIF G_94
+01 1
+10 1
+11 0
+00 0
+.names cnt_16_.BLIF cnt12_18.BLIF G_96
+01 1
+10 1
+11 0
+00 0
+.names cnt_17_.BLIF N_583.BLIF G_98
+01 1
+10 1
+11 0
+00 0
+.names cnt_18_.BLIF N_585.BLIF G_100
+01 1
+10 1
+11 0
+00 0
+.names cnt_19_.BLIF N_587.BLIF G_102
+01 1
+10 1
+11 0
+00 0
+.names disp_count_1_.BLIF N_602.BLIF G_126
+01 1
+10 1
+11 0
+00 0
+.names disp_count_2_.BLIF N_605.BLIF G_128
+01 1
+10 1
+11 0
+00 0
+.names disp_count_3_.BLIF N_607.BLIF G_130
+01 1
+10 1
+11 0
+00 0
+.names disp_count_4_.BLIF N_609.BLIF G_132
+01 1
+10 1
+11 0
+00 0
+.names inst_clkhzreg.BLIF cnt12.BLIF clkhz_0
+01 1
+10 1
+11 0
+00 0
+.names disp_count_0_.BLIF N_18.BLIF disp_count_5_i_x2_0_
+01 1
+10 1
+11 0
+00 0
+.names disp_count_5_.BLIF N_611.BLIF disp_count_5_i_x2_5_
+01 1
+10 1
+11 0
+00 0
+.end

@@ -1,0 +1,545 @@
+|--------------------------------------------------- ----------|
+|- ispLEVER Classic 2.1.00.02.49.20 Equations File            -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+Equations:
+
+A = N0_Z3 & !N0_Z2 & N0_Z1 & N0_Z0
+    # !N0_Z3 & !N0_Z2 & !N0_Z1 & N0_Z0
+    # N0_Z2 & !N0_Z1 & !N0_Z0
+    # N0_Z3 & N0_Z2 & !N0_Z1 ; (4 pterms, 4 signals)
+
+B = !N0_Z3 & N0_Z2 & !N0_Z1 & N0_Z0
+    # N0_Z3 & N0_Z1 & N0_Z0
+    # N0_Z2 & N0_Z1 & !N0_Z0
+    # N0_Z3 & N0_Z2 & !N0_Z0 ; (4 pterms, 4 signals)
+
+C = !N0_Z3 & !N0_Z2 & N0_Z1 & !N0_Z0
+    # N0_Z3 & N0_Z2 & N0_Z1
+    # N0_Z3 & N0_Z2 & !N0_Z0 ; (3 pterms, 4 signals)
+
+C0_q0.D = !C0_q0.Q ; (1 pterm, 1 signal)
+C0_q0.C = CLK1 ; (1 pterm, 1 signal)
+
+C0_q1.D = C0_q2.Q & !C0_q1.Q & C0_q0.Q
+    # !C0_q3.Q & !C0_q1.Q & C0_q0.Q
+    # C0_q1.Q & !C0_q0.Q ; (3 pterms, 4 signals)
+C0_q1.C = CLK1 ; (1 pterm, 1 signal)
+
+C0_q2.D = !C0_q2.Q & C0_q1.Q & C0_q0.Q
+    # C0_q2.Q & !C0_q1.Q
+    # C0_q2.Q & !C0_q0.Q ; (3 pterms, 3 signals)
+C0_q2.C = CLK1 ; (1 pterm, 1 signal)
+
+C0_q3.D = !C0_q3.Q & C0_q2.Q & C0_q1.Q & C0_q0.Q
+    # C0_q3.Q & !C0_q2.Q & C0_q1.Q
+    # C0_q3.Q & C0_q2.Q & !C0_q1.Q
+    # C0_q3.Q & !C0_q0.Q ; (4 pterms, 4 signals)
+C0_q3.C = CLK1 ; (1 pterm, 1 signal)
+
+CLOCK.D = CLOCK.Q & !N_43.Q
+    # !CLOCK.Q & N_43.Q ; (2 pterms, 2 signals)
+CLOCK.C = CLK ; (1 pterm, 1 signal)
+CLOCK.AR = 0 ; (0 pterm, 0 signal)
+
+D = N0_Z3 & !N0_Z2 & N0_Z1 & !N0_Z0
+    # !N0_Z3 & N0_Z2 & !N0_Z1 & !N0_Z0
+    # !N0_Z3 & !N0_Z2 & !N0_Z1 & N0_Z0
+    # N0_Z2 & N0_Z1 & N0_Z0 ; (4 pterms, 4 signals)
+
+E = !N0_Z3 & N0_Z2 & !N0_Z1
+    # !N0_Z2 & !N0_Z1 & N0_Z0
+    # !N0_Z3 & N0_Z0 ; (3 pterms, 4 signals)
+
+F = N0_Z3 & N0_Z2 & !N0_Z1
+    # !N0_Z3 & !N0_Z2 & N0_Z1
+    # !N0_Z3 & N0_Z1 & N0_Z0
+    # !N0_Z3 & !N0_Z2 & N0_Z0 ; (4 pterms, 4 signals)
+
+G = !N0_Z3 & N0_Z2 & N0_Z1 & N0_Z0
+    # !N0_Z3 & !N0_Z2 & !N0_Z1 ; (2 pterms, 4 signals)
+
+LED1 = !( N_46.Q & N_47.Q & N_48.Q & N_49.Q
+    # N_45.Q
+    # N_44.Q ) ; (3 pterms, 6 signals)
+
+LED2 = !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q
+    # !N_44.Q & N_45.Q & !N_46.Q
+    # !N_44.Q & N_45.Q & !N_47.Q
+    # !N_44.Q & N_45.Q & !N_48.Q ; (4 pterms, 6 signals)
+
+LED3 = N_45.Q & N_46.Q & N_47.Q & N_48.Q
+    # N_44.Q ; (2 pterms, 5 signals)
+
+LED4 = !LED1 ; (1 pterm, 1 signal)
+
+LED5 = !LED2 ; (1 pterm, 1 signal)
+
+LED6 = !LED3 ; (1 pterm, 1 signal)
+
+LEDVCC1 = !N_52.Q & !N_53.Q ; (1 pterm, 2 signals)
+
+LEDVCC2 = N_52.Q & !N_53.Q ; (1 pterm, 2 signals)
+
+LEDVCC3 = !N_52.Q & N_53.Q ; (1 pterm, 2 signals)
+
+LEDVCC4 = N_52.Q & N_53.Q ; (1 pterm, 2 signals)
+
+N0_Z0 = !OUT_A.Q & !N_52.Q & !N_53.Q
+    # !N_52.Q & N_53.Q & N_63
+    # N_22 & N_52.Q & !N_53.Q
+    # N_52.Q & N_53.Q & N_59 ; (4 pterms, 6 signals)
+
+N0_Z1 = !OUT_B.Q & !N_52.Q & !N_53.Q
+    # !N_52.Q & N_53.Q & N_62
+    # N_23 & N_52.Q & !N_53.Q
+    # N_52.Q & N_53.Q & N_58 ; (4 pterms, 6 signals)
+
+N0_Z2 = !N_52.Q & N_53.Q & N_61
+    # N_25 & N_52.Q & !N_53.Q
+    # N_52.Q & N_53.Q & N_57 ; (3 pterms, 5 signals)
+
+N0_Z3 = !N_52.Q & N_53.Q & N_60
+    # N_27 & N_52.Q & !N_53.Q
+    # N_52.Q & N_53.Q & N_56 ; (3 pterms, 5 signals)
+
+N_10.D = N_7.Q ; (1 pterm, 1 signal)
+N_10.C = N_4.Q ; (1 pterm, 1 signal)
+
+N_22 = !N_44.Q & N_45.Q & !N_46.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q
+    # !N_44.Q & N_45.Q & !N_47.Q & !N_48.Q & !N_49.Q
+    # !N_44.Q & N_45.Q & !N_47.Q & !N_48.Q & !N_50.Q & !N_51.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & N_46.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_49.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_47.Q & N_48.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_48.Q
+    # N_44.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q
+    # N_44.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_51.Q ; (12 pterms, 8 signals)
+
+N_23.X1 = !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q
+    # N_44.Q & !N_46.Q & !N_47.Q & !N_48.Q
+    # N_44.Q & !N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q ; (5 pterms, 8 signals)
+N_23.X2 = !N_44.Q & N_45.Q & N_46.Q ; (1 pterm, 3 signals)
+
+N_25 = N_44.Q & N_45.Q & N_48.Q & N_49.Q
+    # N_44.Q & N_45.Q & N_48.Q & N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q
+    # N_44.Q & N_45.Q & N_47.Q ; (4 pterms, 7 signals)
+
+N_27 = 0 ; (0 pterm, 0 signal)
+
+N_4.D = C0_q3.Q & !C0_q2.Q & !C0_q1.Q & C0_q0.Q ; (1 pterm, 4 signals)
+N_4.C = CLK1 ; (1 pterm, 1 signal)
+
+N_40.D = !N_40.Q ; (1 pterm, 1 signal)
+N_40.C = CLK1 ; (1 pterm, 1 signal)
+
+N_43.D = !N_43.Q ; (1 pterm, 1 signal)
+N_43.C = CLK ; (1 pterm, 1 signal)
+N_43.AR = 0 ; (0 pterm, 0 signal)
+
+N_44.D = !AD7 ; (1 pterm, 1 signal)
+N_44.C = N_43.Q ; (1 pterm, 1 signal)
+
+N_45.D = !AD6 ; (1 pterm, 1 signal)
+N_45.C = N_43.Q ; (1 pterm, 1 signal)
+
+N_46.D = !AD5 ; (1 pterm, 1 signal)
+N_46.C = N_43.Q ; (1 pterm, 1 signal)
+
+N_47.D = !AD4 ; (1 pterm, 1 signal)
+N_47.C = N_43.Q ; (1 pterm, 1 signal)
+
+N_48.D = !AD3 ; (1 pterm, 1 signal)
+N_48.C = N_43.Q ; (1 pterm, 1 signal)
+
+N_49.D = !AD2 ; (1 pterm, 1 signal)
+N_49.C = N_43.Q ; (1 pterm, 1 signal)
+
+N_5.D = KEY2 ; (1 pterm, 1 signal)
+N_5.C = N_4.Q ; (1 pterm, 1 signal)
+
+N_50.D = !AD1 ; (1 pterm, 1 signal)
+N_50.C = N_43.Q ; (1 pterm, 1 signal)
+
+N_51.D = !AD0 ; (1 pterm, 1 signal)
+N_51.C = N_43.Q ; (1 pterm, 1 signal)
+
+N_52.D = !N_52.Q ; (1 pterm, 1 signal)
+N_52.C = !N_40.Q ; (1 pterm, 1 signal)
+
+N_53.D = !N_52.Q & N_53.Q
+    # N_52.Q & !N_53.Q ; (2 pterms, 2 signals)
+N_53.C = !N_40.Q ; (1 pterm, 1 signal)
+
+N_56 = !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+       & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+       & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & N_50.Q
+       & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & N_50.Q
+       & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+       & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+       & !N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q
+       & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q
+       & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+       & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+       & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q
+       & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q
+       & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q
+       & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+       & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_49.Q & !N_50.Q
+       & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+       & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_49.Q & !N_50.Q
+       & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+       & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+       & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q
+       & N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+       & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+       & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q
+       & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q & N_51.Q ; (47 pterms, 8 signals)
+
+N_57.X1 = !N_44.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_49.Q & !N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_49.Q & !N_50.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_50.Q & N_51.Q
+    # N_44.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_45.Q & N_47.Q & N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # N_45.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_48.Q & N_49.Q & !N_50.Q
+    # !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_45.Q & N_46.Q & N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+    # N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_48.Q & !N_49.Q & !N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_48.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_48.Q & !N_49.Q & N_50.Q
+    # !N_44.Q & N_45.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_48.Q & !N_49.Q & N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_48.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_47.Q & N_48.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+    # N_45.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q
+    # !N_45.Q & N_46.Q & N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_50.Q & N_51.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q ; (62 pterms, 8 signals)
+N_57.X2 = N_44.Q & N_46.Q & N_48.Q ; (1 pterm, 3 signals)
+
+N_58.X1 = !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & !N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & !N_50.Q & !N_51.Q
+    # !N_45.Q & !N_46.Q & N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_48.Q & N_49.Q & !N_51.Q
+    # N_45.Q & N_46.Q & N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_49.Q & N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_48.Q & N_49.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & N_51.Q
+    # !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & N_51.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_48.Q & !N_49.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & N_50.Q
+       & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_48.Q & !N_49.Q & N_51.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q & N_51.Q
+    # !N_44.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_49.Q & N_50.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q & N_50.Q ; (58 pterms, 8 signals)
+N_58.X2 = N_47.Q & N_49.Q & !N_51.Q ; (1 pterm, 3 signals)
+
+N_59 = !( !N_44.Q & !N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & N_47.Q & N_48.Q & N_50.Q
+    # !N_44.Q & N_45.Q & !N_47.Q & !N_48.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & N_47.Q & N_48.Q & N_49.Q
+    # !N_44.Q & N_45.Q & !N_47.Q & !N_48.Q & !N_49.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_49.Q
+    # !N_45.Q & N_46.Q & N_47.Q & N_48.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_50.Q & !N_51.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q
+    # !N_44.Q & N_45.Q & !N_47.Q & !N_48.Q & !N_51.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q
+    # N_44.Q & !N_45.Q & N_46.Q
+    # !N_44.Q & N_45.Q & !N_46.Q ) ; (13 pterms, 8 signals)
+
+N_6.D = !KEY1 ; (1 pterm, 1 signal)
+N_6.C = N_4.Q ; (1 pterm, 1 signal)
+
+N_60.X1 = !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q
+       & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & N_50.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q
+    # N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_49.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q ; (15 pterms, 8 signals)
+N_60.X2 = !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_48.Q ; (1 pterm, 5 signals)
+
+N_61.X1 = !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_48.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & !N_47.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_50.Q
+    # N_44.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q
+    # N_44.Q & N_45.Q & N_46.Q & !N_47.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_47.Q & N_48.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_47.Q & N_48.Q & N_49.Q
+    # N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_50.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q
+    # N_44.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_51.Q
+    # N_44.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q ; (18 pterms, 8 signals)
+N_61.X2 = !N_44.Q & !N_46.Q & N_47.Q ; (1 pterm, 3 signals)
+
+N_62 = !( N_44.Q & N_45.Q & !N_47.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_49.Q
+    # !N_44.Q & N_45.Q & !N_47.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_48.Q & N_50.Q & N_51.Q
+    # N_45.Q & !N_46.Q & N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & !N_50.Q
+    # N_44.Q & !N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q
+    # !N_44.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_49.Q & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_48.Q & N_49.Q & N_50.Q
+    # !N_45.Q & !N_46.Q & N_47.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_47.Q & N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_48.Q & N_49.Q & N_51.Q
+    # N_44.Q & N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q
+    # !N_44.Q & N_46.Q & N_48.Q & !N_49.Q & N_50.Q
+    # !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q
+    # !N_44.Q & !N_45.Q & N_47.Q & N_48.Q & !N_49.Q
+    # !N_44.Q & N_45.Q & N_48.Q & N_49.Q
+    # N_44.Q & N_45.Q & !N_47.Q & !N_48.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & N_48.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q
+    # N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # !N_45.Q & N_46.Q & !N_47.Q & N_48.Q & N_49.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q
+    # N_44.Q & !N_46.Q & !N_48.Q & !N_49.Q ) ; (30 pterms, 8 signals)
+
+N_63.X1 = N_44.Q & !N_45.Q & !N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+    # N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_49.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q
+    # !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & !N_47.Q & N_48.Q & N_49.Q & !N_50.Q
+    # !N_44.Q & !N_45.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & !N_47.Q & N_49.Q & N_50.Q
+    # !N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_47.Q & N_48.Q & N_49.Q & N_50.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_49.Q & !N_50.Q
+    # N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & N_49.Q
+    # !N_44.Q & !N_45.Q & N_47.Q & N_48.Q & !N_49.Q & N_50.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_49.Q & !N_50.Q
+    # !N_44.Q & !N_45.Q & !N_46.Q & N_47.Q & !N_48.Q & !N_49.Q
+    # !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & !N_51.Q
+    # !N_45.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_47.Q & !N_48.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_50.Q & N_51.Q
+    # N_44.Q & !N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_49.Q & N_51.Q
+    # !N_44.Q & !N_45.Q & N_46.Q & N_47.Q & N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_46.Q & N_47.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & !N_46.Q & N_47.Q & N_48.Q & N_49.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_48.Q & !N_49.Q & N_50.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & !N_49.Q
+    # !N_44.Q & N_45.Q & N_46.Q & !N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & !N_46.Q & N_48.Q & !N_49.Q & !N_50.Q
+    # N_44.Q & N_45.Q & !N_47.Q & N_48.Q & !N_49.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & !N_47.Q & N_48.Q & N_49.Q
+    # N_44.Q & N_45.Q & !N_48.Q & N_49.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_49.Q & N_50.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_49.Q & !N_50.Q
+    # N_45.Q & N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & !N_50.Q & !N_51.Q
+    # N_45.Q & !N_46.Q & !N_47.Q & !N_48.Q & N_49.Q & N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_47.Q & !N_48.Q & !N_49.Q & N_51.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & !N_50.Q & !N_51.Q
+    # !N_44.Q & N_45.Q & N_48.Q & N_49.Q & !N_50.Q
+    # !N_44.Q & N_45.Q & N_47.Q & !N_49.Q & N_50.Q & N_51.Q
+    # !N_44.Q & N_45.Q & !N_46.Q & N_48.Q & N_49.Q
+    # !N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_48.Q & N_50.Q & !N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_47.Q & N_49.Q & N_50.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_47.Q & !N_48.Q & N_49.Q & N_50.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & N_49.Q & N_51.Q
+    # N_44.Q & N_45.Q & N_46.Q & N_47.Q & !N_48.Q & N_49.Q ; (47 pterms, 8 signals)
+N_63.X2 = N_45.Q & N_47.Q ; (1 pterm, 2 signals)
+
+N_7.D = N_5.Q ; (1 pterm, 1 signal)
+N_7.C = N_4.Q ; (1 pterm, 1 signal)
+
+N_8.D = N_6.Q ; (1 pterm, 1 signal)
+N_8.C = N_4.Q ; (1 pterm, 1 signal)
+
+N_9.D = N_8.Q ; (1 pterm, 1 signal)
+N_9.C = N_4.Q ; (1 pterm, 1 signal)
+
+OUT_A.D = !OUT_A.Q ; (1 pterm, 1 signal)
+OUT_A.C = N_5.Q & N_7.Q & N_10.Q ; (1 pterm, 3 signals)
+OUT_A.AP = N_6.Q & N_8.Q & N_9.Q ; (1 pterm, 3 signals)
+
+OUT_B.D = OUT_A.Q & OUT_B.Q
+    # !OUT_A.Q & !OUT_B.Q ; (2 pterms, 2 signals)
+OUT_B.C = N_5.Q & N_7.Q & N_10.Q ; (1 pterm, 3 signals)
+OUT_B.AP = N_6.Q & N_8.Q & N_9.Q ; (1 pterm, 3 signals)
+
+START.D = !START.Q & CLOCK.Q & N_43.Q
+    # START.Q & !CLOCK.Q
+    # START.Q & !N_43.Q ; (3 pterms, 3 signals)
+START.C = CLK ; (1 pterm, 1 signal)
+START.AP = 0 ; (0 pterm, 0 signal)
+
+point = !( N_52.Q & !N_53.Q ) ; (1 pterm, 2 signals)
+

@@ -1,0 +1,684 @@
+|--------------------------------------------------- ----------|
+|- ispLEVER Classic 2.1.00.02.49.20 Equations File            -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+Equations:
+
+A0_dout_22reg.D = !( !key_in & !A0_pre_s_i0.Q ) ; (1 pterm, 2 signals)
+A0_dout_22reg.C = clk1 ; (1 pterm, 1 signal)
+A0_dout_22reg.CE = A0_dout_22reg_0 ; (1 pterm, 1 signal)
+
+A0_dout_22reg_0 = A0_pre_s_i1.Q & !A0_pre_s_i0.Q
+    # key_in & !A0_pre_s_i1.Q & A0_pre_s_i0.Q ; (2 pterms, 3 signals)
+
+A0_next_s_i0.D = !( !key_in & !A0_pre_s_i1.Q & A0_pre_s_i0.Q ) ; (1 pterm, 3 signals)
+A0_next_s_i0.C = clk1 ; (1 pterm, 1 signal)
+A0_next_s_i0.CE = !( !key_in & A0_pre_s_i1.Q & !A0_pre_s_i0.Q ) ; (1 pterm, 3 signals)
+
+A0_next_s_i1.D = !key_in & !A0_pre_s_i1.Q & A0_pre_s_i0.Q ; (1 pterm, 3 signals)
+A0_next_s_i1.C = clk1 ; (1 pterm, 1 signal)
+A0_next_s_i1.CE = !( !key_in & A0_pre_s_i1.Q & !A0_pre_s_i0.Q ) ; (1 pterm, 3 signals)
+
+A0_pre_s_i0.D = !( reset & !A0_next_s_i0.Q ) ; (1 pterm, 2 signals)
+A0_pre_s_i0.C = clk1 ; (1 pterm, 1 signal)
+
+A0_pre_s_i1.D = reset & A0_next_s_i1.Q ; (1 pterm, 2 signals)
+A0_pre_s_i1.C = clk1 ; (1 pterm, 1 signal)
+
+B0_Clock16_94.D = B0_ClockCount_Rx_280__i5.Q & !B0_ClockCount_Rx_280__i4.Q
+       & !B0_ClockCount_Rx_280__i3.Q & B0_ClockCount_Rx_280__i2.Q
+       & B0_ClockCount_Rx_280__i1.Q & !B0_ClockCount_Rx_280__i0.Q ; (1 pterm, 6 signals)
+B0_Clock16_94.C = clk ; (1 pterm, 1 signal)
+B0_Clock16_94.CE = reset ; (1 pterm, 1 signal)
+
+B0_Clock9600_92.D = B0_ClockCount_281__i9.Q & !B0_ClockCount_281__i8.Q
+       & !B0_ClockCount_281__i7.Q & B0_ClockCount_281__i6.Q
+       & B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & !B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i2.Q
+       & !B0_ClockCount_281__i1.Q & !B0_ClockCount_281__i0.Q ; (1 pterm, 10 signals)
+B0_Clock9600_92.C = clk ; (1 pterm, 1 signal)
+B0_Clock9600_92.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i0.D = !( B0_ClockCount_281__i9.Q
+       & !B0_ClockCount_281__i8.Q & !B0_ClockCount_281__i7.Q
+       & B0_ClockCount_281__i6.Q & B0_ClockCount_281__i5.Q
+       & B0_ClockCount_281__i4.Q & !B0_ClockCount_281__i3.Q
+       & !B0_ClockCount_281__i2.Q & !B0_ClockCount_281__i1.Q
+    # B0_ClockCount_281__i0.Q ) ; (2 pterms, 10 signals)
+B0_ClockCount_281__i0.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i0.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i1.D = B0_ClockCount_281__i1.Q & !B0_ClockCount_281__i0.Q
+    # !B0_ClockCount_281__i1.Q & B0_ClockCount_281__i0.Q ; (2 pterms, 2 signals)
+B0_ClockCount_281__i1.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i1.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i2.D = !B0_ClockCount_281__i2.Q & B0_ClockCount_281__i1.Q
+       & B0_ClockCount_281__i0.Q
+    # B0_ClockCount_281__i2.Q & !B0_ClockCount_281__i1.Q
+    # B0_ClockCount_281__i2.Q & !B0_ClockCount_281__i0.Q ; (3 pterms, 3 signals)
+B0_ClockCount_281__i2.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i2.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i3.D = !B0_ClockCount_281__i3.Q & B0_ClockCount_281__i2.Q
+       & B0_ClockCount_281__i1.Q & B0_ClockCount_281__i0.Q
+    # B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i1.Q
+    # B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i2.Q
+    # B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i0.Q ; (4 pterms, 4 signals)
+B0_ClockCount_281__i3.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i3.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i4.T = B0_ClockCount_281__i9.Q & !B0_ClockCount_281__i8.Q
+       & !B0_ClockCount_281__i7.Q & B0_ClockCount_281__i6.Q
+       & B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & !B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i2.Q
+       & !B0_ClockCount_281__i1.Q & !B0_ClockCount_281__i0.Q
+    # B0_ClockCount_281__i3.Q & B0_ClockCount_281__i2.Q
+       & B0_ClockCount_281__i1.Q & B0_ClockCount_281__i0.Q ; (2 pterms, 10 signals)
+B0_ClockCount_281__i4.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i4.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i5.T = B0_ClockCount_281__i9.Q & !B0_ClockCount_281__i8.Q
+       & !B0_ClockCount_281__i7.Q & B0_ClockCount_281__i6.Q
+       & B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & !B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i2.Q
+       & !B0_ClockCount_281__i1.Q & !B0_ClockCount_281__i0.Q
+    # B0_ClockCount_281__i4.Q & B0_ClockCount_281__i3.Q
+       & B0_ClockCount_281__i2.Q & B0_ClockCount_281__i1.Q
+       & B0_ClockCount_281__i0.Q ; (2 pterms, 10 signals)
+B0_ClockCount_281__i5.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i5.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i6.T = B0_ClockCount_281__i9.Q & !B0_ClockCount_281__i8.Q
+       & !B0_ClockCount_281__i7.Q & B0_ClockCount_281__i6.Q
+       & B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & !B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i2.Q
+       & !B0_ClockCount_281__i1.Q & !B0_ClockCount_281__i0.Q
+    # B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & B0_ClockCount_281__i3.Q & B0_ClockCount_281__i2.Q
+       & B0_ClockCount_281__i1.Q & B0_ClockCount_281__i0.Q ; (2 pterms, 10 signals)
+B0_ClockCount_281__i6.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i6.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i7.T = B0_ClockCount_281__i6.Q & B0_ClockCount_281__i5.Q
+       & B0_ClockCount_281__i4.Q & B0_ClockCount_281__i3.Q
+       & B0_ClockCount_281__i2.Q & B0_ClockCount_281__i1.Q
+       & B0_ClockCount_281__i0.Q ; (1 pterm, 7 signals)
+B0_ClockCount_281__i7.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i7.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i8.T = B0_ClockCount_281__i7.Q & B0_ClockCount_281__i6.Q
+       & B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & B0_ClockCount_281__i3.Q & B0_ClockCount_281__i2.Q
+       & B0_ClockCount_281__i1.Q & B0_ClockCount_281__i0.Q ; (1 pterm, 8 signals)
+B0_ClockCount_281__i8.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i8.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_281__i9.T = B0_ClockCount_281__i9.Q & !B0_ClockCount_281__i8.Q
+       & !B0_ClockCount_281__i7.Q & B0_ClockCount_281__i6.Q
+       & B0_ClockCount_281__i5.Q & B0_ClockCount_281__i4.Q
+       & !B0_ClockCount_281__i3.Q & !B0_ClockCount_281__i2.Q
+       & !B0_ClockCount_281__i1.Q & !B0_ClockCount_281__i0.Q
+    # B0_ClockCount_281__i8.Q & B0_ClockCount_281__i7.Q
+       & B0_ClockCount_281__i6.Q & B0_ClockCount_281__i5.Q
+       & B0_ClockCount_281__i4.Q & B0_ClockCount_281__i3.Q
+       & B0_ClockCount_281__i2.Q & B0_ClockCount_281__i1.Q
+       & B0_ClockCount_281__i0.Q ; (2 pterms, 10 signals)
+B0_ClockCount_281__i9.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_281__i9.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_Rx_280__i0.D = !( B0_ClockCount_Rx_280__i5.Q
+       & !B0_ClockCount_Rx_280__i4.Q & !B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+    # B0_ClockCount_Rx_280__i0.Q ) ; (2 pterms, 6 signals)
+B0_ClockCount_Rx_280__i0.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i0.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_Rx_280__i1.D = !( B0_ClockCount_Rx_280__i5.Q
+       & !B0_ClockCount_Rx_280__i4.Q & !B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+    # !B0_ClockCount_Rx_280__i1.Q & !B0_ClockCount_Rx_280__i0.Q
+    # B0_ClockCount_Rx_280__i1.Q & B0_ClockCount_Rx_280__i0.Q ) ; (3 pterms, 6 signals)
+B0_ClockCount_Rx_280__i1.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i1.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_Rx_280__i2.D = !( B0_ClockCount_Rx_280__i5.Q
+       & !B0_ClockCount_Rx_280__i4.Q & !B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i1.Q & !B0_ClockCount_Rx_280__i0.Q
+    # !B0_ClockCount_Rx_280__i2.Q & !B0_ClockCount_Rx_280__i1.Q
+    # B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+       & B0_ClockCount_Rx_280__i0.Q
+    # !B0_ClockCount_Rx_280__i2.Q & !B0_ClockCount_Rx_280__i0.Q ) ; (4 pterms, 6 signals)
+B0_ClockCount_Rx_280__i2.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i2.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_Rx_280__i3.D = !B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+       & B0_ClockCount_Rx_280__i0.Q
+    # B0_ClockCount_Rx_280__i3.Q & !B0_ClockCount_Rx_280__i1.Q
+    # B0_ClockCount_Rx_280__i3.Q & !B0_ClockCount_Rx_280__i2.Q
+    # B0_ClockCount_Rx_280__i3.Q & !B0_ClockCount_Rx_280__i0.Q ; (4 pterms, 4 signals)
+B0_ClockCount_Rx_280__i3.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i3.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_Rx_280__i4.D.X1 = B0_ClockCount_Rx_280__i4.Q ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i4.D.X2 = B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+       & B0_ClockCount_Rx_280__i0.Q ; (1 pterm, 4 signals)
+B0_ClockCount_Rx_280__i4.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i4.CE = reset ; (1 pterm, 1 signal)
+
+B0_ClockCount_Rx_280__i5.T = B0_ClockCount_Rx_280__i5.Q
+       & !B0_ClockCount_Rx_280__i4.Q & !B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+       & !B0_ClockCount_Rx_280__i0.Q
+    # B0_ClockCount_Rx_280__i4.Q & B0_ClockCount_Rx_280__i3.Q
+       & B0_ClockCount_Rx_280__i2.Q & B0_ClockCount_Rx_280__i1.Q
+       & B0_ClockCount_Rx_280__i0.Q ; (2 pterms, 6 signals)
+B0_ClockCount_Rx_280__i5.C = clk ; (1 pterm, 1 signal)
+B0_ClockCount_Rx_280__i5.CE = reset ; (1 pterm, 1 signal)
+
+B0_Data1_i1reg.D = B0_Rx_Data_i0_i0.Q ; (1 pterm, 1 signal)
+B0_Data1_i1reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data1_i1reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data1_i2reg.D = B0_Rx_Data_i0_i1.Q ; (1 pterm, 1 signal)
+B0_Data1_i2reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data1_i2reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data1_i3reg.D = B0_Rx_Data_i0_i2.Q ; (1 pterm, 1 signal)
+B0_Data1_i3reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data1_i3reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data1_i4reg.D = B0_Rx_Data_i0_i3.Q ; (1 pterm, 1 signal)
+B0_Data1_i4reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data1_i4reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data2_i1reg.D = B0_Rx_Data_i0_i4.Q ; (1 pterm, 1 signal)
+B0_Data2_i1reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data2_i1reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data2_i2reg.D = B0_Rx_Data_i0_i5.Q ; (1 pterm, 1 signal)
+B0_Data2_i2reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data2_i2reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data2_i3reg.D = B0_Rx_Data_i0_i6.Q ; (1 pterm, 1 signal)
+B0_Data2_i3reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data2_i3reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Data2_i4reg.D = B0_Rx_Data_i0_i7.Q ; (1 pterm, 1 signal)
+B0_Data2_i4reg.C = !B0_Rx_Valid_102.Q ; (1 pterm, 1 signal)
+B0_Data2_i4reg.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Rx_Data_i0_i0.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i0.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i0.CE = reset & !B0_m_i7.Q & !B0_m_i6.Q & !B0_m_i5.Q & B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i1.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i1.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i1.CE = reset & !B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i2.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i2.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i2.CE = reset & !B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i3.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i3.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i3.CE = reset & !B0_m_i7.Q & B0_m_i6.Q & !B0_m_i5.Q & !B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i4.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i4.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i4.CE = reset & !B0_m_i7.Q & B0_m_i6.Q & !B0_m_i5.Q & B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i5.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i5.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i5.CE = reset & !B0_m_i7.Q & B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i6.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i6.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i6.CE = reset & !B0_m_i7.Q & B0_m_i6.Q & B0_m_i5.Q & B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Data_i0_i7.D = Rx ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i7.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Data_i0_i7.CE = reset & B0_m_i7.Q & !B0_m_i6.Q & !B0_m_i5.Q & !B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (1 pterm, 9 signals)
+
+B0_Rx_Valid_102.D = !( !B0_m_i7.Q & !B0_m_i6.Q & !B0_m_i5.Q & !B0_m_i4.Q
+       & !B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ) ; (1 pterm, 8 signals)
+B0_Rx_Valid_102.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_Rx_Valid_102.CE = B0_Rx_Valid_102_0 ; (1 pterm, 1 signal)
+B0_Rx_Valid_102.AR = !reset ; (1 pterm, 1 signal)
+
+B0_Rx_Valid_102_0 = B0_m_i7.Q & !B0_m_i6.Q & !B0_m_i5.Q & B0_m_i4.Q
+       & B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q
+    # B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q & B0_m_i3.Q & !B0_m_i2.Q
+       & !B0_m_i1.Q & !B0_m_i0.Q
+    # Rx & !B0_m_i7.Q & !B0_m_i6.Q & !B0_m_i5.Q & !B0_m_i4.Q & !B0_m_i3.Q
+       & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q ; (3 pterms, 9 signals)
+
+B0_Send_count_i0_i0.D = B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q
+       & !B0_Send_count_i0_i1.Q
+    # !B0_Send_count_i0_i0.Q ; (2 pterms, 4 signals)
+B0_Send_count_i0_i0.C = B0_Clock9600_92.Q ; (1 pterm, 1 signal)
+B0_Send_count_i0_i0.AR = B0_Send_en_100.Q ; (1 pterm, 1 signal)
+
+B0_Send_count_i0_i1.D = B0_Send_count_i0_i1.Q & !B0_Send_count_i0_i0.Q
+    # !B0_Send_count_i0_i1.Q & B0_Send_count_i0_i0.Q ; (2 pterms, 2 signals)
+B0_Send_count_i0_i1.C = B0_Clock9600_92.Q ; (1 pterm, 1 signal)
+B0_Send_count_i0_i1.CE = !( B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q
+       & !B0_Send_count_i0_i1.Q & B0_Send_count_i0_i0.Q ) ; (1 pterm, 4 signals)
+B0_Send_count_i0_i1.AR = B0_Send_en_100.Q ; (1 pterm, 1 signal)
+
+B0_Send_count_i0_i2.D = !B0_Send_count_i0_i2.Q & B0_Send_count_i0_i1.Q
+       & B0_Send_count_i0_i0.Q
+    # B0_Send_count_i0_i2.Q & !B0_Send_count_i0_i1.Q
+    # B0_Send_count_i0_i2.Q & !B0_Send_count_i0_i0.Q ; (3 pterms, 3 signals)
+B0_Send_count_i0_i2.C = B0_Clock9600_92.Q ; (1 pterm, 1 signal)
+B0_Send_count_i0_i2.CE = !( B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q
+       & !B0_Send_count_i0_i1.Q & B0_Send_count_i0_i0.Q ) ; (1 pterm, 4 signals)
+B0_Send_count_i0_i2.AR = B0_Send_en_100.Q ; (1 pterm, 1 signal)
+
+B0_Send_count_i0_i3.D = !B0_Send_count_i0_i3.Q & B0_Send_count_i0_i2.Q
+       & B0_Send_count_i0_i1.Q & B0_Send_count_i0_i0.Q
+    # B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i1.Q
+    # B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q
+    # B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i0.Q ; (4 pterms, 4 signals)
+B0_Send_count_i0_i3.C = B0_Clock9600_92.Q ; (1 pterm, 1 signal)
+B0_Send_count_i0_i3.CE = !( B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q
+       & !B0_Send_count_i0_i1.Q & B0_Send_count_i0_i0.Q ) ; (1 pterm, 4 signals)
+B0_Send_count_i0_i3.AR = B0_Send_en_100.Q ; (1 pterm, 1 signal)
+
+B0_Send_data_9__N_42 = !( reset & B0_Send_over_99.Q ) ; (1 pterm, 2 signals)
+
+B0_Send_data_i1.D = 1 ; (1 pterm, 0 signal)
+B0_Send_data_i1.C = A0_dout_22reg.Q ; (1 pterm, 1 signal)
+B0_Send_data_i1.AR = B0_Send_data_9__N_42 ; (1 pterm, 1 signal)
+
+B0_Send_en_100.D = 0 ; (0 pterm, 0 signal)
+B0_Send_en_100.C = A0_dout_22reg.Q ; (1 pterm, 1 signal)
+B0_Send_en_100.AP = B0_Send_data_9__N_42 ; (1 pterm, 1 signal)
+
+B0_Send_over_99.D = 0 ; (0 pterm, 0 signal)
+B0_Send_over_99.C = B0_Clock9600_92.Q ; (1 pterm, 1 signal)
+B0_Send_over_99.CE = B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q
+       & !B0_Send_count_i0_i1.Q & B0_Send_count_i0_i0.Q ; (1 pterm, 4 signals)
+B0_Send_over_99.AP = B0_Send_en_100.Q ; (1 pterm, 1 signal)
+
+B0_m_i0.D = !( Rx & !B0_m_i7.Q & !B0_m_i6.Q & !B0_m_i5.Q & !B0_m_i4.Q
+       & !B0_m_i3.Q & !B0_m_i2.Q & !B0_m_i1.Q
+    # B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q & B0_m_i3.Q & !B0_m_i2.Q
+       & !B0_m_i1.Q
+    # B0_m_i0.Q ) ; (3 pterms, 9 signals)
+B0_m_i0.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i0.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i1.D = B0_m_i1.Q & !B0_m_i0.Q
+    # !B0_m_i1.Q & B0_m_i0.Q ; (2 pterms, 2 signals)
+B0_m_i1.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i1.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i2.D = !B0_m_i2.Q & B0_m_i1.Q & B0_m_i0.Q
+    # B0_m_i2.Q & !B0_m_i1.Q
+    # B0_m_i2.Q & !B0_m_i0.Q ; (3 pterms, 3 signals)
+B0_m_i2.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i2.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i3.D.X1 = B0_m_i2.Q & B0_m_i1.Q & B0_m_i0.Q
+    # B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q & B0_m_i3.Q & !B0_m_i2.Q
+       & !B0_m_i1.Q & !B0_m_i0.Q ; (2 pterms, 8 signals)
+B0_m_i3.D.X2 = B0_m_i3.Q ; (1 pterm, 1 signal)
+B0_m_i3.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i3.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i4.D.X1 = B0_m_i4.Q ; (1 pterm, 1 signal)
+B0_m_i4.D.X2 = B0_m_i3.Q & B0_m_i2.Q & B0_m_i1.Q & B0_m_i0.Q ; (1 pterm, 4 signals)
+B0_m_i4.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i4.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i5.T = B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q & B0_m_i3.Q
+       & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q
+    # B0_m_i4.Q & B0_m_i3.Q & B0_m_i2.Q & B0_m_i1.Q & B0_m_i0.Q ; (2 pterms, 8 signals)
+B0_m_i5.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i5.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i6.T = B0_m_i5.Q & B0_m_i4.Q & B0_m_i3.Q & B0_m_i2.Q & B0_m_i1.Q
+       & B0_m_i0.Q ; (1 pterm, 6 signals)
+B0_m_i6.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i6.AR = !reset ; (1 pterm, 1 signal)
+
+B0_m_i7.T = B0_m_i7.Q & !B0_m_i6.Q & B0_m_i5.Q & !B0_m_i4.Q & B0_m_i3.Q
+       & !B0_m_i2.Q & !B0_m_i1.Q & !B0_m_i0.Q
+    # B0_m_i6.Q & B0_m_i5.Q & B0_m_i4.Q & B0_m_i3.Q & B0_m_i2.Q & B0_m_i1.Q
+       & B0_m_i0.Q ; (2 pterms, 8 signals)
+B0_m_i7.C = B0_Clock16_94.Q ; (1 pterm, 1 signal)
+B0_m_i7.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i0.D = !C0_count_186__i0.Q ; (1 pterm, 1 signal)
+C0_count_186__i0.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i0.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i1.D = C0_count_186__i1.Q & !C0_count_186__i0.Q
+    # !C0_count_186__i1.Q & C0_count_186__i0.Q ; (2 pterms, 2 signals)
+C0_count_186__i1.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i1.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i10.T = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q
+    # C0_count_186__i9.Q & C0_count_186__i8.Q & C0_count_186__i7.Q
+       & C0_count_186__i6.Q & C0_count_186__i5.Q & C0_count_186__i4.Q
+       & C0_count_186__i3.Q & C0_count_186__i2.Q & C0_count_186__i1.Q
+       & C0_count_186__i0.Q ; (2 pterms, 13 signals)
+C0_count_186__i10.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i10.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i11.T = C0_count_186__i10.Q & C0_count_186__i9.Q
+       & C0_count_186__i8.Q & C0_count_186__i7.Q & C0_count_186__i6.Q
+       & C0_count_186__i5.Q & C0_count_186__i4.Q & C0_count_186__i3.Q
+       & C0_count_186__i2.Q & C0_count_186__i1.Q & C0_count_186__i0.Q ; (1 pterm, 11 signals)
+C0_count_186__i11.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i11.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i12.T = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q
+    # C0_count_186__i11.Q & C0_count_186__i10.Q & C0_count_186__i9.Q
+       & C0_count_186__i8.Q & C0_count_186__i7.Q & C0_count_186__i6.Q
+       & C0_count_186__i5.Q & C0_count_186__i4.Q & C0_count_186__i3.Q
+       & C0_count_186__i2.Q & C0_count_186__i1.Q & C0_count_186__i0.Q ; (2 pterms, 13 signals)
+C0_count_186__i12.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i12.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i2.D = !C0_count_186__i2.Q & C0_count_186__i1.Q
+       & C0_count_186__i0.Q
+    # C0_count_186__i2.Q & !C0_count_186__i1.Q
+    # C0_count_186__i2.Q & !C0_count_186__i0.Q ; (3 pterms, 3 signals)
+C0_count_186__i2.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i2.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i3.D = !C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q
+    # C0_count_186__i3.Q & !C0_count_186__i1.Q
+    # C0_count_186__i3.Q & !C0_count_186__i2.Q
+    # C0_count_186__i3.Q & !C0_count_186__i0.Q ; (4 pterms, 4 signals)
+C0_count_186__i3.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i3.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i4.T.X1 = C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (1 pterm, 4 signals)
+C0_count_186__i4.T.X2 = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (1 pterm, 13 signals)
+C0_count_186__i4.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i4.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i5.T = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & C0_count_186__i3.Q & C0_count_186__i2.Q & C0_count_186__i1.Q
+       & C0_count_186__i0.Q
+    # C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (2 pterms, 13 signals)
+C0_count_186__i5.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i5.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i6.T = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & C0_count_186__i3.Q & C0_count_186__i2.Q & C0_count_186__i1.Q
+       & C0_count_186__i0.Q
+    # C0_count_186__i5.Q & C0_count_186__i4.Q & C0_count_186__i3.Q
+       & C0_count_186__i2.Q & C0_count_186__i1.Q & C0_count_186__i0.Q ; (2 pterms, 13 signals)
+C0_count_186__i6.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i6.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i7.T = C0_count_186__i6.Q & C0_count_186__i5.Q
+       & C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (1 pterm, 7 signals)
+C0_count_186__i7.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i7.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i8.T = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q
+    # C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (2 pterms, 13 signals)
+C0_count_186__i8.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i8.AR = !reset ; (1 pterm, 1 signal)
+
+C0_count_186__i9.T = C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q
+    # C0_count_186__i8.Q & C0_count_186__i7.Q & C0_count_186__i6.Q
+       & C0_count_186__i5.Q & C0_count_186__i4.Q & C0_count_186__i3.Q
+       & C0_count_186__i2.Q & C0_count_186__i1.Q & C0_count_186__i0.Q ; (2 pterms, 13 signals)
+C0_count_186__i9.C = clk ; (1 pterm, 1 signal)
+C0_count_186__i9.AR = !reset ; (1 pterm, 1 signal)
+
+C0_scancnt__i0.T = reset & C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (1 pterm, 14 signals)
+C0_scancnt__i0.C = clk ; (1 pterm, 1 signal)
+
+C0_scancnt__i1.D = C0_scancnt__i1.Q & !C0_scancnt__i0.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q ; (2 pterms, 2 signals)
+C0_scancnt__i1.C = clk ; (1 pterm, 1 signal)
+C0_scancnt__i1.CE = reset & C0_count_186__i12.Q & !C0_count_186__i11.Q
+       & C0_count_186__i10.Q & C0_count_186__i9.Q & C0_count_186__i8.Q
+       & !C0_count_186__i7.Q & C0_count_186__i6.Q & C0_count_186__i5.Q
+       & !C0_count_186__i4.Q & C0_count_186__i3.Q & C0_count_186__i2.Q
+       & C0_count_186__i1.Q & C0_count_186__i0.Q ; (1 pterm, 14 signals)
+
+LED_VCC1 = 0 ; (0 pterm, 0 signal)
+
+LED_VCC2 = 0 ; (0 pterm, 0 signal)
+
+LED_VCC3.D = !C0_scancnt__i1.Q & C0_scancnt__i0.Q ; (1 pterm, 2 signals)
+LED_VCC3.C = clk ; (1 pterm, 1 signal)
+LED_VCC3.CE = 1 ; (1 pterm, 0 signal)
+LED_VCC3.AR = !reset ; (1 pterm, 1 signal)
+
+LED_VCC4.D = !C0_scancnt__i1.Q & !C0_scancnt__i0.Q ; (1 pterm, 2 signals)
+LED_VCC4.C = clk ; (1 pterm, 1 signal)
+LED_VCC4.CE = 1 ; (1 pterm, 0 signal)
+LED_VCC4.AR = !reset ; (1 pterm, 1 signal)
+
+Tx.D = B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q & !B0_Send_count_i0_i1.Q
+       & B0_Send_count_i0_i0.Q
+    # !B0_Send_count_i0_i3.Q & B0_Send_count_i0_i2.Q & B0_Send_count_i0_i0.Q
+       & B0_Send_data_i1.Q
+    # !B0_Send_count_i0_i3.Q & !B0_Send_count_i0_i2.Q & B0_Send_count_i0_i1.Q
+       & B0_Send_data_i1.Q ; (3 pterms, 5 signals)
+Tx.C = B0_Clock9600_92.Q ; (1 pterm, 1 signal)
+Tx.AP = B0_Send_en_100.Q ; (1 pterm, 1 signal)
+
+a.D = C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & !B0_Data2_i3reg.Q & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i2reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i3reg.Q ; (10 pterms, 10 signals)
+a.C = clk ; (1 pterm, 1 signal)
+a.CE = 1 ; (1 pterm, 0 signal)
+a.AP = !reset ; (1 pterm, 1 signal)
+
+b.D = C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & !B0_Data2_i3reg.Q & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i2reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i3reg.Q ; (10 pterms, 10 signals)
+b.C = clk ; (1 pterm, 1 signal)
+b.CE = 1 ; (1 pterm, 0 signal)
+b.AP = !reset ; (1 pterm, 1 signal)
+
+c.D = C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i3reg.Q
+       & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q & !B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i3reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i2reg.Q ; (5 pterms, 9 signals)
+c.C = clk ; (1 pterm, 1 signal)
+c.CE = 1 ; (1 pterm, 0 signal)
+c.AP = !reset ; (1 pterm, 1 signal)
+
+d.D = C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q & B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & !B0_Data2_i3reg.Q & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i2reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i3reg.Q ; (13 pterms, 10 signals)
+d.C = clk ; (1 pterm, 1 signal)
+d.CE = 1 ; (1 pterm, 0 signal)
+d.AP = !reset ; (1 pterm, 1 signal)
+
+e.D = C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & !B0_Data2_i3reg.Q & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i3reg.Q
+       & !B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i2reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i3reg.Q & !B0_Data2_i2reg.Q
+       & B0_Data2_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i1reg.Q ; (11 pterms, 10 signals)
+e.C = clk ; (1 pterm, 1 signal)
+e.CE = 1 ; (1 pterm, 0 signal)
+e.AP = !reset ; (1 pterm, 1 signal)
+
+f.D = C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & B0_Data2_i2reg.Q
+       & B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i2reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i3reg.Q
+       & B0_Data1_i2reg.Q & !B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & B0_Data1_i1reg.Q
+    # !C0_scancnt__i1.Q & C0_scancnt__i0.Q & !B0_Data2_i3reg.Q
+       & B0_Data2_i2reg.Q & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data2_i4reg.Q
+       & B0_Data2_i3reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & B0_Data2_i2reg.Q
+       & B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & B0_Data2_i1reg.Q ; (11 pterms, 10 signals)
+f.C = clk ; (1 pterm, 1 signal)
+f.CE = 1 ; (1 pterm, 0 signal)
+f.AP = !reset ; (1 pterm, 1 signal)
+
+g.D = !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & !B0_Data1_i4reg.Q
+       & !B0_Data1_i3reg.Q & !B0_Data1_i2reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i3reg.Q
+       & B0_Data1_i2reg.Q & B0_Data1_i1reg.Q
+    # C0_scancnt__i1.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q
+    # C0_scancnt__i0.Q & !B0_Data2_i4reg.Q & !B0_Data2_i3reg.Q
+       & !B0_Data2_i2reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i4reg.Q
+       & B0_Data1_i2reg.Q
+    # !C0_scancnt__i1.Q & !C0_scancnt__i0.Q & B0_Data1_i4reg.Q
+       & B0_Data1_i3reg.Q
+    # C0_scancnt__i1.Q & B0_Data2_i4reg.Q & B0_Data2_i2reg.Q
+       & !B0_Data2_i1reg.Q
+    # C0_scancnt__i1.Q & B0_Data2_i3reg.Q & B0_Data2_i2reg.Q
+       & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & B0_Data2_i4reg.Q & B0_Data2_i2reg.Q
+    # C0_scancnt__i1.Q & B0_Data2_i4reg.Q & B0_Data2_i3reg.Q
+    # C0_scancnt__i0.Q & B0_Data2_i3reg.Q & B0_Data2_i2reg.Q
+       & B0_Data2_i1reg.Q
+    # C0_scancnt__i0.Q & B0_Data2_i4reg.Q & B0_Data2_i3reg.Q ; (12 pterms, 10 signals)
+g.C = clk ; (1 pterm, 1 signal)
+g.CE = 1 ; (1 pterm, 0 signal)
+g.AP = !reset ; (1 pterm, 1 signal)
+

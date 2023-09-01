@@ -1,0 +1,112 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Mon May 01 09:08:05 2023
+#$ TITLE lab8new.bls 
+#$ MODULE lab8new
+#$ PINS 28 clk key_out1 key_out2 key_out3 key_out4 clk1 LED0 LED1 LED2 LED3 LED4 reset a b \
+#  PointTime c d e f g LEDVCC1 LEDVCC2 LEDVCC3 LEDVCC4 key_in0 key_in1 key_in2 key_in3
+#$ NODES 55 N_16'ke'  N_17'ke'  N_18'ke'  N_19'ke'  N_20'ke'  N_21'ke'  N_22'ke'  N_23'ke'  N_15 N_14 N_12'ke'  \
+#  N_13'ke'  key_out_0_ key_out_1_ key_out_2_ key_out_3_ key_in_0_ key_in_1_ key_in_2_ \
+#  key_in_3_ led_0_ led_1_ led_2_ led_3_ led_4_ led_int_Data0_0_ led_int_Data0_1_ \
+#  led_int_Data0_2_ led_int_Data0_3_ led_int_Data1_0_ led_int_Data1_1_ \
+#  led_int_Data1_2_ led_int_Data1_3_ led_int_Data2_0_ led_int_Data2_1_ \
+#  led_int_Data2_2_ led_int_Data2_3_ N_2'ke'  N_4'ke'  I80>ZN0 I80>A0 I79>ZN0 I79>A0 I78>ZN0 \
+#  I78>A0 I77>ZN0 I77>A0 I76>ZN0 I76>A0 I75>ZN0 I75>A0 I74>ZN0 I74>A0 I73>ZN0 I73>A0
+#$ INTERFACE calculate  19 clk'i'  key_in_0_'i'  key_in_1_'i'  key_in_2_'i'  key_in_3_'i'  reset'i'  PointTime'o'  \
+#  led_int_Data0_0_'o'  led_int_Data0_1_'o'  led_int_Data0_2_'o'  led_int_Data0_3_'o'  \
+#  led_int_Data1_0_'o'  led_int_Data1_1_'o'  led_int_Data1_2_'o'  led_int_Data1_3_'o'  \
+#  led_int_Data2_0_'o'  led_int_Data2_1_'o'  led_int_Data2_2_'o'  led_int_Data2_3_'o' 
+#$ INTERFACE decode_module  15 clk'i'  key_in_0_'i'  key_in_1_'i'  key_in_2_'i'  key_in_3_'i'  reset'i'  \
+#  key_out_0_'o'  key_out_1_'o'  key_out_2_'o'  key_out_3_'o'  led_0_'o'  led_1_'o'  led_2_'o'  led_3_'o'  led_4_'o' 
+#$ INTERFACE decoder_4  8 in_0_'i'  in_1_'i'  in_2_'i'  in_3_'i'  Q0'o'  Q1'o'  Q2'o'  Q3'o' 
+#$ INTERFACE decoder_5  10 in_0_'i'  in_1_'i'  in_2_'i'  in_3_'i'  in_4_'i'  Q0'o'  Q1'o'  Q2'o'  Q3'o'  Q4'o' 
+#$ INTERFACE deshake  4 RESET'i'  din'i'  keyclk'i'  dout'o' 
+#$ INTERFACE display  29 clk'i'  num1_0_'i'  num1_1_'i'  num1_2_'i'  num1_3_'i'  num2_0_'i'  num2_1_'i'  num2_2_'i'  \
+#  num2_3_'i'  num3_0_'i'  num3_1_'i'  num3_2_'i'  num3_3_'i'  num4_0_'i'  num4_1_'i'  num4_2_'i'  num4_3_'i'  reset'i'  LED_A'o'  LED_B'o'  \
+#  LED_C'o'  LED_D'o'  LED_E'o'  LED_F'o'  LED_G'o'  LED_VCC1'o'  LED_VCC2'o'  LED_VCC3'o'  LED_VCC4'o' 
+#$ INTERFACE divider_8  3 clk'i'  reset'i'  time10ms'o' 
+#$ INTERFACE encoder  8 D0'i'  D1'i'  D2'i'  D3'i'  key_in_0_'o'  key_in_1_'o'  key_in_2_'o'  key_in_3_'o' 
+#$ INTERFACE l_inv  2 A0'i'  ZN0'o' 
+#$ INSTANCE I3 calculate 19 clk key_in_0_ key_in_1_ key_in_2_ key_in_3_ reset PointTime \
+#  led_int_Data0_0_ led_int_Data0_1_ led_int_Data0_2_ led_int_Data0_3_ \
+#  led_int_Data1_0_ led_int_Data1_1_ led_int_Data1_2_ led_int_Data1_3_ \
+#  led_int_Data2_0_ led_int_Data2_1_ led_int_Data2_2_ led_int_Data2_3_
+#$ INSTANCE I1 decode_module 15 N_14 key_in_0_ key_in_1_ key_in_2_ key_in_3_ reset \
+#  key_out_0_ key_out_1_ key_out_2_ key_out_3_ led_0_ led_1_ led_2_ led_3_ led_4_
+#$ INSTANCE I4 decoder_4 8 key_out_0_ key_out_1_ key_out_2_ key_out_3_ key_out1 \
+#  key_out2 key_out3 key_out4
+#$ INSTANCE I8 decoder_5 10 led_0_ led_1_ led_2_ led_3_ led_4_ LED0 LED1 LED2 LED3 LED4
+#$ INSTANCE I67 deshake 4 reset N_20 N_15 N_16
+#$ INSTANCE I68 deshake 4 reset N_21 N_15 N_17
+#$ INSTANCE I69 deshake 4 reset N_22 N_15 N_18
+#$ INSTANCE I70 deshake 4 reset N_23 N_15 N_19
+#$ INSTANCE I59 display 29 clk led_int_Data0_0_ led_int_Data0_1_ led_int_Data0_2_ \
+#  led_int_Data0_3_ led_int_Data1_0_ led_int_Data1_1_ led_int_Data1_2_ \
+#  led_int_Data1_3_ led_int_Data2_0_ led_int_Data2_1_ led_int_Data2_2_ \
+#  led_int_Data2_3_ led_int_Data2_0_ led_int_Data2_1_ led_int_Data2_2_ \
+#  led_int_Data2_3_ reset a b c d e f g LEDVCC1 LEDVCC2 LEDVCC3 LEDVCC4
+#$ INSTANCE I71 divider_8 3 clk1 reset N_14
+#$ INSTANCE I72 divider_8 3 clk1 reset N_15
+#$ INSTANCE I2 encoder 8 N_13 N_2 N_12 N_4 key_in_0_ key_in_1_ key_in_2_ key_in_3_
+#$ INSTANCE I73 l_inv 2 I73>A0 I73>ZN0
+#$ INSTANCE I74 l_inv 2 I74>A0 I74>ZN0
+#$ INSTANCE I75 l_inv 2 I75>A0 I75>ZN0
+#$ INSTANCE I76 l_inv 2 I76>A0 I76>ZN0
+#$ INSTANCE I77 l_inv 2 I77>A0 I77>ZN0
+#$ INSTANCE I78 l_inv 2 I78>A0 I78>ZN0
+#$ INSTANCE I79 l_inv 2 I79>A0 I79>ZN0
+#$ INSTANCE I80 l_inv 2 I80>A0 I80>ZN0
+.model lab8new
+.inputs I80>ZN0.BLIF key_in0.BLIF I79>ZN0.BLIF key_in1.BLIF I78>ZN0.BLIF \
+key_in2.BLIF I77>ZN0.BLIF key_in3.BLIF I76>ZN0.BLIF N_19.BLIF I75>ZN0.BLIF \
+N_18.BLIF I74>ZN0.BLIF N_17.BLIF I73>ZN0.BLIF N_16.BLIF
+.outputs N_23 I80>A0 N_22 I79>A0 N_21 I78>A0 N_20 I77>A0 N_13 I76>A0 N_2 \
+I75>A0 N_12 I74>A0 N_4 I73>A0
+.names I80>ZN0.BLIF N_23
+1 1
+0 0
+.names key_in0.BLIF I80>A0
+1 1
+0 0
+.names I79>ZN0.BLIF N_22
+1 1
+0 0
+.names key_in1.BLIF I79>A0
+1 1
+0 0
+.names I78>ZN0.BLIF N_21
+1 1
+0 0
+.names key_in2.BLIF I78>A0
+1 1
+0 0
+.names I77>ZN0.BLIF N_20
+1 1
+0 0
+.names key_in3.BLIF I77>A0
+1 1
+0 0
+.names I76>ZN0.BLIF N_13
+1 1
+0 0
+.names N_19.BLIF I76>A0
+1 1
+0 0
+.names I75>ZN0.BLIF N_2
+1 1
+0 0
+.names N_18.BLIF I75>A0
+1 1
+0 0
+.names I74>ZN0.BLIF N_12
+1 1
+0 0
+.names N_17.BLIF I74>A0
+1 1
+0 0
+.names I73>ZN0.BLIF N_4
+1 1
+0 0
+.names N_16.BLIF I73>A0
+1 1
+0 0
+.end

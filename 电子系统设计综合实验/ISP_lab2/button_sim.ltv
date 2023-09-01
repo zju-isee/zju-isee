@@ -1,0 +1,55 @@
+// Lattice TS Stimulus Data from the Waveform Editor
+NETWORK button
+MODULE button
+XRESET_SIGNAL !XRESET 0@0ns 1@0ns
+XRESET_SIGNAL XRESET 0@0ns 1@0ns
+VECTOR XTEST_OE PATTERN 1#0ns
+
+
+// Create Dummy Wires to Connect to signals
+
+
+
+// Code for all top level Inputs and BiDirs, etc.
+
+
+VECTOR ButtonIn PATTERN 1*(\
+ 0#0ps,\
+ 1#7500ps,\
+ 0#20000ps,\
+ 1#11500ps,\
+ 0#20000ps,\
+ 1#23000ps,\
+ 0#21000ps,\
+ 1#31000ps,\
+ 0#22500ps,\
+  0#6000ps   )
+
+VECTOR clk PATTERN 1*(\
+ 1#0ps,\
+ 0#1000ps,\
+ 4294967295*( 1#1000ps,\
+ 0#1000ps),\
+  0#1000ps   )
+
+VECTOR reset PATTERN 1*(\
+ 0#0ps,\
+ 1#98500ps,\
+ 0#16000ps,\
+  0#44500ps   )
+
+VECTOR pulse1kHz PATTERN 1*(\
+ 1#0ps,\
+ 0#10000ps,\
+ 4294967295*( 1#10000ps,\
+ 0#10000ps),\
+  0#10000ps   )
+
+
+
+FTRACE(button_sim.TRA, "%12t: %b%b%b%b->", $time, pulse1kHz, reset, clk, ButtonIn);
+SET INTERNAL_ONLY_ALL_SET$$ [pulse1kHz,reset,clk,ButtonIn]
+BREAK IF INTERNAL_ONLY_ALL_SET$$->? DO PRINT
+
+RUN
+

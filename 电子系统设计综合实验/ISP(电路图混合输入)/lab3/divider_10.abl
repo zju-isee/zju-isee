@@ -1,0 +1,19 @@
+MODULE DIVIDER_10
+
+TITLE 'This is a 10 divider'
+
+"Inputs
+clk pin;
+"Outputs
+clk_10 pin istype 'reg';
+q3..q0 NODE istype 'reg';
+count=[q3..q0];
+equations
+count.clk=clk;
+clk_10.clk=clk;
+when (count==9) then {count:=0;clk_10:= 1;}
+else {count:=count+1;clk_10:=0;} 
+
+
+END
+

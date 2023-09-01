@@ -1,0 +1,26 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Tue Mar 17 10:30:10 2020
+#$ TITLE BCD counter4
+#$ MODULE count4
+#$ JEDECFILE count4
+#$ PINS 5 R EN CLK q1 q0
+
+.model count4
+.inputs CLK.BLIF R.BLIF q1.BLIF q0.BLIF EN.BLIF
+.outputs q1.C q0.C q1.AR q0.AR q1.REG q0.REG
+.names CLK.BLIF q1.C
+1 1
+.names CLK.BLIF q0.C
+1 1
+.names R.BLIF q1.AR
+1 1
+.names R.BLIF q0.AR
+1 1
+.names q1.BLIF q0.BLIF EN.BLIF q1.REG
+1-0 1
+011 1
+101 1
+.names q0.BLIF EN.BLIF q0.REG
+01 1
+10 1
+.end

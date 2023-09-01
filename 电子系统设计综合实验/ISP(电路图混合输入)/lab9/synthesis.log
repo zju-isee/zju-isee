@@ -1,0 +1,150 @@
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
+Thu May 25 00:28:35 2023
+
+
+Command Line:  E:\Bin\lse/bin/nt/synthesis -f DISPLAY.synproj 
+
+Synthesis options:
+The -a option is ispMACH400ZE.
+The -t option is not used.
+The -d option is LC4256V.
+Using default performance grade 6.
+                                                          
+
+##########################################################
+
+### Lattice Family : ispMACH400ZE
+
+### Device  : LC4256V
+
+### Package : 
+
+##########################################################
+
+                                                          
+
+Optimization goal = Area
+Top-level module name = DISPLAY.
+WARNING - synthesis: Ignoring Frequency option in Area Mode. Setting to default frequency of 1.0 MHz.
+WARNING - synthesis: Ignoring SDC constraints in Area Mode!
+Target frequency = 1.000000 MHz.
+Timing path count = 3
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+Use IO Insertion = TRUE
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+Output EDIF file name = DISPLAY.edi.
+WARNING - synthesis: Option -force_gsr will be set to false when option -output_edif/-ngo are set
+The -comp option is FALSE.
+The -syn option is FALSE.
+Verilog design file = lab9.h
+Verilog design file = display.v
+-sdc option: SDC file input not used.
+-lpf option: Output file option is not used.
+Hardtimer checking is enabled (default). The -dt option is not used.
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Technology check ok...
+
+Analyzing Verilog file E:/Bin/lse/userware/NT/SYNTHESIS_HEADERS/mach.v. VERI-1482
+Compile design.
+Compile Design Begin
+Analyzing Verilog file lab9.h. VERI-1482
+Analyzing Verilog file display.v. VERI-1482
+Analyzing Verilog file E:/Bin/lse/userware/NT/SYNTHESIS_HEADERS/mach.v. VERI-1482
+Top module name (Verilog): DISPLAY
+INFO - synthesis: display.v(1): compiling module DISPLAY. VERI-1018
+WARNING - synthesis: display.v(23): expression size 32 truncated to fit in target size 2. VERI-1209
+WARNING - synthesis: display.v(25): expression size 32 truncated to fit in target size 13. VERI-1209
+Loading NGL library 'E:/Bin/lse/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'E:/Bin/lse/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'xo2c640.nph' in environment: E:/Bin/lse.
+Package Status:                     Final          Version 1.36.
+Top-level module name = DISPLAY.
+INFO - synthesis: Extracted state machine for register 'scancnt' with sequential encoding
+State machine has 4 reachable states with original encodings of:
+
+ 00 
+
+ 01 
+
+ 10 
+
+ 11 
+
+
+
+
+WARNING - synthesis: display.v(343): Register LED_VCC2_116 is stuck at Zero. VDB-5013
+Applying 1.000000 MHz constraint to all clocks
+
+WARNING - synthesis: No .lpf file will be written because the -lpf option is not used or is set to zero.
+Results of NGD DRC are available in DISPLAY_drc.log.
+
+################### Begin Area Report (DISPLAY)######################
+Number of register bits => 24 of 880 (2 % )
+AND2 => 124
+AND3 => 20
+AND4 => 3
+AND6 => 2
+DFF => 1
+DFFC => 1
+DFFCR => 2
+DFFCS => 7
+DFFR => 13
+GND => 1
+IBUF => 18
+INV => 36
+OBUF => 11
+OR2 => 69
+OR3 => 2
+VCC => 1
+XOR2 => 22
+################### End Area Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 1
+  Net : clk_c, loads : 24
+Clock Enable Nets
+Number of Clock Enables: 0
+Top 0 highest fanout Clock Enables:
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : reset_c, loads : 23
+  Net : n25_adj_2, loads : 12
+  Net : pwr, loads : 9
+  Net : num3_c_3, loads : 8
+  Net : num3_c_2, loads : 8
+  Net : num4_c_2, loads : 8
+  Net : LED_VCC3_N_103, loads : 8
+  Net : LED_VCC4_N_106, loads : 8
+  Net : num1_c_0, loads : 7
+  Net : num2_c_0, loads : 7
+################### End Clock Report ##################
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 1000.000000 -name  |             |             |
+clk0 [get_nets clk_c]                   |            -|            -|     0  
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Peak Memory Usage: 33.445  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 0.422  secs
+--------------------------------------------------------------

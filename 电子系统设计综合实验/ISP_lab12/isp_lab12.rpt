@@ -1,0 +1,1340 @@
+|--------------------------------------------------------------|
+|- ispLEVER Classic 2.1.00.02.49.20 Fitter Report File        -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+
+
+The Basic/Detailed Report Format can be selected in the dialog box
+Tools->Fitter Report File Format...
+
+Project_Summary
+~~~~~~~~~~~~~~~
+Project Name         :  isp_lab12
+Project Path         :  D:\MyDucuments\_Junior_1\ElectricSystemDesign\ISP_lab12
+Project Fitted on    :  Sat May 27 22:50:47 2023
+
+Device               :  M4256_96
+Package              :  144
+GLB Input Mux Size   :  33
+Available Blocks     :  16
+Speed                :  -7.5
+Part Number          :  LC4256V-75T144I
+Source Format        :  Schematic_Verilog_HDL
+
+
+// Project 'isp_lab12' Fit Successfully! //
+
+
+Compilation_Times
+~~~~~~~~~~~~~~~~~
+Prefit Time                     0 secs
+Load Design Time                0.05 secs
+Partition Time                  0.06 secs
+Place Time                      0.00 secs
+Route Time                      0.00 secs
+Total Fit Time                  00:00:01
+
+
+Design_Summary
+~~~~~~~~~~~~~~
+Total Input Pins                2
+Total Logic Functions           73
+  Total Output Pins             16
+  Total Bidir I/O Pins          0
+  Total Buried Nodes            57
+Total Flip-Flops                54
+  Total D Flip-Flops            29
+  Total T Flip-Flops            25
+  Total Latches                 0
+Total Product Terms             340
+
+Total Reserved Pins             0
+Total Locked Pins               18
+Total Locked Nodes              0
+
+Total Unique Output Enables     0
+Total Unique Clocks             1
+Total Unique Clock Enables      2
+Total Unique Resets             1
+Total Unique Presets            1
+
+Fmax Logic Levels               2
+
+
+Device_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~~~~
+                                 Device
+                                 Total    Used   Not Used   Utilization
+-----------------------------------------------------------------------
+Dedicated Pins
+  Clock/Input Pins                  4        1      3    -->    25
+  Input-Only Pins                  10        0     10    -->     0
+  I/O / Enable Pins                 2        0      2    -->     0
+I/O Pins                           94       17     77    -->    18
+Logic Functions                   256       73    183    -->    28
+  Input Registers                  96        0     96    -->     0
+
+GLB Inputs                        576      204    372    -->    35
+Logical Product Terms            1280      220   1060    -->    17
+Occupied GLBs                      16       14      2    -->    87
+Macrocells                        256       73    183    -->    28
+
+Control Product Terms:
+  GLB Clock/Clock Enables          16        3     13    -->    18
+  GLB Reset/Presets                16        0     16    -->     0
+  Macrocell Clocks                256        0    256    -->     0
+  Macrocell Clock Enables         256        0    256    -->     0
+  Macrocell Enables               256        0    256    -->     0
+  Macrocell Resets                256        0    256    -->     0
+  Macrocell Presets               256        0    256    -->     0
+
+Global Routing Pool               356       66    290    -->    18
+  GRP from IFB                     ..        1     ..    -->    ..
+    (from input signals)           ..        1     ..    -->    ..
+    (from output signals)          ..        0     ..    -->    ..
+    (from bidir signals)           ..        0     ..    -->    ..
+  GRP from MFB                     ..       65     ..    -->    ..
+----------------------------------------------------------------------
+
+<Note> 1 : The available PT is the product term that has not been used.
+<Note> 2 : IFB is I/O feedback.
+<Note> 3 : MFB is macrocell feedback.
+
+
+
+GLB_Resource_Summary
+~~~~~~~~~~~~~~~~~~~~
+                                                                                     # of PT
+               ---  Fanin  ---    I/O    Input  Macrocells       Macrocells   Logic  clusters
+             Unique Shared Total  Pins    Regs Used Inaccessible  available    PTs   used
+-------------------------------------------------------------------------------------------
+Maximum
+  GLB                      36      *(1)     8   --     --             16       80       16
+-------------------------------------------------------------------------------------------
+  GLB    A     12     0    12      0/6      0    1      0             15       14        3
+  GLB    B     12     0    12      0/6      0    1      0             15       15        3
+  GLB    C      1     5     6      0/6      0    4      0             12       10        4
+  GLB    D     12     0    12      0/6      0    1      0             15       10        2
+-------------------------------------------------------------------------------------------
+  GLB    E      0     0     0      0/6      0    0      0             16        0        0
+  GLB    F      0     0     0      0/6      0    0      0             16        0        0
+  GLB    G      2    12    14      2/6      0    2      0             14       28        6
+  GLB    H      4    12    16      6/6      0    6      0             10       41       10
+-------------------------------------------------------------------------------------------
+  GLB    I      6    17    23      6/6      0   13      0              3       18       13
+  GLB    J      0    29    29      3/6      0   12      0              4       20       12
+  GLB    K     12     0    12      0/6      0    1      0             15       14        3
+  GLB    L      3     0     3      0/6      0    1      0             15        2        1
+-------------------------------------------------------------------------------------------
+  GLB    M      4    14    18      0/6      0   11      0              5       16       11
+  GLB    N      4    26    30      0/6      0   14      0              2       18       14
+  GLB    O      5     4     9      0/6      0    3      0             13        6        3
+  GLB    P      4     4     8      0/6      0    3      0             13        8        3
+-------------------------------------------------------------------------------------------
+TOTALS:        81   123   204     17/96     0   73      0            183      220       88
+
+<Note> 1 : For ispMACH 4000 devices, the number of IOs depends on the GLB.
+<Note> 2 : Four rightmost columns above reflect last status of the placement process.
+
+
+
+GLB_Control_Summary
+~~~~~~~~~~~~~~~~~~~
+           Shared Shared | Mcell  Mcell  Mcell  Mcell  Mcell 
+           Clk/CE Rst/Pr | Clock  CE     Enable Reset  Preset
+------------------------------------------------------------------------------
+Maximum
+  GLB        1      1        16     16     16     16     16  
+==============================================================================
+  GLB    A   0      0         0      0      0      0      0
+  GLB    B   0      0         0      0      0      0      0
+  GLB    C   1      0         0      0      0      0      0
+  GLB    D   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    E   0      0         0      0      0      0      0
+  GLB    F   0      0         0      0      0      0      0
+  GLB    G   0      0         0      0      0      0      0
+  GLB    H   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    I   1      0         0      0      0      0      0
+  GLB    J   1      0         0      0      0      0      0
+  GLB    K   0      0         0      0      0      0      0
+  GLB    L   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+  GLB    M   0      0         0      0      0      0      0
+  GLB    N   0      0         0      0      0      0      0
+  GLB    O   0      0         0      0      0      0      0
+  GLB    P   0      0         0      0      0      0      0
+------------------------------------------------------------------------------
+
+<Note> 1 : For ispMACH 4000 devices, the number of output enables depends on the GLB.
+
+
+
+Optimizer_and_Fitter_Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pin Assignment :                       Yes
+Group Assignment :                     No
+Pin Reservation :                      No
+
+@Ignore_Project_Constraints :
+  Pin Assignments :                    No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+  Group Assignments :                  No
+  Macrocell Assignment :               No
+      Keep Block Assignment            --
+      Keep Segment Assignment          --
+
+@Backannotate_Project_Constraints
+  Pin Assignments :                    No
+  Pin And Block Assignments :          No
+  Pin, Macrocell and Block :           No
+
+@Timing_Constraints :                  No
+
+@Global_Project_Optimization :
+  Balanced Partitioning :              Yes
+  Spread Placement :                   Yes
+
+  Note :
+    Pack Design :
+       Balanced Partitioning = No
+       Spread Placement      = No
+    Spread Design :
+       Balanced Partitioning = Yes
+       Spread Placement      = Yes
+
+
+@Logic_Synthesis :
+  Logic Reduction :                    Yes
+  Node Collapsing :                    FMAX
+  Fmax_Logic_Level :                   1
+  D/T Synthesis :                      Yes
+  XOR Synthesis :                      Yes
+  Max. P-Term for Collapsing :         16
+  Max. P-Term for Splitting :          80
+  Max Symbols :                        24
+
+@Utilization_options
+  Max. % of Macrocells used :          100
+@Usercode                               (HEX)
+@IO_Types                              Default = LVCMOS18 (2)
+@Output_Slew_Rate                      Default = FAST (2)
+@Power                                 Default = HIGH (2)
+@Pull                                  Default = PULLUP_UP (2)
+@Fast_Bypass                           Default = None (2)
+@ORP_Bypass                            Default = None
+@Input_Registers                       Default = None (2)
+@Register_Powerup                      Default = None
+
+Device Options:
+<Note> 1 : Reserved unused I/Os can be independently driven to Low or High, and does not
+           follow the drive level set for the Global Configure Unused I/O Option.
+<Note> 2 : For user-specified constraints on individual signals, refer to the Output,
+           Bidir and Buried Signal Lists.
+
+
+
+Pinout_Listing
+~~~~~~~~~~~~~~
+      | Pin   | Bank |GLB |Assigned|                 | Signal|
+Pin No| Type  |Number|Pad |Pin     |     I/O Type    | Type  | Signal name
+-------------------------------------------------------------------------------
+1     | GND   |   -  |    |        |                 |       |
+2     | TDI   |   -  |    |        |                 |       |
+3     |VCCIO0 |   -  |    |        |                 |       |
+4     |  I_O  |   0  |C12 |        |                 |       |
+5     |  I_O  |   0  |C10 |        |                 |       |
+6     |  I_O  |   0  |C8  |        |                 |       |
+7     |  I_O  |   0  |C6  |        |                 |       |
+8     |  I_O  |   0  |C4  |        |                 |       |
+9     |  I_O  |   0  |C2  |        |                 |       |
+10    |GNDIO0 |   -  |    |        |                 |       |
+11    |  I_O  |   0  |D14 |        |                 |       |
+12    |  I_O  |   0  |D12 |        |                 |       |
+13    |  I_O  |   0  |D10 |        |                 |       |
+14    |  I_O  |   0  |D8  |        |                 |       |
+15    |  I_O  |   0  |D6  |        |                 |       |
+16    |  I_O  |   0  |D4  |        |                 |       |
+17    | IN0   |   0  |    |        |                 |       |
+18    | NC    |   -  |    |        |                 |       |
+19    |VCCIO0 |   -  |    |        |                 |       |
+20    | IN1   |   0  |    |        |                 |       |
+21    |  I_O  |   0  |E2  |        |                 |       |
+22    |  I_O  |   0  |E4  |        |                 |       |
+23    |  I_O  |   0  |E6  |        |                 |       |
+24    |  I_O  |   0  |E8  |        |                 |       |
+25    |  I_O  |   0  |E10 |        |                 |       |
+26    |  I_O  |   0  |E12 |        |                 |       |
+27    |GNDIO0 |   -  |    |        |                 |       |
+28    |  I_O  |   0  |F2  |        |                 |       |
+29    |  I_O  |   0  |F4  |        |                 |       |
+30    |  I_O  |   0  |F6  |        |                 |       |
+31    |  I_O  |   0  |F8  |        |                 |       |
+32    |  I_O  |   0  |F10 |        |                 |       |
+33    |  I_O  |   0  |F12 |        |                 |       |
+34    |VCCIO0 |   -  |    |        |                 |       |
+35    | TCK   |   -  |    |        |                 |       |
+36    | VCC   |   -  |    |        |                 |       |
+37    | GND   |   -  |    |        |                 |       |
+38    | IN2   |   0  |    |        |                 |       |
+39    |  I_O  |   0  |G12 |        |                 |       |
+40    |  I_O  |   0  |G10 |        |                 |       |
+41    |  I_O  |   0  |G8  |        |                 |       |
+42    |  I_O  |   0  |G6  |        |                 |       |
+43    |  I_O  |   0  |G4  |    *   |LVCMOS18         | Output|led_col_0_
+44    |  I_O  |   0  |G2  |    *   |LVCMOS18         | Output|led_col_1_
+45    | IN3   |   0  |    |        |                 |       |
+46    |GNDIO0 |   -  |    |        |                 |       |
+47    |VCCIO0 |   -  |    |        |                 |       |
+48    |  I_O  |   0  |H12 |    *   |LVCMOS18         | Output|led_col_2_
+49    |  I_O  |   0  |H10 |    *   |LVCMOS18         | Output|led_col_3_
+50    |  I_O  |   0  |H8  |    *   |LVCMOS18         | Output|led_col_4_
+51    |  I_O  |   0  |H6  |    *   |LVCMOS18         | Output|led_col_5_
+52    |  I_O  |   0  |H4  |    *   |LVCMOS18         | Output|led_col_6_
+53    |  I_O  |   0  |H2  |    *   |LVCMOS18         | Output|led_col_7_
+54    |INCLK1 |   0  |    |        |                 |       |
+55    |GNDIO1 |   -  |    |        |                 |       |
+56    |INCLK2 |   1  |    |        |                 |       |
+57    | VCC   |   -  |    |        |                 |       |
+58    |  I_O  |   1  |I2  |    *   |LVCMOS18         | Output|led_row_7_
+59    |  I_O  |   1  |I4  |    *   |LVCMOS18         | Output|led_row_6_
+60    |  I_O  |   1  |I6  |    *   |LVCMOS18         | Output|led_row_5_
+61    |  I_O  |   1  |I8  |    *   |LVCMOS18         | Output|led_row_4_
+62    |  I_O  |   1  |I10 |    *   |LVCMOS18         | Output|led_row_3_
+63    |  I_O  |   1  |I12 |    *   |LVCMOS18         | Output|led_row_2_
+64    |VCCIO1 |   -  |    |        |                 |       |
+65    |GNDIO1 |   -  |    |        |                 |       |
+66    |  I_O  |   1  |J2  |    *   |LVCMOS18         | Output|led_row_1_
+67    |  I_O  |   1  |J4  |    *   |LVCMOS18         | Output|led_row_0_
+68    |  I_O  |   1  |J6  |    *   |LVCMOS18         | Input |reset_n
+69    |  I_O  |   1  |J8  |        |                 |       |
+70    |  I_O  |   1  |J10 |        |                 |       |
+71    |  I_O  |   1  |J12 |        |                 |       |
+72    | IN4   |   0  |    |        |                 |       |
+73    | GND   |   -  |    |        |                 |       |
+74    | TMS   |   -  |    |        |                 |       |
+75    |VCCIO1 |   -  |    |        |                 |       |
+76    |  I_O  |   1  |K12 |        |                 |       |
+77    |  I_O  |   1  |K10 |        |                 |       |
+78    |  I_O  |   1  |K8  |        |                 |       |
+79    |  I_O  |   1  |K6  |        |                 |       |
+80    |  I_O  |   1  |K4  |        |                 |       |
+81    |  I_O  |   1  |K2  |        |                 |       |
+82    |GNDIO1 |   -  |    |        |                 |       |
+83    |  I_O  |   1  |L14 |        |                 |       |
+84    |  I_O  |   1  |L12 |        |                 |       |
+85    |  I_O  |   1  |L10 |        |                 |       |
+86    |  I_O  |   1  |L8  |        |                 |       |
+87    |  I_O  |   1  |L6  |        |                 |       |
+88    |  I_O  |   1  |L4  |        |                 |       |
+89    | IN5   |   1  |    |        |                 |       |
+90    | NC    |   -  |    |        |                 |       |
+91    |VCCIO1 |   -  |    |        |                 |       |
+92    | IN6   |   1  |    |        |                 |       |
+93    |  I_O  |   1  |M2  |        |                 |       |
+94    |  I_O  |   1  |M4  |        |                 |       |
+95    |  I_O  |   1  |M6  |        |                 |       |
+96    |  I_O  |   1  |M8  |        |                 |       |
+97    |  I_O  |   1  |M10 |        |                 |       |
+98    |  I_O  |   1  |M12 |        |                 |       |
+99    |GNDIO1 |   -  |    |        |                 |       |
+100   |  I_O  |   1  |N2  |        |                 |       |
+101   |  I_O  |   1  |N4  |        |                 |       |
+102   |  I_O  |   1  |N6  |        |                 |       |
+103   |  I_O  |   1  |N8  |        |                 |       |
+104   |  I_O  |   1  |N10 |        |                 |       |
+105   |  I_O  |   1  |N12 |        |                 |       |
+106   |VCCIO1 |   -  |    |        |                 |       |
+107   | TDO   |   -  |    |        |                 |       |
+108   | VCC   |   -  |    |        |                 |       |
+109   | GND   |   -  |    |        |                 |       |
+110   | IN7   |   1  |    |        |                 |       |
+111   |  I_O  |   1  |O12 |        |                 |       |
+112   |  I_O  |   1  |O10 |        |                 |       |
+113   |  I_O  |   1  |O8  |        |                 |       |
+114   |  I_O  |   1  |O6  |        |                 |       |
+115   |  I_O  |   1  |O4  |        |                 |       |
+116   |  I_O  |   1  |O2  |        |                 |       |
+117   | IN8   |   1  |    |        |                 |       |
+118   |GNDIO1 |   -  |    |        |                 |       |
+119   |VCCIO1 |   -  |    |        |                 |       |
+120   |  I_O  |   1  |P12 |        |                 |       |
+121   |  I_O  |   1  |P10 |        |                 |       |
+122   |  I_O  |   1  |P8  |        |                 |       |
+123   |  I_O  |   1  |P6  |        |                 |       |
+124   |  I_O  |   1  |P4  |        |                 |       |
+125   | I_O/OE|   1  |P2  |        |                 |       |
+126   |INCLK3 |   1  |    |        |                 |       |
+127   |GNDIO0 |   -  |    |        |                 |       |
+128   |INCLK0 |   0  |    |    *   |LVCMOS18         | Input |clk_50m
+129   | VCC   |   -  |    |        |                 |       |
+130   | I_O/OE|   0  |A2  |        |                 |       |
+131   |  I_O  |   0  |A4  |        |                 |       |
+132   |  I_O  |   0  |A6  |        |                 |       |
+133   |  I_O  |   0  |A8  |        |                 |       |
+134   |  I_O  |   0  |A10 |        |                 |       |
+135   |  I_O  |   0  |A12 |        |                 |       |
+136   |VCCIO0 |   -  |    |        |                 |       |
+137   |GNDIO0 |   -  |    |        |                 |       |
+138   |  I_O  |   0  |B2  |        |                 |       |
+139   |  I_O  |   0  |B4  |        |                 |       |
+140   |  I_O  |   0  |B6  |        |                 |       |
+141   |  I_O  |   0  |B8  |        |                 |       |
+142   |  I_O  |   0  |B10 |        |                 |       |
+143   |  I_O  |   0  |B12 |        |                 |       |
+144   | IN9   |   0  |    |        |                 |       |
+-------------------------------------------------------------------------------
+
+<Note> GLB Pad : This notation refers to the GLB I/O pad number in the device.
+<Note> Assigned Pin : user or dedicated input assignment (E.g. Clock pins).
+<Note> Pin Type : 
+          ClkIn : Dedicated input or clock pin 
+           CLK  : Dedicated clock pin
+           I_O  : Input/Output pin
+           INP  : Dedicated input pin
+           JTAG : JTAG Control and test pin
+           NC   : No connected
+
+
+
+Input_Signal_List
+~~~~~~~~~~~~~~~~~
+                Input
+         Pin    Fanout
+ Pin GLB Type                       Pullup Signal
+--------------------------------------------------
+ 128  -- INCLK     ----------------      Up clk_50m
+  68   J  I/O   8  --C-----IJ-LMNOP      Up reset_n
+--------------------------------------------------
+
+
+
+Output_Signal_List
+~~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Output
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+-----------------------------------------------------------------------------------
+  43   G 13  -  13  3 COM                   ----------------  Fast     Up led_col_0_
+  44   G 13  -  15  3 COM                   ----------------  Fast     Up led_col_1_
+  48   H 13  -  11  3 COM                   ----------------  Fast     Up led_col_2_
+  49   H 13  -  14  3 COM                   ----------------  Fast     Up led_col_3_
+  50   H 14  -  13  3 COM                   ----------------  Fast     Up led_col_4_
+  51   H  0  -   1  1 COM                   ----------------  Fast     Up led_col_5_
+  52   H  0  -   1  1 COM                   ----------------  Fast     Up led_col_6_
+  53   H  0  -   1  1 COM                   ----------------  Fast     Up led_col_7_
+  67   J 18  1   1  1 DFF    * R *       7  AB-D--GH-JK-----  Fast     Up led_row_0_
+  66   J 18  1   1  1 DFF    * R *       8  AB-D--GHIJK-----  Fast     Up led_row_1_
+  63   I 18  1   1  1 DFF    * R *       8  AB-D--GHIJK-----  Fast     Up led_row_2_
+  62   I 18  1   1  1 DFF    * R *       8  AB-D--GHIJK-----  Fast     Up led_row_3_
+  61   I 18  1   1  1 DFF    * R *       8  AB-D--GHIJK-----  Fast     Up led_row_4_
+  60   I 18  1   1  1 DFF    * R *       8  AB-D--GHIJK-----  Fast     Up led_row_5_
+  59   I 18  1   1  1 DFF    * R *       8  AB-D--GHIJK-----  Fast     Up led_row_6_
+  58   I 18  1   1  1 DFF  *   S *       7  AB-D--GH-JK-----  Fast     Up led_row_7_
+-----------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Bidir_Signal_List
+~~~~~~~~~~~~~~~~~
+          I         C      P R P       O Bidir
+          N         L Mc   R E U C O F B Fanout
+ Pin GLB  P LL PTs  S Type E S P E E P P                     Slew Pullup Signal
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+Buried_Signal_List
+~~~~~~~~~~~~~~~~~~
+        I         C      P R P       Node
+        N         L Mc   R E U C I F Fanout
+Mc GLB  P LL PTs  S Type E S P E R P                     Signal
+-------------------------------------------------------------------------
+11   N 11  -   1  1 COM              2  -------------N-P  N_272
+12   M 16  -   1  1 COM              1  ---------------P  N_282
+13   N 18  -   1  1 COM              1  -------------N--  N_286
+12   N 22  -   1  1 COM              1  --------------O-  N_294
+ 0   J 12  -   5  1 COM              1  -------H--------  N_51_i
+ 5   M  2  1   1  1 DFF    * R       3  ------------MNO-  cnt_next_0_
+ 3   M 11  1   1  1 TFF    * R       2  ------------MN--  cnt_next_10_
+10   P  4  2   2  1 DFF    * R       3  ------------MN-P  cnt_next_11_
+ 2   P  5  2   3  1 DFF    * R       3  ------------MN-P  cnt_next_12_
+ 4   M 14  1   1  1 TFF    * R       2  ------------MN--  cnt_next_13_
+ 1   N  7  2   2  1 DFF    * R       2  ------------MN--  cnt_next_14_
+ 8   N 16  1   1  1 TFF    * R       2  ------------MN--  cnt_next_15_
+ 6   N 17  1   1  1 TFF    * R       2  -------------N-P  cnt_next_16_
+ 5   P  5  2   3  1 DFF    * R       2  -------------N-P  cnt_next_17_
+ 4   N 19  1   1  1 TFF    * R       1  -------------N--  cnt_next_18_
+ 9   N 20  1   1  1 TFF    * R       1  -------------N--  cnt_next_19_
+ 5   O  3  1   2  1 DFF    * R       3  ------------MNO-  cnt_next_1_
+ 3   N 21  1   1  1 TFF    * R       1  -------------N--  cnt_next_20_
+ 2   N  7  2   2  1 DFF    * R       1  -------------N--  cnt_next_21_
+10   O  4  2   2  1 DFF    * R       2  -------------NO-  cnt_next_22_
+ 7   N 24  1   1  1 TFF    * R       2  -------------NO-  cnt_next_23_
+ 5   N 25  1   1  1 TFF    * R       2  -------------NO-  cnt_next_24_
+ 2   O  7  2   2  1 DFF    * R       2  -------------NO-  cnt_next_25_
+ 0   N  4  1   3  1 DFF    * R       2  ------------MN--  cnt_next_2_
+ 0   M  5  1   4  1 DFF    * R       2  ------------MN--  cnt_next_3_
+ 1   M  6  1   2  1 DFF    * R       2  ------------MN--  cnt_next_4_
+ 6   M  6  1   1  1 TFF    * R       2  ------------MN--  cnt_next_5_
+ 7   M  7  1   1  1 TFF    * R       2  ------------MN--  cnt_next_6_
+ 8   M  8  1   1  1 TFF    * R       2  ------------MN--  cnt_next_7_
+ 9   M  9  1   1  1 TFF    * R       2  ------------MN--  cnt_next_8_
+ 2   M 12  2   2  1 TFF    * R       2  ------------MN--  cnt_next_9_
+ 5   J  2  1   1  1 DFF    * R       3  --------IJ-L----  cnt_scan_0_
+ 9   J 11  1   1  1 TFF    * R       2  --------IJ------  cnt_scan_10_
+10   I 12  1   1  1 TFF    * R       2  --------IJ------  cnt_scan_11_
+10   J 13  1   1  1 TFF    * R       2  --------IJ------  cnt_scan_12_
+11   I 14  1   1  1 TFF    * R       2  --------IJ------  cnt_scan_13_
+13   I 15  1   1  1 TFF    * R       2  --------IJ------  cnt_scan_14_
+12   J 16  1   1  1 TFF    * R       2  --------IJ------  cnt_scan_15_
+ 7   L  3  1   2  1 DFF    * R       3  --------IJ-L----  cnt_scan_1_
+ 5   I  4  1   3  1 DFF    * R       2  --------IJ------  cnt_scan_2_
+ 3   I  5  1   4  1 DFF    * R       2  --------IJ------  cnt_scan_3_
+ 3   J  6  1   2  1 DFF    * R       2  --------IJ------  cnt_scan_4_
+ 7   I  6  1   1  1 TFF    * R       2  --------IJ------  cnt_scan_5_
+ 6   J  7  1   1  1 TFF    * R       2  --------IJ------  cnt_scan_6_
+ 7   J  8  1   1  1 TFF    * R       2  --------IJ------  cnt_scan_7_
+ 8   J  9  1   1  1 TFF    * R       2  --------IJ------  cnt_scan_8_
+ 9   I 10  1   1  1 TFF    * R       2  --------IJ------  cnt_scan_9_
+ 4   K 12  -  14  3 COM              1  ------G---------  col_buf_i_4_0__n
+ 1   J 12  -   4  1 COM              1  ------G---------  col_buf_i_5_1__n
+ 4   B 12  -  15  3 COM              1  -------H--------  col_buf_i_5_3__n
+ 4   A 12  -  14  3 COM              1  -------H--------  col_buf_i_5_4__n
+ 4   D 12  -  10  2 COM              1  -------H--------  col_buf_i_6_2__n
+10   C  3  1   1  1 DFF    * R *     8  ABCD--GH-JK-----  scan_data_0_
+ 6   C  4  1   2  1 DFF    * R *     8  ABCD--GH-JK-----  scan_data_1_
+ 3   C  5  1   3  1 DFF    * R *     8  ABCD--GH-JK-----  scan_data_2_
+ 1   C  6  1   4  1 DFF    * R *     8  ABCD--GH-JK-----  scan_data_3_
+10   N 26  -   1  1 COM              5  --C---------MNOP  scan_datae
+-------------------------------------------------------------------------
+
+<Note> CLS = Number of clusters used
+       INP = Number of input signals
+       PTs = Number of product terms
+        LL = Number of logic levels
+       PRE = Has preset equation
+       RES = Has reset equation
+       PUP = Power-Up initial state: R=Reset, S=Set
+        CE = Has clock enable equation
+        OE = Has output enable equation
+        IR = Input register
+        FP = Fast path used
+       OBP = ORP bypass used
+
+
+
+PostFit_Equations
+~~~~~~~~~~~~~~~~~
+N_272 = cnt_next_9_.Q & cnt_next_10_.Q & cnt_next_0_.Q & cnt_next_1_.Q
+       & cnt_next_2_.Q & cnt_next_3_.Q & cnt_next_4_.Q & cnt_next_5_.Q
+       & cnt_next_6_.Q & cnt_next_7_.Q & cnt_next_8_.Q ; (1 pterm, 11 signals)
+
+N_282 = cnt_next_9_.Q & cnt_next_10_.Q & cnt_next_13_.Q & cnt_next_15_.Q
+       & cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q & cnt_next_3_.Q
+       & cnt_next_4_.Q & cnt_next_5_.Q & cnt_next_6_.Q & cnt_next_7_.Q
+       & cnt_next_8_.Q & cnt_next_11_.Q & cnt_next_12_.Q & cnt_next_14_.Q ; (1 pterm, 16 signals)
+
+N_286 = cnt_next_9_.Q & cnt_next_16_.Q & cnt_next_10_.Q & cnt_next_13_.Q
+       & cnt_next_15_.Q & cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q
+       & cnt_next_3_.Q & cnt_next_4_.Q & cnt_next_5_.Q & cnt_next_6_.Q
+       & cnt_next_7_.Q & cnt_next_8_.Q & cnt_next_11_.Q & cnt_next_12_.Q
+       & cnt_next_14_.Q & cnt_next_17_.Q ; (1 pterm, 18 signals)
+
+N_294 = cnt_next_9_.Q & cnt_next_20_.Q & cnt_next_18_.Q & cnt_next_16_.Q
+       & cnt_next_10_.Q & cnt_next_13_.Q & cnt_next_15_.Q & cnt_next_19_.Q
+       & cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q & cnt_next_3_.Q
+       & cnt_next_4_.Q & cnt_next_5_.Q & cnt_next_6_.Q & cnt_next_7_.Q
+       & cnt_next_8_.Q & cnt_next_11_.Q & cnt_next_12_.Q & cnt_next_14_.Q
+       & cnt_next_17_.Q & cnt_next_21_.Q ; (1 pterm, 22 signals)
+
+N_51_i.X1 = !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & scan_data_1_.Q & scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_1_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_2_.Q & !scan_data_3_.Q ; (4 pterms, 12 signals)
+N_51_i.X2 = !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_1_.Q & scan_data_3_.Q ; (1 pterm, 10 signals)
+
+cnt_next_0_.D = !cnt_next_0_.Q ; (1 pterm, 1 signal)
+cnt_next_0_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_0_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_10_.T = cnt_next_9_.Q & cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q
+       & cnt_next_3_.Q & cnt_next_4_.Q & cnt_next_5_.Q & cnt_next_6_.Q
+       & cnt_next_7_.Q & cnt_next_8_.Q ; (1 pterm, 10 signals)
+cnt_next_10_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_10_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_11_.D = cnt_next_11_.Q & !scan_datae & !N_272
+    # !cnt_next_11_.Q & !scan_datae & N_272 ; (2 pterms, 3 signals)
+cnt_next_11_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_11_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_12_.D = cnt_next_11_.Q & !cnt_next_12_.Q & !scan_datae & N_272
+    # !cnt_next_11_.Q & cnt_next_12_.Q & !scan_datae
+    # cnt_next_12_.Q & !scan_datae & !N_272 ; (3 pterms, 4 signals)
+cnt_next_12_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_12_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_13_.T = cnt_next_9_.Q & cnt_next_10_.Q & cnt_next_0_.Q
+       & cnt_next_1_.Q & cnt_next_2_.Q & cnt_next_3_.Q & cnt_next_4_.Q
+       & cnt_next_5_.Q & cnt_next_6_.Q & cnt_next_7_.Q & cnt_next_8_.Q
+       & cnt_next_11_.Q & cnt_next_12_.Q ; (1 pterm, 13 signals)
+cnt_next_13_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_13_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_14_.D.X1 = cnt_next_13_.Q & cnt_next_11_.Q & cnt_next_12_.Q
+       & !scan_datae & N_272 ; (1 pterm, 5 signals)
+cnt_next_14_.D.X2 = cnt_next_14_.Q & !scan_datae ; (1 pterm, 2 signals)
+cnt_next_14_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_14_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_15_.T = cnt_next_9_.Q & cnt_next_10_.Q & cnt_next_13_.Q
+       & cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q & cnt_next_3_.Q
+       & cnt_next_4_.Q & cnt_next_5_.Q & cnt_next_6_.Q & cnt_next_7_.Q
+       & cnt_next_8_.Q & cnt_next_11_.Q & cnt_next_12_.Q & cnt_next_14_.Q ; (1 pterm, 15 signals)
+cnt_next_15_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_15_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_16_.T = cnt_next_9_.Q & cnt_next_10_.Q & cnt_next_13_.Q
+       & cnt_next_15_.Q & cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q
+       & cnt_next_3_.Q & cnt_next_4_.Q & cnt_next_5_.Q & cnt_next_6_.Q
+       & cnt_next_7_.Q & cnt_next_8_.Q & cnt_next_11_.Q & cnt_next_12_.Q
+       & cnt_next_14_.Q ; (1 pterm, 16 signals)
+cnt_next_16_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_16_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_17_.D = cnt_next_16_.Q & !cnt_next_17_.Q & !scan_datae & N_282
+    # !cnt_next_16_.Q & cnt_next_17_.Q & !scan_datae
+    # cnt_next_17_.Q & !scan_datae & !N_282 ; (3 pterms, 4 signals)
+cnt_next_17_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_17_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_18_.T = cnt_next_9_.Q & cnt_next_16_.Q & cnt_next_10_.Q
+       & cnt_next_13_.Q & cnt_next_15_.Q & cnt_next_0_.Q & cnt_next_1_.Q
+       & cnt_next_2_.Q & cnt_next_3_.Q & cnt_next_4_.Q & cnt_next_5_.Q
+       & cnt_next_6_.Q & cnt_next_7_.Q & cnt_next_8_.Q & cnt_next_11_.Q
+       & cnt_next_12_.Q & cnt_next_14_.Q & cnt_next_17_.Q ; (1 pterm, 18 signals)
+cnt_next_18_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_18_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_19_.T = cnt_next_9_.Q & cnt_next_18_.Q & cnt_next_16_.Q
+       & cnt_next_10_.Q & cnt_next_13_.Q & cnt_next_15_.Q & cnt_next_0_.Q
+       & cnt_next_1_.Q & cnt_next_2_.Q & cnt_next_3_.Q & cnt_next_4_.Q
+       & cnt_next_5_.Q & cnt_next_6_.Q & cnt_next_7_.Q & cnt_next_8_.Q
+       & cnt_next_11_.Q & cnt_next_12_.Q & cnt_next_14_.Q & cnt_next_17_.Q ; (1 pterm, 19 signals)
+cnt_next_19_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_19_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_1_.D = cnt_next_0_.Q & !cnt_next_1_.Q
+    # !cnt_next_0_.Q & cnt_next_1_.Q ; (2 pterms, 2 signals)
+cnt_next_1_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_1_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_20_.T = cnt_next_9_.Q & cnt_next_18_.Q & cnt_next_16_.Q
+       & cnt_next_10_.Q & cnt_next_13_.Q & cnt_next_15_.Q & cnt_next_19_.Q
+       & cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q & cnt_next_3_.Q
+       & cnt_next_4_.Q & cnt_next_5_.Q & cnt_next_6_.Q & cnt_next_7_.Q
+       & cnt_next_8_.Q & cnt_next_11_.Q & cnt_next_12_.Q & cnt_next_14_.Q
+       & cnt_next_17_.Q ; (1 pterm, 20 signals)
+cnt_next_20_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_20_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_21_.D.X1 = cnt_next_20_.Q & cnt_next_18_.Q & cnt_next_19_.Q
+       & !scan_datae & N_286 ; (1 pterm, 5 signals)
+cnt_next_21_.D.X2 = cnt_next_21_.Q & !scan_datae ; (1 pterm, 2 signals)
+cnt_next_21_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_21_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_22_.D = cnt_next_22_.Q & !scan_datae & !N_294
+    # !cnt_next_22_.Q & !scan_datae & N_294 ; (2 pterms, 3 signals)
+cnt_next_22_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_22_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_23_.T = cnt_next_9_.Q & cnt_next_20_.Q & cnt_next_18_.Q
+       & cnt_next_16_.Q & cnt_next_10_.Q & cnt_next_13_.Q & cnt_next_15_.Q
+       & cnt_next_19_.Q & cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q
+       & cnt_next_3_.Q & cnt_next_4_.Q & cnt_next_5_.Q & cnt_next_6_.Q
+       & cnt_next_7_.Q & cnt_next_8_.Q & cnt_next_11_.Q & cnt_next_12_.Q
+       & cnt_next_14_.Q & cnt_next_17_.Q & cnt_next_21_.Q & cnt_next_22_.Q ; (1 pterm, 23 signals)
+cnt_next_23_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_23_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_24_.T = cnt_next_9_.Q & cnt_next_20_.Q & cnt_next_18_.Q
+       & cnt_next_16_.Q & cnt_next_23_.Q & cnt_next_10_.Q & cnt_next_13_.Q
+       & cnt_next_15_.Q & cnt_next_19_.Q & cnt_next_0_.Q & cnt_next_1_.Q
+       & cnt_next_2_.Q & cnt_next_3_.Q & cnt_next_4_.Q & cnt_next_5_.Q
+       & cnt_next_6_.Q & cnt_next_7_.Q & cnt_next_8_.Q & cnt_next_11_.Q
+       & cnt_next_12_.Q & cnt_next_14_.Q & cnt_next_17_.Q & cnt_next_21_.Q
+       & cnt_next_22_.Q ; (1 pterm, 24 signals)
+cnt_next_24_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_24_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_25_.D.X1 = cnt_next_24_.Q & cnt_next_23_.Q & cnt_next_22_.Q
+       & !scan_datae & N_294 ; (1 pterm, 5 signals)
+cnt_next_25_.D.X2 = cnt_next_25_.Q & !scan_datae ; (1 pterm, 2 signals)
+cnt_next_25_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_25_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_2_.D = cnt_next_0_.Q & cnt_next_1_.Q & !cnt_next_2_.Q
+    # !cnt_next_1_.Q & cnt_next_2_.Q
+    # !cnt_next_0_.Q & cnt_next_2_.Q ; (3 pterms, 3 signals)
+cnt_next_2_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_2_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_3_.D = cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q & !cnt_next_3_.Q
+    # !cnt_next_2_.Q & cnt_next_3_.Q
+    # !cnt_next_1_.Q & cnt_next_3_.Q
+    # !cnt_next_0_.Q & cnt_next_3_.Q ; (4 pterms, 4 signals)
+cnt_next_3_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_3_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_4_.D.X1 = cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q
+       & cnt_next_3_.Q ; (1 pterm, 4 signals)
+cnt_next_4_.D.X2 = cnt_next_4_.Q ; (1 pterm, 1 signal)
+cnt_next_4_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_4_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_5_.T = cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q & cnt_next_3_.Q
+       & cnt_next_4_.Q ; (1 pterm, 5 signals)
+cnt_next_5_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_5_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_6_.T = cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q & cnt_next_3_.Q
+       & cnt_next_4_.Q & cnt_next_5_.Q ; (1 pterm, 6 signals)
+cnt_next_6_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_6_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_7_.T = cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q & cnt_next_3_.Q
+       & cnt_next_4_.Q & cnt_next_5_.Q & cnt_next_6_.Q ; (1 pterm, 7 signals)
+cnt_next_7_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_7_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_8_.T = cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q & cnt_next_3_.Q
+       & cnt_next_4_.Q & cnt_next_5_.Q & cnt_next_6_.Q & cnt_next_7_.Q ; (1 pterm, 8 signals)
+cnt_next_8_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_8_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_next_9_.T = cnt_next_0_.Q & cnt_next_1_.Q & cnt_next_2_.Q & cnt_next_3_.Q
+       & cnt_next_4_.Q & cnt_next_5_.Q & cnt_next_6_.Q & cnt_next_7_.Q
+       & cnt_next_8_.Q & !scan_datae
+    # cnt_next_9_.Q & scan_datae ; (2 pterms, 11 signals)
+cnt_next_9_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_next_9_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_0_.D = !cnt_scan_0_.Q ; (1 pterm, 1 signal)
+cnt_scan_0_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_0_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_10_.T = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q ; (1 pterm, 10 signals)
+cnt_scan_10_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_10_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_11_.T = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q ; (1 pterm, 11 signals)
+cnt_scan_11_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_11_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_12_.T = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q & cnt_scan_11_.Q ; (1 pterm, 12 signals)
+cnt_scan_12_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_12_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_13_.T = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q & cnt_scan_11_.Q
+       & cnt_scan_12_.Q ; (1 pterm, 13 signals)
+cnt_scan_13_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_13_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_14_.T = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q & cnt_scan_11_.Q
+       & cnt_scan_12_.Q & cnt_scan_13_.Q ; (1 pterm, 14 signals)
+cnt_scan_14_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_14_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_15_.T = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q & cnt_scan_11_.Q
+       & cnt_scan_12_.Q & cnt_scan_13_.Q & cnt_scan_14_.Q ; (1 pterm, 15 signals)
+cnt_scan_15_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_15_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_1_.D = cnt_scan_0_.Q & !cnt_scan_1_.Q
+    # !cnt_scan_0_.Q & cnt_scan_1_.Q ; (2 pterms, 2 signals)
+cnt_scan_1_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_1_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_2_.D = cnt_scan_0_.Q & cnt_scan_1_.Q & !cnt_scan_2_.Q
+    # !cnt_scan_1_.Q & cnt_scan_2_.Q
+    # !cnt_scan_0_.Q & cnt_scan_2_.Q ; (3 pterms, 3 signals)
+cnt_scan_2_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_2_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_3_.D = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & !cnt_scan_3_.Q
+    # !cnt_scan_2_.Q & cnt_scan_3_.Q
+    # !cnt_scan_1_.Q & cnt_scan_3_.Q
+    # !cnt_scan_0_.Q & cnt_scan_3_.Q ; (4 pterms, 4 signals)
+cnt_scan_3_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_3_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_4_.D.X1 = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q
+       & cnt_scan_3_.Q ; (1 pterm, 4 signals)
+cnt_scan_4_.D.X2 = cnt_scan_4_.Q ; (1 pterm, 1 signal)
+cnt_scan_4_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_4_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_5_.T = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q ; (1 pterm, 5 signals)
+cnt_scan_5_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_5_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_6_.T = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q ; (1 pterm, 6 signals)
+cnt_scan_6_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_6_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_7_.T = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q ; (1 pterm, 7 signals)
+cnt_scan_7_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_7_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_8_.T = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q ; (1 pterm, 8 signals)
+cnt_scan_8_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_8_.AR = !reset_n ; (1 pterm, 1 signal)
+
+cnt_scan_9_.T = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q ; (1 pterm, 9 signals)
+cnt_scan_9_.C = clk_50m ; (1 pterm, 1 signal)
+cnt_scan_9_.AR = !reset_n ; (1 pterm, 1 signal)
+
+col_buf_i_4_0__n = !( !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q
+       & led_row_4_.Q & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q
+       & !led_row_0_.Q & !scan_data_0_.Q & !scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_1_.Q & !scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_1_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_2_.Q & scan_data_3_.Q ) ; (14 pterms, 12 signals)
+
+col_buf_i_5_1__n = !( !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q
+       & !led_row_4_.Q & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q
+       & !led_row_0_.Q & !scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q
+       & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q & !scan_data_3_.Q ) ; (4 pterms, 12 signals)
+
+col_buf_i_5_3__n = !( !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q
+       & !led_row_4_.Q & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q
+       & led_row_0_.Q & scan_data_0_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_1_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & !scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_1_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_1_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & scan_data_1_.Q & !scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_0_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & scan_data_3_.Q ) ; (15 pterms, 12 signals)
+
+col_buf_i_5_4__n = !( !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q
+       & !led_row_4_.Q & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q
+       & !led_row_0_.Q & !scan_data_0_.Q & !scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_1_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_1_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_1_.Q & !scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_0_.Q & scan_data_1_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_0_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_1_.Q & scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_1_.Q & scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_1_.Q & scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_3_.Q ) ; (14 pterms, 12 signals)
+
+col_buf_i_6_2__n = !( !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q
+       & !led_row_4_.Q & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q
+       & !led_row_0_.Q & scan_data_0_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & !scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & !scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_1_.Q & scan_data_2_.Q ) ; (10 pterms, 12 signals)
+
+led_col_0_ = !( !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_1_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_1_.Q & scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_0_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_1_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & led_row_1_.Q & !led_row_0_.Q
+       & scan_data_1_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_1_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_2_.Q & scan_data_3_.Q
+    # !col_buf_i_4_0__n ) ; (13 pterms, 13 signals)
+
+led_col_1_ = !( !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & !scan_data_1_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_0_.Q & scan_data_1_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_1_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_1_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_1_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_2_.Q
+    # !col_buf_i_5_1__n ) ; (15 pterms, 13 signals)
+
+led_col_2_ = !( !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_1_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_1_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & !scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_1_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_2_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & !scan_data_2_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_0_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & led_row_0_.Q
+       & scan_data_3_.Q
+    # !col_buf_i_6_2__n ) ; (11 pterms, 13 signals)
+
+led_col_3_ = !( !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_1_.Q & scan_data_2_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_1_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_1_.Q & scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q & scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & scan_data_1_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & scan_data_1_.Q & scan_data_2_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & !scan_data_0_.Q & !scan_data_1_.Q & !scan_data_3_.Q
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & scan_data_0_.Q & !scan_data_2_.Q
+    # !col_buf_i_5_3__n ) ; (14 pterms, 13 signals)
+
+led_col_4_.X1 = !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & col_buf_i_5_4__n & scan_data_1_.Q & !scan_data_2_.Q & !N_51_i
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & col_buf_i_5_4__n & scan_data_0_.Q & scan_data_2_.Q & scan_data_3_.Q
+       & !N_51_i
+    # !led_row_7_.Q & led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & col_buf_i_5_4__n & scan_data_1_.Q & scan_data_3_.Q & !N_51_i
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & col_buf_i_5_4__n & !scan_data_0_.Q & !scan_data_1_.Q & !N_51_i
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & col_buf_i_5_4__n & !scan_data_0_.Q & scan_data_2_.Q & !N_51_i
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & col_buf_i_5_4__n & !scan_data_0_.Q & scan_data_3_.Q & !N_51_i
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & led_row_4_.Q
+       & !led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & col_buf_i_5_4__n & scan_data_1_.Q & scan_data_2_.Q & scan_data_3_.Q
+       & !N_51_i
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & col_buf_i_5_4__n & !scan_data_0_.Q & !scan_data_1_.Q
+       & !scan_data_3_.Q & !N_51_i
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & col_buf_i_5_4__n & !scan_data_0_.Q & scan_data_2_.Q & !N_51_i
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & col_buf_i_5_4__n & scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q
+       & !scan_data_3_.Q & !N_51_i
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & col_buf_i_5_4__n & !scan_data_0_.Q & scan_data_1_.Q & scan_data_3_.Q
+       & !N_51_i
+    # !led_row_7_.Q & !led_row_6_.Q & !led_row_5_.Q & !led_row_4_.Q
+       & led_row_3_.Q & !led_row_2_.Q & !led_row_1_.Q & !led_row_0_.Q
+       & col_buf_i_5_4__n & scan_data_1_.Q & scan_data_2_.Q & scan_data_3_.Q
+       & !N_51_i ; (12 pterms, 14 signals)
+led_col_4_.X2 = col_buf_i_5_4__n & !N_51_i ; (1 pterm, 2 signals)
+
+led_col_5_ = 1 ; (1 pterm, 0 signal)
+
+led_col_6_ = 1 ; (1 pterm, 0 signal)
+
+led_col_7_ = 1 ; (1 pterm, 0 signal)
+
+led_row_0_.D = led_row_7_.Q ; (1 pterm, 1 signal)
+led_row_0_.C = clk_50m ; (1 pterm, 1 signal)
+led_row_0_.CE = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q & cnt_scan_11_.Q
+       & cnt_scan_12_.Q & cnt_scan_13_.Q & cnt_scan_14_.Q & cnt_scan_15_.Q ; (1 pterm, 16 signals)
+led_row_0_.AR = !reset_n ; (1 pterm, 1 signal)
+
+led_row_1_.D = led_row_0_.Q ; (1 pterm, 1 signal)
+led_row_1_.C = clk_50m ; (1 pterm, 1 signal)
+led_row_1_.CE = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q & cnt_scan_11_.Q
+       & cnt_scan_12_.Q & cnt_scan_13_.Q & cnt_scan_14_.Q & cnt_scan_15_.Q ; (1 pterm, 16 signals)
+led_row_1_.AR = !reset_n ; (1 pterm, 1 signal)
+
+led_row_2_.D = led_row_1_.Q ; (1 pterm, 1 signal)
+led_row_2_.C = clk_50m ; (1 pterm, 1 signal)
+led_row_2_.CE = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q & cnt_scan_11_.Q
+       & cnt_scan_12_.Q & cnt_scan_13_.Q & cnt_scan_14_.Q & cnt_scan_15_.Q ; (1 pterm, 16 signals)
+led_row_2_.AR = !reset_n ; (1 pterm, 1 signal)
+
+led_row_3_.D = led_row_2_.Q ; (1 pterm, 1 signal)
+led_row_3_.C = clk_50m ; (1 pterm, 1 signal)
+led_row_3_.CE = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q & cnt_scan_11_.Q
+       & cnt_scan_12_.Q & cnt_scan_13_.Q & cnt_scan_14_.Q & cnt_scan_15_.Q ; (1 pterm, 16 signals)
+led_row_3_.AR = !reset_n ; (1 pterm, 1 signal)
+
+led_row_4_.D = led_row_3_.Q ; (1 pterm, 1 signal)
+led_row_4_.C = clk_50m ; (1 pterm, 1 signal)
+led_row_4_.CE = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q & cnt_scan_11_.Q
+       & cnt_scan_12_.Q & cnt_scan_13_.Q & cnt_scan_14_.Q & cnt_scan_15_.Q ; (1 pterm, 16 signals)
+led_row_4_.AR = !reset_n ; (1 pterm, 1 signal)
+
+led_row_5_.D = led_row_4_.Q ; (1 pterm, 1 signal)
+led_row_5_.C = clk_50m ; (1 pterm, 1 signal)
+led_row_5_.CE = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q & cnt_scan_11_.Q
+       & cnt_scan_12_.Q & cnt_scan_13_.Q & cnt_scan_14_.Q & cnt_scan_15_.Q ; (1 pterm, 16 signals)
+led_row_5_.AR = !reset_n ; (1 pterm, 1 signal)
+
+led_row_6_.D = led_row_5_.Q ; (1 pterm, 1 signal)
+led_row_6_.C = clk_50m ; (1 pterm, 1 signal)
+led_row_6_.CE = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q & cnt_scan_11_.Q
+       & cnt_scan_12_.Q & cnt_scan_13_.Q & cnt_scan_14_.Q & cnt_scan_15_.Q ; (1 pterm, 16 signals)
+led_row_6_.AR = !reset_n ; (1 pterm, 1 signal)
+
+led_row_7_.D = led_row_6_.Q ; (1 pterm, 1 signal)
+led_row_7_.C = clk_50m ; (1 pterm, 1 signal)
+led_row_7_.CE = cnt_scan_0_.Q & cnt_scan_1_.Q & cnt_scan_2_.Q & cnt_scan_3_.Q
+       & cnt_scan_4_.Q & cnt_scan_5_.Q & cnt_scan_6_.Q & cnt_scan_7_.Q
+       & cnt_scan_8_.Q & cnt_scan_9_.Q & cnt_scan_10_.Q & cnt_scan_11_.Q
+       & cnt_scan_12_.Q & cnt_scan_13_.Q & cnt_scan_14_.Q & cnt_scan_15_.Q ; (1 pterm, 16 signals)
+led_row_7_.AP = !reset_n ; (1 pterm, 1 signal)
+
+scan_data_0_.D = !scan_data_0_.Q ; (1 pterm, 1 signal)
+scan_data_0_.C = clk_50m ; (1 pterm, 1 signal)
+scan_data_0_.CE = scan_datae ; (1 pterm, 1 signal)
+scan_data_0_.AR = !reset_n ; (1 pterm, 1 signal)
+
+scan_data_1_.D = scan_data_0_.Q & !scan_data_1_.Q
+    # !scan_data_0_.Q & scan_data_1_.Q ; (2 pterms, 2 signals)
+scan_data_1_.C = clk_50m ; (1 pterm, 1 signal)
+scan_data_1_.CE = scan_datae ; (1 pterm, 1 signal)
+scan_data_1_.AR = !reset_n ; (1 pterm, 1 signal)
+
+scan_data_2_.D = scan_data_0_.Q & scan_data_1_.Q & !scan_data_2_.Q
+    # !scan_data_1_.Q & scan_data_2_.Q
+    # !scan_data_0_.Q & scan_data_2_.Q ; (3 pterms, 3 signals)
+scan_data_2_.C = clk_50m ; (1 pterm, 1 signal)
+scan_data_2_.CE = scan_datae ; (1 pterm, 1 signal)
+scan_data_2_.AR = !reset_n ; (1 pterm, 1 signal)
+
+scan_data_3_.D = scan_data_0_.Q & scan_data_1_.Q & scan_data_2_.Q
+       & !scan_data_3_.Q
+    # !scan_data_2_.Q & scan_data_3_.Q
+    # !scan_data_1_.Q & scan_data_3_.Q
+    # !scan_data_0_.Q & scan_data_3_.Q ; (4 pterms, 4 signals)
+scan_data_3_.C = clk_50m ; (1 pterm, 1 signal)
+scan_data_3_.CE = scan_datae ; (1 pterm, 1 signal)
+scan_data_3_.AR = !reset_n ; (1 pterm, 1 signal)
+
+scan_datae = !cnt_next_9_.Q & !cnt_next_20_.Q & !cnt_next_18_.Q
+       & !cnt_next_24_.Q & !cnt_next_16_.Q & !cnt_next_23_.Q & !cnt_next_10_.Q
+       & !cnt_next_13_.Q & !cnt_next_15_.Q & !cnt_next_19_.Q & cnt_next_0_.Q
+       & cnt_next_1_.Q & cnt_next_2_.Q & cnt_next_3_.Q & cnt_next_4_.Q
+       & cnt_next_5_.Q & cnt_next_6_.Q & cnt_next_7_.Q & cnt_next_8_.Q
+       & cnt_next_11_.Q & cnt_next_12_.Q & cnt_next_14_.Q & cnt_next_17_.Q
+       & cnt_next_21_.Q & cnt_next_22_.Q & cnt_next_25_.Q ; (1 pterm, 26 signals)
+
+
+
+

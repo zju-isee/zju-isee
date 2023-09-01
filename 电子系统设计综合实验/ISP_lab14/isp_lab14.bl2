@@ -1,0 +1,1864 @@
+#$ TOOL ispLEVER Classic 2.1.00.02.49.20
+#$ DATE Mon May 29 16:18:44 2023
+#$ MODULE isp_lab14
+#$ PINS 9 vga_d_2_ reset_n sys_clk orient vga_d_1_ hsync vga_d_0_ vsync EndFrame
+#$ NODES 475 vga_data_n_25_i_n vga_ctrl_linescan_q1_1se_0_un0_n vga_data_n_26_i_n \
+#  vga_ctrl_HCounter_hcnt_0_ vga_data_n_9_i_n vga_ctrl_HCounter_hcnt_1_ \
+#  vga_ctrl_hcounter_n_55_i_n vga_ctrl_HCounter_hcnt_2_ vga_ctrl_hcounter_n_54_i_n \
+#  vga_ctrl_HCounter_hcnt_3_ vga_ctrl_hcounter_n_53_i_n vga_ctrl_HCounter_hcnt_4_ \
+#  vga_ctrl_hcounter_n_52_i_n vga_ctrl_HCounter_hcnt_5_ vga_data_n_288_i_n \
+#  vga_ctrl_HCounter_hcnt_6_ vga_data_n_11_0_n vga_ctrl_HCounter_hcnt_7_ \
+#  vga_data_n_545_1_i_n vga_ctrl_HCounter_hcnt_8_ vga_data_n_12_0_n \
+#  vga_ctrl_HCounter_hcnt_9_ vga_data_n_287_0_n vga_ctrl_VCounter_vcnt_0_ \
+#  vga_data_n_539_i_n vga_ctrl_VCounter_vcnt_1_ vga_data_n_542_0_n \
+#  vga_ctrl_VCounter_vcnt_2_ vga_data_n_538_0_n vga_ctrl_VCounter_vcnt_3_ \
+#  vga_data_n_210_i_n vga_ctrl_VCounter_vcnt_4_ vga_data_n_213_0_n \
+#  vga_ctrl_VCounter_vcnt_5_ vga_data_n_204_i_n vga_ctrl_VCounter_vcnt_6_ \
+#  vga_data_n_207_0_n vga_ctrl_VCounter_vcnt_7_ vga_data_n_203_0_n \
+#  vga_ctrl_VCounter_vcnt_8_ vga_data_n_128_i_n vga_ctrl_VCounter_vcnt_9_ \
+#  vga_data_n_131_0_n vga_ctrl_LineScan_q1_1_0_ vga_data_n_127_0_n \
+#  vga_ctrl_LineScan_q1_1_1_ vga_ctrl_vcounter_n_58_i_n vga_ctrl_co1_n \
+#  vga_ctrl_vcounter_n_57_i_n vga_ctrl_FrameScan_q2_1_0_ vga_ctrl_hcounter_n_51_i_n \
+#  vga_ctrl_FrameScan_q2_1_1_ vga_ctrl_hcounter_n_50_i_n vga_data_n_59_0_n \
+#  vga_data_n_432_i_n vga_data_un1_vcnt_3_n vga_data_n_435_0_n vga_data_un1_hcnt_4_n \
+#  vga_data_n_426_i_n vga_data_n_10_n vga_data_n_429_0_n vga_data_n_29_n \
+#  vga_data_n_425_i_n vga_data_n_280_2_n vga_data_n_64_i_n vga_data_un1_hcnt_6_i_n \
+#  vga_data_n_60_i_n vga_ctrl_vcounter_un7_co2_n vga_data_n_63_0_n \
+#  vga_ctrl_vcounter_cnt14_n vga_ctrl_hcounter_n_49_i_n vga_ctrl_vcounter_cnt15_n \
+#  vga_ctrl_hcounter_n_48_i_n vga_ctrl_v_nblank_n vga_ctrl_hcounter_n_47_i_n \
+#  vga_ctrl_VCounter_cnt_0_ vga_ctrl_vcounter_n_76_i_n vga_ctrl_VCounter_cnt_1_ \
+#  vga_data_n_314_0_n vga_ctrl_VCounter_cnt_2_ vga_ctrl_vcounter_n_73_i_n \
+#  vga_ctrl_VCounter_cnt_3_ vga_data_n_246_0_n vga_ctrl_VCounter_cnt_4_ \
+#  vga_data_n_167_i_n vga_ctrl_vcounter_vcnte_n vga_data_n_323_i_n \
+#  vga_ctrl_vcounter_n_49_n vga_data_un1_vcnt_5_i_n vga_ctrl_vcounter_n_61_n \
+#  vga_data_n_247_i_n vga_ctrl_vcounter_n_65_n vga_data_n_250_0_n \
+#  vga_ctrl_VCounter_G_65 vga_ctrl_vcounter_n_56_i_n vga_ctrl_VCounter_G_66 \
+#  vga_ctrl_vcounter_n_54_i_n vga_ctrl_vcounter_n_53_i_n vga_ctrl_vcounter_n_111_n \
+#  vga_ctrl_vcounter_n_51_i_n vga_ctrl_vcounter_n_47_n vga_ctrl_vcounter_n_50_i_n \
+#  vga_ctrl_vcounter_n_48_n vga_ctrl_vcounter_n_119_i_n vga_ctrl_vcounter_n_119_n \
+#  vga_ctrl_vcounter_n_60_i_n vga_ctrl_vcounter_n_50_n vga_ctrl_vcounter_n_59_i_n \
+#  vga_ctrl_vcounter_n_51_n vga_ctrl_vcounter_cnt_i_3__n vga_ctrl_vcounter_n_53_n \
+#  vga_ctrl_vcounter_n_65_0_n vga_ctrl_vcounter_n_54_n vga_data_n_20_i_n \
+#  vga_ctrl_vcounter_n_56_n vga_data_n_15_i_n vga_ctrl_vcounter_n_66_n \
+#  vga_data_n_19_i_n vga_ctrl_vcounter_n_67_n vga_data_n_17_i_n \
+#  vga_ctrl_vcounter_n_68_n vga_data_n_352_i_n vga_ctrl_vcounter_n_69_n \
+#  vga_data_n_357_0_n vga_ctrl_vcounter_n_70_n vga_data_n_396_0_n \
+#  vga_ctrl_vcounter_n_71_n vga_data_n_5_i_n vga_ctrl_vcounter_n_72_n \
+#  vga_data_n_21_i_n vga_ctrl_vcounter_n_73_n vga_data_n_23_i_n \
+#  vga_ctrl_vcounter_n_74_n vga_data_n_22_i_n vga_ctrl_vcounter_n_76_n \
+#  vga_data_n_24_i_n vga_ctrl_HCounter_cnt_4_ vga_data_n_7_i_n \
+#  vga_ctrl_hcounter_cnt14_n vga_data_n_134_i_n vga_data_n_137_0_n \
+#  vga_ctrl_hcounter_cnt16_n vga_data_n_95_i_n vga_ctrl_HCounter_cnt_6_ \
+#  vga_data_n_98_0_n vga_ctrl_HCounter_cnt_7_ vga_ctrl_vcounter_cnt15_i_n \
+#  vga_ctrl_HCounter_cnt_8_ vga_ctrl_vcounter_n_110_0_n vga_data_n_18_i_n \
+#  vga_ctrl_HCounter_G_22 vga_data_n_16_i_n vga_ctrl_HCounter_G_23 \
+#  vga_data_n_280_i_n vga_ctrl_LineScan_q1_1_ns_1_0__m1 vga_data_n_467_i_n \
+#  vga_ctrl_HCounter_G_21 vga_data_n_472_0_n vga_ctrl_hcounter_n_44_n \
+#  vga_ctrl_framescan_n_42_i_n vga_ctrl_hcounter_n_45_n vga_ctrl_framescan_n_41_i_n \
+#  vga_ctrl_hcounter_n_46_n vga_ctrl_framescan_q2_1_ns_0_0__n \
+#  vga_ctrl_hcounter_n_47_n vga_ctrl_framescan_n_44_i_n vga_ctrl_hcounter_n_48_n \
+#  vga_ctrl_framescan_q2_1_ns_0_1__n vga_ctrl_hcounter_n_49_n \
+#  vga_ctrl_vcounter_n_84_0_n vga_ctrl_hcounter_n_50_n vga_ctrl_endline_i_n \
+#  vga_ctrl_hcounter_n_51_n vga_ctrl_vcounter_vcnte_0_n vga_ctrl_hcounter_n_56_n \
+#  vga_ctrl_vcounter_n_66_i_n vga_ctrl_hcounter_n_57_n vga_ctrl_vcounter_n_67_i_n \
+#  vga_ctrl_hcounter_n_58_n vga_ctrl_vcounter_vcnt_n9_0_n vga_ctrl_hcounter_n_59_n \
+#  vga_ctrl_hcounter_n_46_i_n vga_ctrl_hcounter_n_60_n vga_ctrl_hcounter_n_45_i_n \
+#  vga_ctrl_hcounter_n_61_n vga_ctrl_hcounter_n_44_i_n vga_ctrl_hcounter_n_62_n \
+#  vga_ctrl_co1_i_n vga_ctrl_hcounter_n_63_n vga_ctrl_hcounter_hcnt11_i_n \
+#  vga_ctrl_hcounter_n_64_n vga_ctrl_vcounter_n_74_i_n vga_data_n_92_0_n \
+#  vga_ctrl_hcounter_n_66_n vga_ctrl_vcounter_n_48_i_n vga_data_un1_vcnt_1_n \
+#  vga_ctrl_vcounter_n_47_i_n vga_data_n_391_n vga_ctrl_vcounter_n_121_i_n \
+#  vga_data_n_352_n vga_ctrl_vcounter_n_120_i_n nblank vga_ctrl_vcounter_n_63_i_n \
+#  vga_data_n_11_n vga_ctrl_vcounter_n_62_i_n vga_data_n_213_n \
+#  vga_ctrl_vcounter_n_111_0_n vga_data_n_467_n vga_ctrl_vcounter_n_49_0_n \
+#  vga_ctrl_vcounter_n_62_n vga_ctrl_vcounter_n_63_n vga_ctrl_vcounter_n_120_n \
+#  vga_ctrl_vcounter_n_72_i_n vga_ctrl_VCounter_G_64_i_x3 vga_ctrl_vcounter_n_121_n \
+#  vga_ctrl_vcounter_n_71_i_n vga_data_n_92_n vga_data_n_95_n \
+#  vga_ctrl_vcounter_n_70_i_n vga_ctrl_endline_n vga_ctrl_vcounter_n_69_i_n \
+#  vga_ctrl_LineScan_q1_1_ns_1_0__q1_1se vga_ctrl_linescan_n_15_n \
+#  vga_ctrl_vcounter_n_68_i_n vga_ctrl_framescan_n_17_n \
+#  vga_ctrl_framescan_q2_1_ns_0__n vga_ctrl_vcounter_cnt_i_4__n \
+#  vga_ctrl_framescan_n_18_n vga_ctrl_vcounter_n_61_0_n \
+#  vga_ctrl_framescan_q2_1_ns_1__n vga_ctrl_vcounter_cnt_i_2__n \
+#  vga_ctrl_framescan_n_42_n vga_ctrl_vcounter_n_46_i_n vga_ctrl_framescan_n_44_n \
+#  vga_ctrl_hcounter_n_66_i_n vga_ctrl_framescan_n_41_n vga_data_n_16_n \
+#  vga_ctrl_hcounter_n_64_i_n vga_data_n_30_n vga_data_n_15_n \
+#  vga_ctrl_hcounter_n_63_i_n vga_data_n_472_n vga_data_n_134_n \
+#  vga_ctrl_hcounter_n_62_i_n vga_data_n_280_n vga_data_n_18_n \
+#  vga_ctrl_hcounter_n_61_i_n vga_data_n_98_n vga_data_n_137_n \
+#  vga_ctrl_hcounter_n_60_i_n vga_data_n_24_n vga_data_n_23_n \
+#  vga_ctrl_hcounter_n_59_i_n vga_data_n_22_n vga_data_n_21_n \
+#  vga_ctrl_hcounter_n_58_i_n vga_data_n_396_n vga_data_vga_d28_n \
+#  vga_ctrl_hcounter_n_56_i_n vga_data_n_17_2_n vga_ctrl_hcounter_n_57_i_n \
+#  vga_data_n_357_n vga_ctrl_hcounter_hcnt_n9_0_n vga_data_un1_hcnt_n \
+#  vga_data_n_472_0_1_n vga_data_n_17_n vga_data_n_7_i_1_n vga_data_n_19_n \
+#  vga_data_n_7_i_2_n vga_data_n_20_n vga_data_n_7_i_3_n vga_ctrl_vcounter_n_59_n \
+#  vga_data_n_7_i_4_n vga_ctrl_VCounter_G_68_i_x3 vga_data_n_5_i_1_n \
+#  vga_ctrl_vcounter_n_60_n vga_data_n_5_i_2_n vga_data_n_247_n vga_data_n_5_i_3_n \
+#  vga_data_n_246_n vga_data_n_5_i_4_n vga_data_n_250_n vga_data_n_5_i_5_n \
+#  vga_data_un1_vcnt_5_n vga_data_n_396_0_1_n vga_data_n_323_n vga_data_n_357_0_1_n \
+#  vga_data_n_167_n vga_data_n_246_0_1_n vga_data_n_314_n vga_data_n_246_0_2_n \
+#  vga_data_n_60_n vga_data_n_314_0_1_n vga_data_n_59_n vga_data_n_59_0_1_n \
+#  vga_data_n_63_n vga_data_n_12_0_1_n vga_data_n_64_n vga_data_n_9_i_1_n \
+#  vga_data_un1_hcnt_6_n vga_data_n_9_i_2_n vga_data_n_425_n vga_data_n_509_0_1_n \
+#  vga_data_n_426_n vga_data_n_509_0_2_n vga_data_n_429_n vga_data_n_509_0_3_n \
+#  vga_data_n_435_n vga_data_n_509_0_4_n vga_data_n_432_n vga_ctrl_co1_1_n \
+#  vga_data_un1_hcnt_2_n vga_ctrl_co1_2_n vga_ctrl_vcounter_n_57_n vga_ctrl_co1_3_n \
+#  vga_ctrl_vcounter_n_58_n vga_ctrl_co1_4_n vga_data_n_127_n vga_ctrl_co1_5_n \
+#  vga_data_n_128_n vga_ctrl_co1_6_n vga_data_n_131_n vga_ctrl_co1_7_n \
+#  vga_data_n_203_n vga_ctrl_co1_8_n vga_data_n_204_n vga_ctrl_co1_9_n \
+#  vga_data_n_207_n vga_ctrl_co1_10_n vga_data_n_210_n vga_ctrl_vcounter_un7_co2_1_n \
+#  vga_data_n_288_n vga_ctrl_vcounter_un7_co2_2_n vga_data_n_287_n \
+#  vga_ctrl_vcounter_un7_co2_3_n vga_data_n_538_n vga_ctrl_vcounter_un7_co2_4_n \
+#  vga_data_n_539_n vga_ctrl_vcounter_un7_co2_5_n vga_data_n_542_n \
+#  vga_ctrl_vcounter_un7_co2_6_n vga_data_n_12_n vga_ctrl_vcounter_un7_co2_7_n \
+#  vga_data_n_545_1_n vga_ctrl_vcounter_un7_co2_8_n vga_ctrl_hcounter_n_52_n \
+#  vga_ctrl_vcounter_un7_co2_9_n vga_ctrl_hcounter_n_53_n \
+#  vga_ctrl_vcounter_un7_co2_10_n vga_ctrl_hcounter_n_54_n \
+#  vga_ctrl_vcounter_un7_co2_11_n vga_ctrl_hcounter_n_55_n vga_data_n_95_1_n \
+#  vga_data_n_350_n vga_ctrl_framescan_n_42_1_n vga_data_n_509_n EndFrame_c_1 \
+#  vga_data_n_26_n vga_ctrl_framescan_n_44_1_n vga_data_n_25_n vga_data_n_16_1_n \
+#  vga_data_n_174_n vga_data_n_15_1_n vga_ctrl_vcounter_cnt14_i_n vga_data_n_134_1_n \
+#  vga_ctrl_hcounter_cnt14_i_n vga_data_n_280_1_n orient_i vga_data_n_280_2_0_n \
+#  hcnt_i_4__n vga_data_n_18_1_n hcnt_i_3__n vga_data_vga_d28_1_n vcnt_i_8__n \
+#  vga_data_un1_hcnt_1_n vcnt_i_9__n vga_data_un1_hcnt_2_0_n vcnt_i_6__n \
+#  vga_data_n_391_1_n vcnt_i_7__n vga_data_n_17_1_n hcnt_i_6__n vga_data_n_17_2_0_n \
+#  hcnt_i_5__n vga_data_n_19_1_n hcnt_i_8__n vga_data_n_19_2_n hcnt_i_7__n \
+#  vga_data_n_19_3_n hcnt_i_9__n vga_data_n_20_1_n hcnt_i_2__n vga_data_n_167_1_n \
+#  vga_ctrl_hcounter_cnt_i_8__n vga_data_n_323_1_n vga_data_un1_hcnt_2_i_n \
+#  vga_data_n_323_2_n vcnt_i_2__n vga_data_n_323_3_n vcnt_i_1__n vga_data_n_323_4_n \
+#  vcnt_i_5__n vga_data_n_432_1_n vcnt_i_4__n vga_data_n_467_1_n vcnt_i_3__n \
+#  vga_data_n_210_1_n vga_ctrl_vcounter_n_52_i_i_n vga_data_n_287_0_1_n vcnt_i_0__n \
+#  vga_data_n_174_0_1_n vga_ctrl_q1_i_0__n vga_data_n_174_0_2_n \
+#  vga_data_un1_vcnt_1_i_n vga_data_un1_vcnt_1_1_n vga_data_un1_hcnt_i_n \
+#  vga_ctrl_vcounter_n_118_i_1_n vga_data_vga_d28_i_n vga_ctrl_vcounter_n_42_i_1_n \
+#  vga_ctrl_q2_i_0__n vga_ctrl_vcounter_n_40_i_1_n vga_ctrl_q2_i_1__n \
+#  vga_ctrl_vcounter_n_38_i_1_n vga_data_un1_hcnt_4_i_n \
+#  vga_ctrl_vcounter_n_36_i_1_n vga_data_un1_vcnt_3_i_n \
+#  vga_ctrl_vcounter_n_34_i_1_n vga_ctrl_linescan_n_15_i_n \
+#  vga_ctrl_vcounter_n_117_i_1_n vga_ctrl_vcounter_un7_co2_i_n \
+#  vga_ctrl_vcounter_n_116_i_1_n hcnt_i_0__n vga_ctrl_vcounter_n_67_1_n hcnt_i_1__n \
+#  vga_ctrl_vcounter_n_66_1_n vga_ctrl_q1_i_1__n vga_ctrl_VCounter_G_65_1 \
+#  vga_ctrl_vcounter_cnt_i_1__n vga_ctrl_VCounter_G_66_1 \
+#  vga_ctrl_vcounter_n_55_i_i_n vga_ctrl_vcounter_n_61_0_1_n \
+#  vga_ctrl_vcounter_cnt_i_0__n vga_ctrl_vcounter_n_46_i_1_n vga_ctrl_v_nblank_i_n \
+#  vga_ctrl_hcounter_n_43_i_1_n vga_ctrl_hcounter_n_24_i_n \
+#  vga_ctrl_hcounter_n_39_i_1_n vga_ctrl_hcounter_n_25_i_n \
+#  vga_ctrl_hcounter_n_37_i_1_n vga_ctrl_hcounter_n_36_i_1_n reset_n_c \
+#  vga_ctrl_hcounter_n_35_i_1_n vga_ctrl_hcounter_n_30_i_1_n sys_clk_c \
+#  vga_ctrl_hcounter_n_28_i_1_n vga_ctrl_hcounter_n_34_i_1_n orient_c \
+#  vga_ctrl_hcounter_n_57_1_n vga_ctrl_hcounter_n_56_1_n \
+#  vga_data_vga_d_i_m5_1__un3_n vga_data_vga_d_i_m5_1__un1_n EndFrame_c \
+#  vga_data_vga_d_i_m5_1__un0_n vga_ctrl_framescan_q2_1se_un3_n \
+#  vga_ctrl_framescan_q2_1se_un1_n vga_ctrl_framescan_q2_1se_un0_n \
+#  vga_ctrl_framescan_q2_1se_0_un3_n vga_data_n_174_0_n \
+#  vga_ctrl_framescan_q2_1se_0_un1_n vga_data_n_350_i_n \
+#  vga_ctrl_framescan_q2_1se_0_un0_n vga_data_n_509_0_n \
+#  vga_ctrl_linescan_q1_1se_0_un3_n vga_data_n_391_i_n \
+#  vga_ctrl_linescan_q1_1se_0_un1_n
+.model toplevel
+.inputs reset_n.BLIF sys_clk.BLIF orient.BLIF vga_data_n_25_i_n.BLIF \
+vga_ctrl_linescan_q1_1se_0_un0_n.BLIF vga_data_n_26_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_0_.BLIF vga_data_n_9_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_1_.BLIF vga_ctrl_hcounter_n_55_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_2_.BLIF vga_ctrl_hcounter_n_54_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_3_.BLIF vga_ctrl_hcounter_n_53_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_4_.BLIF vga_ctrl_hcounter_n_52_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_5_.BLIF vga_data_n_288_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_6_.BLIF vga_data_n_11_0_n.BLIF \
+vga_ctrl_HCounter_hcnt_7_.BLIF vga_data_n_545_1_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_8_.BLIF vga_data_n_12_0_n.BLIF \
+vga_ctrl_HCounter_hcnt_9_.BLIF vga_data_n_287_0_n.BLIF \
+vga_ctrl_VCounter_vcnt_0_.BLIF vga_data_n_539_i_n.BLIF \
+vga_ctrl_VCounter_vcnt_1_.BLIF vga_data_n_542_0_n.BLIF \
+vga_ctrl_VCounter_vcnt_2_.BLIF vga_data_n_538_0_n.BLIF \
+vga_ctrl_VCounter_vcnt_3_.BLIF vga_data_n_210_i_n.BLIF \
+vga_ctrl_VCounter_vcnt_4_.BLIF vga_data_n_213_0_n.BLIF \
+vga_ctrl_VCounter_vcnt_5_.BLIF vga_data_n_204_i_n.BLIF \
+vga_ctrl_VCounter_vcnt_6_.BLIF vga_data_n_207_0_n.BLIF \
+vga_ctrl_VCounter_vcnt_7_.BLIF vga_data_n_203_0_n.BLIF \
+vga_ctrl_VCounter_vcnt_8_.BLIF vga_data_n_128_i_n.BLIF \
+vga_ctrl_VCounter_vcnt_9_.BLIF vga_data_n_131_0_n.BLIF \
+vga_ctrl_LineScan_q1_1_0_.BLIF vga_data_n_127_0_n.BLIF \
+vga_ctrl_LineScan_q1_1_1_.BLIF vga_ctrl_vcounter_n_58_i_n.BLIF \
+vga_ctrl_co1_n.BLIF vga_ctrl_vcounter_n_57_i_n.BLIF \
+vga_ctrl_FrameScan_q2_1_0_.BLIF vga_ctrl_hcounter_n_51_i_n.BLIF \
+vga_ctrl_FrameScan_q2_1_1_.BLIF vga_ctrl_hcounter_n_50_i_n.BLIF \
+vga_data_n_59_0_n.BLIF vga_data_n_432_i_n.BLIF vga_data_un1_vcnt_3_n.BLIF \
+vga_data_n_435_0_n.BLIF vga_data_un1_hcnt_4_n.BLIF vga_data_n_426_i_n.BLIF \
+vga_data_n_10_n.BLIF vga_data_n_429_0_n.BLIF vga_data_n_29_n.BLIF \
+vga_data_n_425_i_n.BLIF vga_data_n_280_2_n.BLIF vga_data_n_64_i_n.BLIF \
+vga_data_un1_hcnt_6_i_n.BLIF vga_data_n_60_i_n.BLIF \
+vga_ctrl_vcounter_un7_co2_n.BLIF vga_data_n_63_0_n.BLIF \
+vga_ctrl_vcounter_cnt14_n.BLIF vga_ctrl_hcounter_n_49_i_n.BLIF \
+vga_ctrl_vcounter_cnt15_n.BLIF vga_ctrl_hcounter_n_48_i_n.BLIF \
+vga_ctrl_v_nblank_n.BLIF vga_ctrl_hcounter_n_47_i_n.BLIF \
+vga_ctrl_VCounter_cnt_0_.BLIF vga_ctrl_vcounter_n_76_i_n.BLIF \
+vga_ctrl_VCounter_cnt_1_.BLIF vga_data_n_314_0_n.BLIF \
+vga_ctrl_VCounter_cnt_2_.BLIF vga_ctrl_vcounter_n_73_i_n.BLIF \
+vga_ctrl_VCounter_cnt_3_.BLIF vga_data_n_246_0_n.BLIF \
+vga_ctrl_VCounter_cnt_4_.BLIF vga_data_n_167_i_n.BLIF \
+vga_ctrl_vcounter_vcnte_n.BLIF vga_data_n_323_i_n.BLIF \
+vga_ctrl_vcounter_n_49_n.BLIF vga_data_un1_vcnt_5_i_n.BLIF \
+vga_ctrl_vcounter_n_61_n.BLIF vga_data_n_247_i_n.BLIF \
+vga_ctrl_vcounter_n_65_n.BLIF vga_data_n_250_0_n.BLIF \
+vga_ctrl_VCounter_G_65.BLIF vga_ctrl_vcounter_n_56_i_n.BLIF \
+vga_ctrl_VCounter_G_66.BLIF vga_ctrl_vcounter_n_54_i_n.BLIF \
+vga_ctrl_vcounter_n_53_i_n.BLIF vga_ctrl_vcounter_n_111_n.BLIF \
+vga_ctrl_vcounter_n_51_i_n.BLIF vga_ctrl_vcounter_n_47_n.BLIF \
+vga_ctrl_vcounter_n_50_i_n.BLIF vga_ctrl_vcounter_n_48_n.BLIF \
+vga_ctrl_vcounter_n_119_i_n.BLIF vga_ctrl_vcounter_n_119_n.BLIF \
+vga_ctrl_vcounter_n_60_i_n.BLIF vga_ctrl_vcounter_n_50_n.BLIF \
+vga_ctrl_vcounter_n_59_i_n.BLIF vga_ctrl_vcounter_n_51_n.BLIF \
+vga_ctrl_vcounter_cnt_i_3__n.BLIF vga_ctrl_vcounter_n_53_n.BLIF \
+vga_ctrl_vcounter_n_65_0_n.BLIF vga_ctrl_vcounter_n_54_n.BLIF \
+vga_data_n_20_i_n.BLIF vga_ctrl_vcounter_n_56_n.BLIF vga_data_n_15_i_n.BLIF \
+vga_ctrl_vcounter_n_66_n.BLIF vga_data_n_19_i_n.BLIF \
+vga_ctrl_vcounter_n_67_n.BLIF vga_data_n_17_i_n.BLIF \
+vga_ctrl_vcounter_n_68_n.BLIF vga_data_n_352_i_n.BLIF \
+vga_ctrl_vcounter_n_69_n.BLIF vga_data_n_357_0_n.BLIF \
+vga_ctrl_vcounter_n_70_n.BLIF vga_data_n_396_0_n.BLIF \
+vga_ctrl_vcounter_n_71_n.BLIF vga_data_n_5_i_n.BLIF \
+vga_ctrl_vcounter_n_72_n.BLIF vga_data_n_21_i_n.BLIF \
+vga_ctrl_vcounter_n_73_n.BLIF vga_data_n_23_i_n.BLIF \
+vga_ctrl_vcounter_n_74_n.BLIF vga_data_n_22_i_n.BLIF \
+vga_ctrl_vcounter_n_76_n.BLIF vga_data_n_24_i_n.BLIF \
+vga_ctrl_HCounter_cnt_4_.BLIF vga_data_n_7_i_n.BLIF \
+vga_ctrl_hcounter_cnt14_n.BLIF vga_data_n_134_i_n.BLIF vga_data_n_137_0_n.BLIF \
+vga_ctrl_hcounter_cnt16_n.BLIF vga_data_n_95_i_n.BLIF \
+vga_ctrl_HCounter_cnt_6_.BLIF vga_data_n_98_0_n.BLIF \
+vga_ctrl_HCounter_cnt_7_.BLIF vga_ctrl_vcounter_cnt15_i_n.BLIF \
+vga_ctrl_HCounter_cnt_8_.BLIF vga_ctrl_vcounter_n_110_0_n.BLIF \
+vga_data_n_18_i_n.BLIF vga_ctrl_HCounter_G_22.BLIF vga_data_n_16_i_n.BLIF \
+vga_ctrl_HCounter_G_23.BLIF vga_data_n_280_i_n.BLIF \
+vga_ctrl_LineScan_q1_1_ns_1_0__m1.BLIF vga_data_n_467_i_n.BLIF \
+vga_ctrl_HCounter_G_21.BLIF vga_data_n_472_0_n.BLIF \
+vga_ctrl_hcounter_n_44_n.BLIF vga_ctrl_framescan_n_42_i_n.BLIF \
+vga_ctrl_hcounter_n_45_n.BLIF vga_ctrl_framescan_n_41_i_n.BLIF \
+vga_ctrl_hcounter_n_46_n.BLIF vga_ctrl_framescan_q2_1_ns_0_0__n.BLIF \
+vga_ctrl_hcounter_n_47_n.BLIF vga_ctrl_framescan_n_44_i_n.BLIF \
+vga_ctrl_hcounter_n_48_n.BLIF vga_ctrl_framescan_q2_1_ns_0_1__n.BLIF \
+vga_ctrl_hcounter_n_49_n.BLIF vga_ctrl_vcounter_n_84_0_n.BLIF \
+vga_ctrl_hcounter_n_50_n.BLIF vga_ctrl_endline_i_n.BLIF \
+vga_ctrl_hcounter_n_51_n.BLIF vga_ctrl_vcounter_vcnte_0_n.BLIF \
+vga_ctrl_hcounter_n_56_n.BLIF vga_ctrl_vcounter_n_66_i_n.BLIF \
+vga_ctrl_hcounter_n_57_n.BLIF vga_ctrl_vcounter_n_67_i_n.BLIF \
+vga_ctrl_hcounter_n_58_n.BLIF vga_ctrl_vcounter_vcnt_n9_0_n.BLIF \
+vga_ctrl_hcounter_n_59_n.BLIF vga_ctrl_hcounter_n_46_i_n.BLIF \
+vga_ctrl_hcounter_n_60_n.BLIF vga_ctrl_hcounter_n_45_i_n.BLIF \
+vga_ctrl_hcounter_n_61_n.BLIF vga_ctrl_hcounter_n_44_i_n.BLIF \
+vga_ctrl_hcounter_n_62_n.BLIF vga_ctrl_co1_i_n.BLIF \
+vga_ctrl_hcounter_n_63_n.BLIF vga_ctrl_hcounter_hcnt11_i_n.BLIF \
+vga_ctrl_hcounter_n_64_n.BLIF vga_ctrl_vcounter_n_74_i_n.BLIF \
+vga_data_n_92_0_n.BLIF vga_ctrl_hcounter_n_66_n.BLIF \
+vga_ctrl_vcounter_n_48_i_n.BLIF vga_data_un1_vcnt_1_n.BLIF \
+vga_ctrl_vcounter_n_47_i_n.BLIF vga_data_n_391_n.BLIF \
+vga_ctrl_vcounter_n_121_i_n.BLIF vga_data_n_352_n.BLIF \
+vga_ctrl_vcounter_n_120_i_n.BLIF nblank.BLIF vga_ctrl_vcounter_n_63_i_n.BLIF \
+vga_data_n_11_n.BLIF vga_ctrl_vcounter_n_62_i_n.BLIF vga_data_n_213_n.BLIF \
+vga_ctrl_vcounter_n_111_0_n.BLIF vga_data_n_467_n.BLIF \
+vga_ctrl_vcounter_n_49_0_n.BLIF vga_ctrl_vcounter_n_62_n.BLIF \
+vga_ctrl_vcounter_n_63_n.BLIF vga_ctrl_vcounter_n_120_n.BLIF \
+vga_ctrl_vcounter_n_72_i_n.BLIF vga_ctrl_VCounter_G_64_i_x3.BLIF \
+vga_ctrl_vcounter_n_121_n.BLIF vga_ctrl_vcounter_n_71_i_n.BLIF \
+vga_data_n_92_n.BLIF vga_data_n_95_n.BLIF vga_ctrl_vcounter_n_70_i_n.BLIF \
+vga_ctrl_endline_n.BLIF vga_ctrl_vcounter_n_69_i_n.BLIF \
+vga_ctrl_LineScan_q1_1_ns_1_0__q1_1se.BLIF vga_ctrl_linescan_n_15_n.BLIF \
+vga_ctrl_vcounter_n_68_i_n.BLIF vga_ctrl_framescan_n_17_n.BLIF \
+vga_ctrl_framescan_q2_1_ns_0__n.BLIF vga_ctrl_vcounter_cnt_i_4__n.BLIF \
+vga_ctrl_framescan_n_18_n.BLIF vga_ctrl_vcounter_n_61_0_n.BLIF \
+vga_ctrl_framescan_q2_1_ns_1__n.BLIF vga_ctrl_vcounter_cnt_i_2__n.BLIF \
+vga_ctrl_framescan_n_42_n.BLIF vga_ctrl_vcounter_n_46_i_n.BLIF \
+vga_ctrl_framescan_n_44_n.BLIF vga_ctrl_hcounter_n_66_i_n.BLIF \
+vga_ctrl_framescan_n_41_n.BLIF vga_data_n_16_n.BLIF \
+vga_ctrl_hcounter_n_64_i_n.BLIF vga_data_n_30_n.BLIF vga_data_n_15_n.BLIF \
+vga_ctrl_hcounter_n_63_i_n.BLIF vga_data_n_472_n.BLIF vga_data_n_134_n.BLIF \
+vga_ctrl_hcounter_n_62_i_n.BLIF vga_data_n_280_n.BLIF vga_data_n_18_n.BLIF \
+vga_ctrl_hcounter_n_61_i_n.BLIF vga_data_n_98_n.BLIF vga_data_n_137_n.BLIF \
+vga_ctrl_hcounter_n_60_i_n.BLIF vga_data_n_24_n.BLIF vga_data_n_23_n.BLIF \
+vga_ctrl_hcounter_n_59_i_n.BLIF vga_data_n_22_n.BLIF vga_data_n_21_n.BLIF \
+vga_ctrl_hcounter_n_58_i_n.BLIF vga_data_n_396_n.BLIF vga_data_vga_d28_n.BLIF \
+vga_ctrl_hcounter_n_56_i_n.BLIF vga_data_n_17_2_n.BLIF \
+vga_ctrl_hcounter_n_57_i_n.BLIF vga_data_n_357_n.BLIF \
+vga_ctrl_hcounter_hcnt_n9_0_n.BLIF vga_data_un1_hcnt_n.BLIF \
+vga_data_n_472_0_1_n.BLIF vga_data_n_17_n.BLIF vga_data_n_7_i_1_n.BLIF \
+vga_data_n_19_n.BLIF vga_data_n_7_i_2_n.BLIF vga_data_n_20_n.BLIF \
+vga_data_n_7_i_3_n.BLIF vga_ctrl_vcounter_n_59_n.BLIF vga_data_n_7_i_4_n.BLIF \
+vga_ctrl_VCounter_G_68_i_x3.BLIF vga_data_n_5_i_1_n.BLIF \
+vga_ctrl_vcounter_n_60_n.BLIF vga_data_n_5_i_2_n.BLIF vga_data_n_247_n.BLIF \
+vga_data_n_5_i_3_n.BLIF vga_data_n_246_n.BLIF vga_data_n_5_i_4_n.BLIF \
+vga_data_n_250_n.BLIF vga_data_n_5_i_5_n.BLIF vga_data_un1_vcnt_5_n.BLIF \
+vga_data_n_396_0_1_n.BLIF vga_data_n_323_n.BLIF vga_data_n_357_0_1_n.BLIF \
+vga_data_n_167_n.BLIF vga_data_n_246_0_1_n.BLIF vga_data_n_314_n.BLIF \
+vga_data_n_246_0_2_n.BLIF vga_data_n_60_n.BLIF vga_data_n_314_0_1_n.BLIF \
+vga_data_n_59_n.BLIF vga_data_n_59_0_1_n.BLIF vga_data_n_63_n.BLIF \
+vga_data_n_12_0_1_n.BLIF vga_data_n_64_n.BLIF vga_data_n_9_i_1_n.BLIF \
+vga_data_un1_hcnt_6_n.BLIF vga_data_n_9_i_2_n.BLIF vga_data_n_425_n.BLIF \
+vga_data_n_509_0_1_n.BLIF vga_data_n_426_n.BLIF vga_data_n_509_0_2_n.BLIF \
+vga_data_n_429_n.BLIF vga_data_n_509_0_3_n.BLIF vga_data_n_435_n.BLIF \
+vga_data_n_509_0_4_n.BLIF vga_data_n_432_n.BLIF vga_ctrl_co1_1_n.BLIF \
+vga_data_un1_hcnt_2_n.BLIF vga_ctrl_co1_2_n.BLIF vga_ctrl_vcounter_n_57_n.BLIF \
+vga_ctrl_co1_3_n.BLIF vga_ctrl_vcounter_n_58_n.BLIF vga_ctrl_co1_4_n.BLIF \
+vga_data_n_127_n.BLIF vga_ctrl_co1_5_n.BLIF vga_data_n_128_n.BLIF \
+vga_ctrl_co1_6_n.BLIF vga_data_n_131_n.BLIF vga_ctrl_co1_7_n.BLIF \
+vga_data_n_203_n.BLIF vga_ctrl_co1_8_n.BLIF vga_data_n_204_n.BLIF \
+vga_ctrl_co1_9_n.BLIF vga_data_n_207_n.BLIF vga_ctrl_co1_10_n.BLIF \
+vga_data_n_210_n.BLIF vga_ctrl_vcounter_un7_co2_1_n.BLIF vga_data_n_288_n.BLIF \
+vga_ctrl_vcounter_un7_co2_2_n.BLIF vga_data_n_287_n.BLIF \
+vga_ctrl_vcounter_un7_co2_3_n.BLIF vga_data_n_538_n.BLIF \
+vga_ctrl_vcounter_un7_co2_4_n.BLIF vga_data_n_539_n.BLIF \
+vga_ctrl_vcounter_un7_co2_5_n.BLIF vga_data_n_542_n.BLIF \
+vga_ctrl_vcounter_un7_co2_6_n.BLIF vga_data_n_12_n.BLIF \
+vga_ctrl_vcounter_un7_co2_7_n.BLIF vga_data_n_545_1_n.BLIF \
+vga_ctrl_vcounter_un7_co2_8_n.BLIF vga_ctrl_hcounter_n_52_n.BLIF \
+vga_ctrl_vcounter_un7_co2_9_n.BLIF vga_ctrl_hcounter_n_53_n.BLIF \
+vga_ctrl_vcounter_un7_co2_10_n.BLIF vga_ctrl_hcounter_n_54_n.BLIF \
+vga_ctrl_vcounter_un7_co2_11_n.BLIF vga_ctrl_hcounter_n_55_n.BLIF \
+vga_data_n_95_1_n.BLIF vga_data_n_350_n.BLIF vga_ctrl_framescan_n_42_1_n.BLIF \
+vga_data_n_509_n.BLIF EndFrame_c_1.BLIF vga_data_n_26_n.BLIF \
+vga_ctrl_framescan_n_44_1_n.BLIF vga_data_n_25_n.BLIF vga_data_n_16_1_n.BLIF \
+vga_data_n_174_n.BLIF vga_data_n_15_1_n.BLIF vga_ctrl_vcounter_cnt14_i_n.BLIF \
+vga_data_n_134_1_n.BLIF vga_ctrl_hcounter_cnt14_i_n.BLIF \
+vga_data_n_280_1_n.BLIF orient_i.BLIF vga_data_n_280_2_0_n.BLIF \
+hcnt_i_4__n.BLIF vga_data_n_18_1_n.BLIF hcnt_i_3__n.BLIF \
+vga_data_vga_d28_1_n.BLIF vcnt_i_8__n.BLIF vga_data_un1_hcnt_1_n.BLIF \
+vcnt_i_9__n.BLIF vga_data_un1_hcnt_2_0_n.BLIF vcnt_i_6__n.BLIF \
+vga_data_n_391_1_n.BLIF vcnt_i_7__n.BLIF vga_data_n_17_1_n.BLIF \
+hcnt_i_6__n.BLIF vga_data_n_17_2_0_n.BLIF hcnt_i_5__n.BLIF \
+vga_data_n_19_1_n.BLIF hcnt_i_8__n.BLIF vga_data_n_19_2_n.BLIF \
+hcnt_i_7__n.BLIF vga_data_n_19_3_n.BLIF hcnt_i_9__n.BLIF \
+vga_data_n_20_1_n.BLIF hcnt_i_2__n.BLIF vga_data_n_167_1_n.BLIF \
+vga_ctrl_hcounter_cnt_i_8__n.BLIF vga_data_n_323_1_n.BLIF \
+vga_data_un1_hcnt_2_i_n.BLIF vga_data_n_323_2_n.BLIF vcnt_i_2__n.BLIF \
+vga_data_n_323_3_n.BLIF vcnt_i_1__n.BLIF vga_data_n_323_4_n.BLIF \
+vcnt_i_5__n.BLIF vga_data_n_432_1_n.BLIF vcnt_i_4__n.BLIF \
+vga_data_n_467_1_n.BLIF vcnt_i_3__n.BLIF vga_data_n_210_1_n.BLIF \
+vga_ctrl_vcounter_n_52_i_i_n.BLIF vga_data_n_287_0_1_n.BLIF vcnt_i_0__n.BLIF \
+vga_data_n_174_0_1_n.BLIF vga_ctrl_q1_i_0__n.BLIF vga_data_n_174_0_2_n.BLIF \
+vga_data_un1_vcnt_1_i_n.BLIF vga_data_un1_vcnt_1_1_n.BLIF \
+vga_data_un1_hcnt_i_n.BLIF vga_ctrl_vcounter_n_118_i_1_n.BLIF \
+vga_data_vga_d28_i_n.BLIF vga_ctrl_vcounter_n_42_i_1_n.BLIF \
+vga_ctrl_q2_i_0__n.BLIF vga_ctrl_vcounter_n_40_i_1_n.BLIF \
+vga_ctrl_q2_i_1__n.BLIF vga_ctrl_vcounter_n_38_i_1_n.BLIF \
+vga_data_un1_hcnt_4_i_n.BLIF vga_ctrl_vcounter_n_36_i_1_n.BLIF \
+vga_data_un1_vcnt_3_i_n.BLIF vga_ctrl_vcounter_n_34_i_1_n.BLIF \
+vga_ctrl_linescan_n_15_i_n.BLIF vga_ctrl_vcounter_n_117_i_1_n.BLIF \
+vga_ctrl_vcounter_un7_co2_i_n.BLIF vga_ctrl_vcounter_n_116_i_1_n.BLIF \
+hcnt_i_0__n.BLIF vga_ctrl_vcounter_n_67_1_n.BLIF hcnt_i_1__n.BLIF \
+vga_ctrl_vcounter_n_66_1_n.BLIF vga_ctrl_q1_i_1__n.BLIF \
+vga_ctrl_VCounter_G_65_1.BLIF vga_ctrl_vcounter_cnt_i_1__n.BLIF \
+vga_ctrl_VCounter_G_66_1.BLIF vga_ctrl_vcounter_n_55_i_i_n.BLIF \
+vga_ctrl_vcounter_n_61_0_1_n.BLIF vga_ctrl_vcounter_cnt_i_0__n.BLIF \
+vga_ctrl_vcounter_n_46_i_1_n.BLIF vga_ctrl_v_nblank_i_n.BLIF \
+vga_ctrl_hcounter_n_43_i_1_n.BLIF vga_ctrl_hcounter_n_24_i_n.BLIF \
+vga_ctrl_hcounter_n_39_i_1_n.BLIF vga_ctrl_hcounter_n_25_i_n.BLIF \
+vga_ctrl_hcounter_n_37_i_1_n.BLIF vga_ctrl_hcounter_n_36_i_1_n.BLIF \
+reset_n_c.BLIF vga_ctrl_hcounter_n_35_i_1_n.BLIF \
+vga_ctrl_hcounter_n_30_i_1_n.BLIF sys_clk_c.BLIF \
+vga_ctrl_hcounter_n_28_i_1_n.BLIF vga_ctrl_hcounter_n_34_i_1_n.BLIF \
+orient_c.BLIF vga_ctrl_hcounter_n_57_1_n.BLIF vga_ctrl_hcounter_n_56_1_n.BLIF \
+vga_data_vga_d_i_m5_1__un3_n.BLIF vga_data_vga_d_i_m5_1__un1_n.BLIF \
+EndFrame_c.BLIF vga_data_vga_d_i_m5_1__un0_n.BLIF \
+vga_ctrl_framescan_q2_1se_un3_n.BLIF vga_ctrl_framescan_q2_1se_un1_n.BLIF \
+vga_ctrl_framescan_q2_1se_un0_n.BLIF vga_ctrl_framescan_q2_1se_0_un3_n.BLIF \
+vga_data_n_174_0_n.BLIF vga_ctrl_framescan_q2_1se_0_un1_n.BLIF \
+vga_data_n_350_i_n.BLIF vga_ctrl_framescan_q2_1se_0_un0_n.BLIF \
+vga_data_n_509_0_n.BLIF vga_ctrl_linescan_q1_1se_0_un3_n.BLIF \
+vga_data_n_391_i_n.BLIF vga_ctrl_linescan_q1_1se_0_un1_n.BLIF
+.outputs vga_d_2_ hsync vsync EndFrame vga_d_1_ vga_d_0_ \
+vga_ctrl_HCounter_hcnt_9_.D vga_ctrl_HCounter_hcnt_9_.C \
+vga_ctrl_HCounter_cnt_6_.D vga_ctrl_HCounter_cnt_6_.C \
+vga_ctrl_HCounter_cnt_7_.D vga_ctrl_HCounter_cnt_7_.C \
+vga_ctrl_HCounter_cnt_8_.D vga_ctrl_HCounter_cnt_8_.C \
+vga_ctrl_HCounter_hcnt_6_.D vga_ctrl_HCounter_hcnt_6_.C \
+vga_ctrl_HCounter_hcnt_7_.D vga_ctrl_HCounter_hcnt_7_.C \
+vga_ctrl_HCounter_hcnt_8_.D vga_ctrl_HCounter_hcnt_8_.C \
+vga_ctrl_HCounter_hcnt_3_.D vga_ctrl_HCounter_hcnt_3_.C \
+vga_ctrl_HCounter_hcnt_4_.D vga_ctrl_HCounter_hcnt_4_.C \
+vga_ctrl_HCounter_hcnt_5_.D vga_ctrl_HCounter_hcnt_5_.C \
+vga_ctrl_HCounter_hcnt_0_.D vga_ctrl_HCounter_hcnt_0_.C \
+vga_ctrl_HCounter_hcnt_1_.D vga_ctrl_HCounter_hcnt_1_.C \
+vga_ctrl_HCounter_hcnt_2_.D vga_ctrl_HCounter_hcnt_2_.C \
+vga_ctrl_HCounter_cnt_4_.D vga_ctrl_HCounter_cnt_4_.C \
+vga_ctrl_VCounter_cnt_0_.D vga_ctrl_VCounter_cnt_0_.C \
+vga_ctrl_VCounter_cnt_1_.D vga_ctrl_VCounter_cnt_1_.C \
+vga_ctrl_VCounter_cnt_2_.D vga_ctrl_VCounter_cnt_2_.C \
+vga_ctrl_VCounter_cnt_3_.D vga_ctrl_VCounter_cnt_3_.C \
+vga_ctrl_VCounter_cnt_4_.D vga_ctrl_VCounter_cnt_4_.C \
+vga_ctrl_VCounter_vcnt_7_.D vga_ctrl_VCounter_vcnt_7_.CE \
+vga_ctrl_VCounter_vcnt_7_.C vga_ctrl_VCounter_vcnt_8_.D \
+vga_ctrl_VCounter_vcnt_8_.CE vga_ctrl_VCounter_vcnt_8_.C \
+vga_ctrl_VCounter_vcnt_9_.D vga_ctrl_VCounter_vcnt_9_.CE \
+vga_ctrl_VCounter_vcnt_9_.C vga_ctrl_VCounter_vcnt_4_.D \
+vga_ctrl_VCounter_vcnt_4_.CE vga_ctrl_VCounter_vcnt_4_.C \
+vga_ctrl_VCounter_vcnt_5_.D vga_ctrl_VCounter_vcnt_5_.CE \
+vga_ctrl_VCounter_vcnt_5_.C vga_ctrl_VCounter_vcnt_6_.D \
+vga_ctrl_VCounter_vcnt_6_.CE vga_ctrl_VCounter_vcnt_6_.C \
+vga_ctrl_VCounter_vcnt_2_.D vga_ctrl_VCounter_vcnt_2_.CE \
+vga_ctrl_VCounter_vcnt_2_.C vga_ctrl_VCounter_vcnt_3_.D \
+vga_ctrl_VCounter_vcnt_3_.CE vga_ctrl_VCounter_vcnt_3_.C \
+vga_ctrl_VCounter_vcnt_0_.D vga_ctrl_VCounter_vcnt_0_.CE \
+vga_ctrl_VCounter_vcnt_0_.C vga_ctrl_VCounter_vcnt_1_.D \
+vga_ctrl_VCounter_vcnt_1_.CE vga_ctrl_VCounter_vcnt_1_.C \
+vga_ctrl_LineScan_q1_1_1_.D vga_ctrl_LineScan_q1_1_1_.C \
+vga_ctrl_LineScan_q1_1_0_.D vga_ctrl_LineScan_q1_1_0_.C \
+vga_ctrl_FrameScan_q2_1_0_.D vga_ctrl_FrameScan_q2_1_0_.C \
+vga_ctrl_FrameScan_q2_1_1_.D vga_ctrl_FrameScan_q2_1_1_.C vga_data_n_25_i_n \
+vga_ctrl_linescan_q1_1se_0_un0_n vga_data_n_26_i_n vga_data_n_9_i_n \
+vga_ctrl_hcounter_n_55_i_n vga_ctrl_hcounter_n_54_i_n \
+vga_ctrl_hcounter_n_53_i_n vga_ctrl_hcounter_n_52_i_n vga_data_n_288_i_n \
+vga_data_n_11_0_n vga_data_n_545_1_i_n vga_data_n_12_0_n vga_data_n_287_0_n \
+vga_data_n_539_i_n vga_data_n_542_0_n vga_data_n_538_0_n vga_data_n_210_i_n \
+vga_data_n_213_0_n vga_data_n_204_i_n vga_data_n_207_0_n vga_data_n_203_0_n \
+vga_data_n_128_i_n vga_data_n_131_0_n vga_data_n_127_0_n \
+vga_ctrl_vcounter_n_58_i_n vga_ctrl_co1_n vga_ctrl_vcounter_n_57_i_n \
+vga_ctrl_hcounter_n_51_i_n vga_ctrl_hcounter_n_50_i_n vga_data_n_59_0_n \
+vga_data_n_432_i_n vga_data_un1_vcnt_3_n vga_data_n_435_0_n \
+vga_data_un1_hcnt_4_n vga_data_n_426_i_n vga_data_n_10_n vga_data_n_429_0_n \
+vga_data_n_29_n vga_data_n_425_i_n vga_data_n_280_2_n vga_data_n_64_i_n \
+vga_data_un1_hcnt_6_i_n vga_data_n_60_i_n vga_ctrl_vcounter_un7_co2_n \
+vga_data_n_63_0_n vga_ctrl_vcounter_cnt14_n vga_ctrl_hcounter_n_49_i_n \
+vga_ctrl_vcounter_cnt15_n vga_ctrl_hcounter_n_48_i_n vga_ctrl_v_nblank_n \
+vga_ctrl_hcounter_n_47_i_n vga_ctrl_vcounter_n_76_i_n vga_data_n_314_0_n \
+vga_ctrl_vcounter_n_73_i_n vga_data_n_246_0_n vga_data_n_167_i_n \
+vga_ctrl_vcounter_vcnte_n vga_data_n_323_i_n vga_ctrl_vcounter_n_49_n \
+vga_data_un1_vcnt_5_i_n vga_ctrl_vcounter_n_61_n vga_data_n_247_i_n \
+vga_ctrl_vcounter_n_65_n vga_data_n_250_0_n vga_ctrl_vcounter_n_56_i_n \
+vga_ctrl_vcounter_n_54_i_n vga_ctrl_vcounter_n_53_i_n \
+vga_ctrl_vcounter_n_111_n vga_ctrl_vcounter_n_51_i_n vga_ctrl_vcounter_n_47_n \
+vga_ctrl_vcounter_n_50_i_n vga_ctrl_vcounter_n_48_n \
+vga_ctrl_vcounter_n_119_i_n vga_ctrl_vcounter_n_119_n \
+vga_ctrl_vcounter_n_60_i_n vga_ctrl_vcounter_n_50_n vga_ctrl_vcounter_n_59_i_n \
+vga_ctrl_vcounter_n_51_n vga_ctrl_vcounter_cnt_i_3__n vga_ctrl_vcounter_n_53_n \
+vga_ctrl_vcounter_n_65_0_n vga_ctrl_vcounter_n_54_n vga_data_n_20_i_n \
+vga_ctrl_vcounter_n_56_n vga_data_n_15_i_n vga_ctrl_vcounter_n_66_n \
+vga_data_n_19_i_n vga_ctrl_vcounter_n_67_n vga_data_n_17_i_n \
+vga_ctrl_vcounter_n_68_n vga_data_n_352_i_n vga_ctrl_vcounter_n_69_n \
+vga_data_n_357_0_n vga_ctrl_vcounter_n_70_n vga_data_n_396_0_n \
+vga_ctrl_vcounter_n_71_n vga_data_n_5_i_n vga_ctrl_vcounter_n_72_n \
+vga_data_n_21_i_n vga_ctrl_vcounter_n_73_n vga_data_n_23_i_n \
+vga_ctrl_vcounter_n_74_n vga_data_n_22_i_n vga_ctrl_vcounter_n_76_n \
+vga_data_n_24_i_n vga_data_n_7_i_n vga_ctrl_hcounter_cnt14_n \
+vga_data_n_134_i_n vga_data_n_137_0_n vga_ctrl_hcounter_cnt16_n \
+vga_data_n_95_i_n vga_data_n_98_0_n vga_ctrl_vcounter_cnt15_i_n \
+vga_ctrl_vcounter_n_110_0_n vga_data_n_18_i_n vga_data_n_16_i_n \
+vga_data_n_280_i_n vga_data_n_467_i_n vga_data_n_472_0_n \
+vga_ctrl_hcounter_n_44_n vga_ctrl_framescan_n_42_i_n vga_ctrl_hcounter_n_45_n \
+vga_ctrl_framescan_n_41_i_n vga_ctrl_hcounter_n_46_n \
+vga_ctrl_framescan_q2_1_ns_0_0__n vga_ctrl_hcounter_n_47_n \
+vga_ctrl_framescan_n_44_i_n vga_ctrl_hcounter_n_48_n \
+vga_ctrl_framescan_q2_1_ns_0_1__n vga_ctrl_hcounter_n_49_n \
+vga_ctrl_vcounter_n_84_0_n vga_ctrl_hcounter_n_50_n vga_ctrl_endline_i_n \
+vga_ctrl_hcounter_n_51_n vga_ctrl_vcounter_vcnte_0_n vga_ctrl_hcounter_n_56_n \
+vga_ctrl_vcounter_n_66_i_n vga_ctrl_hcounter_n_57_n vga_ctrl_vcounter_n_67_i_n \
+vga_ctrl_hcounter_n_58_n vga_ctrl_vcounter_vcnt_n9_0_n \
+vga_ctrl_hcounter_n_59_n vga_ctrl_hcounter_n_46_i_n vga_ctrl_hcounter_n_60_n \
+vga_ctrl_hcounter_n_45_i_n vga_ctrl_hcounter_n_61_n vga_ctrl_hcounter_n_44_i_n \
+vga_ctrl_hcounter_n_62_n vga_ctrl_co1_i_n vga_ctrl_hcounter_n_63_n \
+vga_ctrl_hcounter_hcnt11_i_n vga_ctrl_hcounter_n_64_n \
+vga_ctrl_vcounter_n_74_i_n vga_data_n_92_0_n vga_ctrl_hcounter_n_66_n \
+vga_ctrl_vcounter_n_48_i_n vga_data_un1_vcnt_1_n vga_ctrl_vcounter_n_47_i_n \
+vga_data_n_391_n vga_ctrl_vcounter_n_121_i_n vga_data_n_352_n \
+vga_ctrl_vcounter_n_120_i_n nblank vga_ctrl_vcounter_n_63_i_n vga_data_n_11_n \
+vga_ctrl_vcounter_n_62_i_n vga_data_n_213_n vga_ctrl_vcounter_n_111_0_n \
+vga_data_n_467_n vga_ctrl_vcounter_n_49_0_n vga_ctrl_vcounter_n_62_n \
+vga_ctrl_vcounter_n_63_n vga_ctrl_vcounter_n_120_n vga_ctrl_vcounter_n_72_i_n \
+vga_ctrl_vcounter_n_121_n vga_ctrl_vcounter_n_71_i_n vga_data_n_92_n \
+vga_data_n_95_n vga_ctrl_vcounter_n_70_i_n vga_ctrl_endline_n \
+vga_ctrl_vcounter_n_69_i_n vga_ctrl_linescan_n_15_n vga_ctrl_vcounter_n_68_i_n \
+vga_ctrl_framescan_n_17_n vga_ctrl_framescan_q2_1_ns_0__n \
+vga_ctrl_vcounter_cnt_i_4__n vga_ctrl_framescan_n_18_n \
+vga_ctrl_vcounter_n_61_0_n vga_ctrl_framescan_q2_1_ns_1__n \
+vga_ctrl_vcounter_cnt_i_2__n vga_ctrl_framescan_n_42_n \
+vga_ctrl_vcounter_n_46_i_n vga_ctrl_framescan_n_44_n \
+vga_ctrl_hcounter_n_66_i_n vga_ctrl_framescan_n_41_n vga_data_n_16_n \
+vga_ctrl_hcounter_n_64_i_n vga_data_n_30_n vga_data_n_15_n \
+vga_ctrl_hcounter_n_63_i_n vga_data_n_472_n vga_data_n_134_n \
+vga_ctrl_hcounter_n_62_i_n vga_data_n_280_n vga_data_n_18_n \
+vga_ctrl_hcounter_n_61_i_n vga_data_n_98_n vga_data_n_137_n \
+vga_ctrl_hcounter_n_60_i_n vga_data_n_24_n vga_data_n_23_n \
+vga_ctrl_hcounter_n_59_i_n vga_data_n_22_n vga_data_n_21_n \
+vga_ctrl_hcounter_n_58_i_n vga_data_n_396_n vga_data_vga_d28_n \
+vga_ctrl_hcounter_n_56_i_n vga_data_n_17_2_n vga_ctrl_hcounter_n_57_i_n \
+vga_data_n_357_n vga_ctrl_hcounter_hcnt_n9_0_n vga_data_un1_hcnt_n \
+vga_data_n_472_0_1_n vga_data_n_17_n vga_data_n_7_i_1_n vga_data_n_19_n \
+vga_data_n_7_i_2_n vga_data_n_20_n vga_data_n_7_i_3_n vga_ctrl_vcounter_n_59_n \
+vga_data_n_7_i_4_n vga_data_n_5_i_1_n vga_ctrl_vcounter_n_60_n \
+vga_data_n_5_i_2_n vga_data_n_247_n vga_data_n_5_i_3_n vga_data_n_246_n \
+vga_data_n_5_i_4_n vga_data_n_250_n vga_data_n_5_i_5_n vga_data_un1_vcnt_5_n \
+vga_data_n_396_0_1_n vga_data_n_323_n vga_data_n_357_0_1_n vga_data_n_167_n \
+vga_data_n_246_0_1_n vga_data_n_314_n vga_data_n_246_0_2_n vga_data_n_60_n \
+vga_data_n_314_0_1_n vga_data_n_59_n vga_data_n_59_0_1_n vga_data_n_63_n \
+vga_data_n_12_0_1_n vga_data_n_64_n vga_data_n_9_i_1_n vga_data_un1_hcnt_6_n \
+vga_data_n_9_i_2_n vga_data_n_425_n vga_data_n_509_0_1_n vga_data_n_426_n \
+vga_data_n_509_0_2_n vga_data_n_429_n vga_data_n_509_0_3_n vga_data_n_435_n \
+vga_data_n_509_0_4_n vga_data_n_432_n vga_ctrl_co1_1_n vga_data_un1_hcnt_2_n \
+vga_ctrl_co1_2_n vga_ctrl_vcounter_n_57_n vga_ctrl_co1_3_n \
+vga_ctrl_vcounter_n_58_n vga_ctrl_co1_4_n vga_data_n_127_n vga_ctrl_co1_5_n \
+vga_data_n_128_n vga_ctrl_co1_6_n vga_data_n_131_n vga_ctrl_co1_7_n \
+vga_data_n_203_n vga_ctrl_co1_8_n vga_data_n_204_n vga_ctrl_co1_9_n \
+vga_data_n_207_n vga_ctrl_co1_10_n vga_data_n_210_n \
+vga_ctrl_vcounter_un7_co2_1_n vga_data_n_288_n vga_ctrl_vcounter_un7_co2_2_n \
+vga_data_n_287_n vga_ctrl_vcounter_un7_co2_3_n vga_data_n_538_n \
+vga_ctrl_vcounter_un7_co2_4_n vga_data_n_539_n vga_ctrl_vcounter_un7_co2_5_n \
+vga_data_n_542_n vga_ctrl_vcounter_un7_co2_6_n vga_data_n_12_n \
+vga_ctrl_vcounter_un7_co2_7_n vga_data_n_545_1_n vga_ctrl_vcounter_un7_co2_8_n \
+vga_ctrl_hcounter_n_52_n vga_ctrl_vcounter_un7_co2_9_n \
+vga_ctrl_hcounter_n_53_n vga_ctrl_vcounter_un7_co2_10_n \
+vga_ctrl_hcounter_n_54_n vga_ctrl_vcounter_un7_co2_11_n \
+vga_ctrl_hcounter_n_55_n vga_data_n_95_1_n vga_data_n_350_n \
+vga_ctrl_framescan_n_42_1_n vga_data_n_509_n EndFrame_c_1 vga_data_n_26_n \
+vga_ctrl_framescan_n_44_1_n vga_data_n_25_n vga_data_n_16_1_n vga_data_n_174_n \
+vga_data_n_15_1_n vga_ctrl_vcounter_cnt14_i_n vga_data_n_134_1_n \
+vga_ctrl_hcounter_cnt14_i_n vga_data_n_280_1_n orient_i vga_data_n_280_2_0_n \
+hcnt_i_4__n vga_data_n_18_1_n hcnt_i_3__n vga_data_vga_d28_1_n vcnt_i_8__n \
+vga_data_un1_hcnt_1_n vcnt_i_9__n vga_data_un1_hcnt_2_0_n vcnt_i_6__n \
+vga_data_n_391_1_n vcnt_i_7__n vga_data_n_17_1_n hcnt_i_6__n \
+vga_data_n_17_2_0_n hcnt_i_5__n vga_data_n_19_1_n hcnt_i_8__n \
+vga_data_n_19_2_n hcnt_i_7__n vga_data_n_19_3_n hcnt_i_9__n vga_data_n_20_1_n \
+hcnt_i_2__n vga_data_n_167_1_n vga_ctrl_hcounter_cnt_i_8__n vga_data_n_323_1_n \
+vga_data_un1_hcnt_2_i_n vga_data_n_323_2_n vcnt_i_2__n vga_data_n_323_3_n \
+vcnt_i_1__n vga_data_n_323_4_n vcnt_i_5__n vga_data_n_432_1_n vcnt_i_4__n \
+vga_data_n_467_1_n vcnt_i_3__n vga_data_n_210_1_n vga_ctrl_vcounter_n_52_i_i_n \
+vga_data_n_287_0_1_n vcnt_i_0__n vga_data_n_174_0_1_n vga_ctrl_q1_i_0__n \
+vga_data_n_174_0_2_n vga_data_un1_vcnt_1_i_n vga_data_un1_vcnt_1_1_n \
+vga_data_un1_hcnt_i_n vga_ctrl_vcounter_n_118_i_1_n vga_data_vga_d28_i_n \
+vga_ctrl_vcounter_n_42_i_1_n vga_ctrl_q2_i_0__n vga_ctrl_vcounter_n_40_i_1_n \
+vga_ctrl_q2_i_1__n vga_ctrl_vcounter_n_38_i_1_n vga_data_un1_hcnt_4_i_n \
+vga_ctrl_vcounter_n_36_i_1_n vga_data_un1_vcnt_3_i_n \
+vga_ctrl_vcounter_n_34_i_1_n vga_ctrl_linescan_n_15_i_n \
+vga_ctrl_vcounter_n_117_i_1_n vga_ctrl_vcounter_un7_co2_i_n \
+vga_ctrl_vcounter_n_116_i_1_n hcnt_i_0__n vga_ctrl_vcounter_n_67_1_n \
+hcnt_i_1__n vga_ctrl_vcounter_n_66_1_n vga_ctrl_q1_i_1__n \
+vga_ctrl_vcounter_cnt_i_1__n vga_ctrl_vcounter_n_55_i_i_n \
+vga_ctrl_vcounter_n_61_0_1_n vga_ctrl_vcounter_cnt_i_0__n \
+vga_ctrl_vcounter_n_46_i_1_n vga_ctrl_v_nblank_i_n \
+vga_ctrl_hcounter_n_43_i_1_n vga_ctrl_hcounter_n_24_i_n \
+vga_ctrl_hcounter_n_39_i_1_n vga_ctrl_hcounter_n_25_i_n \
+vga_ctrl_hcounter_n_37_i_1_n vga_ctrl_hcounter_n_36_i_1_n reset_n_c \
+vga_ctrl_hcounter_n_35_i_1_n vga_ctrl_hcounter_n_30_i_1_n sys_clk_c \
+vga_ctrl_hcounter_n_28_i_1_n vga_ctrl_hcounter_n_34_i_1_n orient_c \
+vga_ctrl_hcounter_n_57_1_n vga_ctrl_hcounter_n_56_1_n \
+vga_data_vga_d_i_m5_1__un3_n vga_data_vga_d_i_m5_1__un1_n EndFrame_c \
+vga_data_vga_d_i_m5_1__un0_n vga_ctrl_framescan_q2_1se_un3_n \
+vga_ctrl_framescan_q2_1se_un1_n vga_ctrl_framescan_q2_1se_un0_n \
+vga_ctrl_framescan_q2_1se_0_un3_n vga_data_n_174_0_n \
+vga_ctrl_framescan_q2_1se_0_un1_n vga_data_n_350_i_n \
+vga_ctrl_framescan_q2_1se_0_un0_n vga_data_n_509_0_n \
+vga_ctrl_linescan_q1_1se_0_un3_n vga_data_n_391_i_n \
+vga_ctrl_linescan_q1_1se_0_un1_n vga_ctrl_VCounter_G_65 vga_ctrl_VCounter_G_66 \
+vga_ctrl_HCounter_G_22 vga_ctrl_HCounter_G_23 \
+vga_ctrl_LineScan_q1_1_ns_1_0__m1 vga_ctrl_HCounter_G_21 \
+vga_ctrl_VCounter_G_64_i_x3 vga_ctrl_LineScan_q1_1_ns_1_0__q1_1se \
+vga_ctrl_VCounter_G_68_i_x3 vga_ctrl_VCounter_G_65_1 vga_ctrl_VCounter_G_66_1
+.names vga_ctrl_hcounter_hcnt_n9_0_n.BLIF vga_ctrl_HCounter_hcnt_9_.D
+0 1
+.names vga_ctrl_LineScan_q1_1_0_.BLIF vga_ctrl_q1_i_1__n.BLIF \
+vga_ctrl_HCounter_cnt_7_.D
+11 1
+.names vga_ctrl_hcounter_n_30_i_1_n.BLIF vga_ctrl_hcounter_hcnt11_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_6_.D
+11 1
+.names vga_ctrl_hcounter_n_28_i_1_n.BLIF vga_ctrl_hcounter_hcnt11_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_7_.D
+11 1
+.names vga_ctrl_hcounter_n_34_i_1_n.BLIF vga_ctrl_hcounter_hcnt11_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_8_.D
+11 1
+.names vga_ctrl_hcounter_n_37_i_1_n.BLIF vga_ctrl_hcounter_hcnt11_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_3_.D
+11 1
+.names vga_ctrl_hcounter_n_36_i_1_n.BLIF vga_ctrl_hcounter_hcnt11_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_4_.D
+11 1
+.names vga_ctrl_hcounter_n_35_i_1_n.BLIF vga_ctrl_hcounter_hcnt11_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_5_.D
+11 1
+.names hcnt_i_0__n.BLIF vga_ctrl_hcounter_hcnt11_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_0_.D
+11 1
+.names vga_ctrl_hcounter_n_43_i_1_n.BLIF vga_ctrl_hcounter_hcnt11_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_1_.D
+11 1
+.names vga_ctrl_hcounter_n_39_i_1_n.BLIF vga_ctrl_hcounter_hcnt11_i_n.BLIF \
+vga_ctrl_HCounter_hcnt_2_.D
+11 1
+.names vga_ctrl_LineScan_q1_1_ns_1_0__m1.BLIF vga_ctrl_HCounter_cnt_4_.D
+0 1
+.names vga_ctrl_vcounter_n_110_0_n.BLIF vga_ctrl_VCounter_cnt_4_.D
+0 1
+.names vga_ctrl_vcounter_n_117_i_1_n.BLIF vga_ctrl_vcounter_n_69_i_n.BLIF \
+vga_ctrl_VCounter_vcnt_7_.D
+11 1
+.names vga_ctrl_vcounter_n_116_i_1_n.BLIF vga_ctrl_vcounter_n_68_i_n.BLIF \
+vga_ctrl_VCounter_vcnt_8_.D
+11 1
+.names vga_ctrl_vcounter_vcnt_n9_0_n.BLIF vga_ctrl_VCounter_vcnt_9_.D
+0 1
+.names vga_ctrl_vcounter_n_38_i_1_n.BLIF vga_ctrl_vcounter_n_84_0_n.BLIF \
+vga_ctrl_VCounter_vcnt_4_.D
+11 1
+.names vga_ctrl_vcounter_n_36_i_1_n.BLIF vga_ctrl_vcounter_n_84_0_n.BLIF \
+vga_ctrl_VCounter_vcnt_5_.D
+11 1
+.names vga_ctrl_vcounter_n_34_i_1_n.BLIF vga_ctrl_vcounter_n_84_0_n.BLIF \
+vga_ctrl_VCounter_vcnt_6_.D
+11 1
+.names vga_ctrl_vcounter_n_42_i_1_n.BLIF vga_ctrl_vcounter_n_84_0_n.BLIF \
+vga_ctrl_VCounter_vcnt_2_.D
+11 1
+.names vga_ctrl_vcounter_n_40_i_1_n.BLIF vga_ctrl_vcounter_n_119_n.BLIF \
+vga_ctrl_VCounter_vcnt_3_.D
+11 1
+.names vcnt_i_0__n.BLIF vga_ctrl_vcounter_n_84_0_n.BLIF \
+vga_ctrl_VCounter_vcnt_0_.D
+11 1
+.names vga_ctrl_vcounter_n_118_i_1_n.BLIF vga_ctrl_vcounter_n_76_i_n.BLIF \
+vga_ctrl_VCounter_vcnt_1_.D
+11 1
+.names reset_n_c.BLIF vga_ctrl_linescan_n_15_n.BLIF \
+vga_ctrl_LineScan_q1_1_1_.D
+11 1
+.names reset_n_c.BLIF vga_ctrl_LineScan_q1_1_ns_1_0__q1_1se.BLIF \
+vga_ctrl_LineScan_q1_1_0_.D
+11 1
+.names reset_n_c.BLIF vga_ctrl_framescan_n_17_n.BLIF \
+vga_ctrl_FrameScan_q2_1_0_.D
+11 1
+.names reset_n_c.BLIF vga_ctrl_framescan_n_18_n.BLIF \
+vga_ctrl_FrameScan_q2_1_1_.D
+11 1
+.names vga_data_n_25_n.BLIF vga_data_n_25_i_n
+0 1
+.names vga_ctrl_LineScan_q1_1_1_.BLIF vga_ctrl_linescan_q1_1se_0_un3_n.BLIF \
+vga_ctrl_linescan_q1_1se_0_un0_n
+11 1
+.names vga_data_n_26_n.BLIF vga_data_n_26_i_n
+0 1
+.names vga_data_n_9_i_1_n.BLIF vga_data_n_9_i_2_n.BLIF vga_data_n_9_i_n
+11 1
+.names vga_ctrl_hcounter_n_55_n.BLIF vga_ctrl_hcounter_n_55_i_n
+0 1
+.names vga_ctrl_hcounter_n_54_n.BLIF vga_ctrl_hcounter_n_54_i_n
+0 1
+.names vga_ctrl_hcounter_n_53_n.BLIF vga_ctrl_hcounter_n_53_i_n
+0 1
+.names vga_ctrl_hcounter_n_52_n.BLIF vga_ctrl_hcounter_n_52_i_n
+0 1
+.names vga_data_n_288_n.BLIF vga_data_n_288_i_n
+0 1
+.names vga_data_n_288_i_n.BLIF vga_data_un1_vcnt_5_n.BLIF vga_data_n_11_0_n
+11 1
+.names vga_data_n_545_1_n.BLIF vga_data_n_545_1_i_n
+0 1
+.names vga_data_n_12_0_1_n.BLIF vga_data_un1_hcnt_6_n.BLIF vga_data_n_12_0_n
+11 1
+.names vga_data_n_287_0_1_n.BLIF vga_ctrl_VCounter_vcnt_7_.BLIF \
+vga_data_n_287_0_n
+11 1
+.names vga_data_n_539_n.BLIF vga_data_n_539_i_n
+0 1
+.names vga_ctrl_HCounter_hcnt_6_.BLIF vga_data_n_539_i_n.BLIF \
+vga_data_n_542_0_n
+11 1
+.names vga_ctrl_HCounter_hcnt_3_.BLIF vga_ctrl_HCounter_hcnt_4_.BLIF \
+vga_data_n_538_0_n
+11 1
+.names vga_data_n_210_n.BLIF vga_data_n_210_i_n
+0 1
+.names vga_ctrl_VCounter_vcnt_8_.BLIF vga_data_n_210_i_n.BLIF \
+vga_data_n_213_0_n
+11 1
+.names vga_data_n_204_n.BLIF vga_data_n_204_i_n
+0 1
+.names vga_ctrl_VCounter_vcnt_5_.BLIF vga_data_n_204_i_n.BLIF \
+vga_data_n_207_0_n
+11 1
+.names vga_ctrl_VCounter_vcnt_2_.BLIF vga_ctrl_VCounter_vcnt_3_.BLIF \
+vga_data_n_203_0_n
+11 1
+.names vga_data_n_128_n.BLIF vga_data_n_128_i_n
+0 1
+.names vga_ctrl_VCounter_vcnt_4_.BLIF vga_data_n_128_i_n.BLIF \
+vga_data_n_131_0_n
+11 1
+.names vga_ctrl_VCounter_vcnt_1_.BLIF vga_ctrl_VCounter_vcnt_2_.BLIF \
+vga_data_n_127_0_n
+11 1
+.names vga_ctrl_vcounter_n_58_n.BLIF vga_ctrl_vcounter_n_58_i_n
+0 1
+.names vga_ctrl_co1_10_n.BLIF vga_ctrl_co1_9_n.BLIF vga_ctrl_co1_n
+11 1
+.names vga_ctrl_vcounter_n_57_n.BLIF vga_ctrl_vcounter_n_57_i_n
+0 1
+.names vga_ctrl_HCounter_hcnt_8_.BLIF vga_ctrl_hcounter_n_50_i_n.BLIF \
+vga_ctrl_hcounter_n_51_i_n
+11 1
+.names vga_ctrl_HCounter_hcnt_7_.BLIF vga_ctrl_hcounter_n_49_i_n.BLIF \
+vga_ctrl_hcounter_n_50_i_n
+11 1
+.names vga_data_n_59_0_1_n.BLIF vga_data_n_425_i_n.BLIF vga_data_n_59_0_n
+11 1
+.names vga_data_n_432_n.BLIF vga_data_n_432_i_n
+0 1
+.names vcnt_i_9__n.BLIF vga_data_n_250_n.BLIF vga_data_un1_vcnt_3_n
+11 1
+.names vga_ctrl_HCounter_hcnt_8_.BLIF vga_data_n_432_i_n.BLIF \
+vga_data_n_435_0_n
+11 1
+.names hcnt_i_9__n.BLIF vga_data_n_509_n.BLIF vga_data_un1_hcnt_4_n
+11 1
+.names vga_data_n_426_n.BLIF vga_data_n_426_i_n
+0 1
+.names vga_data_vga_d_i_m5_1__un1_n.BLIF vga_data_vga_d_i_m5_1__un0_n.BLIF \
+vga_data_n_10_n
+1- 1
+-1 1
+.names vga_ctrl_HCounter_hcnt_5_.BLIF vga_data_n_426_i_n.BLIF \
+vga_data_n_429_0_n
+11 1
+.names orient_i.BLIF vga_data_un1_hcnt_2_i_n.BLIF vga_data_n_29_n
+11 1
+.names vga_ctrl_HCounter_hcnt_2_.BLIF vga_ctrl_HCounter_hcnt_3_.BLIF \
+vga_data_n_425_i_n
+11 1
+.names vcnt_i_3__n.BLIF vcnt_i_4__n.BLIF vga_data_n_280_2_n
+11 1
+.names vga_data_n_64_n.BLIF vga_data_n_64_i_n
+0 1
+.names vga_ctrl_HCounter_hcnt_9_.BLIF vga_data_n_64_i_n.BLIF \
+vga_data_un1_hcnt_6_i_n
+11 1
+.names vga_data_n_60_n.BLIF vga_data_n_60_i_n
+0 1
+.names vga_ctrl_vcounter_un7_co2_10_n.BLIF vga_ctrl_vcounter_un7_co2_11_n.BLIF \
+vga_ctrl_vcounter_un7_co2_n
+11 1
+.names vga_ctrl_HCounter_hcnt_7_.BLIF vga_data_n_60_i_n.BLIF vga_data_n_63_0_n
+11 1
+.names vga_ctrl_q2_i_0__n.BLIF vga_ctrl_q2_i_1__n.BLIF \
+vga_ctrl_vcounter_cnt14_n
+11 1
+.names vga_ctrl_HCounter_hcnt_6_.BLIF vga_ctrl_hcounter_n_48_i_n.BLIF \
+vga_ctrl_hcounter_n_49_i_n
+11 1
+.names vga_ctrl_FrameScan_q2_1_0_.BLIF vga_ctrl_q2_i_1__n.BLIF \
+vga_ctrl_vcounter_cnt15_n
+11 1
+.names vga_ctrl_HCounter_hcnt_5_.BLIF vga_ctrl_hcounter_n_47_i_n.BLIF \
+vga_ctrl_hcounter_n_48_i_n
+11 1
+.names vga_ctrl_FrameScan_q2_1_1_.BLIF vga_ctrl_q2_i_0__n.BLIF \
+vga_ctrl_v_nblank_n
+11 1
+.names vga_ctrl_HCounter_hcnt_4_.BLIF vga_ctrl_hcounter_n_46_i_n.BLIF \
+vga_ctrl_hcounter_n_47_i_n
+11 1
+.names vga_ctrl_vcounter_n_76_n.BLIF vga_ctrl_vcounter_n_76_i_n
+0 1
+.names vga_data_n_314_0_1_n.BLIF vga_ctrl_vcounter_n_76_i_n.BLIF \
+vga_data_n_314_0_n
+11 1
+.names vga_ctrl_vcounter_n_73_n.BLIF vga_ctrl_vcounter_n_73_i_n
+0 1
+.names vga_data_n_246_0_1_n.BLIF vga_data_n_246_0_2_n.BLIF vga_data_n_246_0_n
+11 1
+.names vga_data_n_167_n.BLIF vga_data_n_167_i_n
+0 1
+.names vga_ctrl_vcounter_vcnte_0_n.BLIF vga_ctrl_vcounter_vcnte_n
+0 1
+.names vga_data_n_323_n.BLIF vga_data_n_323_i_n
+0 1
+.names vga_ctrl_vcounter_n_49_0_n.BLIF vga_ctrl_vcounter_n_49_n
+0 1
+.names vga_ctrl_VCounter_vcnt_9_.BLIF vga_data_n_323_i_n.BLIF \
+vga_data_un1_vcnt_5_i_n
+11 1
+.names vga_ctrl_vcounter_n_61_0_n.BLIF vga_ctrl_vcounter_n_61_n
+0 1
+.names vga_data_n_247_n.BLIF vga_data_n_247_i_n
+0 1
+.names vga_ctrl_vcounter_n_65_0_n.BLIF vga_ctrl_vcounter_n_65_n
+0 1
+.names vga_ctrl_VCounter_vcnt_8_.BLIF vga_data_n_247_i_n.BLIF \
+vga_data_n_250_0_n
+11 1
+.names vga_ctrl_VCounter_vcnt_8_.BLIF vga_ctrl_vcounter_n_54_i_n.BLIF \
+vga_ctrl_vcounter_n_56_i_n
+11 1
+.names vga_ctrl_VCounter_vcnt_7_.BLIF vga_ctrl_vcounter_n_53_i_n.BLIF \
+vga_ctrl_vcounter_n_54_i_n
+11 1
+.names vga_ctrl_VCounter_vcnt_6_.BLIF vga_ctrl_vcounter_n_51_i_n.BLIF \
+vga_ctrl_vcounter_n_53_i_n
+11 1
+.names vga_ctrl_vcounter_n_111_0_n.BLIF vga_ctrl_vcounter_n_111_n
+0 1
+.names vga_ctrl_VCounter_vcnt_5_.BLIF vga_ctrl_vcounter_n_50_i_n.BLIF \
+vga_ctrl_vcounter_n_51_i_n
+11 1
+.names vga_ctrl_vcounter_n_47_i_n.BLIF vga_ctrl_vcounter_n_47_n
+0 1
+.names vga_ctrl_VCounter_vcnt_4_.BLIF vga_ctrl_vcounter_n_119_i_n.BLIF \
+vga_ctrl_vcounter_n_50_i_n
+11 1
+.names vga_ctrl_vcounter_n_48_i_n.BLIF vga_ctrl_vcounter_n_48_n
+0 1
+.names vga_ctrl_VCounter_vcnt_3_.BLIF vga_ctrl_vcounter_n_48_i_n.BLIF \
+vga_ctrl_vcounter_n_119_i_n
+11 1
+.names vga_ctrl_vcounter_n_119_i_n.BLIF vga_ctrl_vcounter_n_119_n
+0 1
+.names vga_ctrl_vcounter_n_60_n.BLIF vga_ctrl_vcounter_n_60_i_n
+0 1
+.names vga_ctrl_vcounter_n_50_i_n.BLIF vga_ctrl_vcounter_n_50_n
+0 1
+.names vga_ctrl_vcounter_n_59_n.BLIF vga_ctrl_vcounter_n_59_i_n
+0 1
+.names vga_ctrl_vcounter_n_51_i_n.BLIF vga_ctrl_vcounter_n_51_n
+0 1
+.names vga_ctrl_VCounter_cnt_3_.BLIF vga_ctrl_vcounter_cnt_i_3__n
+0 1
+.names vga_ctrl_vcounter_n_53_i_n.BLIF vga_ctrl_vcounter_n_53_n
+0 1
+.names vga_ctrl_vcounter_n_46_i_n.BLIF vga_ctrl_vcounter_cnt_i_3__n.BLIF \
+vga_ctrl_vcounter_n_65_0_n
+11 1
+.names vga_ctrl_vcounter_n_54_i_n.BLIF vga_ctrl_vcounter_n_54_n
+0 1
+.names vga_data_n_20_n.BLIF vga_data_n_20_i_n
+0 1
+.names vga_ctrl_vcounter_n_56_i_n.BLIF vga_ctrl_vcounter_n_56_n
+0 1
+.names vga_data_n_15_n.BLIF vga_data_n_15_i_n
+0 1
+.names vga_ctrl_vcounter_n_66_1_n.BLIF vga_ctrl_vcounter_n_84_0_n.BLIF \
+vga_ctrl_vcounter_n_66_n
+11 1
+.names vga_data_n_19_n.BLIF vga_data_n_19_i_n
+0 1
+.names vga_ctrl_vcounter_n_67_1_n.BLIF vga_ctrl_vcounter_n_84_0_n.BLIF \
+vga_ctrl_vcounter_n_67_n
+11 1
+.names vga_data_n_17_n.BLIF vga_data_n_17_i_n
+0 1
+.names vcnt_i_8__n.BLIF vga_ctrl_vcounter_n_54_n.BLIF vga_ctrl_vcounter_n_68_n
+11 1
+.names vga_data_n_352_n.BLIF vga_data_n_352_i_n
+0 1
+.names vcnt_i_7__n.BLIF vga_ctrl_vcounter_n_53_n.BLIF vga_ctrl_vcounter_n_69_n
+11 1
+.names vga_data_n_357_0_1_n.BLIF vga_data_n_352_i_n.BLIF vga_data_n_357_0_n
+11 1
+.names vcnt_i_6__n.BLIF vga_ctrl_vcounter_n_51_n.BLIF vga_ctrl_vcounter_n_70_n
+11 1
+.names vga_data_n_396_0_1_n.BLIF vga_data_n_391_i_n.BLIF vga_data_n_396_0_n
+11 1
+.names vcnt_i_5__n.BLIF vga_ctrl_vcounter_n_50_n.BLIF vga_ctrl_vcounter_n_71_n
+11 1
+.names vga_data_n_5_i_4_n.BLIF vga_data_n_5_i_5_n.BLIF vga_data_n_5_i_n
+11 1
+.names vcnt_i_4__n.BLIF vga_ctrl_vcounter_n_119_n.BLIF \
+vga_ctrl_vcounter_n_72_n
+11 1
+.names vga_data_n_21_n.BLIF vga_data_n_21_i_n
+0 1
+.names vcnt_i_3__n.BLIF vga_ctrl_vcounter_n_48_n.BLIF vga_ctrl_vcounter_n_73_n
+11 1
+.names vga_data_n_23_n.BLIF vga_data_n_23_i_n
+0 1
+.names vcnt_i_2__n.BLIF vga_ctrl_vcounter_n_47_n.BLIF vga_ctrl_vcounter_n_74_n
+11 1
+.names vga_data_n_22_n.BLIF vga_data_n_22_i_n
+0 1
+.names vcnt_i_0__n.BLIF vcnt_i_1__n.BLIF vga_ctrl_vcounter_n_76_n
+11 1
+.names vga_data_n_24_n.BLIF vga_data_n_24_i_n
+0 1
+.names vga_data_n_7_i_4_n.BLIF vga_data_n_7_i_3_n.BLIF vga_data_n_7_i_n
+11 1
+.names vga_ctrl_q1_i_0__n.BLIF vga_ctrl_q1_i_1__n.BLIF \
+vga_ctrl_hcounter_cnt14_n
+11 1
+.names vga_data_n_134_n.BLIF vga_data_n_134_i_n
+0 1
+.names vga_ctrl_VCounter_vcnt_7_.BLIF vga_data_n_134_i_n.BLIF \
+vga_data_n_137_0_n
+11 1
+.names vga_ctrl_LineScan_q1_1_1_.BLIF vga_ctrl_q1_i_0__n.BLIF \
+vga_ctrl_hcounter_cnt16_n
+11 1
+.names vga_data_n_95_n.BLIF vga_data_n_95_i_n
+0 1
+.names vga_ctrl_VCounter_vcnt_6_.BLIF vga_data_n_95_i_n.BLIF vga_data_n_98_0_n
+11 1
+.names vga_ctrl_vcounter_cnt15_n.BLIF vga_ctrl_vcounter_cnt15_i_n
+0 1
+.names vga_ctrl_vcounter_cnt15_i_n.BLIF vga_ctrl_v_nblank_i_n.BLIF \
+vga_ctrl_vcounter_n_110_0_n
+11 1
+.names vga_data_n_18_n.BLIF vga_data_n_18_i_n
+0 1
+.names vga_data_n_16_n.BLIF vga_data_n_16_i_n
+0 1
+.names vga_data_n_280_n.BLIF vga_data_n_280_i_n
+0 1
+.names vga_data_n_467_n.BLIF vga_data_n_467_i_n
+0 1
+.names vga_data_n_472_0_1_n.BLIF vga_data_n_467_i_n.BLIF vga_data_n_472_0_n
+11 1
+.names vga_ctrl_hcounter_n_44_i_n.BLIF vga_ctrl_hcounter_n_44_n
+0 1
+.names vga_ctrl_framescan_n_42_n.BLIF vga_ctrl_framescan_n_42_i_n
+0 1
+.names vga_ctrl_hcounter_n_45_i_n.BLIF vga_ctrl_hcounter_n_45_n
+0 1
+.names vga_ctrl_framescan_n_41_n.BLIF vga_ctrl_framescan_n_41_i_n
+0 1
+.names vga_ctrl_hcounter_n_46_i_n.BLIF vga_ctrl_hcounter_n_46_n
+0 1
+.names vga_ctrl_framescan_n_41_i_n.BLIF vga_ctrl_framescan_n_42_i_n.BLIF \
+vga_ctrl_framescan_q2_1_ns_0_0__n
+11 1
+.names vga_ctrl_hcounter_n_47_i_n.BLIF vga_ctrl_hcounter_n_47_n
+0 1
+.names vga_ctrl_framescan_n_44_n.BLIF vga_ctrl_framescan_n_44_i_n
+0 1
+.names vga_ctrl_hcounter_n_48_i_n.BLIF vga_ctrl_hcounter_n_48_n
+0 1
+.names vga_ctrl_framescan_n_44_i_n.BLIF vga_ctrl_v_nblank_i_n.BLIF \
+vga_ctrl_framescan_q2_1_ns_0_1__n
+11 1
+.names vga_ctrl_hcounter_n_49_i_n.BLIF vga_ctrl_hcounter_n_49_n
+0 1
+.names reset_n_c.BLIF vga_ctrl_vcounter_un7_co2_i_n.BLIF \
+vga_ctrl_vcounter_n_84_0_n
+11 1
+.names vga_ctrl_hcounter_n_50_i_n.BLIF vga_ctrl_hcounter_n_50_n
+0 1
+.names vga_ctrl_endline_n.BLIF vga_ctrl_endline_i_n
+0 1
+.names vga_ctrl_hcounter_n_51_i_n.BLIF vga_ctrl_hcounter_n_51_n
+0 1
+.names reset_n_c.BLIF vga_ctrl_endline_i_n.BLIF vga_ctrl_vcounter_vcnte_0_n
+11 1
+.names vga_ctrl_hcounter_n_56_1_n.BLIF vga_ctrl_hcounter_hcnt11_i_n.BLIF \
+vga_ctrl_hcounter_n_56_n
+11 1
+.names vga_ctrl_vcounter_n_66_n.BLIF vga_ctrl_vcounter_n_66_i_n
+0 1
+.names vga_ctrl_hcounter_n_57_1_n.BLIF vga_ctrl_hcounter_hcnt11_i_n.BLIF \
+vga_ctrl_hcounter_n_57_n
+11 1
+.names vga_ctrl_vcounter_n_67_n.BLIF vga_ctrl_vcounter_n_67_i_n
+0 1
+.names hcnt_i_8__n.BLIF vga_ctrl_hcounter_n_50_n.BLIF vga_ctrl_hcounter_n_58_n
+11 1
+.names vga_ctrl_vcounter_n_66_i_n.BLIF vga_ctrl_vcounter_n_67_i_n.BLIF \
+vga_ctrl_vcounter_vcnt_n9_0_n
+11 1
+.names hcnt_i_7__n.BLIF vga_ctrl_hcounter_n_49_n.BLIF vga_ctrl_hcounter_n_59_n
+11 1
+.names vga_ctrl_HCounter_hcnt_3_.BLIF vga_ctrl_hcounter_n_45_i_n.BLIF \
+vga_ctrl_hcounter_n_46_i_n
+11 1
+.names hcnt_i_6__n.BLIF vga_ctrl_hcounter_n_48_n.BLIF vga_ctrl_hcounter_n_60_n
+11 1
+.names vga_ctrl_HCounter_hcnt_2_.BLIF vga_ctrl_hcounter_n_44_i_n.BLIF \
+vga_ctrl_hcounter_n_45_i_n
+11 1
+.names hcnt_i_5__n.BLIF vga_ctrl_hcounter_n_47_n.BLIF vga_ctrl_hcounter_n_61_n
+11 1
+.names vga_ctrl_HCounter_hcnt_0_.BLIF vga_ctrl_HCounter_hcnt_1_.BLIF \
+vga_ctrl_hcounter_n_44_i_n
+11 1
+.names hcnt_i_4__n.BLIF vga_ctrl_hcounter_n_46_n.BLIF vga_ctrl_hcounter_n_62_n
+11 1
+.names vga_ctrl_co1_n.BLIF vga_ctrl_co1_i_n
+0 1
+.names hcnt_i_3__n.BLIF vga_ctrl_hcounter_n_45_n.BLIF vga_ctrl_hcounter_n_63_n
+11 1
+.names reset_n_c.BLIF vga_ctrl_co1_i_n.BLIF vga_ctrl_hcounter_hcnt11_i_n
+11 1
+.names hcnt_i_2__n.BLIF vga_ctrl_hcounter_n_44_n.BLIF vga_ctrl_hcounter_n_64_n
+11 1
+.names vga_ctrl_vcounter_n_74_n.BLIF vga_ctrl_vcounter_n_74_i_n
+0 1
+.names vga_ctrl_VCounter_vcnt_3_.BLIF vga_ctrl_vcounter_n_74_i_n.BLIF \
+vga_data_n_92_0_n
+11 1
+.names hcnt_i_0__n.BLIF hcnt_i_1__n.BLIF vga_ctrl_hcounter_n_66_n
+11 1
+.names vga_ctrl_VCounter_vcnt_2_.BLIF vga_ctrl_vcounter_n_47_i_n.BLIF \
+vga_ctrl_vcounter_n_48_i_n
+11 1
+.names vga_data_un1_vcnt_1_1_n.BLIF vcnt_i_9__n.BLIF vga_data_un1_vcnt_1_n
+11 1
+.names vga_ctrl_VCounter_vcnt_0_.BLIF vga_ctrl_VCounter_vcnt_1_.BLIF \
+vga_ctrl_vcounter_n_47_i_n
+11 1
+.names vga_data_n_391_1_n.BLIF hcnt_i_4__n.BLIF vga_data_n_391_n
+11 1
+.names vga_ctrl_vcounter_n_121_n.BLIF vga_ctrl_vcounter_n_121_i_n
+0 1
+.names hcnt_i_4__n.BLIF vga_data_n_350_n.BLIF vga_data_n_352_n
+11 1
+.names vga_ctrl_vcounter_n_120_n.BLIF vga_ctrl_vcounter_n_120_i_n
+0 1
+.names vga_ctrl_hcounter_cnt16_n.BLIF vga_ctrl_v_nblank_n.BLIF nblank
+11 1
+.names vga_ctrl_vcounter_n_63_n.BLIF vga_ctrl_vcounter_n_63_i_n
+0 1
+.names vga_data_n_11_0_n.BLIF vga_data_n_11_n
+0 1
+.names vga_ctrl_vcounter_n_62_n.BLIF vga_ctrl_vcounter_n_62_i_n
+0 1
+.names vga_data_n_213_0_n.BLIF vga_data_n_213_n
+0 1
+.names vga_ctrl_vcounter_n_62_i_n.BLIF vga_ctrl_vcounter_n_63_i_n.BLIF \
+vga_ctrl_vcounter_n_111_0_n
+11 1
+.names vga_data_n_467_1_n.BLIF hcnt_i_5__n.BLIF vga_data_n_467_n
+11 1
+.names vga_ctrl_vcounter_cnt_i_0__n.BLIF vga_ctrl_vcounter_cnt_i_1__n.BLIF \
+vga_ctrl_vcounter_n_49_0_n
+11 1
+.names vcnt_i_0__n.BLIF vga_ctrl_VCounter_cnt_0_.BLIF vga_ctrl_vcounter_n_62_n
+11 1
+.names vga_ctrl_VCounter_vcnt_0_.BLIF vga_ctrl_vcounter_cnt_i_0__n.BLIF \
+vga_ctrl_vcounter_n_63_n
+11 1
+.names vga_ctrl_VCounter_G_64_i_x3.BLIF vga_ctrl_VCounter_cnt_1_.BLIF \
+vga_ctrl_vcounter_n_120_n
+11 1
+.names vga_ctrl_vcounter_n_72_n.BLIF vga_ctrl_vcounter_n_72_i_n
+0 1
+.names vga_ctrl_vcounter_n_55_i_i_n.BLIF vga_ctrl_vcounter_cnt_i_1__n.BLIF \
+vga_ctrl_vcounter_n_121_n
+11 1
+.names vga_ctrl_vcounter_n_71_n.BLIF vga_ctrl_vcounter_n_71_i_n
+0 1
+.names vga_data_n_92_0_n.BLIF vga_data_n_92_n
+0 1
+.names vga_data_n_95_1_n.BLIF vcnt_i_5__n.BLIF vga_data_n_95_n
+11 1
+.names vga_ctrl_vcounter_n_70_n.BLIF vga_ctrl_vcounter_n_70_i_n
+0 1
+.names vga_ctrl_linescan_n_15_i_n.BLIF vga_ctrl_LineScan_q1_1_1_.BLIF \
+vga_ctrl_endline_n
+11 1
+.names vga_ctrl_vcounter_n_69_n.BLIF vga_ctrl_vcounter_n_69_i_n
+0 1
+.names vga_ctrl_linescan_q1_1se_0_un1_n.BLIF \
+vga_ctrl_linescan_q1_1se_0_un0_n.BLIF vga_ctrl_linescan_n_15_n
+1- 1
+-1 1
+.names vga_ctrl_vcounter_n_68_n.BLIF vga_ctrl_vcounter_n_68_i_n
+0 1
+.names vga_ctrl_framescan_q2_1se_un1_n.BLIF \
+vga_ctrl_framescan_q2_1se_un0_n.BLIF vga_ctrl_framescan_n_17_n
+1- 1
+-1 1
+.names vga_ctrl_framescan_q2_1_ns_0_0__n.BLIF vga_ctrl_framescan_q2_1_ns_0__n
+0 1
+.names vga_ctrl_VCounter_cnt_4_.BLIF vga_ctrl_vcounter_cnt_i_4__n
+0 1
+.names vga_ctrl_framescan_q2_1se_0_un1_n.BLIF \
+vga_ctrl_framescan_q2_1se_0_un0_n.BLIF vga_ctrl_framescan_n_18_n
+1- 1
+-1 1
+.names vga_ctrl_vcounter_n_61_0_1_n.BLIF vga_ctrl_vcounter_cnt_i_4__n.BLIF \
+vga_ctrl_vcounter_n_61_0_n
+11 1
+.names vga_ctrl_framescan_q2_1_ns_0_1__n.BLIF vga_ctrl_framescan_q2_1_ns_1__n
+0 1
+.names vga_ctrl_VCounter_cnt_2_.BLIF vga_ctrl_vcounter_cnt_i_2__n
+0 1
+.names vga_ctrl_framescan_n_42_1_n.BLIF vga_ctrl_q2_i_1__n.BLIF \
+vga_ctrl_framescan_n_42_n
+11 1
+.names vga_ctrl_vcounter_n_46_i_1_n.BLIF vga_ctrl_vcounter_cnt_i_2__n.BLIF \
+vga_ctrl_vcounter_n_46_i_n
+11 1
+.names vga_ctrl_framescan_n_44_1_n.BLIF vga_ctrl_q2_i_1__n.BLIF \
+vga_ctrl_framescan_n_44_n
+11 1
+.names vga_ctrl_hcounter_n_66_n.BLIF vga_ctrl_hcounter_n_66_i_n
+0 1
+.names vga_ctrl_vcounter_un7_co2_n.BLIF vga_ctrl_q2_i_0__n.BLIF \
+vga_ctrl_framescan_n_41_n
+11 1
+.names vga_data_n_16_1_n.BLIF vga_data_un1_vcnt_3_i_n.BLIF vga_data_n_16_n
+11 1
+.names vga_ctrl_hcounter_n_64_n.BLIF vga_ctrl_hcounter_n_64_i_n
+0 1
+.names orient_c.BLIF vga_data_un1_vcnt_1_i_n.BLIF vga_data_n_30_n
+11 1
+.names vga_data_n_15_1_n.BLIF vga_data_un1_hcnt_4_i_n.BLIF vga_data_n_15_n
+11 1
+.names vga_ctrl_hcounter_n_63_n.BLIF vga_ctrl_hcounter_n_63_i_n
+0 1
+.names vga_data_n_472_0_n.BLIF vga_data_n_472_n
+0 1
+.names vga_data_n_134_1_n.BLIF vcnt_i_6__n.BLIF vga_data_n_134_n
+11 1
+.names vga_ctrl_hcounter_n_62_n.BLIF vga_ctrl_hcounter_n_62_i_n
+0 1
+.names vga_data_n_280_1_n.BLIF vga_data_n_280_2_0_n.BLIF vga_data_n_280_n
+11 1
+.names vga_data_n_18_1_n.BLIF vga_data_n_213_n.BLIF vga_data_n_18_n
+11 1
+.names vga_ctrl_hcounter_n_61_n.BLIF vga_ctrl_hcounter_n_61_i_n
+0 1
+.names vga_data_n_98_0_n.BLIF vga_data_n_98_n
+0 1
+.names vga_data_n_137_0_n.BLIF vga_data_n_137_n
+0 1
+.names vga_ctrl_hcounter_n_60_n.BLIF vga_ctrl_hcounter_n_60_i_n
+0 1
+.names vga_data_n_29_n.BLIF vga_data_un1_hcnt_4_n.BLIF vga_data_n_24_n
+11 1
+.names vga_data_n_30_n.BLIF vga_data_un1_vcnt_3_n.BLIF vga_data_n_23_n
+11 1
+.names vga_ctrl_hcounter_n_59_n.BLIF vga_ctrl_hcounter_n_59_i_n
+0 1
+.names orient_i.BLIF vga_data_un1_hcnt_n.BLIF vga_data_n_22_n
+11 1
+.names orient_c.BLIF vga_data_vga_d28_n.BLIF vga_data_n_21_n
+11 1
+.names vga_ctrl_hcounter_n_58_n.BLIF vga_ctrl_hcounter_n_58_i_n
+0 1
+.names vga_data_n_396_0_n.BLIF vga_data_n_396_n
+0 1
+.names vga_data_vga_d28_1_n.BLIF vga_data_n_17_2_n.BLIF vga_data_vga_d28_n
+11 1
+.names vga_ctrl_hcounter_n_56_n.BLIF vga_ctrl_hcounter_n_56_i_n
+0 1
+.names vcnt_i_8__n.BLIF vcnt_i_9__n.BLIF vga_data_n_17_2_n
+11 1
+.names vga_ctrl_hcounter_n_57_n.BLIF vga_ctrl_hcounter_n_57_i_n
+0 1
+.names vga_data_n_357_0_n.BLIF vga_data_n_357_n
+0 1
+.names vga_ctrl_hcounter_n_56_i_n.BLIF vga_ctrl_hcounter_n_57_i_n.BLIF \
+vga_ctrl_hcounter_hcnt_n9_0_n
+11 1
+.names vga_data_un1_hcnt_1_n.BLIF vga_data_un1_hcnt_2_0_n.BLIF \
+vga_data_un1_hcnt_n
+11 1
+.names vga_ctrl_HCounter_hcnt_8_.BLIF vga_ctrl_HCounter_hcnt_7_.BLIF \
+vga_data_n_472_0_1_n
+11 1
+.names vga_data_n_17_1_n.BLIF vga_data_n_17_2_0_n.BLIF vga_data_n_17_n
+11 1
+.names nblank.BLIF vga_data_n_24_i_n.BLIF vga_data_n_7_i_1_n
+11 1
+.names vga_data_n_19_3_n.BLIF vga_data_un1_hcnt_i_n.BLIF vga_data_n_19_n
+11 1
+.names vga_data_n_10_n.BLIF vga_data_n_21_i_n.BLIF vga_data_n_7_i_2_n
+11 1
+.names vga_data_n_20_1_n.BLIF vga_data_n_472_n.BLIF vga_data_n_20_n
+11 1
+.names vga_data_n_22_i_n.BLIF vga_data_n_23_i_n.BLIF vga_data_n_7_i_3_n
+11 1
+.names vga_ctrl_VCounter_vcnt_6_.BLIF vga_ctrl_VCounter_G_68_i_x3.BLIF \
+vga_ctrl_vcounter_n_59_n
+11 1
+.names vga_data_n_7_i_1_n.BLIF vga_data_n_7_i_2_n.BLIF vga_data_n_7_i_4_n
+11 1
+.names nblank.BLIF vga_data_n_19_i_n.BLIF vga_data_n_5_i_1_n
+11 1
+.names vcnt_i_6__n.BLIF vga_ctrl_vcounter_n_52_i_i_n.BLIF \
+vga_ctrl_vcounter_n_60_n
+11 1
+.names vga_data_n_15_i_n.BLIF vga_data_n_20_i_n.BLIF vga_data_n_5_i_2_n
+11 1
+.names vcnt_i_7__n.BLIF vga_data_n_246_n.BLIF vga_data_n_247_n
+11 1
+.names vga_data_n_18_i_n.BLIF vga_data_n_16_i_n.BLIF vga_data_n_5_i_3_n
+11 1
+.names vga_data_n_246_0_n.BLIF vga_data_n_246_n
+0 1
+.names vga_data_n_5_i_1_n.BLIF vga_data_n_5_i_2_n.BLIF vga_data_n_5_i_4_n
+11 1
+.names vga_data_n_250_0_n.BLIF vga_data_n_250_n
+0 1
+.names vga_data_n_5_i_3_n.BLIF vga_data_n_17_i_n.BLIF vga_data_n_5_i_5_n
+11 1
+.names vga_data_un1_vcnt_5_i_n.BLIF vga_data_un1_vcnt_5_n
+0 1
+.names vga_ctrl_HCounter_hcnt_7_.BLIF vga_ctrl_HCounter_hcnt_6_.BLIF \
+vga_data_n_396_0_1_n
+11 1
+.names vga_data_n_323_4_n.BLIF vga_data_n_323_3_n.BLIF vga_data_n_323_n
+11 1
+.names vga_ctrl_HCounter_hcnt_6_.BLIF vga_ctrl_HCounter_hcnt_5_.BLIF \
+vga_data_n_357_0_1_n
+11 1
+.names vga_data_n_167_1_n.BLIF vga_data_n_280_2_n.BLIF vga_data_n_167_n
+11 1
+.names vga_ctrl_VCounter_vcnt_4_.BLIF vga_ctrl_vcounter_n_73_i_n.BLIF \
+vga_data_n_246_0_1_n
+11 1
+.names vga_data_n_314_0_n.BLIF vga_data_n_314_n
+0 1
+.names vga_ctrl_VCounter_vcnt_5_.BLIF vga_ctrl_VCounter_vcnt_6_.BLIF \
+vga_data_n_246_0_2_n
+11 1
+.names hcnt_i_6__n.BLIF vga_data_n_59_n.BLIF vga_data_n_60_n
+11 1
+.names vga_ctrl_VCounter_vcnt_3_.BLIF vga_ctrl_VCounter_vcnt_2_.BLIF \
+vga_data_n_314_0_1_n
+11 1
+.names vga_data_n_59_0_n.BLIF vga_data_n_59_n
+0 1
+.names vga_ctrl_HCounter_hcnt_5_.BLIF vga_ctrl_HCounter_hcnt_4_.BLIF \
+vga_data_n_59_0_1_n
+11 1
+.names vga_data_n_63_0_n.BLIF vga_data_n_63_n
+0 1
+.names vga_ctrl_HCounter_hcnt_9_.BLIF vga_data_n_545_1_i_n.BLIF \
+vga_data_n_12_0_1_n
+11 1
+.names hcnt_i_8__n.BLIF vga_data_n_63_n.BLIF vga_data_n_64_n
+11 1
+.names vga_data_n_10_n.BLIF vga_data_n_25_i_n.BLIF vga_data_n_9_i_1_n
+11 1
+.names vga_data_un1_hcnt_6_i_n.BLIF vga_data_un1_hcnt_6_n
+0 1
+.names nblank.BLIF vga_data_n_26_i_n.BLIF vga_data_n_9_i_2_n
+11 1
+.names vga_data_n_425_i_n.BLIF vga_data_n_425_n
+0 1
+.names vga_ctrl_HCounter_hcnt_7_.BLIF vga_ctrl_HCounter_hcnt_8_.BLIF \
+vga_data_n_509_0_1_n
+11 1
+.names hcnt_i_4__n.BLIF vga_data_n_425_n.BLIF vga_data_n_426_n
+11 1
+.names vga_ctrl_HCounter_hcnt_4_.BLIF vga_data_n_350_i_n.BLIF \
+vga_data_n_509_0_2_n
+11 1
+.names vga_data_n_429_0_n.BLIF vga_data_n_429_n
+0 1
+.names vga_ctrl_HCounter_hcnt_5_.BLIF vga_ctrl_HCounter_hcnt_6_.BLIF \
+vga_data_n_509_0_3_n
+11 1
+.names vga_data_n_435_0_n.BLIF vga_data_n_435_n
+0 1
+.names vga_data_n_509_0_1_n.BLIF vga_data_n_509_0_2_n.BLIF \
+vga_data_n_509_0_4_n
+11 1
+.names vga_data_n_432_1_n.BLIF hcnt_i_7__n.BLIF vga_data_n_432_n
+11 1
+.names vga_ctrl_hcounter_n_52_i_n.BLIF vga_ctrl_hcounter_n_53_i_n.BLIF \
+vga_ctrl_co1_1_n
+11 1
+.names hcnt_i_9__n.BLIF vga_data_n_435_n.BLIF vga_data_un1_hcnt_2_n
+11 1
+.names vga_ctrl_hcounter_n_54_i_n.BLIF vga_ctrl_hcounter_n_55_i_n.BLIF \
+vga_ctrl_co1_2_n
+11 1
+.names vga_ctrl_VCounter_vcnt_9_.BLIF vga_ctrl_VCounter_G_68_i_x3.BLIF \
+vga_ctrl_vcounter_n_57_n
+11 1
+.names vga_ctrl_HCounter_hcnt_0_.BLIF vga_ctrl_HCounter_hcnt_1_.BLIF \
+vga_ctrl_co1_3_n
+11 1
+.names vcnt_i_9__n.BLIF vga_ctrl_vcounter_n_52_i_i_n.BLIF \
+vga_ctrl_vcounter_n_58_n
+11 1
+.names vga_ctrl_HCounter_hcnt_2_.BLIF vga_ctrl_HCounter_hcnt_3_.BLIF \
+vga_ctrl_co1_4_n
+11 1
+.names vga_data_n_127_0_n.BLIF vga_data_n_127_n
+0 1
+.names hcnt_i_5__n.BLIF vga_ctrl_hcounter_n_24_i_n.BLIF vga_ctrl_co1_5_n
+11 1
+.names vcnt_i_3__n.BLIF vga_data_n_127_n.BLIF vga_data_n_128_n
+11 1
+.names vga_ctrl_hcounter_n_25_i_n.BLIF vga_ctrl_HCounter_G_21.BLIF \
+vga_ctrl_co1_6_n
+11 1
+.names vga_data_n_131_0_n.BLIF vga_data_n_131_n
+0 1
+.names vga_ctrl_co1_1_n.BLIF vga_ctrl_co1_2_n.BLIF vga_ctrl_co1_7_n
+11 1
+.names vga_data_n_203_0_n.BLIF vga_data_n_203_n
+0 1
+.names vga_ctrl_co1_3_n.BLIF vga_ctrl_co1_4_n.BLIF vga_ctrl_co1_8_n
+11 1
+.names vcnt_i_4__n.BLIF vga_data_n_203_n.BLIF vga_data_n_204_n
+11 1
+.names vga_ctrl_co1_5_n.BLIF vga_ctrl_co1_6_n.BLIF vga_ctrl_co1_9_n
+11 1
+.names vga_data_n_207_0_n.BLIF vga_data_n_207_n
+0 1
+.names vga_ctrl_co1_7_n.BLIF vga_ctrl_co1_8_n.BLIF vga_ctrl_co1_10_n
+11 1
+.names vga_data_n_210_1_n.BLIF vcnt_i_7__n.BLIF vga_data_n_210_n
+11 1
+.names vcnt_i_3__n.BLIF vcnt_i_5__n.BLIF vga_ctrl_vcounter_un7_co2_1_n
+11 1
+.names vcnt_i_9__n.BLIF vga_data_n_287_n.BLIF vga_data_n_288_n
+11 1
+.names vcnt_i_7__n.BLIF vcnt_i_8__n.BLIF vga_ctrl_vcounter_un7_co2_2_n
+11 1
+.names vga_data_n_287_0_n.BLIF vga_data_n_287_n
+0 1
+.names vga_ctrl_vcounter_n_57_i_n.BLIF vga_ctrl_vcounter_n_58_i_n.BLIF \
+vga_ctrl_vcounter_un7_co2_3_n
+11 1
+.names vga_data_n_538_0_n.BLIF vga_data_n_538_n
+0 1
+.names vga_ctrl_vcounter_n_59_i_n.BLIF vga_ctrl_vcounter_n_60_i_n.BLIF \
+vga_ctrl_vcounter_un7_co2_4_n
+11 1
+.names hcnt_i_5__n.BLIF vga_data_n_538_n.BLIF vga_data_n_539_n
+11 1
+.names vga_ctrl_vcounter_n_121_i_n.BLIF vga_ctrl_VCounter_G_65.BLIF \
+vga_ctrl_vcounter_un7_co2_5_n
+11 1
+.names vga_data_n_542_0_n.BLIF vga_data_n_542_n
+0 1
+.names vga_ctrl_VCounter_G_66.BLIF vga_ctrl_vcounter_n_111_n.BLIF \
+vga_ctrl_vcounter_un7_co2_6_n
+11 1
+.names vga_data_n_12_0_n.BLIF vga_data_n_12_n
+0 1
+.names vga_ctrl_vcounter_un7_co2_1_n.BLIF vga_ctrl_vcounter_un7_co2_2_n.BLIF \
+vga_ctrl_vcounter_un7_co2_7_n
+11 1
+.names hcnt_i_7__n.BLIF vga_data_n_542_n.BLIF vga_data_n_545_1_n
+11 1
+.names vga_ctrl_vcounter_un7_co2_3_n.BLIF vga_ctrl_vcounter_un7_co2_4_n.BLIF \
+vga_ctrl_vcounter_un7_co2_8_n
+11 1
+.names vga_ctrl_HCounter_hcnt_8_.BLIF vga_ctrl_hcounter_cnt_i_8__n.BLIF \
+vga_ctrl_hcounter_n_52_n
+11 1
+.names vga_ctrl_vcounter_un7_co2_5_n.BLIF vga_ctrl_vcounter_un7_co2_6_n.BLIF \
+vga_ctrl_vcounter_un7_co2_9_n
+11 1
+.names hcnt_i_8__n.BLIF vga_ctrl_HCounter_cnt_8_.BLIF vga_ctrl_hcounter_n_53_n
+11 1
+.names vga_ctrl_vcounter_un7_co2_7_n.BLIF vga_ctrl_vcounter_un7_co2_8_n.BLIF \
+vga_ctrl_vcounter_un7_co2_10_n
+11 1
+.names vga_ctrl_HCounter_hcnt_9_.BLIF vga_ctrl_hcounter_cnt_i_8__n.BLIF \
+vga_ctrl_hcounter_n_54_n
+11 1
+.names vga_ctrl_vcounter_un7_co2_9_n.BLIF vga_ctrl_vcounter_n_120_i_n.BLIF \
+vga_ctrl_vcounter_un7_co2_11_n
+11 1
+.names hcnt_i_9__n.BLIF vga_ctrl_HCounter_cnt_8_.BLIF vga_ctrl_hcounter_n_55_n
+11 1
+.names vga_data_n_92_n.BLIF vcnt_i_4__n.BLIF vga_data_n_95_1_n
+11 1
+.names hcnt_i_2__n.BLIF hcnt_i_3__n.BLIF vga_data_n_350_n
+11 1
+.names vga_ctrl_vcounter_un7_co2_i_n.BLIF vga_ctrl_FrameScan_q2_1_0_.BLIF \
+vga_ctrl_framescan_n_42_1_n
+11 1
+.names vga_data_n_509_0_n.BLIF vga_data_n_509_n
+0 1
+.names vga_ctrl_endline_n.BLIF vga_ctrl_FrameScan_q2_1_0_.BLIF EndFrame_c_1
+11 1
+.names orient_i.BLIF vga_data_un1_hcnt_2_n.BLIF vga_data_n_26_n
+11 1
+.names vga_ctrl_vcounter_un7_co2_n.BLIF vga_ctrl_FrameScan_q2_1_0_.BLIF \
+vga_ctrl_framescan_n_44_1_n
+11 1
+.names orient_c.BLIF vga_data_un1_vcnt_1_n.BLIF vga_data_n_25_n
+11 1
+.names vga_data_n_11_n.BLIF vga_data_n_30_n.BLIF vga_data_n_16_1_n
+11 1
+.names vga_data_n_174_0_n.BLIF vga_data_n_174_n
+0 1
+.names vga_data_n_12_n.BLIF vga_data_n_29_n.BLIF vga_data_n_15_1_n
+11 1
+.names vga_ctrl_vcounter_cnt14_n.BLIF vga_ctrl_vcounter_cnt14_i_n
+0 1
+.names vga_data_n_131_n.BLIF vcnt_i_5__n.BLIF vga_data_n_134_1_n
+11 1
+.names vga_ctrl_hcounter_cnt14_n.BLIF vga_ctrl_hcounter_cnt14_i_n
+0 1
+.names vcnt_i_1__n.BLIF vcnt_i_2__n.BLIF vga_data_n_280_1_n
+11 1
+.names orient_c.BLIF orient_i
+0 1
+.names vcnt_i_5__n.BLIF vga_data_n_280_2_n.BLIF vga_data_n_280_2_0_n
+11 1
+.names vga_ctrl_HCounter_hcnt_4_.BLIF hcnt_i_4__n
+0 1
+.names vcnt_i_9__n.BLIF vga_data_n_30_n.BLIF vga_data_n_18_1_n
+11 1
+.names vga_ctrl_HCounter_hcnt_3_.BLIF hcnt_i_3__n
+0 1
+.names vga_data_n_98_n.BLIF vcnt_i_7__n.BLIF vga_data_vga_d28_1_n
+11 1
+.names vga_ctrl_VCounter_vcnt_8_.BLIF vcnt_i_8__n
+0 1
+.names hcnt_i_7__n.BLIF hcnt_i_8__n.BLIF vga_data_un1_hcnt_1_n
+11 1
+.names vga_ctrl_VCounter_vcnt_9_.BLIF vcnt_i_9__n
+0 1
+.names hcnt_i_9__n.BLIF vga_data_n_357_n.BLIF vga_data_un1_hcnt_2_0_n
+11 1
+.names vga_ctrl_VCounter_vcnt_6_.BLIF vcnt_i_6__n
+0 1
+.names hcnt_i_5__n.BLIF hcnt_i_3__n.BLIF vga_data_n_391_1_n
+11 1
+.names vga_ctrl_VCounter_vcnt_7_.BLIF vcnt_i_7__n
+0 1
+.names orient_c.BLIF vga_data_n_17_2_n.BLIF vga_data_n_17_1_n
+11 1
+.names vga_ctrl_HCounter_hcnt_6_.BLIF hcnt_i_6__n
+0 1
+.names vga_data_n_137_n.BLIF vga_data_vga_d28_i_n.BLIF vga_data_n_17_2_0_n
+11 1
+.names vga_ctrl_HCounter_hcnt_5_.BLIF hcnt_i_5__n
+0 1
+.names hcnt_i_8__n.BLIF hcnt_i_9__n.BLIF vga_data_n_19_1_n
+11 1
+.names vga_ctrl_HCounter_hcnt_8_.BLIF hcnt_i_8__n
+0 1
+.names orient_i.BLIF vga_data_n_396_n.BLIF vga_data_n_19_2_n
+11 1
+.names vga_ctrl_HCounter_hcnt_7_.BLIF hcnt_i_7__n
+0 1
+.names vga_data_n_19_1_n.BLIF vga_data_n_19_2_n.BLIF vga_data_n_19_3_n
+11 1
+.names vga_ctrl_HCounter_hcnt_9_.BLIF hcnt_i_9__n
+0 1
+.names hcnt_i_9__n.BLIF vga_data_n_29_n.BLIF vga_data_n_20_1_n
+11 1
+.names vga_ctrl_HCounter_hcnt_2_.BLIF hcnt_i_2__n
+0 1
+.names vcnt_i_2__n.BLIF vga_ctrl_vcounter_n_76_n.BLIF vga_data_n_167_1_n
+11 1
+.names vga_ctrl_HCounter_cnt_8_.BLIF vga_ctrl_hcounter_cnt_i_8__n
+0 1
+.names vcnt_i_8__n.BLIF vga_data_n_314_n.BLIF vga_data_n_323_1_n
+11 1
+.names vga_data_un1_hcnt_2_n.BLIF vga_data_un1_hcnt_2_i_n
+0 1
+.names vcnt_i_4__n.BLIF vcnt_i_5__n.BLIF vga_data_n_323_2_n
+11 1
+.names vga_ctrl_VCounter_vcnt_2_.BLIF vcnt_i_2__n
+0 1
+.names vcnt_i_6__n.BLIF vcnt_i_7__n.BLIF vga_data_n_323_3_n
+11 1
+.names vga_ctrl_VCounter_vcnt_1_.BLIF vcnt_i_1__n
+0 1
+.names vga_data_n_323_1_n.BLIF vga_data_n_323_2_n.BLIF vga_data_n_323_4_n
+11 1
+.names vga_ctrl_VCounter_vcnt_5_.BLIF vcnt_i_5__n
+0 1
+.names vga_data_n_429_n.BLIF hcnt_i_6__n.BLIF vga_data_n_432_1_n
+11 1
+.names vga_ctrl_VCounter_vcnt_4_.BLIF vcnt_i_4__n
+0 1
+.names hcnt_i_6__n.BLIF hcnt_i_4__n.BLIF vga_data_n_467_1_n
+11 1
+.names vga_ctrl_VCounter_vcnt_3_.BLIF vcnt_i_3__n
+0 1
+.names vga_data_n_207_n.BLIF vcnt_i_6__n.BLIF vga_data_n_210_1_n
+11 1
+.names vga_ctrl_VCounter_G_68_i_x3.BLIF vga_ctrl_vcounter_n_52_i_i_n
+0 1
+.names vga_data_n_280_i_n.BLIF vga_ctrl_VCounter_vcnt_6_.BLIF \
+vga_data_n_287_0_1_n
+11 1
+.names vga_ctrl_VCounter_vcnt_0_.BLIF vcnt_i_0__n
+0 1
+.names vga_ctrl_VCounter_vcnt_5_.BLIF vga_data_n_167_i_n.BLIF \
+vga_data_n_174_0_1_n
+11 1
+.names vga_ctrl_LineScan_q1_1_0_.BLIF vga_ctrl_q1_i_0__n
+0 1
+.names vga_ctrl_VCounter_vcnt_6_.BLIF vga_ctrl_VCounter_vcnt_7_.BLIF \
+vga_data_n_174_0_2_n
+11 1
+.names vga_data_un1_vcnt_1_n.BLIF vga_data_un1_vcnt_1_i_n
+0 1
+.names vga_data_n_174_n.BLIF vcnt_i_8__n.BLIF vga_data_un1_vcnt_1_1_n
+11 1
+.names vga_data_un1_hcnt_n.BLIF vga_data_un1_hcnt_i_n
+0 1
+.names vga_ctrl_vcounter_n_84_0_n.BLIF vga_ctrl_vcounter_n_47_n.BLIF \
+vga_ctrl_vcounter_n_118_i_1_n
+11 1
+.names vga_data_vga_d28_n.BLIF vga_data_vga_d28_i_n
+0 1
+.names vga_ctrl_vcounter_n_48_n.BLIF vga_ctrl_vcounter_n_74_i_n.BLIF \
+vga_ctrl_vcounter_n_42_i_1_n
+11 1
+.names vga_ctrl_FrameScan_q2_1_0_.BLIF vga_ctrl_q2_i_0__n
+0 1
+.names vga_ctrl_vcounter_n_73_i_n.BLIF vga_ctrl_vcounter_n_84_0_n.BLIF \
+vga_ctrl_vcounter_n_40_i_1_n
+11 1
+.names vga_ctrl_FrameScan_q2_1_1_.BLIF vga_ctrl_q2_i_1__n
+0 1
+.names vga_ctrl_vcounter_n_50_n.BLIF vga_ctrl_vcounter_n_72_i_n.BLIF \
+vga_ctrl_vcounter_n_38_i_1_n
+11 1
+.names vga_data_un1_hcnt_4_n.BLIF vga_data_un1_hcnt_4_i_n
+0 1
+.names vga_ctrl_vcounter_n_51_n.BLIF vga_ctrl_vcounter_n_71_i_n.BLIF \
+vga_ctrl_vcounter_n_36_i_1_n
+11 1
+.names vga_data_un1_vcnt_3_n.BLIF vga_data_un1_vcnt_3_i_n
+0 1
+.names vga_ctrl_vcounter_n_53_n.BLIF vga_ctrl_vcounter_n_70_i_n.BLIF \
+vga_ctrl_vcounter_n_34_i_1_n
+11 1
+.names vga_ctrl_linescan_n_15_n.BLIF vga_ctrl_linescan_n_15_i_n
+0 1
+.names vga_ctrl_vcounter_n_84_0_n.BLIF vga_ctrl_vcounter_n_54_n.BLIF \
+vga_ctrl_vcounter_n_117_i_1_n
+11 1
+.names vga_ctrl_vcounter_un7_co2_n.BLIF vga_ctrl_vcounter_un7_co2_i_n
+0 1
+.names vga_ctrl_vcounter_n_84_0_n.BLIF vga_ctrl_vcounter_n_56_n.BLIF \
+vga_ctrl_vcounter_n_116_i_1_n
+11 1
+.names vga_ctrl_HCounter_hcnt_0_.BLIF hcnt_i_0__n
+0 1
+.names vcnt_i_9__n.BLIF vga_ctrl_vcounter_n_56_i_n.BLIF \
+vga_ctrl_vcounter_n_67_1_n
+11 1
+.names vga_ctrl_HCounter_hcnt_1_.BLIF hcnt_i_1__n
+0 1
+.names vga_ctrl_VCounter_vcnt_9_.BLIF vga_ctrl_vcounter_n_56_n.BLIF \
+vga_ctrl_vcounter_n_66_1_n
+11 1
+.names vga_ctrl_LineScan_q1_1_1_.BLIF vga_ctrl_q1_i_1__n
+0 1
+.names vga_ctrl_VCounter_cnt_1_.BLIF vga_ctrl_vcounter_cnt_i_1__n
+0 1
+.names vga_ctrl_VCounter_G_64_i_x3.BLIF vga_ctrl_vcounter_n_55_i_i_n
+0 1
+.names vga_ctrl_vcounter_n_46_i_n.BLIF vga_ctrl_vcounter_cnt_i_3__n.BLIF \
+vga_ctrl_vcounter_n_61_0_1_n
+11 1
+.names vga_ctrl_VCounter_cnt_0_.BLIF vga_ctrl_vcounter_cnt_i_0__n
+0 1
+.names vga_ctrl_vcounter_cnt_i_0__n.BLIF vga_ctrl_vcounter_cnt_i_1__n.BLIF \
+vga_ctrl_vcounter_n_46_i_1_n
+11 1
+.names vga_ctrl_v_nblank_n.BLIF vga_ctrl_v_nblank_i_n
+0 1
+.names vga_ctrl_hcounter_n_44_n.BLIF vga_ctrl_hcounter_n_66_i_n.BLIF \
+vga_ctrl_hcounter_n_43_i_1_n
+11 1
+.names vga_ctrl_HCounter_G_22.BLIF vga_ctrl_hcounter_n_24_i_n
+0 1
+.names vga_ctrl_hcounter_n_45_n.BLIF vga_ctrl_hcounter_n_64_i_n.BLIF \
+vga_ctrl_hcounter_n_39_i_1_n
+11 1
+.names vga_ctrl_HCounter_G_23.BLIF vga_ctrl_hcounter_n_25_i_n
+0 1
+.names vga_ctrl_hcounter_n_46_n.BLIF vga_ctrl_hcounter_n_63_i_n.BLIF \
+vga_ctrl_hcounter_n_37_i_1_n
+11 1
+.names vga_ctrl_hcounter_n_47_n.BLIF vga_ctrl_hcounter_n_62_i_n.BLIF \
+vga_ctrl_hcounter_n_36_i_1_n
+11 1
+.names vga_ctrl_hcounter_n_48_n.BLIF vga_ctrl_hcounter_n_61_i_n.BLIF \
+vga_ctrl_hcounter_n_35_i_1_n
+11 1
+.names vga_ctrl_hcounter_n_49_n.BLIF vga_ctrl_hcounter_n_60_i_n.BLIF \
+vga_ctrl_hcounter_n_30_i_1_n
+11 1
+.names vga_ctrl_hcounter_n_50_n.BLIF vga_ctrl_hcounter_n_59_i_n.BLIF \
+vga_ctrl_hcounter_n_28_i_1_n
+11 1
+.names vga_ctrl_hcounter_n_51_n.BLIF vga_ctrl_hcounter_n_58_i_n.BLIF \
+vga_ctrl_hcounter_n_34_i_1_n
+11 1
+.names hcnt_i_9__n.BLIF vga_ctrl_hcounter_n_51_i_n.BLIF \
+vga_ctrl_hcounter_n_57_1_n
+11 1
+.names vga_ctrl_HCounter_hcnt_9_.BLIF vga_ctrl_hcounter_n_51_n.BLIF \
+vga_ctrl_hcounter_n_56_1_n
+11 1
+.names orient_c.BLIF vga_data_vga_d_i_m5_1__un3_n
+0 1
+.names vga_data_un1_vcnt_5_n.BLIF orient_c.BLIF vga_data_vga_d_i_m5_1__un1_n
+11 1
+.names EndFrame_c_1.BLIF vga_ctrl_FrameScan_q2_1_1_.BLIF EndFrame_c
+11 1
+.names vga_data_un1_hcnt_6_n.BLIF vga_data_vga_d_i_m5_1__un3_n.BLIF \
+vga_data_vga_d_i_m5_1__un0_n
+11 1
+.names vga_ctrl_endline_n.BLIF vga_ctrl_framescan_q2_1se_un3_n
+0 1
+.names vga_ctrl_framescan_q2_1_ns_0__n.BLIF vga_ctrl_endline_n.BLIF \
+vga_ctrl_framescan_q2_1se_un1_n
+11 1
+.names vga_ctrl_FrameScan_q2_1_0_.BLIF vga_ctrl_framescan_q2_1se_un3_n.BLIF \
+vga_ctrl_framescan_q2_1se_un0_n
+11 1
+.names vga_ctrl_endline_n.BLIF vga_ctrl_framescan_q2_1se_0_un3_n
+0 1
+.names vga_data_n_174_0_1_n.BLIF vga_data_n_174_0_2_n.BLIF vga_data_n_174_0_n
+11 1
+.names vga_ctrl_framescan_q2_1_ns_1__n.BLIF vga_ctrl_endline_n.BLIF \
+vga_ctrl_framescan_q2_1se_0_un1_n
+11 1
+.names vga_data_n_350_n.BLIF vga_data_n_350_i_n
+0 1
+.names vga_ctrl_FrameScan_q2_1_1_.BLIF vga_ctrl_framescan_q2_1se_0_un3_n.BLIF \
+vga_ctrl_framescan_q2_1se_0_un0_n
+11 1
+.names vga_data_n_509_0_4_n.BLIF vga_data_n_509_0_3_n.BLIF vga_data_n_509_0_n
+11 1
+.names vga_ctrl_co1_n.BLIF vga_ctrl_linescan_q1_1se_0_un3_n
+0 1
+.names vga_data_n_391_n.BLIF vga_data_n_391_i_n
+0 1
+.names vga_ctrl_LineScan_q1_1_ns_1_0__m1.BLIF vga_ctrl_co1_n.BLIF \
+vga_ctrl_linescan_q1_1se_0_un1_n
+11 1
+.names vga_ctrl_VCounter_cnt_2_.BLIF vga_ctrl_VCounter_G_65_1.BLIF \
+vga_ctrl_VCounter_G_65
+01 1
+10 1
+11 0
+00 0
+.names vga_ctrl_VCounter_cnt_4_.BLIF vga_ctrl_VCounter_G_66_1.BLIF \
+vga_ctrl_VCounter_G_66
+01 1
+10 1
+11 0
+00 0
+.names vga_ctrl_HCounter_hcnt_6_.BLIF vga_ctrl_HCounter_cnt_6_.BLIF \
+vga_ctrl_HCounter_G_22
+01 1
+10 1
+11 0
+00 0
+.names vga_ctrl_HCounter_hcnt_7_.BLIF vga_ctrl_HCounter_cnt_7_.BLIF \
+vga_ctrl_HCounter_G_23
+01 1
+10 1
+11 0
+00 0
+.names vga_ctrl_LineScan_q1_1_0_.BLIF vga_ctrl_LineScan_q1_1_1_.BLIF \
+vga_ctrl_LineScan_q1_1_ns_1_0__m1
+01 1
+10 1
+11 0
+00 0
+.names vga_ctrl_HCounter_hcnt_4_.BLIF vga_ctrl_HCounter_cnt_4_.BLIF \
+vga_ctrl_HCounter_G_21
+01 1
+10 1
+11 0
+00 0
+.names vga_ctrl_VCounter_vcnt_1_.BLIF vga_ctrl_VCounter_cnt_0_.BLIF \
+vga_ctrl_VCounter_G_64_i_x3
+01 1
+10 1
+11 0
+00 0
+.names vga_ctrl_LineScan_q1_1_0_.BLIF vga_ctrl_co1_n.BLIF \
+vga_ctrl_LineScan_q1_1_ns_1_0__q1_1se
+01 1
+10 1
+11 0
+00 0
+.names vga_ctrl_VCounter_cnt_3_.BLIF vga_ctrl_vcounter_n_61_n.BLIF \
+vga_ctrl_VCounter_G_68_i_x3
+01 1
+10 1
+11 0
+00 0
+.names vga_ctrl_VCounter_vcnt_2_.BLIF vga_ctrl_vcounter_n_49_n.BLIF \
+vga_ctrl_VCounter_G_65_1
+01 1
+10 1
+11 0
+00 0
+.names vga_ctrl_VCounter_vcnt_4_.BLIF vga_ctrl_vcounter_n_65_n.BLIF \
+vga_ctrl_VCounter_G_66_1
+01 1
+10 1
+11 0
+00 0
+.names vga_data_n_9_i_n.BLIF vga_d_2_
+1 1
+0 0
+.names vga_ctrl_hcounter_cnt14_i_n.BLIF hsync
+1 1
+0 0
+.names vga_ctrl_vcounter_cnt14_i_n.BLIF vsync
+1 1
+0 0
+.names EndFrame_c.BLIF EndFrame
+1 1
+0 0
+.names vga_data_n_7_i_n.BLIF vga_d_1_
+1 1
+0 0
+.names vga_data_n_5_i_n.BLIF vga_d_0_
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_hcnt_9_.C
+1 1
+0 0
+.names vga_ctrl_hcounter_cnt14_n.BLIF vga_ctrl_HCounter_cnt_6_.D
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_cnt_6_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_cnt_7_.C
+1 1
+0 0
+.names vga_ctrl_hcounter_cnt16_n.BLIF vga_ctrl_HCounter_cnt_8_.D
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_cnt_8_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_hcnt_6_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_hcnt_7_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_hcnt_8_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_hcnt_3_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_hcnt_4_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_hcnt_5_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_hcnt_0_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_hcnt_1_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_hcnt_2_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_HCounter_cnt_4_.C
+1 1
+0 0
+.names vga_ctrl_v_nblank_i_n.BLIF vga_ctrl_VCounter_cnt_0_.D
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_cnt_0_.C
+1 1
+0 0
+.names vga_ctrl_vcounter_cnt14_n.BLIF vga_ctrl_VCounter_cnt_1_.D
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_cnt_1_.C
+1 1
+0 0
+.names vga_ctrl_vcounter_cnt15_n.BLIF vga_ctrl_VCounter_cnt_2_.D
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_cnt_2_.C
+1 1
+0 0
+.names vga_ctrl_v_nblank_n.BLIF vga_ctrl_VCounter_cnt_3_.D
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_cnt_3_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_cnt_4_.C
+1 1
+0 0
+.names vga_ctrl_vcounter_vcnte_n.BLIF vga_ctrl_VCounter_vcnt_7_.CE
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_vcnt_7_.C
+1 1
+0 0
+.names vga_ctrl_vcounter_vcnte_n.BLIF vga_ctrl_VCounter_vcnt_8_.CE
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_vcnt_8_.C
+1 1
+0 0
+.names vga_ctrl_vcounter_vcnte_n.BLIF vga_ctrl_VCounter_vcnt_9_.CE
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_vcnt_9_.C
+1 1
+0 0
+.names vga_ctrl_vcounter_vcnte_n.BLIF vga_ctrl_VCounter_vcnt_4_.CE
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_vcnt_4_.C
+1 1
+0 0
+.names vga_ctrl_vcounter_vcnte_n.BLIF vga_ctrl_VCounter_vcnt_5_.CE
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_vcnt_5_.C
+1 1
+0 0
+.names vga_ctrl_vcounter_vcnte_n.BLIF vga_ctrl_VCounter_vcnt_6_.CE
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_vcnt_6_.C
+1 1
+0 0
+.names vga_ctrl_vcounter_vcnte_n.BLIF vga_ctrl_VCounter_vcnt_2_.CE
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_vcnt_2_.C
+1 1
+0 0
+.names vga_ctrl_vcounter_vcnte_n.BLIF vga_ctrl_VCounter_vcnt_3_.CE
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_vcnt_3_.C
+1 1
+0 0
+.names vga_ctrl_vcounter_vcnte_n.BLIF vga_ctrl_VCounter_vcnt_0_.CE
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_vcnt_0_.C
+1 1
+0 0
+.names vga_ctrl_vcounter_vcnte_n.BLIF vga_ctrl_VCounter_vcnt_1_.CE
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_VCounter_vcnt_1_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_LineScan_q1_1_1_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_LineScan_q1_1_0_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_FrameScan_q2_1_0_.C
+1 1
+0 0
+.names sys_clk_c.BLIF vga_ctrl_FrameScan_q2_1_1_.C
+1 1
+0 0
+.names reset_n.BLIF reset_n_c
+1 1
+0 0
+.names sys_clk.BLIF sys_clk_c
+1 1
+0 0
+.names orient.BLIF orient_c
+1 1
+0 0
+.end

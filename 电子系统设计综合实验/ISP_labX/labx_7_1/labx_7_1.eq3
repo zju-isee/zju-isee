@@ -1,0 +1,2029 @@
+|--------------------------------------------------- ----------|
+|- ispLEVER Classic 2.1.00.02.49.20 Equations File            -|
+|- Copyright(C), 1992-2012, Lattice Semiconductor Corporation -|
+|- All Rights Reserved.                                       -|
+|--------------------------------------------------------------|
+
+
+Equations:
+
+LED_A.D = sel_song_0_.Q & !sel_song_1_.Q
+    # !reset ; (2 pterms, 3 signals)
+LED_A.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_B.D = !reset ; (1 pterm, 1 signal)
+LED_B.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_C.D = !reset
+    # !sel_song_0_.Q & sel_song_1_.Q ; (2 pterms, 3 signals)
+LED_C.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_D.D = sel_song_0_.Q & !sel_song_1_.Q
+    # !reset ; (2 pterms, 3 signals)
+LED_D.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_E.D = !( reset & !sel_song_0_.Q ) ; (1 pterm, 2 signals)
+LED_E.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_F.D = !( reset & !sel_song_0_.Q & !sel_song_1_.Q ) ; (1 pterm, 3 signals)
+LED_F.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_G.D = !( reset & sel_song_1_.Q ) ; (1 pterm, 2 signals)
+LED_G.C = clk_1kHz ; (1 pterm, 1 signal)
+
+LED_VCC1 = 1 ; (1 pterm, 0 signal)
+
+LED_VCC2 = 1 ; (1 pterm, 0 signal)
+
+LED_VCC3 = 1 ; (1 pterm, 0 signal)
+
+LED_VCC4 = !LEDscanInst_LED_VCC4.Q ; (1 pterm, 1 signal)
+
+LEDscanInst_LED_VCC4.D = reset ; (1 pterm, 1 signal)
+LEDscanInst_LED_VCC4.C = clk_1kHz ; (1 pterm, 1 signal)
+
+clkGenerator_FreqDivide_1_q_10_.D.X1 = reset
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkgenerator_freqdivide_1_q_c7_n
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q & !clkgenerator_freqdivide_1_q_c7_n ; (2 pterms, 15 signals)
+clkGenerator_FreqDivide_1_q_10_.D.X2 = reset
+       & clkGenerator_FreqDivide_1_q_10_.Q ; (1 pterm, 2 signals)
+clkGenerator_FreqDivide_1_q_10_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_10_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_11_.T = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_11_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_11_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_11_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_12_.T = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_12_.Q ; (2 pterms, 13 signals)
+clkGenerator_FreqDivide_1_q_12_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_12_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_13_.T = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & clkGenerator_FreqDivide_1_q_12_.Q
+    # clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_13_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_13_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_13_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_1_.D = reset & !clkGenerator_FreqDivide_1_q_1_.Q ; (1 pterm, 2 signals)
+clkGenerator_FreqDivide_1_q_1_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_2_.D = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & !clkGenerator_FreqDivide_1_q_2_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q ; (2 pterms, 3 signals)
+clkGenerator_FreqDivide_1_q_2_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_3_.D = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & !clkGenerator_FreqDivide_1_q_3_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q ; (3 pterms, 4 signals)
+clkGenerator_FreqDivide_1_q_3_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_4_.D = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & !clkGenerator_FreqDivide_1_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q ; (4 pterms, 5 signals)
+clkGenerator_FreqDivide_1_q_4_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_5_.D.X1 = reset
+       & !clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_5_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_5_.Q
+    # reset & !clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_5_.Q
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q ; (5 pterms, 6 signals)
+clkGenerator_FreqDivide_1_q_5_.D.X2 = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 14 signals)
+clkGenerator_FreqDivide_1_q_5_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_5_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_6_.T = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_6_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_6_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_6_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_7_.T = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_7_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_7_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_7_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_8_.T = reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_8_.Q ; (2 pterms, 9 signals)
+clkGenerator_FreqDivide_1_q_8_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_8_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_1_q_9_.T = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # reset & clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q
+    # !reset & clkGenerator_FreqDivide_1_q_9_.Q ; (3 pterms, 14 signals)
+clkGenerator_FreqDivide_1_q_9_.C = clk ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_1_q_9_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_2_q_10_.T = reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_3_.Q
+       & clkGenerator_FreqDivide_2_q_4_.Q & clkGenerator_FreqDivide_2_q_5_.Q
+       & clkGenerator_FreqDivide_2_q_6_.Q & clkGenerator_FreqDivide_2_q_7_.Q
+       & clkGenerator_FreqDivide_2_q_8_.Q & clkGenerator_FreqDivide_2_q_9_.Q
+    # !reset & clkGenerator_FreqDivide_2_q_10_.Q ; (2 pterms, 11 signals)
+clkGenerator_FreqDivide_2_q_10_.C = clk_1kHz ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_2_q_10_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_2_q_11_.T = reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_3_.Q
+       & clkGenerator_FreqDivide_2_q_4_.Q & clkGenerator_FreqDivide_2_q_5_.Q
+       & clkGenerator_FreqDivide_2_q_6_.Q & clkGenerator_FreqDivide_2_q_7_.Q
+       & clkGenerator_FreqDivide_2_q_8_.Q & clkGenerator_FreqDivide_2_q_9_.Q
+       & clkGenerator_FreqDivide_2_q_10_.Q
+    # !reset & clkGenerator_FreqDivide_2_q_11_.Q ; (2 pterms, 12 signals)
+clkGenerator_FreqDivide_2_q_11_.C = clk_1kHz ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_2_q_11_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_2_q_12_.T = reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_3_.Q
+       & clkGenerator_FreqDivide_2_q_4_.Q & clkGenerator_FreqDivide_2_q_5_.Q
+       & clkGenerator_FreqDivide_2_q_6_.Q & clkGenerator_FreqDivide_2_q_7_.Q
+       & clkGenerator_FreqDivide_2_q_8_.Q & clkGenerator_FreqDivide_2_q_9_.Q
+       & clkGenerator_FreqDivide_2_q_10_.Q & clkGenerator_FreqDivide_2_q_11_.Q
+    # clkGenerator_FreqDivide_2_q_1_.Q & clkGenerator_FreqDivide_2_q_2_.Q
+       & !clkGenerator_FreqDivide_2_q_3_.Q & clkGenerator_FreqDivide_2_q_4_.Q
+       & clkGenerator_FreqDivide_2_q_5_.Q & clkGenerator_FreqDivide_2_q_6_.Q
+       & clkGenerator_FreqDivide_2_q_7_.Q & clkGenerator_FreqDivide_2_q_8_.Q
+       & !clkGenerator_FreqDivide_2_q_9_.Q
+       & !clkGenerator_FreqDivide_2_q_10_.Q
+       & !clkGenerator_FreqDivide_2_q_11_.Q
+       & clkGenerator_FreqDivide_2_q_12_.Q
+    # !reset & clkGenerator_FreqDivide_2_q_12_.Q ; (3 pterms, 13 signals)
+clkGenerator_FreqDivide_2_q_12_.C = clk_1kHz ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_2_q_12_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_2_q_1_.D = reset & !clkGenerator_FreqDivide_2_q_1_.Q ; (1 pterm, 2 signals)
+clkGenerator_FreqDivide_2_q_1_.C = clk_1kHz ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_2_q_1_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_2_q_2_.D = reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & !clkGenerator_FreqDivide_2_q_2_.Q
+    # reset & !clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q ; (2 pterms, 3 signals)
+clkGenerator_FreqDivide_2_q_2_.C = clk_1kHz ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_2_q_2_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_2_q_3_.D.X1 = reset & clkGenerator_FreqDivide_2_q_3_.Q
+    # reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & !clkGenerator_FreqDivide_2_q_3_.Q
+       & clkGenerator_FreqDivide_2_q_4_.Q & clkGenerator_FreqDivide_2_q_5_.Q
+       & clkGenerator_FreqDivide_2_q_6_.Q & clkGenerator_FreqDivide_2_q_7_.Q
+       & clkGenerator_FreqDivide_2_q_8_.Q & !clkGenerator_FreqDivide_2_q_9_.Q
+       & !clkGenerator_FreqDivide_2_q_10_.Q
+       & !clkGenerator_FreqDivide_2_q_11_.Q
+       & clkGenerator_FreqDivide_2_q_12_.Q ; (2 pterms, 13 signals)
+clkGenerator_FreqDivide_2_q_3_.D.X2 = reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q ; (1 pterm, 3 signals)
+clkGenerator_FreqDivide_2_q_3_.C = clk_1kHz ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_2_q_3_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_2_q_4_.T = clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_4_.Q
+       & clkGenerator_FreqDivide_2_q_5_.Q & clkGenerator_FreqDivide_2_q_6_.Q
+       & clkGenerator_FreqDivide_2_q_7_.Q & clkGenerator_FreqDivide_2_q_8_.Q
+       & !clkGenerator_FreqDivide_2_q_9_.Q
+       & !clkGenerator_FreqDivide_2_q_10_.Q
+       & !clkGenerator_FreqDivide_2_q_11_.Q
+       & clkGenerator_FreqDivide_2_q_12_.Q
+    # reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_3_.Q
+    # !reset & clkGenerator_FreqDivide_2_q_4_.Q ; (3 pterms, 13 signals)
+clkGenerator_FreqDivide_2_q_4_.C = clk_1kHz ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_2_q_4_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_2_q_5_.T = clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_4_.Q
+       & clkGenerator_FreqDivide_2_q_5_.Q & clkGenerator_FreqDivide_2_q_6_.Q
+       & clkGenerator_FreqDivide_2_q_7_.Q & clkGenerator_FreqDivide_2_q_8_.Q
+       & !clkGenerator_FreqDivide_2_q_9_.Q
+       & !clkGenerator_FreqDivide_2_q_10_.Q
+       & !clkGenerator_FreqDivide_2_q_11_.Q
+       & clkGenerator_FreqDivide_2_q_12_.Q
+    # reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_3_.Q
+       & clkGenerator_FreqDivide_2_q_4_.Q
+    # !reset & clkGenerator_FreqDivide_2_q_5_.Q ; (3 pterms, 13 signals)
+clkGenerator_FreqDivide_2_q_5_.C = clk_1kHz ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_2_q_5_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_2_q_6_.T = clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_4_.Q
+       & clkGenerator_FreqDivide_2_q_5_.Q & clkGenerator_FreqDivide_2_q_6_.Q
+       & clkGenerator_FreqDivide_2_q_7_.Q & clkGenerator_FreqDivide_2_q_8_.Q
+       & !clkGenerator_FreqDivide_2_q_9_.Q
+       & !clkGenerator_FreqDivide_2_q_10_.Q
+       & !clkGenerator_FreqDivide_2_q_11_.Q
+       & clkGenerator_FreqDivide_2_q_12_.Q
+    # reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_3_.Q
+       & clkGenerator_FreqDivide_2_q_4_.Q & clkGenerator_FreqDivide_2_q_5_.Q
+    # !reset & clkGenerator_FreqDivide_2_q_6_.Q ; (3 pterms, 13 signals)
+clkGenerator_FreqDivide_2_q_6_.C = clk_1kHz ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_2_q_6_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_2_q_7_.T = clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_4_.Q
+       & clkGenerator_FreqDivide_2_q_5_.Q & clkGenerator_FreqDivide_2_q_6_.Q
+       & clkGenerator_FreqDivide_2_q_7_.Q & clkGenerator_FreqDivide_2_q_8_.Q
+       & !clkGenerator_FreqDivide_2_q_9_.Q
+       & !clkGenerator_FreqDivide_2_q_10_.Q
+       & !clkGenerator_FreqDivide_2_q_11_.Q
+       & clkGenerator_FreqDivide_2_q_12_.Q
+    # reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_3_.Q
+       & clkGenerator_FreqDivide_2_q_4_.Q & clkGenerator_FreqDivide_2_q_5_.Q
+       & clkGenerator_FreqDivide_2_q_6_.Q
+    # !reset & clkGenerator_FreqDivide_2_q_7_.Q ; (3 pterms, 13 signals)
+clkGenerator_FreqDivide_2_q_7_.C = clk_1kHz ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_2_q_7_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_2_q_8_.T = clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_4_.Q
+       & clkGenerator_FreqDivide_2_q_5_.Q & clkGenerator_FreqDivide_2_q_6_.Q
+       & clkGenerator_FreqDivide_2_q_7_.Q & clkGenerator_FreqDivide_2_q_8_.Q
+       & !clkGenerator_FreqDivide_2_q_9_.Q
+       & !clkGenerator_FreqDivide_2_q_10_.Q
+       & !clkGenerator_FreqDivide_2_q_11_.Q
+       & clkGenerator_FreqDivide_2_q_12_.Q
+    # reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_3_.Q
+       & clkGenerator_FreqDivide_2_q_4_.Q & clkGenerator_FreqDivide_2_q_5_.Q
+       & clkGenerator_FreqDivide_2_q_6_.Q & clkGenerator_FreqDivide_2_q_7_.Q
+    # !reset & clkGenerator_FreqDivide_2_q_8_.Q ; (3 pterms, 13 signals)
+clkGenerator_FreqDivide_2_q_8_.C = clk_1kHz ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_2_q_8_.CE = 1 ; (1 pterm, 0 signal)
+
+clkGenerator_FreqDivide_2_q_9_.T = reset & clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & clkGenerator_FreqDivide_2_q_3_.Q
+       & clkGenerator_FreqDivide_2_q_4_.Q & clkGenerator_FreqDivide_2_q_5_.Q
+       & clkGenerator_FreqDivide_2_q_6_.Q & clkGenerator_FreqDivide_2_q_7_.Q
+       & clkGenerator_FreqDivide_2_q_8_.Q
+    # !reset & clkGenerator_FreqDivide_2_q_9_.Q ; (2 pterms, 10 signals)
+clkGenerator_FreqDivide_2_q_9_.C = clk_1kHz ; (1 pterm, 1 signal)
+clkGenerator_FreqDivide_2_q_9_.CE = 1 ; (1 pterm, 0 signal)
+
+clk_1kHz = clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 13 signals)
+
+clkgenerator_freqdivide_1_q_c7_n = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & clkGenerator_FreqDivide_1_q_8_.Q ; (1 pterm, 8 signals)
+
+debouncerInst_1_controllerInst_state_0_.D.X1 = reset
+       & debouncerInst_1_controllerInst_state_0_.Q
+    # reset & start & debouncerInst_1_controllerInst_state_1_.Q
+    # reset & !start & !debouncerInst_1_controllerInst_state_1_.Q ; (3 pterms, 4 signals)
+debouncerInst_1_controllerInst_state_0_.D.X2 = reset
+       & debouncerInst_1_timer15ms_q_1_.Q & debouncerInst_1_timer15ms_q_2_.Q
+       & !debouncerInst_1_timer15ms_q_3_.Q & debouncerInst_1_timer15ms_q_4_.Q
+       & !debouncerInst_1_timer15ms_q_5_.Q & debouncerInst_1_timer15ms_q_6_.Q
+       & !debouncerInst_1_timer15ms_q_7_.Q & !debouncerInst_1_timer15ms_q_8_.Q
+       & debouncerInst_1_timer15ms_q_9_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q
+       & clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (1 pterm, 24 signals)
+debouncerInst_1_controllerInst_state_0_.C = clk ; (1 pterm, 1 signal)
+
+debouncerInst_1_controllerInst_state_1_.T = reset
+       & debouncerInst_1_timer15ms_q_1_.Q & debouncerInst_1_timer15ms_q_2_.Q
+       & !debouncerInst_1_timer15ms_q_3_.Q & debouncerInst_1_timer15ms_q_4_.Q
+       & !debouncerInst_1_timer15ms_q_5_.Q & debouncerInst_1_timer15ms_q_6_.Q
+       & !debouncerInst_1_timer15ms_q_7_.Q & !debouncerInst_1_timer15ms_q_8_.Q
+       & debouncerInst_1_timer15ms_q_9_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q
+       & clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q
+    # !reset & debouncerInst_1_controllerInst_state_1_.Q ; (2 pterms, 25 signals)
+debouncerInst_1_controllerInst_state_1_.C = clk ; (1 pterm, 1 signal)
+
+debouncerInst_1_timer15ms_q_1_.D = !debouncerInst_1_timer15ms_q_1_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q ; (1 pterm, 2 signals)
+debouncerInst_1_timer15ms_q_1_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_1_timer15ms_q_1_.CE = debouncerInst_1_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_1_timer15ms_q_1__0 = !debouncerInst_1_controllerInst_state_0_.Q
+    # clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (2 pterms, 14 signals)
+
+debouncerInst_1_timer15ms_q_2_.D = debouncerInst_1_timer15ms_q_1_.Q
+       & !debouncerInst_1_timer15ms_q_2_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q
+    # !debouncerInst_1_timer15ms_q_1_.Q & debouncerInst_1_timer15ms_q_2_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q ; (2 pterms, 3 signals)
+debouncerInst_1_timer15ms_q_2_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_1_timer15ms_q_2_.CE = debouncerInst_1_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_1_timer15ms_q_3_.D.X1 = !debouncerInst_1_timer15ms_q_1_.Q
+       & debouncerInst_1_timer15ms_q_3_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q
+    # debouncerInst_1_timer15ms_q_1_.Q & !debouncerInst_1_timer15ms_q_2_.Q
+       & debouncerInst_1_timer15ms_q_3_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q
+    # debouncerInst_1_timer15ms_q_1_.Q & debouncerInst_1_timer15ms_q_2_.Q
+       & !debouncerInst_1_timer15ms_q_3_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q ; (3 pterms, 4 signals)
+debouncerInst_1_timer15ms_q_3_.D.X2 = debouncerInst_1_timer15ms_q_1_.Q
+       & debouncerInst_1_timer15ms_q_2_.Q & !debouncerInst_1_timer15ms_q_3_.Q
+       & debouncerInst_1_timer15ms_q_4_.Q & !debouncerInst_1_timer15ms_q_5_.Q
+       & debouncerInst_1_timer15ms_q_6_.Q & !debouncerInst_1_timer15ms_q_7_.Q
+       & !debouncerInst_1_timer15ms_q_8_.Q & debouncerInst_1_timer15ms_q_9_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q ; (1 pterm, 10 signals)
+debouncerInst_1_timer15ms_q_3_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_1_timer15ms_q_3_.CE = debouncerInst_1_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_1_timer15ms_q_4_.T = debouncerInst_1_timer15ms_q_1_.Q
+       & debouncerInst_1_timer15ms_q_2_.Q & debouncerInst_1_timer15ms_q_4_.Q
+       & !debouncerInst_1_timer15ms_q_5_.Q & debouncerInst_1_timer15ms_q_6_.Q
+       & !debouncerInst_1_timer15ms_q_7_.Q & !debouncerInst_1_timer15ms_q_8_.Q
+       & debouncerInst_1_timer15ms_q_9_.Q
+    # debouncerInst_1_timer15ms_q_1_.Q & debouncerInst_1_timer15ms_q_2_.Q
+       & debouncerInst_1_timer15ms_q_3_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q
+    # debouncerInst_1_timer15ms_q_4_.Q
+       & !debouncerInst_1_controllerInst_state_0_.Q ; (3 pterms, 10 signals)
+debouncerInst_1_timer15ms_q_4_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_1_timer15ms_q_4_.CE = debouncerInst_1_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_1_timer15ms_q_5_.D.X1 = debouncerInst_1_timer15ms_q_1_.Q
+       & debouncerInst_1_timer15ms_q_2_.Q & debouncerInst_1_timer15ms_q_3_.Q
+       & debouncerInst_1_timer15ms_q_4_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q ; (1 pterm, 5 signals)
+debouncerInst_1_timer15ms_q_5_.D.X2 = debouncerInst_1_timer15ms_q_5_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q ; (1 pterm, 2 signals)
+debouncerInst_1_timer15ms_q_5_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_1_timer15ms_q_5_.CE = debouncerInst_1_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_1_timer15ms_q_6_.T = debouncerInst_1_timer15ms_q_1_.Q
+       & debouncerInst_1_timer15ms_q_2_.Q & !debouncerInst_1_timer15ms_q_3_.Q
+       & debouncerInst_1_timer15ms_q_4_.Q & !debouncerInst_1_timer15ms_q_5_.Q
+       & debouncerInst_1_timer15ms_q_6_.Q & !debouncerInst_1_timer15ms_q_7_.Q
+       & !debouncerInst_1_timer15ms_q_8_.Q & debouncerInst_1_timer15ms_q_9_.Q
+    # debouncerInst_1_timer15ms_q_1_.Q & debouncerInst_1_timer15ms_q_2_.Q
+       & debouncerInst_1_timer15ms_q_3_.Q & debouncerInst_1_timer15ms_q_4_.Q
+       & debouncerInst_1_timer15ms_q_5_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q
+    # debouncerInst_1_timer15ms_q_6_.Q
+       & !debouncerInst_1_controllerInst_state_0_.Q ; (3 pterms, 10 signals)
+debouncerInst_1_timer15ms_q_6_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_1_timer15ms_q_6_.CE = debouncerInst_1_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_1_timer15ms_q_7_.T = debouncerInst_1_timer15ms_q_1_.Q
+       & debouncerInst_1_timer15ms_q_2_.Q & debouncerInst_1_timer15ms_q_3_.Q
+       & debouncerInst_1_timer15ms_q_4_.Q & debouncerInst_1_timer15ms_q_5_.Q
+       & debouncerInst_1_timer15ms_q_6_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q
+    # debouncerInst_1_timer15ms_q_7_.Q
+       & !debouncerInst_1_controllerInst_state_0_.Q ; (2 pterms, 8 signals)
+debouncerInst_1_timer15ms_q_7_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_1_timer15ms_q_7_.CE = debouncerInst_1_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_1_timer15ms_q_8_.T = debouncerInst_1_timer15ms_q_1_.Q
+       & debouncerInst_1_timer15ms_q_2_.Q & debouncerInst_1_timer15ms_q_3_.Q
+       & debouncerInst_1_timer15ms_q_4_.Q & debouncerInst_1_timer15ms_q_5_.Q
+       & debouncerInst_1_timer15ms_q_6_.Q & debouncerInst_1_timer15ms_q_7_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q
+    # debouncerInst_1_timer15ms_q_8_.Q
+       & !debouncerInst_1_controllerInst_state_0_.Q ; (2 pterms, 9 signals)
+debouncerInst_1_timer15ms_q_8_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_1_timer15ms_q_8_.CE = debouncerInst_1_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_1_timer15ms_q_9_.T = debouncerInst_1_timer15ms_q_1_.Q
+       & debouncerInst_1_timer15ms_q_2_.Q & !debouncerInst_1_timer15ms_q_3_.Q
+       & debouncerInst_1_timer15ms_q_4_.Q & !debouncerInst_1_timer15ms_q_5_.Q
+       & debouncerInst_1_timer15ms_q_6_.Q & !debouncerInst_1_timer15ms_q_7_.Q
+       & !debouncerInst_1_timer15ms_q_8_.Q & debouncerInst_1_timer15ms_q_9_.Q
+    # debouncerInst_1_timer15ms_q_1_.Q & debouncerInst_1_timer15ms_q_2_.Q
+       & debouncerInst_1_timer15ms_q_3_.Q & debouncerInst_1_timer15ms_q_4_.Q
+       & debouncerInst_1_timer15ms_q_5_.Q & debouncerInst_1_timer15ms_q_6_.Q
+       & debouncerInst_1_timer15ms_q_7_.Q & debouncerInst_1_timer15ms_q_8_.Q
+       & debouncerInst_1_controllerInst_state_0_.Q
+    # debouncerInst_1_timer15ms_q_9_.Q
+       & !debouncerInst_1_controllerInst_state_0_.Q ; (3 pterms, 10 signals)
+debouncerInst_1_timer15ms_q_9_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_1_timer15ms_q_9_.CE = debouncerInst_1_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_2_controllerInst_state_0_.D = reset & !stop
+       & !debouncerInst_2_controllerInst_state_0_.Q
+       & !debouncerInst_2_controllerInst_state_1_.Q
+    # reset & stop & !debouncerInst_2_controllerInst_state_0_.Q
+       & debouncerInst_2_controllerInst_state_1_.Q
+    # reset & !debouncerinst_2_timer_done_n
+       & debouncerInst_2_controllerInst_state_0_.Q ; (3 pterms, 5 signals)
+debouncerInst_2_controllerInst_state_0_.C = clk ; (1 pterm, 1 signal)
+
+debouncerInst_2_controllerInst_state_1_.T = reset
+       & clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q & debouncerInst_2_timer15ms_q_1_.Q
+       & debouncerInst_2_timer15ms_q_2_.Q & !debouncerInst_2_timer15ms_q_3_.Q
+       & debouncerInst_2_timer15ms_q_4_.Q & !debouncerInst_2_timer15ms_q_5_.Q
+       & debouncerInst_2_timer15ms_q_6_.Q & !debouncerInst_2_timer15ms_q_7_.Q
+       & !debouncerInst_2_timer15ms_q_8_.Q & debouncerInst_2_timer15ms_q_9_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q
+    # !reset & debouncerInst_2_controllerInst_state_1_.Q ; (2 pterms, 25 signals)
+debouncerInst_2_controllerInst_state_1_.C = clk ; (1 pterm, 1 signal)
+
+debouncerInst_2_timer15ms_q_1_.D = !debouncerInst_2_timer15ms_q_1_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q ; (1 pterm, 2 signals)
+debouncerInst_2_timer15ms_q_1_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_2_timer15ms_q_1_.CE = debouncerInst_2_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_2_timer15ms_q_1__0 = !debouncerInst_2_controllerInst_state_0_.Q
+    # clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (2 pterms, 14 signals)
+
+debouncerInst_2_timer15ms_q_2_.D = debouncerInst_2_timer15ms_q_1_.Q
+       & !debouncerInst_2_timer15ms_q_2_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q
+    # !debouncerInst_2_timer15ms_q_1_.Q & debouncerInst_2_timer15ms_q_2_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q ; (2 pterms, 3 signals)
+debouncerInst_2_timer15ms_q_2_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_2_timer15ms_q_2_.CE = debouncerInst_2_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_2_timer15ms_q_3_.D.X1 = !debouncerInst_2_timer15ms_q_1_.Q
+       & debouncerInst_2_timer15ms_q_3_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q
+    # debouncerInst_2_timer15ms_q_1_.Q & !debouncerInst_2_timer15ms_q_2_.Q
+       & debouncerInst_2_timer15ms_q_3_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q
+    # debouncerInst_2_timer15ms_q_1_.Q & debouncerInst_2_timer15ms_q_2_.Q
+       & !debouncerInst_2_timer15ms_q_3_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q ; (3 pterms, 4 signals)
+debouncerInst_2_timer15ms_q_3_.D.X2 = debouncerInst_2_timer15ms_q_1_.Q
+       & debouncerInst_2_timer15ms_q_2_.Q & !debouncerInst_2_timer15ms_q_3_.Q
+       & debouncerInst_2_timer15ms_q_4_.Q & !debouncerInst_2_timer15ms_q_5_.Q
+       & debouncerInst_2_timer15ms_q_6_.Q & !debouncerInst_2_timer15ms_q_7_.Q
+       & !debouncerInst_2_timer15ms_q_8_.Q & debouncerInst_2_timer15ms_q_9_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q ; (1 pterm, 10 signals)
+debouncerInst_2_timer15ms_q_3_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_2_timer15ms_q_3_.CE = debouncerInst_2_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_2_timer15ms_q_4_.T = debouncerInst_2_timer15ms_q_1_.Q
+       & debouncerInst_2_timer15ms_q_2_.Q & debouncerInst_2_timer15ms_q_4_.Q
+       & !debouncerInst_2_timer15ms_q_5_.Q & debouncerInst_2_timer15ms_q_6_.Q
+       & !debouncerInst_2_timer15ms_q_7_.Q & !debouncerInst_2_timer15ms_q_8_.Q
+       & debouncerInst_2_timer15ms_q_9_.Q
+    # debouncerInst_2_timer15ms_q_1_.Q & debouncerInst_2_timer15ms_q_2_.Q
+       & debouncerInst_2_timer15ms_q_3_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q
+    # debouncerInst_2_timer15ms_q_4_.Q
+       & !debouncerInst_2_controllerInst_state_0_.Q ; (3 pterms, 10 signals)
+debouncerInst_2_timer15ms_q_4_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_2_timer15ms_q_4_.CE = debouncerInst_2_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_2_timer15ms_q_5_.D.X1 = debouncerInst_2_timer15ms_q_1_.Q
+       & debouncerInst_2_timer15ms_q_2_.Q & debouncerInst_2_timer15ms_q_3_.Q
+       & debouncerInst_2_timer15ms_q_4_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q ; (1 pterm, 5 signals)
+debouncerInst_2_timer15ms_q_5_.D.X2 = debouncerInst_2_timer15ms_q_5_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q ; (1 pterm, 2 signals)
+debouncerInst_2_timer15ms_q_5_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_2_timer15ms_q_5_.CE = debouncerInst_2_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_2_timer15ms_q_6_.T = debouncerInst_2_timer15ms_q_1_.Q
+       & debouncerInst_2_timer15ms_q_2_.Q & !debouncerInst_2_timer15ms_q_3_.Q
+       & debouncerInst_2_timer15ms_q_4_.Q & !debouncerInst_2_timer15ms_q_5_.Q
+       & debouncerInst_2_timer15ms_q_6_.Q & !debouncerInst_2_timer15ms_q_7_.Q
+       & !debouncerInst_2_timer15ms_q_8_.Q & debouncerInst_2_timer15ms_q_9_.Q
+    # debouncerInst_2_timer15ms_q_1_.Q & debouncerInst_2_timer15ms_q_2_.Q
+       & debouncerInst_2_timer15ms_q_3_.Q & debouncerInst_2_timer15ms_q_4_.Q
+       & debouncerInst_2_timer15ms_q_5_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q
+    # debouncerInst_2_timer15ms_q_6_.Q
+       & !debouncerInst_2_controllerInst_state_0_.Q ; (3 pterms, 10 signals)
+debouncerInst_2_timer15ms_q_6_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_2_timer15ms_q_6_.CE = debouncerInst_2_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_2_timer15ms_q_7_.T = debouncerInst_2_timer15ms_q_1_.Q
+       & debouncerInst_2_timer15ms_q_2_.Q & debouncerInst_2_timer15ms_q_3_.Q
+       & debouncerInst_2_timer15ms_q_4_.Q & debouncerInst_2_timer15ms_q_5_.Q
+       & debouncerInst_2_timer15ms_q_6_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q
+    # debouncerInst_2_timer15ms_q_7_.Q
+       & !debouncerInst_2_controllerInst_state_0_.Q ; (2 pterms, 8 signals)
+debouncerInst_2_timer15ms_q_7_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_2_timer15ms_q_7_.CE = debouncerInst_2_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_2_timer15ms_q_8_.T = debouncerInst_2_timer15ms_q_1_.Q
+       & debouncerInst_2_timer15ms_q_2_.Q & debouncerInst_2_timer15ms_q_3_.Q
+       & debouncerInst_2_timer15ms_q_4_.Q & debouncerInst_2_timer15ms_q_5_.Q
+       & debouncerInst_2_timer15ms_q_6_.Q & debouncerInst_2_timer15ms_q_7_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q
+    # debouncerInst_2_timer15ms_q_8_.Q
+       & !debouncerInst_2_controllerInst_state_0_.Q ; (2 pterms, 9 signals)
+debouncerInst_2_timer15ms_q_8_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_2_timer15ms_q_8_.CE = debouncerInst_2_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_2_timer15ms_q_9_.T = debouncerInst_2_timer15ms_q_1_.Q
+       & debouncerInst_2_timer15ms_q_2_.Q & !debouncerInst_2_timer15ms_q_3_.Q
+       & debouncerInst_2_timer15ms_q_4_.Q & !debouncerInst_2_timer15ms_q_5_.Q
+       & debouncerInst_2_timer15ms_q_6_.Q & !debouncerInst_2_timer15ms_q_7_.Q
+       & !debouncerInst_2_timer15ms_q_8_.Q & debouncerInst_2_timer15ms_q_9_.Q
+    # debouncerInst_2_timer15ms_q_1_.Q & debouncerInst_2_timer15ms_q_2_.Q
+       & debouncerInst_2_timer15ms_q_3_.Q & debouncerInst_2_timer15ms_q_4_.Q
+       & debouncerInst_2_timer15ms_q_5_.Q & debouncerInst_2_timer15ms_q_6_.Q
+       & debouncerInst_2_timer15ms_q_7_.Q & debouncerInst_2_timer15ms_q_8_.Q
+       & debouncerInst_2_controllerInst_state_0_.Q
+    # debouncerInst_2_timer15ms_q_9_.Q
+       & !debouncerInst_2_controllerInst_state_0_.Q ; (3 pterms, 10 signals)
+debouncerInst_2_timer15ms_q_9_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_2_timer15ms_q_9_.CE = debouncerInst_2_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_3_controllerInst_state_0_.D.X1 = reset
+       & debouncerInst_3_controllerInst_state_0_.Q
+    # reset & switch & debouncerInst_3_controllerInst_state_1_.Q
+    # reset & !switch & !debouncerInst_3_controllerInst_state_1_.Q ; (3 pterms, 4 signals)
+debouncerInst_3_controllerInst_state_0_.D.X2 = reset
+       & clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q & debouncerInst_3_timer15ms_q_1_.Q
+       & debouncerInst_3_timer15ms_q_2_.Q & !debouncerInst_3_timer15ms_q_3_.Q
+       & debouncerInst_3_timer15ms_q_4_.Q & !debouncerInst_3_timer15ms_q_5_.Q
+       & debouncerInst_3_timer15ms_q_6_.Q & !debouncerInst_3_timer15ms_q_7_.Q
+       & !debouncerInst_3_timer15ms_q_8_.Q & debouncerInst_3_timer15ms_q_9_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q ; (1 pterm, 24 signals)
+debouncerInst_3_controllerInst_state_0_.C = clk ; (1 pterm, 1 signal)
+
+debouncerInst_3_controllerInst_state_1_.T = reset
+       & clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q & debouncerInst_3_timer15ms_q_1_.Q
+       & debouncerInst_3_timer15ms_q_2_.Q & !debouncerInst_3_timer15ms_q_3_.Q
+       & debouncerInst_3_timer15ms_q_4_.Q & !debouncerInst_3_timer15ms_q_5_.Q
+       & debouncerInst_3_timer15ms_q_6_.Q & !debouncerInst_3_timer15ms_q_7_.Q
+       & !debouncerInst_3_timer15ms_q_8_.Q & debouncerInst_3_timer15ms_q_9_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q
+    # !reset & debouncerInst_3_controllerInst_state_1_.Q ; (2 pterms, 25 signals)
+debouncerInst_3_controllerInst_state_1_.C = clk ; (1 pterm, 1 signal)
+
+debouncerInst_3_timer15ms_q_1_.D = !debouncerInst_3_timer15ms_q_1_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q ; (1 pterm, 2 signals)
+debouncerInst_3_timer15ms_q_1_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_3_timer15ms_q_1_.CE = debouncerInst_3_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_3_timer15ms_q_1__0 = !debouncerInst_3_controllerInst_state_0_.Q
+    # clkGenerator_FreqDivide_1_q_1_.Q & clkGenerator_FreqDivide_1_q_2_.Q
+       & clkGenerator_FreqDivide_1_q_3_.Q & clkGenerator_FreqDivide_1_q_4_.Q
+       & !clkGenerator_FreqDivide_1_q_5_.Q & clkGenerator_FreqDivide_1_q_6_.Q
+       & clkGenerator_FreqDivide_1_q_7_.Q & !clkGenerator_FreqDivide_1_q_8_.Q
+       & clkGenerator_FreqDivide_1_q_9_.Q & clkGenerator_FreqDivide_1_q_10_.Q
+       & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q ; (2 pterms, 14 signals)
+
+debouncerInst_3_timer15ms_q_2_.D = debouncerInst_3_timer15ms_q_1_.Q
+       & !debouncerInst_3_timer15ms_q_2_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q
+    # !debouncerInst_3_timer15ms_q_1_.Q & debouncerInst_3_timer15ms_q_2_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q ; (2 pterms, 3 signals)
+debouncerInst_3_timer15ms_q_2_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_3_timer15ms_q_2_.CE = debouncerInst_3_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_3_timer15ms_q_3_.D.X1 = !debouncerInst_3_timer15ms_q_1_.Q
+       & debouncerInst_3_timer15ms_q_3_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q
+    # debouncerInst_3_timer15ms_q_1_.Q & !debouncerInst_3_timer15ms_q_2_.Q
+       & debouncerInst_3_timer15ms_q_3_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q
+    # debouncerInst_3_timer15ms_q_1_.Q & debouncerInst_3_timer15ms_q_2_.Q
+       & !debouncerInst_3_timer15ms_q_3_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q ; (3 pterms, 4 signals)
+debouncerInst_3_timer15ms_q_3_.D.X2 = debouncerInst_3_timer15ms_q_1_.Q
+       & debouncerInst_3_timer15ms_q_2_.Q & !debouncerInst_3_timer15ms_q_3_.Q
+       & debouncerInst_3_timer15ms_q_4_.Q & !debouncerInst_3_timer15ms_q_5_.Q
+       & debouncerInst_3_timer15ms_q_6_.Q & !debouncerInst_3_timer15ms_q_7_.Q
+       & !debouncerInst_3_timer15ms_q_8_.Q & debouncerInst_3_timer15ms_q_9_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q ; (1 pterm, 10 signals)
+debouncerInst_3_timer15ms_q_3_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_3_timer15ms_q_3_.CE = debouncerInst_3_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_3_timer15ms_q_4_.T = debouncerInst_3_timer15ms_q_1_.Q
+       & debouncerInst_3_timer15ms_q_2_.Q & debouncerInst_3_timer15ms_q_4_.Q
+       & !debouncerInst_3_timer15ms_q_5_.Q & debouncerInst_3_timer15ms_q_6_.Q
+       & !debouncerInst_3_timer15ms_q_7_.Q & !debouncerInst_3_timer15ms_q_8_.Q
+       & debouncerInst_3_timer15ms_q_9_.Q
+    # debouncerInst_3_timer15ms_q_1_.Q & debouncerInst_3_timer15ms_q_2_.Q
+       & debouncerInst_3_timer15ms_q_3_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q
+    # debouncerInst_3_timer15ms_q_4_.Q
+       & !debouncerInst_3_controllerInst_state_0_.Q ; (3 pterms, 10 signals)
+debouncerInst_3_timer15ms_q_4_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_3_timer15ms_q_4_.CE = debouncerInst_3_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_3_timer15ms_q_5_.D.X1 = debouncerInst_3_timer15ms_q_1_.Q
+       & debouncerInst_3_timer15ms_q_2_.Q & debouncerInst_3_timer15ms_q_3_.Q
+       & debouncerInst_3_timer15ms_q_4_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q ; (1 pterm, 5 signals)
+debouncerInst_3_timer15ms_q_5_.D.X2 = debouncerInst_3_timer15ms_q_5_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q ; (1 pterm, 2 signals)
+debouncerInst_3_timer15ms_q_5_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_3_timer15ms_q_5_.CE = debouncerInst_3_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_3_timer15ms_q_6_.T = debouncerInst_3_timer15ms_q_1_.Q
+       & debouncerInst_3_timer15ms_q_2_.Q & !debouncerInst_3_timer15ms_q_3_.Q
+       & debouncerInst_3_timer15ms_q_4_.Q & !debouncerInst_3_timer15ms_q_5_.Q
+       & debouncerInst_3_timer15ms_q_6_.Q & !debouncerInst_3_timer15ms_q_7_.Q
+       & !debouncerInst_3_timer15ms_q_8_.Q & debouncerInst_3_timer15ms_q_9_.Q
+    # debouncerInst_3_timer15ms_q_1_.Q & debouncerInst_3_timer15ms_q_2_.Q
+       & debouncerInst_3_timer15ms_q_3_.Q & debouncerInst_3_timer15ms_q_4_.Q
+       & debouncerInst_3_timer15ms_q_5_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q
+    # debouncerInst_3_timer15ms_q_6_.Q
+       & !debouncerInst_3_controllerInst_state_0_.Q ; (3 pterms, 10 signals)
+debouncerInst_3_timer15ms_q_6_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_3_timer15ms_q_6_.CE = debouncerInst_3_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_3_timer15ms_q_7_.T = debouncerInst_3_timer15ms_q_1_.Q
+       & debouncerInst_3_timer15ms_q_2_.Q & debouncerInst_3_timer15ms_q_3_.Q
+       & debouncerInst_3_timer15ms_q_4_.Q & debouncerInst_3_timer15ms_q_5_.Q
+       & debouncerInst_3_timer15ms_q_6_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q
+    # debouncerInst_3_timer15ms_q_7_.Q
+       & !debouncerInst_3_controllerInst_state_0_.Q ; (2 pterms, 8 signals)
+debouncerInst_3_timer15ms_q_7_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_3_timer15ms_q_7_.CE = debouncerInst_3_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_3_timer15ms_q_8_.T = debouncerInst_3_timer15ms_q_1_.Q
+       & debouncerInst_3_timer15ms_q_2_.Q & debouncerInst_3_timer15ms_q_3_.Q
+       & debouncerInst_3_timer15ms_q_4_.Q & debouncerInst_3_timer15ms_q_5_.Q
+       & debouncerInst_3_timer15ms_q_6_.Q & debouncerInst_3_timer15ms_q_7_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q
+    # debouncerInst_3_timer15ms_q_8_.Q
+       & !debouncerInst_3_controllerInst_state_0_.Q ; (2 pterms, 9 signals)
+debouncerInst_3_timer15ms_q_8_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_3_timer15ms_q_8_.CE = debouncerInst_3_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerInst_3_timer15ms_q_9_.T = debouncerInst_3_timer15ms_q_1_.Q
+       & debouncerInst_3_timer15ms_q_2_.Q & !debouncerInst_3_timer15ms_q_3_.Q
+       & debouncerInst_3_timer15ms_q_4_.Q & !debouncerInst_3_timer15ms_q_5_.Q
+       & debouncerInst_3_timer15ms_q_6_.Q & !debouncerInst_3_timer15ms_q_7_.Q
+       & !debouncerInst_3_timer15ms_q_8_.Q & debouncerInst_3_timer15ms_q_9_.Q
+    # debouncerInst_3_timer15ms_q_1_.Q & debouncerInst_3_timer15ms_q_2_.Q
+       & debouncerInst_3_timer15ms_q_3_.Q & debouncerInst_3_timer15ms_q_4_.Q
+       & debouncerInst_3_timer15ms_q_5_.Q & debouncerInst_3_timer15ms_q_6_.Q
+       & debouncerInst_3_timer15ms_q_7_.Q & debouncerInst_3_timer15ms_q_8_.Q
+       & debouncerInst_3_controllerInst_state_0_.Q
+    # debouncerInst_3_timer15ms_q_9_.Q
+       & !debouncerInst_3_controllerInst_state_0_.Q ; (3 pterms, 10 signals)
+debouncerInst_3_timer15ms_q_9_.C = clk ; (1 pterm, 1 signal)
+debouncerInst_3_timer15ms_q_9_.CE = debouncerInst_3_timer15ms_q_1__0 ; (1 pterm, 1 signal)
+
+debouncerinst_2_timer_done_n = clkGenerator_FreqDivide_1_q_1_.Q
+       & clkGenerator_FreqDivide_1_q_2_.Q & clkGenerator_FreqDivide_1_q_3_.Q
+       & clkGenerator_FreqDivide_1_q_4_.Q & !clkGenerator_FreqDivide_1_q_5_.Q
+       & clkGenerator_FreqDivide_1_q_6_.Q & clkGenerator_FreqDivide_1_q_7_.Q
+       & !clkGenerator_FreqDivide_1_q_8_.Q & clkGenerator_FreqDivide_1_q_9_.Q
+       & clkGenerator_FreqDivide_1_q_10_.Q & clkGenerator_FreqDivide_1_q_11_.Q
+       & !clkGenerator_FreqDivide_1_q_12_.Q
+       & clkGenerator_FreqDivide_1_q_13_.Q & debouncerInst_2_timer15ms_q_1_.Q
+       & debouncerInst_2_timer15ms_q_2_.Q & !debouncerInst_2_timer15ms_q_3_.Q
+       & debouncerInst_2_timer15ms_q_4_.Q & !debouncerInst_2_timer15ms_q_5_.Q
+       & debouncerInst_2_timer15ms_q_6_.Q & !debouncerInst_2_timer15ms_q_7_.Q
+       & !debouncerInst_2_timer15ms_q_8_.Q & debouncerInst_2_timer15ms_q_9_.Q ; (1 pterm, 22 signals)
+
+inst_play_enable.D = 1 ; (1 pterm, 0 signal)
+inst_play_enable.LH = !( reset & !debouncerInst_2_controllerInst_state_0_.Q
+       & !debouncerInst_2_controllerInst_state_1_.Q ) ; (1 pterm, 3 signals)
+inst_play_enable.AR = inst_play_enable_0 ; (1 pterm, 1 signal)
+
+inst_play_enable_0 = reset & debouncerInst_1_controllerInst_state_1_.Q
+    # reset & debouncerInst_1_controllerInst_state_0_.Q ; (2 pterms, 3 signals)
+
+led_0_ = !( reset & !inst_play_enable.Q & playInst_tone_0_.Q
+       & !playInst_tone_1_.Q & !playInst_tone_2_.Q & !playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_10_ = !( reset & !inst_play_enable.Q & playInst_tone_0_.Q
+       & playInst_tone_1_.Q & !playInst_tone_2_.Q & playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_11_ = !( reset & !inst_play_enable.Q & !playInst_tone_0_.Q
+       & !playInst_tone_1_.Q & playInst_tone_2_.Q & playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_12_ = !( reset & !inst_play_enable.Q & playInst_tone_0_.Q
+       & !playInst_tone_1_.Q & playInst_tone_2_.Q & playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_13_ = !( reset & !inst_play_enable.Q & !playInst_tone_0_.Q
+       & playInst_tone_1_.Q & playInst_tone_2_.Q & playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_14_ = !( reset & !inst_play_enable.Q & playInst_tone_0_.Q
+       & playInst_tone_1_.Q & playInst_tone_2_.Q & playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_15_ = 1 ; (1 pterm, 0 signal)
+
+led_1_ = !( reset & !inst_play_enable.Q & !playInst_tone_0_.Q
+       & playInst_tone_1_.Q & !playInst_tone_2_.Q & !playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_2_ = !( reset & !inst_play_enable.Q & playInst_tone_0_.Q
+       & playInst_tone_1_.Q & !playInst_tone_2_.Q & !playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_3_ = !( reset & !inst_play_enable.Q & !playInst_tone_0_.Q
+       & !playInst_tone_1_.Q & playInst_tone_2_.Q & !playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_4_ = !( reset & !inst_play_enable.Q & playInst_tone_0_.Q
+       & !playInst_tone_1_.Q & playInst_tone_2_.Q & !playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_5_ = !( reset & !inst_play_enable.Q & !playInst_tone_0_.Q
+       & playInst_tone_1_.Q & playInst_tone_2_.Q & !playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_6_ = !( reset & !inst_play_enable.Q & playInst_tone_0_.Q
+       & playInst_tone_1_.Q & playInst_tone_2_.Q & !playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_7_ = !( reset & !inst_play_enable.Q & !playInst_tone_0_.Q
+       & !playInst_tone_1_.Q & !playInst_tone_2_.Q & playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_8_ = !( reset & !inst_play_enable.Q & playInst_tone_0_.Q
+       & !playInst_tone_1_.Q & !playInst_tone_2_.Q & playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+led_9_ = !( reset & !inst_play_enable.Q & !playInst_tone_0_.Q
+       & playInst_tone_1_.Q & !playInst_tone_2_.Q & playInst_tone_3_.Q ) ; (1 pterm, 6 signals)
+
+playInst_CntSone1_0_.D = sel_song_0_.Q & !sel_song_1_.Q
+       & !playInst_CntSone1_0_.Q
+    # sel_song_1_.Q & playInst_CntSone1_0_.Q
+    # !sel_song_0_.Q & playInst_CntSone1_0_.Q ; (3 pterms, 3 signals)
+playInst_CntSone1_0_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone1_0_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone1_1_.D = sel_song_0_.Q & !sel_song_1_.Q
+       & playInst_CntSone1_0_.Q & !playInst_CntSone1_1_.Q
+    # !playInst_CntSone1_0_.Q & playInst_CntSone1_1_.Q
+    # sel_song_1_.Q & playInst_CntSone1_1_.Q
+    # !sel_song_0_.Q & playInst_CntSone1_1_.Q ; (4 pterms, 4 signals)
+playInst_CntSone1_1_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone1_1_.AP = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone1_2_.D.X1 = sel_song_0_.Q & !sel_song_1_.Q
+       & playInst_CntSone1_0_.Q & playInst_CntSone1_1_.Q ; (1 pterm, 4 signals)
+playInst_CntSone1_2_.D.X2 = playInst_CntSone1_2_.Q ; (1 pterm, 1 signal)
+playInst_CntSone1_2_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone1_2_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone1_3_.T = sel_song_0_.Q & !sel_song_1_.Q
+       & playInst_CntSone1_0_.Q & playInst_CntSone1_1_.Q
+       & playInst_CntSone1_2_.Q ; (1 pterm, 5 signals)
+playInst_CntSone1_3_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone1_3_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone1_4_.T = sel_song_0_.Q & !sel_song_1_.Q
+       & playInst_CntSone1_0_.Q & !playInst_CntSone1_1_.Q
+       & !playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & playInst_CntSone1_1_.Q & playInst_CntSone1_2_.Q
+       & playInst_CntSone1_3_.Q ; (2 pterms, 11 signals)
+playInst_CntSone1_4_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone1_4_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone1_5_.T = sel_song_0_.Q & !sel_song_1_.Q
+       & playInst_CntSone1_0_.Q & !playInst_CntSone1_1_.Q
+       & !playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & playInst_CntSone1_1_.Q & playInst_CntSone1_2_.Q
+       & playInst_CntSone1_3_.Q & playInst_CntSone1_4_.Q ; (2 pterms, 11 signals)
+playInst_CntSone1_5_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone1_5_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone1_6_.T = sel_song_0_.Q & !sel_song_1_.Q
+       & playInst_CntSone1_0_.Q & !playInst_CntSone1_1_.Q
+       & !playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & playInst_CntSone1_1_.Q & playInst_CntSone1_2_.Q
+       & playInst_CntSone1_3_.Q & playInst_CntSone1_4_.Q
+       & playInst_CntSone1_5_.Q ; (2 pterms, 11 signals)
+playInst_CntSone1_6_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone1_6_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone1_7_.T = sel_song_0_.Q & !sel_song_1_.Q
+       & playInst_CntSone1_0_.Q & playInst_CntSone1_1_.Q
+       & playInst_CntSone1_2_.Q & playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q ; (1 pterm, 9 signals)
+playInst_CntSone1_7_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone1_7_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone1_8_.T = sel_song_0_.Q & !sel_song_1_.Q
+       & playInst_CntSone1_0_.Q & playInst_CntSone1_1_.Q
+       & playInst_CntSone1_2_.Q & playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & playInst_CntSone1_7_.Q ; (1 pterm, 10 signals)
+playInst_CntSone1_8_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone1_8_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone2_0_.D = !playInst_CntSone2_0_.Q ; (1 pterm, 1 signal)
+playInst_CntSone2_0_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone2_0_.CE = !sel_song_0_.Q & sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone2_0_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone2_1_.D = !( !playInst_CntSone2_1_.Q & !playInst_CntSone2_2_.Q
+       & playInst_CntSone2_3_.Q & playInst_CntSone2_4_.Q
+       & !playInst_CntSone2_5_.Q & !playInst_CntSone2_6_.Q
+       & !playInst_CntSone2_7_.Q & !playInst_CntSone2_8_.Q
+    # !playInst_CntSone2_1_.Q & !playInst_CntSone2_0_.Q
+    # playInst_CntSone2_1_.Q & playInst_CntSone2_0_.Q ) ; (3 pterms, 9 signals)
+playInst_CntSone2_1_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone2_1_.CE = !sel_song_0_.Q & sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone2_1_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone2_2_.D = playInst_CntSone2_1_.Q & !playInst_CntSone2_2_.Q
+       & playInst_CntSone2_0_.Q
+    # !playInst_CntSone2_1_.Q & playInst_CntSone2_2_.Q
+    # playInst_CntSone2_2_.Q & !playInst_CntSone2_0_.Q ; (3 pterms, 3 signals)
+playInst_CntSone2_2_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone2_2_.CE = !sel_song_0_.Q & sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone2_2_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone2_3_.D.X1 = playInst_CntSone2_1_.Q & playInst_CntSone2_2_.Q
+       & playInst_CntSone2_0_.Q
+    # !playInst_CntSone2_1_.Q & !playInst_CntSone2_2_.Q
+       & playInst_CntSone2_3_.Q & playInst_CntSone2_4_.Q
+       & !playInst_CntSone2_5_.Q & !playInst_CntSone2_6_.Q
+       & !playInst_CntSone2_7_.Q & !playInst_CntSone2_8_.Q
+       & playInst_CntSone2_0_.Q ; (2 pterms, 9 signals)
+playInst_CntSone2_3_.D.X2 = playInst_CntSone2_3_.Q ; (1 pterm, 1 signal)
+playInst_CntSone2_3_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone2_3_.CE = !sel_song_0_.Q & sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone2_3_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone2_4_.T = !playInst_CntSone2_1_.Q & !playInst_CntSone2_2_.Q
+       & playInst_CntSone2_3_.Q & playInst_CntSone2_4_.Q
+       & !playInst_CntSone2_5_.Q & !playInst_CntSone2_6_.Q
+       & !playInst_CntSone2_7_.Q & !playInst_CntSone2_8_.Q
+       & playInst_CntSone2_0_.Q
+    # playInst_CntSone2_1_.Q & playInst_CntSone2_2_.Q & playInst_CntSone2_3_.Q
+       & playInst_CntSone2_0_.Q ; (2 pterms, 9 signals)
+playInst_CntSone2_4_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone2_4_.CE = !sel_song_0_.Q & sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone2_4_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone2_5_.T = playInst_CntSone2_1_.Q & playInst_CntSone2_2_.Q
+       & playInst_CntSone2_3_.Q & playInst_CntSone2_4_.Q
+       & playInst_CntSone2_0_.Q ; (1 pterm, 5 signals)
+playInst_CntSone2_5_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone2_5_.CE = !sel_song_0_.Q & sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone2_5_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone2_6_.T = playInst_CntSone2_1_.Q & playInst_CntSone2_2_.Q
+       & playInst_CntSone2_3_.Q & playInst_CntSone2_4_.Q
+       & playInst_CntSone2_5_.Q & playInst_CntSone2_0_.Q ; (1 pterm, 6 signals)
+playInst_CntSone2_6_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone2_6_.CE = !sel_song_0_.Q & sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone2_6_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone2_7_.T = playInst_CntSone2_1_.Q & playInst_CntSone2_2_.Q
+       & playInst_CntSone2_3_.Q & playInst_CntSone2_4_.Q
+       & playInst_CntSone2_5_.Q & playInst_CntSone2_6_.Q
+       & playInst_CntSone2_0_.Q ; (1 pterm, 7 signals)
+playInst_CntSone2_7_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone2_7_.CE = !sel_song_0_.Q & sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone2_7_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone2_8_.T = playInst_CntSone2_1_.Q & playInst_CntSone2_2_.Q
+       & playInst_CntSone2_3_.Q & playInst_CntSone2_4_.Q
+       & playInst_CntSone2_5_.Q & playInst_CntSone2_6_.Q
+       & playInst_CntSone2_7_.Q & playInst_CntSone2_0_.Q ; (1 pterm, 8 signals)
+playInst_CntSone2_8_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone2_8_.CE = !sel_song_0_.Q & sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone2_8_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone_0_.D = !playInst_CntSone_0_.Q ; (1 pterm, 1 signal)
+playInst_CntSone_0_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone_0_.CE = !sel_song_0_.Q & !sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone_0_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone_1_.D = playInst_CntSone_1_.Q & !playInst_CntSone_0_.Q
+    # !playInst_CntSone_1_.Q & playInst_CntSone_0_.Q ; (2 pterms, 2 signals)
+playInst_CntSone_1_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone_1_.CE = !sel_song_0_.Q & !sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone_1_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone_2_.D = !( !playInst_CntSone_3_.Q & !playInst_CntSone_5_.Q
+       & playInst_CntSone_6_.Q & !playInst_CntSone_7_.Q
+       & !playInst_CntSone_8_.Q & !playInst_CntSone_2_.Q
+       & !playInst_CntSone_4_.Q
+    # playInst_CntSone_1_.Q & playInst_CntSone_0_.Q & playInst_CntSone_2_.Q
+    # !playInst_CntSone_0_.Q & !playInst_CntSone_2_.Q
+    # !playInst_CntSone_1_.Q & !playInst_CntSone_2_.Q ) ; (4 pterms, 9 signals)
+playInst_CntSone_2_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone_2_.CE = !sel_song_0_.Q & !sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone_2_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone_3_.D = playInst_CntSone_1_.Q & !playInst_CntSone_3_.Q
+       & playInst_CntSone_0_.Q & playInst_CntSone_2_.Q
+    # playInst_CntSone_3_.Q & !playInst_CntSone_0_.Q
+    # !playInst_CntSone_1_.Q & playInst_CntSone_3_.Q
+    # playInst_CntSone_3_.Q & !playInst_CntSone_2_.Q ; (4 pterms, 4 signals)
+playInst_CntSone_3_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone_3_.CE = !sel_song_0_.Q & !sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone_3_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone_4_.D.X1 = playInst_CntSone_1_.Q & playInst_CntSone_3_.Q
+       & playInst_CntSone_0_.Q & playInst_CntSone_2_.Q ; (1 pterm, 4 signals)
+playInst_CntSone_4_.D.X2 = playInst_CntSone_4_.Q ; (1 pterm, 1 signal)
+playInst_CntSone_4_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone_4_.CE = !sel_song_0_.Q & !sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone_4_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone_5_.T = playInst_CntSone_1_.Q & playInst_CntSone_3_.Q
+       & playInst_CntSone_0_.Q & playInst_CntSone_2_.Q & playInst_CntSone_4_.Q ; (1 pterm, 5 signals)
+playInst_CntSone_5_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone_5_.CE = !sel_song_0_.Q & !sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone_5_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone_6_.T = playInst_CntSone_1_.Q & !playInst_CntSone_3_.Q
+       & !playInst_CntSone_5_.Q & playInst_CntSone_6_.Q
+       & !playInst_CntSone_7_.Q & !playInst_CntSone_8_.Q
+       & playInst_CntSone_0_.Q & !playInst_CntSone_2_.Q
+       & !playInst_CntSone_4_.Q
+    # playInst_CntSone_1_.Q & playInst_CntSone_3_.Q & playInst_CntSone_5_.Q
+       & playInst_CntSone_0_.Q & playInst_CntSone_2_.Q & playInst_CntSone_4_.Q ; (2 pterms, 9 signals)
+playInst_CntSone_6_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone_6_.CE = !sel_song_0_.Q & !sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone_6_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone_7_.T = playInst_CntSone_1_.Q & playInst_CntSone_3_.Q
+       & playInst_CntSone_5_.Q & playInst_CntSone_6_.Q & playInst_CntSone_0_.Q
+       & playInst_CntSone_2_.Q & playInst_CntSone_4_.Q ; (1 pterm, 7 signals)
+playInst_CntSone_7_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone_7_.CE = !sel_song_0_.Q & !sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone_7_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSone_8_.T = playInst_CntSone_1_.Q & playInst_CntSone_3_.Q
+       & playInst_CntSone_5_.Q & playInst_CntSone_6_.Q & playInst_CntSone_7_.Q
+       & playInst_CntSone_0_.Q & playInst_CntSone_2_.Q & playInst_CntSone_4_.Q ; (1 pterm, 8 signals)
+playInst_CntSone_8_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_CntSone_8_.CE = !sel_song_0_.Q & !sel_song_1_.Q ; (1 pterm, 2 signals)
+playInst_CntSone_8_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_0_.D = !( !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_13_.Q
+       & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q
+       & !playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q & !playInst_origin_0_.Q
+    # playInst_CntSp_0_.Q ) ; (2 pterms, 15 signals)
+playInst_CntSp_0_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_0_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_0_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_10_.T.X1 = !playInst_CntSp_4_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_3_.Q & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q
+       & !playInst_CntSp_8_.Q & !playInst_CntSp_1_.Q ; (1 pterm, 10 signals)
+playInst_CntSp_10_.T.X2 = !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q
+       & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q
+       & !playInst_CntSp_2_.Q & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q
+       & !playInst_CntSp_13_.Q & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q
+       & !playInst_CntSp_8_.Q & !playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q
+       & !playInst_origin_10_.Q ; (1 pterm, 15 signals)
+playInst_CntSp_10_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_10_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_10_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_11_.T = !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q
+       & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q
+       & !playInst_CntSp_2_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_5_.Q
+       & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q & playInst_CntSp_11_.Q
+       & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_3_.Q & playInst_CntSp_13_.Q & !playInst_CntSp_5_.Q
+       & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_5_.Q
+       & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_3_.Q & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q
+       & !playInst_CntSp_8_.Q & !playInst_CntSp_1_.Q & playInst_origin_11_.Q ; (4 pterms, 15 signals)
+playInst_CntSp_11_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_11_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_11_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_12_.T = !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q
+       & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q
+       & !playInst_CntSp_2_.Q & !playInst_CntSp_3_.Q & playInst_CntSp_13_.Q
+       & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q
+       & !playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_5_.Q
+       & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q & !playInst_CntSp_11_.Q
+       & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_3_.Q & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q
+       & !playInst_CntSp_8_.Q & !playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q
+       & playInst_origin_12_.Q ; (3 pterms, 15 signals)
+playInst_CntSp_12_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_12_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_12_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_13_.T = !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q
+       & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q
+       & !playInst_CntSp_2_.Q & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q
+       & playInst_CntSp_13_.Q & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q
+       & !playInst_CntSp_8_.Q & !playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_5_.Q
+       & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q & !playInst_CntSp_11_.Q
+       & !playInst_CntSp_1_.Q & playInst_origin_13_.Q ; (2 pterms, 15 signals)
+playInst_CntSp_13_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_13_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_13_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_1_.D = !( !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q
+       & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q
+       & !playInst_CntSp_2_.Q & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q
+       & !playInst_CntSp_13_.Q & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q
+       & !playInst_CntSp_8_.Q & !playInst_CntSp_11_.Q & !playInst_origin_1_.Q
+    # playInst_CntSp_0_.Q & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_0_.Q & playInst_CntSp_1_.Q ) ; (3 pterms, 15 signals)
+playInst_CntSp_1_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_1_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_1_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_2_.D = !( !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_13_.Q
+       & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q
+       & !playInst_CntSp_11_.Q & !playInst_origin_2_.Q
+    # !playInst_CntSp_0_.Q & playInst_CntSp_2_.Q & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_2_.Q & playInst_CntSp_1_.Q
+    # playInst_CntSp_0_.Q & !playInst_CntSp_2_.Q ) ; (4 pterms, 15 signals)
+playInst_CntSp_2_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_2_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_2_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_3_.D.X1 = playInst_CntSp_3_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_13_.Q
+       & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q
+       & !playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q & !playInst_origin_3_.Q ; (2 pterms, 15 signals)
+playInst_CntSp_3_.D.X2 = !playInst_CntSp_0_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_1_.Q ; (1 pterm, 3 signals)
+playInst_CntSp_3_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_3_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_3_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_4_.T.X1 = !playInst_CntSp_0_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_3_.Q & !playInst_CntSp_1_.Q ; (1 pterm, 4 signals)
+playInst_CntSp_4_.T.X2 = !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q
+       & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q
+       & !playInst_CntSp_2_.Q & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q
+       & !playInst_CntSp_13_.Q & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q
+       & !playInst_CntSp_8_.Q & !playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q
+       & !playInst_origin_4_.Q ; (1 pterm, 15 signals)
+playInst_CntSp_4_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_4_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_4_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_4__0 = !reset
+    # inst_play_enable.Q
+    # !playInst_tone_0_.Q & !playInst_tone_1_.Q & !playInst_tone_2_.Q
+       & !playInst_tone_3_.Q ; (3 pterms, 6 signals)
+
+playInst_CntSp_5_.D.X1 = playInst_CntSp_5_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_13_.Q
+       & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q
+       & !playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q & !playInst_origin_5_.Q ; (2 pterms, 15 signals)
+playInst_CntSp_5_.D.X2 = !playInst_CntSp_4_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_2_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_1_.Q ; (1 pterm, 5 signals)
+playInst_CntSp_5_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_5_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_5_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_6_.D.X1 = playInst_CntSp_6_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_13_.Q
+       & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q
+       & !playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q & !playInst_origin_6_.Q ; (2 pterms, 15 signals)
+playInst_CntSp_6_.D.X2 = !playInst_CntSp_4_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_2_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_5_.Q
+       & !playInst_CntSp_1_.Q ; (1 pterm, 6 signals)
+playInst_CntSp_6_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_6_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_6_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_7_.D.X1 = playInst_CntSp_7_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_13_.Q
+       & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q
+       & !playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q & !playInst_origin_7_.Q ; (2 pterms, 15 signals)
+playInst_CntSp_7_.D.X2 = !playInst_CntSp_4_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q & !playInst_CntSp_3_.Q
+       & !playInst_CntSp_5_.Q & !playInst_CntSp_1_.Q ; (1 pterm, 7 signals)
+playInst_CntSp_7_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_7_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_7_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_8_.D.X1 = !playInst_CntSp_4_.Q & playInst_CntSp_10_.Q
+       & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q
+       & !playInst_CntSp_2_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_5_.Q
+       & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q
+       & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q & playInst_CntSp_12_.Q
+       & !playInst_CntSp_3_.Q & !playInst_CntSp_5_.Q & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q
+       & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q & !playInst_CntSp_3_.Q
+       & playInst_CntSp_13_.Q & !playInst_CntSp_5_.Q & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q
+       & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q & !playInst_CntSp_3_.Q
+       & !playInst_CntSp_5_.Q & playInst_CntSp_9_.Q & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q
+       & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q & !playInst_CntSp_3_.Q
+       & !playInst_CntSp_5_.Q & playInst_CntSp_8_.Q & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q
+       & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q & !playInst_CntSp_3_.Q
+       & !playInst_CntSp_5_.Q & playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q
+       & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q & !playInst_CntSp_3_.Q
+       & !playInst_CntSp_5_.Q & !playInst_CntSp_1_.Q & playInst_origin_8_.Q ; (7 pterms, 15 signals)
+playInst_CntSp_8_.D.X2 = playInst_CntSp_8_.Q ; (1 pterm, 1 signal)
+playInst_CntSp_8_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_8_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_8_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_CntSp_9_.T.X1 = !playInst_CntSp_4_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_3_.Q & !playInst_CntSp_5_.Q & !playInst_CntSp_8_.Q
+       & !playInst_CntSp_1_.Q ; (1 pterm, 9 signals)
+playInst_CntSp_9_.T.X2 = !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q
+       & !playInst_CntSp_0_.Q & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q
+       & !playInst_CntSp_2_.Q & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q
+       & !playInst_CntSp_13_.Q & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q
+       & !playInst_CntSp_8_.Q & !playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q
+       & !playInst_origin_9_.Q ; (1 pterm, 15 signals)
+playInst_CntSp_9_.C = clk ; (1 pterm, 1 signal)
+playInst_CntSp_9_.CE = !( playInst_CntSp_4__0 ) ; (1 pterm, 1 signal)
+playInst_CntSp_9_.AR = !reset ; (1 pterm, 1 signal)
+
+playInst_origin_0_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_0_.LH = playInst_origin_0__0 ; (1 pterm, 1 signal)
+playInst_origin_0_.AR = playinst_n_552_i_1_n & playinst_un1_tone_26_n ; (1 pterm, 2 signals)
+
+playInst_origin_0__0 = playinst_n_22_i_1_n & !playinst_n_728_i_n
+    # playInst_tone_2_.Q & playinst_n_22_i_1_n ; (2 pterms, 3 signals)
+
+playInst_origin_10_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_10_.LH = playInst_origin_10__0 ; (1 pterm, 1 signal)
+playInst_origin_10_.AR = playInst_origin_10__1 ; (1 pterm, 1 signal)
+
+playInst_origin_10__0 = playInst_tone_0_.Q & playInst_tone_1_.Q
+       & playinst_n_733_i_n
+    # playInst_tone_1_.Q & !playInst_tone_2_.Q & playinst_n_733_i_n
+    # !playInst_tone_0_.Q & !playInst_tone_1_.Q & playinst_n_733_i_n
+       & playInst_un1_tone_31_i_0_x2
+    # !playInst_tone_1_.Q & !playInst_tone_3_.Q & playinst_n_733_i_n
+       & playInst_un1_tone_31_i_0_x2 ; (4 pterms, 6 signals)
+
+playInst_origin_10__1 = playInst_tone_1_.Q & playInst_tone_2_.Q
+       & playinst_n_735_0_n
+    # playInst_tone_2_.Q & playInst_tone_3_.Q & playinst_n_735_0_n
+    # playInst_tone_0_.Q & !playInst_tone_1_.Q & !playInst_tone_2_.Q
+       & playinst_n_735_0_n ; (3 pterms, 5 signals)
+
+playInst_origin_11_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_11_.LH = playInst_origin_11__0 ; (1 pterm, 1 signal)
+playInst_origin_11_.AR = playInst_origin_11__1 ; (1 pterm, 1 signal)
+
+playInst_origin_11__0 = playInst_tone_0_.Q & !playInst_tone_1_.Q
+       & !playInst_tone_2_.Q & playinst_n_734_0_n
+    # playInst_tone_0_.Q & playInst_tone_1_.Q & playinst_n_734_0_n
+       & !playInst_un1_tone_31_i_0_x2
+    # !playInst_tone_0_.Q & !playInst_tone_1_.Q & playInst_tone_2_.Q
+       & playinst_n_734_0_n
+    # !playInst_tone_1_.Q & !playInst_tone_2_.Q & playInst_tone_3_.Q
+       & playinst_n_734_0_n ; (4 pterms, 6 signals)
+
+playInst_origin_11__1 = playInst_tone_0_.Q & playinst_n_737_0_n
+       & playinst_n_81_i_2_n
+    # playInst_tone_1_.Q & playinst_n_737_0_n & playinst_n_81_i_2_n
+    # playInst_tone_3_.Q & playinst_n_737_0_n & playinst_n_81_i_2_n ; (3 pterms, 5 signals)
+
+playInst_origin_12_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_12_.LH = !( playInst_origin_12__0 ) ; (1 pterm, 1 signal)
+playInst_origin_12_.AR = playInst_origin_12__1 ; (1 pterm, 1 signal)
+
+playInst_origin_12__0 = !playinst_n_727_i_1_n
+    # playInst_tone_0_.Q & playInst_tone_1_.Q & playInst_tone_2_.Q ; (2 pterms, 4 signals)
+
+playInst_origin_12__1 = reset & !inst_play_enable.Q & playInst_tone_2_.Q
+       & !playInst_tone_3_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_0_.Q & playInst_tone_1_.Q
+       & !playInst_tone_3_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_0_.Q & playInst_tone_1_.Q
+       & playInst_tone_2_.Q ; (3 pterms, 6 signals)
+
+playInst_origin_13_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_13_.LH = !playInst_tone_3_.Q & playinst_un1_tone_26_n ; (1 pterm, 2 signals)
+playInst_origin_13_.AR = reset & !inst_play_enable.Q & playInst_tone_3_.Q ; (1 pterm, 3 signals)
+
+playInst_origin_1_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_1_.LH = playInst_origin_1__0 ; (1 pterm, 1 signal)
+playInst_origin_1_.AR = playInst_origin_1__1 ; (1 pterm, 1 signal)
+
+playInst_origin_1__0 = reset & !inst_play_enable.Q & !playInst_tone_1_.Q
+       & playinst_n_741_n
+    # reset & !inst_play_enable.Q & !playinst_n_736_i_n & playinst_n_741_n ; (2 pterms, 5 signals)
+
+playInst_origin_1__1 = !playInst_tone_0_.Q & !playInst_tone_1_.Q
+       & playinst_n_102_0_n
+    # playInst_tone_1_.Q & playinst_n_736_i_n & playinst_n_102_0_n ; (2 pterms, 4 signals)
+
+playInst_origin_2_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_2_.LH = playinst_n_542_i_1_n & playinst_n_737_0_n ; (1 pterm, 2 signals)
+playInst_origin_2_.AR = playInst_origin_2__0 ; (1 pterm, 1 signal)
+
+playInst_origin_2__0 = playInst_tone_0_.Q & playInst_tone_1_.Q
+       & playInst_tone_3_.Q & playinst_n_103_i_n
+    # playInst_tone_1_.Q & !playInst_tone_2_.Q & playInst_tone_3_.Q
+       & playinst_n_103_i_n
+    # playInst_tone_0_.Q & !playInst_tone_1_.Q & !playInst_tone_2_.Q
+       & playinst_n_103_i_n
+    # !playInst_tone_0_.Q & playInst_tone_1_.Q & playInst_tone_2_.Q
+       & !playInst_tone_3_.Q & playinst_n_103_i_n ; (4 pterms, 5 signals)
+
+playInst_origin_3_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_3_.LH = playInst_origin_3__0 ; (1 pterm, 1 signal)
+playInst_origin_3_.AR = playInst_origin_3__1 ; (1 pterm, 1 signal)
+
+playInst_origin_3__0 = !playInst_tone_1_.Q & !playInst_tone_2_.Q
+       & !playInst_tone_3_.Q & playinst_un1_tone_26_n
+    # !playInst_tone_0_.Q & !playInst_tone_2_.Q & playInst_tone_3_.Q
+       & playinst_un1_tone_26_n
+    # playInst_tone_1_.Q & playInst_tone_2_.Q & !playInst_tone_3_.Q
+       & playinst_un1_tone_26_n
+    # !playInst_tone_0_.Q & !playInst_tone_1_.Q & !playInst_tone_3_.Q
+       & playinst_un1_tone_26_n ; (4 pterms, 5 signals)
+
+playInst_origin_3__1 = !( !playinst_n_733_i_n
+    # !playInst_tone_0_.Q & !playInst_tone_1_.Q & !playInst_tone_3_.Q
+    # !playInst_tone_1_.Q & !playInst_tone_2_.Q & !playInst_tone_3_.Q
+    # !playInst_tone_0_.Q & playInst_tone_1_.Q & !playInst_tone_2_.Q
+       & playInst_tone_3_.Q ) ; (4 pterms, 5 signals)
+
+playInst_origin_4_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_4_.LH = playinst_n_724_i_1_n & playinst_n_739_0_n ; (1 pterm, 2 signals)
+playInst_origin_4_.AR = playInst_origin_4__0 ; (1 pterm, 1 signal)
+
+playInst_origin_4__0 = !( inst_play_enable.Q
+    # !reset
+    # !playinst_n_728_i_n & !playInst_un1_tone_31_i_0_x2
+    # !playInst_tone_0_.Q & playInst_tone_1_.Q & !playInst_tone_2_.Q
+       & playInst_tone_3_.Q ) ; (4 pterms, 8 signals)
+
+playInst_origin_5_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_5_.LH = playInst_origin_5__0 ; (1 pterm, 1 signal)
+playInst_origin_5_.AR = playinst_n_726_i_1_n & playinst_n_726_i_2_n ; (1 pterm, 2 signals)
+
+playInst_origin_5__0 = playInst_tone_2_.Q & playinst_n_193_n
+    # !playInst_tone_2_.Q & playinst_n_192_n ; (2 pterms, 3 signals)
+
+playInst_origin_6_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_6_.LH = !( playInst_origin_6__0 ) ; (1 pterm, 1 signal)
+playInst_origin_6_.AR = playInst_origin_6__1 ; (1 pterm, 1 signal)
+
+playInst_origin_6__0 = !playinst_n_733_i_n
+    # !playInst_tone_2_.Q & playInst_tone_3_.Q & playinst_n_728_i_n
+    # !playInst_tone_0_.Q & !playInst_tone_1_.Q & !playInst_tone_2_.Q
+       & !playInst_tone_3_.Q ; (3 pterms, 6 signals)
+
+playInst_origin_6__1 = playInst_tone_1_.Q & playinst_n_735_0_n
+       & playInst_un1_tone_31_i_0_x2
+    # playInst_tone_0_.Q & !playInst_tone_2_.Q & playinst_n_735_0_n
+       & playInst_un1_tone_31_i_0_x2 ; (2 pterms, 5 signals)
+
+playInst_origin_7_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_7_.LH = !( playInst_origin_7__0 ) ; (1 pterm, 1 signal)
+playInst_origin_7_.AR = playInst_origin_7__1 ; (1 pterm, 1 signal)
+
+playInst_origin_7__0 = !playinst_n_103_i_n
+    # !playInst_tone_0_.Q & !playInst_tone_2_.Q & !playInst_tone_3_.Q ; (2 pterms, 4 signals)
+
+playInst_origin_7__1 = reset & !inst_play_enable.Q & playInst_tone_1_.Q
+       & !playInst_tone_2_.Q & !playInst_tone_3_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_0_.Q & playInst_tone_1_.Q
+       & !playInst_tone_2_.Q ; (2 pterms, 6 signals)
+
+playInst_origin_8_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_8_.LH = !( playInst_origin_8__0 ) ; (1 pterm, 1 signal)
+playInst_origin_8_.AR = playinst_n_26_i_1_n & playinst_n_734_0_n ; (1 pterm, 2 signals)
+
+playInst_origin_8__0 = !playinst_n_739_0_n
+    # playInst_tone_1_.Q & playInst_tone_2_.Q & playInst_tone_3_.Q
+    # !playInst_tone_0_.Q & !playInst_tone_1_.Q & !playInst_tone_3_.Q ; (3 pterms, 5 signals)
+
+playInst_origin_9_.D = 1 ; (1 pterm, 0 signal)
+playInst_origin_9_.LH = playInst_origin_9__0 ; (1 pterm, 1 signal)
+playInst_origin_9_.AR = playInst_origin_9__1 ; (1 pterm, 1 signal)
+
+playInst_origin_9__0 = playInst_tone_2_.Q & playinst_n_184_n
+    # !playInst_tone_2_.Q & playinst_n_183_n ; (2 pterms, 3 signals)
+
+playInst_origin_9__1 = reset & !inst_play_enable.Q & !playInst_tone_0_.Q
+       & playInst_tone_3_.Q & playInst_un1_tone_30_i_x2
+    # reset & !inst_play_enable.Q & playInst_tone_2_.Q & playInst_tone_3_.Q
+       & playInst_un1_tone_30_i_x2
+    # reset & !inst_play_enable.Q & !playInst_tone_0_.Q & !playInst_tone_3_.Q
+       & !playInst_un1_tone_30_i_x2
+    # reset & !inst_play_enable.Q & playInst_tone_2_.Q & !playInst_tone_3_.Q
+       & !playInst_un1_tone_30_i_x2 ; (4 pterms, 6 signals)
+
+playInst_tone_0_.D = !playInst_CntSone1_0_.Q & !playInst_CntSone1_2_.Q
+       & !playInst_CntSone1_3_.Q & playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q & playinst_n_279_n
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & playInst_CntSone1_1_.Q & playInst_CntSone1_2_.Q
+       & !playInst_CntSone1_3_.Q & playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & playInst_CntSone1_1_.Q & !playInst_CntSone1_2_.Q
+       & !playInst_CntSone1_4_.Q & !playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # !playInst_CntSone1_0_.Q & !playInst_CntSone1_1_.Q
+       & playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & !playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & playinst_n_279_n
+    # playInst_CntSone1_0_.Q & !playInst_CntSone1_1_.Q
+       & !playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & !playinst_n_629_i_n & playinst_n_279_n
+    # playInst_CntSone1_1_.Q & !playInst_CntSone1_2_.Q
+       & playInst_CntSone1_3_.Q & playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q & playinst_n_279_n
+    # !playInst_CntSone1_1_.Q & !playInst_CntSone1_2_.Q
+       & !playInst_CntSone1_3_.Q & playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q & playinst_n_279_n
+    # playInst_CntSone1_0_.Q & !playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & playInst_CntSone1_6_.Q & playinst_n_629_i_n
+       & playinst_n_279_n
+    # playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q & playinst_n_679_1_n
+       & playinst_n_279_n
+    # playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q & playinst_n_682_1_n
+       & playinst_n_279_n
+    # !playInst_CntSone1_6_.Q & playinst_n_680_1_n & playinst_n_279_n
+    # playinst_n_678_n
+    # playinst_n_676_n
+    # playinst_n_675_n
+    # playinst_n_198_n
+    # playinst_n_196_n
+    # playinst_n_195_n
+    # playinst_n_673_n
+    # playinst_n_677_n ; (19 pterms, 24 signals)
+playInst_tone_0_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_tone_0_.CE = playInst_tone_0__0 ; (1 pterm, 1 signal)
+
+playInst_tone_0__0 = reset & !sel_song_1_.Q
+    # reset & !sel_song_0_.Q ; (2 pterms, 3 signals)
+
+playInst_tone_1_.D = !sel_song_0_.Q & sel_song_1_.Q & !playInst_CntSone2_1_.Q
+       & !playInst_CntSone2_3_.Q & playInst_CntSone2_4_.Q
+       & !playInst_CntSone2_0_.Q & playinst_n_206_n
+    # !sel_song_0_.Q & sel_song_1_.Q & playInst_CntSone2_1_.Q
+       & playInst_CntSone2_2_.Q & !playInst_CntSone2_4_.Q
+       & !playInst_CntSone2_0_.Q & playinst_n_206_n
+    # !sel_song_0_.Q & sel_song_1_.Q & playInst_CntSone2_2_.Q
+       & !playInst_CntSone2_3_.Q & !playInst_CntSone2_4_.Q
+       & !playInst_CntSone2_0_.Q & playinst_n_206_n
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & !playInst_CntSone1_1_.Q & !playInst_CntSone1_2_.Q
+       & !playInst_CntSone1_4_.Q & playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone1_0_.Q
+       & playInst_CntSone1_1_.Q & !playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & !playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone1_1_.Q
+       & playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & !playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone1_0_.Q
+       & playInst_CntSone1_1_.Q & !playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone1_0_.Q
+       & playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_2_.Q
+       & !playInst_CntSone1_3_.Q & playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+    # !sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone_3_.Q
+       & playInst_CntSone_5_.Q & !playInst_CntSone_6_.Q
+       & !playInst_CntSone_7_.Q & !playInst_CntSone_8_.Q
+       & !playInst_CntSone_0_.Q & playInst_CntSone_2_.Q
+    # !sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone_3_.Q
+       & playInst_CntSone_5_.Q & !playInst_CntSone_6_.Q
+       & !playInst_CntSone_7_.Q & !playInst_CntSone_8_.Q
+       & !playInst_CntSone_0_.Q & !playInst_CntSone_2_.Q
+    # !sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone_3_.Q
+       & !playInst_CntSone_5_.Q & !playInst_CntSone_6_.Q
+       & !playInst_CntSone_7_.Q & !playInst_CntSone_8_.Q
+       & !playInst_CntSone_0_.Q & playInst_CntSone_4_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone1_0_.Q
+       & playInst_CntSone1_1_.Q & playInst_CntSone1_2_.Q
+       & playInst_CntSone1_3_.Q & playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone1_1_.Q
+       & playInst_CntSone1_2_.Q & playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & !playInst_CntSone1_2_.Q & playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone1_1_.Q
+       & !playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & playInst_CntSone1_1_.Q & playInst_CntSone1_2_.Q
+       & !playInst_CntSone1_3_.Q & !playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & !playInst_CntSone1_1_.Q & playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & !playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_1_.Q
+       & !playInst_CntSone1_2_.Q & playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & !playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & playInst_CntSone1_1_.Q & !playInst_CntSone1_2_.Q
+       & playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & playInst_CntSone1_1_.Q & playInst_CntSone1_2_.Q
+       & !playInst_CntSone1_3_.Q & !playInst_CntSone1_4_.Q
+       & playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q ; (21 pterms, 25 signals)
+playInst_tone_1_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_tone_1_.CE = playInst_tone_0__0 ; (1 pterm, 1 signal)
+
+playInst_tone_2_.D = playInst_CntSone_3_.Q & !playInst_CntSone_0_.Q
+       & !playInst_CntSone_2_.Q & playInst_CntSone_4_.Q & playinst_n_289_n
+    # !playInst_CntSone_3_.Q & !playInst_CntSone_0_.Q & playInst_CntSone_2_.Q
+       & playInst_CntSone_4_.Q & playinst_n_289_n
+    # playInst_CntSone1_0_.Q & !playInst_CntSone1_1_.Q
+       & playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & playinst_n_279_n
+    # playInst_CntSone1_0_.Q & playInst_CntSone1_1_.Q & playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & playinst_n_279_n
+    # playInst_CntSone1_0_.Q & !playInst_CntSone1_1_.Q
+       & !playInst_CntSone1_2_.Q & !playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & playInst_CntSone1_6_.Q & playinst_n_279_n
+    # playInst_CntSone1_0_.Q & playInst_CntSone1_1_.Q & playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & playInst_CntSone1_6_.Q & playinst_n_629_i_n
+       & playinst_n_279_n
+    # !playInst_CntSone1_0_.Q & !playInst_CntSone1_1_.Q
+       & playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & !playInst_CntSone1_5_.Q & playinst_n_279_n
+    # playInst_CntSone2_1_.Q & !playInst_CntSone2_3_.Q
+       & !playInst_CntSone2_0_.Q & playinst_tone396_n & playinst_n_206_n
+    # playInst_CntSone1_0_.Q & playInst_CntSone1_1_.Q
+       & !playInst_CntSone1_3_.Q & !playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & playInst_CntSone1_6_.Q & playinst_n_279_n
+    # !playInst_CntSone_3_.Q & !playInst_CntSone_5_.Q & !playInst_CntSone_0_.Q
+       & !playInst_CntSone_2_.Q & playinst_n_289_n
+    # !playInst_CntSone_1_.Q & playInst_CntSone_3_.Q & playInst_CntSone_2_.Q
+       & playInst_CntSone_4_.Q & playinst_n_289_n
+    # !playInst_CntSone_1_.Q & playInst_CntSone_3_.Q & playInst_CntSone_5_.Q
+       & playInst_CntSone_2_.Q & playinst_n_289_n
+    # playInst_CntSone1_1_.Q & !playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q
+       & playinst_n_629_i_n & playinst_n_279_n
+    # !playInst_CntSone1_1_.Q & !playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & !playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & playinst_n_279_n
+    # playInst_CntSone_3_.Q & playInst_CntSone_5_.Q & !playInst_CntSone_0_.Q
+       & !playInst_CntSone_2_.Q & playinst_n_289_n
+    # !playInst_CntSone_3_.Q & playInst_CntSone_5_.Q & !playInst_CntSone_0_.Q
+       & playInst_CntSone_2_.Q & playinst_n_289_n
+    # !playInst_CntSone1_0_.Q & playInst_CntSone1_2_.Q
+       & !playInst_CntSone1_4_.Q & !playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & playinst_n_279_n
+    # playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & !playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & playinst_n_279_n
+    # !playInst_CntSone1_0_.Q & playInst_CntSone1_1_.Q
+       & playInst_CntSone1_2_.Q & !playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & playinst_n_279_n
+    # !playInst_CntSone1_0_.Q & playInst_CntSone1_1_.Q
+       & !playInst_CntSone1_3_.Q & !playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & playinst_n_279_n
+    # playinst_n_254_n
+    # playinst_n_333_n ; (22 pterms, 23 signals)
+playInst_tone_2_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_tone_2_.CE = playInst_tone_0__0 ; (1 pterm, 1 signal)
+
+playInst_tone_3_.D = sel_song_0_.Q & playInst_CntSone1_0_.Q
+       & !playInst_CntSone1_1_.Q & playInst_CntSone1_2_.Q
+       & playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & playInst_CntSone1_0_.Q & playInst_CntSone1_1_.Q
+       & playInst_CntSone1_3_.Q & !playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & playInst_CntSone1_1_.Q & !playInst_CntSone1_2_.Q
+       & playInst_CntSone1_3_.Q & !playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !playInst_CntSone1_2_.Q & playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & !playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # !sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone_3_.Q
+       & !playInst_CntSone_5_.Q & !playInst_CntSone_6_.Q
+       & !playInst_CntSone_7_.Q & !playInst_CntSone_8_.Q
+       & !playInst_CntSone_0_.Q & !playInst_CntSone_2_.Q
+       & !playInst_CntSone_4_.Q
+    # !sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone_3_.Q
+       & !playInst_CntSone_5_.Q & !playInst_CntSone_6_.Q
+       & !playInst_CntSone_7_.Q & !playInst_CntSone_8_.Q
+       & !playInst_CntSone_0_.Q & playInst_CntSone_2_.Q
+       & !playInst_CntSone_4_.Q
+    # !sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone_1_.Q
+       & playInst_CntSone_3_.Q & !playInst_CntSone_5_.Q
+       & !playInst_CntSone_6_.Q & !playInst_CntSone_7_.Q
+       & !playInst_CntSone_8_.Q & playInst_CntSone_2_.Q
+       & !playInst_CntSone_4_.Q
+    # sel_song_0_.Q & !playInst_CntSone1_1_.Q & !playInst_CntSone1_2_.Q
+       & !playInst_CntSone1_3_.Q & playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !playInst_CntSone1_0_.Q & !playInst_CntSone1_1_.Q
+       & playInst_CntSone1_3_.Q & playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & playInst_CntSone1_1_.Q & playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & !playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & playInst_CntSone1_1_.Q & !playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & playInst_CntSone1_0_.Q & !playInst_CntSone1_1_.Q
+       & playInst_CntSone1_3_.Q & playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & playInst_CntSone1_0_.Q & playInst_CntSone1_1_.Q
+       & !playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+       & !playinst_n_629_i_n
+    # sel_song_0_.Q & !playInst_CntSone1_0_.Q & !playInst_CntSone1_4_.Q
+       & playInst_CntSone1_5_.Q & !playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+       & playinst_n_629_i_n
+    # sel_song_0_.Q & playInst_CntSone1_0_.Q & !playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q & playinst_n_629_i_n
+    # sel_song_0_.Q & playInst_CntSone1_1_.Q & !playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q & playinst_n_629_i_n
+    # sel_song_0_.Q & !playInst_CntSone1_1_.Q & !playInst_CntSone1_4_.Q
+       & playInst_CntSone1_5_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q & playinst_n_629_i_n
+    # !playinst_n_19_0_5_n
+    # !playinst_n_19_0_4_n ; (20 pterms, 23 signals)
+playInst_tone_3_.C = un1_clk_4Hz ; (1 pterm, 1 signal)
+playInst_tone_3_.CE = playInst_tone_0__0 ; (1 pterm, 1 signal)
+
+playInst_un1_tone_30_i_x2 = !playInst_tone_0_.Q & playInst_tone_1_.Q
+       & playInst_tone_2_.Q
+    # playInst_tone_0_.Q & !playInst_tone_1_.Q
+    # !playInst_tone_1_.Q & !playInst_tone_2_.Q ; (3 pterms, 3 signals)
+
+playInst_un1_tone_31_i_0_x2 = playInst_tone_2_.Q & !playInst_tone_3_.Q
+    # !playInst_tone_2_.Q & playInst_tone_3_.Q ; (2 pterms, 2 signals)
+
+playinst_n_102_0_n = reset & !inst_play_enable.Q & playInst_tone_2_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_1_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_3_.Q ; (3 pterms, 5 signals)
+
+playinst_n_103_i_n = reset & !inst_play_enable.Q & !playInst_tone_1_.Q
+    # reset & !inst_play_enable.Q & !playInst_tone_0_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_2_.Q ; (3 pterms, 5 signals)
+
+playinst_n_183_n = reset & !inst_play_enable.Q & playInst_tone_0_.Q
+       & !playInst_tone_3_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_3_.Q & playinst_n_741_n ; (2 pterms, 5 signals)
+
+playinst_n_184_n = reset & !inst_play_enable.Q & playInst_tone_3_.Q
+       & !playinst_n_728_i_n
+    # reset & !inst_play_enable.Q & !playInst_tone_3_.Q & playinst_n_728_i_n ; (2 pterms, 4 signals)
+
+playinst_n_192_n = reset & !inst_play_enable.Q & playInst_tone_0_.Q
+       & playInst_tone_1_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_3_.Q ; (2 pterms, 5 signals)
+
+playinst_n_193_n = reset & !inst_play_enable.Q & playInst_tone_0_.Q
+       & !playInst_tone_1_.Q & !playInst_tone_3_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_3_.Q & !playinst_n_728_i_n ; (2 pterms, 6 signals)
+
+playinst_n_195_n = sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_0_.Q
+       & !playInst_CntSone1_2_.Q & playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone1_1_.Q
+       & playInst_CntSone1_2_.Q & playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q ; (3 pterms, 11 signals)
+
+playinst_n_196_n = sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone1_1_.Q
+       & playInst_CntSone1_2_.Q & playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & !playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone1_0_.Q
+       & playInst_CntSone1_1_.Q & playInst_CntSone1_2_.Q
+       & playInst_CntSone1_3_.Q & !playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q ; (2 pterms, 10 signals)
+
+playinst_n_198_n = !sel_song_0_.Q & !sel_song_1_.Q & playInst_CntSone_3_.Q
+       & !playInst_CntSone_5_.Q & !playInst_CntSone_6_.Q
+       & !playInst_CntSone_7_.Q & !playInst_CntSone_8_.Q
+       & !playInst_CntSone_0_.Q & !playInst_CntSone_2_.Q
+    # !sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone_5_.Q
+       & !playInst_CntSone_6_.Q & !playInst_CntSone_7_.Q
+       & !playInst_CntSone_8_.Q & !playInst_CntSone_0_.Q
+       & !playInst_CntSone_2_.Q & playInst_CntSone_4_.Q ; (2 pterms, 10 signals)
+
+playinst_n_19_0_4_n = !( sel_song_1_.Q & !playInst_CntSone2_1_.Q
+       & !playInst_CntSone2_2_.Q & playInst_CntSone2_3_.Q
+       & !playInst_CntSone2_4_.Q & !playInst_CntSone2_5_.Q
+       & !playInst_CntSone2_6_.Q & !playInst_CntSone2_7_.Q
+       & !playInst_CntSone2_8_.Q
+    # sel_song_0_.Q & !playInst_CntSone1_0_.Q & !playInst_CntSone1_3_.Q
+       & playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q
+    # sel_song_0_.Q & !playInst_CntSone1_0_.Q & !playInst_CntSone1_2_.Q
+       & playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_6_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q ) ; (3 pterms, 18 signals)
+
+playinst_n_19_0_5_n = !( !sel_song_0_.Q & !sel_song_1_.Q
+       & !playInst_CntSone_3_.Q & playInst_CntSone_5_.Q
+       & !playInst_CntSone_6_.Q & !playInst_CntSone_7_.Q
+       & !playInst_CntSone_8_.Q & !playInst_CntSone_0_.Q
+       & !playInst_CntSone_2_.Q
+    # sel_song_0_.Q & playInst_CntSone1_0_.Q & playInst_CntSone1_4_.Q
+       & !playInst_CntSone1_5_.Q & playInst_CntSone1_6_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q ) ; (2 pterms, 15 signals)
+
+playinst_n_206_n = !playInst_CntSone2_5_.Q & !playInst_CntSone2_6_.Q
+       & !playInst_CntSone2_7_.Q & !playInst_CntSone2_8_.Q ; (1 pterm, 4 signals)
+
+playinst_n_22_i_1_n = !( !playInst_tone_0_.Q & !playInst_tone_1_.Q
+       & playInst_tone_2_.Q
+    # !playinst_n_102_0_n ) ; (2 pterms, 4 signals)
+
+playinst_n_254_n = !sel_song_0_.Q & sel_song_1_.Q & playInst_CntSone2_1_.Q
+       & !playInst_CntSone2_2_.Q & playInst_CntSone2_3_.Q
+       & !playInst_CntSone2_4_.Q & !playInst_CntSone2_5_.Q
+       & !playInst_CntSone2_6_.Q & !playInst_CntSone2_7_.Q
+       & !playInst_CntSone2_8_.Q & playInst_CntSone2_0_.Q ; (1 pterm, 11 signals)
+
+playinst_n_26_i_1_n = !( !playInst_tone_0_.Q & !playInst_tone_2_.Q
+    # !playInst_tone_3_.Q & playinst_n_741_n ) ; (2 pterms, 4 signals)
+
+playinst_n_279_n = sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone1_7_.Q
+       & !playInst_CntSone1_8_.Q ; (1 pterm, 4 signals)
+
+playinst_n_289_n = !sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone_6_.Q
+       & !playInst_CntSone_7_.Q & !playInst_CntSone_8_.Q ; (1 pterm, 5 signals)
+
+playinst_n_333_n = !sel_song_0_.Q & sel_song_1_.Q & playInst_CntSone2_2_.Q
+       & !playInst_CntSone2_4_.Q & !playInst_CntSone2_5_.Q
+       & !playInst_CntSone2_6_.Q & !playInst_CntSone2_7_.Q
+       & !playInst_CntSone2_8_.Q & !playInst_CntSone2_0_.Q
+    # !sel_song_0_.Q & sel_song_1_.Q & !playInst_CntSone2_2_.Q
+       & !playInst_CntSone2_3_.Q & !playInst_CntSone2_5_.Q
+       & !playInst_CntSone2_6_.Q & !playInst_CntSone2_7_.Q
+       & !playInst_CntSone2_8_.Q & !playInst_CntSone2_0_.Q ; (2 pterms, 10 signals)
+
+playinst_n_542_i_1_n = !( !playInst_tone_0_.Q & playInst_tone_1_.Q
+       & playInst_un1_tone_31_i_0_x2
+    # !playInst_tone_1_.Q & playinst_n_736_i_n ) ; (2 pterms, 4 signals)
+
+playinst_n_552_i_1_n = !playInst_tone_0_.Q & !playInst_tone_1_.Q
+    # !playInst_tone_1_.Q & !playInst_tone_2_.Q
+    # !playInst_tone_0_.Q & !playInst_tone_2_.Q ; (3 pterms, 3 signals)
+
+playinst_n_629_i_n = playInst_CntSone1_2_.Q & playInst_CntSone1_3_.Q ; (1 pterm, 2 signals)
+
+playinst_n_673_n = !sel_song_0_.Q & sel_song_1_.Q & playInst_CntSone2_1_.Q
+       & playInst_CntSone2_2_.Q & !playInst_CntSone2_4_.Q
+       & !playInst_CntSone2_5_.Q & !playInst_CntSone2_6_.Q
+       & !playInst_CntSone2_7_.Q & !playInst_CntSone2_8_.Q
+       & !playInst_CntSone2_0_.Q
+    # !sel_song_0_.Q & sel_song_1_.Q & playInst_CntSone2_1_.Q
+       & !playInst_CntSone2_2_.Q & !playInst_CntSone2_3_.Q
+       & !playInst_CntSone2_5_.Q & !playInst_CntSone2_6_.Q
+       & !playInst_CntSone2_7_.Q & !playInst_CntSone2_8_.Q
+       & !playInst_CntSone2_0_.Q ; (2 pterms, 11 signals)
+
+playinst_n_675_n = !sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone_3_.Q
+       & playInst_CntSone_5_.Q & !playInst_CntSone_6_.Q
+       & !playInst_CntSone_7_.Q & !playInst_CntSone_8_.Q
+       & !playInst_CntSone_0_.Q & playInst_CntSone_2_.Q ; (1 pterm, 9 signals)
+
+playinst_n_676_n = !sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone_1_.Q
+       & playInst_CntSone_3_.Q & playInst_CntSone_5_.Q
+       & !playInst_CntSone_6_.Q & !playInst_CntSone_7_.Q
+       & !playInst_CntSone_8_.Q & playInst_CntSone_2_.Q ; (1 pterm, 9 signals)
+
+playinst_n_677_n = !sel_song_0_.Q & sel_song_1_.Q & !playInst_CntSone2_1_.Q
+       & playInst_CntSone2_2_.Q & !playInst_CntSone2_3_.Q
+       & playInst_CntSone2_4_.Q & !playInst_CntSone2_5_.Q
+       & !playInst_CntSone2_6_.Q & !playInst_CntSone2_7_.Q
+       & !playInst_CntSone2_8_.Q & !playInst_CntSone2_0_.Q ; (1 pterm, 11 signals)
+
+playinst_n_678_n = sel_song_0_.Q & !sel_song_1_.Q & !playInst_CntSone1_0_.Q
+       & !playInst_CntSone1_2_.Q & !playInst_CntSone1_3_.Q
+       & !playInst_CntSone1_4_.Q & playInst_CntSone1_5_.Q
+       & !playInst_CntSone1_7_.Q & !playInst_CntSone1_8_.Q ; (1 pterm, 9 signals)
+
+playinst_n_679_1_n = playInst_CntSone1_0_.Q & playInst_CntSone1_2_.Q
+       & playInst_CntSone1_4_.Q ; (1 pterm, 3 signals)
+
+playinst_n_680_1_n = playInst_CntSone1_1_.Q & !playInst_CntSone1_2_.Q
+       & !playInst_CntSone1_3_.Q & playInst_CntSone1_5_.Q ; (1 pterm, 4 signals)
+
+playinst_n_682_1_n = !playInst_CntSone1_1_.Q & playInst_CntSone1_2_.Q
+       & !playInst_CntSone1_3_.Q & playInst_CntSone1_4_.Q ; (1 pterm, 4 signals)
+
+playinst_n_724_i_1_n = playInst_tone_0_.Q & !playInst_tone_2_.Q
+       & !playInst_un1_tone_30_i_x2
+    # playInst_tone_3_.Q & !playInst_un1_tone_30_i_x2 ; (2 pterms, 4 signals)
+
+playinst_n_726_i_1_n = reset & !inst_play_enable.Q & playInst_tone_2_.Q
+       & !playInst_tone_3_.Q
+    # reset & !inst_play_enable.Q & playinst_n_728_i_n ; (2 pterms, 5 signals)
+
+playinst_n_726_i_2_n = !( playInst_tone_0_.Q & !playInst_tone_1_.Q
+       & playInst_tone_2_.Q & !playInst_tone_3_.Q
+    # !playInst_tone_2_.Q & playInst_tone_3_.Q ) ; (2 pterms, 4 signals)
+
+playinst_n_727_i_1_n = reset & !inst_play_enable.Q & playInst_tone_3_.Q
+    # reset & !inst_play_enable.Q & !playInst_tone_2_.Q & playinst_n_728_i_n ; (2 pterms, 5 signals)
+
+playinst_n_728_i_n = !playInst_tone_1_.Q & playinst_n_741_n
+    # !playInst_tone_0_.Q & playinst_n_741_n ; (2 pterms, 3 signals)
+
+playinst_n_733_i_n = reset & !inst_play_enable.Q & !playInst_tone_2_.Q
+    # reset & !inst_play_enable.Q & !playInst_tone_1_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_3_.Q ; (3 pterms, 5 signals)
+
+playinst_n_734_0_n = reset & !inst_play_enable.Q & !playInst_tone_2_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_1_.Q
+    # reset & !inst_play_enable.Q & !playInst_tone_3_.Q ; (3 pterms, 5 signals)
+
+playinst_n_735_0_n = reset & !inst_play_enable.Q & !playInst_tone_1_.Q
+    # reset & !inst_play_enable.Q & !playInst_tone_0_.Q
+    # reset & !inst_play_enable.Q & !playInst_tone_3_.Q ; (3 pterms, 5 signals)
+
+playinst_n_736_i_n = playInst_tone_0_.Q & !playInst_tone_2_.Q
+    # !playInst_tone_2_.Q & !playInst_tone_3_.Q ; (2 pterms, 3 signals)
+
+playinst_n_737_0_n = !( playInst_tone_0_.Q & playInst_tone_1_.Q
+       & playInst_tone_2_.Q & playInst_tone_3_.Q
+    # inst_play_enable.Q
+    # !reset ) ; (3 pterms, 6 signals)
+
+playinst_n_739_0_n = reset & !inst_play_enable.Q & playInst_tone_2_.Q
+    # reset & !inst_play_enable.Q & !playInst_tone_0_.Q
+    # reset & !inst_play_enable.Q & !playInst_tone_3_.Q ; (3 pterms, 5 signals)
+
+playinst_n_741_n = !( !playInst_tone_0_.Q & !playInst_tone_1_.Q ) ; (1 pterm, 2 signals)
+
+playinst_n_81_i_2_n = !( playInst_tone_0_.Q & !playInst_tone_2_.Q
+       & !playInst_tone_3_.Q
+    # !playInst_tone_1_.Q & !playInst_tone_2_.Q ) ; (2 pterms, 4 signals)
+
+playinst_tone396_n = !sel_song_0_.Q & sel_song_1_.Q ; (1 pterm, 2 signals)
+
+playinst_un1_tone_26_n = reset & !inst_play_enable.Q & playInst_tone_0_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_1_.Q
+    # reset & !inst_play_enable.Q & playInst_tone_2_.Q ; (3 pterms, 5 signals)
+
+sel_song_0_.D = !sel_song_0_.Q & !sel_song_1_.Q
+    # sel_song_0_.Q & sel_song_1_.Q ; (2 pterms, 2 signals)
+sel_song_0_.C = !( !debouncerInst_3_controllerInst_state_0_.Q
+       & !debouncerInst_3_controllerInst_state_1_.Q ) ; (1 pterm, 2 signals)
+sel_song_0_.AR = !reset ; (1 pterm, 1 signal)
+
+sel_song_1_.D = sel_song_0_.Q ; (1 pterm, 1 signal)
+sel_song_1_.C = !( !debouncerInst_3_controllerInst_state_0_.Q
+       & !debouncerInst_3_controllerInst_state_1_.Q ) ; (1 pterm, 2 signals)
+sel_song_1_.AR = !reset ; (1 pterm, 1 signal)
+
+sp.D = !playInst_tone_0_.Q & !playInst_tone_1_.Q & !playInst_tone_2_.Q
+       & !playInst_tone_3_.Q
+    # inst_play_enable.Q
+    # !sp.Q
+    # !reset ; (4 pterms, 7 signals)
+sp.C = clk ; (1 pterm, 1 signal)
+sp.CE = sp_0 ; (1 pterm, 1 signal)
+sp.AP = !reset ; (1 pterm, 1 signal)
+
+sp_0 = !reset
+    # inst_play_enable.Q
+    # !playInst_tone_0_.Q & !playInst_tone_1_.Q & !playInst_tone_2_.Q
+       & !playInst_tone_3_.Q
+    # !playInst_CntSp_4_.Q & !playInst_CntSp_10_.Q & !playInst_CntSp_0_.Q
+       & !playInst_CntSp_7_.Q & !playInst_CntSp_6_.Q & !playInst_CntSp_2_.Q
+       & !playInst_CntSp_12_.Q & !playInst_CntSp_3_.Q & !playInst_CntSp_13_.Q
+       & !playInst_CntSp_5_.Q & !playInst_CntSp_9_.Q & !playInst_CntSp_8_.Q
+       & !playInst_CntSp_11_.Q & !playInst_CntSp_1_.Q ; (4 pterms, 20 signals)
+
+un1_clk_4Hz = !inst_play_enable.Q & clkGenerator_FreqDivide_2_q_1_.Q
+       & clkGenerator_FreqDivide_2_q_2_.Q & !clkGenerator_FreqDivide_2_q_3_.Q
+       & clkGenerator_FreqDivide_2_q_4_.Q & clkGenerator_FreqDivide_2_q_5_.Q
+       & clkGenerator_FreqDivide_2_q_6_.Q & clkGenerator_FreqDivide_2_q_7_.Q
+       & clkGenerator_FreqDivide_2_q_8_.Q & !clkGenerator_FreqDivide_2_q_9_.Q
+       & !clkGenerator_FreqDivide_2_q_10_.Q
+       & !clkGenerator_FreqDivide_2_q_11_.Q
+       & clkGenerator_FreqDivide_2_q_12_.Q ; (1 pterm, 13 signals)
+

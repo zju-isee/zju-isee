@@ -1,0 +1,167 @@
+#PLAFILE     isp_lab2.bl5
+#DATE        Sat Apr 22 21:58:36 2023
+
+#DESIGN      isp_lab2
+#DEVICE      MACH4S-256
+
+
+// Default settings.
+DATA GLOBAL tINDIO:0
+
+
+// Signal locations
+DATA LOCATION clk:*_*_88
+DATA LOCATION clk_low:*_*_39
+DATA LOCATION resetIn:J_*_48
+DATA LOCATION ButtonIn:J_*_49
+DATA LOCATION LED_VCC2:O_13_78
+DATA LOCATION light_1:I_10_42
+DATA LOCATION light_2:I_2_41
+DATA LOCATION LED_A:L_5_61
+DATA LOCATION LED_B:K_2_56
+DATA LOCATION LED_C:M_1_66
+DATA LOCATION LED_D:M_6_64
+DATA LOCATION LED_E:M_10_65
+DATA LOCATION LED_F:L_10_60
+DATA LOCATION LED_G:L_2_58
+DATA LOCATION LED_VCC1:N_1_72
+DATA LOCATION LED_VCC3:K_7_55
+DATA LOCATION LED_VCC4:K_0_54
+DATA LOCATION clkGenerate_scancnt_1_:K_9
+DATA LOCATION clkGenerate_scancnt_0_:K_12
+DATA LOCATION randomNumGenetate_oddreg:D_5
+DATA LOCATION randomNumGenetate_num_1_:D_7
+DATA LOCATION randomNumGenetate_num_2_:D_9
+DATA LOCATION randomNumGenetate_num_3_:D_12
+DATA LOCATION randomNumGenetate_conter_9_q_1_:B_9
+DATA LOCATION randomNumGenetate_conter_9_q_2_:D_3
+DATA LOCATION randomNumGenetate_conter_9_q_3_:B_3
+DATA LOCATION randomNumGenetate_conter_9_q_4_:D_1
+DATA LOCATION clkGenerate_FreqDivide_q_1_:F_3
+DATA LOCATION clkGenerate_FreqDivide_q_2_:I_5
+DATA LOCATION clkGenerate_FreqDivide_q_3_:E_7
+DATA LOCATION clkGenerate_FreqDivide_q_4_:N_3
+DATA LOCATION clkGenerate_FreqDivide_q_5_:P_7
+DATA LOCATION clkGenerate_FreqDivide_q_6_:K_1
+DATA LOCATION clkGenerate_FreqDivide_q_7_:K_3
+DATA LOCATION clkGenerate_FreqDivide_q_8_:G_1
+DATA LOCATION clkGenerate_FreqDivide_q_9_:G_3
+DATA LOCATION clkGenerate_FreqDivide_q_10_:N_6
+DATA LOCATION clkGenerate_FreqDivide_q_11_:K_4
+DATA LOCATION clkGenerate_FreqDivide_q_12_:M_3
+DATA LOCATION clkGenerate_FreqDivide_q_13_:K_5
+DATA LOCATION buttonInst_2_Timer_q_1_:H_10
+DATA LOCATION buttonInst_2_Timer_q_2_:H_3
+DATA LOCATION buttonInst_2_Timer_q_3_:H_6
+DATA LOCATION buttonInst_2_Timer_q_4_:H_1
+DATA LOCATION buttonInst_2_ControlInst_state_0_:F_1
+DATA LOCATION buttonInst_2_ControlInst_state_1_:F_10
+DATA LOCATION buttonInst_1_Width_TransInst_q:A_9
+DATA LOCATION buttonInst_1_Debouncer_Timer_q_1_:C_10
+DATA LOCATION buttonInst_1_Debouncer_Timer_q_2_:C_3
+DATA LOCATION buttonInst_1_Debouncer_Timer_q_3_:C_6
+DATA LOCATION buttonInst_1_Debouncer_Timer_q_4_:C_1
+DATA LOCATION buttonInst_1_Debouncer_ControlInst_state_0_:G_6
+DATA LOCATION buttonInst_1_Debouncer_ControlInst_state_1_:G_10
+DATA LOCATION buttoninst_1_width_transinst_un1_out_i_n:A_3
+DATA LOCATION buttonInst_2_Timer_q_1__0:N_10
+DATA LOCATION buttonInst_1_Debouncer_Timer_q_1__0:F_6
+
+// Signals direction
+DATA IO_DIR clk:IN
+DATA IO_DIR clk_low:IN
+DATA IO_DIR resetIn:IN
+DATA IO_DIR ButtonIn:IN
+DATA IO_DIR LED_VCC2:OUT
+DATA IO_DIR light_1:OUT
+DATA IO_DIR light_2:OUT
+DATA IO_DIR LED_A:OUT
+DATA IO_DIR LED_B:OUT
+DATA IO_DIR LED_C:OUT
+DATA IO_DIR LED_D:OUT
+DATA IO_DIR LED_E:OUT
+DATA IO_DIR LED_F:OUT
+DATA IO_DIR LED_G:OUT
+DATA IO_DIR LED_VCC1:OUT
+DATA IO_DIR LED_VCC3:OUT
+DATA IO_DIR LED_VCC4:OUT
+
+// Global Clocks
+DATA GLB_CLOCK clk:3
+DATA GLB_CLOCK clk_low:2
+
+// Signals using Shared Clock or CE
+DATA tBCLK LED_A.C
+DATA tBCLK LED_B.C
+DATA tBCLK LED_C.C
+DATA tBCLK LED_D.C
+DATA tBCLK LED_E.C
+DATA tBCLK LED_F.C
+DATA tBCLK LED_G.C
+DATA tBCLK LED_VCC1.C
+DATA tBCLK LED_VCC3.C
+DATA tBCLK LED_VCC4.C
+DATA tBCLK clkGenerate_scancnt_1_.C
+DATA tBCLK clkGenerate_scancnt_0_.C
+DATA tBCLK randomNumGenetate_oddreg.C
+DATA tBCLK randomNumGenetate_num_1_.C
+DATA tBCLK randomNumGenetate_num_2_.C
+DATA tBCLK randomNumGenetate_num_3_.C
+DATA tBCLK buttonInst_2_Timer_q_1_.CE
+DATA tBCLK buttonInst_2_Timer_q_2_.CE
+DATA tBCLK buttonInst_2_Timer_q_3_.CE
+DATA tBCLK buttonInst_2_Timer_q_4_.CE
+DATA tBCLK buttonInst_1_Debouncer_Timer_q_1_.CE
+DATA tBCLK buttonInst_1_Debouncer_Timer_q_2_.CE
+DATA tBCLK buttonInst_1_Debouncer_Timer_q_3_.CE
+DATA tBCLK buttonInst_1_Debouncer_Timer_q_4_.CE
+
+// Block Load Adders
+DATA tBLA clkGenerate_FreqDivide_q_2_:8
+DATA tBLA clkGenerate_FreqDivide_q_1_:8
+DATA tBLA clkGenerate_FreqDivide_q_3_:7
+DATA tBLA clkGenerate_FreqDivide_q_5_:6
+DATA tBLA clkGenerate_FreqDivide_q_4_:6
+DATA tBLA buttonInst_2_ControlInst_state_0_:5
+DATA tBLA clkGenerate_FreqDivide_q_13_:5
+DATA tBLA clkGenerate_FreqDivide_q_12_:5
+DATA tBLA clkGenerate_FreqDivide_q_11_:5
+DATA tBLA clkGenerate_FreqDivide_q_10_:5
+DATA tBLA clkGenerate_FreqDivide_q_9_:5
+DATA tBLA clkGenerate_FreqDivide_q_8_:5
+DATA tBLA clkGenerate_FreqDivide_q_7_:5
+DATA tBLA clkGenerate_FreqDivide_q_6_:5
+DATA tBLA buttonInst_1_Debouncer_ControlInst_state_0_:3
+DATA tBLA buttonInst_2_ControlInst_state_1_:3
+DATA tBLA randomNumGenetate_oddreg:3
+DATA tBLA randomNumGenetate_num_3_:2
+DATA tBLA randomNumGenetate_num_2_:2
+DATA tBLA randomNumGenetate_num_1_:2
+DATA tBLA clkGenerate_scancnt_0_:2
+DATA tBLA buttonInst_1_Debouncer_ControlInst_state_1_:1
+DATA tBLA buttonInst_1_Debouncer_Timer_q_4_:1
+DATA tBLA buttonInst_1_Debouncer_Timer_q_3_:1
+DATA tBLA buttonInst_1_Debouncer_Timer_q_2_:1
+DATA tBLA buttonInst_1_Debouncer_Timer_q_1_:1
+DATA tBLA buttonInst_2_Timer_q_4_:1
+DATA tBLA buttonInst_2_Timer_q_3_:1
+DATA tBLA buttonInst_2_Timer_q_2_:1
+DATA tBLA buttonInst_2_Timer_q_1_:1
+DATA tBLA randomNumGenetate_conter_9_q_3_:1
+DATA tBLA randomNumGenetate_conter_9_q_2_:1
+DATA tBLA randomNumGenetate_conter_9_q_1_:1
+
+// Signals using OSM or fast 5-PTs path
+DATA tOSM LED_VCC2
+DATA tOSM light_1
+DATA tOSM light_2
+DATA tOSM LED_A
+DATA tOSM LED_B
+DATA tOSM LED_C
+DATA tOSM LED_D
+DATA tOSM LED_E
+DATA tOSM LED_F
+DATA tOSM LED_G
+DATA tOSM LED_VCC1
+DATA tOSM LED_VCC3
+DATA tOSM LED_VCC4

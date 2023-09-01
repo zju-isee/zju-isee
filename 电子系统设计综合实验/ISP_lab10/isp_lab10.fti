@@ -1,0 +1,167 @@
+#PLAFILE     isp_lab10.bl5
+#DATE        Wed May 24 22:05:36 2023
+
+#DESIGN      isp_lab10
+#DEVICE      MACH4S-256
+
+
+// Default settings.
+DATA GLOBAL tINDIO:0
+
+
+// Signal locations
+DATA LOCATION clk:*_*_88
+DATA LOCATION clk_low:*_*_39
+DATA LOCATION reset:*_*_38
+DATA LOCATION KeyData:C_*_4
+DATA LOCATION KeyClock:C_*_3
+DATA LOCATION LED_VCC1:N_0_72
+DATA LOCATION LED_VCC2:O_1_78
+DATA LOCATION LED_VCC3:K_7_55
+DATA LOCATION LED_A:L_5_61
+DATA LOCATION LED_B:K_2_56
+DATA LOCATION LED_C:M_10_66
+DATA LOCATION LED_D:M_4_64
+DATA LOCATION LED_E:M_6_65
+DATA LOCATION LED_F:L_10_60
+DATA LOCATION LED_G:L_2_58
+DATA LOCATION LED_VCC4:K_11_54
+DATA LOCATION PS2_Receiver_Inst_PS_Data_0_:E_4
+DATA LOCATION PS2_Receiver_Inst_PS_Data_1_:F_4
+DATA LOCATION PS2_Receiver_Inst_PS_Data_2_:C_4
+DATA LOCATION PS2_Receiver_Inst_PS_Data_3_:I_4
+DATA LOCATION PS2_Receiver_Inst_KeyClock_r1:N_12
+DATA LOCATION PS2_Receiver_Inst_RxEn:D_3
+DATA LOCATION PS2_Receiver_Inst_LastRxData_0_:O_9
+DATA LOCATION PS2_Receiver_Inst_LastRxData_1_:D_5
+DATA LOCATION PS2_Receiver_Inst_LastRxData_2_:P_6
+DATA LOCATION PS2_Receiver_Inst_LastRxData_3_:N_7
+DATA LOCATION PS2_Receiver_Inst_LastRxData_4_:D_7
+DATA LOCATION PS2_Receiver_Inst_LastRxData_5_:N_9
+DATA LOCATION PS2_Receiver_Inst_LastRxData_6_:O_12
+DATA LOCATION PS2_Receiver_Inst_LastRxData_7_:P_10
+DATA LOCATION PS2_Receiver_Inst_LedEn:B_9
+DATA LOCATION PS2_Receiver_Inst_KeyClock_r0:D_9
+DATA LOCATION PS2_Receiver_Inst_KeyClock_r2:D_12
+DATA LOCATION PS2_Receiver_Inst_counter_0_:N_5
+DATA LOCATION PS2_Receiver_Inst_counter_1_:A_3
+DATA LOCATION PS2_Receiver_Inst_counter_2_:O_7
+DATA LOCATION PS2_Receiver_Inst_counter_3_:A_9
+DATA LOCATION PS2_Receiver_Inst_RxData_1_:O_3
+DATA LOCATION PS2_Receiver_Inst_RxData_2_:D_0
+DATA LOCATION PS2_Receiver_Inst_RxData_3_:P_1
+DATA LOCATION PS2_Receiver_Inst_RxData_4_:N_1
+DATA LOCATION PS2_Receiver_Inst_RxData_5_:D_1
+DATA LOCATION PS2_Receiver_Inst_RxData_6_:N_3
+DATA LOCATION PS2_Receiver_Inst_RxData_7_:O_5
+DATA LOCATION PS2_Receiver_Inst_RxData_8_:P_3
+DATA LOCATION PS2_Receiver_Inst_save_0_:B_3
+DATA LOCATION PS2_Receiver_Inst_save_1_:G_4
+DATA LOCATION PS2_Receiver_Inst_save_2_:H_4
+DATA LOCATION PS2_Receiver_Inst_save_3_:J_4
+
+// Signals direction
+DATA IO_DIR clk:IN
+DATA IO_DIR clk_low:IN
+DATA IO_DIR reset:IN
+DATA IO_DIR KeyData:IN
+DATA IO_DIR KeyClock:IN
+DATA IO_DIR LED_VCC1:OUT
+DATA IO_DIR LED_VCC2:OUT
+DATA IO_DIR LED_VCC3:OUT
+DATA IO_DIR LED_A:OUT
+DATA IO_DIR LED_B:OUT
+DATA IO_DIR LED_C:OUT
+DATA IO_DIR LED_D:OUT
+DATA IO_DIR LED_E:OUT
+DATA IO_DIR LED_F:OUT
+DATA IO_DIR LED_G:OUT
+DATA IO_DIR LED_VCC4:OUT
+
+// Global Clocks
+DATA GLB_CLOCK clk:3
+DATA GLB_CLOCK clk_low:2
+
+// Signals using Shared Clock or CE
+DATA tBCLK PS2_Receiver_Inst_PS_Data_0_.C
+DATA tBCLK PS2_Receiver_Inst_PS_Data_1_.C
+DATA tBCLK PS2_Receiver_Inst_PS_Data_2_.C
+DATA tBCLK PS2_Receiver_Inst_PS_Data_3_.C
+DATA tBCLK PS2_Receiver_Inst_counter_1_.CE
+DATA tBCLK PS2_Receiver_Inst_counter_3_.CE
+DATA tBCLK PS2_Receiver_Inst_RxData_1_.CE
+DATA tBCLK PS2_Receiver_Inst_RxData_2_.CE
+DATA tBCLK PS2_Receiver_Inst_RxData_3_.CE
+DATA tBCLK PS2_Receiver_Inst_RxData_4_.CE
+DATA tBCLK PS2_Receiver_Inst_RxData_5_.CE
+DATA tBCLK PS2_Receiver_Inst_RxData_6_.CE
+DATA tBCLK PS2_Receiver_Inst_RxData_7_.CE
+DATA tBCLK PS2_Receiver_Inst_RxData_8_.CE
+DATA tBCLK PS2_Receiver_Inst_save_0_.C
+DATA tBCLK PS2_Receiver_Inst_save_1_.C
+DATA tBCLK PS2_Receiver_Inst_save_2_.C
+DATA tBCLK PS2_Receiver_Inst_save_3_.C
+
+// Signals using Shared Init Pterm
+DATA tBSR PS2_Receiver_Inst_PS_Data_0_.AR
+DATA tBSR PS2_Receiver_Inst_PS_Data_1_.AR
+DATA tBSR PS2_Receiver_Inst_PS_Data_2_.AR
+DATA tBSR PS2_Receiver_Inst_PS_Data_3_.AR
+DATA tBSR PS2_Receiver_Inst_KeyClock_r1.AR
+DATA tBSR PS2_Receiver_Inst_RxEn.PR
+DATA tBSR PS2_Receiver_Inst_LastRxData_0_.PR
+DATA tBSR PS2_Receiver_Inst_LastRxData_1_.AR
+DATA tBSR PS2_Receiver_Inst_LastRxData_2_.PR
+DATA tBSR PS2_Receiver_Inst_LastRxData_3_.AR
+DATA tBSR PS2_Receiver_Inst_LastRxData_4_.AR
+DATA tBSR PS2_Receiver_Inst_LastRxData_5_.AR
+DATA tBSR PS2_Receiver_Inst_LastRxData_6_.PR
+DATA tBSR PS2_Receiver_Inst_LastRxData_7_.AR
+DATA tBSR PS2_Receiver_Inst_LedEn.AR
+DATA tBSR PS2_Receiver_Inst_KeyClock_r0.AR
+DATA tBSR PS2_Receiver_Inst_KeyClock_r2.AR
+DATA tBSR PS2_Receiver_Inst_counter_0_.AR
+DATA tBSR PS2_Receiver_Inst_counter_1_.AR
+DATA tBSR PS2_Receiver_Inst_counter_2_.AR
+DATA tBSR PS2_Receiver_Inst_counter_3_.AR
+
+// Block Load Adders
+DATA tBLA reset:15
+DATA tBLA PS2_Receiver_Inst_LedEn:7
+DATA tBLA PS2_Receiver_Inst_LastRxData_7_:7
+DATA tBLA PS2_Receiver_Inst_LastRxData_6_:7
+DATA tBLA PS2_Receiver_Inst_LastRxData_5_:7
+DATA tBLA PS2_Receiver_Inst_LastRxData_4_:7
+DATA tBLA PS2_Receiver_Inst_LastRxData_3_:7
+DATA tBLA PS2_Receiver_Inst_LastRxData_2_:7
+DATA tBLA PS2_Receiver_Inst_LastRxData_1_:7
+DATA tBLA PS2_Receiver_Inst_LastRxData_0_:7
+DATA tBLA PS2_Receiver_Inst_counter_3_:4
+DATA tBLA PS2_Receiver_Inst_counter_2_:4
+DATA tBLA PS2_Receiver_Inst_counter_1_:4
+DATA tBLA PS2_Receiver_Inst_counter_0_:4
+DATA tBLA PS2_Receiver_Inst_KeyClock_r2:4
+DATA tBLA PS2_Receiver_Inst_RxEn:4
+DATA tBLA PS2_Receiver_Inst_KeyClock_r1:4
+DATA tBLA KeyData:3
+DATA tBLA PS2_Receiver_Inst_PS_Data_3_:2
+DATA tBLA PS2_Receiver_Inst_PS_Data_2_:2
+DATA tBLA PS2_Receiver_Inst_PS_Data_1_:2
+DATA tBLA PS2_Receiver_Inst_PS_Data_0_:2
+DATA tBLA PS2_Receiver_Inst_save_3_:1
+DATA tBLA PS2_Receiver_Inst_save_2_:1
+DATA tBLA PS2_Receiver_Inst_save_1_:1
+DATA tBLA PS2_Receiver_Inst_save_0_:1
+
+// Signals using OSM or fast 5-PTs path
+DATA tOSM LED_VCC1
+DATA tOSM LED_VCC2
+DATA tOSM LED_VCC3
+DATA tOSM LED_A
+DATA tOSM LED_B
+DATA tOSM LED_C
+DATA tOSM LED_D
+DATA tOSM LED_E
+DATA tOSM LED_F
+DATA tOSM LED_G
+DATA tOSM LED_VCC4
