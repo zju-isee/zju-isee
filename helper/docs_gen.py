@@ -8,7 +8,6 @@ def replace_yml_slash(yml_file_path):
     with open(yml_file_path, 'w', encoding='utf-8') as file:
         file.write(modified_content)
 
-
 def copy_readme_to_docs(root_path, dest_folder):
     if "README.md" in os.listdir(root_path):
         source_file = os.path.join(root_path, "README.md")
@@ -39,7 +38,6 @@ def generate_yml_content(structure, docs_path, prefix="  "):
             continue
         
         if isinstance(value, dict) and 'README.md' in value:
-            # 使用os.path.relpath()得到相对于docs目录的路径
             abs_path = value['README.md']
             relative_path = os.path.relpath(abs_path, docs_path)
             yml_content += prefix + "- " + key + ": '" + relative_path + "'\n"
@@ -65,6 +63,7 @@ nav:
         f.write(yml_header + yml_content)
         print("Generated mkdocs.yml")
 
+
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
     base_path = os.path.dirname(current_dir)
@@ -76,8 +75,6 @@ if __name__ == "__main__":
             copy_readme_to_docs(path_, os.path.join(dest_path, d))
     generate_mkdocs_yml(dest_path)
 
-
-    # 定义文件路径
-    yml_file_name = 'mkdocs.yml'  # 请根据需要修改路径
+    yml_file_name = 'mkdocs.yml'
     yml_file_path = os.path.join(base_path, yml_file_name)
     replace_yml_slash(yml_file_path)
